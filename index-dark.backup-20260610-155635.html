@@ -1345,6 +1345,115 @@ div.case-body {
 .work-item-title { font-family: 'Archivo', 'NanumSquareNeo', sans-serif !important; }
 .work-item-tag, .work-item-desc, .work-item-stat-unit, .work-open-btn { font-family: 'Figtree', 'NanumSquareNeo', sans-serif !important; }
 .work-item-stat-big { font-family: 'Archivo', sans-serif !important; }
+
+/* ══════════════════════════════════════
+   DARK MODE OVERRIDES
+══════════════════════════════════════ */
+:root {
+  --ink: #e8e8e8;
+  --ink-2: #999;
+  --ink-3: #555;
+  --border: rgba(255,255,255,0.1);
+  --pill-bg: rgba(255,255,255,0.08);
+}
+
+body { background: #111; color: var(--ink); }
+
+/* home */
+#home-page { background: #111; }
+.home-page-inner { background: #111; }
+.case-card { background: #1a1a1a !important; border-color: rgba(255,255,255,0.07) !important; }
+.case-tag { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.1) !important; }
+.work-item { background: #1a1a1a !important; border-color: rgba(255,255,255,0.07) !important; }
+.work-item-right { background: #222 !important; }
+.work-item-placeholder { color: #555 !important; }
+.work-open-btn { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; color: #aaa !important; }
+.work-open-btn:hover { background: rgba(255,255,255,0.12) !important; color: #eee !important; }
+.wit { background: #222 !important; border-color: rgba(255,255,255,0.1) !important; color: #888 !important; }
+.work-item-stat-big { color: #e8e8e8 !important; }
+.work-item-stat-unit, .work-item-stat-label { color: #666 !important; }
+.work-item-title { color: #e8e8e8 !important; }
+.work-item-desc { color: #777 !important; }
+.work-item-tag { color: #666 !important; }
+
+/* nav */
+.global-nav { background: rgba(17,17,17,0.85) !important; border-bottom-color: rgba(255,255,255,0.07) !important; }
+.global-nav-pills a { color: #888 !important; }
+.global-nav-pills a:hover { background: rgba(255,255,255,0.06) !important; color: #ddd !important; }
+.global-nav-pills a.nav-active { background: #2a2a2a !important; color: #eee !important; box-shadow: 0 1px 4px rgba(0,0,0,0.4) !important; }
+.home-nav-links a { color: #888 !important; }
+.home-nav-links a:hover { background: rgba(255,255,255,0.06) !important; color: #ddd !important; }
+
+/* hero */
+.hero-section { background: #111 !important; }
+.leah-cta { background: #e8e8e8 !important; color: #111 !important; }
+
+/* pills / chat */
+.pill { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; color: #aaa !important; }
+.chat-box { background: rgba(255,255,255,0.04) !important; border-color: rgba(255,255,255,0.08) !important; }
+.chat-input { color: #e8e8e8 !important; }
+.chat-send { background: #e8e8e8 !important; color: #111 !important; }
+.msg-bubble.user { background: #2a2a2a !important; }
+.msg-bubble.ai { background: #1e1e1e !important; }
+
+/* about */
+#about-page { background: #111 !important; }
+
+/* footer */
+footer { background: #111 !important; border-top-color: rgba(255,255,255,0.07) !important; }
+.footer-copy { color: #444 !important; }
+.footer-col h4 { color: #ccc !important; }
+.footer-col a { color: #666 !important; }
+.footer-col a:hover { color: #ccc !important; }
+
+/* case page */
+#case-page { background: #141218 !important; }
+.case-page-nav { background: rgba(20,18,24,0.85) !important; border-bottom-color: rgba(255,255,255,0.07) !important; }
+.case-page-nav-logo { color: #aaa !important; }
+.case-page-nav-back { color: #888 !important; }
+.case-hero-wrap { background: #141218 !important; }
+.cht { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; color: #888 !important; }
+.cb-h2 { color: #e0e0e0 !important; }
+.cb-p { color: #999 !important; }
+.cb-label { color: #555 !important; }
+.cb-label::before { background: #555 !important; }
+
+/* case stats */
+.case-stats-strip { background: rgba(255,255,255,0.04) !important; border-color: rgba(255,255,255,0.07) !important; }
+
+/* sticky cards */
+.sticky-card { background: #2a2520 !important; }
+.sticky-card:nth-child(1) { background: #2a2535 !important; }
+.sticky-card:nth-child(4) { background: #2a2535 !important; }
+.sticky-title { color: #b8aef0 !important; }
+
+/* proc stepper */
+.proc-card { background: rgba(255,255,255,0.04) !important; border-color: rgba(255,255,255,0.08) !important; }
+.p-circ { background: #2e2a45 !important; color: #a89de0 !important; }
+.p-lbl { color: #777 !important; }
+.p-lbl.active-lbl, .proc-step.active .p-lbl { color: #e8e8e8 !important; }
+.pd-title { color: #ddd !important; }
+.pd-desc { color: #888 !important; }
+.pd-btn { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.1) !important; color: #888 !important; }
+.pd-btn:hover { border-color: #aaa !important; color: #eee !important; }
+.chip { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.1) !important; color: #777 !important; }
+
+/* cards */
+.opp-card, .insight-item, .sol-card, .ref-card, .pain-card { background: #1e1b2a !important; border-color: rgba(255,255,255,0.07) !important; }
+.opp-title, .i-title, .sol-title { color: #ddd !important; }
+.opp-desc, .i-desc, .sol-desc, .opp-num { color: #777 !important; }
+.obs-bubble { background: #1e1b2a !important; border-color: rgba(255,255,255,0.07) !important; color: #999 !important; }
+
+/* sidenav */
+.case-sidenav button { color: #555 !important; }
+.case-sidenav button.snav-active { color: #ddd !important; }
+.case-sidenav button:hover { color: #aaa !important; }
+
+/* highlight */
+mark.hl { background: linear-gradient(rgba(180,160,80,0.35), rgba(180,160,80,0.35)) no-repeat left center !important; }
+
+/* image tags */
+.meta-cell { background: #1e1b2a !important; }
 </style>
 </head>
 <body>
@@ -1417,6 +1526,7 @@ div.case-body {
       <div class="work-item-left">
         <p class="work-item-tag">YouTube Redesign Challenge 2025 · Team · 1 Month</p>
         <h2 class="work-item-title">YouTube Shorts Shopping Experience</h2>
+        <p class="work-item-desc">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. 8명 사용자 인터뷰와 UT를 통해 핵심 페인포인트를 발굴하고 디자인 개선안을 도출했습니다.</p>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">8</span>
           <span class="work-item-stat-unit">user interviews &nbsp;·&nbsp;</span>
@@ -1444,6 +1554,7 @@ div.case-body {
           <span>Naver OGQ Market 통합 홈 개선</span>
           
         </h2>
+        <p class="work-item-desc">홈 상단부 공간 점유 문제를 데이터로 정의하고 UI를 개선했습니다. 상단 높이 44% 축소, '최근 본 콘텐츠' 사이드바 이동으로 클릭당 전환율 +60.9%, 피처드 지면 매출 +45%를 달성했습니다.</p>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">+60.9%</span>
           <span class="work-item-stat-unit">Click CVR &nbsp;·&nbsp;</span>
@@ -1608,136 +1719,28 @@ div.case-body {
       </div>
     </div>
 
-    <!-- PROTOTYPE -->
+    <!-- LO-FI DESIGN -->
     <div class="cb-section">
-      <p class="cb-label">Prototype</p>
+      <p class="cb-label">Lo-fi Design</p>
       <h2 class="cb-h2">프로토타입 설계</h2>
-      <p class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
+      <p class="cb-p">리서치에서 도출한 Pain Point를 바탕으로 <mark class="hl">핵심 기능 2가지를 정의</mark>하고, Figma로 Lo-fi 와이어프레임을 제작하여 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
 
-      <!-- 3 feature cards hover -->
-      <style>
-        .hifi-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:32px; }
-        .hifi-card {
-          position:relative;
-          background:rgba(255,255,255,0.55); backdrop-filter:blur(8px);
-          border-radius:14px; border:1px solid rgba(255,255,255,0.7);
-          aspect-ratio:3/2; overflow:hidden; cursor:pointer;
-          transition:background 0.25s;
-        }
-        .hifi-card:hover { background:#fff; }
-        .hifi-card-deco {
-          position:absolute; bottom:-22px; right:-22px;
-          width:62%; height:130%;
-          pointer-events:none; z-index:1;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card-deco svg { width:100%; height:100%; }
-        .hifi-card:hover .hifi-card-deco { opacity:0; transform:scale(0.96); }
-        .hifi-card-front {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; flex-direction:column; justify-content:space-between;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-front { opacity:0; transform:translateY(-8px); }
-        .hifi-card-num {
-          font-size:72px; font-weight:400; color:#c4bef0;
-          font-family:'Archivo',sans-serif; line-height:1;
-          letter-spacing:-0.04em; position:relative; z-index:1;
-        }
-        .hifi-card-title {
-          font-size:14px; font-weight:800; color:#1a1424;
-          font-family:'NanumSquareNeo',sans-serif; line-height:1.4;
-          max-width:52%; position:relative; z-index:1;
-        }
-        .hifi-card-back {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; align-items:center;
-          opacity:0; transform:translateY(8px);
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-back { opacity:1; transform:translateY(0); }
-        .hifi-card-back p {
-          font-size:10px; color:#111; line-height:1.65;
-          font-family:'Figtree',sans-serif;
-        }
-      </style>
-      <div class="hifi-cards">
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 01: 오프셋 겹침 라운드 rect — 왼쪽으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc1a" x1="0%" y1="20%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="40%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="5" y="45" width="100" height="75" rx="22" fill="url(#gc1a)"/>
-              <rect x="20" y="8" width="100" height="75" rx="22" fill="url(#gc1a)" opacity="0.72"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">01</div>
-            <h3 class="hifi-card-title">스티커 위치 제어</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>스티커 위치가 액션 버튼들과 겹쳐 오클릭이 자주 발생했습니다. 드래그로 위치를 옮기거나 제거할 수 있되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 02: 큰 원 — 우하단 중심으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="gc2a" cx="72%" cy="68%" r="60%">
-                  <stop offset="0%" stop-color="#c4bef0" stop-opacity="0.9"/>
-                  <stop offset="65%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#ede9fd" stop-opacity="0.08"/>
-                </radialGradient>
-              </defs>
-              <circle cx="75" cy="90" r="70" fill="url(#gc2a)"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">02</div>
-            <h3 class="hifi-card-title">제품 뱃지 + 타임스탬프</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 등장한 제품인지 구분이 어려웠습니다. "태그된 제품" 뱃지와 타임스탬프를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있게 했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 03: 레이어드 rect — 왼쪽 투명 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc3a" x1="0%" y1="10%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="45%" stop-color="#ddd8f8" stop-opacity="0.6"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="78" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.5"/>
-              <rect x="0" y="46" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.72"/>
-              <rect x="0" y="14" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.92"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">03</div>
-            <h3 class="hifi-card-title">My Products 설계</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>익숙한 YouTube 저장 패턴 위에 제품 저장 기능을 얹어 자연스럽게 My Products에 담기도록 설계했습니다. 저장 후 상세 페이지·관련 영상으로 바로 이동할 수 있고, 관심도나 구매 우선순위에 따라 직접 정렬할 수 있는 기능으로 재탐색 경험을 개선했습니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="cb-label" style="margin-top:48px;">Lo-fi Prototype</p>
-      <div class="wf-scroll-wrap" style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+      <div class="wf-scroll-wrap" style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
         <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/wireframe-01.png" alt="와이어프레임 01" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+        </div>
+        <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease 0.15s,transform 0.6s ease 0.15s;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/wireframe-02.png" alt="와이어프레임 02" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+        </div>
+        <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease 0.3s,transform 0.6s ease 0.3s;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/wireframe-03.png" alt="와이어프레임 03" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
             <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
           </div>
         </div>
@@ -1753,9 +1756,35 @@ div.case-body {
         items.forEach(el => obs.observe(el));
       })();
       </script>
+    </div>
 
-      <p class="cb-label" style="margin-top:48px;">Hi-fi Prototype</p>
-      <div class="case-img-wrap" style="margin-top:20px;">
+    <!-- HI-FI DESIGN -->
+    <div class="cb-section">
+      <p class="cb-label">Hi-fi Design</p>
+      <h2 class="cb-h2">Hi-fi 프로토타입</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
+        <div class="opp-card">
+          <div class="opp-num">01</div>
+          <p class="opp-title">스티커 위치를 사용자가 직접 제어할 수 있게</p>
+          <p class="opp-desc">크리에이터가 설정한 스티커 위치가 Shorts 화면 우측 패널의 좋아요, 공유 등 액션 버튼들과 겹쳐 오클릭이 발생하는 경우가 많았음. 사용자가 직접 드래그로 위치를 옮기거나 제거할 수 있도록 하되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 <mark class="hl">의도치 않은 클릭을 방지</mark>함.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">02</div>
+          <p class="opp-title">YouTube 기존 흐름 위에 저장 기능 설계</p>
+          <p class="opp-desc">새로운 기능일수록 <mark class="hl">사용자가 이미 익숙한 패턴 위에 얹히도록</mark> 설계하는 것이 중요하다고 판단함. YouTube의 기존 영상 저장 플로우와 유사한 방식으로 제품을 저장하면 "내 제품(My Products)" 카테고리에 담기도록 설계함.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">03</div>
+          <p class="opp-title">태그된 제품 뱃지 + 타임스탬프로 영상-제품 연결</p>
+          <p class="opp-desc">바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 실제로 등장한 제품인지 구분이 안 됐음. <mark class="hl">"태그된 제품" 뱃지와 타임스탬프</mark>를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있도록 함.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">04</div>
+          <p class="opp-title">My Products 경험 설계</p>
+          <p class="opp-desc">저장된 제품 목록에서 상세 페이지(View), 관련 Shorts, Videos로 바로 이동할 수 있는 플로우를 설계해 <mark class="hl">저장 후 재탐색 경험</mark>을 개선함. 나아가 사용자가 <mark class="hl">관심도나 구매 우선순위에 따라 직접 정렬</mark>할 수 있는 기능을 추가해 제품을 다시 찾는 번거로움을 줄임.</p>
+        </div>
+      </div>
+      <div class="case-img-wrap" style="margin-top:40px;">
         <img src="images/ut-task.png" alt="태스크 테스트 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
         <p class="img-caption">Task 1–8 — Prototype-based usability test screens</p>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
@@ -2207,7 +2236,8 @@ function initCaseSidenav() {
   const sectionMap = {
     'Problem': 'Problem',
     'Design & Research Process': 'Process',
-    'Prototype': 'Prototype',
+    'Lo-fi Design': 'Lo-fi Design',
+    'Hi-fi Design': 'Hi-fi Design',
     'Usability Testing': 'Usability Testing',
     'Affinity Mapping': 'Affinity & Insights',
     'Design Solution': 'Final Design',

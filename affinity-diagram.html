@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affinity Diagram — YouTube Shorts 쇼핑 경험</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #14141f; }
+body {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  color: #fff;
+  padding: 40px 32px 64px;
+}
+.page-title {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px;
+}
+.page-subtitle {
+  font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 8px;
+}
+
+/* 색 그룹 범례 */
+.legend {
+  display: flex; gap: 20px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* 2행 보드: 각 행은 가로 flex */
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* 각 테마 카드 */
+.theme {
+  flex-shrink: 0;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.theme-header {
+  font-size: 13px; font-weight: 700;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
+  white-space: nowrap;
+}
+.dot { display: none; }
+.theme-body {
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+}
+.subcols {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  gap: 12px; align-items: flex-start;
+}
+.column { width: 188px; flex-shrink: 0; }
+.col-title {
+  font-size: 10px; font-weight: 600;
+  padding: 4px 9px; border-radius: 5px; margin-bottom: 9px;
+  line-height: 1.4; display: inline-block;
+}
+.col-title.pos { background: rgba(34,197,94,0.2); color: #86efac; }
+.col-title.neg { background: rgba(239,68,68,0.2); color: #fca5a5; }
+.col-title.neu { background: rgba(148,163,184,0.15); color: #cbd5e1; }
+
+.notes { display: flex; flex-direction: column; gap: 9px; }
+.note {
+  background: #fef3c7;
+  color: #1a1a1a;
+  border-radius: 2px;
+  padding: 14px 10px 32px;
+  font-size: 11px;
+  line-height: 1.65;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.28);
+  transform: rotate(-0.5deg);
+  min-height: 72px;
+}
+.note:nth-child(even) { transform: rotate(0.6deg); background: #fdf0b5; }
+.note:nth-child(3n) { transform: rotate(-0.8deg); }
+.note-tag {
+  position: absolute; bottom: 6px; left: 9px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em;
+}
+.tag-A1{color:#2563eb}.tag-A2{color:#16a34a}.tag-A3{color:#9333ea}
+.tag-B1{color:#db2777}.tag-B2{color:#ea580c}.tag-B3{color:#dc2626}.tag-B4{color:#ca8a04}
+
+/* ── 그룹별 헤더 색 — 투명도 없이 온전한 색 ── */
+.t-perception .theme-header { background: #eab308; color:#1a1a1a; }
+.t-watch .theme-header    { background: #1e40af; color:#fff; }
+.t-interest .theme-header { background: #2563eb; color:#fff; }
+.t-behavior .theme-header { background: #3b82f6; color:#fff; }
+.t-sticker .theme-header  { background: #ef4444; color:#fff; }
+.t-bottom .theme-header      { background: #9d174d; color:#fff; }
+.t-save .theme-header        { background: #be185d; color:#fff; }
+.t-sortbrowser .theme-header { background: #ec4899; color:#fff; }
+.t-extra .theme-header { background: #a855f7; color:#fff; }
+
+/* 행 구분 배경 */
+.row-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+</style>
+</head>
+<body>
+
+<p class="page-title">Affinity Diagram</p>
+<h1 class="page-subtitle">YouTube Shorts 쇼핑 경험 — 사용자 피드백 구조화</h1>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:#fbbf24"></span>쇼핑 기능 인식</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>시청 동기 · 관심 동기 · 행동 양식</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>스티커</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#ec4899"></span>바텀시트 · 저장 · 정렬 · 인앱</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>추가 의견</div>
+</div>
+
+<div class="board">
+
+  <!-- ══ 1행 ══ -->
+  <div class="row">
+
+    <!-- 쇼핑 기능에 대한 인식 -->
+    <div class="theme t-perception">
+      <div class="theme-header"><span class="dot" style="background:#fbbf24"></span>쇼핑 기능에 대한 인식</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title pos">편리함</div>
+            <div class="notes">
+              <div class="note">제품 태그 많으면 편리해서 좋겠음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">제품명·설명 확인할 수 있어 좋음<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">소비 유도 거부감 · 신뢰 어려움</div>
+            <div class="notes">
+              <div class="note">쿠팡·아마존 제품 많아 품질 신뢰 안 됨. 자사몰이 나음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">광고라서 믿음 안 감<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">굳이 왜 필요한가 싶음<span class="note-tag tag-B1">B1</span></div>
+              <div class="note">신뢰도 낮으면 구매까지 안 감<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">제품에 관심 없으면 거부감 듦<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 쇼츠 시청 동기 -->
+    <div class="theme t-watch">
+      <div class="theme-header"><span class="dot" style="background:#3b82f6"></span>쇼츠 시청 동기</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title neu">살 것이 명확히 있음</div>
+            <div class="notes">
+              <div class="note">키보드 타건이 좋아 사고 싶었음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">내년 다이어리 사려고 검색해봄<span class="note-tag tag-A3">A3</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neu">찐 리뷰 · 디테일 확인</div>
+            <div class="notes">
+              <div class="note">아마존 후기 와닿지 않아 유튜브 쇼츠에서 검색 시작함<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">구성 전부 볼 수 있고 유튜버 개인 평가도 알 수 있어 시청함<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">다른 구매자 영상 참고용으로 활용한 적 있음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">살 만한 제품인지 후기·사용법 보며 확인하려 봄<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">크기·디테일·색감 알고 싶어 영상 봄<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 쇼츠 내 제품 관심 동기 -->
+    <div class="theme t-interest">
+      <div class="theme-header"><span class="dot" style="background:#3b82f6"></span>쇼츠 내 제품 관심 동기</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title neu">살 생각 없어도 관심 가는 경우</div>
+            <div class="notes">
+              <div class="note">관심 있는 영상에서 제품 소개하면 궁금함<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">영상이 재밌어 관심 가져 판매링크 들어가봄<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">눈에 띄는 상품 스티커 클릭해 판매처로 들어감<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neu">살 의향이 있을 때</div>
+            <div class="notes">
+              <div class="note">살 생각 없어 스티커 클릭 안 해봄<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">쇼핑 목적 없어 클릭 안 해봄<span class="note-tag tag-B1">B1</span></div>
+              <div class="note">필요한 제품 태그돼 있으면 쇼핑으로 이어짐. 이름 몰라 검색 못하던 제품을 쇼츠로 알게 돼 실제 구매한 적도 있음<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 쇼핑 행동 양식 -->
+    <div class="theme t-behavior">
+      <div class="theme-header"><span class="dot" style="background:#3b82f6"></span>쇼츠를 통한 쇼핑 행동 양식</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title neu">여러 영상 탐색</div>
+            <div class="notes">
+              <div class="note">수십 개 쇼츠 보고 비교 후 결정함<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">썸네일 보고 영상 선택함<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">후보 고른 뒤 각각 검색해 하나 정함<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neu">가격 비교 → 구매</div>
+            <div class="notes">
+              <div class="note">댓글·타이틀에서 이름 알아내 가격 비교 후 삼<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">후기·영상 찾는 플로우 선호함<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">판매 사이트 후기·가격 확인 후 구매함<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">관심 제품 스샷 후 장바구니에 넣어둠<span class="note-tag tag-A2">A2</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 스티커 -->
+    <div class="theme t-sticker">
+      <div class="theme-header"><span class="dot" style="background:#ef4444"></span>스티커</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title neg">기능 감상 — 방해됨</div>
+            <div class="notes">
+              <div class="note">제품 실물 보여주는 영상에서 방해됨. 동그라미 태그가 나을 것 같음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">스티커가 영상 내용 가려서 불편함<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">더보기 링크에 익숙한 사용자에게 영상 보기 전 뜨는 건 거부감 듦<span class="note-tag tag-B4">B4</span></div>
+              <div class="note">간혹 영상 내용 가리는 경우 신경 쓰임<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neu">기능 감상 — 좋음</div>
+            <div class="notes">
+              <div class="note">이 영상에서 실제 홍보하는 제품 나오는 것 같아 나쁘지 않음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">직관적인 것은 좋음<span class="note-tag tag-B3">B3</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">제거 경험 — 부정</div>
+            <div class="notes">
+              <div class="note">인스타 엑스 드래그 방식과 헷갈림<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">X 뜬 순간 바로 누르고 싶은데 드래그 추가로 해야 해 별로임. 원클릭 방식이 더 직관적임<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">X 찾아 누르려다 광고 실수로 클릭하게 됨<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">X 표시 의도적으로 안 보이게 한 것 같음. 여러 번 실패 후 그냥 넘기게 됨<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">지울 수 있는 방법 바로 알 수 없어 불편하고 난감했음<span class="note-tag tag-B1">B1</span></div>
+              <div class="note">너무 불편함<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title pos">위치 변경 — 긍정</div>
+            <div class="notes">
+              <div class="note">움직이면 좋을 것 같음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">영상 설명 가릴 때 이동 기능 유용할 듯<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">위치 변경 — 부정</div>
+            <div class="notes">
+              <div class="note">안 없어지면 왼쪽 하단으로 옮기는 게 그나마 나음<span class="note-tag tag-B4">B4</span></div>
+              <div class="note">굳이 싶음. 원래 없었는데 나타나니까<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">정보 연결만 잘 되면 이동 기능 굳이 필요 없음<span class="note-tag tag-B1">B1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">제휴사 버튼 — 비직관적</div>
+            <div class="notes">
+              <div class="note">Affiliate 직관적이지 않음. 화살표도 너무 작음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">제휴사가 뭔지 모르겠음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">버튼 작아 바텀시트 뜨는지 몰랐음. 제휴사라 하면 사이트로 바로 갈 것 같음<span class="note-tag tag-B3">B3</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">클릭 루트 변경 필요</div>
+            <div class="notes">
+              <div class="note">쇼핑 아이콘 누르면 바텀시트 뜨는 게 나을 듯<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">전체 영역 어디든 누르면 바텀시트가 뜨면 좋겠음. 작은 네모칸만 클릭해야 하는 게 별로임<span class="note-tag tag-B2">B2</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 1 -->
+
+  <!-- ══ 2행 ══ -->
+  <div class="row">
+
+    <!-- 바텀시트 -->
+    <div class="theme t-bottom">
+      <div class="theme-header"><span class="dot" style="background:#ec4899"></span>바텀시트</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title pos">세이브 숫자 — 명확함</div>
+            <div class="notes">
+              <div class="note">북마크한 사람 수 같음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">인기 제품 가늠 가능함<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">관심 있는 사람 많다는 의미 같음<span class="note-tag tag-A1">A1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">세이브 숫자 — 모름</div>
+            <div class="notes">
+              <div class="note">세이브 아이콘 옆 숫자 뭔지 모르겠음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">생각해보면 저장 수 같으나 처음부터 직관적이진 않음<span class="note-tag tag-B1">B1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title pos">태그된 제품 칩 — 긍정</div>
+            <div class="notes">
+              <div class="note">언급된 제품 표시는 좋음. 언급 안 된 제품 태그는 거부감 듦<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">매우 좋음. 작성자가 직접 태그한 것 같아 좋음<span class="note-tag tag-B2">B2</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">태그된 제품 칩 — 모름</div>
+            <div class="notes">
+              <div class="note">featured 뜻 모르겠음. 오피셜하다는 건가 싶음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">오피셜하다는 건가, 뭔지 모르겠음<span class="note-tag tag-B3">B3</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title pos">타임스탬프 — 긍정</div>
+            <div class="notes">
+              <div class="note">타임스탬프 걸어주는 거 좋음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">매우 좋음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">바로 해당 제품으로 돌아갈 수 있어 편함<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">좋음<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">타임스탬프 · 바텀시트 정보 — 부정</div>
+            <div class="notes">
+              <div class="note">재생바 타임스탬프 표시는 광고 같음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">자세히 보기 버튼 설명인지 구매 페이지인지 모르겠음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">색이 어두워 눈에 잘 안 들어옴<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title pos">바텀시트 내 정보 — 긍정</div>
+            <div class="notes">
+              <div class="note">화면 안 변하고 바로 아래서 설명 볼 수 있어 좋음<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">관련 제품 있구나 싶음. 다른 제품도 보게 될 듯<span class="note-tag tag-B3">B3</span></div>
+              <div class="note">유튜브에서 비슷한 기능 본 적 있어 익숙함<span class="note-tag tag-B1">B1</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 제품 저장 + 정렬 + 인앱 -->
+    <div class="theme t-sortbrowser">
+      <div class="theme-header"><span class="dot" style="background:#ec4899"></span>제품 저장 · 정렬 · 인앱 브라우저</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title pos">저장 — 긍정</div>
+            <div class="notes">
+              <div class="note">인스타와 비슷해 직관적이고 좋음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">영상 저장은 나중에 이유를 모를 수 있어, 제품 자체 저장이 좋음<span class="note-tag tag-A1">A1</span></div>
+              <div class="note">인스타와 똑같아서 좋음<span class="note-tag tag-B4">B4</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">저장 — 부정</div>
+            <div class="notes">
+              <div class="note">가격 비교하러 이탈할 텐데 저장이 필요한지 모르겠음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">폴더 썸네일 기능 모르겠음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">폴더 선택 복잡함. 어떻게 찾아야 할지 모르겠음<span class="note-tag tag-B1">B1</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title pos">정렬 — 긍정</div>
+            <div class="notes">
+              <div class="note">원하는 제품 위에 놔둘 수 있으면 좋겠음<span class="note-tag tag-B3">B3</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neg">정렬 · 인앱 — 부정</div>
+            <div class="notes">
+              <div class="note">유튜브 경험 있어 가능했음. 경험 없는 사람에겐 어려울 수 있음<span class="note-tag tag-B2">B2</span></div>
+              <div class="note">인앱 브라우저로 쇼핑할 것 같지 않음<span class="note-tag tag-A2">A2</span></div>
+              <div class="note">인앱보다 밖으로 이탈이 나음. 크롬으로 열리면 북마크로 쓸 수 있음<span class="note-tag tag-A3">A3</span></div>
+              <div class="note">인앱 브라우저는 비디오 멈추는 단점 있음<span class="note-tag tag-A3">A3</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 추가 의견 -->
+    <div class="theme t-extra">
+      <div class="theme-header"><span class="dot" style="background:#a855f7"></span>쇼핑 경험 관련 추가 의견</div>
+      <div class="theme-body">
+        <div class="subcols">
+          <div class="column">
+            <div class="col-title neu">리마인드 기능</div>
+            <div class="notes">
+              <div class="note">저장만 해두고 다시 안 들어가는 경우 많음. 저장 제품 관련 영상이 다시 노출되는 리마인드가 있으면 좋겠음<span class="note-tag tag-B2">B2</span></div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="col-title neu">제품 공유 기능</div>
+            <div class="notes">
+              <div class="note">인스타처럼 링크로 제품 공유할 수 있으면 좋겠음<span class="note-tag tag-B3">B3</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /row 2 -->
+
+</div><!-- /board -->
+</body>
+</html>

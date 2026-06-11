@@ -347,7 +347,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: clamp(26px, 3.8vw, 44px);
   line-height: 1.22;
   letter-spacing: -0.025em;
@@ -357,7 +357,7 @@ body {
 }
 .hero-title .name-highlight {
   display: inline;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-weight: 500;
   background: rgba(255,255,255,0.75);
   border: 1px solid rgba(0,0,0,0.1);
@@ -774,40 +774,41 @@ body {
 .case-page-nav-back:hover { color: var(--ink); }
 
 .case-hero-wrap {
-  max-width: 1100px; margin: 0 auto;
-  padding: 100px 48px 0;
+  max-width: 900px; margin: 0 auto;
+  padding: 100px 80px 0;
 }
 .case-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #111; margin-bottom: 14px; }
 .case-h1 {
-  font-family: 'Figtree', sans-serif;
+  font-family: 'NanumSquareNeo', var(--serif);
   font-size: clamp(22px, 2.8vw, 36px);
   line-height: 1.1; letter-spacing: -0.025em;
   color: var(--ink); margin-bottom: 16px; font-weight: 700;
 }
 .case-h1 em { font-style: normal; color: var(--ink); }
-.case-hero-desc { font-size: 15px; color: var(--ink-2); font-weight: 300; line-height: 1.75; max-width: 100%; margin-bottom: 20px; white-space: nowrap; }
+.case-hero-desc { font-size: 14px; color: var(--ink-2); font-weight: 300; line-height: 1.75; max-width: 100%; margin-bottom: 36px; white-space: nowrap; }
 .case-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
 .cht { font-size: 12px; padding: 5px 12px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.1); color: var(--ink-2); background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
 
 .case-stats-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(0,0,0,0.1);
   margin-top: 48px;
 }
 .cs { padding: 32px 24px 28px; border-right: 1px solid rgba(0,0,0,0.1); }
 .cs:last-child { border-right: none; }
 .cs-n { font-family: 'Archivo', sans-serif !important; font-size: 44px; line-height: 1; color: #0f0f0f; letter-spacing: -0.03em; margin-bottom: 8px; font-weight: 700; }
 .cs-n em { font-style: normal; color: #0f0f0f; }
-.cs-l { font-family: 'Archivo', sans-serif !important; font-size: 13px; color: #888; font-weight: 400; letter-spacing: 0; }
+.cs-l { font-family: 'NanumSquareNeo', 'Pretendard', sans-serif !important; font-size: 13px; color: #888; font-weight: 400; letter-spacing: 0; }
 
 /* CASE BODY */
 .case-body {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto !important;
-  padding: 80px 48px !important;
+  padding: 80px 80px !important;
   box-sizing: border-box;
 }
-.cb-section { margin-bottom: 96px; }
+.cb-section { margin-bottom: 64px; }
 .cb-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
 .cb-label::before { content: ''; width: 18px; height: 1px; background: #111; }
 .cb-h2 { font-family: 'NanumSquareNeo', var(--serif); font-size: clamp(17px, 1.8vw, 22px); line-height: 1.12; letter-spacing: -0.022em; color: #0f0f0f; margin-bottom: 14px; font-weight: 700; }
@@ -815,15 +816,15 @@ body {
 .cb-p { font-size: 15px; color: #333; line-height: 1.8; font-weight: 400; margin-bottom: 14px; }
 
 .meta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; margin-bottom: 32px; }
-.meta-cell { background: rgb(248, 247, 251); backdrop-filter: blur(8px); padding: 22px 18px; display: flex; flex-direction: column; justify-content: flex-start; }
-.meta-lbl { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; font-family: 'NanumSquareNeo', sans-serif; }
-.meta-val { font-size: 15px; color: #111; line-height: 1.4; font-weight: 500; font-family: 'NanumSquareNeo', sans-serif; }
+.meta-cell { background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); padding: 16px 18px; }
+.meta-lbl { font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 5px; }
+.meta-val { font-size: 13px; color: #111; line-height: 1.4; font-weight: 500; }
 
 .team-row { display: flex; flex-wrap: wrap; gap: 48px; margin-top: 14px; align-items: center; }
 .team-chip { display: flex; align-items: center; gap: 8px; padding: 0; border: none; background: transparent; }
 .t-av { width: 22px; height: 22px; border-radius: 50%; background: transparent; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; color: #aaa; }
-.t-name { font-size: 16px; color: #aaa; font-weight: 400; }
-.t-role { font-size: 13px; color: #bbb; }
+.t-name { font-size: 13px; color: #aaa; font-weight: 400; }
+.t-role { font-size: 11px; color: #bbb; }
 
 .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
 .pain-card { background: rgba(255,255,255,0.55); border-radius: 12px; backdrop-filter: blur(8px); padding: 22px; }
@@ -833,7 +834,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding: 40px 0 40px;
+  padding: 24px 0 40px;
   max-width: 620px;
   margin: 0 auto;
 }
@@ -843,10 +844,10 @@ body {
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(.34,1.4,.64,1);
 }
-.sticky-card:nth-child(1) { transform: rotate(-3deg); background: #e3dbfd; }
+.sticky-card:nth-child(1) { transform: rotate(-3deg); }
 .sticky-card:nth-child(2) { transform: rotate(-1deg); }
 .sticky-card:nth-child(3) { transform: rotate(1deg); }
-.sticky-card:nth-child(4) { transform: rotate(3deg); background: #e3dbfd; }
+.sticky-card:nth-child(4) { transform: rotate(3deg); }
 .sticky-card:nth-child(1):hover { transform: rotate(-6deg) translateY(-10px); z-index:2; position:relative; }
 .sticky-card:nth-child(2):hover { transform: rotate(-3deg) translateY(-10px); z-index:2; position:relative; }
 .sticky-card:nth-child(3):hover { transform: rotate(3deg) translateY(-10px); z-index:2; position:relative; }
@@ -856,7 +857,7 @@ body {
   display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
 }
 .sticky-emoji { font-size: 36px; line-height: 1; margin-bottom: 2px; }
-.sticky-title { font-size: 14px; font-weight: 600; color: #7c6fcd; line-height: 1.3; }
+.sticky-title { font-size: 14px; font-weight: 600; color: #8163e3; line-height: 1.3; }
 .sticky-quote { font-size: 15px; font-weight: 700; color: #1a1a1a; line-height: 1.65; }
 .sticky-desc {
   font-size: 11px; font-weight: 400; color: #666;
@@ -875,25 +876,25 @@ body {
 .proc-wrap { margin-top: 22px; }
 .proc-track { display: flex; align-items: flex-start; }
 .proc-step { display: flex; flex-direction: column; align-items: center; flex: 1; cursor: pointer; }
-.proc-conn { flex: 1; height: 3px; background: #d8d8d8; margin-top: 16px; border-radius: 2px; transition: background 0.3s; }
-.proc-conn.done { background: #aaaaaa; }
-.p-circ { width: 36px; height: 36px; border-radius: 50%; border: none; background: #e4e0f5; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 14px; color: #7c6fcd; transition: all 0.2s; z-index: 1; }
-.proc-step.active .p-circ { border: none; background: #111; color: white; }
-.proc-step.done .p-circ { border: none; background: rgba(0,0,0,0.05); color: #111; }
-.p-lbl { margin-top: 8px; font-size: 12px; color: var(--ink-3); text-align: center; max-width: none; white-space: nowrap; line-height: 1.3; transition: color 0.2s; }
+.proc-conn { flex: 1; height: 1px; background: rgba(0,0,0,0.1); margin-top: 18px; transition: background 0.3s; }
+.proc-conn.done { background: #111; }
+.p-circ { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 14px; color: var(--ink-3); transition: all 0.2s; z-index: 1; }
+.proc-step.active .p-circ { border-color: #111; background: #111; color: white; }
+.proc-step.done .p-circ { border-color: rgba(0,0,0,0.2); background: rgba(0,0,0,0.05); color: #111; }
+.p-lbl { margin-top: 8px; font-size: 11px; color: var(--ink-3); text-align: center; max-width: 60px; line-height: 1.3; transition: color 0.2s; }
 .proc-step.active .p-lbl { color: #111; }
 .proc-step.done .p-lbl { color: var(--ink-2); }
 
 .proc-detail { margin-top: 18px; background: rgba(255,255,255,0.55); border-radius: 12px; backdrop-filter: blur(8px); overflow: hidden; }
 .pd-head { padding: 16px 20px 12px; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; gap: 10px; }
 .pd-badge { width: 30px; height: 30px; border-radius: 7px; background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 14px; color: #111; flex-shrink: 0; }
-.pd-title { font-size: 16px; font-weight: 500; color: var(--ink); margin: 0 0 1px; font-family: 'Figtree', sans-serif !important; }
-.pd-sub { font-size: 11px; color: var(--ink-3); display: none; }
+.pd-title { font-size: 14px; font-weight: 500; color: var(--ink); margin: 0 0 1px; }
+.pd-sub { font-size: 11px; color: var(--ink-3); }
 .pd-body { padding: 14px 20px 16px; }
-.pd-desc { font-size: 15px; color: #333; line-height: 1.75; margin-bottom: 20px; font-weight: 400; }
+.pd-desc { font-size: 14px; color: #333; line-height: 1.75; margin-bottom: 12px; font-weight: 400; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chip { font-size: 11px; padding: 3px 9px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.1); color: var(--ink-2); background: rgba(255,255,255,0.5); }
-.pd-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; padding-top: 0; border-top: none; }
+.pd-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 11px; border-top: 1px solid rgba(0,0,0,0.07); }
 .pd-btn { font-size: 12px; color: var(--ink-2); background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.2s; }
 .pd-btn:hover { border-color: #111; color: #111; }
 .pd-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
@@ -914,15 +915,14 @@ mark.hl.hl-visible {
 }
 
 /* CHAT BUBBLE OBSERVATIONS */
-.obs-wrap { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
+.obs-wrap { margin: 28px 0; display: flex; flex-direction: column; gap: 22px; }
 .obs-row { display: flex; align-items: flex-start; gap: 12px; }
 .obs-row.right { flex-direction: row-reverse; }
 .obs-avatar { display: none; }
 .obs-meta { display: flex; flex-direction: column; max-width: 88%; }
 .obs-row.right .obs-meta { align-items: flex-end; }
 .obs-label { font-size: 11px; color: #999; margin-bottom: 5px; letter-spacing: 0.02em; }
-.obs-bubble { background: #fbf9ff; border-radius: 4px 14px 14px 14px; padding: 16px 20px; font-size: 14px; color: #1a1a1a; line-height: 1.7; }
-.obs-bubble strong { font-family: 'NanumSquareNeo', sans-serif; font-size: 15px; }
+.obs-bubble { background: #fbf9ff; border-radius: 4px 14px 14px 14px; padding: 16px 20px; font-size: 15px; color: #1a1a1a; line-height: 1.7; }
 .obs-row.right .obs-bubble { background: #ffffff; border-radius: 14px 4px 14px 14px; }
 .obs-row:nth-child(3) .obs-bubble { background: #fbf9ff; border-radius: 4px 14px 14px 14px; }
 .obs-insight { margin-top: 6px; font-size: 12px; color: #666; padding-left: 4px; line-height: 1.6; }
@@ -952,21 +952,21 @@ mark.hl.hl-visible {
 .opp-card { background: rgba(255,255,255,0.7); border-radius: 12px; padding: 22px; backdrop-filter: blur(8px); }
 .opp-num { font-family: var(--sans); font-style: normal; font-weight: 400; font-size: 18px; color: rgba(0,0,0,0.25); margin-bottom: 10px; line-height: 1; }
 .opp-title { font-size: 15px; font-weight: 600; color: #111; margin-bottom: 5px; }
-.opp-desc { font-size: 15px; color: #555; line-height: 1.6; }
+.opp-desc { font-size: 13px; color: #555; line-height: 1.6; }
 
 .img-ph { width: 100%; border-radius: 12px; background: rgba(0,0,0,0.04); border: 1.5px dashed rgba(0,0,0,0.12); margin: 22px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--ink-3); gap: 6px; font-size: 13px; font-weight: 300; cursor: pointer; transition: border-color 0.2s; min-height: 220px; }
 .img-ph:hover { border-color: #111; }
 .img-ph-icon { font-size: 22px; }
 
-.ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
 .ref-card { background: rgba(255,255,255,0.65); border-radius: 12px; backdrop-filter: blur(8px); padding: 20px; }
 .ref-lbl { font-size: 15px; font-weight: 600; color: #111; margin-bottom: 8px; }
-.ref-p { font-size: 15px; color: #555; line-height: 1.6; font-weight: 400; }
+.ref-p { font-size: 13px; color: #555; line-height: 1.6; font-weight: 400; }
 .ref-p strong { font-weight: 600; }
 
 .case-end-section {
-  max-width: 1100px; margin: 0 auto;
-  padding: 0 48px 80px;
+  max-width: 780px; margin: 0 auto;
+  padding: 0 24px 80px;
   text-align: center;
 }
 @keyframes holo-shift {
@@ -1050,14 +1050,14 @@ mark.hl.hl-visible {
 .work-item-yt:hover .work-item-tag,
 .work-item-yt:hover .work-item-desc,
 .work-item-yt:hover .work-item-stat-big,
-.work-item-yt:hover .work-item-stat-unit { color: #444444 !important; transition: color 0.2s; }
+.work-item-yt:hover .work-item-stat-unit { color: #1e1654 !important; transition: color 0.2s; }
 
 /* NOM 카드 hover */
 .work-item-nom:hover .work-item-title,
 .work-item-nom:hover .work-item-tag,
 .work-item-nom:hover .work-item-desc,
 .work-item-nom:hover .work-item-stat-big,
-.work-item-nom:hover .work-item-stat-unit { color: #444444 !important; transition: color 0.2s; }
+.work-item-nom:hover .work-item-stat-unit { color: #1e1654 !important; transition: color 0.2s; }
 .work-item-nom .work-item-right > div { transition: transform 0.35s ease; }
 .work-item-nom:hover .work-item-right > div { transform: scale(1.05); }
 .work-item:first-child { padding-top: 0; }
@@ -1128,10 +1128,6 @@ mark.hl.hl-visible {
   position: relative;
   padding: 0;
 }
-.work-item-yt .work-item-right {
-  aspect-ratio: 16/9;
-  background: rgb(248, 153, 196);
-}
 .work-item-right img {
   width: 100%; height: 100%;
   border-radius: 20px;
@@ -1150,9 +1146,9 @@ mark.hl.hl-visible {
 
 /* CASE BODY FORCE */
 div.case-body {
-  padding-left: 48px !important;
-  padding-right: 48px !important;
-  max-width: 1100px !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  max-width: 900px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
@@ -1169,7 +1165,7 @@ div.case-body {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  left: max(16px, calc(50% - 740px));
+  left: max(16px, calc(50% - 640px));
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -1179,9 +1175,9 @@ div.case-body {
   transition: opacity 0.3s;
 }
 .case-sidenav.visible { opacity: 1; pointer-events: auto; }
-.case-sidenav button, nav.case-sidenav button {
+.case-sidenav button {
   background: none; border: none; cursor: pointer;
-  font-family: 'Figtree', sans-serif !important; font-size: 13px !important; font-weight: 400 !important;
+  font-family: 'Figtree', sans-serif !important; font-size: 13px; font-weight: 400;
   color: #bbb; text-align: left; padding: 3px 0;
   transition: color 0.2s; letter-spacing: 0.01em;
   white-space: nowrap; line-height: 1.4;
@@ -1313,7 +1309,7 @@ div.case-body {
 
 
 /* 케이스스터디 + About Pretendard 강제 */
-#case-page .cb-p, #case-page .pd-desc,
+#case-page .cb-p, #case-page .pd-desc, #case-page .pd-title,
 #case-page .p-title, #case-page .p-desc, #case-page .i-title, #case-page .i-desc,
 #case-page .sol-title, #case-page .sol-desc, #case-page .opp-title, #case-page .opp-desc,
 #case-page .ref-p, #case-page .meta-val, #case-page .meta-lbl,
@@ -1416,7 +1412,8 @@ div.case-body {
     <div class="work-item work-item-yt" onclick="showPage('case')">
       <div class="work-item-left">
         <p class="work-item-tag">YouTube Redesign Challenge 2025 · Team · 1 Month</p>
-        <h2 class="work-item-title">YouTube Shorts Shopping Experience</h2>
+        <h2 class="work-item-title">YouTube Shorts 쇼핑 경험 개선</h2>
+        <p class="work-item-desc">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. 8명 사용자 인터뷰와 UT를 통해 핵심 페인포인트를 발굴하고 디자인 개선안을 도출했습니다.</p>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">8</span>
           <span class="work-item-stat-unit">user interviews &nbsp;·&nbsp;</span>
@@ -1432,7 +1429,7 @@ div.case-body {
         </div>
       </div>
       <div class="work-item-right">
-        <img src="images/youtube thumnail image.png" alt="YouTube Shorts 최종 화면"/>
+        <img src="images/work-thumb.png" alt="YouTube Shorts 최종 화면"/>
       </div>
     </div>
 
@@ -1444,6 +1441,7 @@ div.case-body {
           <span>Naver OGQ Market 통합 홈 개선</span>
           
         </h2>
+        <p class="work-item-desc">홈 상단부 공간 점유 문제를 데이터로 정의하고 UI를 개선했습니다. 상단 높이 44% 축소, '최근 본 콘텐츠' 사이드바 이동으로 클릭당 전환율 +60.9%, 피처드 지면 매출 +45%를 달성했습니다.</p>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">+60.9%</span>
           <span class="work-item-stat-unit">Click CVR &nbsp;·&nbsp;</span>
@@ -1486,13 +1484,10 @@ div.case-body {
 <div id="case-page" class="page">
 
   <div class="case-hero-wrap">
-    <p class="case-eyebrow">YouTube Redesign Challenge · Team · Sep–Oct 2025</p>
-    <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">YouTube Shorts Shopping Experience</span>
-      <span style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>
-      </span>
-    </h1>
+    <p class="case-eyebrow">YouTube Redesign Challenge · Team · 1 Month</p>
+    <h1 class="case-h1">YouTube Shorts 쇼핑 경험 개선</h1>
+    <p style="font-size:18px;color:#333;font-weight:500;margin-bottom:10px;letter-spacing:-0.02em;">제품 스티커 UX를 중심으로</p>
+    <p class="case-hero-desc" style="white-space:normal;max-width:600px;">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. 제품 스티커가 시청을 방해하고, 관심 있는 제품을 저장할 방법이 없다는 점에 주목했습니다.</p>
     <div class="case-hero-tags">
       <span class="cht">User Interview</span>
       <span class="cht">Usability Testing</span>
@@ -1500,45 +1495,38 @@ div.case-body {
       <span class="cht">Affinity Mapping</span>
       <span class="cht">Prototyping</span>
     </div>
-    <div style="margin-top:28px;position:relative;">
-      <img src="images/youtube main image.png" alt="YouTube Shorts 쇼핑 경험 개선" style="width:100%;border-radius:16px;display:block;"/>
-      <!-- Right tag: pointing left, Team info -->
-      <div style="position:absolute;top:28px;right:-80px;pointer-events:none;transform:rotate(4deg);transform-origin:right center;">
-        <div style="position:relative;background:#eaeaea;padding:20px 24px 20px 36px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(24px 0%,100% 0%,100% 100%,24px 100%,0% 50%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);">
-          <span style="font-weight:700;">Team:</span> 3명<br>I led design &amp; research
-        </div>
-      </div>
-      <!-- Left tag: pointing right, Role info -->
-      <div style="position:absolute;bottom:32px;left:-100px;pointer-events:none;transform:rotate(-4deg);transform-origin:left center;">
-        <div style="position:relative;background:#eaeaea;padding:20px 36px 20px 24px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(0% 0%,calc(100% - 24px) 0%,100% 50%,calc(100% - 24px) 100%,0% 100%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);">
-          <span style="font-weight:700;">My Role:</span> Research, Design,<br>Prototyping, Testing
-        </div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
-        <div class="cs-n">8<span style="font-size:28px;font-weight:500;color:#888;">명</span></div>
-        <div class="cs-l">사용자 인터뷰</div>
-      </div>
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
-        <div class="cs-n">67.5</div>
-        <div class="cs-l">SUS Score</div>
-      </div>
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
-        <div class="cs-n">85.7<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
-        <div class="cs-l">Task 평균 성공률</div>
-      </div>
+    <div class="case-stats-strip" style="grid-template-columns:repeat(3,1fr);">
+      <div class="cs"><div class="cs-n">8<span style="font-size:28px;font-weight:500;color:#888;">명</span></div><div class="cs-l">사용자 인터뷰</div></div>
+      <div class="cs"><div class="cs-n">67.5</div><div class="cs-l">SUS Score</div></div>
+      <div class="cs"><div class="cs-n">85.7<span style="font-size:28px;font-weight:500;color:#888;">%</span></div><div class="cs-l">Task 평균 성공률</div></div>
     </div>
   </div>
 
   <nav class="case-sidenav" id="case-sidenav"></nav>
 
   <div class="case-body">
+    <hr class="cb-divider" style="margin-top:0;">
 
+    <div class="cb-section">
+      <p class="cb-label">Overview</p>
+      <div class="meta-grid" style="grid-template-columns:repeat(5,1fr);">
+        <div class="meta-cell"><div class="meta-lbl">프로젝트 유형</div><div class="meta-val">사이드 프로젝트</div></div>
+        <div class="meta-cell"><div class="meta-lbl">기간</div><div class="meta-val">2025년 9월 — 10월</div></div>
+        <div class="meta-cell"><div class="meta-lbl">팀</div><div class="meta-val">3명</div></div>
+        <div class="meta-cell"><div class="meta-lbl">역할</div><div class="meta-val">UX Research &amp; Design 주도</div></div>
+        <div class="meta-cell"><div class="meta-lbl">툴</div><div class="meta-val">Figma</div></div>
+      </div>
+      <p class="cb-label" style="margin-top:24px;margin-bottom:12px;">Team</p>
+      <div class="team-row">
+        <div class="team-chip"><div><div class="t-name" style="color:#111;font-weight:600;font-size:14px;">Miseon Park</div><div class="t-role" style="color:#666;">UX Research &amp; UX Design</div></div></div>
+        <div class="team-chip"><div><div class="t-name">Seoulhee Lee</div><div class="t-role">UX Research &amp; UX Design</div></div></div>
+        <div class="team-chip"><div><div class="t-name">Kyeongmin Lee</div><div class="t-role">UX Design</div></div></div>
+      </div>
+    </div>
 
     <div class="cb-section">
       <p class="cb-label">Problem</p>
-      <h2 class="cb-h2">무엇이 문제인가?</h2>
+      <h2 class="cb-h2">쇼츠에서 쇼핑이 불편한 이유</h2>
       <p class="cb-p">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. 제품 스티커가 시청을 방해하고, 관심 있는 제품을 저장할 방법이 없다는 점에 주목했습니다.</p>
       <div class="sticky-cards">
         <div class="sticky-card">
@@ -1577,15 +1565,15 @@ div.case-body {
     </div>
 
     <div class="cb-section">
-      <p class="cb-label">Design & Research Process</p>
-      <h2 class="cb-h2">어떻게 접근했나</h2>
+      <p class="cb-label">Research Process</p>
+      <h2 class="cb-h2">어떻게 탐구했나</h2>
       <div class="proc-wrap">
         <div class="proc-track">
-          <div class="proc-step active" onclick="selectStep(0)"><div class="p-circ">1</div><div class="p-lbl">기존 경험 분석</div></div>
+          <div class="proc-step active" onclick="selectStep(0)"><div class="p-circ">1</div><div class="p-lbl">리서치</div></div>
           <div class="proc-conn" id="conn-0"></div>
           <div class="proc-step" onclick="selectStep(1)"><div class="p-circ">2</div><div class="p-lbl">UX 전략</div></div>
           <div class="proc-conn" id="conn-1"></div>
-          <div class="proc-step" onclick="selectStep(2)"><div class="p-circ">3</div><div class="p-lbl">프로토타입 설계</div></div>
+          <div class="proc-step" onclick="selectStep(2)"><div class="p-circ">3</div><div class="p-lbl">와이어프레임</div></div>
           <div class="proc-conn" id="conn-2"></div>
           <div class="proc-step" onclick="selectStep(3)"><div class="p-circ">4</div><div class="p-lbl">사용성 테스트</div></div>
           <div class="proc-conn" id="conn-3"></div>
@@ -1597,165 +1585,50 @@ div.case-body {
           <div class="pd-head"><div class="pd-badge" id="pd-badge">1</div><div><p class="pd-title" id="pd-title">—</p><p class="pd-sub" id="pd-sub">—</p></div></div>
           <div class="pd-body">
             <p class="pd-desc" id="pd-desc">—</p>
-            <div class="chips" id="pd-chips" style="display:none;"></div>
+            <div class="chips" id="pd-chips"></div>
             <div class="pd-nav">
-              <button class="pd-btn" id="btn-prev" onclick="stepNav(-1)" disabled>이전</button>
+              <button class="pd-btn" id="btn-prev" onclick="stepNav(-1)" disabled>← 이전</button>
               <span class="pd-prog" id="pd-prog">1 / 6</span>
-              <button class="pd-btn" id="btn-next" onclick="stepNav(1)">다음</button>
+              <button class="pd-btn" id="btn-next" onclick="stepNav(1)">다음 →</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- PROTOTYPE -->
+    <!-- LO-FI DESIGN -->
     <div class="cb-section">
-      <p class="cb-label">Prototype</p>
+      <p class="cb-label">Lo-fi Design</p>
       <h2 class="cb-h2">프로토타입 설계</h2>
-      <p class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
+      <p class="cb-p">리서치에서 도출한 Pain Point를 바탕으로 <mark class="hl">핵심 기능 2가지를 정의</mark>하고, Figma로 Lo-fi 와이어프레임을 제작했습니다. 이 프로토타입을 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
 
-      <!-- 3 feature cards hover -->
-      <style>
-        .hifi-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:32px; }
-        .hifi-card {
-          position:relative;
-          background:rgba(255,255,255,0.55); backdrop-filter:blur(8px);
-          border-radius:14px; border:1px solid rgba(255,255,255,0.7);
-          aspect-ratio:3/2; overflow:hidden; cursor:pointer;
-          transition:background 0.25s;
-        }
-        .hifi-card:hover { background:#fff; }
-        .hifi-card-deco {
-          position:absolute; bottom:-22px; right:-22px;
-          width:62%; height:130%;
-          pointer-events:none; z-index:1;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card-deco svg { width:100%; height:100%; }
-        .hifi-card:hover .hifi-card-deco { opacity:0; transform:scale(0.96); }
-        .hifi-card-front {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; flex-direction:column; justify-content:space-between;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-front { opacity:0; transform:translateY(-8px); }
-        .hifi-card-num {
-          font-size:72px; font-weight:400; color:#c4bef0;
-          font-family:'Archivo',sans-serif; line-height:1;
-          letter-spacing:-0.04em; position:relative; z-index:1;
-        }
-        .hifi-card-title {
-          font-size:14px; font-weight:800; color:#1a1424;
-          font-family:'NanumSquareNeo',sans-serif; line-height:1.4;
-          max-width:52%; position:relative; z-index:1;
-        }
-        .hifi-card-back {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; align-items:center;
-          opacity:0; transform:translateY(8px);
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-back { opacity:1; transform:translateY(0); }
-        .hifi-card-back p {
-          font-size:10px; color:#111; line-height:1.65;
-          font-family:'Figtree',sans-serif;
-        }
-      </style>
-      <div class="hifi-cards">
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 01: 오프셋 겹침 라운드 rect — 왼쪽으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc1a" x1="0%" y1="20%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="40%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="5" y="45" width="100" height="75" rx="22" fill="url(#gc1a)"/>
-              <rect x="20" y="8" width="100" height="75" rx="22" fill="url(#gc1a)" opacity="0.72"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">01</div>
-            <h3 class="hifi-card-title">스티커 위치 제어</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>스티커 위치가 액션 버튼들과 겹쳐 오클릭이 자주 발생했습니다. 드래그로 위치를 옮기거나 제거할 수 있되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 02: 큰 원 — 우하단 중심으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="gc2a" cx="72%" cy="68%" r="60%">
-                  <stop offset="0%" stop-color="#c4bef0" stop-opacity="0.9"/>
-                  <stop offset="65%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#ede9fd" stop-opacity="0.08"/>
-                </radialGradient>
-              </defs>
-              <circle cx="75" cy="90" r="70" fill="url(#gc2a)"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">02</div>
-            <h3 class="hifi-card-title">제품 뱃지 + 타임스탬프</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 등장한 제품인지 구분이 어려웠습니다. "태그된 제품" 뱃지와 타임스탬프를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있게 했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 03: 레이어드 rect — 왼쪽 투명 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc3a" x1="0%" y1="10%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="45%" stop-color="#ddd8f8" stop-opacity="0.6"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="78" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.5"/>
-              <rect x="0" y="46" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.72"/>
-              <rect x="0" y="14" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.92"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">03</div>
-            <h3 class="hifi-card-title">My Products 설계</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>익숙한 YouTube 저장 패턴 위에 제품 저장 기능을 얹어 자연스럽게 My Products에 담기도록 설계했습니다. 저장 후 상세 페이지·관련 영상으로 바로 이동할 수 있고, 관심도나 구매 우선순위에 따라 직접 정렬할 수 있는 기능으로 재탐색 경험을 개선했습니다.</p>
-          </div>
-        </div>
+      <div class="case-img-wrap" style="margin-top:20px;margin-bottom:8px;">
+        <img src="images/wireframe-01.png" alt="와이어프레임 01" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <p class="img-caption">Wireframe 01</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
       </div>
-
-      <p class="cb-label" style="margin-top:48px;">Lo-fi Prototype</p>
-      <div class="wf-scroll-wrap" style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
-        <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;">
-          <div class="case-img-wrap" style="margin:0;">
-            <img src="images/wireframe-01.png" alt="와이어프레임 01" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
-          </div>
-        </div>
+      <div class="case-img-wrap" style="margin-top:8px;margin-bottom:8px;">
+        <img src="images/wireframe-02.png" alt="와이어프레임 02" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <p class="img-caption">Wireframe 02</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
       </div>
-      <script>
-      (function(){
-        const items = document.querySelectorAll('.wf-scroll-item');
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
-          });
-        }, { threshold: 0.15 });
-        items.forEach(el => obs.observe(el));
-      })();
-      </script>
+      <div class="case-img-wrap" style="margin-top:8px;">
+        <img src="images/wireframe-03.png" alt="와이어프레임 03" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <p class="img-caption">Wireframe 03</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+    </div>
 
-      <p class="cb-label" style="margin-top:48px;">Hi-fi Prototype</p>
-      <div class="case-img-wrap" style="margin-top:20px;">
+    <!-- HI-FI DESIGN -->
+    <div class="cb-section">
+      <p class="cb-label">Hi-fi Design</p>
+      <h2 class="cb-h2">Hi-fi 프로토타입</h2>
+      <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;margin-top:20px;">2가지 핵심 기능</p>
+      <div class="sol-grid">
+        <div class="sol-card"><div class="sol-num">01</div><p class="sol-title">쇼핑 스티커 이동</p><p class="sol-desc">사용자가 스티커를 화면 내 원하는 위치로 이동하거나 제거. 시청 흐름을 방해하지 않으면서 쇼핑 정보를 유지합니다.</p></div>
+        <div class="sol-card"><div class="sol-num">02</div><p class="sol-title">My Products</p><p class="sol-desc">시청 중 관심 상품을 저장하고 언제든 다시 찾아볼 수 있는 나만의 프라이빗 공간.</p></div>
+      </div>
+      <div class="case-img-wrap" style="margin-top:24px;">
         <img src="images/ut-task.png" alt="태스크 테스트 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
         <p class="img-caption">Task 1–8 — Prototype-based usability test screens</p>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
@@ -1767,16 +1640,14 @@ div.case-body {
       <p class="cb-label">Usability Testing</p>
       <h2 class="cb-h2">실제 사용자와 함께한 테스트</h2>
       <p class="cb-p">Google Meet를 통해 8명의 참가자와 원격으로 1:1 사용성 테스트를 진행했습니다. 참가자가 위에서 설계한 Figma 프로토타입을 직접 조작하는 동안 Think-Aloud 방식으로 생각을 소리 내어 말하도록 유도했습니다.</p>
-      <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:20px;">
-        <div class="case-img-wrap" style="margin:0;">
-          <img src="images/ut-session.png" alt="사용자 인터뷰 세션 2" onclick="openLBThis(this)" style="cursor:zoom-in;display:block;width:100%;border-radius:12px;"/>
-          <p class="img-caption">Remote UT Session — Participant B</p>
-          <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
-        </div>
-        <div style="text-align:center;">
-          <video autoplay loop muted playsinline style="display:block;width:200px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><source src="images/ut-prototype.mp4" type="video/mp4"></video>
-          <p class="img-caption" style="margin-top:8px;">UT Prototype</p>
-        </div>
+      <div class="case-img-wrap" style="text-align:center;">
+        <img src="images/ut-session.png" alt="사용자 인터뷰 세션 2" onclick="openLBThis(this)" style="cursor:zoom-in;display:block;margin:0 auto;max-width:600px;width:100%;border-radius:12px;"/>
+        <p class="img-caption">Remote UT Session — Participant B</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+      <div class="case-img-wrap" style="text-align:center;margin-top:16px;">
+        <video autoplay loop muted playsinline style="display:block;margin:0 auto;width:220px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><source src="images/ut-prototype.mp4" type="video/mp4"></video>
+        <p class="img-caption">UT Prototype — Shopping sticker interaction demo</p>
       </div>
     </div>
 
@@ -1874,12 +1745,12 @@ div.case-body {
       <h2 class="cb-h2">시스템 사용성 점수 (SUS)</h2>
       <p class="cb-p">테스트 완료 후 표준 SUS(System Usability Scale) 10문항 설문을 진행했습니다. 참가자 8명의 응답을 SUS 공식으로 환산한 결과 <strong>67.5점</strong>을 기록했습니다.</p>
       <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px;margin:24px 0;">
-        <div style="background:rgba(0,0,0,0.04);border-radius:16px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
-          <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:6px;">SUS Score</div>
-          <div style="font-size:44px;font-weight:700;color:#111;line-height:1;margin-bottom:4px;font-family:'Archivo',sans-serif;">67.5</div>
-          <div style="font-size:12px;color:#666;margin-bottom:10px;">/ 100점</div>
-          <div style="background:#333;color:white;font-size:11px;font-weight:600;padding:3px 12px;border-radius:100px;">OK 등급</div>
-          <div style="font-size:11px;color:#999;margin-top:6px;">수용 가능한 사용성 수준</div>
+        <div style="background:rgba(0,0,0,0.04);border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:8px;">SUS Score</div>
+          <div style="font-size:52px;font-weight:700;color:#111;line-height:1;margin-bottom:6px;font-family:'Archivo',sans-serif;">67.5</div>
+          <div style="font-size:13px;color:#666;margin-bottom:12px;">/ 100점</div>
+          <div style="background:#333;color:white;font-size:12px;font-weight:600;padding:4px 14px;border-radius:100px;">OK 등급</div>
+          <div style="font-size:11px;color:#999;margin-top:8px;">수용 가능한 사용성 수준</div>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="background:rgba(255,255,255,0.7);border-radius:12px;padding:18px;">
@@ -1957,12 +1828,12 @@ div.case-body {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 32px;">
         <div style="background:#1c1a2e;border-radius:16px;padding:28px 28px 32px;border:2px solid #b8a4f8;box-sizing:border-box;">
           <div style="font-size:22px;line-height:1;margin-bottom:24px;">💜</div>
-          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.55;font-family:'NanumSquareNeo','Figtree',sans-serif;margin-bottom:10px;"><span style="font-family:'Archivo',sans-serif;color:#b8a4f8;">67.5점</span> SUS Score — <span style="font-family:'Archivo',sans-serif;">100</span>점 만점 중 수용 가능한 사용성 수준 달성</div>
+          <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.55;font-family:'NanumSquareNeo','Figtree',sans-serif;margin-bottom:10px;"><span style="font-family:'Archivo',sans-serif;">67.5점</span> SUS Score — <span style="font-family:'Archivo',sans-serif;">100</span>점 만점 중 수용 가능한 사용성 수준 달성</div>
           <div style="font-size:13px;color:rgba(255,255,255,0.4);font-family:'NanumSquareNeo','Figtree',sans-serif;">Acceptable 등급</div>
         </div>
         <div style="background:#1c1a2e;border-radius:16px;padding:28px 28px 32px;border:2px solid #f9d84a;box-sizing:border-box;">
           <div style="font-size:22px;line-height:1;margin-bottom:24px;">⚡</div>
-          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.55;font-family:'NanumSquareNeo','Figtree',sans-serif;margin-bottom:10px;">Task 평균 성공률 <span style="font-family:'Archivo',sans-serif;">85.7%</span> 달성 — 제품 저장 태스크는 최저 <span style="color:#f9d84a;font-family:'Archivo',sans-serif;">71.4%</span></div>
+          <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.55;font-family:'NanumSquareNeo','Figtree',sans-serif;margin-bottom:10px;">Task 평균 성공률 <span style="font-family:'Archivo',sans-serif;">85.7%</span> 달성 — 제품 저장 태스크는 최저 <span style="color:#f9d84a;font-family:'Archivo',sans-serif;">71.4%</span></div>
           <div style="font-size:13px;color:rgba(255,255,255,0.4);font-family:'NanumSquareNeo','Figtree',sans-serif;">위치·레이블 개선 필요</div>
         </div>
       </div>
@@ -1993,23 +1864,57 @@ div.case-body {
     </div>
 
     <div class="cb-section">
-      <p class="cb-label">UT Result</p>
-      <h2 class="cb-h2">UT 결과 반영</h2>
-      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px;">
+      <p class="cb-label">Design Decision</p>
+      <h2 class="cb-h2">디자인 결정과 그 이유</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
         <div class="opp-card">
           <div class="opp-num">01</div>
+          <p class="opp-title">스티커 위치를 사용자가 직접 제어할 수 있게</p>
+          <p class="opp-desc">크리에이터가 설정한 스티커 위치가 Shorts 화면 우측 패널의 좋아요, 공유 등 액션 버튼들과 겹쳐 오클릭이 발생하는 경우가 많았음. 사용자가 직접 드래그로 위치를 옮기거나 제거할 수 있도록 하되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 <mark class="hl">의도치 않은 클릭을 방지</mark>함.</p>
+        </div>
+        <div class="opp-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+            <div class="opp-num" style="margin-bottom:0;">02</div>
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.01em;background:#f9b8d4;color:#1a0a2e;padding:5px 14px;border-radius:100px;font-family:'Figtree',sans-serif;">UT 결과 반영</span>
+          </div>
           <p class="opp-title">스티커 클릭 시 바텀시트를 기본 경로로</p>
           <p class="opp-desc">기존에는 "제휴사" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였음. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 <mark class="hl">불안감을 만든다는 걸 확인</mark>함. "제휴사" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경함.</p>
         </div>
         <div class="opp-card">
-          <div class="opp-num">02</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+            <div class="opp-num" style="margin-bottom:0;">03</div>
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.01em;background:#f9b8d4;color:#1a0a2e;padding:5px 14px;border-radius:100px;font-family:'Figtree',sans-serif;">UT 결과 반영</span>
+          </div>
           <p class="opp-title">스티커 삭제 인터랙션 수정</p>
           <p class="opp-desc">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였음. <mark class="hl">YouTube에서 이미 익숙한 점점점(⋮) 더보기 아이콘</mark> 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정함.</p>
         </div>
         <div class="opp-card">
-          <div class="opp-num">03</div>
+          <div class="opp-num">04</div>
+          <p class="opp-title">YouTube 기존 흐름 위에 저장 기능 설계</p>
+          <p class="opp-desc">새로운 기능일수록 <mark class="hl">사용자가 이미 익숙한 패턴 위에 얹히도록</mark> 설계하는 것이 중요하다고 판단함. YouTube의 기존 영상 저장 플로우와 유사한 방식으로 제품을 저장하면 "내 제품(My Products)" 카테고리에 담기도록 설계함.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">05</div>
+          <p class="opp-title">태그된 제품 뱃지 + 타임스탬프로 영상-제품 연결</p>
+          <p class="opp-desc">바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 실제로 등장한 제품인지 구분이 안 됐음. <mark class="hl">"태그된 제품" 뱃지와 타임스탬프</mark>를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있도록 함.</p>
+        </div>
+        <div class="opp-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+            <div class="opp-num" style="margin-bottom:0;">06</div>
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.01em;background:#f9b8d4;color:#1a0a2e;padding:5px 14px;border-radius:100px;font-family:'Figtree',sans-serif;">UT 결과 반영</span>
+          </div>
           <p class="opp-title">Related Videos(관련 영상)로 제품 관련 영상 탐색 플로우 추가</p>
           <p class="opp-desc">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었음. <mark class="hl">Related Videos 버튼</mark>을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 설계함.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">07</div>
+          <p class="opp-title">My Products 목록에서 View, Shorts, Videos로 연결</p>
+          <p class="opp-desc">저장된 제품 목록에서 해당 제품의 상세 페이지(View), 관련 Shorts, Videos로 바로 이동할 수 있는 플로우를 설계함. <mark class="hl">저장 후 재탐색 경험</mark>을 개선해 제품을 다시 찾는 번거로움을 줄임.</p>
+        </div>
+        <div class="opp-card">
+          <div class="opp-num">08</div>
+          <p class="opp-title">상품 정렬 기능 추가</p>
+          <p class="opp-desc">My Products에 저장된 제품들을 <mark class="hl">사용자가 원하는 순서로 직접 정렬</mark>할 수 있는 기능을 추가함. 관심도나 구매 우선순위에 따라 제품을 재배치할 수 있어 저장 후 재탐색 경험을 개선함.</p>
         </div>
       </div>
     </div>
@@ -2054,7 +1959,6 @@ div.case-body {
     </div>
 
   </div>
-
   <div class="case-end-section">
     <div class="case-end-card">
       <h2 class="ce-title">More work<br>coming soon.</h2>
@@ -2205,12 +2109,14 @@ function initCaseSidenav() {
 
   // 섹션 레이블 정의 (표시 이름)
   const sectionMap = {
+    'Overview': 'Overview',
     'Problem': 'Problem',
-    'Design & Research Process': 'Process',
-    'Prototype': 'Prototype',
+    'Research Process': 'Research',
+    'Lo-fi Design': 'Lo-fi Design',
+    'Hi-fi Design': 'Hi-fi Design',
     'Usability Testing': 'Usability Testing',
     'Affinity Mapping': 'Affinity & Insights',
-    'Design Solution': 'Final Design',
+    'Design Decision': 'Design',
     'Reflection': 'Reflection'
   };
 
@@ -2309,12 +2215,12 @@ function sendAsk(text) {
 
 /* ── PROCESS STEPPER ── */
 const procSteps = [
-  { title:'Experience Analysis', sub:'Step 1 of 6 — 기존 사용자 경험 분석', desc:'YouTube Shorts 쇼핑 기능의 UX를 직접 사용하며 문제를 탐색했습니다. 스티커 배치, 바텀시트 구조, 구매 연결 플로우를 관찰하며 개선이 필요한 지점을 파악했습니다.', chips:["쇼핑 스티커 UX 분석", "사용자 행동 흐름 관찰", "문제 지점 탐색"] },
-  { title:'UX Strategy', sub:'Step 2 of 6 — UX 개선 방향 정의', desc:'기존 경험 분석에서 발견한 Pain Point를 바탕으로 해결 방향을 설정하고, 핵심 기능 4가지의 우선순위를 정의했습니다. 각 기능이 어떤 문제를 해결하는지 명확히 한 뒤 프로토타입 설계로 넘어갔습니다.', chips:["스티커 위치 제어", "저장 기능 설계", "제품 뱃지 + 타임스탬프", "My Products 설계"] },
-  { title:'Prototyping', sub:'Step 3 of 6 — 프로토타입 설계', desc:'Lo-fi 와이어프레임으로 핵심 플로우를 빠르게 구조화한 뒤, Hi-fi 디자인으로 구체화했습니다. 스티커 이동 인터랙션과 바텀시트 플로우를 중심으로 Figma 프로토타입을 제작해 UT에 직접 활용했습니다.', chips:["Lo-fi 와이어프레임", "Hi-fi UI 디자인", "Figma 프로토타입"] },
-  { title:'Usability Testing', sub:'Step 4 of 6 — 사용성 테스트', desc:'사전 스크리너를 활용한 목적적 표집으로 쇼핑 경험 유무에 따라 각 4명씩 총 8명을 모집했습니다. 최근 1개월 내 Shorts 시청, 제품 스티커 인지, 스마트폰 주 사용자를 기준으로 참가자를 한정했습니다. Figma 프로토타입 기반 7개 태스크를 Think-Aloud 방식으로 수행하며 완료 시간과 오류 횟수를 기록했고, 15초 이상 침묵 시 중립적 질문으로 발화를 유도했습니다. 세션 후 SUS 설문과 심층 인터뷰로 마무리했습니다.', chips:["Purposive Sampling", "Think-Aloud", "7개 태스크", "SUS 설문", "심층 인터뷰"] },
+  { title:'Current Experience Analysis', sub:'Step 1 of 6 — 기존 사용자 경험 분석', desc:'YouTube Shorts 기존 쇼핑 기능의 UX를 직접 사용하며 분석했습니다. 스티커 배치, 바텀시트 구조, 구매 연결 플로우를 관찰하고 Instagram 제품 저장 기능을 벤치마킹해 개선 방향의 기준점을 잡았습니다.', chips:["쇼핑 스티커 UX 분석", "사용자 행동 흐름 관찰", "Instagram 저장 기능 벤치마킹"] },
+  { title:'UX Strategy', sub:'Step 2 of 6 — UX 개선 방향 정의', desc:'리서치에서 발견한 Pain Point를 바탕으로 핵심 기능 2가지를 정의했습니다. 스티커 위치 제어로 시청 방해 문제를 해결하고, My Products로 제품 저장 및 재탐색 경험을 새롭게 설계했습니다.', chips:["스티커 위치 제어", "제품 뱃지 + 타임스탬프", "My Products 저장"] },
+  { title:'Wireframe & UI Design', sub:'Step 3 of 6 — 와이어프레임 및 UI 디자인', desc:'Lo-fi 와이어프레임으로 핵심 플로우를 빠르게 구조화한 뒤, Hi-fi 디자인으로 구체화했습니다. 스티커 이동 인터랙션과 바텀시트 플로우를 중심으로 Figma 프로토타입을 제작해 UT에 직접 활용했습니다.', chips:["Lo-fi 와이어프레임", "Hi-fi UI 디자인", "Figma 프로토타입"] },
+  { title:'Usability Testing', sub:'Step 4 of 6 — 사용성 테스트', desc:'쇼핑 경험 유무에 따라 각 4명씩 총 8명을 스노우볼 샘플링으로 모집. 최근 1개월 내 Shorts 시청, 제품 스티커 인지, 스마트폰 주 사용자로 한정. Figma 프로토타입 기반 7개 태스크를 Think-Aloud로 수행, 완료 시간·오류 횟수 기록, 15초 이상 침묵 시 중립적 질문으로 발화 유도. SUS 설문 후 심층 인터뷰로 마무리.', chips:["스노우볼 샘플링", "Think-Aloud", "7개 태스크", "SUS 설문", "심층 인터뷰"] },
   { title:'Affinity Mapping', sub:'Step 5 of 6 — 피드백 구조화', desc:'8명의 발화 데이터를 포스트잇으로 옮겨 유사한 패턴끼리 그룹핑했습니다. 스티커 오클릭, 행선지 불안, 저장 기능 부재 등 주요 Pain Point 카테고리를 도출하고 Key Insights로 정제했습니다.', chips:["발화 데이터 그룹핑", "Pain Point 범주화", "어피니티 다이어그램"] },
-  { title:'Final Design', sub:'Step 6 of 6 — 최종 디자인 완성', desc:'UT와 어피니티 매핑에서 도출한 인사이트를 바탕으로 디자인을 개선해 최종 프로토타입을 완성했습니다.', chips:["8가지 디자인 결정", "최종 디자인 완성"] }
+  { title:'Final Iteration', sub:'Step 6 of 6 — 최종 디자인 완성', desc:'UT와 어피니티 매핑에서 나온 인사이트를 반영해 8가지 디자인 결정을 내렸습니다. 그 중 UT 결과가 직접 반영된 3가지 항목을 포함해 최종 Hi-fi 디자인을 완성했습니다.', chips:["8가지 디자인 결정", "UT 결과 반영", "최종 디자인 완성"] }
 ];
 let cur = 0;
 function selectStep(idx) {
