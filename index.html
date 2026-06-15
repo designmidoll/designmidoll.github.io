@@ -769,6 +769,10 @@ body {
 #about-page .about-label {
   font-family: 'Archivo', sans-serif !important;
 }
+/* 한글 본문 — 나눔스퀘어 네오 */
+#about-page .kr {
+  font-family: 'NanumSquareNeo', sans-serif !important;
+}
 .case-page-nav-logo { font-family: var(--serif); font-size: 16px; color: var(--ink); letter-spacing: -0.01em; text-decoration: none; opacity: 0.7; cursor: pointer; background: none; border: none; }
 .case-page-nav-back { font-size: 13px; color: var(--ink-2); cursor: pointer; background: none; border: none; display: flex; align-items: center; gap: 6px; }
 .case-page-nav-back:hover { color: var(--ink); }
@@ -787,7 +791,7 @@ body {
 .case-h1 em { font-style: normal; color: var(--ink); }
 .case-hero-desc { font-size: 15px; color: var(--ink-2); font-weight: 300; line-height: 1.75; max-width: 100%; margin-bottom: 20px; white-space: nowrap; }
 .case-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
-.cht { font-size: 12px; padding: 5px 12px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.1); color: var(--ink-2); background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
+.cht { font-size: 12px; padding: 5px 12px; border-radius: 100px; border: none; color: var(--ink-2); background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
 
 .case-stats-strip {
   display: grid;
@@ -810,6 +814,7 @@ body {
 .cb-section { margin-bottom: 96px; }
 .cb-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
 .cb-label::before { content: ''; width: 18px; height: 1px; background: #111; }
+.cb-sublabel::before { width: 5px; height: 5px; border-radius: 50%; background: var(--ink-3); flex-shrink: 0; }
 .cb-h2 { font-family: 'NanumSquareNeo', var(--serif); font-size: clamp(17px, 1.8vw, 22px); line-height: 1.12; letter-spacing: -0.022em; color: #0f0f0f; margin-bottom: 14px; font-weight: 700; }
 .cb-h2 em { font-style: normal; color: var(--ink); }
 .cb-p { font-size: 15px; color: #333; line-height: 1.8; font-weight: 400; margin-bottom: 14px; }
@@ -831,10 +836,10 @@ body {
 /* ── STICKY NOTE CARDS ── */
 .sticky-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   padding: 40px 0 40px;
-  max-width: 620px;
+  max-width: 860px;
   margin: 0 auto;
 }
 .sticky-card {
@@ -845,12 +850,10 @@ body {
 }
 .sticky-card:nth-child(1) { transform: rotate(-3deg); background: #e3dbfd; }
 .sticky-card:nth-child(2) { transform: rotate(-1deg); }
-.sticky-card:nth-child(3) { transform: rotate(1deg); }
-.sticky-card:nth-child(4) { transform: rotate(3deg); background: #e3dbfd; }
+.sticky-card:nth-child(3) { transform: rotate(2deg); background: #e3dbfd; }
 .sticky-card:nth-child(1):hover { transform: rotate(-6deg) translateY(-10px); z-index:2; position:relative; }
 .sticky-card:nth-child(2):hover { transform: rotate(-3deg) translateY(-10px); z-index:2; position:relative; }
-.sticky-card:nth-child(3):hover { transform: rotate(3deg) translateY(-10px); z-index:2; position:relative; }
-.sticky-card:nth-child(4):hover { transform: rotate(6deg) translateY(-10px); z-index:2; position:relative; }
+.sticky-card:nth-child(3):hover { transform: rotate(4deg) translateY(-10px); z-index:2; position:relative; }
 .sticky-body {
   padding: 24px 20px 26px;
   display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
@@ -866,6 +869,11 @@ body {
 }
 @media (max-width: 768px) {
   .sticky-cards { grid-template-columns: 1fr 1fr; }
+  .sticky-cards .sticky-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 10px);
+    margin: 0 auto;
+  }
 }
 .p-num { font-family: var(--serif); font-style: italic; font-size: 12px; color: var(--ink-3); margin-bottom: 8px; }
 .p-title { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 6px; line-height: 1.3; }
@@ -885,8 +893,8 @@ body {
 .proc-step.done .p-lbl { color: var(--ink-2); }
 
 .proc-detail { margin-top: 18px; background: rgba(255,255,255,0.55); border-radius: 12px; backdrop-filter: blur(8px); overflow: hidden; }
-.pd-head { padding: 16px 20px 12px; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; gap: 10px; }
-.pd-badge { width: 30px; height: 30px; border-radius: 7px; background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 14px; color: #111; flex-shrink: 0; }
+.pd-head { padding: 16px 20px 12px; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; align-items: center; gap: 4px; }
+.pd-badge { font-family: 'Figtree', sans-serif; font-weight: 500; font-size: 16px; color: var(--ink); flex-shrink: 0; line-height: 1; }
 .pd-title { font-size: 16px; font-weight: 500; color: var(--ink); margin: 0 0 1px; font-family: 'Figtree', sans-serif !important; }
 .pd-sub { font-size: 11px; color: var(--ink-3); display: none; }
 .pd-body { padding: 14px 20px 16px; }
@@ -894,10 +902,12 @@ body {
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chip { font-size: 11px; padding: 3px 9px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.1); color: var(--ink-2); background: rgba(255,255,255,0.5); }
 .pd-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; padding-top: 0; border-top: none; }
-.pd-btn { font-size: 12px; color: var(--ink-2); background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.2s; }
-.pd-btn:hover { border-color: #111; color: #111; }
+.pd-btn { font-size: 12px; color: var(--ink-2); background: #fff; border: none; border-radius: 6px; padding: 5px 12px; cursor: pointer; transition: all 0.2s; }
+.pd-btn:hover { background: #f5f5f5; color: #111; }
 .pd-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
-.pd-prog { font-size: 11px; color: var(--ink-3); }
+.pd-dots { display: flex; align-items: center; gap: 6px; }
+.pd-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(124,111,205,0.2); transition: background 0.2s, transform 0.2s; }
+.pd-dot.active { background: #7c6fcd; transform: scale(1.25); }
 
 /* YELLOW HIGHLIGHT — scroll-triggered draw-in */
 mark.hl {
@@ -1279,6 +1289,52 @@ div.case-body {
 /* ── MINIMAP ── */
 #lb-minimap { backdrop-filter: blur(4px); }
 
+/* ── ABOUT PAGE RESPONSIVE ── */
+@media (max-width: 660px) {
+  .about-wrap { padding: 72px 20px 60px !important; }
+  .about-profile-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    margin-bottom: 48px !important;
+  }
+  /* dissolve img-col so its children become direct grid items */
+  .about-img-col { display: contents; }
+  .about-img-col img { order: 1; margin-bottom: 24px !important; aspect-ratio: 4/3 !important; object-position: top center; }
+  .about-links { order: 3; margin-top: 24px; }
+  .about-bio-col { order: 2; }
+  .about-skills-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+}
+@media (max-width: 400px) {
+  .about-skills-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+
+/* ── GLOBAL NAV RESPONSIVE ── */
+@media (max-width: 600px) {
+  #global-nav { padding: 10px 16px; }
+  #nav-logo { font-size: 18px !important; white-space: nowrap; }
+  .global-nav-pills { padding: 3px 4px; }
+  .global-nav-pills a { font-size: 11px !important; padding: 5px 10px; }
+}
+
+/* ── HOME WORK SECTION RESPONSIVE ── */
+@media (max-width: 860px) {
+  .work-section { padding: 40px 24px 60px; }
+  .work-item { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+  .work-item-right { width: 100%; aspect-ratio: 16/9 !important; }
+  .work-item-title { font-size: 22px; }
+  .work-item-stat-big { font-size: 28px; }
+}
+@media (max-width: 540px) {
+  .work-section { padding: 32px 16px 48px; }
+  .work-item { gap: 20px; padding: 32px 0; }
+  .work-item-title { font-size: 20px; margin-bottom: 12px; }
+  .work-item-stat-row { gap: 8px; margin-bottom: 20px; }
+  .work-item-stat-big { font-size: 24px; }
+  .work-item-stat-unit { font-size: 12px; }
+  .case-tags { gap: 5px; }
+  .case-tag { font-size: 10px; padding: 3px 8px; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 760px) {
   .case-card-inner, .about-card, .pain-grid, .sol-grid, .opp-grid, .ref-grid, .meta-grid { grid-template-columns: 1fr; }
@@ -1287,6 +1343,19 @@ div.case-body {
   .cs { flex: 0 0 calc(50% - 20px); border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.08); margin-right: 0; padding-right: 0; padding-bottom: 20px; margin-bottom: 0; }
   .cs:last-child { border-bottom: none; }
   .case-hero-desc { white-space: normal !important; }
+  .htag-r { right: -40px !important; }
+  .htag-l { left: -50px !important; }
+  .htag-r > div, .htag-l > div { font-size: 13px !important; }
+}
+@media (max-width: 600px) {
+  .htag-r { right: 8px !important; top: 12px !important; }
+  .htag-l { left: 8px !important; bottom: 12px !important; }
+  .htag-r > div, .htag-l > div { font-size: 11px !important; padding: 10px 16px 10px 26px !important; }
+  .htag-l > div { padding: 10px 26px 10px 16px !important; }
+  .case-stats-card { padding: 18px 14px 16px !important; border-radius: 12px !important; }
+  .case-stats-grid .cs-n { font-size: 28px !important; }
+  .case-stats-grid .cs-n span { font-size: 18px !important; }
+  .case-stats-grid .cs-l { font-size: 11px !important; word-break: keep-all; line-height: 1.4; margin-top: 4px; }
 }
 
 /* 케이스스터디 숫자 — Archivo */
@@ -1503,28 +1572,28 @@ div.case-body {
     <div style="margin-top:28px;position:relative;">
       <img src="images/youtube main image.png" alt="YouTube Shorts 쇼핑 경험 개선" style="width:100%;border-radius:16px;display:block;"/>
       <!-- Right tag: pointing left, Team info -->
-      <div style="position:absolute;top:28px;right:-80px;pointer-events:none;transform:rotate(4deg);transform-origin:right center;">
+      <div class="htag-r" style="position:absolute;top:28px;right:-80px;pointer-events:none;transform:rotate(4deg);transform-origin:right center;">
         <div style="position:relative;background:#eaeaea;padding:20px 24px 20px 36px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(24px 0%,100% 0%,100% 100%,24px 100%,0% 50%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);">
           <span style="font-weight:700;">Team:</span> 3명<br>I led design &amp; research
         </div>
       </div>
       <!-- Left tag: pointing right, Role info -->
-      <div style="position:absolute;bottom:32px;left:-100px;pointer-events:none;transform:rotate(-4deg);transform-origin:left center;">
+      <div class="htag-l" style="position:absolute;bottom:32px;left:-100px;pointer-events:none;transform:rotate(-4deg);transform-origin:left center;">
         <div style="position:relative;background:#eaeaea;padding:20px 36px 20px 24px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(0% 0%,calc(100% - 24px) 0%,100% 50%,calc(100% - 24px) 100%,0% 100%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);">
           <span style="font-weight:700;">My Role:</span> Research, Design,<br>Prototyping, Testing
         </div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+    <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">8<span style="font-size:28px;font-weight:500;color:#888;">명</span></div>
         <div class="cs-l">사용자 인터뷰</div>
       </div>
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">67.5</div>
         <div class="cs-l">SUS Score</div>
       </div>
-      <div style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">85.7<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
         <div class="cs-l">Task 평균 성공률</div>
       </div>
@@ -1540,21 +1609,14 @@ div.case-body {
       <p class="cb-label">Problem</p>
       <h2 class="cb-h2">무엇이 문제인가?</h2>
       <p class="cb-p">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. 제품 스티커가 시청을 방해하고, 관심 있는 제품을 저장할 방법이 없다는 점에 주목했습니다.</p>
+      <img src="images/problem.png" alt="Problem overview" style="width:100%; border-radius:14px; margin-top:28px; display:block;" />
       <div class="sticky-cards">
         <div class="sticky-card">
           <div class="sticky-body">
             <div class="sticky-emoji">😤</div>
-            <p class="sticky-quote">"쇼츠 보는데 스티커가 화면을 가려요"</p>
+            <p class="sticky-quote">"쇼츠 보는데 스티커가 화면을 방해해요"</p>
             <p class="sticky-title">시청을 방해하는 스티커</p>
-            <p class="sticky-desc">쇼핑 스티커가 화면 위에 고정 배치되어 영상을 가립니다. 위치를 옮기거나 제거할 수 없어요.</p>
-          </div>
-        </div>
-        <div class="sticky-card">
-          <div class="sticky-body">
-            <div class="sticky-emoji">😰</div>
-            <p class="sticky-quote">"누르면 어디로 가는 건지 모르겠어요"</p>
-            <p class="sticky-title">신뢰할 수 없는 링크</p>
-            <p class="sticky-desc">클릭하면 안내 없이 외부 사이트로 이동합니다. 어디로 연결되는지 미리 알 수 없어요.</p>
+            <p class="sticky-desc">쇼핑 스티커가 화면 위에 고정 배치되어 영상을 가려요. 위치를 옮기거나 제거할 수 없어요.</p>
           </div>
         </div>
         <div class="sticky-card">
@@ -1562,15 +1624,15 @@ div.case-body {
             <div class="sticky-emoji">🤔</div>
             <p class="sticky-quote">"이 제품이 영상 어디서 나왔는지 모르겠어요"</p>
             <p class="sticky-title">맥락이 끊긴 제품 정보</p>
-            <p class="sticky-desc">제품이 영상의 어느 장면에서 등장하는지 확인할 수 없어 신뢰도가 떨어집니다.</p>
+            <p class="sticky-desc">제품이 영상의 어느 장면에서 등장하는지 확인할 수 없어 신뢰도가 떨어져요.</p>
           </div>
         </div>
         <div class="sticky-card">
           <div class="sticky-body">
             <div class="sticky-emoji">😩</div>
-            <p class="sticky-quote">"제품만 저장할 방법이 없어요"</p>
+            <p class="sticky-quote">"관심 제품을 저장할 방법이 없어요"</p>
             <p class="sticky-title">저장 경로의 부재</p>
-            <p class="sticky-desc">관심 제품을 따로 저장하는 기능이 없어 나중에 다시 찾으려면 영상을 직접 검색해야 합니다.</p>
+            <p class="sticky-desc">관심 제품을 따로 저장하는 기능이 없어 나중에 다시 찾으려면 영상을 직접 검색해야 해요.</p>
           </div>
         </div>
       </div>
@@ -1600,7 +1662,7 @@ div.case-body {
             <div class="chips" id="pd-chips" style="display:none;"></div>
             <div class="pd-nav">
               <button class="pd-btn" id="btn-prev" onclick="stepNav(-1)" disabled>이전</button>
-              <span class="pd-prog" id="pd-prog">1 / 6</span>
+              <div class="pd-dots" id="pd-dots"></div>
               <button class="pd-btn" id="btn-next" onclick="stepNav(1)">다음</button>
             </div>
           </div>
@@ -1614,126 +1676,25 @@ div.case-body {
       <h2 class="cb-h2">프로토타입 설계</h2>
       <p class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
 
-      <!-- 3 feature cards hover -->
+      <!-- feature accordion -->
       <style>
-        .hifi-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:32px; }
-        .hifi-card {
-          position:relative;
-          background:rgba(255,255,255,0.55); backdrop-filter:blur(8px);
-          border-radius:14px; border:1px solid rgba(255,255,255,0.7);
-          aspect-ratio:3/2; overflow:hidden; cursor:pointer;
-          transition:background 0.25s;
+        .feat-card { background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); border-radius:16px; overflow:hidden; }
+        .feat-acc-item { border-bottom:1px solid rgba(0,0,0,0.07); }
+        .feat-acc-item:last-child { border-bottom:none; }
+        .feat-acc-head {
+          width:100%; display:flex; align-items:center; gap:14px;
+          padding:14px 18px; background:none; border:none; cursor:pointer;
+          text-align:left; transition:background 0.2s;
         }
-        .hifi-card:hover { background:#fff; }
-        .hifi-card-deco {
-          position:absolute; bottom:-22px; right:-22px;
-          width:62%; height:130%;
-          pointer-events:none; z-index:1;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card-deco svg { width:100%; height:100%; }
-        .hifi-card:hover .hifi-card-deco { opacity:0; transform:scale(0.96); }
-        .hifi-card-front {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; flex-direction:column; justify-content:space-between;
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-front { opacity:0; transform:translateY(-8px); }
-        .hifi-card-num {
-          font-size:72px; font-weight:400; color:#c4bef0;
-          font-family:'Archivo',sans-serif; line-height:1;
-          letter-spacing:-0.04em; position:relative; z-index:1;
-        }
-        .hifi-card-title {
-          font-size:14px; font-weight:800; color:#1a1424;
-          font-family:'NanumSquareNeo',sans-serif; line-height:1.4;
-          max-width:52%; position:relative; z-index:1;
-        }
-        .hifi-card-back {
-          position:absolute; inset:0; padding:16px 18px; z-index:2;
-          display:flex; align-items:center;
-          opacity:0; transform:translateY(8px);
-          transition:opacity 0.25s, transform 0.25s;
-        }
-        .hifi-card:hover .hifi-card-back { opacity:1; transform:translateY(0); }
-        .hifi-card-back p {
-          font-size:10px; color:#111; line-height:1.65;
-          font-family:'Figtree',sans-serif;
-        }
+        .feat-acc-head:hover { background:rgba(255,255,255,0.6); }
+        .feat-acc-num { font-family:'Archivo',sans-serif; font-size:12px; font-weight:400; color:rgba(0,0,0,0.3); min-width:22px; flex-shrink:0; }
+        .feat-acc-title { font-size:15px; font-weight:500; color:#111; font-family:'Pretendard',sans-serif; flex:1; }
+        .feat-acc-chevron { flex-shrink:0; transition:transform 0.25s; color:rgba(0,0,0,0.25); display:flex; align-items:center; }
+        .feat-acc-item.open .feat-acc-chevron { transform:rotate(180deg); }
+        .feat-acc-body { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+        .feat-acc-body-inner { padding:0 18px 14px 50px; font-size:14px; color:#666; line-height:1.8; font-family:'Pretendard',sans-serif; }
       </style>
-      <div class="hifi-cards">
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 01: 오프셋 겹침 라운드 rect — 왼쪽으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc1a" x1="0%" y1="20%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="40%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="5" y="45" width="100" height="75" rx="22" fill="url(#gc1a)"/>
-              <rect x="20" y="8" width="100" height="75" rx="22" fill="url(#gc1a)" opacity="0.72"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">01</div>
-            <h3 class="hifi-card-title">스티커 위치 제어</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>스티커 위치가 액션 버튼들과 겹쳐 오클릭이 자주 발생했습니다. 드래그로 위치를 옮기거나 제거할 수 있되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 02: 큰 원 — 우하단 중심으로 투명하게 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="gc2a" cx="72%" cy="68%" r="60%">
-                  <stop offset="0%" stop-color="#c4bef0" stop-opacity="0.9"/>
-                  <stop offset="65%" stop-color="#ddd8f8" stop-opacity="0.55"/>
-                  <stop offset="100%" stop-color="#ede9fd" stop-opacity="0.08"/>
-                </radialGradient>
-              </defs>
-              <circle cx="75" cy="90" r="70" fill="url(#gc2a)"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">02</div>
-            <h3 class="hifi-card-title">제품 뱃지 + 타임스탬프</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 등장한 제품인지 구분이 어려웠습니다. "태그된 제품" 뱃지와 타임스탬프를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있게 했습니다.</p>
-          </div>
-        </div>
-        <div class="hifi-card">
-          <div class="hifi-card-deco">
-            <!-- 03: 레이어드 rect — 왼쪽 투명 페이드 -->
-            <svg viewBox="0 0 110 130" fill="none" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gc3a" x1="0%" y1="10%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e8e3fa" stop-opacity="0"/>
-                  <stop offset="45%" stop-color="#ddd8f8" stop-opacity="0.6"/>
-                  <stop offset="100%" stop-color="#c4bef0" stop-opacity="0.92"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="78" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.5"/>
-              <rect x="0" y="46" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.72"/>
-              <rect x="0" y="14" width="110" height="40" rx="13" fill="url(#gc3a)" opacity="0.92"/>
-            </svg>
-          </div>
-          <div class="hifi-card-front">
-            <div class="hifi-card-num">03</div>
-            <h3 class="hifi-card-title">My Products 설계</h3>
-          </div>
-          <div class="hifi-card-back">
-            <p>익숙한 YouTube 저장 패턴 위에 제품 저장 기능을 얹어 자연스럽게 My Products에 담기도록 설계했습니다. 저장 후 상세 페이지·관련 영상으로 바로 이동할 수 있고, 관심도나 구매 우선순위에 따라 직접 정렬할 수 있는 기능으로 재탐색 경험을 개선했습니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="cb-label" style="margin-top:48px;">Lo-fi Prototype</p>
+      <p class="cb-label cb-sublabel" style="margin-top:48px;">Low-Fidelity</p>
       <div class="wf-scroll-wrap" style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
         <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;">
           <div class="case-img-wrap" style="margin:0;">
@@ -1754,12 +1715,59 @@ div.case-body {
       })();
       </script>
 
-      <p class="cb-label" style="margin-top:48px;">Hi-fi Prototype</p>
+      <div class="feat-card" style="margin-top:48px;">
+        <div class="feat-acc-item">
+          <button class="feat-acc-head" onclick="toggleAcc(this)">
+            <span class="feat-acc-num">01.</span>
+            <span class="feat-acc-title">스티커 위치 제어</span>
+            <svg class="feat-acc-chevron" viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="feat-acc-body">
+            <div class="feat-acc-body-inner">스티커 위치가 액션 버튼들과 겹쳐 오클릭이 자주 발생했습니다. 드래그로 위치를 옮기거나 제거할 수 있되, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
+          </div>
+        </div>
+        <div class="feat-acc-item">
+          <button class="feat-acc-head" onclick="toggleAcc(this)">
+            <span class="feat-acc-num">02.</span>
+            <span class="feat-acc-title">제품 뱃지 + 타임스탬프</span>
+            <svg class="feat-acc-chevron" viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="feat-acc-body">
+            <div class="feat-acc-body-inner">바텀시트에 제품이 여러 개 나열될 때 어느 것이 영상에 등장한 제품인지 구분이 어려웠습니다. "태그된 제품" 뱃지와 타임스탬프를 추가해 영상 속 제품을 명확히 구분하고, 해당 제품이 등장하는 시점으로 바로 이동할 수 있게 했습니다.</div>
+          </div>
+        </div>
+        <div class="feat-acc-item">
+          <button class="feat-acc-head" onclick="toggleAcc(this)">
+            <span class="feat-acc-num">03.</span>
+            <span class="feat-acc-title">My Products 설계</span>
+            <svg class="feat-acc-chevron" viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="feat-acc-body">
+            <div class="feat-acc-body-inner">익숙한 YouTube 저장 패턴 위에 제품 저장 기능을 얹어 자연스럽게 My Products에 담기도록 설계했습니다. 저장 후 상세 페이지·관련 영상으로 바로 이동할 수 있고, 관심도나 구매 우선순위에 따라 직접 정렬할 수 있는 기능으로 재탐색 경험을 개선했습니다.</div>
+          </div>
+        </div>
+      </div>
+      <script>
+      function toggleAcc(btn) {
+        const item = btn.closest('.feat-acc-item');
+        const body = item.querySelector('.feat-acc-body');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.feat-acc-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.feat-acc-body').style.maxHeight = '';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      }
+      </script>
       <div class="case-img-wrap" style="margin-top:20px;">
-        <img src="images/ut-task.png" alt="태스크 테스트 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-        <p class="img-caption">Task 1–8 — Prototype-based usability test screens</p>
+        <img src="images/redesign1.png" alt="Low-Fidelity redesign" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
       </div>
+
+
     </div>
 
     <!-- UT SESSION PHOTOS -->
@@ -1995,6 +2003,10 @@ div.case-body {
     <div class="cb-section">
       <p class="cb-label">UT Result</p>
       <h2 class="cb-h2">UT 결과 반영</h2>
+      <div class="case-img-wrap" style="margin-top:20px;">
+        <img src="images/redesign2.png" alt="UT 결과 반영" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
       <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px;">
         <div class="opp-card">
           <div class="opp-num">01</div>
@@ -2071,23 +2083,23 @@ div.case-body {
 <!-- ═══════════════════ ABOUT PAGE ═══════════════════ -->
 <div id="about-page" class="page">
 
-  <div style="max-width:760px;margin:0 auto;padding:100px 48px 80px;font-family:'Figtree',sans-serif;">
+  <div class="about-wrap" style="max-width:760px;margin:0 auto;padding:100px 48px 80px;font-family:'Figtree',sans-serif;">
 
     <!-- TOP: name + tagline -->
     <div style="margin-bottom:72px;">
       <p class="about-label" style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:20px;">About</p>
       <h1 style="font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;color:#0f0f0f;margin-bottom:24px;">I find the <em style="font-style:italic;font-weight:300;color:#555;">why</em><br>then design.</h1>
-      <p style="font-size:17px;font-weight:300;color:#444;line-height:1.8;max-width:560px;">From visual design school to graphic and web design, and now product design — the through-line has always been understanding why things work the way they do for people. I'm drawn to messy, undefined problems where the research shapes the solution.</p>
+      <p class="kr" style="font-size:16px;font-weight:400;color:#444;line-height:1.85;max-width:560px;">비주얼 디자인에서 출발해 그래픽·웹 디자인을 거쳐 지금의 프로덕트 디자인까지, 일관된 관심사는 언제나 '사람에게 왜 그것이 그렇게 작동하는가'를 이해하는 것이었습니다. 저는 리서치가 해답을 만들어가는, 복잡하고 정의되지 않은 문제에 끌립니다.</p>
     </div>
 
     <!-- DIVIDER -->
     <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin-bottom:64px;">
 
     <!-- PROFILE + BIO -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:start;">
-      <div>
+    <div class="about-profile-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:72px;align-items:start;">
+      <div class="about-img-col">
         <img src="images/profile-new.png" alt="Miseon Park" style="width:100%;border-radius:20px;object-fit:cover;object-position:top;aspect-ratio:3/4;display:block;margin-bottom:20px;">
-        <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="about-links" style="display:flex;flex-direction:column;gap:10px;">
           <a href="mailto:designmidoll@gmail.com" style="font-size:13px;font-weight:500;color:#0f0f0f;text-decoration:none;display:flex;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.07);transition:color 0.2s;" onmouseover="this.style.color='#7c6fcd'" onmouseout="this.style.color='#0f0f0f'">
             <span style="font-size:15px;">✉</span> designmidoll@gmail.com
           </a>
@@ -2099,10 +2111,20 @@ div.case-body {
           </a>
         </div>
       </div>
-      <div>
-        <p style="font-size:15px;font-weight:400;color:#333;line-height:1.85;margin-bottom:20px;">I started out in visual design, moved through graphic and web work, and landed in product design because it's where I get to sit closest to the question of why people do what they do.</p>
-        <p style="font-size:15px;font-weight:400;color:#333;line-height:1.85;margin-bottom:20px;">My process is research-first. I run user interviews, usability tests, and affinity mapping not because I'm supposed to, but because I've seen how easily assumptions get baked into design without them.</p>
-        <p style="font-size:15px;font-weight:400;color:#333;line-height:1.85;">Currently based in Seoul, Korea. Open to product design roles — including opportunities in the US.</p>
+      <div class="about-bio-col">
+        <style>
+          .about-bio-col p { font-size:15px; font-weight:400; color:#333; line-height:1.9; margin-bottom:24px; font-family:'NanumSquareNeo', sans-serif; }
+          .about-bio-col p:last-child { margin-bottom:0; }
+        </style>
+        <p>그래픽 디자인을 시작으로 콘텐츠 디자인, 웹 디자인을 거쳐 현재는 UX/UI 디자인 업무를 수행하고 있습니다. OGQ에서 7년간 콘텐츠 디자이너로 근무하며 NAVER, 삼성, SOOP 등 다양한 파트너사와 협업 프로젝트를 진행했고, 웹·모바일 이벤트 페이지, 배너, 그래픽 아이콘, 일러스트레이션, 캐릭터 디자인 등 폭넓은 디자인 경험을 쌓았습니다.</p>
+
+        <p>다양한 디자인 작업을 수행하며 단순히 시각적으로 완성도 높은 결과물을 만드는 것을 넘어, 사용자가 서비스를 어떻게 이해하고 경험하는지에 관심을 갖게 되었습니다. 이를 계기로 UX/UI 디자인을 학습하고 실무에 적용하며 사용자 경험 관점에서 문제를 해결하는 디자이너로 성장하고 있습니다.</p>
+
+        <p>현재는 디자인 시스템을 기반으로 UI 일관성을 관리하고 신규 컴포넌트를 설계하며, 서비스 화면 개선 업무를 수행하고 있습니다. 또한 NAVER OGQ 마켓과 채팅플러스 관련 프로젝트를 진행하며 사용자 흐름과 사용성을 고려한 화면 설계 경험을 쌓고 있습니다. 직군 전환 이후에는 기획자·개발자와의 협업을 통해 의사결정 과정에도 참여하며 서비스 관점의 사고를 넓혀가고 있습니다.</p>
+
+        <p>프로젝트를 진행할 때는 사용자와 문제를 먼저 이해하려고 노력합니다. 유튜브 쇼츠 쇼핑 기능 리디자인 프로젝트에서는 사용자 리서치, 문제 정의, 와이어프레임, UI 설계까지 전 과정에 참여하며 기존 기능을 사용자 관점에서 재해석하는 경험을 했습니다. 아이디어를 빠르게 시각화해 공유하고, 피드백을 반영하며 발전시키는 협업 방식을 선호합니다.</p>
+
+        <p>다양한 산업과 서비스의 문제를 경험하며 UX/UI 디자이너로서 시야를 계속 넓혀가고 싶습니다. 시각적 커뮤니케이션 경험과 UX/UI 역량을 함께 발휘하며, 더 나은 디지털 경험을 만드는 데 기여하고 싶습니다.</p>
       </div>
     </div>
 
@@ -2112,7 +2134,7 @@ div.case-body {
     <!-- SKILLS -->
     <div>
       <p class="about-label" style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:40px;">Skills & Tools</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;">
+      <div class="about-skills-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;">
         <div>
           <p class="about-label" style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0f0f0f;margin-bottom:16px;">Research</p>
           <div style="display:flex;flex-direction:column;gap:12px;">
@@ -2322,11 +2344,15 @@ function selectStep(idx) {
   document.querySelectorAll('.proc-step').forEach((el,i) => { el.classList.remove('active','done'); if(i===idx) el.classList.add('active'); else if(i<idx) el.classList.add('done'); });
   for(let i=0;i<5;i++){const c=document.getElementById('conn-'+i);if(c)c.classList.toggle('done',i<idx);}
   const s=procSteps[idx];
-  document.getElementById('pd-badge').textContent=idx+1;
+  document.getElementById('pd-badge').textContent=(idx+1)+'.';
   document.getElementById('pd-title').textContent=s.title;
   document.getElementById('pd-sub').textContent=s.sub;
   document.getElementById('pd-desc').textContent=s.desc;
-  document.getElementById('pd-prog').textContent=(idx+1)+' / 6';
+  const dotsEl = document.getElementById('pd-dots');
+  if (dotsEl.children.length === 0) {
+    for (let i = 0; i < 6; i++) { const d = document.createElement('div'); d.className = 'pd-dot'; dotsEl.appendChild(d); }
+  }
+  Array.from(dotsEl.children).forEach((d, i) => d.classList.toggle('active', i === idx));
   document.getElementById('pd-chips').innerHTML=s.chips.map(c=>'<span class="chip">'+c+'</span>').join('');
   document.getElementById('btn-prev').disabled=idx===0;
   document.getElementById('btn-next').disabled=idx===5;
@@ -2552,6 +2578,112 @@ document.addEventListener('keydown', function(e) {
   </div>
   <div style="position:fixed;bottom:28px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;pointer-events:none;">클릭으로 확대 · 다시 클릭으로 축소 · ESC로 닫기</div>
 </div>
+
+<!-- ═══ CHARACTER WIDGET ═══ -->
+<style>
+  #char-widget {
+    position: fixed; bottom: 20px; right: 24px; z-index: 999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+    pointer-events: none;
+    opacity: 0; transition: opacity 0.4s;
+  }
+  #char-widget.visible { opacity: 1; }
+  #char-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 14px 14px 4px 14px;
+    padding: 10px 14px;
+    max-width: 150px;
+    font-size: 12.5px; font-family: 'NanumSquareNeo', sans-serif;
+    color: #1a1424; line-height: 1.55;
+    opacity: 0; transform: translateY(6px) scale(0.97);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  #char-bubble::after {
+    content: '';
+    position: absolute;
+    right: 16px; bottom: -7px;
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid #fff;
+  }
+  #char-bubble.show { opacity: 1; transform: translateY(0) scale(1); }
+  #char-img { width: 82px; height: auto; display: block; }
+</style>
+
+<div id="char-widget">
+  <div id="char-bubble"></div>
+  <img id="char-img" src="images/character.png" alt="character"/>
+</div>
+
+<script>
+(function() {
+  const messages = {
+    'Problem':                    '직접 느꼈던 불편함에서 출발했어요 🧐',
+    'Design & Research Process':  '6단계로 꼼꼼하게 접근했어요!',
+    'Prototype':                  'Lo-fi부터 Hi-fi까지 직접 만들었어요 ✏️',
+    'Low-Fidelity':               '각 카드에 마우스를 올려보세요 👆',
+    'Usability Testing':          '8명이랑 직접 테스트했어요!',
+    'Affinity Mapping':           '발화 데이터에서 인사이트를 찾아냈어요 🔍',
+    'Design Solution':            'UT 결과를 반영하여 최종 디자인했어요.',
+    'Reflection':                 '많이 배우고 성장했답니다 :)'
+  };
+
+  const widget = document.getElementById('char-widget');
+  const bubble = document.getElementById('char-bubble');
+
+  function showMsg(text) {
+    bubble.classList.remove('show');
+    setTimeout(() => {
+      bubble.textContent = text;
+      bubble.classList.add('show');
+    }, 200);
+  }
+
+  // Show/hide widget based on case-page visibility
+  const casePage = document.getElementById('case-page');
+  const pageObserver = new MutationObserver(() => {
+    if (casePage && casePage.classList.contains('active')) {
+      widget.classList.add('visible');
+    } else {
+      widget.classList.remove('visible');
+      bubble.classList.remove('show');
+    }
+  });
+  if (casePage) pageObserver.observe(casePage, { attributes: true, attributeFilter: ['class'] });
+
+  // Watch each cb-section
+  const secObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let key;
+        if (entry.target.classList.contains('cb-label')) {
+          key = entry.target.textContent.trim();
+        } else {
+          const label = entry.target.querySelector('.cb-label');
+          if (!label) return;
+          key = label.textContent.trim();
+        }
+        if (messages[key]) showMsg(messages[key]);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.cb-section').forEach(sec => secObserver.observe(sec));
+
+  // Sublabels need a separate observer (small elements, use threshold:0 + rootMargin)
+  const sublabelObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const key = entry.target.textContent.trim();
+        if (messages[key]) showMsg(messages[key]);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
+  document.querySelectorAll('.cb-sublabel').forEach(el => sublabelObserver.observe(el));
+})();
+</script>
 
 </body>
 </html>
