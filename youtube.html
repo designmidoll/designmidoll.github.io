@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miseon Park — Product Designer</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<div class="gradient-bg"><div class="blob-green"></div></div>
+
+<!-- ── GLOBAL NAV (persists across all pages) ── -->
+<nav id="global-nav">
+  <div id="nav-logo" onclick="showPage('home')" style="font-family:'Archivo',sans-serif;font-size:23px;font-weight:600;color:var(--ink);cursor:pointer;letter-spacing:-0.02em;">Miseon Park</div>
+  <div class="global-nav-pills">
+    <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
+    <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
+    <a href="resume.pdf" target="_blank">Resume</a>
+    <a href="https://www.linkedin.com/in/miseonpark" target="_blank">LinkedIn</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+<div id="case-page" class="page active">
+
+  <div class="case-hero-wrap">
+    <p class="case-eyebrow">YouTube Redesign Challenge · Team · Sep–Oct 2025</p>
+    <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
+      <span style="font-family:'Archivo',sans-serif;">YouTube Shorts Shopping Experience</span>
+      <span style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>
+      </span>
+    </h1>
+    <div class="case-hero-tags">
+      <span class="cht">User Interview</span>
+      <span class="cht">Usability Testing</span>
+      <span class="cht">SUS Survey</span>
+      <span class="cht">Affinity Mapping</span>
+      <span class="cht">Prototyping</span>
+    </div>
+    <div style="margin-top:28px;position:relative;">
+      <img src="images/youtube/youtube main image.png" alt="YouTube Shorts 쇼핑 경험 개선" style="width:100%;border-radius:16px;display:block;"/>
+      <!-- Right tag: pointing left, Team info -->
+      <div class="htag-r" style="position:absolute;top:28px;right:-80px;pointer-events:none;transform:rotate(4deg);transform-origin:right center;">
+        <div style="position:relative;background:#eaeaea;padding:20px 24px 20px 36px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(24px 0%,100% 0%,100% 100%,24px 100%,0% 50%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at 22px 50%,transparent 4px,black 4px);">
+          <span style="font-weight:700;">Team:</span> 3명<br>I led design &amp; research
+        </div>
+      </div>
+      <!-- Left tag: pointing right, Role info -->
+      <div class="htag-l" style="position:absolute;bottom:32px;left:-100px;pointer-events:none;transform:rotate(-4deg);transform-origin:left center;">
+        <div style="position:relative;background:#eaeaea;padding:20px 36px 20px 24px;font-size:16px;font-family:'Figtree',sans-serif;color:#1a1a1a;clip-path:polygon(0% 0%,calc(100% - 24px) 0%,100% 50%,calc(100% - 24px) 100%,0% 100%);line-height:1.55;box-shadow:0 4px 16px rgba(0,0,0,0.12);-webkit-mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);mask:radial-gradient(circle 4px at calc(100% - 22px) 50%,transparent 4px,black 4px);">
+          <span style="font-weight:700;">My Role:</span> Research, Design,<br>Prototyping, Testing
+        </div>
+      </div>
+    </div>
+    <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+        <div class="cs-n">8<span style="font-size:28px;font-weight:500;color:#888;">명</span></div>
+        <div class="cs-l">사용자 인터뷰</div>
+      </div>
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+        <div class="cs-n">67.5</div>
+        <div class="cs-l">SUS Score</div>
+      </div>
+      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+        <div class="cs-n">85.7<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
+        <div class="cs-l">Task 평균 성공률</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="case-sidenav" id="case-sidenav"></nav>
+
+  <div class="case-body">
+
+
+    <div class="cb-section">
+      <p class="cb-label">Problem</p>
+      <h2 class="cb-h2">무엇이 문제인가?</h2>
+      <p class="cb-p">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. <mark class="hl">제품 스티커가 시청을 방해하고</mark>, 관심 있는 제품을 <mark class="hl">저장할 방법이 없다</mark>는 점에 주목했습니다.</p>
+      <img src="images/youtube/problem.png" alt="Problem overview" style="width:100%; border-radius:14px; margin-top:28px; display:block;" />
+      <div class="sticky-cards">
+        <div class="sticky-card">
+          <div class="sticky-body">
+            <div class="sticky-emoji">😤</div>
+            <p class="sticky-quote">"쇼츠 보는데 스티커가 화면을 방해해요"</p>
+            <p class="sticky-title">시청을 방해하는 스티커</p>
+            <p class="sticky-desc">쇼핑 스티커가 화면 위에 고정 배치되어 영상을 가려요. 위치를 옮기거나 제거할 수 없어요.</p>
+          </div>
+        </div>
+        <div class="sticky-card">
+          <div class="sticky-body">
+            <div class="sticky-emoji">🤔</div>
+            <p class="sticky-quote">"이 제품이 영상 어디서 나왔는지 모르겠어요"</p>
+            <p class="sticky-title">맥락이 끊긴 제품 정보</p>
+            <p class="sticky-desc">제품이 영상의 어느 장면에서 등장하는지 확인할 수 없어 신뢰도가 떨어져요.</p>
+          </div>
+        </div>
+        <div class="sticky-card">
+          <div class="sticky-body">
+            <div class="sticky-emoji">😩</div>
+            <p class="sticky-quote">"관심 제품을 저장할 방법이 없어요"</p>
+            <p class="sticky-title">저장 경로의 부재</p>
+            <p class="sticky-desc">관심 제품을 따로 저장하는 기능이 없어 나중에 다시 찾으려면 영상을 직접 검색해야 해요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-section">
+      <p class="cb-label">Design & Research Process</p>
+      <h2 class="cb-h2">어떻게 접근했나</h2>
+      <div class="proc-wrap">
+        <div class="proc-track">
+          <div class="proc-step active" onclick="selectStep(0)"><div class="p-circ">1</div><div class="p-lbl">기존 경험 분석</div></div>
+          <div class="proc-conn" id="conn-0"></div>
+          <div class="proc-step" onclick="selectStep(1)"><div class="p-circ">2</div><div class="p-lbl">UX 전략</div></div>
+          <div class="proc-conn" id="conn-1"></div>
+          <div class="proc-step" onclick="selectStep(2)"><div class="p-circ">3</div><div class="p-lbl">프로토타입 설계</div></div>
+          <div class="proc-conn" id="conn-2"></div>
+          <div class="proc-step" onclick="selectStep(3)"><div class="p-circ">4</div><div class="p-lbl">사용성 테스트</div></div>
+          <div class="proc-conn" id="conn-3"></div>
+          <div class="proc-step" onclick="selectStep(4)"><div class="p-circ">5</div><div class="p-lbl">어피니티 매핑</div></div>
+          <div class="proc-conn" id="conn-4"></div>
+          <div class="proc-step" onclick="selectStep(5)"><div class="p-circ">6</div><div class="p-lbl">최종 디자인</div></div>
+        </div>
+        <div class="proc-detail">
+          <div class="pd-head"><div class="pd-badge" id="pd-badge">1</div><div><p class="pd-title" id="pd-title">—</p><p class="pd-sub" id="pd-sub">—</p></div></div>
+          <div class="pd-body">
+            <p class="pd-desc" id="pd-desc">—</p>
+            <div class="chips" id="pd-chips" style="display:none;"></div>
+            <div class="pd-nav">
+              <button class="pd-btn" id="btn-prev" onclick="stepNav(-1)" disabled>이전</button>
+              <div class="pd-dots" id="pd-dots"></div>
+              <button class="pd-btn" id="btn-next" onclick="stepNav(1)">다음</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROTOTYPE -->
+    <div class="cb-section">
+      <p class="cb-label">Prototype</p>
+      <h2 class="cb-h2">프로토타입 설계</h2>
+      <p class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
+
+      <!-- feature accordion -->
+      <style>
+        .feat-card { background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); border-radius:16px; overflow:hidden; }
+        .feat-acc-item { border-bottom:1px solid rgba(0,0,0,0.07); }
+        .feat-acc-item:last-child { border-bottom:none; }
+        .feat-acc-head {
+          width:100%; display:flex; align-items:center; gap:14px;
+          padding:14px 18px; background:none; border:none; cursor:pointer;
+          text-align:left; transition:background 0.2s;
+        }
+        .feat-acc-head:hover { background:rgba(255,255,255,0.6); }
+        .feat-acc-num { font-family:'Archivo',sans-serif; font-size:12px; font-weight:400; color:rgba(0,0,0,0.3); min-width:22px; flex-shrink:0; }
+        .feat-acc-title { font-size:15px; font-weight:500; color:#111; font-family:'Pretendard',sans-serif; flex:1; }
+        .feat-acc-chevron { flex-shrink:0; transition:transform 0.25s; color:rgba(0,0,0,0.25); display:flex; align-items:center; }
+        .feat-acc-item.open .feat-acc-chevron { transform:rotate(180deg); }
+        .feat-acc-body { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+        .feat-acc-body-inner { padding:0 18px 14px 50px; font-size:14px; color:#666; line-height:1.8; font-family:'Pretendard',sans-serif; }
+      </style>
+      <p class="cb-label cb-sublabel" style="margin-top:48px;">Low-Fidelity</p>
+      <div class="wf-scroll-wrap" style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+        <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/youtube/wireframe-01.png" alt="와이어프레임 01" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function(){
+        const items = document.querySelectorAll('.wf-scroll-item');
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+          });
+        }, { threshold: 0.15 });
+        items.forEach(el => obs.observe(el));
+      })();
+      </script>
+
+      <div class="case-img-wrap" style="margin-top:32px;">
+        <img src="images/youtube/redesign1.png" alt="Low-Fidelity redesign" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+
+      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거/이동 기능</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>태그된 제품 뱃지</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. "Featured(태그된 제품)" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>타임스탬프 기능</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.</div>
+          </details>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>제품 저장</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 폴더 내 썸네일 방식</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">06.</span>제품 정렬 기능</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.</div>
+          </details>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- UT SESSION PHOTOS -->
+    <div class="cb-section">
+      <p class="cb-label">Usability Testing</p>
+      <h2 class="cb-h2">실제 사용자와 함께한 테스트</h2>
+      <p class="cb-p">Google Meet를 통해 <mark class="hl">8명의 참가자</mark>와 원격으로 1:1 사용성 테스트를 진행했습니다. 참가자가 위에서 설계한 Figma 프로토타입을 직접 조작하는 동안 <mark class="hl">Think-Aloud 방식</mark>으로 생각을 소리 내어 말하도록 유도했습니다.</p>
+      <div class="ut-session-flex" style="display:flex;gap:16px;align-items:flex-start;justify-content:center;margin-top:20px;">
+        <div class="case-img-wrap" style="margin:0;">
+          <img id="ut-session-img" src="images/youtube/ut-session.png" alt="사용자 인터뷰 세션 2" onclick="openLBThis(this)" style="cursor:zoom-in;display:block;width:auto;height:auto;border-radius:12px;"/>
+          <p class="img-caption">Remote UT Session</p>
+          <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+        </div>
+        <div style="text-align:center;">
+          <video id="ut-proto-video" autoplay loop muted playsinline style="display:block;width:200px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><source src="images/youtube/ut-prototype.mp4" type="video/mp4"></video>
+          <p class="img-caption" style="margin-top:8px;">UT Prototype</p>
+        </div>
+      </div>
+      <script>
+      (function(){
+        const vid = document.getElementById('ut-proto-video');
+        const img = document.getElementById('ut-session-img');
+        function syncHeight() {
+          if (window.innerWidth <= 640) { img.style.height = ''; img.style.width = '100%'; return; }
+          const h = vid.offsetHeight;
+          if (h > 0) { img.style.height = h + 'px'; img.style.width = 'auto'; return; }
+          requestAnimationFrame(syncHeight);
+        }
+        vid.addEventListener('loadedmetadata', syncHeight);
+        vid.addEventListener('canplay', syncHeight);
+        window.addEventListener('resize', syncHeight);
+        requestAnimationFrame(syncHeight);
+      })();
+      </script>
+    </div>
+
+    <!-- TASK PERFORMANCE METRICS -->
+    <div class="cb-section">
+      <p class="cb-label">Task Performance Metrics</p>
+      <h2 class="cb-h2">개별 태스크 성과 분석</h2>
+      <p class="cb-p">7개 태스크에 대해 각 참가자의 <mark class="hl">완료율과 소요 시간</mark>을 측정했습니다.</p>
+
+      <!-- Key highlights — 항상 노출 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
+        <div style="background:#fff;border-radius:12px;padding:18px;">
+          <div style="font-size:13px;font-weight:600;letter-spacing:0;color:#999;margin-bottom:8px;">평균 완료율</div>
+          <div style="font-size:28px;font-weight:700;color:#111;line-height:1;font-family:'Archivo',sans-serif;">85.7%</div>
+          <div style="font-size:12px;color:#555;margin-top:4px;">8명 · 7개 태스크</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:18px;">
+          <div style="font-size:13px;font-weight:600;letter-spacing:0;color:#999;margin-bottom:8px;">가장 빠른 태스크</div>
+          <div style="font-size:28px;font-weight:700;color:#111;line-height:1;font-family:'Archivo',sans-serif;">~2.6s</div>
+          <div style="font-size:12px;color:#555;margin-top:4px;">스티커 이동 — 매우 직관적</div>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:18px;">
+          <div style="font-size:13px;font-weight:600;letter-spacing:0;color:#111;margin-bottom:8px;">개선 필요 태스크</div>
+          <div style="font-size:28px;font-weight:700;color:#fc83b8;line-height:1;font-family:'Archivo',sans-serif;">~45s–3m</div>
+          <div style="font-size:12px;color:#555;margin-top:4px;">제품 저장 — 위치·레이블 개선 필요</div>
+        </div>
+      </div>
+
+      <!-- 상세 데이터 아코디언 -->
+      <details style="margin-top:8px;" class="task-accordion">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.37);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+          <span>상세 데이터 보기 — Task Success Rate &amp; Time on Task</span>
+          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+        </summary>
+        <div style="padding:20px 0 4px;">
+          <div style="margin-bottom:28px;overflow-x:auto;">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#111;margin-bottom:12px;">Task Success Rate (완료율)</div>
+            <table class="data-table">
+              <thead><tr>
+                <th>그룹</th>
+                <th>완료수 / 시도수</th>
+                <th>완료율</th>
+              </tr></thead>
+              <tbody>
+                <tr><td style="color:#666;">A1</td><td>5/6</td><td style="font-weight:600;color:#111;">71.4%</td></tr>
+                <tr><td style="color:#666;">A2</td><td>5/7</td><td style="font-weight:600;color:#111;">71.4%</td></tr>
+                <tr><td style="color:#666;">A3</td><td>7/7</td><td style="font-weight:600;color:#111;">100%</td></tr>
+                <tr><td style="color:#666;">A4</td><td>7/7</td><td style="font-weight:600;color:#111;">100%</td></tr>
+                <tr><td style="color:#666;">B1</td><td>6/7</td><td style="font-weight:600;color:#111;">85.7%</td></tr>
+                <tr><td style="color:#666;">B2</td><td>6/7</td><td style="font-weight:600;color:#111;">85.7%</td></tr>
+                <tr><td style="color:#666;">B3</td><td>7/7</td><td style="font-weight:600;color:#111;">100%</td></tr>
+                <tr><td style="color:#666;">B4</td><td>5/7</td><td style="font-weight:600;color:#111;">71.4%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="overflow-x:auto;">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#111;margin-bottom:12px;">Time on Task (평균 소요 시간)</div>
+            <table class="data-table" style="font-size:12px;">
+              <thead><tr>
+                <th style="width:40px;">참가자</th>
+                <th>스티커게재</th><th>스티커이동</th><th>배경설정</th><th>제품저장</th><th>타임스탬프</th><th>자동안제거</th><th>순서변경</th>
+              </tr></thead>
+              <tbody>
+                <tr><td style="color:#666;font-weight:600;">A1</td><td>31s</td><td>3s</td><td>1s</td><td style="color:#e85050;font-weight:600;">2m 30s</td><td>2s</td><td>17s</td><td>3s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">A2</td><td>8s</td><td>2s</td><td>1s</td><td style="color:#e85050;font-weight:600;">47s</td><td>1s</td><td>4s</td><td>5s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">A3</td><td>1s</td><td style="font-weight:600;color:#111;">1s</td><td style="font-weight:600;color:#111;">2s</td><td>27s</td><td style="font-weight:600;color:#111;">1s</td><td>4s</td><td style="font-weight:600;color:#111;">1s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">A4</td><td>4s</td><td style="font-weight:600;color:#111;">2s</td><td>3s</td><td>1m 5s</td><td style="font-weight:600;color:#111;">3s</td><td>10s</td><td>19s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">B1</td><td>35s</td><td>4s</td><td>7s</td><td style="color:#e85050;font-weight:600;">2m 53s</td><td>16s</td><td>57s</td><td>30s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">B2</td><td>45s</td><td>3s</td><td>3s</td><td>50s</td><td>3s</td><td>40s</td><td>30s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">B3</td><td>15s</td><td style="font-weight:600;color:#111;">3s</td><td>5s</td><td>40s</td><td>10s</td><td>25s</td><td>30s</td></tr>
+                <tr><td style="color:#666;font-weight:600;">B4</td><td>4s</td><td style="font-weight:600;color:#111;">1s</td><td style="font-weight:600;color:#111;">2s</td><td>25s</td><td style="font-weight:600;color:#111;">1s</td><td>5s</td><td style="font-weight:600;color:#111;">2s</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:11px;color:#bbb;margin-top:10px;">짙은 색 = 빠른 완료, 빨간색 = 지연</p>
+          </div>
+        </div>
+      </details>
+      <style>
+        .task-accordion summary::-webkit-details-marker { display:none; }
+        details[open] .task-accordion summary .accordion-arrow,
+        .task-accordion[open] summary .accordion-arrow { transform: rotate(180deg); }
+        details[open] > summary .accordion-arrow { transform: rotate(180deg); }
+        .data-table { border-collapse: separate; border-spacing: 0 4px; width: 100%; }
+        .data-table thead th { padding: 8px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #999; text-align: center; }
+        .data-table thead th:first-child { text-align: left; }
+        .data-table tbody tr td { background: #f0ecfc; padding: 10px 12px; font-size: 13px; color: #333; text-align: center; }
+        .data-table tbody tr td:first-child { text-align: left; border-radius: 8px 0 0 8px; }
+        .data-table tbody tr td:last-child { border-radius: 0 8px 8px 0; }
+        .data-table tbody tr:nth-child(even) td { background: #e5dff5; }
+      </style>
+    </div>
+
+    <!-- SUS RESULTS -->
+    <div class="cb-section">
+      <p class="cb-label">SUS Results</p>
+      <h2 class="cb-h2">시스템 사용성 점수 (SUS)</h2>
+      <p class="cb-p">테스트 완료 후 표준 SUS(System Usability Scale) 10문항 설문을 진행했습니다. 참가자 8명의 응답을 SUS 공식으로 환산한 결과 <mark class="hl">67.5점</mark>을 기록했습니다.</p>
+      <div class="sus-grid" style="display:grid;grid-template-columns:1fr 2fr;gap:16px;margin:24px 0;align-items:stretch;">
+        <div id="sus-card" style="background:#1c1a2e;border-radius:16px;padding:28px 20px;border:2px solid #b8a4f8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;font-family:'Archivo',sans-serif;">SUS Score</div>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:14px;">
+            <div style="font-size:52px;font-weight:700;color:#b8a4f8;line-height:1;font-family:'Archivo',sans-serif;">67.5</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.4);font-family:'NanumSquareNeo',sans-serif;">/ 100점</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.12);color:white;font-size:12px;font-weight:600;padding:6px 18px;border-radius:100px;font-family:'Archivo',sans-serif;">OK 등급</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.63);margin-top:10px;font-family:'NanumSquareNeo',sans-serif;">수용 가능한 사용성 수준</div>
+        </div>
+        <div id="sus-right" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:rgba(255,255,255,0.7);border-radius:12px;padding:20px;">
+            <div style="font-size:14px;font-weight:500;color:#333;margin-bottom:12px;">✓ 강점</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="background:#f2f2f2;color:#333;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">자신감 · Q9 4.1점</span>
+              <span style="background:#f2f2f2;color:#333;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">전문가 불필요 · Q4 1.6점</span>
+              <span style="background:#f2f2f2;color:#333;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">학습 부담 낮음 · Q10 2.0점</span>
+              <span style="background:#f2f2f2;color:#333;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">일관성 있는 UI · Q6 1.75점</span>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7);border-radius:12px;padding:20px;">
+            <div style="font-size:14px;font-weight:500;color:#333;margin-bottom:12px;">→ 개선점</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="background:#f1f1fd;color:#7c6fcd;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">복잡성 인지 · Q2 2.63점</span>
+              <span style="background:#f1f1fd;color:#7c6fcd;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">지속 사용 의향 · Q1 2.88점</span>
+              <span style="background:#f1f1fd;color:#7c6fcd;font-size:13px;font-weight:500;padding:6px 14px;border-radius:100px;">기능 통합성 · Q5 3.5점</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function(){
+        function syncSusHeight() {
+          const card = document.getElementById('sus-card');
+          const right = document.getElementById('sus-right');
+          if (!card || !right) return;
+          card.style.height = '';
+          if (window.innerWidth <= 640) return;
+          const h = right.offsetHeight;
+          if (h > 0) card.style.height = h + 'px';
+        }
+        window.addEventListener('load', syncSusHeight);
+        window.addEventListener('resize', syncSusHeight);
+        setTimeout(syncSusHeight, 100);
+        setTimeout(syncSusHeight, 400);
+        setTimeout(syncSusHeight, 800);
+        setTimeout(syncSusHeight, 1500);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(syncSusHeight);
+        }
+      })();
+      </script>
+      <!-- SUS 척도 시각화 -->
+      <div style="background:rgba(255,255,255,0.6);border-radius:12px;padding:20px;">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:14px;">SUS 등급 척도</div>
+        <div style="position:relative;height:8px;background:linear-gradient(to right,#f9a8d4 0%,#c4b5fd 50%,#93c5fd 100%);border-radius:100px;margin-bottom:20px;">
+          <div style="position:absolute;top:-4px;left:calc(67.5% - 8px);width:16px;height:16px;border-radius:50%;background:#111;border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.2);"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#999;">
+          <span>0<br>최악</span>
+          <span style="text-align:center;">25<br>Poor</span>
+          <span style="text-align:center;">50<br>Marginal</span>
+          <span style="text-align:center;color:#111;font-weight:600;">67.5<br><strong>OK ←</strong></span>
+          <span style="text-align:center;">75<br>Good</span>
+          <span style="text-align:right;">100<br>최고</span>
+        </div>
+      </div>
+      <p class="cb-p" style="margin-top:16px;">SUS 결과는 현재 프로토타입이 <strong>수용 가능한 사용성 수준</strong>에 도달했음을 보여줍니다. 특히 <mark class="hl">자신감(Q9)과 학습 용이성(Q10)</mark>에서 높은 점수를 기록했으며, 복잡성(Q2)과 지속 사용 의향(Q1) 항목이 최종 이터레이션의 핵심 개선 방향이 됐습니다.</p>
+      <details style="margin-top:16px;width:100%;" class="task-accordion">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.37);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+          <span>상세 데이터 보기 — SUS 10문항</span>
+          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+        </summary>
+        <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q1 자주 사용하고 싶다</span><span style="font-weight:600;color:#111;">2.88</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q2 복잡하게 느껴진다</span><span style="font-weight:600;color:#111;">2.63</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q3 쉽게 사용할 수 있다</span><span style="font-weight:600;color:#111;">3.63</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q4 전문가 도움 없이 사용 가능</span><span style="font-weight:600;color:#111;">1.6</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q5 기능이 잘 통합되어 있다</span><span style="font-weight:600;color:#111;">3.5</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q6 일관성이 없다</span><span style="font-weight:600;color:#111;">1.75</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q7 빠르게 배울 수 있다</span><span style="font-weight:600;color:#111;">3.75</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q8 사용이 불편하다</span><span style="font-weight:600;color:#111;">2.38</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q9 자신감이 생겼다</span><span style="font-weight:600;color:#4a9d5f;">4.1</span></div>
+          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q10 학습 전 알아야 할 것이 많다</span><span style="font-weight:600;color:#4a9d5f;">2.0</span></div>
+        </div>
+      </details>
+    </div>
+
+    <!-- AFFINITY MAPPING -->
+    <div class="cb-section">
+      <p class="cb-label">Affinity Mapping</p>
+      <h2 class="cb-h2">사용자 피드백 구조화</h2>
+      <p class="cb-p">8명의 인터뷰와 태스크 테스트에서 수집된 발화 데이터를 <mark class="hl">어피니티 매핑</mark>으로 구조화했습니다. 유사한 패턴끼리 그룹핑해 <mark class="hl">주요 Pain Point와 사용자 니즈</mark>를 범주화했습니다.</p>
+      <div class="case-img-wrap">
+        <img src="images/youtube/affinity-diagram.png" alt="어피니티 다이어그램" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <p class="img-caption">Affinity Diagram — Grouping 8 participants feedback into themes</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+    </div>
+
+    <div class="cb-section">
+      <p class="cb-label">Key Insights</p>
+      <h2 class="cb-h2">리서치에서 발견한 것들</h2>
+
+      <div class="obs-wrap">
+        <div class="obs-row">
+          <div class="obs-avatar">🔍</div>
+          <div class="obs-meta">
+            <span class="obs-label">Insight #1</span>
+            <div class="obs-bubble"><strong>스티커 제거 방식이 <mark class="hl">직관적이지 않아</mark> 포기로 이어짐</strong><br>X버튼을 찾지 못하거나 찾아도 드래그까지 해야 해서 그냥 넘기게 됨. 제거 인터랙션 자체를 단순화해야 함.</div>
+          </div>
+        </div>
+        <div class="obs-row right">
+          <div class="obs-avatar">⚠️</div>
+          <div class="obs-meta">
+            <span class="obs-label">Insight #2</span>
+            <div class="obs-bubble"><strong>스티커 클릭 루트가 <mark class="hl">예측 불가능해</mark> 신뢰가 무너짐</strong><br>"제휴사" 버튼의 의미를 이해한 참가자가 없었고, 스티커 클릭 시 바로 외부로 넘어가는 구조가 불안감을 만듦. 바텀시트를 기본 경로로 설계해야 함.</div>
+          </div>
+        </div>
+        <div class="obs-row">
+          <div class="obs-avatar">✨</div>
+          <div class="obs-meta">
+            <span class="obs-label">Insight #3</span>
+            <div class="obs-bubble"><strong>제품과 영상의 <mark class="hl">맥락이 연결될수록</mark> 신뢰도와 구매 욕구가 높아짐</strong><br>태그된 제품 칩과 타임스탬프에 강한 긍정 반응. 사용자는 제품이 영상의 어느 장면에서 나왔는지 알고 싶어하며, 이 연결이 있을 때 신뢰와 관심이 높아짐.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-section">
+      <p class="cb-label">UT Result</p>
+      <h2 class="cb-h2">UT 결과 반영</h2>
+      <div class="case-img-wrap" style="margin-top:20px;">
+        <img src="images/youtube/redesign2.png" alt="UT 결과 반영" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:20px;">
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거 방식 변경</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>스티커 이동 기능 툴팁 추가</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>제품 관련 영상 탐색 플로우 추가</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.</div>
+          </details>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>스티커 클릭 시 바텀시트 열리게 구조 변경</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">기존에는 "Affiliate(제휴사)" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. "Affiliate(제휴사)" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.</div>
+          </details>
+          <details class="task-accordion">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 공유 기능 추가</span>
+              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+            </summary>
+            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-section">
+      <p class="cb-label">Design Solution</p>
+      <h2 class="cb-h2">최종 디자인</h2>
+
+      <div class="case-img-wrap" style="margin-top:24px;">
+        <video id="hifi-proto-video" src="images/youtube/hifi prototype.mov" controls playsinline muted style="width:33%;display:block;margin:0 auto;clip-path:inset(0 0 1px 2px round 50px);"></video>
+        <script>
+        (function(){
+          const v = document.getElementById('hifi-proto-video');
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) { v.play(); }
+              else { v.pause(); }
+            });
+          }, { threshold: 0.5 });
+          obs.observe(v);
+        })();
+        </script>
+        <p class="img-caption">Final Hi-fi Prototype — Interactive flow</p>
+      </div>
+
+      <div class="case-img-wrap" style="margin-top:32px;">
+        <img src="images/youtube/final design.png" alt="최종 Hi-fi 디자인 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:16px;"/>
+        <p class="img-caption">Final Hi-fi Design — Task flows</p>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      </div>
+    </div>
+
+    <div class="cb-section">
+      <p class="cb-label">Reflection</p>
+      <h2 class="cb-h2">배운 것과 다음에 할 것</h2>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <p class="ref-lbl">배운 점</p>
+          <p class="ref-p">리서치가 실제로 설계 결정을 바꾸는 장면을 직접 경험했습니다. 스티커 dismiss 방식이 드래그에서 ⋮ 메뉴로 바뀐 것, 바텀시트가 기본 진입 경로로 변경된 것 모두 <mark class="hl">UT 데이터 없이는 내리기 어려운 결정</mark>이었습니다. 리서치가 디자인의 방향을 바꿀 수 있다는 걸 수치와 행동 데이터로 확인한 프로젝트였습니다.</p>
+        </div>
+        <div class="ref-card">
+          <p class="ref-lbl">프로토콜 개선</p>
+          <p class="ref-p">UT 진행 중 일부 질문이 사용자의 행동을 유도하고 있다는 것을 발견하고 <strong>즉시 표현을 수정했습니다.</strong> 이 경험을 바탕으로 이후 프로젝트에서는 <mark class="hl">프로토콜 검토 단계에 '유도 여부 체크' 항목을 추가</mark>해 인터뷰 전 팀 내 리뷰를 거치는 방식으로 프로세스를 구체화했습니다.</p>
+        </div>
+        <div class="ref-card">
+          <p class="ref-lbl">향후 개선 방향</p>
+          <p class="ref-p">전 과정을 폭넓게 다루다 보니 <strong>특정 포인트를 더 깊이 파고드는 데 한계</strong>가 있었습니다. 다음에는 <strong>리마인드 기능</strong>이나 <mark class="hl">Shorts 썸네일에서 제품 스티커 유무를 미리 확인할 수 있는 기능</mark> 등 더 고도화된 경험까지 설계해보고 싶습니다.</p>
+        </div>
+        <div class="ref-card">
+          <p class="ref-lbl">아쉬운 점</p>
+          <p class="ref-p">프로젝트 진행 당시 <strong>제품 스티커 기능이 한국에 출시된 지 얼마 되지 않은 시점</strong>이라 기능을 인지하고 있는 참가자를 모집하는 것 자체가 쉽지 않았습니다. 지금 시점이었다면 <mark class="hl">기능에 더 익숙한 사용자들로부터 더 풍부한 인사이트</mark>를 얻을 수 있었을 것 같습니다.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="case-end-section">
+    <div class="case-end-card">
+      <div style="position:relative;z-index:1;text-align:left;">
+        <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">Next Case</p>
+        <div onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+          <img src="images/nom/NOM main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+          <div>
+            <p style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">NOM · Product Design · 2026</p>
+            <h3 style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">Naver OGQ Market 홈 상단부 공간 효율화</h3>
+            <span style="font-size:13px;color:#6b5fb0;font-weight:600;">Read case study →</span>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <button class="ce-btn p" onclick="showPage('home')">← All Work</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /case-page -->
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb-overlay" onclick="closeLB()">
+  <div class="lb-img-wrap" onclick="event.stopPropagation(); event.preventDefault();">
+    <img id="lb-img" src="" alt="확대 이미지" onclick="toggleZoom(event)" style="cursor:zoom-in;transition:transform 0.15s ease;max-width:90vw;max-height:90vh;border-radius:12px;"/>
+  </div>
+  <button class="lb-close" onclick="event.stopPropagation(); closeLB();">✕</button>
+  <div id="lb-minimap" onclick="event.stopPropagation();" style="display:none;position:fixed;bottom:28px;right:28px;width:160px;height:100px;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.25);box-shadow:0 4px 20px rgba(0,0,0,0.4);background:#111;">
+    <img id="lb-minimap-img" src="" style="width:100%;height:100%;object-fit:contain;"/>
+    <div id="lb-minimap-box" style="position:absolute;border:2px solid #ff3d3d;border-radius:2px;cursor:grab;"></div>
+  </div>
+  <div style="position:fixed;bottom:28px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;pointer-events:none;">클릭으로 확대 · 다시 클릭으로 축소 · ESC로 닫기</div>
+</div>
+
+<div id="char-widget">
+  <div id="char-bubble"></div>
+  <img id="char-img" src="images/character.png" alt="character"/>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
