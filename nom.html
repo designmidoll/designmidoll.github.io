@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-v2.css">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>
   /* NOM 페이지 전용 배경 */
   .gradient-bg { background: #FBFBFB; }
@@ -21,6 +22,7 @@
   #case2-sidenav button:hover { color: #44614f; }
   #case2-sidenav button.snav-active { color: #2f4a3c; font-weight: 700; }
   /* NOM 상단 그라데이션 띠 (OGQ 2.0) — 위→아래로 흰색 페이드 */
+  #case2-page .case-h1, #case2-page .case-h1 span { color: #2b2b2b !important; }
   #case2-page { position: relative; }
   #case2-page::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 620px; z-index: -1;
@@ -65,6 +67,7 @@
       <span class="cht">UI Optimization</span>
       <span class="cht">Hypothesis-driven</span>
       <span class="cht">Before / After Validation</span>
+      <span class="cht">Shipped</span>
     </div>
 
     <div style="margin-top:28px;position:relative;">
@@ -86,27 +89,21 @@
       </div>
     </div>
 
-    <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
-      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+    <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;">
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
         <div class="cs-n">+60.9<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
         <div class="cs-l">최근 본 콘텐츠 클릭당 전환율</div>
       </div>
-      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;border-left:1px solid rgba(0,0,0,0.06);border-right:1px solid rgba(0,0,0,0.06);">
         <div class="cs-n">+45<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
         <div class="cs-l">주간인기 지면 매출 (절대값)</div>
       </div>
-      <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
         <div class="cs-n">~45<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
         <div class="cs-l">홈 상단 공간 확보</div>
       </div>
     </div>
 
-    <!-- Meta row -->
-    <div style="display:grid;grid-template-columns:2fr 1.5fr 1fr;gap:24px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(0,0,0,0.08);">
-      <div><div class="c2-meta-l">Role</div><div class="c2-meta-v">Product Designer — 문제 정의 · UI 설계 · 데이터 검증</div></div>
-      <div><div class="c2-meta-l">Context</div><div class="c2-meta-v">현재 재직 중인 서비스 · 실무 프로젝트</div></div>
-      <div><div class="c2-meta-l">Period</div><div class="c2-meta-v">개편 2026.5 · 검증 4–5월</div></div>
-    </div>
   </div>
 
   <nav class="case-sidenav" id="case2-sidenav"></nav>
@@ -119,25 +116,25 @@
       <h2 class="cb-h2">왜 시작했나</h2>
       <p class="cb-p">OGQ Market의 유료 구매율이 2024년 2월 45.7%에서 2026년 4월 42.0%까지 지속 하락하고 있었습니다. <mark class="hl">홈 화면 상단부가 과도한 공간을 차지해 유료 피처드 콘텐츠의 초기 노출도가 떨어지고 있다는 가설을 세웠습니다.</mark></p>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0;">
-        <div class="c2-card" style="background:#fcf9ff;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:40px 0;">
+        <div class="c2-card" style="background:transparent;padding-right:24px;">
           <div class="c2-card-l">유료 구매율 추이</div>
           <div class="c2-card-n">45.7% <span style="color:#bbb;font-weight:400;">→</span> <span style="color:#fc83b8;">42.0%</span></div>
           <div class="c2-card-s">2024.2 → 2026.4 · 지속 하락</div>
         </div>
-        <div class="c2-card" style="background:#fcf9ff;">
+        <div class="c2-card" style="background:transparent;padding-left:24px;padding-right:24px;border-left:1px solid rgba(0,0,0,0.06);border-right:1px solid rgba(0,0,0,0.06);">
           <div class="c2-card-l">상단부 점유</div>
           <div class="c2-card-n">배너 · 여백 · 최근 본</div>
           <div class="c2-card-s">피처드 영역 도달에 추가 스크롤 필요</div>
         </div>
-        <div class="c2-card" style="background:#fcf9ff;">
+        <div class="c2-card" style="background:transparent;padding-left:24px;">
           <div class="c2-card-l">결과</div>
           <div class="c2-card-n">발견성 ↓</div>
           <div class="c2-card-s">유료 콘텐츠 발견 기회 상실</div>
         </div>
       </div>
 
-      <div style="margin:24px 0 16px;">
+      <div style="margin:40px 0 32px;">
         <img src="images/nom/problem.png" alt="Problem" onclick="openLBThis(this)" style="width:100%;border-radius:16px;display:block;cursor:zoom-in;"/>
       </div>
 
@@ -193,7 +190,6 @@
       <!-- Toggle Before/After — PC -->
       <div style="margin:28px 0 0;">
         <div class="tg-wrap">
-          <p class="tg-hint"><span class="tg-hint-arrow">←</span> Click to compare</p>
           <div class="tg-tabs">
             <button class="tg-tab" data-state="before">Before</button>
             <button class="tg-tab active" data-state="after">After</button>
@@ -201,7 +197,6 @@
           <div class="tg-img-wrap">
             <img class="tg-before" src="images/nom/PC Before.png" alt="PC Before"/>
             <img class="tg-after tg-visible" src="images/nom/PC After.png" alt="PC After"/>
-            <button class="tg-zoom" onclick="openTgLB(this)" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></button>
           </div>
         </div>
       </div>
@@ -210,7 +205,6 @@
       <div style="margin:28px 0 0;">
         <div style="max-width:510px;margin:0 auto;">
           <div class="tg-wrap">
-            <p class="tg-hint"><span class="tg-hint-arrow">←</span> Click to compare</p>
             <div class="tg-tabs">
               <button class="tg-tab" data-state="before">Before</button>
               <button class="tg-tab active" data-state="after">After</button>
@@ -218,7 +212,6 @@
             <div class="tg-img-wrap">
               <img class="tg-before" src="images/nom/mobile before.png" alt="Mobile Before"/>
               <img class="tg-after tg-visible" src="images/nom/mobile after.png" alt="Mobile After"/>
-              <button class="tg-zoom" onclick="openTgLB(this)" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></button>
             </div>
           </div>
         </div>
@@ -269,7 +262,7 @@
           <div class="c2-hero-ba">
             <span>6.4%</span>
             <span class="c2-hero-track">
-              <i style="position:absolute;left:0;top:0;height:100%;width:38%;background:#f3cee2;border-radius:4px;"></i>
+              <i style="position:absolute;left:0;top:0;height:100%;width:38%;background:#a8dfc4;border-radius:4px;"></i>
               <i style="position:absolute;left:38%;top:0;height:100%;width:62%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
             </span>
             <strong style="color:#1a1a2e;">10.3%</strong>
@@ -281,7 +274,7 @@
           <div class="c2-hero-ba">
             <span>114만</span>
             <span class="c2-hero-track">
-              <i style="position:absolute;left:0;top:0;height:100%;width:31%;background:#f3cee2;border-radius:4px;"></i>
+              <i style="position:absolute;left:0;top:0;height:100%;width:31%;background:#a8dfc4;border-radius:4px;"></i>
               <i style="position:absolute;left:31%;top:0;height:100%;width:69%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
             </span>
             <strong style="color:#1a1a2e;">166만</strong>
@@ -375,7 +368,7 @@
           <div class="obs-avatar">🔁</div>
           <div class="obs-meta">
             <span class="obs-label">Insight #1</span>
-            <div class="obs-bubble"><strong>서로 독립적인 두 지표가 <mark class="hl">같은 방향</mark>을 가리킴</strong><br>클릭당 전환율과 지면 매출 기여도를 따로 추적했는데 둘 다 개선됨. 상단부 효율화의 효과가 우연이 아님을 교차 검증할 수 있었음.</div>
+            <div class="obs-bubble" style="background:#e4f8ee;"><strong>서로 독립적인 두 지표가 <mark class="hl">같은 방향</mark>을 가리킴</strong><br>클릭당 전환율과 지면 매출 기여도를 따로 추적했는데 둘 다 개선됨. 상단부 효율화의 효과가 우연이 아님을 교차 검증할 수 있었음.</div>
           </div>
         </div>
         <div class="obs-row right">
@@ -389,7 +382,7 @@
           <div class="obs-avatar">💰</div>
           <div class="obs-meta">
             <span class="obs-label">Insight #3</span>
-            <div class="obs-bubble"><strong>전체 매출 하락 속에서도 <mark class="hl">피처드 지면 매출은 실질 증가</mark></strong><br>지면 매출 절대값 +45%(114만 → 166만원), 전체 대비 비중도 6.9% → 11.0%로 상승. 비중 상승이 단순 착시가 아님을 확인.</div>
+            <div class="obs-bubble" style="background:#e4f8ee;"><strong>전체 매출 하락 속에서도 <mark class="hl">피처드 지면 매출은 실질 증가</mark></strong><br>지면 매출 절대값 +45%(114만 → 166만원), 전체 대비 비중도 6.9% → 11.0%로 상승. 비중 상승이 단순 착시가 아님을 확인.</div>
           </div>
         </div>
       </div>
@@ -485,6 +478,14 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
+  document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.transition = 'none';
+  });
+</script>
 
 </body>
 </html>

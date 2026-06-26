@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style-v2.css">
 </head>
 <body>
 
@@ -45,6 +45,7 @@
       <span class="cht">SUS Survey</span>
       <span class="cht">Affinity Mapping</span>
       <span class="cht">Prototyping</span>
+      <span class="cht">Redesign Concept</span>
     </div>
     <div style="margin-top:28px;position:relative;">
       <img src="images/youtube/youtube main image.png" alt="YouTube Shorts 쇼핑 경험 개선" style="width:100%;border-radius:16px;display:block;"/>
@@ -649,6 +650,14 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
+  document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.transition = 'none';
+  });
+</script>
 
 </body>
 </html>
