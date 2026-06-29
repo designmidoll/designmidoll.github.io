@@ -10,12 +10,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style-v2.css">
+<style>
+  html { background: #F8F8F7 !important; }
+  body {
+    background:
+      linear-gradient(180deg, #1a1a1a 0%, rgba(26,26,26,0.95) 20%, rgba(26,26,26,0.8) 40%, rgba(26,26,26,0.5) 58%, rgba(26,26,26,0.2) 75%, rgba(26,26,26,0) 100%) no-repeat top / 100% 750px,
+      #F8F8F7 !important;
+  }
+  .gradient-bg { display: none !important; }
+  #case-page { background: transparent !important; }
+  #global-nav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  #case-page .case-eyebrow { color: rgba(255,255,255,0.55) !important; }
+  #case-page .case-h1, #case-page .case-h1 span { color: #ffffff !important; }
+  #case-page .case-hero-tags .cht { background: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.75) !important; }
+</style>
 </head>
 <body>
 
 
 
 <div class="gradient-bg"><div class="blob-green"></div></div>
+<div id="yt-grad-overlay"></div>
 
 <!-- ── GLOBAL NAV (persists across all pages) ── -->
 <nav id="global-nav">
@@ -32,11 +47,11 @@
 <div id="case-page" class="page active">
 
   <div class="case-hero-wrap">
-    <p class="case-eyebrow">YouTube Redesign Challenge · Team · Sep–Oct 2025</p>
+    <p class="case-eyebrow">UX Research & Design · YouTube Shorts · Sep 2025</p>
     <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
       <span style="font-family:'Archivo',sans-serif;">YouTube Shorts Shopping Experience</span>
       <span style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>
+        <span style="font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>
       </span>
     </h1>
     <div class="case-hero-tags">
@@ -657,6 +672,21 @@
     el.style.transform = 'none';
     el.style.transition = 'none';
   });
+
+  /* 로고 색상 — 최상단: white, 스크롤 후: dark */
+  (function() {
+    const logo = document.getElementById('nav-logo');
+    const nav = document.getElementById('global-nav');
+    function updateLogo() {
+      if (window.scrollY < 60) {
+        logo.style.color = '#ffffff';
+      } else {
+        logo.style.color = '';
+      }
+    }
+    updateLogo();
+    window.addEventListener('scroll', updateLogo, { passive: true });
+  })();
 </script>
 
 </body>

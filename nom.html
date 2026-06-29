@@ -13,7 +13,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>
   /* NOM 페이지 전용 배경 */
-  .gradient-bg { background: #FBFBFB; }
+  .gradient-bg { background: #F8F8F7; }
   .gradient-bg::before, .gradient-bg::after, .blob-green { display: none; }
   /* 상단 내비는 투명 — 그라데이션이 비치게 */
   #global-nav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
@@ -23,6 +23,7 @@
   #case2-sidenav button.snav-active { color: #2f4a3c; font-weight: 700; }
   /* NOM 상단 그라데이션 띠 (OGQ 2.0) — 위→아래로 흰색 페이드 */
   #case2-page .case-h1, #case2-page .case-h1 span { color: #2b2b2b !important; }
+  #case2-page .cht { background: #e9fff8; }
   #case2-page { position: relative; }
   #case2-page::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 620px; z-index: -1;
@@ -54,11 +55,11 @@
 <div id="case2-page" class="page active">
 
   <div class="case-hero-wrap">
-    <p class="case-eyebrow">NOM · Naver OGQ Market · 2026</p>
+    <p class="case-eyebrow">Product Design · Naver OGQ Market · Mar 2026</p>
     <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">Naver OGQ Market 홈 상단부 공간 효율화</span>
+      <span style="font-family:'Archivo',sans-serif;">Naver OGQ Market 통합 홈 개편</span>
       <span style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">피처드 콘텐츠 발견성을 높여 유료 구매율 하락세를 완화하다</span>
+        <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>
       </span>
     </h1>
     <div class="case-hero-tags">
@@ -71,9 +72,8 @@
     </div>
 
     <div style="margin-top:28px;position:relative;">
-      <div class="case-img-wrap" style="margin:0;">
-        <img src="images/nom/NOM main image.png" alt="Naver OGQ Market 홈 개선" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:16px;display:block;"/>
-        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+      <div style="margin:0;">
+        <img src="images/nom/NOM main image.png" alt="Naver OGQ Market 홈 개선" style="width:100%;border-radius:16px;display:block;"/>
       </div>
       <!-- Right tag -->
       <div class="htag-r" style="position:absolute;top:28px;right:-80px;pointer-events:none;transform:rotate(4deg);transform-origin:right center;">
@@ -91,12 +91,12 @@
 
     <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;">
       <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
-        <div class="cs-n">+60.9<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
-        <div class="cs-l">최근 본 콘텐츠 클릭당 전환율</div>
-      </div>
-      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;border-left:1px solid rgba(0,0,0,0.06);border-right:1px solid rgba(0,0,0,0.06);">
         <div class="cs-n">+45<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
         <div class="cs-l">주간인기 지면 매출 (절대값)</div>
+      </div>
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;border-left:1px solid rgba(0,0,0,0.06);border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="cs-n">+60.9<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
+        <div class="cs-l">최근 본 콘텐츠 클릭당 전환율</div>
       </div>
       <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
         <div class="cs-n">~45<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
@@ -114,15 +114,53 @@
     <div class="cb-section" data-nav="Background">
       <p class="cb-label">Background</p>
       <h2 class="cb-h2">왜 시작했나</h2>
-      <p class="cb-p">OGQ Market의 유료 구매율이 2024년 2월 45.7%에서 2026년 4월 42.0%까지 지속 하락하고 있었습니다. <mark class="hl">홈 화면 상단부가 과도한 공간을 차지해 유료 피처드 콘텐츠의 초기 노출도가 떨어지고 있다는 가설을 세웠습니다.</mark></p>
+      <p class="cb-p">OGQ Market의 유료 구매율이 2024년 2월 45.7%에서 2026년 4월 42.0%까지 지속 하락하고 있었습니다. 팀 내에서 홈 화면 구성에 대한 의문이 제기됐고, <mark class="hl">화면을 직접 분석해 문제를 구체화했습니다.</mark></p>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:40px 0;">
+      <div class="sticky-cards">
+        <div class="sticky-card" style="background:#b8f0d4;">
+          <div class="sticky-body">
+            <p class="sticky-title">"유료 구매율이 지속적으로 하락하고 있는데, 어떻게 개선하면 좋을까요?"</p>
+          </div>
+        </div>
+        <div class="sticky-card" style="background:#d4f7e6;">
+          <div class="sticky-body">
+            <p class="sticky-title">"배너 영역을 확 줄여버리면 어떨까요?"</p>
+          </div>
+        </div>
+        <div class="sticky-card" style="background:#b6ece3;">
+          <div class="sticky-body">
+            <p class="sticky-title">"더 많이 유입시킬 방법이 없을까요?"</p>
+          </div>
+        </div>
+        <div class="sticky-card" style="background:#c5f2df;">
+          <div class="sticky-body">
+            <p class="sticky-title">"최근 본 콘텐츠, 굳이 상단에 있어야 해요?"</p>
+          </div>
+        </div>
+        <div class="sticky-card" style="background:#d4f7e6;">
+          <div class="sticky-body">
+            <p class="sticky-title">"피처드가 너무 아래에 있지 않아요?"</p>
+          </div>
+        </div>
+        <div class="sticky-card" style="background:#b8f0d4;">
+          <div class="sticky-body">
+            <p class="sticky-title">"첫 화면에서 피처드 콘텐츠까지 스크롤이 너무 많이 필요해요"</p>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aac4b8;text-align:center;margin-top:4px;">Team Voices</p>
+
+      <div style="margin:40px 0 32px;">
+        <img src="images/nom/problem.png" alt="Problem" onclick="openLBThis(this)" style="width:100%;border-radius:16px;display:block;cursor:zoom-in;"/>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0 0 40px;">
         <div class="c2-card" style="background:transparent;padding-right:24px;">
           <div class="c2-card-l">유료 구매율 추이</div>
-          <div class="c2-card-n">45.7% <span style="color:#bbb;font-weight:400;">→</span> <span style="color:#fc83b8;">42.0%</span></div>
+          <div class="c2-card-n">45.7% <span style="color:#bbb;font-weight:400;">→</span> <span style="color:#ff786c;">42.0%</span></div>
           <div class="c2-card-s">2024.2 → 2026.4 · 지속 하락</div>
         </div>
-        <div class="c2-card" style="background:transparent;padding-left:24px;padding-right:24px;border-left:1px solid rgba(0,0,0,0.06);border-right:1px solid rgba(0,0,0,0.06);">
+        <div class="c2-card" style="background:transparent;padding-left:24px;padding-right:24px;border-left:1px solid rgba(0,0,0,0.08);border-right:1px solid rgba(0,0,0,0.08);border-radius:0;">
           <div class="c2-card-l">상단부 점유</div>
           <div class="c2-card-n">배너 · 여백 · 최근 본</div>
           <div class="c2-card-s">피처드 영역 도달에 추가 스크롤 필요</div>
@@ -133,34 +171,6 @@
           <div class="c2-card-s">유료 콘텐츠 발견 기회 상실</div>
         </div>
       </div>
-
-      <div style="margin:40px 0 32px;">
-        <img src="images/nom/problem.png" alt="Problem" onclick="openLBThis(this)" style="width:100%;border-radius:16px;display:block;cursor:zoom-in;"/>
-      </div>
-
-      <div class="sticky-cards">
-        <div class="sticky-card">
-          <div class="sticky-body">
-            <div class="sticky-emoji">📐</div>
-            <p class="sticky-title">과도한 상단 점유</p>
-            <p class="sticky-desc">배너, 여백, '최근 본 콘텐츠' 영역이 첫 화면의 절반 가까이를 차지했어요.</p>
-          </div>
-        </div>
-        <div class="sticky-card">
-          <div class="sticky-body">
-            <div class="sticky-emoji">🔍</div>
-            <p class="sticky-title">피처드 도달까지 스크롤</p>
-            <p class="sticky-desc">유료 피처드 영역에 닿으려면 사용자가 추가로 스크롤해야 했어요.</p>
-          </div>
-        </div>
-        <div class="sticky-card">
-          <div class="sticky-body">
-            <div class="sticky-emoji">📉</div>
-            <p class="sticky-title">발견 기회 상실</p>
-            <p class="sticky-desc">초기 노출도가 낮아 유료 콘텐츠가 발견될 기회 자체가 줄었어요.</p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- 2. HYPOTHESIS -->
@@ -168,19 +178,133 @@
       <p class="cb-label">Hypothesis</p>
       <h2 class="cb-h2">검증 가능한 가설로 정리</h2>
       <div class="c2-hypo" style="border-left:none;border-radius:14px;">
-        <p>“상단부를 효율화해 <mark class="hl">피처드 콘텐츠의 초기 노출도를 높이고</mark>, '최근 본 콘텐츠'를 사이드바로 이동시키면 —<br>
-        ① 최근 본 콘텐츠 경로의 <strong>클릭당 전환율이 개선</strong>되고, ② 주간인기 지면의 <strong>매출 기여도가 증가</strong>하여, 결과적으로 <strong>유료 구매율 하락세가 완화</strong>될 것이다.”</p>
+        <p>”상단부를 효율화해 피처드 콘텐츠의 초기 노출도를 높이고, '최근 본 콘텐츠'를 사이드바로 이동시키면 —<br>
+        ① 주간인기 지면의 <strong>매출 기여도가 증가</strong>하고, ② 최근 본 콘텐츠 경로의 <strong>클릭당 전환율이 개선</strong>되어, 결과적으로 <strong>유료 구매율 하락세가 완화</strong>될 것이다.”</p>
       </div>
     </div>
 
-    <!-- 3. SOLUTION -->
+    <!-- 3. PROCESS -->
+    <div class="cb-section" data-nav="Process">
+      <p class="cb-label">Process</p>
+      <h2 class="cb-h2">시안 탐색부터 팀 결정까지</h2>
+      <p class="cb-p"><mark class="hl">어떤 콘텐츠를, 어떤 순서로 노출할지</mark>를 먼저 정의하고, 그에 맞는 레이아웃을 탐색했습니다. 배너 사이즈·타이틀 표기 방식부터 마이페이지 메뉴 구조까지 복수의 시안을 제작해 팀 내 기획자·개발자와 함께 검토했습니다.</p>
+
+      <!-- 3-1 Design Exploration -->
+      <p class="cb-label cb-sublabel" style="margin-top:40px;">Design Exploration</p>
+      <h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:10px 0 8px;letter-spacing:-0.01em;">홈 배너 레이아웃 — PC</h3>
+      <p class="cb-p" style="margin-bottom:16px;">배너 사이즈(A/B)와 타이틀 표기 방식(두 줄/한 줄), 최근 본 콘텐츠 노출 위치를 조합해 4개 후보안을 병렬 탐색했습니다.</p>
+      <!-- PC 홈 시안 이미지 4종 -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px;">
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/A-1.png" alt="A-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">A-1 · 두 줄</p>
+        </div>
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/A-2.png" alt="A-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>A-2 · 한 줄</p>
+        </div>
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/B-1.png" alt="B-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">B-1 · 두 줄</p>
+        </div>
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/B-2.png" alt="B-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">B-2 · 한 줄</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:0 0 8px;letter-spacing:-0.01em;">홈 배너 레이아웃 — Mobile</h3>
+      <p class="cb-p" style="margin-bottom:16px;">모바일에서는 배너 높이와 GNB 여백, 피처드 콘텐츠와의 간격을 기준으로 두 가지 안(a/b)을 비교했습니다.</p>
+      <!-- MO 홈 시안 이미지 2종 -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:28px;max-width:420px;margin-left:auto;margin-right:auto;">
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/c-1.png" alt="c-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">C-1 · 두 줄</p>
+        </div>
+        <div style="margin:0;">
+          <div class="case-img-wrap" style="margin:0;">
+            <img src="images/nom/c-2.png" alt="c-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          </div>
+          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>C-2 · 한 줄</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:0 0 8px;letter-spacing:-0.01em;">마이페이지 메뉴 · 드로워</h3>
+      <p class="cb-p" style="margin-bottom:16px;">PC 마이페이지 메뉴(기존·구조 유지형·직관적 시각화형)와 모바일 드로워(구조 유지형·직관적 시각화형·퀵메뉴 추가형)를 각각 탐색했습니다.</p>
+      <!-- 마이페이지 + 드로워 5열 -->
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:14px;margin-bottom:40px;align-items:start;">
+        <!-- Mypage 1,2 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+          <div>
+            <div class="case-img-wrap" style="margin:0;">
+              <img src="images/nom/mypage1.png" alt="mypage1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            </div>
+            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Mypage 1</p>
+          </div>
+          <div>
+            <div class="case-img-wrap" style="margin:0;">
+              <img src="images/nom/mypage2.png" alt="mypage2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            </div>
+            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>Mypage 2</p>
+          </div>
+        </div>
+        <!-- Drawer 1,2,3 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+          <div>
+            <div class="case-img-wrap" style="margin:0;">
+              <img src="images/nom/drawer1.png" alt="drawer1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            </div>
+            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Drawer 1</p>
+          </div>
+          <div>
+            <div class="case-img-wrap" style="margin:0;">
+              <img src="images/nom/drawer2.png" alt="drawer2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            </div>
+            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>Drawer 2</p>
+          </div>
+          <div>
+            <div class="case-img-wrap" style="margin:0;">
+              <img src="images/nom/drawer3.png" alt="drawer3" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            </div>
+            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Drawer 3</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-2 Decision -->
+      <p class="cb-label cb-sublabel">Decision</p>
+      <p class="cb-p" style="margin-bottom:10px;">팀 내 기획자·개발자 의견 수렴을 통해 최종안을 결정했습니다. <mark class="hl">[최종 선택 근거 — 추후 작성]</mark></p>
+
+    </div>
+
+    <!-- 4. SOLUTION -->
     <div class="cb-section" data-nav="Solution">
       <p class="cb-label">Solution</p>
-      <h2 class="cb-h2">상단부를 다시 설계하다</h2>
-      <p class="cb-p">PC·모바일 모두에서 화면 높이의 <mark class="hl">약 44~45% 공간을 확보</mark>했습니다. 핵심은 배너 축소와 '최근 본 콘텐츠'의 사이드바 이동입니다.</p>
+      <h2 class="cb-h2">최종 디자인</h2>
 
       <!-- Wireframe -->
-      <div style="margin:28px 0 0;">
+      <div style="margin:16px 0 0;">
         <div class="case-img-wrap" style="margin:0;">
           <img src="images/nom/wireframe.png" alt="Wireframe" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:14px;display:block;"/>
           <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
@@ -202,7 +326,7 @@
       </div>
 
       <!-- Toggle Before/After — Mobile -->
-      <div style="margin:28px 0 0;">
+      <div style="margin:60px 0 0;">
         <div style="max-width:510px;margin:0 auto;">
           <div class="tg-wrap">
             <div class="tg-tabs">
@@ -249,25 +373,13 @@
 
     </div>
 
-    <!-- 4. VALIDATION -->
+    <!-- 5. VALIDATION -->
     <div class="cb-section" data-nav="Validation">
       <p class="cb-label">Validation</p>
       <h2 class="cb-h2">두 개의 독립 지표로 검증</h2>
       <p class="cb-p">개선 전(2026.4.15–4.27)과 개선 후(2026.5.8–5.20) 각 13일치를 비교 분석했습니다. 서로 독립적인 두 지표를 추적해 효과가 우연이 아닌지 교차 검증했습니다.</p>
 
       <div class="c2-hero">
-        <div class="c2-hero-card">
-          <div class="c2-hero-top"><span class="c2-hero-tri">▲</span><span class="c2-hero-n">+60.9%</span></div>
-          <div class="c2-hero-l">최근 본 콘텐츠 — 클릭당 전환율</div>
-          <div class="c2-hero-ba">
-            <span>6.4%</span>
-            <span class="c2-hero-track">
-              <i style="position:absolute;left:0;top:0;height:100%;width:38%;background:#a8dfc4;border-radius:4px;"></i>
-              <i style="position:absolute;left:38%;top:0;height:100%;width:62%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
-            </span>
-            <strong style="color:#1a1a2e;">10.3%</strong>
-          </div>
-        </div>
         <div class="c2-hero-card">
           <div class="c2-hero-top"><span class="c2-hero-tri">▲</span><span class="c2-hero-n">+45%</span></div>
           <div class="c2-hero-l">주간인기 지면 — 매출 절대값</div>
@@ -280,47 +392,21 @@
             <strong style="color:#1a1a2e;">166만</strong>
           </div>
         </div>
-      </div>
-
-      <p class="cb-label cb-sublabel" style="margin-top:40px;">4-1 · 최근 본 콘텐츠 경로 — 클릭당 전환율</p>
-      <p class="cb-p" style="margin-top:12px;">GA4 <code class="c2-code">checkout_source: recent_artwork</code> 로 구매 경로를 분리해 추적했습니다.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
-        <div class="c2-card">
-          <div class="c2-card-l">클릭당 전환율</div>
-          <div class="c2-card-n">+60.9%</div>
-          <div class="c2-card-s">6.4% → 10.3%</div>
-        </div>
-        <div class="c2-card">
-          <div class="c2-card-l">결제 진입율</div>
-          <div class="c2-card-n">+57.7%</div>
-          <div class="c2-card-s">9.7% → 15.3%</div>
-        </div>
-        <div class="c2-card">
-          <div class="c2-card-l">일평균 구매</div>
-          <div class="c2-card-n" style="color:#fc83b8;">-0.9건</div>
-          <div class="c2-card-s">손실폭 3주 연속 수렴 중</div>
+        <div class="c2-hero-card">
+          <div class="c2-hero-top"><span class="c2-hero-tri">▲</span><span class="c2-hero-n">+60.9%</span></div>
+          <div class="c2-hero-l">최근 본 콘텐츠 — 클릭당 전환율</div>
+          <div class="c2-hero-ba">
+            <span>6.4%</span>
+            <span class="c2-hero-track">
+              <i style="position:absolute;left:0;top:0;height:100%;width:38%;background:#a8dfc4;border-radius:4px;"></i>
+              <i style="position:absolute;left:38%;top:0;height:100%;width:62%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
+            </span>
+            <strong style="color:#1a1a2e;">10.3%</strong>
+          </div>
         </div>
       </div>
-      <details style="margin-top:8px;" class="task-accordion">
-        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.6);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
-          <span>상세 데이터 보기 — 클릭 · 진입 · 전환</span>
-          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-        </summary>
-        <div style="padding:16px 0 4px;overflow-x:auto;">
-          <table class="c2-table">
-            <thead><tr><th>지표</th><th>개선 전</th><th>개선 후</th><th>변화</th></tr></thead>
-            <tbody>
-              <tr><td>클릭 수</td><td>1,632</td><td>895</td><td style="color:#fc83b8;">▼ 45.2%</td></tr>
-              <tr><td>결제 진입율</td><td>9.7%</td><td>15.3%</td><td style="color:#7c6fcd;">▲ 57.7%</td></tr>
-              <tr class="c2-total"><td>클릭당 전환율</td><td>6.4%</td><td>10.3%</td><td style="color:#7c6fcd;">▲ 60.9%</td></tr>
-              <tr><td>일평균 구매</td><td>8건</td><td>7.1건</td><td style="color:#fc83b8;">▼ 0.9건</td></tr>
-            </tbody>
-          </table>
-          <p style="font-size:12px;color:#888;margin-top:12px;line-height:1.7;">절대 클릭은 줄었지만 클릭당 전환율은 60.9% 상승 — 사이드바에서 찾아 클릭하는 사용자는 구매 의도가 높은 세그먼트. 일평균 손실폭도 2.5건 → 1.25건 → 0.9건으로 3주 연속 수렴 중.</p>
-        </div>
-      </details>
 
-      <p class="cb-label cb-sublabel" style="margin-top:48px;">4-2 · 주간인기 지면 — 매출 기여 비중</p>
+      <p class="cb-label cb-sublabel" style="margin-top:40px;">4-1 · 주간인기 지면 — 매출 기여 비중</p>
       <p class="cb-p" style="margin-top:12px;">홈 주간인기 지면 노출 스티커의 매출을 합산해 추적했습니다.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
         <div class="c2-card">
@@ -355,6 +441,44 @@
             </tbody>
           </table>
           <p style="font-size:12px;color:#888;margin-top:12px;line-height:1.7;">전체 매출이 하락하는 국면에서도 지면 매출 절대값은 +45% 증가 — 비중 상승이 단순 착시가 아님을 확인. featured +47%, weekly_popular +25% 둘 다 기여.</p>
+        </div>
+      </details>
+
+      <p class="cb-label cb-sublabel" style="margin-top:48px;">4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율</p>
+      <p class="cb-p" style="margin-top:12px;">GA4 <code class="c2-code">checkout_source: recent_artwork</code> 로 구매 경로를 분리해 추적했습니다.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
+        <div class="c2-card">
+          <div class="c2-card-l">클릭당 전환율</div>
+          <div class="c2-card-n">+60.9%</div>
+          <div class="c2-card-s">6.4% → 10.3%</div>
+        </div>
+        <div class="c2-card">
+          <div class="c2-card-l">결제 진입율</div>
+          <div class="c2-card-n">+57.7%</div>
+          <div class="c2-card-s">9.7% → 15.3%</div>
+        </div>
+        <div class="c2-card">
+          <div class="c2-card-l">일평균 구매</div>
+          <div class="c2-card-n" style="color:#ff786c;">-0.9건</div>
+          <div class="c2-card-s">손실폭 3주 연속 수렴 중</div>
+        </div>
+      </div>
+      <details style="margin-top:8px;" class="task-accordion">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.6);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+          <span>상세 데이터 보기 — 클릭 · 진입 · 전환</span>
+          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+        </summary>
+        <div style="padding:16px 0 4px;overflow-x:auto;">
+          <table class="c2-table">
+            <thead><tr><th>지표</th><th>개선 전</th><th>개선 후</th><th>변화</th></tr></thead>
+            <tbody>
+              <tr><td>클릭 수</td><td>1,632</td><td>895</td><td style="color:#ff786c;">▼ 45.2%</td></tr>
+              <tr><td>결제 진입율</td><td>9.7%</td><td>15.3%</td><td style="color:#3a8c66;">▲ 57.7%</td></tr>
+              <tr class="c2-total"><td>클릭당 전환율</td><td>6.4%</td><td>10.3%</td><td style="color:#3a8c66;">▲ 60.9%</td></tr>
+              <tr><td>일평균 구매</td><td>8건</td><td>7.1건</td><td>▼ 0.9건</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:#888;margin-top:12px;line-height:1.7;">절대 클릭은 줄었지만 클릭당 전환율은 60.9% 상승 — 사이드바에서 찾아 클릭하는 사용자는 구매 의도가 높은 세그먼트. 일평균 손실폭도 2.5건 → 1.25건 → 0.9건으로 3주 연속 수렴 중.</p>
         </div>
       </details>
     </div>
@@ -430,9 +554,9 @@
 
       <p class="cb-label cb-sublabel" style="margin-top:40px;">다음에 할 것</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
-        <div class="c2-detail"><div class="c2-detail-t">데이터 누적 후 재분석</div><div class="c2-detail-d">주간인기 지면 데이터(현재 2주)를 더 쌓아 신뢰도 보강</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">타 피처드 영역 비교</div><div class="c2-detail-d">블로그 인기·카테고리별 추천 등 효율 비교 분석</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">Clarity 사전 설치</div><div class="c2-detail-d">다음 개편 전 설치해 전후 UX 지표 직접 비교</div></div>
+        <div class="c2-detail"><div class="c2-detail-t" style="color:#29b18d;">데이터 누적 후 재분석</div><div class="c2-detail-d">주간인기 지면 데이터(현재 2주)를 더 쌓아 신뢰도 보강</div></div>
+        <div class="c2-detail"><div class="c2-detail-t" style="color:#29b18d;">타 피처드 영역 비교</div><div class="c2-detail-d">블로그 인기·카테고리별 추천 등 효율 비교 분석</div></div>
+        <div class="c2-detail"><div class="c2-detail-t" style="color:#29b18d;">Clarity 사전 설치</div><div class="c2-detail-d">다음 개편 전 설치해 전후 UX 지표 직접 비교</div></div>
       </div>
     </div>
 
