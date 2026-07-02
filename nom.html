@@ -23,8 +23,8 @@
   #case2-sidenav button.snav-active { color: #2f4a3c; font-weight: 700; }
   /* NOM 상단 그라데이션 띠 (OGQ 2.0) — 위→아래로 흰색 페이드 */
   #case2-page .case-h1, #case2-page .case-h1 span { color: #2b2b2b !important; }
-  #case2-page .sticky-body { text-align: center !important; align-items: center !important; justify-content: center !important; }
-  #case2-page .sticky-title { text-align: center !important; width: 100%; }
+  #case2-page .sticky-body { width: 100% !important; text-align: center !important; align-items: stretch !important; justify-content: center !important; }
+  #case2-page .sticky-title { text-align: center !important; display: block !important; width: 100% !important; }
   #case2-page .cht { background: #e9fff8; }
   #case2-page { position: relative; }
   #case2-page::before {
@@ -120,33 +120,33 @@
 
       <div class="sticky-cards">
         <div class="sticky-card" style="background:#b8f0d4;">
-          <div class="sticky-body">
-            <p class="sticky-title">"유료 구매율이 지속적으로 하락하고 있는데, 어떻게 개선하면 좋을까요?"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"유료 구매율이 지속적으로 하락하고 있는데, 어떻게 개선하면 좋을까요?"</p>
           </div>
         </div>
         <div class="sticky-card" style="background:#d4f7e6;">
-          <div class="sticky-body">
-            <p class="sticky-title">"배너 영역을 확 줄여버리면 어떨까요?"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"배너 영역을 확 줄여버리면 어떨까요?"</p>
           </div>
         </div>
         <div class="sticky-card" style="background:#b6ece3;">
-          <div class="sticky-body">
-            <p class="sticky-title">"더 많이 유입시킬 방법이 없을까요?"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"더 많이 유입시킬 방법이 없을까요?"</p>
           </div>
         </div>
         <div class="sticky-card" style="background:#c5f2df;">
-          <div class="sticky-body">
-            <p class="sticky-title">"최근 본 콘텐츠, 굳이 상단에 있어야 해요?"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"최근 본 콘텐츠, 굳이 상단에 있어야 해요?"</p>
           </div>
         </div>
         <div class="sticky-card" style="background:#d4f7e6;">
-          <div class="sticky-body">
-            <p class="sticky-title">"피처드가 너무 아래에 있지 않아요?"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"피처드가 너무 아래에 있지 않아요?"</p>
           </div>
         </div>
         <div class="sticky-card" style="background:#b8f0d4;">
-          <div class="sticky-body">
-            <p class="sticky-title">"첫 화면에서 피처드 콘텐츠까지 스크롤이 너무 많이 필요해요"</p>
+          <div class="sticky-body" style="align-items:stretch;">
+            <p class="sticky-title" style="text-align:center;">"첫 화면에서 피처드 콘텐츠까지 스크롤이 너무 많이 필요해요"</p>
           </div>
         </div>
       </div>
@@ -610,6 +610,14 @@
     el.style.opacity = '1';
     el.style.transform = 'none';
     el.style.transition = 'none';
+  });
+
+  /* Team Voices 메모지 텍스트 가운데 정렬 강제 적용 */
+  document.querySelectorAll('#case2-page .sticky-cards .sticky-title').forEach(el => {
+    el.style.setProperty('text-align', 'center', 'important');
+    el.style.setProperty('display', 'block', 'important');
+    el.style.setProperty('width', '100%', 'important');
+    el.parentElement.style.setProperty('align-items', 'stretch', 'important');
   });
 </script>
 
