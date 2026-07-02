@@ -395,7 +395,7 @@ body {
   display: inline;
   font-family: 'Archivo', sans-serif;
   font-weight: 500;
-  background: rgba(255,255,255,0.75);
+  background: rgba(220,220,220,0.75);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 6px;
   padding: 1px 8px;
@@ -1197,7 +1197,7 @@ mark.hl.hl-visible {
 }
 .work-item-yt .work-item-right {
   aspect-ratio: 16/9;
-  background: rgb(248, 153, 196);
+  background: #e8e8e8;
 }
 .work-item-nom .work-item-right {
   aspect-ratio: 16/9;
