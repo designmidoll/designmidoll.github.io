@@ -1127,6 +1127,15 @@ mark.hl.hl-visible {
 .work-item-nom:hover .work-item-stat-unit { color: #444444 !important; transition: color 0.2s; }
 .work-item-nom .work-item-right > div { transition: transform 0.35s ease; }
 .work-item-nom .work-item-right:hover > div { transform: scale(1.05); }
+.work-item-hm .work-item-right {
+  aspect-ratio: 16/9;
+  background: #080808;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.work-item-hm .work-item-right > div { transition: transform 0.35s ease; }
+.work-item-hm .work-item-right:hover > div { transform: scale(1.05); }
+.work-item-hm:hover .work-item-title { color: #ff6b00 !important; transition: color 0.2s; }
 .work-item:first-child { padding-top: 0; }
 .work-item:last-child { border-bottom: none; }
 .work-item-left {}
