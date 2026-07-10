@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="style.css">
 <style>
   html { background: #F8F8F7 !important; }
   body {
@@ -23,6 +23,10 @@
   #case-page .case-eyebrow { color: rgba(255,255,255,0.55) !important; }
   #case-page .case-h1, #case-page .case-h1 span { color: #ffffff !important; }
   #case-page .case-hero-tags .cht { background: rgba(255,255,255,0.12) !important; color: rgba(255,255,255,0.75) !important; }
+  /* 반복 인라인 → 클래스 (아코디언·칩) */
+  #case-page .yt-acc-sum { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: rgba(255,255,255,0.58); border-radius: 10px; font-size: 13px; font-weight: 500; color: #333; list-style: none; user-select: none; }
+  #case-page .yt-acc-body { padding: 14px 18px 14px 46px; font-size: 14px; color: #666; line-height: 1.8; font-family: 'NanumSquareNeo', sans-serif; }
+  #case-page .yt-chip { background: #ebe6f8; border-radius: 10px; padding: 12px 16px; font-size: 13px; color: #333; display: flex; justify-content: space-between; align-items: center; }
 </style>
 </head>
 <body>
@@ -192,7 +196,7 @@
         <div class="wf-scroll-item" style="opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/youtube/wireframe-01.png" alt="와이어프레임 01" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
         </div>
       </div>
@@ -210,54 +214,54 @@
 
       <div class="case-img-wrap" style="margin-top:32px;">
         <img src="images/youtube/redesign1.png" alt="Low-Fidelity redesign" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
 
       <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:3px;">
         <div style="display:flex;flex-direction:column;gap:3px;">
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거/이동 기능</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
+            <div class="yt-acc-body">스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>태그된 제품 뱃지</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. "Featured(태그된 제품)" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.</div>
+            <div class="yt-acc-body">바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. "Featured(태그된 제품)" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>타임스탬프 기능</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.</div>
+            <div class="yt-acc-body">바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.</div>
           </details>
         </div>
         <div style="display:flex;flex-direction:column;gap:3px;">
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>제품 저장</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.</div>
+            <div class="yt-acc-body">관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 폴더 내 썸네일 방식</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.</div>
+            <div class="yt-acc-body">저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">06.</span>제품 정렬 기능</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.</div>
+            <div class="yt-acc-body">Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.</div>
           </details>
         </div>
       </div>
@@ -274,7 +278,7 @@
         <div class="case-img-wrap" style="margin:0;">
           <img id="ut-session-img" src="images/youtube/ut-session.png" alt="사용자 인터뷰 세션 2" onclick="openLBThis(this)" style="cursor:zoom-in;display:block;width:auto;height:auto;border-radius:12px;"/>
           <p class="img-caption">Remote UT Session</p>
-          <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
         </div>
         <div style="text-align:center;">
           <video id="ut-proto-video" autoplay loop muted playsinline style="display:block;width:200px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><source src="images/youtube/ut-prototype.mp4" type="video/mp4"></video>
@@ -467,16 +471,16 @@
           <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
         </summary>
         <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q1 자주 사용하고 싶다</span><span style="font-weight:600;color:#111;">2.88</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q2 복잡하게 느껴진다</span><span style="font-weight:600;color:#111;">2.63</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q3 쉽게 사용할 수 있다</span><span style="font-weight:600;color:#111;">3.63</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q4 전문가 도움 없이 사용 가능</span><span style="font-weight:600;color:#111;">1.6</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q5 기능이 잘 통합되어 있다</span><span style="font-weight:600;color:#111;">3.5</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q6 일관성이 없다</span><span style="font-weight:600;color:#111;">1.75</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q7 빠르게 배울 수 있다</span><span style="font-weight:600;color:#111;">3.75</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q8 사용이 불편하다</span><span style="font-weight:600;color:#111;">2.38</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q9 자신감이 생겼다</span><span style="font-weight:600;color:#4a9d5f;">4.1</span></div>
-          <div style="background:#ebe6f8;border-radius:10px;padding:12px 16px;font-size:13px;color:#333;display:flex;justify-content:space-between;align-items:center;"><span>Q10 학습 전 알아야 할 것이 많다</span><span style="font-weight:600;color:#4a9d5f;">2.0</span></div>
+          <div class="yt-chip"><span>Q1 자주 사용하고 싶다</span><span style="font-weight:600;color:#111;">2.88</span></div>
+          <div class="yt-chip"><span>Q2 복잡하게 느껴진다</span><span style="font-weight:600;color:#111;">2.63</span></div>
+          <div class="yt-chip"><span>Q3 쉽게 사용할 수 있다</span><span style="font-weight:600;color:#111;">3.63</span></div>
+          <div class="yt-chip"><span>Q4 전문가 도움 없이 사용 가능</span><span style="font-weight:600;color:#111;">1.6</span></div>
+          <div class="yt-chip"><span>Q5 기능이 잘 통합되어 있다</span><span style="font-weight:600;color:#111;">3.5</span></div>
+          <div class="yt-chip"><span>Q6 일관성이 없다</span><span style="font-weight:600;color:#111;">1.75</span></div>
+          <div class="yt-chip"><span>Q7 빠르게 배울 수 있다</span><span style="font-weight:600;color:#111;">3.75</span></div>
+          <div class="yt-chip"><span>Q8 사용이 불편하다</span><span style="font-weight:600;color:#111;">2.38</span></div>
+          <div class="yt-chip"><span>Q9 자신감이 생겼다</span><span style="font-weight:600;color:#4a9d5f;">4.1</span></div>
+          <div class="yt-chip"><span>Q10 학습 전 알아야 할 것이 많다</span><span style="font-weight:600;color:#4a9d5f;">2.0</span></div>
         </div>
       </details>
     </div>
@@ -489,7 +493,7 @@
       <div class="case-img-wrap">
         <img src="images/youtube/affinity-diagram.png" alt="어피니티 다이어그램" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
         <p class="img-caption">Affinity Diagram — Grouping 8 participants feedback into themes</p>
-        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
     </div>
 
@@ -527,46 +531,46 @@
       <h2 class="cb-h2">UT 결과 반영</h2>
       <div class="case-img-wrap" style="margin-top:20px;">
         <img src="images/youtube/redesign2.png" alt="UT 결과 반영" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:20px;">
         <div style="display:flex;flex-direction:column;gap:3px;">
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거 방식 변경</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정했습니다.</div>
+            <div class="yt-acc-body">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>스티커 이동 기능 툴팁 추가</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.</div>
+            <div class="yt-acc-body">기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>제품 관련 영상 탐색 플로우 추가</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.</div>
+            <div class="yt-acc-body">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.</div>
           </details>
         </div>
         <div style="display:flex;flex-direction:column;gap:3px;">
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>스티커 클릭 시 바텀시트 열리게 구조 변경</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">기존에는 "Affiliate(제휴사)" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. "Affiliate(제휴사)" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.</div>
+            <div class="yt-acc-body">기존에는 "Affiliate(제휴사)" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. "Affiliate(제휴사)" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.</div>
           </details>
           <details class="task-accordion">
-            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,0.58);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+            <summary class="yt-acc-sum">
               <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 공유 기능 추가</span>
               <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
             </summary>
-            <div style="padding:14px 18px 14px 46px;font-size:14px;color:#666;line-height:1.8;font-family:'NanumSquareNeo',sans-serif;">저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.</div>
+            <div class="yt-acc-body">저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.</div>
           </details>
         </div>
       </div>
@@ -596,7 +600,7 @@
       <div class="case-img-wrap" style="margin-top:32px;">
         <img src="images/youtube/final design.png" alt="최종 Hi-fi 디자인 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:16px;"/>
         <p class="img-caption">Final Hi-fi Design — Task flows</p>
-        <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+        <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
     </div>
 
@@ -629,11 +633,14 @@
     <div class="case-end-card">
       <div style="position:relative;z-index:1;text-align:left;">
         <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">Next Case</p>
-        <div onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
-          <img src="images/nom/NOM main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+        <div onclick="showPage('case3')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+          <div style="width:160px;height:90px;border-radius:10px;flex-shrink:0;background:#0a0a0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+            <div style="position:absolute;inset:0;background:radial-gradient(70% 80% at 75% 20%, rgba(255,107,0,0.25), transparent 65%);"></div>
+            <span style="font-family:'Archivo',sans-serif;font-size:15px;font-weight:800;color:#fff;letter-spacing:0.08em;position:relative;">HO<span style="color:#ff6b00;">MUSCLE</span></span>
+          </div>
           <div>
-            <p style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">NOM · Product Design · 2026</p>
-            <h3 style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">Naver OGQ Market 홈 상단부 공간 효율화</h3>
+            <p style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">HOMUSCLE · AI Experiment · 2025</p>
+            <h3 style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">AI 포즈 인식 홈트 웹앱 — 디자인부터 구현까지</h3>
             <span style="font-size:13px;color:#6b5fb0;font-weight:600;">Read case study →</span>
           </div>
         </div>

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-v2.css">
+<link rel="stylesheet" href="style.css">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <style>
   /* NOM 페이지 전용 배경 */
@@ -34,6 +34,9 @@
     mask: linear-gradient(180deg, #000 50%, transparent 100%);
     pointer-events: none;
   }
+  /* 이미지 캡션 (반복 인라인 → 클래스) */
+  #case2-page .nom-cap { font-size: 12px; color: #999; margin: 6px 0 0; text-align: center; }
+  #case2-page .nom-cap.b { font-weight: 500; }
 </style>
 </head>
 <body>
@@ -200,30 +203,30 @@
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/A-1.png" alt="A-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">A-1 · 두 줄</p>
+          <p class="nom-cap">A-1 · 두 줄</p>
         </div>
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/A-2.png" alt="A-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>A-2 · 한 줄</p>
+          <p class="nom-cap b"><span style="color:#29b18d;margin-right:3px;">✓</span>A-2 · 한 줄</p>
         </div>
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/B-1.png" alt="B-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">B-1 · 두 줄</p>
+          <p class="nom-cap">B-1 · 두 줄</p>
         </div>
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/B-2.png" alt="B-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">B-2 · 한 줄</p>
+          <p class="nom-cap">B-2 · 한 줄</p>
         </div>
       </div>
 
@@ -234,16 +237,16 @@
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/C-1.png" alt="c-1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">C-1 · 두 줄</p>
+          <p class="nom-cap">C-1 · 두 줄</p>
         </div>
         <div style="margin:0;">
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/C-2.png" alt="c-2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
-          <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>C-2 · 한 줄</p>
+          <p class="nom-cap b"><span style="color:#29b18d;margin-right:3px;">✓</span>C-2 · 한 줄</p>
         </div>
       </div>
 
@@ -256,16 +259,16 @@
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/mypage1.png" alt="mypage1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
             </div>
-            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Mypage 1</p>
+            <p class="nom-cap">Mypage 1</p>
           </div>
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/mypage2.png" alt="mypage2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
             </div>
-            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>Mypage 2</p>
+            <p class="nom-cap b"><span style="color:#29b18d;margin-right:3px;">✓</span>Mypage 2</p>
           </div>
         </div>
         <!-- Drawer 1,2,3 -->
@@ -273,23 +276,23 @@
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/drawer1.png" alt="drawer1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
             </div>
-            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Drawer 1</p>
+            <p class="nom-cap">Drawer 1</p>
           </div>
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/drawer2.png" alt="drawer2" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
             </div>
-            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;font-weight:500;"><span style="color:#29b18d;margin-right:3px;">✓</span>Drawer 2</p>
+            <p class="nom-cap b"><span style="color:#29b18d;margin-right:3px;">✓</span>Drawer 2</p>
           </div>
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/drawer3.png" alt="drawer3" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
-              <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+              <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
             </div>
-            <p style="font-size:12px;color:#999;margin:6px 0 0;text-align:center;">Drawer 3</p>
+            <p class="nom-cap">Drawer 3</p>
           </div>
         </div>
       </div>
@@ -309,7 +312,7 @@
       <div style="margin:16px 0 0;">
         <div class="case-img-wrap" style="margin:0;">
           <img src="images/nom/wireframe.png" alt="Wireframe" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:14px;display:block;"/>
-          <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+          <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
         </div>
       </div>
 
@@ -528,14 +531,14 @@
           <p style="margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#999;">PC</p>
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/pc banner design guide.png" alt="PC Banner Design Guide" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:14px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
         </div>
         <div>
           <p style="margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#999;">Mobile</p>
           <div class="case-img-wrap" style="margin:0;">
             <img src="images/nom/mo banner design guide.png" alt="Mobile Banner Design Guide" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:14px;display:block;"/>
-            <div class="zoom-hint"><img src="images/vector.png" alt="zoom" style="width:60px;height:60px;opacity:0.75;border-radius:50%;overflow:hidden;"/></div>
+            <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
           </div>
         </div>
       </div>
@@ -610,14 +613,6 @@
     el.style.opacity = '1';
     el.style.transform = 'none';
     el.style.transition = 'none';
-  });
-
-  /* Team Voices 메모지 텍스트 가운데 정렬 강제 적용 */
-  document.querySelectorAll('#case2-page .sticky-cards .sticky-title').forEach(el => {
-    el.style.setProperty('text-align', 'center', 'important');
-    el.style.setProperty('display', 'block', 'important');
-    el.style.setProperty('width', '100%', 'important');
-    el.parentElement.style.setProperty('align-items', 'stretch', 'important');
   });
 </script>
 

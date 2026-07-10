@@ -124,24 +124,24 @@
     </div>
 
     <!-- Work Item 03 — HOMUSCLE -->
-    <div class="work-item work-item-hm" onclick="window.open('homuscle.html','_blank')">
+    <div class="work-item work-item-hm" onclick="showPage('case3')">
       <div class="work-item-left">
         <p class="work-item-tag">AI Experiment · Side Project · 2025</p>
-        <h2 class="work-item-title" style="font-family:'Archivo',sans-serif;letter-spacing:-0.01em;">HOMUSCLE</h2>
+        <h2 class="work-item-title">HOMUSCLE — AI Home Workout Tracker</h2>
         <div class="work-item-stat-row">
-          <span class="work-item-stat-big" style="color:#ff6b00;">AI</span>
+          <span class="work-item-stat-big">AI</span>
           <span class="work-item-stat-unit">Pose Detection Web App</span>
         </div>
         <div class="work-item-tags">
           <span class="wit">MediaPipe</span>
           <span class="wit">Computer Vision</span>
-          <span class="wit">Web App</span>
           <span class="wit">Vibe Coding</span>
+          <span class="wit">Design System</span>
         </div>
       </div>
       <div class="work-item-right work-item-right-hm">
-        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#080808;border-radius:20px;">
-          <span style="font-family:'Archivo',sans-serif;font-size:clamp(24px,4vw,48px);font-weight:900;color:#ff6b00;letter-spacing:0.06em;">HOMUSCLE</span>
+        <div class="hm-card-embed">
+          <iframe src="homuscle-app.html?demo=1" title="HOMUSCLE app 로딩 화면" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
         </div>
       </div>
     </div>
@@ -204,6 +204,10 @@
         <style>
           #about-page .about-bio-col p { font-size:15px; font-weight:400; color:#333; line-height:1.9; margin-bottom:24px; font-family:'NanumSquareNeo', sans-serif !important; }
           #about-page .about-bio-col p:last-child { margin-bottom:0; }
+          #about-page .idx-skill { font-size:14px; font-weight:300; color:#444; }
+          /* HOMUSCLE 카드 — 앱 로딩 화면 라이브 임베드 */
+          .work-item-hm .hm-card-embed { position:absolute; inset:0; overflow:hidden; background:#080808; border-radius:20px; }
+          .work-item-hm .hm-card-embed iframe { position:absolute; top:0; left:0; border:0; transform-origin:0 0; pointer-events:none; }
         </style>
         <p>그래픽 디자인을 시작으로 콘텐츠 디자인, 웹 디자인을 거쳐 현재는 UX/UI 디자인 업무를 수행하고 있습니다. OGQ에서 7년간 콘텐츠 디자이너로 근무하며 NAVER, 삼성, SOOP 등 다양한 파트너사와 협업 프로젝트를 진행했고, 웹·모바일 이벤트 페이지, 배너, 그래픽 아이콘, 일러스트레이션, 캐릭터 디자인 등 폭넓은 디자인 경험을 쌓았습니다.</p>
 
@@ -224,27 +228,27 @@
         <div>
           <p class="about-label" style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0f0f0f;margin-bottom:16px;">Research</p>
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <span style="font-size:14px;font-weight:300;color:#444;">In-depth Interview</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Usability Testing</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Affinity Diagramming</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">SUS Questionnaire</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Hypothesis Testing</span>
+            <span class="idx-skill">In-depth Interview</span>
+            <span class="idx-skill">Usability Testing</span>
+            <span class="idx-skill">Affinity Diagramming</span>
+            <span class="idx-skill">SUS Questionnaire</span>
+            <span class="idx-skill">Hypothesis Testing</span>
           </div>
         </div>
         <div>
           <p class="about-label" style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0f0f0f;margin-bottom:16px;">UX Design</p>
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <span style="font-size:14px;font-weight:300;color:#444;">User Journey Mapping</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Information Architecture</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Lo-fi / Hi-fi Design</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Prototyping</span>
+            <span class="idx-skill">User Journey Mapping</span>
+            <span class="idx-skill">Information Architecture</span>
+            <span class="idx-skill">Lo-fi / Hi-fi Design</span>
+            <span class="idx-skill">Prototyping</span>
           </div>
         </div>
         <div>
           <p class="about-label" style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0f0f0f;margin-bottom:16px;">Tools</p>
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <span style="font-size:14px;font-weight:300;color:#444;">Figma · FigJam</span>
-            <span style="font-size:14px;font-weight:300;color:#444;">Notion · Excel</span>
+            <span class="idx-skill">Figma · FigJam</span>
+            <span class="idx-skill">Notion · Excel</span>
           </div>
         </div>
       </div>
@@ -283,6 +287,25 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  /* HOMUSCLE 카드 임베드 스케일링 (16:9 컨테이너에 앱 화면 맞춤) */
+  (function () {
+    var BASE_W = 1240, BASE_H = 740;
+    function fitCardEmbeds() {
+      document.querySelectorAll('.hm-card-embed').forEach(function (box) {
+        var f = box.querySelector('iframe');
+        if (!f) return;
+        var s = box.clientWidth / BASE_W;
+        f.style.width = BASE_W + 'px';
+        f.style.height = BASE_H + 'px';
+        f.style.transform = 'scale(' + s + ')';
+      });
+    }
+    window.addEventListener('resize', fitCardEmbeds);
+    window.addEventListener('load', fitCardEmbeds);
+    fitCardEmbeds();
+  })();
+</script>
 
 </body>
 </html>

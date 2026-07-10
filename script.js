@@ -23,20 +23,21 @@ history.scrollRestoration = 'manual';
 window.addEventListener('load', () => window.scrollTo(0, 0));
 
 function showPage(p) {
-  const pageMap = { home: 'home-page', case: 'case-page', case2: 'case2-page', about: 'about-page' };
-  const fileMap = { home: 'index.html', about: 'index.html', case: 'youtube.html', case2: 'nom.html' };
+  const pageMap = { home: 'home-page', case: 'case-page', case2: 'case2-page', case3: 'case3-page', about: 'about-page' };
+  const fileMap = { home: 'index.html', about: 'index.html', case: 'youtube.html', case2: 'nom.html', case3: 'homuscle.html' };
   const target = document.getElementById(pageMap[p]);
   if (!target) { window.location.href = fileMap[p] + (p === 'about' ? '#about' : ''); return; }
   document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
   target.classList.add('active');
   window.scrollTo(0, 0);
-  if (p === 'case' || p === 'case2') {
+  if (p === 'case' || p === 'case2' || p === 'case3') {
     setTimeout(() => initCaseSidenav(pageMap[p]), 100);
     setTimeout(initHighlights, 200);
     setTimeout(initToggle, 150);
   } else {
     document.getElementById('case-sidenav')?.classList.remove('visible');
     document.getElementById('case2-sidenav')?.classList.remove('visible');
+    document.getElementById('case3-sidenav')?.classList.remove('visible');
   }
   // update nav active state
   document.querySelectorAll('#global-nav [data-page]').forEach(a => {
@@ -73,7 +74,9 @@ function initCaseSidenav(pageId) {
   pageId = pageId || 'case-page';
   const page = document.getElementById(pageId);
   if (!page) return;
-  const navId = pageId === 'case2-page' ? 'case2-sidenav' : 'case-sidenav';
+  const navId = pageId === 'case2-page' ? 'case2-sidenav'
+              : pageId === 'case3-page' ? 'case3-sidenav'
+              : 'case-sidenav';
   const nav = document.getElementById(navId);
   if (!nav) return;
 
@@ -460,7 +463,13 @@ document.addEventListener('keydown', function(e) {
     'Insights':                   '두 지표가 같은 방향을 가리켰어요 ✨',
     'Limitations':                '솔직하게 한계도 적어뒀어요 🙏',
     'Conclusion':                 '개선 UI 유지로 결론 냈어요!',
-    'Next Steps':                 '다음엔 이걸 해보고 싶어요 🚀'
+    'Next Steps':                 '다음엔 이걸 해보고 싶어요 🚀',
+    'Overview':                   '직접 겪은 불편함에서 시작했어요 💪',
+    'Design System':              '블랙 + 주황, 색은 딱 하나만!',
+    'Key Screens':                '이미지가 아니라 진짜 앱이에요! 눌러보세요 👆',
+    'Session':                    '멀리서도 읽히게 디자인했어요 🏋️',
+    'Feedback & Motivation':      '꾸준함도 디자인의 영역이에요 🔥',
+    'Process — Working with AI':  'AI랑 함께 만들었어요. 스펙 문서가 핵심!'
   };
 
   const widget = document.getElementById('char-widget');
@@ -477,15 +486,18 @@ document.addEventListener('keydown', function(e) {
   // Show/hide widget based on case-page or case2-page visibility
   const casePage  = document.getElementById('case-page');
   const case2Page = document.getElementById('case2-page');
+  const case3Page = document.getElementById('case3-page');
   function updateVisibility() {
     const on = (casePage && casePage.classList.contains('active')) ||
-               (case2Page && case2Page.classList.contains('active'));
+               (case2Page && case2Page.classList.contains('active')) ||
+               (case3Page && case3Page.classList.contains('active'));
     widget.classList.toggle('visible', on);
     if (!on) bubble.classList.remove('show');
   }
   const pageObserver = new MutationObserver(updateVisibility);
   if (casePage)  pageObserver.observe(casePage,  { attributes: true, attributeFilter: ['class'] });
   if (case2Page) pageObserver.observe(case2Page, { attributes: true, attributeFilter: ['class'] });
+  if (case3Page) pageObserver.observe(case3Page, { attributes: true, attributeFilter: ['class'] });
   updateVisibility(); // initial check (case files load already-active)
 
   // Watch each cb-section
@@ -539,7 +551,8 @@ window.addEventListener('scroll', () => {
 /* ── MULTI-FILE INIT (split build) ── */
 document.addEventListener('DOMContentLoaded', () => {
   const cp = document.getElementById('case-page') ? 'case-page'
-           : (document.getElementById('case2-page') ? 'case2-page' : null);
+           : (document.getElementById('case2-page') ? 'case2-page'
+           : (document.getElementById('case3-page') ? 'case3-page' : null));
   if (cp) {
     try { initCaseSidenav(cp); } catch(e){}
     try { if (typeof initHighlights === 'function') initHighlights(); } catch(e){}
