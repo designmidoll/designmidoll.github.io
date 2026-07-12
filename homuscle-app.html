@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOMUSCLE</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1675469404/pose.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.js"></script>
-<script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
 <style>
 @font-face{
   font-family:'Ethnocentric';
@@ -588,6 +585,7 @@ main{max-width:1200px;margin:0 auto;padding:60px 48px}
 .history-cal.fixed .cal-grid{flex:1 1 auto;min-height:0}
 .history-cal.fixed .cal-day{aspect-ratio:auto;min-height:0}
 </style>
+<!-- MediaPipe/Roboflow는 카메라 세션 시작 시 지연 로드 (아래 ensureLibs) -->
 </head>
 <body>
 
@@ -1483,9 +1481,31 @@ function showGuide(){
 }
 function closeGuide(){ $('guideModal').classList.remove('show'); }
 
+/* ── 무거운 CV 라이브러리는 실제 세션 시작 시에만 로드 (임베드/첫 로드 성능) ── */
+let _libsPromise = null;
+function _loadScript(src){
+  return new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = src; s.async = false;
+    s.onload = res;
+    s.onerror = () => rej(new Error('script load failed: ' + src));
+    document.head.appendChild(s);
+  });
+}
+function ensureLibs(){
+  if (_libsPromise) return _libsPromise;
+  _libsPromise = Promise.all([
+    _loadScript('https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1675469404/pose.js'),
+    _loadScript('https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.js'),
+    _loadScript('https://cdn.roboflow.com/0.2.26/roboflow.js'),
+  ]);
+  return _libsPromise;
+}
+
 async function initPoseAndCamera(){
   setStatus('카메라와 포즈 모델 준비 중...');
   try {
+    await ensureLibs();
     if (!pose){
       pose = new Pose({ locateFile: f => 'https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5.1675469404/' + f });
       pose.setOptions({ modelComplexity: 1, smoothLandmarks: true, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5 });
@@ -1524,6 +1544,7 @@ async function loadDumbbellModel(){
   dumbbellTried = true;
   setStatus('아령 인식 모델 준비 중... (최초 1회, 약 20초)');
   try {
+    await ensureLibs();
     const rf = await roboflow.auth({
       publishable_key: 'rf_9iv2Ak6jPNNdAMpI19necTM2QQK2'
     });

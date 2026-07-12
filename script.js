@@ -463,14 +463,30 @@ document.addEventListener('keydown', function(e) {
     'Insights':                   '두 지표가 같은 방향을 가리켰어요 ✨',
     'Limitations':                '솔직하게 한계도 적어뒀어요 🙏',
     'Conclusion':                 '개선 UI 유지로 결론 냈어요!',
-    'Next Steps':                 '다음엔 이걸 해보고 싶어요 🚀',
-    'Overview':                   '직접 겪은 불편함에서 시작했어요 💪',
-    'Design System':              '블랙 + 주황, 색은 딱 하나만!',
-    'Key Screens':                '이미지가 아니라 진짜 앱이에요! 눌러보세요 👆',
-    'Session':                    '멀리서도 읽히게 디자인했어요 🏋️',
-    'Feedback & Motivation':      '꾸준함도 디자인의 영역이에요 🔥',
-    'Process — Working with AI':  'AI랑 함께 만들었어요. 스펙 문서가 핵심!'
+    'Next Steps':                 '다음엔 이걸 해보고 싶어요 🚀'
   };
+
+  /* 페이지별 전용 메시지 — 같은 라벨(Reflection 등)이 여러 케이스에 있어서 페이지로 분리 */
+  const pageMessages = {
+    'case3-page': {
+      'Overview':                   '집에서 덤벨 운동을 하고 싶은데 자꾸 미루게 되는 분들을 위해 직접 만들어봤어요 💪',
+      'Design System':              '액센트 컬러는 주황 원컬러로 했어요. 블랙과 조화를 이루어서 스포츠 브랜드의 느낌을 살렸어요.',
+      'Key Screens':                '이건 캡처 이미지가 아니라 진짜 앱이에요. 탭을 눌러 화면을 옮겨볼 수 있어요 👆',
+      '01 · Training — 목표와 진행 상황': 'D-day를 화면에서 제일 크게 뒀어요. 오늘 운동할 이유가 가장 먼저 보이도록요.',
+      '02 · Gallery — 운동 기록':   '운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시돼요 📅',
+      '03 · Stretch — 스트레칭 가이드': '운동 전후에 목·어깨를 풀 수 있는 가이드예요. 관절이 움직이는 궤적을 하나하나 그렸어요.',
+      'Session':                    '운동 중엔 화면에서 2~3m 떨어져 있어요. 그래서 카운터만 7rem으로 키웠어요 🏋️',
+      '카운팅 상태머신':             '팔꿈치가 110°보다 크면 DOWN, 80°보다 작으면 UP. 이 전환이 일어날 때 +1 카운트해요.',
+      '예외 상황 처리':              '아령 인식이 실패해도 포즈 카운팅은 계속 돌아가요. 핵심 기능은 안 멈추게 했어요.',
+      'Feedback & Motivation':      '카운트마다 주황 펄스와 사운드가 같이 나와요. 화면을 안 봐도 세졌는지 알 수 있죠 🔥',
+      'Process — Working with AI':  '474줄짜리 스펙 문서를 먼저 쓰고 AI에게 넘겼어요. 스펙이 정밀할수록 결과물이 좋아지더라고요.',
+      '다음에 할 것':                '다른 부위 운동도 더 추가해보고 싶어요 🦾'
+    }
+  };
+
+  /* 현재 케이스 페이지에 맞는 메시지 병합 */
+  const curPage = ['case-page', 'case2-page', 'case3-page'].find(id => document.getElementById(id));
+  const msgMap = Object.assign({}, messages, (curPage && pageMessages[curPage]) || {});
 
   const widget = document.getElementById('char-widget');
   const bubble = document.getElementById('char-bubble');
@@ -512,7 +528,7 @@ document.addEventListener('keydown', function(e) {
           if (!label) return;
           key = label.textContent.trim();
         }
-        if (messages[key]) showMsg(messages[key]);
+        if (msgMap[key]) showMsg(msgMap[key]);
       }
     });
   }, { threshold: 0.3 });
@@ -524,7 +540,7 @@ document.addEventListener('keydown', function(e) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const key = entry.target.textContent.trim();
-        if (messages[key]) showMsg(messages[key]);
+        if (msgMap[key]) showMsg(msgMap[key]);
       }
     });
   }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
