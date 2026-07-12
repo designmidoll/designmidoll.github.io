@@ -116,17 +116,38 @@
   .hm-btn.gho { background: transparent; color: #ff6b00; border: 1px solid #ff6b00; font-weight: 700; }
   .hm-btn.dan { background: transparent; color: #666; border: 1px solid #3a3a3a; font-weight: 600; }
 
-  /* ── 세션 화면 재현 목업 ── */
+  /* ── 세션 화면 재현 목업 — 캐릭터 카메라 피드 ── */
   .hm-session { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #232323; background: #0d0d0d; box-shadow: 0 24px 70px rgba(0,0,0,0.4); }
-  .hm-sess-cam { position: relative; height: 430px; background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.028) 0 1px, transparent 1px 4px),
-    radial-gradient(600px 320px at 50% 40%, #232323, #101010); }
-  .hm-sess-cam svg, .hm-sess-cam canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-  .hm-sess-ang { position: absolute; top: 47%; font-family: monospace; font-size: 12px; font-weight: 700; color: #ff6b00; z-index: 2; }
-  .hm-sess-ang.l { left: 36%; }
-  .hm-sess-ang.r { right: 36%; }
-  .hm-sess-status { position: absolute; top: 16px; left: 18px; font-family: monospace; font-size: 11px; color: #ff6b00; letter-spacing: 0.1em; }
+  .hm-sess-cam { position: relative; height: 560px; overflow: hidden;
+    background: radial-gradient(120% 150% at 50% 24%, #504f4f 0%, #3b3a3a 46%, #222121 100%); }
+  .hm-cam-stage { position: absolute; left: 50%; top: 0; transform: translateX(-50%); height: 100%; aspect-ratio: 1024 / 1040; }
+  .hm-cam-base { width: 100%; height: 100%; display: block;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%); }
+  .hm-arm { position: absolute; will-change: transform; animation: 3.2s ease-in-out infinite; }
+  .hm-arm img { width: 100%; height: 100%; display: block; }
+  .hm-armL { left: 27.246%; top: 80.385%; width: 7.617%; height: 17.692%; transform-origin: 55.128% 7.609%; animation-name: hmCurlL; }
+  .hm-armR { left: 63.379%; top: 80.673%; width: 10.449%; height: 17.788%; transform-origin: 47.664% 7.027%; animation-name: hmCurlR; }
+  @keyframes hmCurlL { 0%, 12% { transform: rotate(0deg); } 46%, 58% { transform: rotate(70deg); } 94%, 100% { transform: rotate(0deg); } }
+  @keyframes hmCurlR { 0%, 12% { transform: rotate(0deg); } 46%, 58% { transform: rotate(-70deg); } 94%, 100% { transform: rotate(0deg); } }
+  .hm-skel { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .hm-skel .rotL, .hm-skel .rotR { transform-box: view-box; animation: 3.2s ease-in-out infinite; }
+  .hm-skel .rotL { transform-origin: 322px 850px; animation-name: hmCurlL; }
+  .hm-skel .rotR { transform-origin: 700px 852px; animation-name: hmCurlR; }
+  .hm-skel .angA { animation: hmAngSwapA 3.2s ease-in-out infinite; }
+  .hm-skel .angB { animation: hmAngSwapB 3.2s ease-in-out infinite; }
+  @keyframes hmAngSwapA { 0%, 24% { opacity: 1; } 36%, 66% { opacity: 0; } 84%, 100% { opacity: 1; } }
+  @keyframes hmAngSwapB { 0%, 24% { opacity: 0; } 36%, 66% { opacity: 1; } 84%, 100% { opacity: 0; } }
+  .hm-skel .pulse { animation: hmPulse 3.2s ease-out infinite; }
+  @keyframes hmPulse { 0%, 46% { opacity: 0; r: 18px; } 55% { opacity: 0.85; } 76%, 100% { opacity: 0; r: 52px; } }
+  .hm-cam-fx { position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.4)),
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.09) 0 1px, transparent 1px 4px),
+      radial-gradient(135% 105% at 50% 42%, transparent 56%, rgba(0,0,0,0.52) 100%); }
+  .hm-sess-status { position: absolute; top: 16px; left: 18px; font-family: monospace; font-size: 11px; color: #ff6b00; letter-spacing: 0.1em; z-index: 2; }
+  .hm-sess-status2 { position: absolute; top: 16px; right: 18px; font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; z-index: 2; }
+  @media (max-width: 760px) { .hm-sess-cam { height: 430px; } }
   .hm-sess-panel { background: rgba(10,10,10,0.92); border-top: 1px solid #1f1f1f; padding: 0 32px 24px; }
   .hm-prog { height: 3px; background: #1c1c1c; margin: 0 -32px 20px; }
   .hm-prog i { display: block; height: 100%; background: #ff6b00; width: 40%; animation: hmProg 9.6s linear infinite; }
@@ -370,10 +391,67 @@
 
       <div class="hm-session" style="margin:20px 0 8px;">
         <div class="hm-sess-cam">
-          <canvas id="hmSessCanvas"></canvas>
+          <div class="hm-cam-stage">
+            <img class="hm-cam-base" src="images/homuscle/cam-base.png" alt="카메라 피드 — 캐릭터">
+            <div class="hm-arm hm-armL"><img src="images/homuscle/cam-armL.png" alt=""></div>
+            <div class="hm-arm hm-armR"><img src="images/homuscle/cam-armR.png" alt=""></div>
+            <svg class="hm-skel" viewBox="0 0 1024 1040" xmlns="http://www.w3.org/2000/svg">
+              <!-- 몸통 스켈레톤 (디지털 그린, 은은하게) -->
+              <g stroke="rgba(0,255,100,0.28)" stroke-width="2.5" fill="none">
+                <line x1="392" y1="716" x2="633" y2="716"/>
+                <line x1="402" y1="716" x2="432" y2="1008"/>
+                <line x1="626" y1="716" x2="598" y2="1008"/>
+                <line x1="432" y1="1008" x2="598" y2="1008"/>
+              </g>
+              <g fill="rgba(0,255,100,0.55)">
+                <circle cx="432" cy="1008" r="6"/><circle cx="598" cy="1008" r="6"/>
+                <circle cx="447" cy="337" r="5"/><circle cx="577" cy="337" r="5"/><circle cx="512" cy="420" r="5"/>
+              </g>
+              <!-- 위팔 (주황, 고정) -->
+              <g stroke="rgba(255,107,0,0.9)" stroke-width="5" fill="none" stroke-linecap="round">
+                <line x1="382" y1="722" x2="322" y2="850"/>
+                <line x1="643" y1="722" x2="700" y2="852"/>
+              </g>
+              <!-- 전완 + 아령 오버레이 (팔 레이어와 동일 회전) -->
+              <g class="rotL">
+                <!-- 바 (주먹 뒤로 지나가는 두 구간) -->
+                <rect x="271" y="958" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
+                <rect x="335" y="958" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
+                <!-- 플레이트 -->
+                <rect x="253" y="929" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
+                <rect x="357" y="929" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
+                <line x1="322" y1="850" x2="315" y2="948" stroke="rgba(255,107,0,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/>
+              </g>
+              <g class="rotR">
+                <rect x="660" y="967" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
+                <rect x="738" y="967" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
+                <rect x="642" y="938" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
+                <rect x="758" y="938" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
+                <line x1="700" y1="852" x2="710" y2="957" stroke="rgba(255,107,0,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <rect x="632" y="912" width="156" height="112" stroke="#ff6b00" stroke-width="3" fill="none"/>
+                <text x="632" y="896" font-family="monospace" font-size="22" font-weight="700" fill="#ff6b00">DUMBBELL DETECTED</text>
+                <rect x="632" y="1032" width="156" height="6" fill="rgba(255,107,0,0.35)"/>
+              </g>
+              <!-- 관절 포인트 -->
+              <g fill="#ff6b00">
+                <circle cx="382" cy="722" r="9"/><circle cx="643" cy="722" r="9"/>
+                <circle cx="322" cy="850" r="10"/><circle cx="700" cy="852" r="10"/>
+              </g>
+              <!-- 팔꿈치 각도 (상태 전환 시 스왑) -->
+              <g font-family="monospace" font-size="26" font-weight="700" fill="#ff6b00">
+                <text class="angA" x="178" y="742" text-anchor="middle">R 164°</text>
+                <text class="angB" x="178" y="742" text-anchor="middle">R 62°</text>
+                <text class="angA" x="848" y="746" text-anchor="middle">L 161°</text>
+                <text class="angB" x="848" y="746" text-anchor="middle">L 65°</text>
+              </g>
+              <!-- 카운트 펄스 (컬 정점 위치) -->
+              <circle class="pulse" cx="215" cy="880" r="18" fill="none" stroke="#ff6b00" stroke-width="4" opacity="0"/>
+              <circle class="pulse" cx="815" cy="882" r="18" fill="none" stroke="#ff6b00" stroke-width="4" opacity="0"/>
+            </svg>
+          </div>
+          <div class="hm-cam-fx"></div>
           <div class="hm-sess-status">MODEL READY · POSE TRACKING</div>
-          <div class="hm-sess-ang l">R 72°</div>
-          <div class="hm-sess-ang r">L 118°</div>
+          <div class="hm-sess-status2">ON-DEVICE · 0 SERVER</div>
         </div>
         <div class="hm-sess-panel">
           <div class="hm-prog"><i></i></div>
@@ -390,7 +468,7 @@
           </div>
         </div>
       </div>
-      <p class="nom-cap" style="margin-bottom:32px;">세션 화면 구조 재현 — 풀스크린 카메라 + 포즈 스켈레톤 오버레이 + 반투명 하단 패널</p>
+      <p class="nom-cap" style="margin-bottom:32px;">세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다</p>
 
       <p class="cb-label cb-sublabel">카운팅 상태머신</p>
       <p class="cb-p" style="margin-top:12px;">초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class="hl">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.</p>
@@ -604,11 +682,6 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
 
   /* ── 세션 목업: 카운터 + 컬 애니메이션 동기화 ── */
   (function(){
-    const style = document.createElement('style');
-    style.textContent =
-      '@keyframes hmCurl { 0%,15% { transform: rotate(0deg); } 45%,60% { transform: rotate(-95deg); } 90%,100% { transform: rotate(0deg); } }' +
-      '@keyframes hmAngle { 0%,15% { opacity: 1; } 45%,60% { opacity: 0.4; } 100% { opacity: 1; } }';
-    document.head.appendChild(style);
     const rep = document.getElementById('hmRep');
     if (!rep) return;
     let n = 17;
@@ -621,282 +694,6 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
     }, 3200);
   })();
 
-  /* ── 세션 목업: 앱의 해부학 와이어프레임 (homuscle-app.html에서 추출) ── */
-(function(){
-const iCv = document.getElementById('hmSessCanvas');
-const iCtx = iCv ? iCv.getContext('2d') : null;
-let introRaf = null, introStart = 0, introRevealed = false;
-
-/* ── 해부학 프로파일 (300유닛 기준 모델, y: 0=정수리) ── */
-const lerp = (a, b, k) => a + (b - a) * k;
-const easeO = k => 1 - (1 - k) * (1 - k);
-/* 몸통 반폭: 승모근→어깨(삼각근)→가슴→허리→골반 곡선 */
-function torsoHW(y){
-  if (y <= 46) return lerp(6.5, 9, (y - 40) / 6);            /* 목 */
-  if (y <= 54) return lerp(9, 16, easeO((y - 46) / 8));      /* 승모근 경사 */
-  if (y <= 63) return lerp(16, 34.5, easeO((y - 54) / 9));   /* 어깨(삼각근) */
-  if (y <= 72) return lerp(34.5, 33, (y - 63) / 9);          /* 겨드랑이 */
-  if (y <= 96) return lerp(33, 25.5, easeO((y - 72) / 24));  /* 가슴→광배 */
-  if (y <= 122) return lerp(25.5, 18.5, (y - 96) / 26);      /* 허리 */
-  if (y <= 150) return lerp(18.5, 26, easeO((y - 122) / 28));/* 골반 */
-  return lerp(26, 23, (y - 150) / 12);                       /* 서혜부 */
-}
-/* 다리 반폭: 허벅지→무릎→종아리 볼록→발목 */
-function legHW(y){
-  if (y <= 216) return lerp(12.5, 7.8, easeO((y - 162) / 54));
-  if (y <= 236) return lerp(7.8, 9.3, Math.sin((y - 216) / 20 * Math.PI / 2));
-  if (y <= 282) return lerp(9.3, 4.6, easeO((y - 236) / 46));
-  return 5;
-}
-/* 다리 중심선: 아래로 갈수록 살짝 안쪽으로 (자연스러운 스탠스) */
-const legCX = y => 13.5 - (y - 162) * 0.012;
-/* y 높이에서의 실루엣 수평 구간들 [[xl,xr], ...] */
-function silhouetteAt(y){
-  if (y < 2) return [];
-  if (y <= 40){                                               /* 머리 (달걀형) */
-    const dy = (y - 21) / 19; if (Math.abs(dy) > 1) return [];
-    const hw = 14.5 * Math.sqrt(1 - dy * dy) * (y > 21 ? lerp(1, 0.82, (y - 21) / 19) : 1); /* 턱 좁아짐 */
-    return hw < 0.6 ? [] : [[-hw, hw]];
-  }
-  if (y <= 162) return [[-torsoHW(y), torsoHW(y)]];           /* 몸통 */
-  if (y <= 284){                                              /* 다리 */
-    const hw = legHW(y), c = legCX(y);
-    return [[-c - hw, -c + hw], [c - hw, c + hw]];
-  }
-  if (y <= 294) return [[-24, -4], [4, 24]];                  /* 발 (앞으로) */
-  return [];
-}
-
-function drawIntro(now){
-  if (!iCtx) return;
-  const t = now - introStart;
-  /* WORK OUT 버튼: 초반부터 점진 등장 */
-  const W = iCv.width, H = iCv.height;
-  iCtx.clearRect(0, 0, W, H);
-  if (!W || !H) return;
-
-  /* 뒤 배경: 은은한 방사형 글로우 + 바닥 그리드 소실선 */
-  const g = iCtx.createRadialGradient(W/2, H*0.45, 10, W/2, H*0.45, Math.max(W,H)*0.55);
-  g.addColorStop(0, 'rgba(255,255,255,0.045)');
-  g.addColorStop(1, 'rgba(255,255,255,0)');
-  iCtx.fillStyle = g; iCtx.fillRect(0, 0, W, H);
-
-  const s = Math.min(H * 0.88, 560) / 300;      /* 스케일 */
-  const cx = W / 2, top = (H - 300 * s) / 2;
-  const X = u => cx + u * s, Y = u => top + u * s;
-  const reveal = Math.min(1, t / 1400);          /* 위→아래 스캔 리빌 */
-  const maxY = reveal * 300;
-
-  iCtx.lineWidth = 1;
-  iCtx.shadowColor = 'rgba(255,255,255,0.9)';
-  iCtx.shadowBlur = 7;
-
-  /* ① 머리+몸통: 볼록하게 휜 위도(latitude) 컨투어 — 입체 곡면 느낌 */
-  const shimmer = y => 0.24 + 0.18 * Math.sin(y * 0.22 - t * 0.0028);
-  const beam = y => (reveal < 1 && (maxY - y) < 14) ? 0.55 : 0; /* 스캔 빔 */
-  for (let y = 2; y <= 162; y += 3.5){
-    if (y > maxY) break;
-    const segs = silhouetteAt(y); if (!segs.length) continue;
-    const seg = segs[0];
-    const hw = (seg[1] - seg[0]) / 2;
-    iCtx.strokeStyle = 'rgba(255,255,255,' + Math.min(0.95, shimmer(y) + beam(y)).toFixed(3) + ')';
-    iCtx.beginPath();
-    iCtx.moveTo(X(seg[0]), Y(y));
-    iCtx.quadraticCurveTo(X((seg[0] + seg[1]) / 2), Y(y + hw * 0.22), X(seg[1]), Y(y)); /* 아래로 볼록 */
-    iCtx.stroke();
-  }
-
-  /* ② 다리: 실루엣 에지 라인(연속 윤곽) + 성긴 단면 링 — 스프링 느낌 없이 볼륨 표현 */
-  const legEdge = (sideSign, edgeSign) => {
-    iCtx.beginPath();
-    let started = false;
-    for (let y = 163; y <= Math.min(283, maxY); y += 4){
-      const px = sideSign * legCX(y) + edgeSign * legHW(y);
-      if (!started){ iCtx.moveTo(X(px), Y(y)); started = true; }
-      else iCtx.lineTo(X(px), Y(y));
-    }
-    if (started) iCtx.stroke();
-  };
-  iCtx.strokeStyle = 'rgba(255,255,255,0.5)';
-  [1, -1].forEach(ss => [1, -1].forEach(es => legEdge(ss, es)));
-  for (let y = 172; y <= 278; y += 13){                       /* 단면 링 (드문드문) */
-    if (y > maxY) break;
-    const hw = legHW(y), c = legCX(y);
-    iCtx.strokeStyle = 'rgba(255,255,255,' + Math.min(0.6, shimmer(y) * 0.55 + beam(y)).toFixed(3) + ')';
-    [-c, c].forEach(lc => {
-      iCtx.beginPath();
-      iCtx.ellipse(X(lc), Y(y), hw * s, Math.max(1, hw * 0.28 * s), 0, 0, Math.PI * 2);
-      iCtx.stroke();
-    });
-  }
-  /* 발: 앞으로 나온 작은 쐐기 링 */
-  for (let y = 285; y <= 293; y += 4){
-    if (y > maxY) break;
-    iCtx.strokeStyle = 'rgba(255,255,255,' + (shimmer(y) * 0.8).toFixed(3) + ')';
-    [-13, 13].forEach(c => {
-      iCtx.beginPath();
-      iCtx.ellipse(X(c * 1.05), Y(y), 9.5 * s, 3.2 * s, 0, 0, Math.PI * 2);
-      iCtx.stroke();
-    });
-  }
-
-  /* ③ 수직 메리디언 (세로 와이어) — 곡면을 따라 흐름 */
-  iCtx.shadowBlur = 0;
-  const vCurve = (pts, alpha) => {
-    if (pts.length < 2) return;
-    iCtx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
-    iCtx.beginPath();
-    pts.forEach((p, i) => { if (i === 0) iCtx.moveTo(X(p[0]), Y(p[1])); else iCtx.lineTo(X(p[0]), Y(p[1])); });
-    iCtx.stroke();
-  };
-  [-0.82, -0.55, -0.28, 0, 0.28, 0.55, 0.82].forEach(f => {   /* 몸통 */
-    const pts = [];
-    for (let y = 42; y <= Math.min(162, maxY); y += 5){
-      const bow = f * torsoHW(y);
-      pts.push([bow, y + Math.abs(torsoHW(y)) * 0.11 * (1 - f * f)]); /* 위도 곡률 따라감 */
-    }
-    vCurve(pts, '0.12');
-  });
-  [-0.65, -0.33, 0, 0.33, 0.65].forEach(f => {                /* 머리 */
-    const pts = [];
-    for (let y = 4; y <= Math.min(40, maxY); y += 3){
-      const seg = silhouetteAt(y); if (!seg.length) continue;
-      pts.push([f * seg[0][1], y + Math.abs(seg[0][1]) * 0.1 * (1 - f * f)]);
-    }
-    vCurve(pts, '0.14');
-  });
-
-  /* ④ 양팔 — 정면 뷰 덤벨 컬: 시상면(앞뒤) 회전의 원근 투영
-     팔은 몸 옆에 그대로 있고, 전완이 앞으로 접히며 화면상 길이가 단축되고
-     덤벨이 위로 올라오며 가까워질수록 커진다 (몸/팔 겹침 없음) */
-  const armAlpha = Math.max(0, Math.min(1, (t - 1200) / 600));
-  if (armAlpha > 0){
-    const bend = 15 + 60 * (1 - Math.cos(t * 0.0021));   /* 15°~135° 왕복 */
-    const flex = (bend - 15) / 120;                       /* 0~1 수축 정도 */
-
-    /* 사지: 실루엣 에지 2줄(벌지 곡선) + 성긴 단면 링 3개 */
-    const limb = (A, B, w1, w2, bulge) => {
-      const vx = B[0] - A[0], vy = B[1] - A[1];
-      const len = Math.hypot(vx, vy);
-      if (len < 1.5) return;
-      const nx = -vy / len, ny = vx / len;
-      const ringRot = Math.atan2(vy, vx) + Math.PI / 2;
-      iCtx.strokeStyle = 'rgba(255,255,255,' + (0.5 * armAlpha).toFixed(3) + ')';
-      [-1, 1].forEach(o => {                              /* 에지 (근육 벌지 곡선) */
-        const mw = (w1 + w2) / 4 * (1 + (bulge || 0));
-        iCtx.beginPath();
-        iCtx.moveTo(X(A[0] + nx * o * w1 / 2), Y(A[1] + ny * o * w1 / 2));
-        iCtx.quadraticCurveTo(
-          X((A[0] + B[0]) / 2 + nx * o * mw), Y((A[1] + B[1]) / 2 + ny * o * mw),
-          X(B[0] + nx * o * w2 / 2), Y(B[1] + ny * o * w2 / 2));
-        iCtx.stroke();
-      });
-      [0.25, 0.5, 0.75].forEach(p => {                    /* 성긴 링 */
-        const px = A[0] + vx * p, py = A[1] + vy * p;
-        let w = lerp(w1, w2, p) / 2;
-        if (bulge) w *= 1 + bulge * Math.sin(p * Math.PI);
-        iCtx.strokeStyle = 'rgba(255,255,255,' + (0.2 * armAlpha).toFixed(3) + ')';
-        iCtx.beginPath();
-        iCtx.ellipse(X(px), Y(py), w * s, Math.max(0.9, w * 0.3 * s), ringRot, 0, Math.PI * 2);
-        iCtx.stroke();
-      });
-    };
-
-    [1, -1].forEach(side => {
-      const S = [side * 30, 60];                          /* 어깨 */
-      const E = [side * 36, 100];                         /* 팔꿈치 (몸 옆 고정) */
-      const L = 38;
-      const brad = bend * Math.PI / 180;
-      const proj = Math.cos(brad);                        /* 화면 세로 성분: 1(아래로 폄) → -0.7(위로 컬) */
-      const near = Math.sin(brad);                        /* 카메라 근접도 0→1 */
-      const zs = 1 + 0.42 * near;                         /* 가까울수록 확대 (원근) */
-      const wx = E[0] + side * 3.5 * near;                /* 컬 시 살짝 바깥으로 */
-      const wy = E[1] + L * proj;                         /* 손목: 아래 → 어깨 높이로 */
-
-      iCtx.shadowBlur = 6;
-      /* 삼각근 캡 */
-      iCtx.strokeStyle = 'rgba(255,255,255,' + (0.32 * armAlpha).toFixed(3) + ')';
-      iCtx.beginPath();
-      iCtx.ellipse(X(side * 31), Y(61), 8.5 * s, 6.5 * s, side * 0.5, 0, Math.PI * 2);
-      iCtx.stroke();
-      /* 위팔 (고정) — 수축 시 이두 벌지 */
-      limb(S, E, 14, 10, 0.08 + 0.24 * flex);
-      /* 전완 — 접힐수록 화면상 단축(원근), 폭은 근접 확대 */
-      limb(E, [wx, wy], 10 * (1 + 0.15 * near), 6.5 * zs, 0.05);
-
-      /* 손 (근접 확대 반영) */
-      iCtx.strokeStyle = 'rgba(255,255,255,' + (0.45 * armAlpha).toFixed(3) + ')';
-      iCtx.beginPath();
-      iCtx.ellipse(X(wx), Y(wy), 4.4 * zs * s, 3.4 * zs * s, 0, 0, Math.PI * 2);
-      iCtx.stroke();
-
-      /* 관절 포인트 (주황) */
-      iCtx.shadowColor = 'rgba(255,107,0,0.9)';
-      iCtx.beginPath();
-      iCtx.arc(X(E[0]), Y(E[1]), 3 * s, 0, Math.PI * 2);
-      iCtx.fillStyle = 'rgba(255,107,0,' + (0.85 * armAlpha).toFixed(3) + ')';
-      iCtx.fill();
-
-      /* 덤벨 — 정면 뷰: 수평 바 + 양끝 원형 플레이트 (올라올수록 커짐) */
-      const half = 10 * zs;
-      iCtx.strokeStyle = 'rgba(255,107,0,' + (0.85 * armAlpha).toFixed(3) + ')';
-      iCtx.lineWidth = 2 * zs;
-      iCtx.beginPath();
-      iCtx.moveTo(X(wx - half), Y(wy));
-      iCtx.lineTo(X(wx + half), Y(wy));
-      iCtx.stroke();
-      iCtx.lineWidth = 1.4;
-      [wx - half, wx + half].forEach(px => {
-        [4.6, 2.4].forEach(r => {
-          iCtx.beginPath();
-          iCtx.arc(X(px), Y(wy), r * zs * s, 0, Math.PI * 2);
-          iCtx.stroke();
-        });
-      });
-      iCtx.lineWidth = 1;
-      iCtx.shadowColor = 'rgba(255,255,255,0.9)';
-    });
-  }
-}
-
-function sizeIntro(){
-  if (!iCv) return;
-  const st = iCv.parentElement;
-  iCv.width = st.clientWidth;
-  iCv.height = st.clientHeight;
-}
-function introLoop(now){
-  drawIntro(now);
-  introRaf = requestAnimationFrame(introLoop);
-}
-function startIntro(){
-  if (!iCtx) return;
-  stopIntro();
-  introStart = performance.now();
-  introRevealed = false;
-  sizeIntro();
-  introRaf = requestAnimationFrame(introLoop);
-}
-function stopIntro(){
-  if (introRaf){ cancelAnimationFrame(introRaf); introRaf = null; }
-}
-
-if (iCv){
-  window.addEventListener('resize', () => { if (introRaf) sizeIntro(); });
-}
-/* 성능: 화면에 보일 때만 애니메이션 (보일 땐 원래대로 계속 움직임, 화면 밖에선 정지) */
-(function () {
-  if (!iCv) return;
-  let running = false;
-  const io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting && !running) { running = true; startIntro(); }
-      else if (!e.isIntersecting && running) { running = false; stopIntro(); }
-    });
-  }, { threshold: 0.15 });
-  io.observe(iCv);
-})();
-})();
 </script>
 
 </body>
