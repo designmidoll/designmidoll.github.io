@@ -37,9 +37,12 @@
   #global-nav.nav-light .global-nav-pills a:hover, #global-nav.nav-light .global-nav-pills a.nav-active { color: #000 !important; }
 
   /* 왼쪽 목차 */
-  #case3-sidenav button { color: #9a9a9a; }
-  #case3-sidenav button:hover { color: #666; }
+  #case3-sidenav button { color: rgba(255,255,255,0.45); transition: color 0.25s; }
+  #case3-sidenav button:hover { color: rgba(255,255,255,0.8); }
   #case3-sidenav button.snav-active { color: #e85f00; font-weight: 700; }
+  #case3-sidenav.snav-light button { color: #9a9a9a; }
+  #case3-sidenav.snav-light button:hover { color: #555; }
+  #case3-sidenav.snav-light button.snav-active { color: #e85f00; }
 
   /* 상단 다크 밴드 — 블랙 + 주황 글로우, 아래로 페이드 */
   #case3-page { position: relative; }
@@ -222,8 +225,8 @@
   <div class="case-hero-wrap">
     <p class="case-eyebrow">AI Experiment · Side Project · 2025 — Vibe Coding</p>
     <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">HOMUSCLE</span>
-      <span style="font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지 직접 진행하다</span>
+      <span style="font-family:'Archivo',sans-serif;">HOMUSCLE : AI Home Workout Tracker</span>
+      <span style="font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>
     </h1>
     <div class="case-hero-tags">
       <span class="cht">Vibe Coding · AI 협업</span>
@@ -672,12 +675,30 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
   window.addEventListener('load', fitEmbeds);
   fitEmbeds();
 
-  /* ── 다크 밴드를 지나면 내비를 라이트 모드로 ── */
+  /* ── 다크 밴드를 지나면 내비 + 사이드nav를 라이트 모드로 ── */
   (function(){
     const nav = document.getElementById('global-nav');
-    function onScroll(){ nav.classList.toggle('nav-light', window.scrollY > 1050); }
+    const sidenav = document.getElementById('case3-sidenav');
+    function onScroll(){
+      const light = window.scrollY > 1050;
+      nav.classList.toggle('nav-light', light);
+      if (sidenav) sidenav.classList.toggle('snav-light', light);
+    }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  /* ── 캐릭터 위젯: Overview 섹션 진입 시에만 등장 ── */
+  (function(){
+    const widget = document.getElementById('char-widget');
+    if (!widget) return;
+    widget.classList.remove('visible');
+    const overview = document.querySelector('#case3-page [data-nav="Overview"]');
+    if (!overview) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { widget.classList.add('visible'); io.disconnect(); } });
+    }, { threshold: 0.15 });
+    io.observe(overview);
   })();
 
   /* ── 세션 목업: 카운터 + 컬 애니메이션 동기화 ── */
