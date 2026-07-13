@@ -1082,6 +1082,14 @@ mark.hl.hl-visible {
 .ce-btn.g { background: rgba(255,255,255,0.25); color: #3a3060; border-color: rgba(100,80,180,0.25); backdrop-filter: blur(8px); }
 .ce-btn.g:hover { background: rgba(255,255,255,0.45); border-color: rgba(100,80,180,0.45); }
 
+/* ── NEXT CASE CARD — MOBILE RESPONSIVE ── */
+@media (max-width: 600px) {
+  .case-end-section { padding: 0 16px 48px; }
+  .case-end-card { padding: 32px 20px; }
+  .next-case-link { flex-direction: column !important; align-items: flex-start !important; }
+  .next-case-thumb { width: 100% !important; height: 160px !important; flex-shrink: unset !important; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
