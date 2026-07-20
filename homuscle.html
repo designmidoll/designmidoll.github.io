@@ -46,15 +46,25 @@
 
   /* 상단 다크 밴드 — 블랙 + 주황 글로우, 아래로 페이드 */
   #case3-page { position: relative; }
+  /* hero wrap에 아래 여백을 줘서 fade가 콘텐츠 아닌 빈 공간에서 일어나도록 */
+  #case3-page .case-hero-wrap { padding-bottom: 160px; }
   #case3-page::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1360px; z-index: -1;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1550px; z-index: -1;
     background:
       radial-gradient(1000px 460px at 82% -8%, rgba(255,107,0,0.30), transparent 62%),
       radial-gradient(760px 560px at 6% 34%, rgba(255,107,0,0.10), transparent 60%),
       #0a0a0a;
-    -webkit-mask: linear-gradient(180deg, #000 76%, transparent 100%);
-    mask: linear-gradient(180deg, #000 76%, transparent 100%);
+    -webkit-mask: linear-gradient(180deg, #000 79%, transparent 100%);
+    mask: linear-gradient(180deg, #000 79%, transparent 100%);
     pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    #case3-page .case-hero-wrap { padding-bottom: 100px; }
+    #case3-page::before {
+      height: 1100px;
+      -webkit-mask: linear-gradient(180deg, #000 82%, transparent 100%);
+      mask: linear-gradient(180deg, #000 82%, transparent 100%);
+    }
   }
 
   /* 히어로 텍스트 — 다크 밴드 위 */
@@ -201,18 +211,6 @@
   #case3-page .hm-meta .c2-card { display: flex; flex-direction: column; height: 100%; padding-top: 0 !important; padding-bottom: 0 !important; }
   #case3-page .hm-meta .c2-card-s { margin-top: auto; }
 
-  /* 다크 존 텍스트 — Overview / Design System 섹션 */
-  #case3-page .cb-section[data-nav="Overview"] .cb-h2,
-  #case3-page .cb-section[data-nav="Design System"] .cb-h2 { color: #fff; }
-  #case3-page .cb-section[data-nav="Overview"] .cb-p,
-  #case3-page .cb-section[data-nav="Design System"] .cb-p { color: rgba(255,255,255,0.78); }
-  #case3-page .cb-section[data-nav="Overview"] .cb-label,
-  #case3-page .cb-section[data-nav="Design System"] .cb-label { color: rgba(255,255,255,0.35); }
-  /* hm-meta 카드 내 텍스트 */
-  #case3-page .hm-meta .c2-card-n { color: #fff !important; }
-  #case3-page .hm-meta .c2-card-l { color: rgba(255,255,255,0.4) !important; }
-  #case3-page .hm-meta .c2-card-s { color: rgba(255,255,255,0.6) !important; }
-  #case3-page .hm-meta .c2-card[style*="border-left"] { border-left-color: rgba(255,255,255,0.12) !important; }
 </style>
 </head>
 <body>
@@ -227,7 +225,7 @@
   <div class="global-nav-pills">
     <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
     <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
-    <a href="resume.pdf?v=2" target="_blank">Resume</a>
+    <a href="resume.pdf?v=3" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/miseonpark" target="_blank">LinkedIn</a>
   </div>
 </nav>
@@ -693,7 +691,7 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
     const nav = document.getElementById('global-nav');
     const sidenav = document.getElementById('case3-sidenav');
     function onScroll(){
-      const light = window.scrollY > 1050;
+      const light = window.scrollY > (window.innerWidth <= 768 ? 1000 : 1400);
       nav.classList.toggle('nav-light', light);
       if (sidenav) sidenav.classList.toggle('snav-light', light);
     }
