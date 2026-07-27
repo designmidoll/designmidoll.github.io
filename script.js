@@ -1,4 +1,31 @@
 
+/* ── BEFORE/AFTER DRAG SLIDER ── */
+function initBASlider() {
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    if (slider._baInit) return;
+    slider._baInit = true;
+    let dragging = false;
+
+    function setPos(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = (x - rect.left) / rect.width * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      slider.style.setProperty('--ba-pos', pct + '%');
+    }
+
+    const hint = slider.querySelector('.ba-hint');
+    function hideHint() { if (hint) hint.classList.add('ba-hint-hide'); }
+
+    slider.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); hideHint(); e.preventDefault(); });
+    slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); hideHint(); }, { passive: true });
+    window.addEventListener('mousemove',  e => { if (dragging) setPos(e.clientX); });
+    window.addEventListener('touchmove',  e => { if (dragging) { setPos(e.touches[0].clientX); } }, { passive: true });
+    window.addEventListener('mouseup',    () => dragging = false);
+    window.addEventListener('touchend',   () => dragging = false);
+  });
+}
+document.addEventListener('DOMContentLoaded', initBASlider);
+
 /* ── TOGGLE BEFORE/AFTER ── */
 function initToggle() {
   document.querySelectorAll('.tg-wrap').forEach(wrap => {
@@ -143,7 +170,7 @@ const responses = {
   research: '사용자가 말하는 불편함을 그대로 받아들이지 않습니다. 인터뷰와 행동 관찰을 통해 맥락을 파악하고, 진정한 문제가 무엇인지 검증합니다. 올바른 문제 정의가 좋은 디자인의 시작이라고 믿기 때문입니다.',
   designer: '상황에 맞는 검증 방법을 선택합니다. 실무에서는 GA와 Clarity를 통해 사용자 행동 데이터를 분석하고 A/B 테스트로 검증합니다. 리서치 프로젝트에서는 사용자 인터뷰, 사용성 테스트, SUS 설문을 활용합니다. 방법은 다르지만, 가설을 세우고 데이터로 판단하는 원칙은 일관됩니다.',
   youtube: 'YouTube Shorts의 쇼핑 스티커 기능이 시청 경험을 방해하는 문제를 해결하기 위해 시작한 프로젝트입니다. 8명의 사용자 인터뷰를 통해 "광고로 인식되어 즉시 무시된다"는 핵심 문제를 발견했고, 이를 바탕으로 스티커 이동 기능과 My Products를 설계했습니다. 리서치부터 최종 디자인 출시까지 전체 과정을 주도했습니다.',
-  ai: '리서치 데이터 정리와 패턴 파악에 AI를 활용하고, Figma AI로 초기 시안을 빠르게 잡습니다. 이 포트폴리오 사이트도 Claude로 직접 만들었습니다.',
+  ai: '리서치와 사용성 테스트 데이터를 AI로 빠르게 정리해 의사결정 근거를 만들고, 반복 작업을 덜어냅니다. 다만 문제 정의와 최종 판단은 언제나 제가 직접 합니다. 여기에 더해 AI 포즈 인식 기반 서비스(HOMUSCLE)를 직접 기획·디자인·구현하며, AI 제품을 설계하는 경험까지 넓혀가고 있습니다.',
 };
 
 function getResponse(text) {

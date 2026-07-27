@@ -220,7 +220,88 @@ body {
 .page { display: none; }
 .page.active { display: block; }
 
-/* ── TOGGLE BEFORE/AFTER ── */
+/* ── BEFORE/AFTER TOGGLE ── */
+.ba-toggle { text-align: center; }
+.ba-toggle-img { text-align: left; }
+.ba-toggle-tabs {
+  display: inline-flex;
+  background: #efefef;
+  border-radius: 100px;
+  padding: 4px;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+.ba-tab {
+  padding: 7px 22px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Figtree', sans-serif;
+  letter-spacing: 0.01em;
+}
+.ba-tab.active {
+  background: #ffffff;
+  color: #111;
+}
+.ba-toggle-img {
+  display: none;
+  width: 100%;
+  border-radius: 14px;
+}
+.ba-toggle-img.active {
+  display: block;
+}
+
+/* ── BEFORE/AFTER DRAG SLIDER ── */
+.ba-slider {
+  position: relative; border-radius: 14px; overflow: hidden;
+  cursor: col-resize; user-select: none; -webkit-user-select: none;
+  touch-action: pan-y;
+}
+.ba-after { display: block; width: 100%; height: auto; pointer-events: none; }
+.ba-before {
+  position: absolute; top: 0; left: 0; width: 100%; display: block;
+  clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0);
+  pointer-events: none;
+}
+.ba-handle {
+  position: absolute; top: 0; bottom: 0;
+  left: var(--ba-pos, 50%); transform: translateX(-50%);
+  width: 2px; background: rgba(255,255,255,0.95);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 16px rgba(0,0,0,0.18);
+  z-index: 6; display: flex; align-items: center; justify-content: center;
+}
+.ba-btn {
+  width: 36px; height: 36px; border-radius: 50%; background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; gap: 2px;
+}
+.ba-btn svg { display: block; }
+.ba-label {
+  position: absolute; top: 14px; padding: 5px 11px; border-radius: 100px;
+  font-family: 'Figtree', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; pointer-events: none; z-index: 5;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.ba-label-before { left: 14px; background: rgba(0,0,0,0.52); color: #fff; }
+.ba-label-after  { right: 14px; background: rgba(0,0,0,0.52); color: #fff; }
+.ba-hint {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,0.48); color: #fff; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  padding: 5px 14px; border-radius: 100px;
+  font-family: 'Figtree', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+  white-space: nowrap; pointer-events: none; z-index: 7;
+  transition: opacity 0.4s ease;
+}
+.ba-hint.ba-hint-hide { opacity: 0; }
+
+/* ── TOGGLE BEFORE/AFTER (legacy) ── */
 .tg-wrap { }
 .tg-tabs {
   display: inline-flex; gap: 0; margin-bottom: 24px;
@@ -357,7 +438,7 @@ body {
   /* 상단 패딩은 고정 내비(약 62px)를 확실히 비켜야 함 — 부족하면 타이틀이 내비에 잘림 */
   padding: 88px 24px 16px;
   text-align: left;
-  max-width: 720px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -398,7 +479,7 @@ body {
   display: inline;
   font-family: 'Archivo', sans-serif;
   font-weight: 500;
-  background: rgba(220,220,220,0.75);
+  background: #ffffff;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 6px;
   padding: 1px 8px;
@@ -410,6 +491,11 @@ body {
   color: var(--ink);
 }
 .hero-title .period { color: var(--ink); }
+
+/* 모바일: 강제 <br> 숨겨서 텍스트 자연스럽게 3줄로 흐르게 */
+@media (max-width: 600px) {
+  .hero-title br { display: none; }
+}
 
 /* PILLS */
 .pills-section {

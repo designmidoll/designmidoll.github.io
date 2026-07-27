@@ -313,32 +313,24 @@
       <h2 class="cb-h2">최종 디자인</h2>
 
       <!-- Toggle Before/After — PC -->
-      <div style="margin:16px 0 0;">
-        <div class="tg-wrap">
-          <div class="tg-tabs">
-            <button class="tg-tab" data-state="before">Before</button>
-            <button class="tg-tab active" data-state="after">After</button>
-          </div>
-          <div class="tg-img-wrap">
-            <img class="tg-before" src="images/nom/PC Before.png" alt="PC Before"/>
-            <img class="tg-after tg-visible" src="images/nom/PC After.png" alt="PC After"/>
-          </div>
+      <div class="ba-toggle" style="margin:16px 0 0;">
+        <div class="ba-toggle-tabs">
+          <button class="ba-tab" data-panel="before">Before</button>
+          <button class="ba-tab active" data-panel="after">After</button>
         </div>
+        <img class="ba-toggle-img" data-key="before" src="images/nom/PC Before.png" alt="PC Before"/>
+        <img class="ba-toggle-img active" data-key="after" src="images/nom/PC After.png" alt="PC After"/>
       </div>
 
       <!-- Toggle Before/After — Mobile -->
       <div style="margin:60px 0 0;">
-        <div style="max-width:510px;margin:0 auto;">
-          <div class="tg-wrap">
-            <div class="tg-tabs">
-              <button class="tg-tab" data-state="before">Before</button>
-              <button class="tg-tab active" data-state="after">After</button>
-            </div>
-            <div class="tg-img-wrap">
-              <img class="tg-before" src="images/nom/mobile before.png" alt="Mobile Before"/>
-              <img class="tg-after tg-visible" src="images/nom/mobile after.png" alt="Mobile After"/>
-            </div>
+        <div class="ba-toggle" style="max-width:510px;margin:0 auto;">
+          <div class="ba-toggle-tabs">
+            <button class="ba-tab" data-panel="before">Before</button>
+            <button class="ba-tab active" data-panel="after">After</button>
           </div>
+          <img class="ba-toggle-img" data-key="before" src="images/nom/mobile before.png" alt="Mobile Before"/>
+          <img class="ba-toggle-img active" data-key="after" src="images/nom/mobile after.png" alt="Mobile After"/>
         </div>
       </div>
 
@@ -612,6 +604,19 @@
 
 <script src="script.js"></script>
 <script>
+  /* Before/After toggle */
+  document.querySelectorAll('.ba-toggle').forEach(toggle => {
+    toggle.querySelectorAll('.ba-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const panel = tab.dataset.panel;
+        toggle.querySelectorAll('.ba-tab').forEach(t => t.classList.remove('active'));
+        toggle.querySelectorAll('.ba-toggle-img').forEach(img => img.classList.remove('active'));
+        tab.classList.add('active');
+        toggle.querySelector(`.ba-toggle-img[data-key="${panel}"]`).classList.add('active');
+      });
+    });
+  });
+
   /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
   document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
     el.style.opacity = '1';
