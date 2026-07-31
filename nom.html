@@ -52,7 +52,7 @@
   <div class="global-nav-pills">
     <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
     <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
-    <a href="resume.pdf?v=3" target="_blank">Resume</a>
+    <a href="resume.pdf?v=4" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/miseonpark" target="_blank">LinkedIn</a>
   </div>
 </nav>
@@ -63,7 +63,7 @@
   <div class="case-hero-wrap">
     <p class="case-eyebrow">Product Design · Naver OGQ Market · Mar 2026</p>
     <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">Naver OGQ Market 통합 홈 개편</span>
+      <span style="font-family:'Archivo',sans-serif;">Naver OGQ Market 홈 상단 노출 구조 개선</span>
       <span style="display:flex;align-items:center;gap:8px;">
         <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>
       </span>
@@ -257,7 +257,7 @@
       <!-- 마이페이지 + 드로워 5열 -->
       <div style="display:grid;grid-template-columns:2fr 3fr;gap:14px;margin-bottom:40px;align-items:start;">
         <!-- Mypage 1,2 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/mypage1.png" alt="mypage1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
@@ -347,7 +347,7 @@
         <div class="c2-space">
           <div class="c2-space-head"><span>PC</span><span class="c2-space-sub">1200px 기준</span></div>
           <div class="c2-space-num">-530px <span>≈ 44%</span></div>
-          <div class="c2-bar"><div class="c2-bar-fill" style="width:44%;"></div></div>
+          <div class="c2-bar"><div class="c2-bar-fill" data-w="44"></div></div>
           <div class="c2-space-rows">
             <div><span>배너 축소</span><span>304 → 232px <em>-72</em></span></div>
             <div><span>최근 본 콘텐츠 → 사이드바</span><span>458px <em>-458</em></span></div>
@@ -356,7 +356,7 @@
         <div class="c2-space">
           <div class="c2-space-head"><span>Mobile</span><span class="c2-space-sub">844px 기준</span></div>
           <div class="c2-space-num">-381px <span>≈ 45%</span></div>
-          <div class="c2-bar"><div class="c2-bar-fill" style="width:45%;"></div></div>
+          <div class="c2-bar"><div class="c2-bar-fill" data-w="45"></div></div>
           <div class="c2-space-rows">
             <div><span>배너 축소</span><span>253 → 194px <em>-59</em></span></div>
             <div><span>GNB 여백 조정</span><span>32 → 16px <em>-16</em></span></div>
@@ -387,8 +387,8 @@
           <div class="c2-hero-ba">
             <span>114만</span>
             <span class="c2-hero-track">
-              <i style="position:absolute;left:0;top:0;height:100%;width:31%;background:#a8dfc4;border-radius:4px;"></i>
-              <i style="position:absolute;left:31%;top:0;height:100%;width:69%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
+              <i class="c2-track-i" data-w="31" style="position:absolute;left:0;top:0;height:100%;width:0%;background:#a8dfc4;border-radius:4px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);"></i>
+              <i class="c2-track-i" data-left="31" data-w="69" style="position:absolute;left:0;top:0;height:100%;width:0%;background:rgba(255,255,255,0.7);border-radius:4px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1) 0.3s, left 0.8s cubic-bezier(0.4,0,0.2,1) 0.3s;"></i>
             </span>
             <strong style="color:#1a1a2e;">166만</strong>
           </div>
@@ -399,8 +399,8 @@
           <div class="c2-hero-ba">
             <span>6.4%</span>
             <span class="c2-hero-track">
-              <i style="position:absolute;left:0;top:0;height:100%;width:38%;background:#a8dfc4;border-radius:4px;"></i>
-              <i style="position:absolute;left:38%;top:0;height:100%;width:62%;background:rgba(255,255,255,0.7);border-radius:4px;"></i>
+              <i class="c2-track-i" data-w="38" style="position:absolute;left:0;top:0;height:100%;width:0%;background:#a8dfc4;border-radius:4px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);"></i>
+              <i class="c2-track-i" data-left="38" data-w="62" style="position:absolute;left:0;top:0;height:100%;width:0%;background:rgba(255,255,255,0.7);border-radius:4px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1) 0.3s, left 0.8s cubic-bezier(0.4,0,0.2,1) 0.3s;"></i>
             </span>
             <strong style="color:#1a1a2e;">10.3%</strong>
           </div>
@@ -427,9 +427,9 @@
         </div>
       </div>
       <details style="margin-top:8px;" class="task-accordion">
-        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.6);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(118,118,118,0.08);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
           <span>상세 데이터 보기 — 주차별 매출 비중</span>
-          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+          <span class="accordion-arrow" style="font-size:13px;color:#666;transition:transform 0.2s;">펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span></span>
         </summary>
         <div style="padding:16px 0 4px;overflow-x:auto;">
           <table class="c2-table">
@@ -447,7 +447,7 @@
 
       <p class="cb-label cb-sublabel" style="margin-top:48px;">4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율</p>
       <p class="cb-p" style="margin-top:12px;">GA4 <code class="c2-code">checkout_source: recent_artwork</code> 로 구매 경로를 분리해 추적했습니다.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0;">
         <div class="c2-card">
           <div class="c2-card-l">클릭당 전환율</div>
           <div class="c2-card-n">+60.9%</div>
@@ -458,16 +458,11 @@
           <div class="c2-card-n">+57.7%</div>
           <div class="c2-card-s">9.7% → 15.3%</div>
         </div>
-        <div class="c2-card">
-          <div class="c2-card-l">일평균 구매</div>
-          <div class="c2-card-n" style="color:#ff786c;">-0.9건</div>
-          <div class="c2-card-s">손실폭 3주 연속 수렴 중</div>
-        </div>
       </div>
       <details style="margin-top:8px;" class="task-accordion">
-        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.6);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(118,118,118,0.08);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
           <span>상세 데이터 보기 — 클릭 · 진입 · 전환</span>
-          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+          <span class="accordion-arrow" style="font-size:13px;color:#666;transition:transform 0.2s;">펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span></span>
         </summary>
         <div style="padding:16px 0 4px;overflow-x:auto;">
           <table class="c2-table">
@@ -476,10 +471,9 @@
               <tr><td>클릭 수</td><td>1,632</td><td>895</td><td style="color:#ff786c;">▼ 45.2%</td></tr>
               <tr><td>결제 진입율</td><td>9.7%</td><td>15.3%</td><td style="color:#3a8c66;">▲ 57.7%</td></tr>
               <tr class="c2-total"><td>클릭당 전환율</td><td>6.4%</td><td>10.3%</td><td style="color:#3a8c66;">▲ 60.9%</td></tr>
-              <tr><td>일평균 구매</td><td>8건</td><td>7.1건</td><td>▼ 0.9건</td></tr>
             </tbody>
           </table>
-          <p style="font-size:12px;color:#888;margin-top:12px;line-height:1.7;">절대 클릭은 줄었지만 클릭당 전환율은 60.9% 상승 — 사이드바에서 찾아 클릭하는 사용자는 구매 의도가 높은 세그먼트. 일평균 손실폭도 2.5건 → 1.25건 → 0.9건으로 3주 연속 수렴 중.</p>
+          <p style="font-size:12px;color:#888;margin-top:12px;line-height:1.7;">절대 클릭은 줄었지만 클릭당 전환율은 60.9% 상승 — 사이드바에서 찾아 클릭하는 사용자는 구매 의도가 높은 세그먼트.</p>
         </div>
       </details>
     </div>
@@ -616,6 +610,44 @@
       });
     });
   });
+
+  /* Accordion toggle text + hover open */
+  document.querySelectorAll('.task-accordion').forEach(details => {
+    const arrow = details.querySelector('.accordion-arrow');
+    details.addEventListener('toggle', () => {
+      arrow.innerHTML = details.open ? '접기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▴</span>' : '펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span>';
+    });
+    details.querySelector('summary').addEventListener('mouseenter', () => {
+      details.open = true;
+    });
+  });
+
+  /* Bar fill animation on scroll */
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => { e.target.style.width = e.target.dataset.w + '%'; }, 100);
+        barObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.c2-bar-fill[data-w]').forEach(el => barObs.observe(el));
+
+  /* Hero track bar animation */
+  const trackObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.c2-track-i').forEach(i => {
+          setTimeout(() => {
+            i.style.width = i.dataset.w + '%';
+            if (i.dataset.left) i.style.left = i.dataset.left + '%';
+          }, 100);
+        });
+        trackObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.c2-hero-card').forEach(el => trackObs.observe(el));
 
   /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
   document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {

@@ -1069,6 +1069,15 @@ mark.hl.hl-visible {
   background-size: 100% 88%;
 }
 
+/* About page — light yellow highlight */
+#about-page mark.hl {
+  background: linear-gradient(#FEF4C2, #FEF4C2) no-repeat left center;
+  background-size: 0% 88%;
+}
+#about-page mark.hl.hl-visible {
+  background-size: 100% 88%;
+}
+
 /* CHAT BUBBLE OBSERVATIONS */
 .obs-wrap { margin: 28px 0; display: flex; flex-direction: column; gap: 12px; }
 .obs-row { display: flex; align-items: flex-start; gap: 12px; }
@@ -1210,18 +1219,10 @@ mark.hl.hl-visible {
 .work-item-right { overflow: hidden; }
 
 /* 첫 번째 카드 hover 폰트 색 */
-.work-item-yt:hover .work-item-title,
-.work-item-yt:hover .work-item-tag,
-.work-item-yt:hover .work-item-desc,
-.work-item-yt:hover .work-item-stat-big,
-.work-item-yt:hover .work-item-stat-unit { color: #444444 !important; transition: color 0.2s; }
+.work-item-yt:hover .work-item-title { color: #ff0e0d !important; transition: color 0.2s; }
 
 /* NOM 카드 hover */
-.work-item-nom:hover .work-item-title,
-.work-item-nom:hover .work-item-tag,
-.work-item-nom:hover .work-item-desc,
-.work-item-nom:hover .work-item-stat-big,
-.work-item-nom:hover .work-item-stat-unit { color: #444444 !important; transition: color 0.2s; }
+.work-item-nom:hover .work-item-title { color: #3fc997 !important; transition: color 0.2s; }
 .work-item-nom .work-item-right > div { transition: transform 0.35s ease; }
 .work-item-nom .work-item-right:hover > div { transform: scale(1.05); }
 .work-item-hm .work-item-right {
@@ -1656,7 +1657,7 @@ div.case-body {
 .c2-space-num { font-family: 'Archivo', sans-serif; font-size: 30px; font-weight: 700; color: #3a8c66; letter-spacing: -0.02em; line-height: 1; margin-bottom: 14px; }
 .c2-space-num span { font-size: 15px; color: #6ab894; font-weight: 600; }
 .c2-bar { height: 8px; border-radius: 100px; background: rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 16px; }
-.c2-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg,#6ab894,#3a8c66); }
+.c2-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg,#6ab894,#3a8c66); width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
 .c2-space-rows > div { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #555; padding: 8px 0; border-top: 1px solid rgba(0,0,0,0.06); }
 .c2-space-rows > div:first-child { border-top: none; }
 .c2-space-rows em { font-style: normal; font-weight: 700; color: #3a8c66; font-family: 'Archivo', sans-serif; margin-left: 8px; }

@@ -61,6 +61,8 @@ function showPage(p) {
     setTimeout(() => initCaseSidenav(pageMap[p]), 100);
     setTimeout(initHighlights, 200);
     setTimeout(initToggle, 150);
+  } else if (p === 'about') {
+    setTimeout(initHighlights, 200);
   } else {
     document.getElementById('case-sidenav')?.classList.remove('visible');
     document.getElementById('case2-sidenav')?.classList.remove('visible');

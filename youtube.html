@@ -42,7 +42,7 @@
   <div class="global-nav-pills">
     <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
     <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
-    <a href="resume.pdf?v=3" target="_blank">Resume</a>
+    <a href="resume.pdf?v=4" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/miseonpark" target="_blank">LinkedIn</a>
   </div>
 </nav>
@@ -329,10 +329,10 @@
       </div>
 
       <!-- 상세 데이터 아코디언 -->
-      <details style="margin-top:8px;" class="task-accordion">
-        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.37);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+      <details style="margin-top:8px;" class="task-accordion data-acc">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(118,118,118,0.08);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
           <span>상세 데이터 보기 — Task Success Rate &amp; Time on Task</span>
-          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+          <span class="accordion-arrow" style="font-size:13px;color:#666;transition:transform 0.2s;">펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span></span>
         </summary>
         <div style="padding:20px 0 4px;">
           <div style="margin-bottom:28px;overflow-x:auto;">
@@ -382,6 +382,8 @@
         details[open] .task-accordion summary .accordion-arrow,
         .task-accordion[open] summary .accordion-arrow { transform: rotate(180deg); }
         details[open] > summary .accordion-arrow { transform: rotate(180deg); }
+        /* 상세데이터 아코디언 — 텍스트 토글 방식이므로 회전 없음 */
+        details.data-acc[open] > summary .accordion-arrow { transform: none; }
         .data-table { border-collapse: separate; border-spacing: 0 4px; width: 100%; }
         .data-table thead th { padding: 8px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #999; text-align: center; }
         .data-table thead th:first-child { text-align: left; }
@@ -465,10 +467,10 @@
         </div>
       </div>
       <p class="cb-p" style="margin-top:16px;">SUS 결과는 현재 프로토타입이 <strong>수용 가능한 사용성 수준</strong>에 도달했음을 보여줍니다. 특히 <mark class="hl">자신감(Q9)과 학습 용이성(Q10)</mark>에서 높은 점수를 기록했으며, 복잡성(Q2)과 지속 사용 의향(Q1) 항목이 최종 이터레이션의 핵심 개선 방향이 됐습니다.</p>
-      <details style="margin-top:16px;width:100%;" class="task-accordion">
-        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(255,255,255,0.37);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
+      <details style="margin-top:16px;width:100%;" class="task-accordion data-acc">
+        <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(118,118,118,0.08);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
           <span>상세 데이터 보기 — SUS 10문항</span>
-          <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
+          <span class="accordion-arrow" style="font-size:13px;color:#666;transition:transform 0.2s;">펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span></span>
         </summary>
         <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <div class="yt-chip"><span>Q1 자주 사용하고 싶다</span><span style="font-weight:600;color:#111;">2.88</span></div>
@@ -670,6 +672,19 @@
 
 <script src="script.js"></script>
 <script>
+  /* 상세데이터 아코디언 — 텍스트 토글 + hover open */
+  document.querySelectorAll('.data-acc').forEach(details => {
+    const arrow = details.querySelector('.accordion-arrow');
+    if (!arrow) return;
+    details.addEventListener('toggle', () => {
+      arrow.innerHTML = details.open
+        ? '접기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▴</span>'
+        : '펼치기 <span style="font-size:18px;line-height:1;display:inline-block;transform:scaleX(1.8);">▾</span>';
+    });
+    const summary = details.querySelector('summary');
+    if (summary) summary.addEventListener('mouseenter', () => { details.open = true; });
+  });
+
   /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
   document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
     el.style.opacity = '1';
