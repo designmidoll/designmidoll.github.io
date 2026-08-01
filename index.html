@@ -39,28 +39,28 @@
           <div class="avatar"><img src="images/profile.png?v=2" alt="Miseon Park" style="width:100%;height:100%;border-radius:50%;object-fit:cover;"/></div>
           <div class="avatar-dot"></div>
         </div>
-        <h1 class="hero-title">
-          I'm <span class="name-highlight">Miseon Park</span> —<br>
-          a Product Designer who <em>hypothesizes</em>,<br>
-          then validates with data.
+        <h1 data-i18n="home.hero-title.0" class="hero-title">
+          프로덕트 디자이너,<br>
+          <span class="name-highlight">박미선</span>입니다.<br>
+          가설을 세우고 데이터로 검증합니다.
         </h1>
       </div>
 
       <div class="pills-section">
         <div class="pills-row">
-          <span class="pill primary" onclick="document.getElementById('work-section').scrollIntoView({behavior:'smooth'})">see my work ↓</span>
-          <span class="pill" onclick="sendAsk('How do you define problems?')">how do you define problems?</span>
-          <span class="pill" onclick="sendAsk('How do you validate your designs?')">how do you validate designs?</span>
-          <span class="pill" onclick="sendAsk('How do you use AI in your work?')">how do you use AI in your work?</span>
-          <a class="pill" href="mailto:designmidoll@gmail.com">wanna chat? ↗</a>
+          <span data-i18n="home.pill.0" class="pill primary" onclick="document.getElementById('work-section').scrollIntoView({behavior:'smooth'})">작업물 보기 ↓</span>
+          <span data-i18n="home.pill.1" class="pill" onclick="sendAsk(window.tr ? window.tr('문제는 어떻게 정의하나요?') : '문제는 어떻게 정의하나요?')">문제는 어떻게 정의하나요?</span>
+          <span data-i18n="home.pill.2" class="pill" onclick="sendAsk(window.tr ? window.tr('디자인은 어떻게 검증하나요?') : '디자인은 어떻게 검증하나요?')">디자인은 어떻게 검증하나요?</span>
+          <span data-i18n="home.pill.3" class="pill" onclick="sendAsk(window.tr ? window.tr('업무에 AI를 어떻게 활용하나요?') : '업무에 AI를 어떻게 활용하나요?')">업무에 AI를 어떻게 활용하나요?</span>
+          <a data-i18n="home.pill.4" class="pill" href="mailto:designmidoll@gmail.com">대화하고 싶다면 ↗</a>
         </div>
       </div>
 
       <div class="chat-input-wrap">
         <div class="chat-input-box">
           <span class="chat-prompt">&gt;_</span>
-          <input class="chat-input" id="chat-input" placeholder="ask Miseon anything..." onkeydown="handleChatKey(event)">
-          <button class="chat-send" onclick="handleChatSend()">↑</button>
+          <input class="chat-input" id="chat-input" data-i18n-ph="home.chat-ph.0" placeholder="무엇이든 물어보세요..." onkeydown="handleChatKey(event)">
+          <button class="chat-send" onclick="handleChatSend()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V4"/><path d="M6 10l6-6 6 6"/></svg></button>
         </div>
         <div class="chat-messages" id="chat-messages"></div>
       </div>
@@ -72,18 +72,17 @@
 
   <!-- WORK -->
   <div id="work-section-wrap"><div class="work-section" id="work-section">
-    <div class="work-label">Selected Work</div>
 
     <!-- Work Item 01 — NOM -->
     <div class="work-item work-item-nom" onclick="showPage('case2')">
       <div class="work-item-left">
-        <p class="work-item-tag">Product Design · Naver OGQ Market · Mar 2026</p>
-        <h2 class="work-item-title" style="display:flex;align-items:flex-start;gap:12px;flex-direction:column;">
-          <span>Naver OGQ Market 홈 상단 노출 구조 개선</span>
+        <p data-i18n="home.work-item-tag.0" class="work-item-tag">Product Design · Naver OGQ Market · Mar 2026</p>
+        <h2 data-i18n="home.work-item-title.0" class="work-item-title" style="display:flex;align-items:flex-start;gap:12px;flex-direction:column;">
+          <span>네이버 OGQ마켓 홈 상단 노출 구조 개선</span>
         </h2>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">+60.9%</span>
-          <span class="work-item-stat-unit">Click CVR</span>
+          <span data-i18n="home.work-item-stat-unit.0" class="work-item-stat-unit">Click CVR</span>
         </div>
         <div class="work-item-tags">
           <span class="wit">Product Design</span>
@@ -100,11 +99,11 @@
     <!-- Work Item 02 — YouTube -->
     <div class="work-item work-item-yt" onclick="showPage('case')">
       <div class="work-item-left">
-        <p class="work-item-tag">UX Research & Design · YouTube Shorts · Sep 2025</p>
-        <h2 class="work-item-title">YouTube Shorts 쇼핑 경험 개선</h2>
+        <p data-i18n="home.work-item-tag.1" class="work-item-tag">UX Research & Design · YouTube Shorts · Sep 2025</p>
+        <h2 data-i18n="home.work-item-title.1" class="work-item-title">유튜브 쇼츠 쇼핑 경험 재설계</h2>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">8</span>
-          <span class="work-item-stat-unit">in-depth user interviews</span>
+          <span data-i18n="home.work-item-stat-unit.1" class="work-item-stat-unit">in-depth user interviews</span>
         </div>
         <div class="work-item-tags">
           <span class="wit">User Interview</span>
@@ -122,11 +121,11 @@
     <!-- Work Item 03 — HOMUSCLE -->
     <div class="work-item work-item-hm" onclick="showPage('case3')">
       <div class="work-item-left">
-        <p class="work-item-tag">AI Experiment · Side Project · 2025</p>
-        <h2 class="work-item-title">HOMUSCLE : AI Home Workout Tracker</h2>
+        <p data-i18n="home.work-item-tag.2" class="work-item-tag">AI Experiment · Side Project · 2025</p>
+        <h2 data-i18n="home.work-item-title.2" class="work-item-title">HOMUSCLE : AI 홈트레이닝 트래커</h2>
         <div class="work-item-stat-row">
           <span class="work-item-stat-big">AI</span>
-          <span class="work-item-stat-unit">Pose Detection Web App</span>
+          <span data-i18n="home.work-item-stat-unit.2" class="work-item-stat-unit">Pose Detection Web App</span>
         </div>
         <div class="work-item-tags">
           <span class="wit">MediaPipe</span>
@@ -171,8 +170,8 @@
     <!-- TOP: name + tagline -->
     <div style="margin-bottom:72px;">
       <p class="about-label" style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:20px;">About</p>
-      <h1 style="font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;color:#0f0f0f;margin-bottom:24px;">I hypothesize.<br>Then I <em style="font-style:italic;font-weight:300;color:#555;">validate</em>.</h1>
-      <p style="font-size:16px;font-weight:400;color:#444;line-height:1.6;max-width:560px;">7 years of graphic and content design built my visual foundation. Now I bring that together with UX research and data validation — deciding not by instinct, but by evidence.</p>
+      <h1 data-i18n="home.about-h1.0" style="font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.08;letter-spacing:-0.03em;color:#0f0f0f;margin-bottom:24px;">가설을 세웁니다.<br>그리고 <em style="font-style:italic;font-weight:300;color:#555;">검증합니다</em>.</h1>
+      <p data-i18n="home.about-lead.0" style="font-size:16px;font-weight:400;color:#444;line-height:1.6;max-width:560px;">사용자가 말하는 불편함을 그대로 받아들이지 않습니다.<br>보이는 문제 너머, 진짜 이유를 파고들어 근거로 증명합니다.</p>
     </div>
 
     <!-- DIVIDER -->
@@ -200,13 +199,13 @@
           #about-page .about-bio-col p:last-child { margin-bottom:0; }
           #about-page .idx-skill { font-size:14px; font-weight:300; color:#444; }
         </style>
-        <p><mark class="hl">그래픽 디자인에서 출발해 콘텐츠·웹 디자인을 거쳐, 지금은 프로덕트 디자이너로 UX/UI를 설계합니다.</mark> OGQ에서 7년여간 삼성·NAVER·LINE 등과 협업하며 굿락 아이콘, 카카오톡 테마, 캐릭터 IP 기반 굿즈와 부스 디자인처럼 <mark class="hl">시각적 완성도가 요구되는 작업으로 기본기를 쌓았고, 그 위에 사용자 리서치와 데이터 검증 역량을 더해 비주얼과 UX를 함께 다루는 디자이너로 전환했습니다.</mark></p>
+        <p data-i18n="home.about-bio.0"><mark class="hl">그래픽 디자인에서 출발해 콘텐츠·웹 디자인을 거쳐, 지금은 프로덕트 디자이너로 UX/UI를 설계합니다.</mark> OGQ에서 7년여간 삼성·NAVER·LINE 등과 협업하며 굿락 아이콘, 카카오톡 테마, 캐릭터 IP 기반 굿즈와 부스 디자인처럼 <mark class="hl">시각적 완성도가 요구되는 작업으로 기본기를 쌓았고, 그 위에 사용자 리서치와 데이터 검증 역량을 더해 비주얼과 UX를 함께 다루는 디자이너로 전환했습니다.</mark></p>
 
-        <p>비주얼 작업을 오래 해오면서 자연스럽게 "왜 사용자가 이걸 쓰는가"를 파고들게 됐습니다. 사내 스터디와 사이드 프로젝트로 UX 방법론을 직접 적용하며, 리서치와 데이터를 기반으로 결정을 내리는 방식으로 일합니다.</p>
+        <p data-i18n="home.about-bio.1">비주얼 작업을 오래 해오면서 자연스럽게 "왜 사용자가 이걸 쓰는가"를 파고들게 됐습니다. 사내 스터디와 사이드 프로젝트로 UX 방법론을 직접 적용하며, 리서치와 데이터를 기반으로 결정을 내리는 방식으로 일합니다.</p>
 
-        <p><mark class="hl">현재는 디자인 시스템 기반 UI 설계, 신규 컴포넌트 설계, 서비스 화면 개선을 담당합니다.</mark> Figma Auto Layout과 컬러·타이포그래피 토큰으로 개발 구현을 고려한 설계를 하고, 스펙을 명확히 정의해 개발자와 협업합니다. 신규 기능마다 디자인 시스템과 연계된 컴포넌트 구조를 함께 고도화합니다.</p>
+        <p data-i18n="home.about-bio.2"><mark class="hl">현재는 디자인 시스템 기반 UI 설계, 신규 컴포넌트 설계, 서비스 화면 개선을 담당합니다.</mark> Figma Auto Layout과 컬러·타이포그래피 토큰으로 개발 구현을 고려한 설계를 하고, 스펙을 명확히 정의해 개발자와 협업합니다. 신규 기능마다 디자인 시스템과 연계된 컴포넌트 구조를 함께 고도화합니다.</p>
 
-        <p>기획자·개발자와 스쿼드로 협업하며 의사결정에 직접 참여합니다. 생성형 AI를 활용한 디자인 제작과 바이브 코딩 사이드 프로젝트를 병행하며 디자인과 기술의 접점을 넓혀가고 있습니다. <mark class="hl">비주얼 완성도와 UX 논리를 함께 다룰 수 있는 것이 제 강점입니다.</mark></p>
+        <p data-i18n="home.about-bio.3">기획자·개발자와 스쿼드로 협업하며 의사결정에 직접 참여합니다. 생성형 AI를 활용한 디자인 제작과 바이브 코딩 사이드 프로젝트를 병행하며 디자인과 기술의 접점을 넓혀가고 있습니다. <mark class="hl">비주얼 완성도와 UX 논리를 함께 다룰 수 있는 것이 제 강점입니다.</mark></p>
 
       </div>
     </div>
@@ -279,6 +278,8 @@
   <img id="char-img" src="images/character.png" alt="character"/>
 </div>
 
+<script src="i18n-dict.js"></script>
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 
 </body>

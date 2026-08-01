@@ -35,6 +35,15 @@
   #global-nav.nav-light .global-nav-pills { background: rgba(255,255,255,0.65) !important; border-color: rgba(0,0,0,0.08) !important; }
   #global-nav.nav-light .global-nav-pills a { color: rgba(20,20,20,0.65) !important; }
   #global-nav.nav-light .global-nav-pills a:hover, #global-nav.nav-light .global-nav-pills a.nav-active { color: #000 !important; }
+  /* 언어 토글 — 다크 밴드 위 (배경 없이 텍스트만) */
+  .lang-btn { color: rgba(255,255,255,0.4) !important; transition: color 0.25s ease; }
+  .lang-btn:hover { color: rgba(255,255,255,0.7) !important; }
+  .lang-btn.lang-active { color: #fff !important; }
+  .lang-sep { background: rgba(255,255,255,0.22) !important; }
+  #global-nav.nav-light .lang-btn { color: rgba(20,20,20,0.32) !important; }
+  #global-nav.nav-light .lang-btn:hover { color: rgba(20,20,20,0.6) !important; }
+  #global-nav.nav-light .lang-btn.lang-active { color: var(--ink) !important; }
+  #global-nav.nav-light .lang-sep { background: rgba(0,0,0,0.15) !important; }
 
   /* 왼쪽 목차 */
   #case3-sidenav button { color: rgba(255,255,255,0.45); transition: color 0.25s; }
@@ -234,18 +243,18 @@
 <div id="case3-page" class="page active">
 
   <div class="case-hero-wrap">
-    <p class="case-eyebrow">AI Experiment · Side Project · 2025 — Vibe Coding</p>
-    <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">HOMUSCLE : AI Home Workout Tracker</span>
+    <p data-i18n="hm.case-eyebrow.0" class="case-eyebrow">AI Experiment · Side Project · 2025 — Vibe Coding</p>
+    <h1 data-i18n="hm.case-h1.0" class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
+      <span style="font-family:'Archivo',sans-serif;">HOMUSCLE : AI 홈트레이닝 트래커</span>
       <span style="font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>
     </h1>
     <div class="case-hero-tags">
-      <span class="cht">Vibe Coding · AI 협업</span>
-      <span class="cht">MediaPipe Pose</span>
-      <span class="cht">On-device YOLO</span>
-      <span class="cht">Design System</span>
-      <span class="cht">Motion Design</span>
-      <span class="cht">Single-file Web App</span>
+      <span data-i18n="hm.cht.0" class="cht">Vibe Coding · AI 협업</span>
+      <span data-i18n="hm.cht.1" class="cht">MediaPipe Pose</span>
+      <span data-i18n="hm.cht.2" class="cht">On-device YOLO</span>
+      <span data-i18n="hm.cht.3" class="cht">Design System</span>
+      <span data-i18n="hm.cht.4" class="cht">Motion Design</span>
+      <span data-i18n="hm.cht.5" class="cht">Single-file Web App</span>
     </div>
 
     <!-- HERO — 라이브 임베드 -->
@@ -260,21 +269,21 @@
           <iframe src="homuscle-app.html?demo=1" title="HOMUSCLE live app — intro" scrolling="no"></iframe>
         </div>
       </div>
-      <p class="hm-embed-note">이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">새 탭에서 직접 사용해보기 ↗</a></p>
+      <p data-i18n="hm.hm-embed-note.0" class="hm-embed-note">이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">새 탭에서 직접 사용해보기 ↗</a></p>
     </div>
 
     <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;">
       <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
         <div class="cs-n">4<span style="font-size:28px;font-weight:500;color:#777;"> 종목</span></div>
-        <div class="cs-l">덤벨 운동 자동 카운팅</div>
+        <div data-i18n="hm.cs-l.0" class="cs-l">덤벨 운동 자동 카운팅</div>
       </div>
       <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;border-left:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08);">
         <div class="cs-n">2,841<span style="font-size:28px;font-weight:500;color:#777;"> lines</span></div>
-        <div class="cs-l">단일 HTML 파일로 완성</div>
+        <div data-i18n="hm.cs-l.1" class="cs-l">단일 HTML 파일로 완성</div>
       </div>
       <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
         <div class="cs-n">100<span style="font-size:28px;font-weight:500;color:#777;">%</span></div>
-        <div class="cs-l">온디바이스 추론 · 서버 0</div>
+        <div data-i18n="hm.cs-l.2" class="cs-l">온디바이스 추론 · 서버 0</div>
       </div>
     </div>
 
@@ -287,30 +296,30 @@
     <!-- 1. OVERVIEW -->
     <div class="cb-section" data-nav="Overview">
       <p class="cb-label">Overview</p>
-      <h2 class="cb-h2">왜 만들었나</h2>
-      <p class="cb-p">집에서 덤벨 운동을 할 때 횟수를 세는 일이 생각보다 번거롭습니다. 세다가 놓치면 기록이 남지 않고, 기록이 없으면 운동을 이어가기 어려웠습니다. <mark class="hl">직접 겪은 이 문제를 카메라 포즈 인식으로 해결할 수 있을지</mark> 확인해보기 위해 시작한 개인 프로젝트입니다.</p>
-      <p class="cb-p">HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class="hl">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다.</p>
+      <h2 data-i18n="hm.cb-h2.0" class="cb-h2">왜 만들었나</h2>
+      <p data-i18n="hm.cb-p.0" class="cb-p">집에서 덤벨 운동을 할 때 횟수를 세는 일이 생각보다 번거롭습니다. 세다가 놓치면 기록이 남지 않고, 기록이 없으면 운동을 이어가기 어려웠습니다. <mark class="hl">직접 겪은 이 문제를 카메라 포즈 인식으로 해결할 수 있을지</mark> 확인해보기 위해 시작한 개인 프로젝트입니다.</p>
+      <p data-i18n="hm.cb-p.1" class="cb-p">HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class="hl">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다.</p>
 
       <div class="hm-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:32px 0 8px;">
         <div class="c2-card" style="background:transparent;padding-right:20px;">
-          <div class="c2-card-l">My Role</div>
-          <div class="c2-card-n" style="font-size:17px;">Designer & Builder</div>
-          <div class="c2-card-s">기획 · 디자인 · 구현 · 검증 1인</div>
+          <div data-i18n="hm.c2-card-l.0" class="c2-card-l">My Role</div>
+          <div data-i18n="hm.c2-card-n.0" class="c2-card-n" style="font-size:17px;">Designer & Builder</div>
+          <div data-i18n="hm.c2-card-s.0" class="c2-card-s">기획 · 디자인 · 구현 · 검증 1인</div>
         </div>
         <div class="c2-card" style="background:transparent;padding:0 20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
-          <div class="c2-card-l">Method</div>
-          <div class="c2-card-n" style="font-size:17px;">Vibe Coding</div>
-          <div class="c2-card-s">스펙 문서 기반 AI 협업</div>
+          <div data-i18n="hm.c2-card-l.1" class="c2-card-l">Method</div>
+          <div data-i18n="hm.c2-card-n.1" class="c2-card-n" style="font-size:17px;">Vibe Coding</div>
+          <div data-i18n="hm.c2-card-s.1" class="c2-card-s">스펙 문서 기반 AI 협업</div>
         </div>
         <div class="c2-card" style="background:transparent;padding:0 20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
-          <div class="c2-card-l">Tech</div>
-          <div class="c2-card-n" style="font-size:17px;">MediaPipe · YOLO</div>
-          <div class="c2-card-s">포즈 추적 + 아령 객체 인식</div>
+          <div data-i18n="hm.c2-card-l.2" class="c2-card-l">Tech</div>
+          <div data-i18n="hm.c2-card-n.2" class="c2-card-n" style="font-size:17px;">MediaPipe · YOLO</div>
+          <div data-i18n="hm.c2-card-s.2" class="c2-card-s">포즈 추적 + 아령 객체 인식</div>
         </div>
         <div class="c2-card" style="background:transparent;padding-left:20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
-          <div class="c2-card-l">Format</div>
-          <div class="c2-card-n" style="font-size:17px;">1 HTML File</div>
-          <div class="c2-card-s">의존성은 CDN 3개뿐</div>
+          <div data-i18n="hm.c2-card-l.3" class="c2-card-l">Format</div>
+          <div data-i18n="hm.c2-card-n.3" class="c2-card-n" style="font-size:17px;">1 HTML File</div>
+          <div data-i18n="hm.c2-card-s.3" class="c2-card-s">의존성은 CDN 3개뿐</div>
         </div>
       </div>
     </div>
@@ -318,9 +327,9 @@
     <!-- 2. DESIGN SYSTEM -->
     <div class="cb-section" data-nav="Design System">
       <p class="cb-label">Design System</p>
-      <h2 class="cb-h2">디자인 시스템 정의</h2>
-      <p class="cb-p">프리미엄 스포츠 브랜드의 공간 경험을 레퍼런스로 삼아, <mark class="hl">블랙 배경에 주황(#FF6B00) 단일 액센트</mark>만 사용하는 규칙을 정했습니다. 색이 하나뿐이므로 위계는 타이포그래피와 여백으로 만들었습니다. 운동명은 4~5rem 올캡스, 레이블은 0.72rem 올캡스에 넓은 자간, 카운터는 7rem 주황으로 정리했고, 주황은 강조가 필요한 요소에만 제한적으로 사용했습니다.</p>
-      <p class="cb-p">모든 색은 CSS 변수 토큰으로만 쓰도록 규칙화해, 화면이 늘어나도 <mark class="hl">시스템이 일관되게 유지되도록</mark> 했습니다.</p>
+      <h2 data-i18n="hm.cb-h2.1" class="cb-h2">디자인 시스템 정의</h2>
+      <p data-i18n="hm.cb-p.2" class="cb-p">프리미엄 스포츠 브랜드의 공간 경험을 레퍼런스로 삼아, <mark class="hl">블랙 배경에 주황(#FF6B00) 단일 액센트</mark>만 사용하는 규칙을 정했습니다. 색이 하나뿐이므로 위계는 타이포그래피와 여백으로 만들었습니다. 운동명은 4~5rem 올캡스, 레이블은 0.72rem 올캡스에 넓은 자간, 카운터는 7rem 주황으로 정리했고, 주황은 강조가 필요한 요소에만 제한적으로 사용했습니다.</p>
+      <p data-i18n="hm.cb-p.3" class="cb-p">모든 색은 CSS 변수 토큰으로만 쓰도록 규칙화해, 화면이 늘어나도 <mark class="hl">시스템이 일관되게 유지되도록</mark> 했습니다.</p>
 
       <div class="hm-panel" style="margin:24px 0;">
         <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin-bottom:16px;">COLOR TOKENS</p>
@@ -365,11 +374,11 @@
     <!-- 3. KEY SCREENS -->
     <div class="cb-section" data-nav="Screens">
       <p class="cb-label">Key Screens</p>
-      <h2 class="cb-h2">주요 화면</h2>
-      <p class="cb-p">아래 화면은 캡처가 아니라 <mark class="hl">실제 앱을 그대로 임베드</mark>한 것입니다. 상단 탭으로 화면을 이동하거나 목표를 추가해볼 수 있습니다.</p>
+      <h2 data-i18n="hm.cb-h2.2" class="cb-h2">주요 화면</h2>
+      <p data-i18n="hm.cb-p.4" class="cb-p">아래 화면은 캡처가 아니라 <mark class="hl">실제 앱을 그대로 임베드</mark>한 것입니다. 상단 탭으로 화면을 이동하거나 목표를 추가해볼 수 있습니다.</p>
 
       <p class="cb-label cb-sublabel" style="margin-top:36px;">01 · Training — 목표와 진행 상황</p>
-      <p class="cb-p" style="margin-bottom:16px;">모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class="hl">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.</p>
+      <p data-i18n="hm.cb-p.5" class="cb-p" style="margin-bottom:16px;">모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class="hl">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.</p>
       <div class="hm-device">
         <div class="hm-device-bar"><i></i><i></i><i></i><em>TRAINING</em><span class="hm-live">LIVE</span></div>
         <div class="hm-embed" data-w="1200" data-h="960">
@@ -378,7 +387,7 @@
       </div>
 
       <p class="cb-label cb-sublabel" style="margin-top:44px;">02 · Gallery — 운동 기록</p>
-      <p class="cb-p" style="margin-bottom:16px;">달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class="hl">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다.</p>
+      <p data-i18n="hm.cb-p.6" class="cb-p" style="margin-bottom:16px;">달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class="hl">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다.</p>
       <div class="hm-device">
         <div class="hm-device-bar"><i></i><i></i><i></i><em>GALLERY</em><span class="hm-live">LIVE</span></div>
         <div class="hm-embed" data-w="1200" data-h="860">
@@ -387,7 +396,7 @@
       </div>
 
       <p class="cb-label cb-sublabel" style="margin-top:44px;">03 · Stretch — 스트레칭 가이드</p>
-      <p class="cb-p" style="margin-bottom:16px;">목·어깨 스트레칭 가이드는 영상 대신 <mark class="hl">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.</p>
+      <p data-i18n="hm.cb-p.7" class="cb-p" style="margin-bottom:16px;">목·어깨 스트레칭 가이드는 영상 대신 <mark class="hl">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.</p>
       <div class="hm-device">
         <div class="hm-device-bar"><i></i><i></i><i></i><em>STRETCH</em><span class="hm-live">LIVE</span></div>
         <div class="hm-embed" data-w="1200" data-h="820">
@@ -399,9 +408,9 @@
     <!-- 4. SESSION -->
     <div class="cb-section" data-nav="Session">
       <p class="cb-label">Session</p>
-      <h2 class="cb-h2">세션 화면 설계</h2>
-      <p class="cb-p">세션 화면은 제약이 분명했습니다. 사용자는 <mark class="hl">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다.</p>
-      <p class="cb-p" style="font-size:13px;color:#888;">아래는 세션 화면의 구조를 재현한 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">라이브 앱 ↗</a>에서 체험할 수 있습니다.</p>
+      <h2 data-i18n="hm.cb-h2.3" class="cb-h2">세션 화면 설계</h2>
+      <p data-i18n="hm.cb-p.8" class="cb-p">세션 화면은 제약이 분명했습니다. 사용자는 <mark class="hl">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다.</p>
+      <p data-i18n="hm.cb-p.9" class="cb-p" style="font-size:13px;color:#888;">아래는 세션 화면의 구조를 재현한 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">라이브 앱 ↗</a>에서 체험할 수 있습니다.</p>
 
       <div class="hm-session" style="margin:20px 0 8px;">
         <div class="hm-sess-cam">
@@ -482,10 +491,10 @@
           </div>
         </div>
       </div>
-      <p class="nom-cap" style="margin-bottom:32px;">세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다</p>
+      <p data-i18n="hm.nom-cap.0" class="nom-cap" style="margin-bottom:32px;">세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다</p>
 
       <p class="cb-label cb-sublabel">카운팅 상태머신</p>
-      <p class="cb-p" style="margin-top:12px;">초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class="hl">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.</p>
+      <p data-i18n="hm.cb-p.10" class="cb-p" style="margin-top:12px;">초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class="hl">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.</p>
       <div class="hm-fsm">
         <div class="hm-fsm-node">
           <div class="st">DOWN</div>
@@ -505,32 +514,32 @@
 
       <p class="cb-label cb-sublabel" style="margin-top:40px;">예외 상황 처리</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;">
-        <div class="c2-detail"><div class="c2-detail-t">YOLO 모델 로드 실패 시</div><div class="c2-detail-d">아령 박스 렌더링만 생략하고 포즈 기반 카운팅은 유지되도록 처리했습니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">포즈 미검출 시</div><div class="c2-detail-d">'카메라 앞에 서주세요' 오버레이로 원인을 안내합니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">저장 공간 초과 시</div><div class="c2-detail-d">인증샷을 제외하고 기록만 저장해 데이터 유실을 줄였습니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.0" class="c2-detail-t">YOLO 모델 로드 실패 시</div><div data-i18n="hm.c2-detail-d.0" class="c2-detail-d">아령 박스 렌더링만 생략하고 포즈 기반 카운팅은 유지되도록 처리했습니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.1" class="c2-detail-t">포즈 미검출 시</div><div data-i18n="hm.c2-detail-d.1" class="c2-detail-d">'카메라 앞에 서주세요' 오버레이로 원인을 안내합니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.2" class="c2-detail-t">저장 공간 초과 시</div><div data-i18n="hm.c2-detail-d.2" class="c2-detail-d">인증샷을 제외하고 기록만 저장해 데이터 유실을 줄였습니다</div></div>
       </div>
     </div>
 
     <!-- 5. MOTIVATION -->
     <div class="cb-section" data-nav="Motivation">
       <p class="cb-label">Feedback & Motivation</p>
-      <h2 class="cb-h2">지속 사용을 위한 피드백 설계</h2>
-      <p class="cb-p">자동 카운팅만으로는 습관이 만들어지지 않았습니다. <mark class="hl">운동 전·중·후 단계별로 피드백 장치</mark>를 배치했습니다.</p>
+      <h2 data-i18n="hm.cb-h2.4" class="cb-h2">지속 사용을 위한 피드백 설계</h2>
+      <p data-i18n="hm.cb-p.11" class="cb-p">자동 카운팅만으로는 습관이 만들어지지 않았습니다. <mark class="hl">운동 전·중·후 단계별로 피드백 장치</mark>를 배치했습니다.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
-        <div class="c2-detail"><div class="c2-detail-t">운동 전 · 가이드 팝업</div><div class="c2-detail-d">세션 진입 시 SVG 모션 가이드로 자세를 먼저 안내해 잘못된 자세로 인한 미카운트를 줄였습니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">운동 중 · 펄스 + 사운드</div><div class="c2-detail-d">카운트마다 손목 주변 주황 펄스와 사운드가 함께 반응해, 화면을 보지 않아도 카운트를 확인할 수 있습니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">운동 중 · 격려 메시지</div><div class="c2-detail-d">진행률 구간마다 격려 문구를 오버레이해 마지막 반복을 이어가도록 했습니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">완료 · 컨페티</div><div class="c2-detail-d">화이트·주황 컨페티와 WORKOUT COMPLETE 문구로 완료를 알립니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">완료 · 3-2-1 인증샷</div><div class="c2-detail-d">카운트다운 후 자동 촬영해 기록에 첨부합니다</div></div>
-        <div class="c2-detail"><div class="c2-detail-t">다음 날 · D-day & 스트릭</div><div class="c2-detail-d">주황 D-day와 연속 기록 뱃지로 복귀 동기를 만듭니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.3" class="c2-detail-t">운동 전 · 가이드 팝업</div><div data-i18n="hm.c2-detail-d.3" class="c2-detail-d">세션 진입 시 SVG 모션 가이드로 자세를 먼저 안내해 잘못된 자세로 인한 미카운트를 줄였습니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.4" class="c2-detail-t">운동 중 · 펄스 + 사운드</div><div data-i18n="hm.c2-detail-d.4" class="c2-detail-d">카운트마다 손목 주변 주황 펄스와 사운드가 함께 반응해, 화면을 보지 않아도 카운트를 확인할 수 있습니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.5" class="c2-detail-t">운동 중 · 격려 메시지</div><div data-i18n="hm.c2-detail-d.5" class="c2-detail-d">진행률 구간마다 격려 문구를 오버레이해 마지막 반복을 이어가도록 했습니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.6" class="c2-detail-t">완료 · 컨페티</div><div data-i18n="hm.c2-detail-d.6" class="c2-detail-d">화이트·주황 컨페티와 WORKOUT COMPLETE 문구로 완료를 알립니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.7" class="c2-detail-t">완료 · 3-2-1 인증샷</div><div data-i18n="hm.c2-detail-d.7" class="c2-detail-d">카운트다운 후 자동 촬영해 기록에 첨부합니다</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.8" class="c2-detail-t">다음 날 · D-day & 스트릭</div><div data-i18n="hm.c2-detail-d.8" class="c2-detail-d">주황 D-day와 연속 기록 뱃지로 복귀 동기를 만듭니다</div></div>
       </div>
     </div>
 
     <!-- 6. PROCESS -->
     <div class="cb-section" data-nav="Process">
       <p class="cb-label">Process — Working with AI</p>
-      <h2 class="cb-h2">AI와 협업한 구현 과정</h2>
-      <p class="cb-p">바이브 코딩에서는 결과물의 품질을 프롬프트보다 <mark class="hl">스펙의 정밀도</mark>가 결정한다는 것을 확인했습니다. 디자인 시스템 토큰, 레이아웃 규칙, 인터랙션 임계값, 완성 기준 체크리스트를 담은 474줄 분량의 스펙 문서(HOMUSCLE.md)를 먼저 작성하고, AI에게 <mark class="hl">이 시스템을 구현하도록</mark> 요청했습니다. 별도 운영 문서(CLAUDE.md)에는 어떤 모델이 작업해도 품질이 유지되도록 불변식과 검증 절차를 정리했습니다.</p>
+      <h2 data-i18n="hm.cb-h2.5" class="cb-h2">AI와 협업한 구현 과정</h2>
+      <p data-i18n="hm.cb-p.12" class="cb-p">바이브 코딩에서는 결과물의 품질을 프롬프트보다 <mark class="hl">스펙의 정밀도</mark>가 결정한다는 것을 확인했습니다. 디자인 시스템 토큰, 레이아웃 규칙, 인터랙션 임계값, 완성 기준 체크리스트를 담은 474줄 분량의 스펙 문서(HOMUSCLE.md)를 먼저 작성하고, AI에게 <mark class="hl">이 시스템을 구현하도록</mark> 요청했습니다. 별도 운영 문서(CLAUDE.md)에는 어떤 모델이 작업해도 품질이 유지되도록 불변식과 검증 절차를 정리했습니다.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 8px;">
         <div class="hm-doc">
@@ -577,45 +586,45 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
     <!-- 7. REFLECTION -->
     <div class="cb-section" data-nav="Reflection">
       <p class="cb-label">Reflection</p>
-      <h2 class="cb-h2">배운 것과 다음 단계</h2>
+      <h2 data-i18n="hm.cb-h2.6" class="cb-h2">배운 것과 다음 단계</h2>
 
       <div class="obs-wrap">
         <div class="obs-row">
           <div class="obs-avatar">📐</div>
           <div class="obs-meta">
-            <span class="obs-label">Learning #1</span>
-            <div class="obs-bubble" style="background:#fff3ea;"><strong>임계값은 직접 운동하며 <mark class="hl">몸으로 조정했다</mark></strong><br>인식 정확도보다 카운트가 안 될 때의 경험이 실제 UX를 좌우했습니다. 인터랙션 파라미터도 사용자 관점에서 검증해야 한다는 것을 확인했습니다.</div>
+            <span data-i18n="hm.obs-label.0" class="obs-label">Learning #1</span>
+            <div data-i18n="hm.obs-bubble.0" class="obs-bubble" style="background:#fff3ea;"><strong>임계값은 직접 운동하며 <mark class="hl">몸으로 조정했다</mark></strong><br>인식 정확도보다 카운트가 안 될 때의 경험이 실제 UX를 좌우했습니다. 인터랙션 파라미터도 사용자 관점에서 검증해야 한다는 것을 확인했습니다.</div>
           </div>
         </div>
         <div class="obs-row right">
           <div class="obs-avatar">🛡</div>
           <div class="obs-meta">
-            <span class="obs-label">Learning #2</span>
-            <div class="obs-bubble"><strong><mark class="hl">예외 처리</mark>가 도구의 신뢰도를 좌우했다</strong><br>모델 로드 실패, 포즈 미검출, 저장 초과 등 실패 경로에 폴백을 설계하고 나서야 안정적으로 쓸 수 있는 도구가 됐습니다.</div>
+            <span data-i18n="hm.obs-label.1" class="obs-label">Learning #2</span>
+            <div data-i18n="hm.obs-bubble.1" class="obs-bubble"><strong><mark class="hl">예외 처리</mark>가 도구의 신뢰도를 좌우했다</strong><br>모델 로드 실패, 포즈 미검출, 저장 초과 등 실패 경로에 폴백을 설계하고 나서야 안정적으로 쓸 수 있는 도구가 됐습니다.</div>
           </div>
         </div>
         <div class="obs-row">
           <div class="obs-avatar">📄</div>
           <div class="obs-meta">
-            <span class="obs-label">Learning #3</span>
-            <div class="obs-bubble" style="background:#fff3ea;"><strong>AI 협업에서는 <mark class="hl">스펙의 정밀도</mark>가 결과물을 좌우한다</strong><br>같은 AI라도 스펙 문서의 해상도에 따라 결과물이 크게 달라졌습니다. 토큰·규칙·체크리스트로 시스템을 문서화하는 능력이 구현 품질로 이어졌습니다.</div>
+            <span data-i18n="hm.obs-label.2" class="obs-label">Learning #3</span>
+            <div data-i18n="hm.obs-bubble.2" class="obs-bubble" style="background:#fff3ea;"><strong>AI 협업에서는 <mark class="hl">스펙의 정밀도</mark>가 결과물을 좌우한다</strong><br>같은 AI라도 스펙 문서의 해상도에 따라 결과물이 크게 달라졌습니다. 토큰·규칙·체크리스트로 시스템을 문서화하는 능력이 구현 품질로 이어졌습니다.</div>
           </div>
         </div>
       </div>
 
       <p class="cb-label cb-sublabel" style="margin-top:32px;">알고 있는 한계</p>
       <div class="ref-grid">
-        <div class="ref-card"><p class="ref-lbl">검증 범위</p><p class="ref-p">본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다.</p></div>
-        <div class="ref-card"><p class="ref-lbl">환경 민감도</p><p class="ref-p">조명·카메라 각도에 따라 포즈 인식 편차가 있어 <strong>측면 운동 종목</strong>은 인식률이 낮아집니다.</p></div>
-        <div class="ref-card"><p class="ref-lbl">모바일 경험</p><p class="ref-p">데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다.</p></div>
-        <div class="ref-card"><p class="ref-lbl">단일 파일의 트레이드오프</p><p class="ref-p">배포·공유는 쉽지만 코드가 2,800줄을 넘으며 <strong>유지보수 비용</strong>이 커지고 있습니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.0" class="ref-lbl">검증 범위</p><p data-i18n="hm.ref-p.0" class="ref-p">본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.1" class="ref-lbl">환경 민감도</p><p data-i18n="hm.ref-p.1" class="ref-p">조명·카메라 각도에 따라 포즈 인식 편차가 있어 <strong>측면 운동 종목</strong>은 인식률이 낮아집니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.2" class="ref-lbl">모바일 경험</p><p data-i18n="hm.ref-p.2" class="ref-p">데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.3" class="ref-lbl">단일 파일의 트레이드오프</p><p data-i18n="hm.ref-p.3" class="ref-p">배포·공유는 쉽지만 코드가 2,800줄을 넘으며 <strong>유지보수 비용</strong>이 커지고 있습니다.</p></div>
       </div>
 
       <p class="cb-label cb-sublabel" style="margin-top:40px;">다음에 할 것</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
-        <div class="c2-detail"><div class="c2-detail-t" style="color:#e85f00;">사용성 테스트</div><div class="c2-detail-d">타 사용자 5명 대상 UT로 카운팅 신뢰도·온보딩 개선점 검증</div></div>
-        <div class="c2-detail"><div class="c2-detail-t" style="color:#e85f00;">운동 종목 확장</div><div class="c2-detail-d">스쿼트·런지 등 하체 종목 — 무릎 각도 기반 상태머신 재사용</div></div>
-        <div class="c2-detail"><div class="c2-detail-t" style="color:#e85f00;">모바일 최적화</div><div class="c2-detail-d">세로 화면 세션 레이아웃과 전면 카메라 거리 보정</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.9" class="c2-detail-t" style="color:#e85f00;">사용성 테스트</div><div data-i18n="hm.c2-detail-d.9" class="c2-detail-d">타 사용자 5명 대상 UT로 카운팅 신뢰도·온보딩 개선점 검증</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.10" class="c2-detail-t" style="color:#e85f00;">운동 종목 확장</div><div data-i18n="hm.c2-detail-d.10" class="c2-detail-d">스쿼트·런지 등 하체 종목 — 무릎 각도 기반 상태머신 재사용</div></div>
+        <div class="c2-detail"><div data-i18n="hm.c2-detail-t.11" class="c2-detail-t" style="color:#e85f00;">모바일 최적화</div><div data-i18n="hm.c2-detail-d.11" class="c2-detail-d">세로 화면 세션 레이아웃과 전면 카메라 거리 보정</div></div>
       </div>
     </div>
 
@@ -624,17 +633,27 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
   <div class="case-end-section">
     <div class="case-end-card">
       <div style="position:relative;z-index:1;text-align:left;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">Next Case</p>
-        <div class="next-case-link" onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
-          <img class="next-case-thumb" src="images/nom/NOM main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
-          <div>
-            <p style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">Product Design · Naver OGQ Market · 2026</p>
-            <h3 style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">Naver OGQ Market 통합 홈 개편</h3>
-            <span style="font-size:13px;color:#e85f00;font-weight:600;">Read case study →</span>
+        <p data-i18n="hm.next-eyebrow.0" style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">다른 케이스</p>
+        <div class="next-case-grid">
+          <div class="next-case-link" onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/nom/NOM main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+            <div>
+              <p data-i18n="hm.next-tag.0" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">프로덕트 디자인 · Naver OGQ Market · 2026</p>
+              <h3 data-i18n="hm.next-title.0" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">네이버 OGQ마켓 홈 상단 노출 구조 개선</h3>
+              <span data-i18n="hm.next-cta.0" style="font-size:13px;color:#e85f00;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
+          </div>
+          <div class="next-case-link" onclick="showPage('case')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/youtube/youtube main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+            <div>
+              <p data-i18n="hm.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">YouTube 리디자인 챌린지 · 2025</p>
+              <h3 data-i18n="hm.next-title.1" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">유튜브 쇼츠 쇼핑 경험 재설계</h3>
+              <span data-i18n="hm.next-cta.1" style="font-size:13px;color:#e85f00;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
           </div>
         </div>
         <div style="margin-top:20px;">
-          <button class="ce-btn p" onclick="showPage('home')">← All Work</button>
+          <button data-i18n="hm.next-allwork.0" class="ce-btn p" onclick="showPage('home')">← 전체 작업 보기</button>
         </div>
       </div>
     </div>
@@ -660,6 +679,8 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
   <img id="char-img" src="images/character.png" alt="character"/>
 </div>
 
+<script src="i18n-dict.js"></script>
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 <script>
   /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */

@@ -1654,16 +1654,16 @@ div.case-body {
 .c2-space-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
 .c2-space-head > span:first-child { font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 700; color: #111; }
 .c2-space-sub { font-size: 12px; color: #999; }
-.c2-space-num { font-family: 'Archivo', sans-serif; font-size: 30px; font-weight: 700; color: #3a8c66; letter-spacing: -0.02em; line-height: 1; margin-bottom: 14px; }
-.c2-space-num span { font-size: 15px; color: #6ab894; font-weight: 600; }
+.c2-space-num { font-family: 'Archivo', sans-serif; font-size: 30px; font-weight: 700; color: #31c4a1; letter-spacing: -0.02em; line-height: 1; margin-bottom: 14px; }
+.c2-space-num span { font-size: 15px; color: #31c4a1; font-weight: 600; }
 .c2-bar { height: 8px; border-radius: 100px; background: rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 16px; }
-.c2-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg,#6ab894,#3a8c66); width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+.c2-bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg,#31c4a1,#32b092); width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
 .c2-space-rows > div { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #555; padding: 8px 0; border-top: 1px solid rgba(0,0,0,0.06); }
 .c2-space-rows > div:first-child { border-top: none; }
-.c2-space-rows em { font-style: normal; font-weight: 700; color: #3a8c66; font-family: 'Archivo', sans-serif; margin-left: 8px; }
+.c2-space-rows em { font-style: normal; font-weight: 700; color: #31b193; font-family: 'Archivo', sans-serif; margin-left: 8px; }
 
 .c2-detail { background: #edf6f5; border-radius: 12px; padding: 18px; }
-.c2-detail-t { font-size: 14px; font-weight: 700; color: #668d77; margin-bottom: 6px; }
+.c2-detail-t { font-size: 14px; font-weight: 700; color: #31b193; margin-bottom: 6px; }
 .c2-detail-d { font-size: 13px; color: #666; line-height: 1.6; }
 
 .c2-table { width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 13px; }
@@ -1730,6 +1730,7 @@ div.case-body {
     border-radius: 14px 14px 4px 14px;
     padding: 10px 14px;
     max-width: 150px;
+    border: 1px solid rgba(0,0,0,0.08);
     font-size: 12.5px; font-family: 'NanumSquareNeo', sans-serif;
     color: #1a1424; line-height: 1.55;
     opacity: 0; transform: translateY(6px) scale(0.97);

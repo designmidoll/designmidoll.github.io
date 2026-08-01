@@ -26,7 +26,12 @@
   /* 반복 인라인 → 클래스 (아코디언·칩) */
   #case-page .yt-acc-sum { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; background: rgba(255,255,255,0.58); border-radius: 10px; font-size: 13px; font-weight: 500; color: #333; list-style: none; user-select: none; }
   #case-page .yt-acc-body { padding: 14px 18px 14px 46px; font-size: 14px; color: #666; line-height: 1.8; font-family: 'NanumSquareNeo', sans-serif; }
-  #case-page .yt-chip { background: #ebe6f8; border-radius: 10px; padding: 12px 16px; font-size: 13px; color: #333; display: flex; justify-content: space-between; align-items: center; }
+  #case-page .yt-chip { background: #f5f5f5; border-radius: 10px; padding: 12px 16px; font-size: 13px; color: #333; display: flex; justify-content: space-between; align-items: center; }
+  /* 프로토타입/UT 결과 반영 — 클릭 없이 항상 펼쳐진 카드 */
+  #case-page .yt-feat-card { background: rgba(255,255,255,0.58); border-radius: 10px; padding: 14px 18px; }
+  #case-page .yt-feat-title { display: flex; align-items: baseline; font-size: 13px; font-weight: 600; color: #222; margin-bottom: 8px; }
+  #case-page .yt-feat-num { font-family: 'Archivo',sans-serif; font-size: 12px; font-weight: 400; color: #aaa; margin-right: 10px; flex-shrink: 0; }
+  #case-page .yt-feat-body { font-size: 13px; color: #666; line-height: 1.8; font-family: 'NanumSquareNeo', sans-serif; padding-left: 30px; }
 </style>
 </head>
 <body>
@@ -51,20 +56,20 @@
 <div id="case-page" class="page active">
 
   <div class="case-hero-wrap">
-    <p class="case-eyebrow">UX Research & Design · YouTube Shorts · Sep 2025</p>
-    <h1 class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">YouTube Shorts Shopping Experience</span>
+    <p data-i18n="yt.case-eyebrow.0" class="case-eyebrow">UX Research & Design · YouTube Shorts · Sep 2025</p>
+    <h1 data-i18n="yt.case-h1.0" class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
+      <span style="font-family:'Archivo',sans-serif;">유튜브 쇼츠 쇼핑 경험 재설계</span>
       <span style="display:flex;align-items:center;gap:8px;">
         <span style="font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>
       </span>
     </h1>
     <div class="case-hero-tags">
-      <span class="cht">User Interview</span>
-      <span class="cht">Usability Testing</span>
-      <span class="cht">SUS Survey</span>
-      <span class="cht">Affinity Mapping</span>
-      <span class="cht">Prototyping</span>
-      <span class="cht">Redesign Concept</span>
+      <span data-i18n="yt.cht.0" class="cht">User Interview</span>
+      <span data-i18n="yt.cht.1" class="cht">Usability Testing</span>
+      <span data-i18n="yt.cht.2" class="cht">SUS Survey</span>
+      <span data-i18n="yt.cht.3" class="cht">Affinity Mapping</span>
+      <span data-i18n="yt.cht.4" class="cht">Prototyping</span>
+      <span data-i18n="yt.cht.5" class="cht">Redesign Concept</span>
     </div>
     <div style="margin-top:28px;position:relative;">
       <img src="images/youtube/youtube main image.png" alt="YouTube Shorts 쇼핑 경험 개선" style="width:100%;border-radius:16px;display:block;"/>
@@ -84,15 +89,15 @@
     <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;">
       <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">8<span style="font-size:28px;font-weight:500;color:#888;">명</span></div>
-        <div class="cs-l">사용자 인터뷰</div>
+        <div data-i18n="yt.cs-l.0" class="cs-l">사용자 인터뷰</div>
       </div>
       <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">67.5</div>
-        <div class="cs-l">SUS Score</div>
+        <div data-i18n="yt.cs-l.1" class="cs-l">SUS Score</div>
       </div>
       <div class="case-stats-card" style="background:rgb(255 255 255 / 51%);border-radius:16px;padding:28px 24px 24px;">
         <div class="cs-n">85.7<span style="font-size:28px;font-weight:500;color:#888;">%</span></div>
-        <div class="cs-l">Task 평균 성공률</div>
+        <div data-i18n="yt.cs-l.2" class="cs-l">Task 평균 성공률</div>
       </div>
     </div>
   </div>
@@ -104,32 +109,32 @@
 
     <div class="cb-section">
       <p class="cb-label">Problem</p>
-      <h2 class="cb-h2">무엇이 문제인가?</h2>
-      <p class="cb-p">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. <mark class="hl">제품 스티커가 시청을 방해하고</mark>, 관심 있는 제품을 <mark class="hl">저장할 방법이 없다</mark>는 점에 주목했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.0" class="cb-h2">무엇이 문제인가?</h2>
+      <p data-i18n="yt.cb-p.0" class="cb-p">YouTube Shorts를 사용하면서 직접 느꼈던 불편함에서 출발했습니다. <mark class="hl">제품 스티커가 시청을 방해하고</mark>, 관심 있는 제품을 <mark class="hl">저장할 방법이 없다</mark>는 점에 주목했습니다.</p>
       <img src="images/youtube/problem.png" alt="Problem overview" style="width:100%; border-radius:14px; margin-top:28px; display:block;" />
       <div class="sticky-cards">
         <div class="sticky-card">
           <div class="sticky-body">
             <div class="sticky-emoji">😤</div>
-            <p class="sticky-quote">"쇼츠 보는데 스티커가 화면을 방해해요"</p>
-            <p class="sticky-title">시청을 방해하는 스티커</p>
-            <p class="sticky-desc">쇼핑 스티커가 화면 위에 고정 배치되어 영상을 가려요. 위치를 옮기거나 제거할 수 없어요.</p>
+            <p data-i18n="yt.sticky-quote.0" class="sticky-quote">"쇼츠 보는데 스티커가 화면을 방해해요"</p>
+            <p data-i18n="yt.sticky-title.0" class="sticky-title">시청을 방해하는 스티커</p>
+            <p data-i18n="yt.sticky-desc.0" class="sticky-desc">쇼핑 스티커가 화면 위에 고정 배치되어 영상을 가려요. 위치를 옮기거나 제거할 수 없어요.</p>
           </div>
         </div>
         <div class="sticky-card">
           <div class="sticky-body">
             <div class="sticky-emoji">🤔</div>
-            <p class="sticky-quote">"이 제품이 영상 어디서 나왔는지 모르겠어요"</p>
-            <p class="sticky-title">맥락이 끊긴 제품 정보</p>
-            <p class="sticky-desc">제품이 영상의 어느 장면에서 등장하는지 확인할 수 없어 신뢰도가 떨어져요.</p>
+            <p data-i18n="yt.sticky-quote.1" class="sticky-quote">"이 제품이 영상 어디서 나왔는지 모르겠어요"</p>
+            <p data-i18n="yt.sticky-title.1" class="sticky-title">맥락이 끊긴 제품 정보</p>
+            <p data-i18n="yt.sticky-desc.1" class="sticky-desc">제품이 영상의 어느 장면에서 등장하는지 확인할 수 없어 신뢰도가 떨어져요.</p>
           </div>
         </div>
         <div class="sticky-card">
           <div class="sticky-body">
             <div class="sticky-emoji">😩</div>
-            <p class="sticky-quote">"관심 제품을 저장할 방법이 없어요"</p>
-            <p class="sticky-title">저장 경로의 부재</p>
-            <p class="sticky-desc">관심 제품을 따로 저장하는 기능이 없어 나중에 다시 찾으려면 영상을 직접 검색해야 해요.</p>
+            <p data-i18n="yt.sticky-quote.2" class="sticky-quote">"관심 제품을 저장할 방법이 없어요"</p>
+            <p data-i18n="yt.sticky-title.2" class="sticky-title">저장 경로의 부재</p>
+            <p data-i18n="yt.sticky-desc.2" class="sticky-desc">관심 제품을 따로 저장하는 기능이 없어 나중에 다시 찾으려면 영상을 직접 검색해야 해요.</p>
           </div>
         </div>
       </div>
@@ -137,7 +142,7 @@
 
     <div class="cb-section">
       <p class="cb-label">Design & Research Process</p>
-      <h2 class="cb-h2">어떻게 접근했나</h2>
+      <h2 data-i18n="yt.cb-h2.1" class="cb-h2">어떻게 접근했나</h2>
       <div class="proc-wrap">
         <div class="proc-track">
           <div class="proc-step active" onclick="selectStep(0)"><div class="p-circ">1</div><div class="p-lbl">기존 경험 분석</div></div>
@@ -170,8 +175,8 @@
     <!-- PROTOTYPE -->
     <div class="cb-section">
       <p class="cb-label">Prototype</p>
-      <h2 class="cb-h2">프로토타입 설계</h2>
-      <p class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.2" class="cb-h2">프로토타입 설계</h2>
+      <p data-i18n="yt.cb-p.1" class="cb-p">UX 전략 단계에서 정의한 핵심 기능을 바탕으로 Lo-fi 와이어프레임을 빠르게 제작하고, Figma 프로토타입으로 발전시켜 <mark class="hl">사용성 테스트에 직접 활용</mark>했습니다.</p>
 
       <!-- feature accordion -->
       <style>
@@ -217,52 +222,34 @@
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
 
-      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:3px;">
-        <div style="display:flex;flex-direction:column;gap:3px;">
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거/이동 기능</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>태그된 제품 뱃지</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. "Featured(태그된 제품)" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>타임스탬프 기능</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.</div>
-          </details>
+      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">01.</span><span data-i18n="yt.proto-t.0">스티커 제거/이동 기능</span></div>
+            <div data-i18n="yt.proto-d.0" class="yt-feat-body">스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">02.</span><span data-i18n="yt.proto-t.1">태그된 제품 뱃지</span></div>
+            <div data-i18n="yt.proto-d.1" class="yt-feat-body">바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. "Featured(태그된 제품)" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">03.</span><span data-i18n="yt.proto-t.2">타임스탬프 기능</span></div>
+            <div data-i18n="yt.proto-d.2" class="yt-feat-body">바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.</div>
+          </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:3px;">
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>제품 저장</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 폴더 내 썸네일 방식</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">06.</span>제품 정렬 기능</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.</div>
-          </details>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">04.</span><span data-i18n="yt.proto-t.3">제품 저장</span></div>
+            <div data-i18n="yt.proto-d.3" class="yt-feat-body">관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">05.</span><span data-i18n="yt.proto-t.4">제품 폴더 내 썸네일 방식</span></div>
+            <div data-i18n="yt.proto-d.4" class="yt-feat-body">저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">06.</span><span data-i18n="yt.proto-t.5">제품 정렬 기능</span></div>
+            <div data-i18n="yt.proto-d.5" class="yt-feat-body">Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.</div>
+          </div>
         </div>
       </div>
 
@@ -272,17 +259,17 @@
     <!-- UT SESSION PHOTOS -->
     <div class="cb-section">
       <p class="cb-label">Usability Testing</p>
-      <h2 class="cb-h2">실제 사용자와 함께한 테스트</h2>
-      <p class="cb-p">Google Meet를 통해 <mark class="hl">8명의 참가자</mark>와 원격으로 1:1 사용성 테스트를 진행했습니다. 참가자가 위에서 설계한 Figma 프로토타입을 직접 조작하는 동안 <mark class="hl">Think-Aloud 방식</mark>으로 생각을 소리 내어 말하도록 유도했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.3" class="cb-h2">실제 사용자와 함께한 테스트</h2>
+      <p data-i18n="yt.cb-p.2" class="cb-p">Google Meet를 통해 <mark class="hl">8명의 참가자</mark>와 원격으로 1:1 사용성 테스트를 진행했습니다. 참가자가 위에서 설계한 Figma 프로토타입을 직접 조작하는 동안 <mark class="hl">Think-Aloud 방식</mark>으로 생각을 소리 내어 말하도록 유도했습니다.</p>
       <div class="ut-session-flex" style="display:flex;gap:16px;align-items:flex-start;justify-content:center;margin-top:20px;">
         <div class="case-img-wrap" style="margin:0;">
           <img id="ut-session-img" src="images/youtube/ut-session.png" alt="사용자 인터뷰 세션 2" onclick="openLBThis(this)" style="cursor:zoom-in;display:block;width:auto;height:auto;border-radius:12px;"/>
-          <p class="img-caption">Remote UT Session</p>
+          <p data-i18n="yt.img-caption.0" class="img-caption">Remote UT Session</p>
           <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
         </div>
         <div style="text-align:center;">
           <video id="ut-proto-video" autoplay loop muted playsinline style="display:block;width:200px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><source src="images/youtube/ut-prototype.mp4" type="video/mp4"></video>
-          <p class="img-caption" style="margin-top:8px;">UT Prototype</p>
+          <p data-i18n="yt.img-caption.1" class="img-caption" style="margin-top:8px;">UT Prototype</p>
         </div>
       </div>
       <script>
@@ -306,8 +293,8 @@
     <!-- TASK PERFORMANCE METRICS -->
     <div class="cb-section">
       <p class="cb-label">Task Performance Metrics</p>
-      <h2 class="cb-h2">개별 태스크 성과 분석</h2>
-      <p class="cb-p">7개 태스크에 대해 각 참가자의 <mark class="hl">완료율과 소요 시간</mark>을 측정했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.4" class="cb-h2">개별 태스크 성과 분석</h2>
+      <p data-i18n="yt.cb-p.3" class="cb-p">7개 태스크에 대해 각 참가자의 <mark class="hl">완료율과 소요 시간</mark>을 측정했습니다.</p>
 
       <!-- Key highlights — 항상 노출 -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
@@ -387,18 +374,18 @@
         .data-table { border-collapse: separate; border-spacing: 0 4px; width: 100%; }
         .data-table thead th { padding: 8px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #999; text-align: center; }
         .data-table thead th:first-child { text-align: left; }
-        .data-table tbody tr td { background: #f0ecfc; padding: 10px 12px; font-size: 13px; color: #333; text-align: center; }
+        .data-table tbody tr td { background: #f0f0f0; padding: 10px 12px; font-size: 13px; color: #333; text-align: center; }
         .data-table tbody tr td:first-child { text-align: left; border-radius: 8px 0 0 8px; }
         .data-table tbody tr td:last-child { border-radius: 0 8px 8px 0; }
-        .data-table tbody tr:nth-child(even) td { background: #e5dff5; }
+        .data-table tbody tr:nth-child(even) td { background: #f5f5f5; }
       </style>
     </div>
 
     <!-- SUS RESULTS -->
     <div class="cb-section">
       <p class="cb-label">SUS Results</p>
-      <h2 class="cb-h2">시스템 사용성 점수 (SUS)</h2>
-      <p class="cb-p">테스트 완료 후 표준 SUS(System Usability Scale) 10문항 설문을 진행했습니다. 참가자 8명의 응답을 SUS 공식으로 환산한 결과 <mark class="hl">67.5점</mark>을 기록했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.5" class="cb-h2">시스템 사용성 점수 (SUS)</h2>
+      <p data-i18n="yt.cb-p.4" class="cb-p">테스트 완료 후 표준 SUS(System Usability Scale) 10문항 설문을 진행했습니다. 참가자 8명의 응답을 SUS 공식으로 환산한 결과 <mark class="hl">67.5점</mark>을 기록했습니다.</p>
       <div class="sus-grid" style="display:grid;grid-template-columns:1fr 2fr;gap:16px;margin:24px 0;align-items:stretch;">
         <div id="sus-card" style="background:#1c1a2e;border-radius:16px;padding:28px 20px;border:2px solid #b8a4f8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;">
           <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;font-family:'Archivo',sans-serif;">SUS Score</div>
@@ -466,7 +453,7 @@
           <span style="text-align:right;">100<br>최고</span>
         </div>
       </div>
-      <p class="cb-p" style="margin-top:16px;">SUS 결과는 현재 프로토타입이 <strong>수용 가능한 사용성 수준</strong>에 도달했음을 보여줍니다. 특히 <mark class="hl">자신감(Q9)과 학습 용이성(Q10)</mark>에서 높은 점수를 기록했으며, 복잡성(Q2)과 지속 사용 의향(Q1) 항목이 최종 이터레이션의 핵심 개선 방향이 됐습니다.</p>
+      <p data-i18n="yt.cb-p.5" class="cb-p" style="margin-top:16px;">SUS 결과는 현재 프로토타입이 <strong>수용 가능한 사용성 수준</strong>에 도달했음을 보여줍니다. 특히 <mark class="hl">자신감(Q9)과 학습 용이성(Q10)</mark>에서 높은 점수를 기록했으며, 복잡성(Q2)과 지속 사용 의향(Q1) 항목이 최종 이터레이션의 핵심 개선 방향이 됐습니다.</p>
       <details style="margin-top:16px;width:100%;" class="task-accordion data-acc">
         <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(118,118,118,0.08);border-radius:10px;font-size:13px;font-weight:500;color:#333;list-style:none;user-select:none;">
           <span>상세 데이터 보기 — SUS 10문항</span>
@@ -490,39 +477,39 @@
     <!-- AFFINITY MAPPING -->
     <div class="cb-section">
       <p class="cb-label">Affinity Mapping</p>
-      <h2 class="cb-h2">사용자 피드백 구조화</h2>
-      <p class="cb-p">8명의 인터뷰와 태스크 테스트에서 수집된 발화 데이터를 <mark class="hl">어피니티 매핑</mark>으로 구조화했습니다. 유사한 패턴끼리 그룹핑해 <mark class="hl">주요 Pain Point와 사용자 니즈</mark>를 범주화했습니다.</p>
+      <h2 data-i18n="yt.cb-h2.6" class="cb-h2">사용자 피드백 구조화</h2>
+      <p data-i18n="yt.cb-p.6" class="cb-p">8명의 인터뷰와 태스크 테스트에서 수집된 발화 데이터를 <mark class="hl">어피니티 매핑</mark>으로 구조화했습니다. 유사한 패턴끼리 그룹핑해 <mark class="hl">주요 Pain Point와 사용자 니즈</mark>를 범주화했습니다.</p>
       <div class="case-img-wrap">
         <img src="images/youtube/affinity-diagram.png" alt="어피니티 다이어그램" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
-        <p class="img-caption">Affinity Diagram — Grouping 8 participants feedback into themes</p>
+        <p data-i18n="yt.img-caption.2" class="img-caption">Affinity Diagram — Grouping 8 participants feedback into themes</p>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
     </div>
 
     <div class="cb-section">
       <p class="cb-label">Key Insights</p>
-      <h2 class="cb-h2">리서치에서 발견한 것들</h2>
+      <h2 data-i18n="yt.cb-h2.7" class="cb-h2">리서치에서 발견한 것들</h2>
 
       <div class="obs-wrap">
         <div class="obs-row">
           <div class="obs-avatar">🔍</div>
           <div class="obs-meta">
-            <span class="obs-label">Insight #1</span>
-            <div class="obs-bubble"><strong>스티커 제거 방식이 <mark class="hl">직관적이지 않아</mark> 포기로 이어짐</strong><br>X버튼을 찾지 못하거나 찾아도 드래그까지 해야 해서 그냥 넘기게 됨. 제거 인터랙션 자체를 단순화해야 함.</div>
+            <span data-i18n="yt.obs-label.0" class="obs-label">Insight #1</span>
+            <div data-i18n="yt.obs-bubble.0" class="obs-bubble" style="background:#e3e3e3;"><strong>스티커 제거 방식이 <mark class="hl">직관적이지 않아</mark> 포기로 이어짐</strong><br>X버튼을 찾지 못하거나 찾아도 드래그까지 해야 해서 그냥 넘기게 됨. 제거 인터랙션 자체를 단순화해야 함.</div>
           </div>
         </div>
         <div class="obs-row right">
           <div class="obs-avatar">⚠️</div>
           <div class="obs-meta">
-            <span class="obs-label">Insight #2</span>
-            <div class="obs-bubble"><strong>스티커 클릭 루트가 <mark class="hl">예측 불가능해</mark> 신뢰가 무너짐</strong><br>"제휴사" 버튼의 의미를 이해한 참가자가 없었고, 스티커 클릭 시 바로 외부로 넘어가는 구조가 불안감을 만듦. 바텀시트를 기본 경로로 설계해야 함.</div>
+            <span data-i18n="yt.obs-label.1" class="obs-label">Insight #2</span>
+            <div data-i18n="yt.obs-bubble.1" class="obs-bubble"><strong>스티커 클릭 루트가 <mark class="hl">예측 불가능해</mark> 신뢰가 무너짐</strong><br>"제휴사" 버튼의 의미를 이해한 참가자가 없었고, 스티커 클릭 시 바로 외부로 넘어가는 구조가 불안감을 만듦. 바텀시트를 기본 경로로 설계해야 함.</div>
           </div>
         </div>
         <div class="obs-row">
           <div class="obs-avatar">✨</div>
           <div class="obs-meta">
-            <span class="obs-label">Insight #3</span>
-            <div class="obs-bubble"><strong>제품과 영상의 <mark class="hl">맥락이 연결될수록</mark> 신뢰도와 구매 욕구가 높아짐</strong><br>태그된 제품 칩과 타임스탬프에 강한 긍정 반응. 사용자는 제품이 영상의 어느 장면에서 나왔는지 알고 싶어하며, 이 연결이 있을 때 신뢰와 관심이 높아짐.</div>
+            <span data-i18n="yt.obs-label.2" class="obs-label">Insight #3</span>
+            <div data-i18n="yt.obs-bubble.2" class="obs-bubble" style="background:#e3e3e3;"><strong>제품과 영상의 <mark class="hl">맥락이 연결될수록</mark> 신뢰도와 구매 욕구가 높아짐</strong><br>태그된 제품 칩과 타임스탬프에 강한 긍정 반응. 사용자는 제품이 영상의 어느 장면에서 나왔는지 알고 싶어하며, 이 연결이 있을 때 신뢰와 관심이 높아짐.</div>
           </div>
         </div>
       </div>
@@ -530,57 +517,42 @@
 
     <div class="cb-section">
       <p class="cb-label">UT Result</p>
-      <h2 class="cb-h2">UT 결과 반영</h2>
+      <h2 data-i18n="yt.cb-h2.8" class="cb-h2">UT 결과 반영</h2>
       <div class="case-img-wrap" style="margin-top:20px;">
         <img src="images/youtube/redesign2.png" alt="UT 결과 반영" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:12px;"/>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:20px;">
-        <div style="display:flex;flex-direction:column;gap:3px;">
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">01.</span>스티커 제거 방식 변경</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">02.</span>스티커 이동 기능 툴팁 추가</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">03.</span>제품 관련 영상 탐색 플로우 추가</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.</div>
-          </details>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">01.</span><span data-i18n="yt.ut-t.0">스티커 제거 방식 변경</span></div>
+            <div data-i18n="yt.ut-d.0" class="yt-feat-body">초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 "닫기"를 선택할 수 있도록 수정했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">02.</span><span data-i18n="yt.ut-t.1">스티커 이동 기능 툴팁 추가</span></div>
+            <div data-i18n="yt.ut-d.1" class="yt-feat-body">기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">03.</span><span data-i18n="yt.ut-t.2">제품 관련 영상 탐색 플로우 추가</span></div>
+            <div data-i18n="yt.ut-d.2" class="yt-feat-body">바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.</div>
+          </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:3px;">
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">04.</span>스티커 클릭 시 바텀시트 열리게 구조 변경</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">기존에는 "Affiliate(제휴사)" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. "Affiliate(제휴사)" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.</div>
-          </details>
-          <details class="task-accordion">
-            <summary class="yt-acc-sum">
-              <span><span style="font-family:'Archivo',sans-serif;font-size:12px;color:#aaa;margin-right:10px;">05.</span>제품 공유 기능 추가</span>
-              <span class="accordion-arrow" style="font-size:11px;color:#999;transition:transform 0.2s;">▼</span>
-            </summary>
-            <div class="yt-acc-body">저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.</div>
-          </details>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">04.</span><span data-i18n="yt.ut-t.3">스티커 클릭 시 바텀시트 열리게 구조 변경</span></div>
+            <div data-i18n="yt.ut-d.3" class="yt-feat-body">기존에는 "Affiliate(제휴사)" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. "Affiliate(제휴사)" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.</div>
+          </div>
+          <div class="yt-feat-card">
+            <div class="yt-feat-title"><span class="yt-feat-num">05.</span><span data-i18n="yt.ut-t.4">제품 공유 기능 추가</span></div>
+            <div data-i18n="yt.ut-d.4" class="yt-feat-body">저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.</div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="cb-section">
       <p class="cb-label">Design Solution</p>
-      <h2 class="cb-h2">최종 디자인</h2>
+      <h2 data-i18n="yt.cb-h2.9" class="cb-h2">최종 디자인</h2>
 
       <div class="case-img-wrap" style="margin-top:24px;">
         <video id="hifi-proto-video" src="images/youtube/hifi prototype.mov" controls playsinline muted style="width:33%;display:block;margin:0 auto;clip-path:inset(0 0 1px 2px round 50px);"></video>
@@ -596,35 +568,35 @@
           obs.observe(v);
         })();
         </script>
-        <p class="img-caption">Final Hi-fi Prototype — Interactive flow</p>
+        <p data-i18n="yt.img-caption.3" class="img-caption">Final Hi-fi Prototype — Interactive flow</p>
       </div>
 
       <div class="case-img-wrap" style="margin-top:32px;">
         <img src="images/youtube/final design.png" alt="최종 Hi-fi 디자인 화면" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:16px;"/>
-        <p class="img-caption">Final Hi-fi Design — Task flows</p>
+        <p data-i18n="yt.img-caption.4" class="img-caption">Final Hi-fi Design — Task flows</p>
         <div class="zoom-hint"><img src="images/vector.png" alt="zoom"/></div>
       </div>
     </div>
 
     <div class="cb-section">
       <p class="cb-label">Reflection</p>
-      <h2 class="cb-h2">배운 것과 다음에 할 것</h2>
+      <h2 data-i18n="yt.cb-h2.10" class="cb-h2">배운 것과 다음에 할 것</h2>
       <div class="ref-grid">
         <div class="ref-card">
-          <p class="ref-lbl">배운 점</p>
-          <p class="ref-p">리서치가 실제로 설계 결정을 바꾸는 장면을 직접 경험했습니다. 스티커 dismiss 방식이 드래그에서 ⋮ 메뉴로 바뀐 것, 바텀시트가 기본 진입 경로로 변경된 것 모두 <mark class="hl">UT 데이터 없이는 내리기 어려운 결정</mark>이었습니다. 리서치가 디자인의 방향을 바꿀 수 있다는 걸 수치와 행동 데이터로 확인한 프로젝트였습니다.</p>
+          <p data-i18n="yt.ref-lbl.0" class="ref-lbl">배운 점</p>
+          <p data-i18n="yt.ref-p.0" class="ref-p">리서치가 실제로 설계 결정을 바꾸는 장면을 직접 경험했습니다. 스티커 dismiss 방식이 드래그에서 ⋮ 메뉴로 바뀐 것, 바텀시트가 기본 진입 경로로 변경된 것 모두 <mark class="hl">UT 데이터 없이는 내리기 어려운 결정</mark>이었습니다. 리서치가 디자인의 방향을 바꿀 수 있다는 걸 수치와 행동 데이터로 확인한 프로젝트였습니다.</p>
         </div>
         <div class="ref-card">
-          <p class="ref-lbl">프로토콜 개선</p>
-          <p class="ref-p">UT 진행 중 일부 질문이 사용자의 행동을 유도하고 있다는 것을 발견하고 <strong>즉시 표현을 수정했습니다.</strong> 이 경험을 바탕으로 이후 프로젝트에서는 <mark class="hl">프로토콜 검토 단계에 '유도 여부 체크' 항목을 추가</mark>해 인터뷰 전 팀 내 리뷰를 거치는 방식으로 프로세스를 구체화했습니다.</p>
+          <p data-i18n="yt.ref-lbl.1" class="ref-lbl">프로토콜 개선</p>
+          <p data-i18n="yt.ref-p.1" class="ref-p">UT 진행 중 일부 질문이 사용자의 행동을 유도하고 있다는 것을 발견하고 <strong>즉시 표현을 수정했습니다.</strong> 이 경험을 바탕으로 이후 프로젝트에서는 <mark class="hl">프로토콜 검토 단계에 '유도 여부 체크' 항목을 추가</mark>해 인터뷰 전 팀 내 리뷰를 거치는 방식으로 프로세스를 구체화했습니다.</p>
         </div>
         <div class="ref-card">
-          <p class="ref-lbl">향후 개선 방향</p>
-          <p class="ref-p">전 과정을 폭넓게 다루다 보니 <strong>특정 포인트를 더 깊이 파고드는 데 한계</strong>가 있었습니다. 다음에는 <strong>리마인드 기능</strong>이나 <mark class="hl">Shorts 썸네일에서 제품 스티커 유무를 미리 확인할 수 있는 기능</mark> 등 더 고도화된 경험까지 설계해보고 싶습니다.</p>
+          <p data-i18n="yt.ref-lbl.2" class="ref-lbl">향후 개선 방향</p>
+          <p data-i18n="yt.ref-p.2" class="ref-p">전 과정을 폭넓게 다루다 보니 <strong>특정 포인트를 더 깊이 파고드는 데 한계</strong>가 있었습니다. 다음에는 <strong>리마인드 기능</strong>이나 <mark class="hl">Shorts 썸네일에서 제품 스티커 유무를 미리 확인할 수 있는 기능</mark> 등 더 고도화된 경험까지 설계해보고 싶습니다.</p>
         </div>
         <div class="ref-card">
-          <p class="ref-lbl">아쉬운 점</p>
-          <p class="ref-p">프로젝트 진행 당시 <strong>제품 스티커 기능이 한국에 출시된 지 얼마 되지 않은 시점</strong>이라 기능을 인지하고 있는 참가자를 모집하는 것 자체가 쉽지 않았습니다. 지금 시점이었다면 <mark class="hl">기능에 더 익숙한 사용자들로부터 더 풍부한 인사이트</mark>를 얻을 수 있었을 것 같습니다.</p>
+          <p data-i18n="yt.ref-lbl.3" class="ref-lbl">아쉬운 점</p>
+          <p data-i18n="yt.ref-p.3" class="ref-p">프로젝트 진행 당시 <strong>제품 스티커 기능이 한국에 출시된 지 얼마 되지 않은 시점</strong>이라 기능을 인지하고 있는 참가자를 모집하는 것 자체가 쉽지 않았습니다. 지금 시점이었다면 <mark class="hl">기능에 더 익숙한 사용자들로부터 더 풍부한 인사이트</mark>를 얻을 수 있었을 것 같습니다.</p>
         </div>
       </div>
     </div>
@@ -634,17 +606,27 @@
   <div class="case-end-section">
     <div class="case-end-card">
       <div style="position:relative;z-index:1;text-align:left;">
-        <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">Next Case</p>
-        <div class="next-case-link" onclick="showPage('case3')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
-          <img class="next-case-thumb" src="images/homuscle/thumbnail.jpg" style="width:160px;height:90px;border-radius:10px;flex-shrink:0;object-fit:cover;"/>
-          <div>
-            <p style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">HOMUSCLE · AI Experiment · 2025</p>
-            <h3 style="font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">HOMUSCLE — AI Home Workout Tracker</h3>
-            <span style="font-size:13px;color:#6b5fb0;font-weight:600;">Read case study →</span>
+        <p data-i18n="yt.next-eyebrow.0" style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">다른 케이스</p>
+        <div class="next-case-grid">
+          <div class="next-case-link" onclick="showPage('case3')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/homuscle/thumbnail.jpg" style="width:160px;height:90px;border-radius:10px;flex-shrink:0;object-fit:cover;"/>
+            <div>
+              <p data-i18n="yt.next-tag.0" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">HOMUSCLE · AI 실험 프로젝트 · 2025</p>
+              <h3 data-i18n="yt.next-title.0" style="font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">HOMUSCLE : AI 홈트레이닝 트래커</h3>
+              <span data-i18n="yt.next-cta.0" style="font-size:13px;color:#6b5fb0;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
+          </div>
+          <div class="next-case-link" onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/nom/NOM main image.png" style="width:160px;height:90px;border-radius:10px;flex-shrink:0;object-fit:cover;"/>
+            <div>
+              <p data-i18n="yt.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">프로덕트 디자인 · Naver OGQ Market · 2026</p>
+              <h3 data-i18n="yt.next-title.1" style="font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">네이버 OGQ마켓 홈 상단 노출 구조 개선</h3>
+              <span data-i18n="yt.next-cta.1" style="font-size:13px;color:#6b5fb0;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
           </div>
         </div>
         <div style="margin-top:20px;">
-          <button class="ce-btn p" onclick="showPage('home')">← All Work</button>
+          <button data-i18n="yt.next-allwork.0" class="ce-btn p" onclick="showPage('home')">← 전체 작업 보기</button>
         </div>
       </div>
     </div>
@@ -670,6 +652,8 @@
   <img id="char-img" src="images/character.png" alt="character"/>
 </div>
 
+<script src="i18n-dict.js"></script>
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 <script>
   /* 상세데이터 아코디언 — 텍스트 토글 + hover open */

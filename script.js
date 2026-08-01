@@ -171,15 +171,21 @@ const responses = {
   default: '안녕하세요! 저는 Miseon Park의 포트폴리오 AI입니다. 리서치 방법론, 프로젝트, 또는 협업에 대해 무엇이든 물어보세요!',
   research: '사용자가 말하는 불편함을 그대로 받아들이지 않습니다. 인터뷰와 행동 관찰을 통해 맥락을 파악하고, 진정한 문제가 무엇인지 검증합니다. 올바른 문제 정의가 좋은 디자인의 시작이라고 믿기 때문입니다.',
   designer: '상황에 맞는 검증 방법을 선택합니다. 실무에서는 GA와 Clarity를 통해 사용자 행동 데이터를 분석하고 A/B 테스트로 검증합니다. 리서치 프로젝트에서는 사용자 인터뷰, 사용성 테스트, SUS 설문을 활용합니다. 방법은 다르지만, 가설을 세우고 데이터로 판단하는 원칙은 일관됩니다.',
+  nom: 'Naver OGQ Market(네이버 OGQ 마켓) 홈 상단의 노출 구조를 개선한 프로젝트입니다. 클릭당 전환율이 정체된 문제를 데이터로 확인하고, 상단 영역의 레이아웃과 정보 구조를 재설계해 클릭당 전환율을 +60.9% 개선했습니다. 현재 재직 중인 회사에서 진행한 실무 프로젝트로, 데이터 분석부터 디자인 검증까지 직접 담당했습니다.',
   youtube: 'YouTube Shorts의 쇼핑 스티커 기능이 시청 경험을 방해하는 문제를 해결하기 위해 시작한 프로젝트입니다. 8명의 사용자 인터뷰를 통해 "광고로 인식되어 즉시 무시된다"는 핵심 문제를 발견했고, 이를 바탕으로 스티커 이동 기능과 My Products를 설계했습니다. 리서치부터 최종 디자인 출시까지 전체 과정을 주도했습니다.',
+  homuscle: 'HOMUSCLE은 카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 AI 홈트레이닝 웹앱입니다. 기획부터 디자인 시스템 정의, 구현, 검증까지 바이브 코딩으로 직접 진행한 사이드 프로젝트로, AI 제품을 설계하는 경험을 넓히기 위해 시작했습니다.',
   ai: '리서치와 사용성 테스트 데이터를 AI로 빠르게 정리해 의사결정 근거를 만들고, 반복 작업을 덜어냅니다. 다만 문제 정의와 최종 판단은 언제나 제가 직접 합니다. 여기에 더해 AI 포즈 인식 기반 서비스(HOMUSCLE)를 직접 기획·디자인·구현하며, AI 제품을 설계하는 경험까지 넓혀가고 있습니다.',
 };
 
 function getResponse(text) {
   const t = text.toLowerCase();
+  /* 특정 프로젝트를 지목한 질문을 먼저 확인 — 방법론 키워드보다 우선 매칭 */
+  if (t.includes('nom') || t.includes('ogq') || t.includes('네이버') || t.includes('오지큐')) return responses.nom;
+  if (t.includes('homuscle') || t.includes('홈스클') || t.includes('홈트') || t.includes('운동') || t.includes('workout')) return responses.homuscle;
+  if (t.includes('youtube') || t.includes('shorts') || t.includes('쇼츠')) return responses.youtube;
+  /* 방법론/일반 질문 */
   if (t.includes('define') || t.includes('problem') || t.includes('문제') || t.includes('정의')) return responses.research;
   if (t.includes('validate') || t.includes('검증') || t.includes('데이터')) return responses.designer;
-  if (t.includes('youtube') || t.includes('shorts') || t.includes('쇼츠') || t.includes('프로젝트')) return responses.youtube;
   if (t.includes('ai') || t.includes('인공지능') || t.includes('claude') || t.includes('활용')) return responses.ai;
   return responses.default;
 }
@@ -212,11 +218,11 @@ function handleChatSend() {
   const text = inp.value.trim();
   if (!text) return;
   inp.value = '';
-  addMsg(text, 'user');
+  addMsg(window.tr ? window.tr(text) : text, 'user');
   const typing = addMsg('...', 'ai');
   setTimeout(() => {
     typing.remove();
-    addMsg(getResponse(text), 'ai');
+    addMsg(window.tr ? window.tr(getResponse(text)) : getResponse(text), 'ai');
   }, 900);
 }
 
@@ -557,7 +563,7 @@ document.addEventListener('keydown', function(e) {
           if (!label) return;
           key = label.textContent.trim();
         }
-        if (msgMap[key]) showMsg(msgMap[key]);
+        if (msgMap[key]) showMsg(window.tr ? window.tr(msgMap[key]) : msgMap[key]);
       }
     });
   }, { threshold: 0.3 });
@@ -569,7 +575,7 @@ document.addEventListener('keydown', function(e) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const key = entry.target.textContent.trim();
-        if (msgMap[key]) showMsg(msgMap[key]);
+        if (msgMap[key]) showMsg(window.tr ? window.tr(msgMap[key]) : msgMap[key]);
       }
     });
   }, { threshold: 0, rootMargin: '0px 0px -15% 0px' });
@@ -582,8 +588,9 @@ function scrollFab() {
   if (fab && fab.classList.contains('up')) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    const work = document.getElementById('work-section');
-    if (work) work.scrollIntoView({ behavior: 'smooth' });
+    const page = document.getElementById('home-page');
+    const bottom = page ? page.scrollHeight : document.body.scrollHeight;
+    window.scrollTo({ top: bottom, behavior: 'smooth' });
   }
 }
 window.addEventListener('scroll', () => {
