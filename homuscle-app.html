@@ -2078,7 +2078,7 @@ function renderCalendar(){
     const el = document.createElement('div');
     el.className = 'cal-day' + (ds === today ? ' today' : '') + (doneDates.has(ds) ? ' done' : '') + (photoByDate[ds] ? ' has-photo' : '');
     el.innerHTML =
-      (photoByDate[ds] ? '<img class="cal-thumb" src="' + photoByDate[ds] + '">' : '') +
+      (photoByDate[ds] ? '<img class="cal-thumb" src="' + photoByDate[ds] + '" decoding="async">' : '') +
       '<span>' + d + '</span>' +
       (doneDates.has(ds) ? '<span class="dot"></span>' : '');
     if (doneDates.has(ds)) el.onclick = () => showDayDetail(ds);
@@ -2223,7 +2223,7 @@ function renderRecordGrid(){
     '<div class="record-card" onclick="openRecordModal(\'' + r.id + '\')">' +
       (recordStats(r).isFinal ? '<div class="rc-badge" title="미션 완수">COMPLETE</div>' : '') +
       (r.photo
-        ? '<img class="rc-img" src="' + r.photo + '">'
+        ? '<img class="rc-img" src="' + r.photo + '" loading="lazy" decoding="async">'
         : '<div class="rc-img">💪</div>') +
       '<div class="rc-body">' +
         '<div class="rc-date">' + r.date + '</div>' +
@@ -2244,7 +2244,7 @@ function openRecordModal(id){
     : '';
   $('recordModalBody').innerHTML =
     (r.photo
-      ? '<img class="modal-photo" src="' + r.photo + '">'
+      ? '<img class="modal-photo" src="' + r.photo + '" decoding="async">'
       : '<div class="modal-photo">💪</div>') +
     '<div class="modal-info">' +
       '<div class="m-date">' + r.date.replace(/-/g, '.') + '</div>' +
