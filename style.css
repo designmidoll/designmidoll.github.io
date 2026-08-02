@@ -1473,6 +1473,9 @@ div.case-body {
 .case-img-wrap:hover .zoom-hint { opacity: 1; }
 .zoom-hint img { width: 60px; height: 60px; opacity: 0.75; border-radius: 50%; overflow: hidden; }
 
+/* NOM Process — 채택되지 않은 시안을 아주 살짝 어둡게 처리해 채택안과 구분 */
+.case-img-wrap.alt img { filter: brightness(0.93); }
+
 
 /* ── MINIMAP ── */
 #lb-minimap { backdrop-filter: blur(4px); }
