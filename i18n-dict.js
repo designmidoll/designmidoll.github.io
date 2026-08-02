@@ -102,9 +102,9 @@ window.I18N_DICT = {
     koAt: "UX Research & Design · YouTube Shorts · Sep 2025"
   },
   "home.work-item-tag.2": {
-    ko:   "AI Experiment · Side Project · 2025",
-    en:   "AI Experiment · Side Project · 2025",
-    koAt: "AI Experiment · Side Project · 2025"
+    ko:   "AI Experiment · Side Project · Jul 2026",
+    en:   "AI Experiment · Side Project · Jul 2026",
+    koAt: "AI Experiment · Side Project · Jul 2026"
   },
   "home.work-item-title.0": {
     ko:   "<span>네이버 OGQ마켓 홈 상단 노출 구조 개선</span>",
@@ -120,6 +120,21 @@ window.I18N_DICT = {
     ko:   "HOMUSCLE : AI 홈트레이닝 트래커",
     en:   "HOMUSCLE : AI Home Workout Tracker",
     koAt: "HOMUSCLE : AI 홈트레이닝 트래커"
+  },
+  "home.work-item-type.0": {
+    ko:   "반응형 웹",
+    en:   "Responsive Web",
+    koAt: "반응형 웹"
+  },
+  "home.work-item-type.1": {
+    ko:   "모바일 앱",
+    en:   "Mobile App",
+    koAt: "모바일 앱"
+  },
+  "home.work-item-type.2": {
+    ko:   "웹앱",
+    en:   "Web App",
+    koAt: "웹앱"
   },
 
   /* ───────── NOM — Naver OGQ Market (nom.html)  (102개 · 번역완료 102 · 남음 0) ───────── */
@@ -344,9 +359,9 @@ window.I18N_DICT = {
     koAt: "Product Design · Naver OGQ Market · Mar 2026"
   },
   "nom.case-h1.0": {
-    ko:   "<span style=\"font-family:'Archivo',sans-serif;\">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>\n      </span>",
-    en:   "<span style=\"font-family:'Archivo',sans-serif;\">Naver OGQ Market — Home Top-Area Exposure</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">Redesigning the top of Home to lift content discovery and purchase conversion</span>\n      </span>",
-    koAt: "<span style=\"font-family:'Archivo',sans-serif;\">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>\n      </span>"
+    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>\n        <span class=\"case-type-badge\">반응형 웹</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>\n      </span>",
+    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">Naver OGQ Market — Home Top-Area Exposure</span>\n        <span class=\"case-type-badge\">Responsive Web</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">Redesigning the top of Home to lift content discovery and purchase conversion</span>\n      </span>",
+    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>\n        <span class=\"case-type-badge\">반응형 웹</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>\n      </span>"
   },
   "nom.cb-h2.0": {
     ko:   "왜 시작했나",
@@ -429,9 +444,9 @@ window.I18N_DICT = {
     koAt: "GA4 <code class=\"c2-code\">checkout_source: recent_artwork</code> 로 구매 경로를 분리해 추적했습니다."
   },
   "nom.cb-p.8": {
-    ko:   "정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 변경된 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다.",
-    en:   "Based on the quantitative results, the changes were <strong>adopted into our internal design system</strong>. The new banner specs were standardized as an official component guide and shared with the creator team, so this went beyond a one-off fix and was applied consistently across the organization.",
-    koAt: "정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 변경된 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다."
+    ko:   "정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 16:9로 통일한 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다. 이 규격은 지금도 <mark class=\"hl\">이벤트 배너 제작의 기준</mark>으로 쓰이고 있습니다.",
+    en:   "On the strength of the quantitative results, the changes were <strong>folded into our internal design system</strong>. The unified 16:9 banner spec was standardized as an official component guide and distributed to the creator team, so the improvement held across the organization rather than staying a one-off. It still serves as <mark class=\"hl\">the reference for every event banner</mark> we produce.",
+    koAt: "정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 16:9로 통일한 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다. 이 규격은 지금도 <mark class=\"hl\">이벤트 배너 제작의 기준</mark>으로 쓰이고 있습니다."
   },
   "nom.cht.0": {
     ko:   "Product Design",
@@ -633,6 +648,56 @@ window.I18N_DICT = {
     en:   "\"It takes far too much scrolling to reach featured content from the first screen\"",
     koAt: "\"첫 화면에서 피처드 콘텐츠까지 스크롤이 너무 많이 필요해요\""
   },
+  "nom.sub.0": {
+    ko:   "배너 규격 통일",
+    en:   "Unifying the banner spec",
+    koAt: "배너 규격 통일"
+  },
+  "nom.sub.1": {
+    ko:   "변경 상세",
+    en:   "What changed",
+    koAt: "변경 상세"
+  },
+  "nom.ratio-note.0": {
+    ko:   "비율 불일치 — 이벤트당 2종 제작",
+    en:   "Mismatched ratios — two versions per event",
+    koAt: "비율 불일치 — 이벤트당 2종 제작"
+  },
+  "nom.ratio-note.1": {
+    ko:   "16:9 통일 — 1종 제작 후 스케일",
+    en:   "Unified to 16:9 — build once, then scale",
+    koAt: "16:9 통일 — 1종 제작 후 스케일"
+  },
+  "nom.cb-p.9": {
+    ko:   "배너 높이를 줄이는 김에 규격 자체를 다시 정의했습니다. 기존에는 PC와 모바일 배너의 <mark class=\"hl\">비율이 서로 달라</mark>, 이벤트마다 콘텐츠 디자이너가 PC용과 모바일용을 각각 만들고 있었습니다.",
+    en:   "While shortening the banner, I redefined the spec itself. The PC and mobile banners <mark class=\"hl\">had different aspect ratios</mark>, so for every event the content designer was building a PC version and a mobile version separately.",
+    koAt: "배너 높이를 줄이는 김에 규격 자체를 다시 정의했습니다. 기존에는 PC와 모바일 배너의 <mark class=\"hl\">비율이 서로 달라</mark>, 이벤트마다 콘텐츠 디자이너가 PC용과 모바일용을 각각 만들고 있었습니다."
+  },
+  "nom.cb-p.10": {
+    ko:   "가로 규격(412·320)은 유지한 채 세로만 재정의해 두 환경을 <mark class=\"hl\">16:9로 통일</mark>했습니다. PC 412×232는 엄밀히는 16:9에서 0.25px 벗어나지만 화면에서 구분되지 않는 수준으로, 규격을 하나로 맞추는 실익이 더 크다고 판단했습니다. 이후 배너는 <mark class=\"hl\">PC 기준 1종만 제작해 모바일에 스케일 적용</mark>하는 방식으로 바뀌었고, 이벤트당 <mark class=\"hl\">제작 공수가 약 50% 줄었습니다.</mark>",
+    en:   "Keeping the widths (412 and 320) fixed, I redefined only the heights to bring both environments <mark class=\"hl\">to a single 16:9 spec</mark>. PC 412×232 is technically 0.25px off 16:9 — indistinguishable on screen — and the gain from one shared spec clearly outweighed it. Banners are now <mark class=\"hl\">built once at PC size and scaled for mobile</mark>, cutting <mark class=\"hl\">production effort per event by roughly half.</mark>",
+    koAt: "가로 규격(412·320)은 유지한 채 세로만 재정의해 두 환경을 <mark class=\"hl\">16:9로 통일</mark>했습니다. PC 412×232는 엄밀히는 16:9에서 0.25px 벗어나지만 화면에서 구분되지 않는 수준으로, 규격을 하나로 맞추는 실익이 더 크다고 판단했습니다. 이후 배너는 <mark class=\"hl\">PC 기준 1종만 제작해 모바일에 스케일 적용</mark>하는 방식으로 바뀌었고, 이벤트당 <mark class=\"hl\">제작 공수가 약 50% 줄었습니다.</mark>"
+  },
+  "nom.sub.2": {
+    ko:   "4-1 · 주간인기 지면 — 매출 기여 비중",
+    en:   "4-1 · Weekly Popular slot — share of revenue",
+    koAt: "4-1 · 주간인기 지면 — 매출 기여 비중"
+  },
+  "nom.sub.3": {
+    ko:   "4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율",
+    en:   "4-2 · Recently Viewed path — conversion per click",
+    koAt: "4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율"
+  },
+  "nom.sub.4": {
+    ko:   "알고 있는 한계",
+    en:   "Known limitations",
+    koAt: "알고 있는 한계"
+  },
+  "nom.sub.5": {
+    ko:   "다음에 할 것",
+    en:   "What's next",
+    koAt: "다음에 할 것"
+  },
   "nom.next-eyebrow.0": {
     ko:   "다른 케이스",
     en:   "Other Cases",
@@ -654,9 +719,9 @@ window.I18N_DICT = {
     koAt: "케이스 스터디 보기 →"
   },
   "nom.next-tag.1": {
-    ko:   "HOMUSCLE · AI 실험 프로젝트 · 2025",
-    en:   "HOMUSCLE · AI Experiment · 2025",
-    koAt: "HOMUSCLE · AI 실험 프로젝트 · 2025"
+    ko:   "HOMUSCLE · AI 실험 프로젝트 · 2026",
+    en:   "HOMUSCLE · AI Experiment · 2026",
+    koAt: "HOMUSCLE · AI 실험 프로젝트 · 2026"
   },
   "nom.next-title.1": {
     ko:   "HOMUSCLE : AI 홈트레이닝 트래커",
@@ -681,9 +746,9 @@ window.I18N_DICT = {
     koAt: "UX Research & Design · YouTube Shorts · Sep 2025"
   },
   "yt.case-h1.0": {
-    ko:   "<span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>",
-    en:   "<span style=\"font-family:'Archivo',sans-serif;\">YouTube Shorts Shopping Experience</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">Designing a shopping experience that doesn't interrupt the viewing flow</span>\n      </span>",
-    koAt: "<span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>"
+    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>",
+    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">YouTube Shorts Shopping Experience</span>\n        <span class=\"case-type-badge\">Mobile App</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">Designing a shopping experience that doesn't interrupt the viewing flow</span>\n      </span>",
+    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>"
   },
   "yt.cb-h2.0": {
     ko:   "무엇이 문제인가?",
@@ -966,9 +1031,9 @@ window.I18N_DICT = {
     koAt: "다른 케이스"
   },
   "yt.next-tag.0": {
-    ko:   "HOMUSCLE · AI 실험 프로젝트 · 2025",
-    en:   "HOMUSCLE · AI Experiment · 2025",
-    koAt: "HOMUSCLE · AI 실험 프로젝트 · 2025"
+    ko:   "HOMUSCLE · AI 실험 프로젝트 · 2026",
+    en:   "HOMUSCLE · AI Experiment · 2026",
+    koAt: "HOMUSCLE · AI 실험 프로젝트 · 2026"
   },
   "yt.next-title.0": {
     ko:   "HOMUSCLE : AI 홈트레이닝 트래커",
@@ -1172,135 +1237,15 @@ window.I18N_DICT = {
     en:   "Only 3 CDN dependencies",
     koAt: "의존성은 CDN 3개뿐"
   },
-  "hm.c2-detail-d.0": {
-    ko:   "아령 박스 렌더링만 생략하고 포즈 기반 카운팅은 유지되도록 처리했습니다",
-    en:   "Only the dumbbell box rendering is skipped — pose-based counting keeps running",
-    koAt: "아령 박스 렌더링만 생략하고 포즈 기반 카운팅은 유지되도록 처리했습니다"
-  },
-  "hm.c2-detail-d.1": {
-    ko:   "'카메라 앞에 서주세요' 오버레이로 원인을 안내합니다",
-    en:   "A \"step in front of the camera\" overlay explains the cause",
-    koAt: "'카메라 앞에 서주세요' 오버레이로 원인을 안내합니다"
-  },
-  "hm.c2-detail-d.2": {
-    ko:   "인증샷을 제외하고 기록만 저장해 데이터 유실을 줄였습니다",
-    en:   "Photos are dropped and records still saved, reducing data loss",
-    koAt: "인증샷을 제외하고 기록만 저장해 데이터 유실을 줄였습니다"
-  },
-  "hm.c2-detail-d.3": {
-    ko:   "세션 진입 시 SVG 모션 가이드로 자세를 먼저 안내해 잘못된 자세로 인한 미카운트를 줄였습니다",
-    en:   "An SVG motion guide shows the form on entry, cutting missed counts from bad posture",
-    koAt: "세션 진입 시 SVG 모션 가이드로 자세를 먼저 안내해 잘못된 자세로 인한 미카운트를 줄였습니다"
-  },
-  "hm.c2-detail-d.4": {
-    ko:   "카운트마다 손목 주변 주황 펄스와 사운드가 함께 반응해, 화면을 보지 않아도 카운트를 확인할 수 있습니다",
-    en:   "Every count fires an orange pulse at the wrist plus a sound, so you can confirm it without looking",
-    koAt: "카운트마다 손목 주변 주황 펄스와 사운드가 함께 반응해, 화면을 보지 않아도 카운트를 확인할 수 있습니다"
-  },
-  "hm.c2-detail-d.5": {
-    ko:   "진행률 구간마다 격려 문구를 오버레이해 마지막 반복을 이어가도록 했습니다",
-    en:   "Encouragement overlays at progress milestones help carry the last few reps",
-    koAt: "진행률 구간마다 격려 문구를 오버레이해 마지막 반복을 이어가도록 했습니다"
-  },
-  "hm.c2-detail-d.6": {
-    ko:   "화이트·주황 컨페티와 WORKOUT COMPLETE 문구로 완료를 알립니다",
-    en:   "White and orange confetti with a WORKOUT COMPLETE message marks the finish",
-    koAt: "화이트·주황 컨페티와 WORKOUT COMPLETE 문구로 완료를 알립니다"
-  },
-  "hm.c2-detail-d.7": {
-    ko:   "카운트다운 후 자동 촬영해 기록에 첨부합니다",
-    en:   "Auto-captures after a countdown and attaches the photo to the record",
-    koAt: "카운트다운 후 자동 촬영해 기록에 첨부합니다"
-  },
-  "hm.c2-detail-d.8": {
-    ko:   "주황 D-day와 연속 기록 뱃지로 복귀 동기를 만듭니다",
-    en:   "An orange D-day and streak badge build the motivation to come back",
-    koAt: "주황 D-day와 연속 기록 뱃지로 복귀 동기를 만듭니다"
-  },
-  "hm.c2-detail-d.9": {
-    ko:   "타 사용자 5명 대상 UT로 카운팅 신뢰도·온보딩 개선점 검증",
-    en:   "Run a UT with 5 other users to validate counting reliability and onboarding",
-    koAt: "타 사용자 5명 대상 UT로 카운팅 신뢰도·온보딩 개선점 검증"
-  },
-  "hm.c2-detail-d.10": {
-    ko:   "스쿼트·런지 등 하체 종목 — 무릎 각도 기반 상태머신 재사용",
-    en:   "Lower-body moves like squats and lunges — reusing the state machine on knee angle",
-    koAt: "스쿼트·런지 등 하체 종목 — 무릎 각도 기반 상태머신 재사용"
-  },
-  "hm.c2-detail-d.11": {
-    ko:   "세로 화면 세션 레이아웃과 전면 카메라 거리 보정",
-    en:   "A portrait session layout and front-camera distance calibration",
-    koAt: "세로 화면 세션 레이아웃과 전면 카메라 거리 보정"
-  },
-  "hm.c2-detail-t.0": {
-    ko:   "YOLO 모델 로드 실패 시",
-    en:   "If the YOLO model fails to load",
-    koAt: "YOLO 모델 로드 실패 시"
-  },
-  "hm.c2-detail-t.1": {
-    ko:   "포즈 미검출 시",
-    en:   "If no pose is detected",
-    koAt: "포즈 미검출 시"
-  },
-  "hm.c2-detail-t.2": {
-    ko:   "저장 공간 초과 시",
-    en:   "If storage runs out",
-    koAt: "저장 공간 초과 시"
-  },
-  "hm.c2-detail-t.3": {
-    ko:   "운동 전 · 가이드 팝업",
-    en:   "Before · guide popup",
-    koAt: "운동 전 · 가이드 팝업"
-  },
-  "hm.c2-detail-t.4": {
-    ko:   "운동 중 · 펄스 + 사운드",
-    en:   "During · pulse + sound",
-    koAt: "운동 중 · 펄스 + 사운드"
-  },
-  "hm.c2-detail-t.5": {
-    ko:   "운동 중 · 격려 메시지",
-    en:   "During · encouragement",
-    koAt: "운동 중 · 격려 메시지"
-  },
-  "hm.c2-detail-t.6": {
-    ko:   "완료 · 컨페티",
-    en:   "Finish · confetti",
-    koAt: "완료 · 컨페티"
-  },
-  "hm.c2-detail-t.7": {
-    ko:   "완료 · 3-2-1 인증샷",
-    en:   "Finish · 3-2-1 photo",
-    koAt: "완료 · 3-2-1 인증샷"
-  },
-  "hm.c2-detail-t.8": {
-    ko:   "다음 날 · D-day & 스트릭",
-    en:   "Next day · D-day & streak",
-    koAt: "다음 날 · D-day & 스트릭"
-  },
-  "hm.c2-detail-t.9": {
-    ko:   "사용성 테스트",
-    en:   "Usability testing",
-    koAt: "사용성 테스트"
-  },
-  "hm.c2-detail-t.10": {
-    ko:   "운동 종목 확장",
-    en:   "More exercise types",
-    koAt: "운동 종목 확장"
-  },
-  "hm.c2-detail-t.11": {
-    ko:   "모바일 최적화",
-    en:   "Mobile optimization",
-    koAt: "모바일 최적화"
-  },
   "hm.case-eyebrow.0": {
-    ko:   "AI Experiment · Side Project · 2025 — Vibe Coding",
-    en:   "AI Experiment · Side Project · 2025 — Vibe Coding",
-    koAt: "AI Experiment · Side Project · 2025 — Vibe Coding"
+    ko:   "AI Experiment · Side Project · Jul 2026 — Vibe Coding",
+    en:   "AI Experiment · Side Project · Jul 2026 — Vibe Coding",
+    koAt: "AI Experiment · Side Project · Jul 2026 — Vibe Coding"
   },
   "hm.case-h1.0": {
-    ko:   "<span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>",
-    en:   "<span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI Home Workout Tracker</span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">A web app that counts dumbbell reps automatically through camera pose detection — from design system to build and validation</span>",
-    koAt: "<span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>"
+    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>",
+    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI Home Workout Tracker</span>\n        <span class=\"case-type-badge\">Web App</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">A web app that counts dumbbell reps automatically through camera pose detection — from design system to build and validation</span>",
+    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>"
   },
   "hm.cb-h2.0": {
     ko:   "왜 만들었나",
@@ -1323,14 +1268,14 @@ window.I18N_DICT = {
     koAt: "세션 화면 설계"
   },
   "hm.cb-h2.4": {
-    ko:   "지속 사용을 위한 피드백 설계",
-    en:   "Feedback that sustains the habit",
-    koAt: "지속 사용을 위한 피드백 설계"
+    ko:   "화면을 볼 수 없는 사용자를 위한 피드백",
+    en:   "Feedback for a user who can't look at the screen",
+    koAt: "화면을 볼 수 없는 사용자를 위한 피드백"
   },
   "hm.cb-h2.5": {
-    ko:   "AI와 협업한 구현 과정",
-    en:   "Building it with AI",
-    koAt: "AI와 협업한 구현 과정"
+    ko:   "기준을 문서로 쓰기 전과 후",
+    en:   "Before and after writing the standards down",
+    koAt: "기준을 문서로 쓰기 전과 후"
   },
   "hm.cb-h2.6": {
     ko:   "배운 것과 다음 단계",
@@ -1393,14 +1338,14 @@ window.I18N_DICT = {
     koAt: "초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class=\"hl\">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다."
   },
   "hm.cb-p.11": {
-    ko:   "자동 카운팅만으로는 습관이 만들어지지 않았습니다. <mark class=\"hl\">운동 전·중·후 단계별로 피드백 장치</mark>를 배치했습니다.",
-    en:   "Automatic counting alone didn't build a habit. I placed <mark class=\"hl\">feedback at each stage — before, during and after a workout</mark>.",
-    koAt: "자동 카운팅만으로는 습관이 만들어지지 않았습니다. <mark class=\"hl\">운동 전·중·후 단계별로 피드백 장치</mark>를 배치했습니다."
+    ko:   "카운트는 정확해졌는데 계속 쓰게 되지는 않았습니다. 이유는 단순했습니다 — 덤벨을 들고 있으면 <mark class=\"hl\">화면을 볼 수가 없습니다.</mark> 시선은 위나 아래를 향하고, 숫자가 올라갔는지는 세트가 끝나고서야 확인하게 됩니다. 그래서 피드백을 화면 밖으로 꺼냈습니다.",
+    en:   "Counting got accurate, but I still didn't keep using it. The reason was simple — once you're holding a dumbbell, <mark class=\"hl\">you can't look at the screen.</mark> Your eyes go up or down, and you only check the number once the set is over. So I moved the feedback off the screen.",
+    koAt: "카운트는 정확해졌는데 계속 쓰게 되지는 않았습니다. 이유는 단순했습니다 — 덤벨을 들고 있으면 <mark class=\"hl\">화면을 볼 수가 없습니다.</mark> 시선은 위나 아래를 향하고, 숫자가 올라갔는지는 세트가 끝나고서야 확인하게 됩니다. 그래서 피드백을 화면 밖으로 꺼냈습니다."
   },
   "hm.cb-p.12": {
-    ko:   "바이브 코딩에서는 결과물의 품질을 프롬프트보다 <mark class=\"hl\">스펙의 정밀도</mark>가 결정한다는 것을 확인했습니다. 디자인 시스템 토큰, 레이아웃 규칙, 인터랙션 임계값, 완성 기준 체크리스트를 담은 474줄 분량의 스펙 문서(HOMUSCLE.md)를 먼저 작성하고, AI에게 <mark class=\"hl\">이 시스템을 구현하도록</mark> 요청했습니다. 별도 운영 문서(CLAUDE.md)에는 어떤 모델이 작업해도 품질이 유지되도록 불변식과 검증 절차를 정리했습니다.",
-    en:   "Vibe coding taught me that output quality is determined less by the prompt than by <mark class=\"hl\">the precision of the spec</mark>. I first wrote a 474-line spec document (HOMUSCLE.md) covering design tokens, layout rules, interaction thresholds and a definition-of-done checklist, then asked the AI to <mark class=\"hl\">implement that system</mark>. A separate operating document (CLAUDE.md) fixed the invariants and verification steps so quality holds regardless of which model does the work.",
-    koAt: "바이브 코딩에서는 결과물의 품질을 프롬프트보다 <mark class=\"hl\">스펙의 정밀도</mark>가 결정한다는 것을 확인했습니다. 디자인 시스템 토큰, 레이아웃 규칙, 인터랙션 임계값, 완성 기준 체크리스트를 담은 474줄 분량의 스펙 문서(HOMUSCLE.md)를 먼저 작성하고, AI에게 <mark class=\"hl\">이 시스템을 구현하도록</mark> 요청했습니다. 별도 운영 문서(CLAUDE.md)에는 어떤 모델이 작업해도 품질이 유지되도록 불변식과 검증 절차를 정리했습니다."
+    ko:   "처음에는 만들고 싶은 걸 그때그때 설명했습니다. 동작하는 화면은 빠르게 나왔지만, 요청 한 번에 카드 모서리가 둥글어지고 주황색이 배경까지 번졌습니다. 같은 지적을 세 번쯤 반복하고 나서야 문제를 알았습니다. <mark class=\"hl\">AI가 기준을 어긴 게 아니라, 기준이 어디에도 적혀 있지 않았습니다.</mark>",
+    en:   "At first I described what I wanted as I went. A working screen came fast, but one request later the card corners had gone round and the orange had bled into the background. Only after repeating the same note about three times did I see it. <mark class=\"hl\">The AI hadn't broken the rules — the rules were written down nowhere.</mark>",
+    koAt: "처음에는 만들고 싶은 걸 그때그때 설명했습니다. 동작하는 화면은 빠르게 나왔지만, 요청 한 번에 카드 모서리가 둥글어지고 주황색이 배경까지 번졌습니다. 같은 지적을 세 번쯤 반복하고 나서야 문제를 알았습니다. <mark class=\"hl\">AI가 기준을 어긴 게 아니라, 기준이 어디에도 적혀 있지 않았습니다.</mark>"
   },
   "hm.cht.0": {
     ko:   "Vibe Coding · AI 협업",
@@ -1458,19 +1403,19 @@ window.I18N_DICT = {
     koAt: "세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다"
   },
   "hm.obs-bubble.0": {
-    ko:   "<strong>임계값은 직접 운동하며 <mark class=\"hl\">몸으로 조정했다</mark></strong><br>인식 정확도보다 카운트가 안 될 때의 경험이 실제 UX를 좌우했습니다. 인터랙션 파라미터도 사용자 관점에서 검증해야 한다는 것을 확인했습니다.",
-    en:   "<strong>The thresholds were <mark class=\"hl\">tuned with my own body</mark></strong><br>The experience of a rep failing to count shaped the real UX more than detection accuracy did. It confirmed that interaction parameters also need validating from the user's side.",
-    koAt: "<strong>임계값은 직접 운동하며 <mark class=\"hl\">몸으로 조정했다</mark></strong><br>인식 정확도보다 카운트가 안 될 때의 경험이 실제 UX를 좌우했습니다. 인터랙션 파라미터도 사용자 관점에서 검증해야 한다는 것을 확인했습니다."
+    ko:   "<strong>숫자는 맞는데 <mark class=\"hl\">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다.",
+    en:   "<strong>The numbers were right, but <mark class=\"hl\">my body didn't follow</mark></strong><br>The first thresholds were 50°/140°. On screen it was precise, but from the third set on my arms bent less and reps went uncounted. Two adjustments later I landed on 80°/110°. Measuring accurately and keeping someone going turned out to be different problems.",
+    koAt: "<strong>숫자는 맞는데 <mark class=\"hl\">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다."
   },
   "hm.obs-bubble.1": {
-    ko:   "<strong><mark class=\"hl\">예외 처리</mark>가 도구의 신뢰도를 좌우했다</strong><br>모델 로드 실패, 포즈 미검출, 저장 초과 등 실패 경로에 폴백을 설계하고 나서야 안정적으로 쓸 수 있는 도구가 됐습니다.",
-    en:   "<strong><mark class=\"hl\">Handling failure</mark> determined whether the tool felt trustworthy</strong><br>Only after designing fallbacks for every failure path — model load errors, undetected poses, storage limits — did it become something I could rely on.",
-    koAt: "<strong><mark class=\"hl\">예외 처리</mark>가 도구의 신뢰도를 좌우했다</strong><br>모델 로드 실패, 포즈 미검출, 저장 초과 등 실패 경로에 폴백을 설계하고 나서야 안정적으로 쓸 수 있는 도구가 됐습니다."
+    ko:   "<strong>고장인지 <mark class=\"hl\">내 탓인지 구분되지 않으면</mark> 다시 열지 않는다</strong><br>모델이 로드되지 않은 날, 앱은 에러도 없이 그냥 숫자를 세지 않았습니다. 그럴 때 사용자가 의심하는 건 앱이 아니라 자기 자세입니다. 실패할 때 무엇이 안 되는지 말하게 고치고 나서야 믿고 쓸 수 있는 도구가 됐습니다.",
+    en:   "<strong>If it can't tell you <mark class=\"hl\">broken from your own fault</mark>, you won't open it again</strong><br>The day the model failed to load, the app just stopped counting — no error at all. In that moment a user doubts their own form, not the app. Only once it said what had failed did it become something I could trust.",
+    koAt: "<strong>고장인지 <mark class=\"hl\">내 탓인지 구분되지 않으면</mark> 다시 열지 않는다</strong><br>모델이 로드되지 않은 날, 앱은 에러도 없이 그냥 숫자를 세지 않았습니다. 그럴 때 사용자가 의심하는 건 앱이 아니라 자기 자세입니다. 실패할 때 무엇이 안 되는지 말하게 고치고 나서야 믿고 쓸 수 있는 도구가 됐습니다."
   },
   "hm.obs-bubble.2": {
-    ko:   "<strong>AI 협업에서는 <mark class=\"hl\">스펙의 정밀도</mark>가 결과물을 좌우한다</strong><br>같은 AI라도 스펙 문서의 해상도에 따라 결과물이 크게 달라졌습니다. 토큰·규칙·체크리스트로 시스템을 문서화하는 능력이 구현 품질로 이어졌습니다.",
-    en:   "<strong>In AI collaboration, <mark class=\"hl\">spec precision</mark> decides the outcome</strong><br>With the same AI, results varied enormously with the resolution of the spec document. The ability to document a system in tokens, rules and checklists translated directly into implementation quality.",
-    koAt: "<strong>AI 협업에서는 <mark class=\"hl\">스펙의 정밀도</mark>가 결과물을 좌우한다</strong><br>같은 AI라도 스펙 문서의 해상도에 따라 결과물이 크게 달라졌습니다. 토큰·규칙·체크리스트로 시스템을 문서화하는 능력이 구현 품질로 이어졌습니다."
+    ko:   "<strong>필요한 건 지시하는 능력이 아니라 <mark class=\"hl\">완성을 정의하는 능력</mark>이었다</strong><br>같은 도구를 쓰고도 결과가 달라진 이유는 프롬프트가 아니라 기준의 유무였습니다. 디자이너의 일이 화면을 그리는 것에서 판단 기준을 명시하는 쪽으로 옮겨가고 있다는 감각을 얻었습니다.",
+    en:   "<strong>What I needed wasn't the ability to instruct, but <mark class=\"hl\">the ability to define done</mark></strong><br>The same tool gave different results not because of the prompt but because of whether a standard existed. It left me with a sense that a designer's work is shifting from drawing screens to stating the criteria for judgment.",
+    koAt: "<strong>필요한 건 지시하는 능력이 아니라 <mark class=\"hl\">완성을 정의하는 능력</mark>이었다</strong><br>같은 도구를 쓰고도 결과가 달라진 이유는 프롬프트가 아니라 기준의 유무였습니다. 디자이너의 일이 화면을 그리는 것에서 판단 기준을 명시하는 쪽으로 옮겨가고 있다는 감각을 얻었습니다."
   },
   "hm.obs-label.0": {
     ko:   "Learning #1",
@@ -1503,9 +1448,9 @@ window.I18N_DICT = {
     koAt: "모바일 경험"
   },
   "hm.ref-lbl.3": {
-    ko:   "단일 파일의 트레이드오프",
-    en:   "Single-file trade-off",
-    koAt: "단일 파일의 트레이드오프"
+    ko:   "단일 파일이라는 선택",
+    en:   "Choosing a single file",
+    koAt: "단일 파일이라는 선택"
   },
   "hm.ref-p.0": {
     ko:   "본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다.",
@@ -1523,9 +1468,169 @@ window.I18N_DICT = {
     koAt: "데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다."
   },
   "hm.ref-p.3": {
-    ko:   "배포·공유는 쉽지만 코드가 2,800줄을 넘으며 <strong>유지보수 비용</strong>이 커지고 있습니다.",
-    en:   "Sharing and deploying is easy, but past 2,800 lines the <strong>maintenance cost</strong> is growing.",
-    koAt: "배포·공유는 쉽지만 코드가 2,800줄을 넘으며 <strong>유지보수 비용</strong>이 커지고 있습니다."
+    ko:   "링크 하나로 바로 열리게 하려고 HTML 한 파일로 유지했습니다. 대신 <strong>종목을 늘리는 시점</strong>에는 구조를 분리해야 합니다.",
+    en:   "I kept it as one HTML file so a single link opens it straight away. The trade-off is that <strong>adding more exercises</strong> will require splitting the structure up.",
+    koAt: "링크 하나로 바로 열리게 하려고 HTML 한 파일로 유지했습니다. 대신 <strong>종목을 늘리는 시점</strong>에는 구조를 분리해야 합니다."
+  },
+  "hm.cb-p.13": {
+    ko:   "기능이 되는 것보다 <mark class=\"hl\">안 될 때 이유를 알 수 있는가</mark>가 이 도구를 계속 쓰게 만드는 조건이었습니다. 실제로 세션이 멈췄던 세 지점입니다.",
+    en:   "What kept me using this tool wasn't that it worked, but <mark class=\"hl\">whether I could tell why when it didn't.</mark> These are the three points where a session actually stalled.",
+    koAt: "기능이 되는 것보다 <mark class=\"hl\">안 될 때 이유를 알 수 있는가</mark>가 이 도구를 계속 쓰게 만드는 조건이었습니다. 실제로 세션이 멈췄던 세 지점입니다."
+  },
+  "hm.cb-p.14": {
+    ko:   "컨페티나 격려 문구처럼 눈에 보이는 장치도 넣었지만, 실제로 차이를 만든 건 <mark class=\"hl\">화면을 보지 않아도 전달되는 신호</mark>였습니다.",
+    en:   "I added visible touches too — confetti, encouragement copy — but what actually made the difference was <mark class=\"hl\">a signal that lands without looking.</mark>",
+    koAt: "컨페티나 격려 문구처럼 눈에 보이는 장치도 넣었지만, 실제로 차이를 만든 건 <mark class=\"hl\">화면을 보지 않아도 전달되는 신호</mark>였습니다."
+  },
+  "hm.cb-p.15": {
+    ko:   "이후 디자인 토큰, 레이아웃 규칙, 카운팅 임계값, 그리고 무엇이 완성인지를 판단할 체크리스트를 문서 하나에 모으고 모든 작업의 기준으로 삼았습니다. 프롬프트를 잘 쓰는 것보다 <mark class=\"hl\">완성의 정의를 먼저 내리는 일</mark>이 결과물을 좌우했습니다.",
+    en:   "From then on I collected the design tokens, layout rules, counting thresholds and a checklist for judging what counted as finished into one document, and made it the reference for every task. <mark class=\"hl\">Defining done first</mark> shaped the output far more than writing better prompts did.",
+    koAt: "이후 디자인 토큰, 레이아웃 규칙, 카운팅 임계값, 그리고 무엇이 완성인지를 판단할 체크리스트를 문서 하나에 모으고 모든 작업의 기준으로 삼았습니다. 프롬프트를 잘 쓰는 것보다 <mark class=\"hl\">완성의 정의를 먼저 내리는 일</mark>이 결과물을 좌우했습니다."
+  },
+  "hm.cb-p.16": {
+    ko:   "아직은 혼자 쓰면서 맞춘 상태입니다. 다음에는 5명 정도에게 직접 써보게 해서 카운팅을 믿을 수 있는지, 첫 세션에서 어디가 막히는지를 확인해보고 싶습니다. 운동 종목은 무릎 각도를 쓰는 스쿼트·런지로 넓힐 수 있고, 모바일 세로 화면 최적화는 그다음 순서로 보고 있습니다.",
+    en:   "So far it's been tuned around my own use. Next I'd like to put it in front of about five people and see whether the counting feels trustworthy and where the first session breaks down. The exercise list can extend to squats and lunges, which run on knee angle, and optimizing the portrait mobile layout comes after that.",
+    koAt: "아직은 혼자 쓰면서 맞춘 상태입니다. 다음에는 5명 정도에게 직접 써보게 해서 카운팅을 믿을 수 있는지, 첫 세션에서 어디가 막히는지를 확인해보고 싶습니다. 운동 종목은 무릎 각도를 쓰는 스쿼트·런지로 넓힐 수 있고, 모바일 세로 화면 최적화는 그다음 순서로 보고 있습니다."
+  },
+  "hm.sub.0": {
+    ko:   "쓰다가 멈췄던 지점",
+    en:   "Where it stalled in use",
+    koAt: "쓰다가 멈췄던 지점"
+  },
+  "hm.sub.1": {
+    ko:   "다음에 할 것",
+    en:   "What's next",
+    koAt: "다음에 할 것"
+  },
+  "hm.fail-sym.0": {
+    ko:   "아령 인식 모델이 로드되지 않자 카운트가 아예 올라가지 않았습니다",
+    en:   "When the dumbbell detection model failed to load, the count stopped moving entirely",
+    koAt: "아령 인식 모델이 로드되지 않자 카운트가 아예 올라가지 않았습니다"
+  },
+  "hm.fail-fix.0": {
+    ko:   "아령 박스 렌더링과 포즈 기반 카운팅을 분리했습니다. 모델이 없으면 박스만 생략되고 세션은 끝까지 진행됩니다.",
+    en:   "I separated the dumbbell box rendering from pose-based counting. Without the model only the box is skipped, and the session still runs to the end.",
+    koAt: "아령 박스 렌더링과 포즈 기반 카운팅을 분리했습니다. 모델이 없으면 박스만 생략되고 세션은 끝까지 진행됩니다."
+  },
+  "hm.fail-sym.1": {
+    ko:   "프레임 밖으로 나가면 화면은 그대로인데 숫자만 멈췄습니다",
+    en:   "Step out of frame and the screen looked fine — only the number froze",
+    koAt: "프레임 밖으로 나가면 화면은 그대로인데 숫자만 멈췄습니다"
+  },
+  "hm.fail-fix.1": {
+    ko:   "포즈가 잡히지 않는 동안 '카메라 앞에 서주세요' 오버레이를 띄웁니다. 사용자가 자기 자세를 의심하기 전에 원인을 먼저 보여주기 위해서입니다.",
+    en:   "While no pose is detected, a 'Please stand in front of the camera' overlay appears — so the cause shows up before the user starts doubting their own form.",
+    koAt: "포즈가 잡히지 않는 동안 '카메라 앞에 서주세요' 오버레이를 띄웁니다. 사용자가 자기 자세를 의심하기 전에 원인을 먼저 보여주기 위해서입니다."
+  },
+  "hm.fail-sym.2": {
+    ko:   "저장 공간이 차자 세션 기록 자체가 남지 않았습니다",
+    en:   "When storage filled up, the session record itself wasn't saved",
+    koAt: "저장 공간이 차자 세션 기록 자체가 남지 않았습니다"
+  },
+  "hm.fail-fix.2": {
+    ko:   "용량이 부족하면 인증샷을 먼저 버리고 운동 기록은 남기도록 우선순위를 뒀습니다. 사진보다 연속 기록이 끊기는 쪽이 더 큰 손실이었습니다.",
+    en:   "When space runs low, the photo is dropped first and the workout record is kept. Losing a streak costs more than losing a picture.",
+    koAt: "용량이 부족하면 인증샷을 먼저 버리고 운동 기록은 남기도록 우선순위를 뒀습니다. 사진보다 연속 기록이 끊기는 쪽이 더 큰 손실이었습니다."
+  },
+  "hm.mot-w.0": {
+    ko:   "운동 중",
+    en:   "During",
+    koAt: "운동 중"
+  },
+  "hm.mot-w.1": {
+    ko:   "운동 전",
+    en:   "Before",
+    koAt: "운동 전"
+  },
+  "hm.mot-w.2": {
+    ko:   "끝난 뒤",
+    en:   "After",
+    koAt: "끝난 뒤"
+  },
+  "hm.mot-t.0": {
+    ko:   "소리와 손목 펄스",
+    en:   "Sound and a wrist pulse",
+    koAt: "소리와 손목 펄스"
+  },
+  "hm.mot-d.0": {
+    ko:   "카운트마다 짧은 사운드가 울리고 손목 주변에 주황 펄스가 번집니다. 화면을 보지 않아도 세어졌다는 걸 알 수 있습니다. 결국 나를 세트 끝까지 가게 만든 건 이 하나였습니다.",
+    en:   "Every rep fires a short sound and an orange pulse around the wrist. You know it counted without looking. In the end, this one thing is what got me through a full set.",
+    koAt: "카운트마다 짧은 사운드가 울리고 손목 주변에 주황 펄스가 번집니다. 화면을 보지 않아도 세어졌다는 걸 알 수 있습니다. 결국 나를 세트 끝까지 가게 만든 건 이 하나였습니다."
+  },
+  "hm.mot-t.1": {
+    ko:   "자세 가이드",
+    en:   "A form guide",
+    koAt: "자세 가이드"
+  },
+  "hm.mot-d.1": {
+    ko:   "세션에 들어가면 모션 가이드를 먼저 띄웁니다. 카운트가 안 되는 상황을 나중에 안내하기보다, 그런 자세로 시작하는 것 자체를 줄이는 편이 나았습니다.",
+    en:   "Entering a session brings up a motion guide first. Preventing a bad starting posture worked better than explaining afterwards why a rep didn't count.",
+    koAt: "세션에 들어가면 모션 가이드를 먼저 띄웁니다. 카운트가 안 되는 상황을 나중에 안내하기보다, 그런 자세로 시작하는 것 자체를 줄이는 편이 나았습니다."
+  },
+  "hm.mot-t.2": {
+    ko:   "인증샷과 D-day",
+    en:   "A photo and a D-day",
+    koAt: "인증샷과 D-day"
+  },
+  "hm.mot-d.2": {
+    ko:   "완료 직후 3-2-1 카운트다운으로 자동 촬영해 기록에 붙이고, 다음 날 D-day와 연속 기록을 띄웁니다. 오늘을 끝내는 장치라기보다 내일 다시 열 이유를 만드는 쪽에 가깝습니다.",
+    en:   "Right after finishing, a 3-2-1 countdown takes a photo and attaches it to the record; the next day a D-day and streak appear. Less a way to close out today than a reason to open it again tomorrow.",
+    koAt: "완료 직후 3-2-1 카운트다운으로 자동 촬영해 기록에 붙이고, 다음 날 D-day와 연속 기록을 띄웁니다. 오늘을 끝내는 장치라기보다 내일 다시 열 이유를 만드는 쪽에 가깝습니다."
+  },
+  "hm.ba-lbl.0": {
+    ko:   "기준 없이 요청할 때",
+    en:   "Asking without a standard",
+    koAt: "기준 없이 요청할 때"
+  },
+  "hm.ba-d.0": {
+    ko:   "\"카드 좀 더 깔끔하게\" — 매번 다른 결과가 나오고, 마음에 안 들면 처음부터 다시 설명해야 했습니다.",
+    en:   "\"Make the cards a bit cleaner\" — a different result every time, and if I didn't like it I had to explain from scratch again.",
+    koAt: "\"카드 좀 더 깔끔하게\" — 매번 다른 결과가 나오고, 마음에 안 들면 처음부터 다시 설명해야 했습니다."
+  },
+  "hm.ba-lbl.1": {
+    ko:   "기준을 문서로 고정한 뒤",
+    en:   "After fixing the standard in writing",
+    koAt: "기준을 문서로 고정한 뒤"
+  },
+  "hm.ba-d.1": {
+    ko:   "\"radius 4px, 주황은 강조점에만\" — 대화를 새로 시작해도 같은 결과가 나왔습니다.",
+    en:   "\"radius 4px, orange on accents only\" — the same result even in a brand-new conversation.",
+    koAt: "\"radius 4px, 주황은 강조점에만\" — 대화를 새로 시작해도 같은 결과가 나왔습니다."
+  },
+  "hm.nom-cap.1": {
+    ko:   "완성 기준은 기능 목록이 아니라 <b>사용자가 무엇을 알 수 있어야 하는가</b>로 적었습니다",
+    en:   "The definition of done was written as <b>what the user must be able to tell</b>, not as a feature list",
+    koAt: "완성 기준은 기능 목록이 아니라 <b>사용자가 무엇을 알 수 있어야 하는가</b>로 적었습니다"
+  },
+  "hm.sub.2": {
+    ko:   "01 · Training — 목표와 진행 상황",
+    en:   "01 · Training — goals and progress",
+    koAt: "01 · Training — 목표와 진행 상황"
+  },
+  "hm.sub.3": {
+    ko:   "02 · Gallery — 운동 기록",
+    en:   "02 · Gallery — workout records",
+    koAt: "02 · Gallery — 운동 기록"
+  },
+  "hm.sub.4": {
+    ko:   "03 · Stretch — 스트레칭 가이드",
+    en:   "03 · Stretch — stretching guide",
+    koAt: "03 · Stretch — 스트레칭 가이드"
+  },
+  "hm.sub.5": {
+    ko:   "카운팅 상태머신",
+    en:   "The counting state machine",
+    koAt: "카운팅 상태머신"
+  },
+  "hm.sub.6": {
+    ko:   "알고 있는 한계",
+    en:   "Known limitations",
+    koAt: "알고 있는 한계"
+  },
+  "hm.doc-tag.0": {
+    ko:   "발췌",
+    en:   "EXCERPT",
+    koAt: "발췌"
   },
   "hm.next-eyebrow.0": {
     ko:   "다른 케이스",

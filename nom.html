@@ -37,6 +37,14 @@
   /* 이미지 캡션 (반복 인라인 → 클래스) */
   #case2-page .nom-cap { font-size: 12px; color: #999; margin: 6px 0 0; text-align: center; }
   #case2-page .nom-cap.b { font-weight: 500; }
+  /* 마이페이지/드로워 5열 — 모바일에서 1단으로: Mypage 1,2가 먼저 나란히(2열), 그 아래 Drawer 1,2,3(3열).
+     style.css의 레거시 규칙(#case2-page [style*="grid-template-columns:1fr 1fr"])이 760px 이하에서
+     이 내부 그리드까지 1열로 강제 축소시켜서, 클래스로 명시적으로 되돌림 */
+  #case2-page .nom-mypage-cols { grid-template-columns: 1fr 1fr !important; }
+  #case2-page .nom-drawer-cols { grid-template-columns: 1fr 1fr 1fr !important; }
+  @media (max-width: 640px) {
+    .nom-mypage-drawer { grid-template-columns: 1fr !important; gap: 20px !important; }
+  }
 
 </style>
 </head>
@@ -53,7 +61,6 @@
     <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
     <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
     <a href="resume.pdf?v=4" target="_blank">Resume</a>
-    <a href="https://www.linkedin.com/in/miseonpark" target="_blank">LinkedIn</a>
   </div>
 </nav>
 
@@ -63,7 +70,10 @@
   <div class="case-hero-wrap">
     <p data-i18n="nom.case-eyebrow.0" class="case-eyebrow">Product Design · Naver OGQ Market · Mar 2026</p>
     <h1 data-i18n="nom.case-h1.0" class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
-      <span style="font-family:'Archivo',sans-serif;">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>
+      <span style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-family:'Archivo',sans-serif;">네이버 OGQ마켓 홈 상단 노출 구조 개선</span>
+        <span class="case-type-badge">반응형 웹</span>
+      </span>
       <span style="display:flex;align-items:center;gap:8px;">
         <span style="font-size:21px;color:#555;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">홈 상단 공간을 재설계해 콘텐츠 발견율과 구매 전환을 높이다</span>
       </span>
@@ -255,9 +265,9 @@
       <h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:0 0 8px;letter-spacing:-0.01em;">마이페이지 메뉴 - PC / 드로워 - MO</h3>
       <p data-i18n="nom.cb-p.4" class="cb-p" style="margin-bottom:16px;">PC 마이페이지 메뉴(기존·구조 유지형·직관적 시각화형)와 모바일 드로워(구조 유지형·직관적 시각화형·퀵메뉴 추가형)를 각각 탐색했습니다.</p>
       <!-- 마이페이지 + 드로워 5열 -->
-      <div style="display:grid;grid-template-columns:2fr 3fr;gap:14px;margin-bottom:40px;align-items:start;">
+      <div class="nom-mypage-drawer" style="display:grid;grid-template-columns:2fr 3fr;gap:36px;margin-bottom:40px;align-items:start;">
         <!-- Mypage 1,2 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="nom-mypage-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/mypage1.png" alt="mypage1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
@@ -274,7 +284,7 @@
           </div>
         </div>
         <!-- Drawer 1,2,3 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="nom-drawer-cols" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
           <div>
             <div class="case-img-wrap" style="margin:0;">
               <img src="images/nom/drawer1.png" alt="drawer1" onclick="openLBThis(this)" style="cursor:zoom-in;width:100%;border-radius:10px;display:block;"/>
@@ -365,7 +375,29 @@
         </div>
       </div>
 
-      <p class="cb-label cb-sublabel" style="margin-top:8px;">변경 상세</p>
+      <p data-i18n="nom.sub.0" class="cb-label cb-sublabel" style="margin-top:36px;">배너 규격 통일</p>
+      <p data-i18n="nom.cb-p.9" class="cb-p" style="margin-top:12px;">배너 높이를 줄이는 김에 규격 자체를 다시 정의했습니다. 기존에는 PC와 모바일 배너의 <mark class="hl">비율이 서로 달라</mark>, 이벤트마다 콘텐츠 디자이너가 PC용과 모바일용을 각각 만들고 있었습니다.</p>
+      <div class="c2-ratio">
+        <div class="c2-ratio-row">
+          <div class="c2-ratio-lbl">Before</div>
+          <div class="c2-ratio-imgs">
+            <figure class="c2-fig pc"><img src="images/nom/banner-before-pc.png" alt="수정 전 PC 배너"/><figcaption>PC</figcaption></figure>
+            <figure class="c2-fig mo"><img src="images/nom/banner-before-mo.png" alt="수정 전 모바일 배너"/><figcaption>MO</figcaption></figure>
+          </div>
+          <div class="c2-ratio-spec"><b>PC 412 × 304</b><b>MO 320 × 236</b><span data-i18n="nom.ratio-note.0">비율 불일치 — 이벤트당 2종 제작</span></div>
+        </div>
+        <div class="c2-ratio-row on">
+          <div class="c2-ratio-lbl">After</div>
+          <div class="c2-ratio-imgs">
+            <figure class="c2-fig pc"><img src="images/nom/banner-after-pc.png" alt="수정 후 PC 배너"/><figcaption>PC</figcaption></figure>
+            <figure class="c2-fig mo"><img src="images/nom/banner-after-mo.png" alt="수정 후 모바일 배너"/><figcaption>MO</figcaption></figure>
+          </div>
+          <div class="c2-ratio-spec"><b>PC 412 × 232</b><b>MO 320 × 180</b><span data-i18n="nom.ratio-note.1">16:9 통일 — 1종 제작 후 스케일</span></div>
+        </div>
+      </div>
+      <p data-i18n="nom.cb-p.10" class="cb-p" style="margin-top:18px;">가로 규격(412·320)은 유지한 채 세로만 재정의해 두 환경을 <mark class="hl">16:9로 통일</mark>했습니다. PC 412×232는 엄밀히는 16:9에서 0.25px 벗어나지만 화면에서 구분되지 않는 수준으로, 규격을 하나로 맞추는 실익이 더 크다고 판단했습니다. 이후 배너는 <mark class="hl">PC 기준 1종만 제작해 모바일에 스케일 적용</mark>하는 방식으로 바뀌었고, 이벤트당 <mark class="hl">제작 공수가 약 50% 줄었습니다.</mark></p>
+
+      <p data-i18n="nom.sub.1" class="cb-label cb-sublabel" style="margin-top:40px;">변경 상세</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;">
         <div class="c2-detail"><div data-i18n="nom.c2-detail-t.0" class="c2-detail-t">배너</div><div data-i18n="nom.c2-detail-d.0" class="c2-detail-d">타이틀 오버레이 통일, 한 줄 형식으로 최적화</div></div>
         <div class="c2-detail"><div data-i18n="nom.c2-detail-t.1" class="c2-detail-t">최근 본 콘텐츠</div><div data-i18n="nom.c2-detail-d.1" class="c2-detail-d">썸네일+타이틀 스크롤 형태로 사이드바 이동</div></div>
@@ -407,7 +439,7 @@
         </div>
       </div>
 
-      <p class="cb-label cb-sublabel" style="margin-top:40px;">4-1 · 주간인기 지면 — 매출 기여 비중</p>
+      <p data-i18n="nom.sub.2" class="cb-label cb-sublabel" style="margin-top:40px;">4-1 · 주간인기 지면 — 매출 기여 비중</p>
       <p data-i18n="nom.cb-p.6" class="cb-p" style="margin-top:12px;">홈 주간인기 지면 노출 스티커의 매출을 합산해 추적했습니다.</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;">
         <div class="c2-card">
@@ -445,7 +477,7 @@
         </div>
       </details>
 
-      <p class="cb-label cb-sublabel" style="margin-top:48px;">4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율</p>
+      <p data-i18n="nom.sub.3" class="cb-label cb-sublabel" style="margin-top:48px;">4-2 · 최근 본 콘텐츠 경로 — 클릭당 전환율</p>
       <p data-i18n="nom.cb-p.7" class="cb-p" style="margin-top:12px;">GA4 <code class="c2-code">checkout_source: recent_artwork</code> 로 구매 경로를 분리해 추적했습니다.</p>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0;">
         <div class="c2-card">
@@ -515,7 +547,7 @@
         <p style="margin:0;">PC 530px(≈44%), 모바일 381px(≈45%)의 상단 공간을 확보하고, <strong>두 개의 독립 지표로 효과를 교차 검증</strong>했습니다. 전체 매출이 하락하는 국면에서도 <mark class="hl">피처드 지면 매출은 실질적으로 증가</mark>했기에, 개선된 UI를 유지하기로 결정했습니다.</p>
       </div>
 
-      <p data-i18n="nom.cb-p.8" class="cb-p" style="margin-top:32px;margin-bottom:20px;">정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 변경된 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다.</p>
+      <p data-i18n="nom.cb-p.8" class="cb-p" style="margin-top:32px;margin-bottom:20px;">정량 검증 결과를 근거로 개선안을 <strong>사내 디자인 시스템에 반영</strong>했습니다. 16:9로 통일한 배너 규격을 공식 컴포넌트 가이드로 표준화해 크리에이터 팀에 배포함으로써, 일회성 개선에 그치지 않고 조직 전반에 일관되게 적용되도록 했습니다. 이 규격은 지금도 <mark class="hl">이벤트 배너 제작의 기준</mark>으로 쓰이고 있습니다.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div>
           <p style="margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#999;">PC</p>
@@ -539,7 +571,7 @@
       <p class="cb-label">Reflection</p>
       <h2 data-i18n="nom.cb-h2.7" class="cb-h2">한계와 다음 단계</h2>
 
-      <p class="cb-label cb-sublabel" style="margin-top:8px;">알고 있는 한계</p>
+      <p data-i18n="nom.sub.4" class="cb-label cb-sublabel" style="margin-top:8px;">알고 있는 한계</p>
       <div class="ref-grid">
         <div class="ref-card"><p data-i18n="nom.ref-lbl.0" class="ref-lbl">데이터 기간</p><p data-i18n="nom.ref-p.0" class="ref-p">주간인기 지면 데이터가 W20–W21 <strong>2주뿐</strong>이라 아직 예비 분석 수준입니다.</p></div>
         <div class="ref-card"><p data-i18n="nom.ref-lbl.1" class="ref-lbl">간접 지표</p><p data-i18n="nom.ref-p.1" class="ref-p">지면 매출은 간접 지표로, <strong>홈을 보고 직접 구매했다는 인과 증거</strong>는 아닙니다.</p></div>
@@ -547,7 +579,7 @@
         <div class="ref-card"><p data-i18n="nom.ref-lbl.3" class="ref-lbl">비교 조건</p><p data-i18n="nom.ref-p.3" class="ref-p">전후 13일치 비교라 <strong>요일 구성 차이</strong>에 따른 영향을 배제하기 어렵습니다.</p></div>
       </div>
 
-      <p class="cb-label cb-sublabel" style="margin-top:40px;">다음에 할 것</p>
+      <p data-i18n="nom.sub.5" class="cb-label cb-sublabel" style="margin-top:40px;">다음에 할 것</p>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;">
         <div class="c2-detail"><div data-i18n="nom.c2-detail-t.3" class="c2-detail-t" style="color:#29b18d;">데이터 누적 후 재분석</div><div data-i18n="nom.c2-detail-d.3" class="c2-detail-d">주간인기 지면 데이터(현재 2주)를 더 쌓아 신뢰도 보강</div></div>
         <div class="c2-detail"><div data-i18n="nom.c2-detail-t.4" class="c2-detail-t" style="color:#29b18d;">타 피처드 영역 비교</div><div data-i18n="nom.c2-detail-d.4" class="c2-detail-d">블로그 인기·카테고리별 추천 등 효율 비교 분석</div></div>
@@ -573,7 +605,7 @@
           <div class="next-case-link" onclick="showPage('case3')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
             <img class="next-case-thumb" src="images/homuscle/thumbnail.jpg" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
             <div>
-              <p data-i18n="nom.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">HOMUSCLE · AI 실험 프로젝트 · 2025</p>
+              <p data-i18n="nom.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">HOMUSCLE · AI 실험 프로젝트 · 2026</p>
               <h3 data-i18n="nom.next-title.1" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">HOMUSCLE : AI 홈트레이닝 트래커</h3>
               <span data-i18n="nom.next-cta.1" style="font-size:13px;color:#6b5fb0;font-weight:600;">케이스 스터디 보기 →</span>
             </div>

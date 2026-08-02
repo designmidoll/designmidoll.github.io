@@ -87,8 +87,10 @@ function updateNavClock() {
 }
 updateNavClock();
 setInterval(updateNavClock, 1000);
-// set initial active state
-document.querySelector('#global-nav [data-page="home"]')?.classList.add('nav-active');
+// set initial active state — Home/About 페이지에서만 표시, 케이스 상세 페이지는 기본 비활성
+if (document.getElementById('home-page')) {
+  document.querySelector('#global-nav [data-page="home"]')?.classList.add('nav-active');
+}
 
 function scrollToSec(id) {
   const el = document.getElementById(id);

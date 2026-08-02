@@ -1214,7 +1214,7 @@ mark.hl.hl-visible {
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
   align-items: center;
-  padding: 16px 0;
+  padding: 24px 0;
   border-bottom: 1px solid rgba(0,0,0,0.07);
   cursor: pointer;
   transition: opacity 0.2s;
@@ -1667,6 +1667,28 @@ div.case-body {
 .c2-space-rows > div:first-child { border-top: none; }
 .c2-space-rows em { font-style: normal; font-weight: 700; color: #31b193; font-family: 'Archivo', sans-serif; margin-left: 8px; }
 
+/* 배너 규격 통일 — Before/After 행 */
+.c2-ratio { margin-top: 18px; }
+.c2-ratio-row { display: grid; grid-template-columns: 74px 1fr 210px; gap: 20px; align-items: center; background: #ffffff; border-radius: 16px; padding: 20px 22px; }
+.c2-ratio-row + .c2-ratio-row { margin-top: 12px; }
+.c2-ratio-row.on { background: #edf6f5; }
+.c2-ratio-lbl { font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #b0b0b0; }
+.c2-ratio-row.on .c2-ratio-lbl { color: #31b193; }
+.c2-ratio-imgs { display: flex; align-items: flex-start; gap: 18px; }
+.c2-fig { margin: 0; min-width: 0; }
+.c2-fig.pc { flex: 412 1 0; }
+.c2-fig.mo { flex: 320 1 0; }
+.c2-fig img { width: 100%; display: block; border-radius: 6px; border: 1px solid rgba(0,0,0,0.06); }
+.c2-fig figcaption { font-family: 'Archivo', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; color: #b0b0b0; margin-top: 7px; }
+.c2-ratio-spec b { display: block; font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700; color: #111; line-height: 1.7; letter-spacing: -0.01em; }
+.c2-ratio-spec span { display: block; margin-top: 8px; font-size: 12.5px; color: #888; line-height: 1.6; word-break: keep-all; }
+.c2-ratio-row.on .c2-ratio-spec span { color: #31b193; font-weight: 600; }
+@media (max-width: 760px) {
+  .c2-ratio-row { grid-template-columns: 1fr; gap: 12px; padding: 16px; }
+  .c2-ratio-spec { display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: baseline; }
+  .c2-ratio-spec span { margin-top: 0; flex-basis: 100%; }
+}
+
 .c2-detail { background: #edf6f5; border-radius: 12px; padding: 18px; }
 .c2-detail-t { font-size: 14px; font-weight: 700; color: #31b193; margin-bottom: 6px; }
 .c2-detail-d { font-size: 13px; color: #666; line-height: 1.6; }
@@ -1705,6 +1727,29 @@ div.case-body {
 
   /* c2-detail 모바일 */
   #case2-page [style*="grid-template-columns:repeat(3,1fr)"] .c2-detail { font-size: 12px; }
+}
+
+/* 작업 환경 타입 (Web / Mobile App / Web App) */
+/* 홈 카드 썸네일 우측 상단 뱃지 */
+.work-item-type {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  font-family: 'Figtree', 'NanumSquareNeo', sans-serif;
+  font-size: 11px; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px;
+  background: rgba(15,15,15,0.78); color: #fff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+/* 상세 페이지 메인 타이틀 우측 뱃지 */
+.case-type-badge {
+  display: inline-block;
+  font-family: 'Figtree', 'NanumSquareNeo', sans-serif;
+  font-size: 12px; font-weight: 600;
+  padding: 9px 16px; border-radius: 100px;
+  background: #ffffff; color: #333;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  vertical-align: middle;
+  line-height: 1;
 }
 
 /* 홈 카드 태그 */
