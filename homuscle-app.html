@@ -2870,38 +2870,37 @@ go('home');
     /* 데모 데이터는 방문 시점(오늘)이 아니라 7월에 고정 — 8월 이후에 봐도 달력이 비어 보이지 않도록 */
     var demoYear = new Date().getFullYear();
     var d = function(day){ return dstr(new Date(demoYear, 6, day)); }; /* month 6 = July */
+    var sc = q.get('screen');
 
-    /* 데모로 심어둔 데이터는 goal/record에 demo:true 표시를 남긴다.
-       "지금 이 저장소에 진짜 기록이 하나라도 섞여 있는가"를 매번 정확히 판단하기 위함 —
-       예전엔 이 표시가 없어서, 한 번이라도 데모 링크(?demo=1)를 열어본 기기라면 나중에
-       진짜로 운동 기록/사진을 추가해도 여전히 "데모 상태"로 착각해 달력을 7월로 강제
-       이동시키고, 심지어 6일 자리에 가짜 기록까지 끼워 넣어 실제 기록(예: 8월에 올린 사진)이
-       가려지는 문제가 있었다. */
-    var isPureDemo = function(){
-      var real = getRecords().some(function(r){ return !r.demo; }) || getGoals().some(function(g){ return !g.demo; });
-      return !real;
-    };
-
+    /* 진짜 기준: "?screen=gallery로 들어왔는가" — 이건 케이스스터디에 박혀있는
+       두 개의 갤러리 iframe(요약 화면 / 기록상세 화면)만 쓰는 파라미터이고,
+       홈페이지의 "라이브 앱"·"새 탭에서 직접 사용해보기" 링크는 screen 파라미터 없이
+       ?demo=1만 붙는다. 그래서 이 값으로 "케이스스터디용 고정 데모 화면"과
+       "실사용자가 실제로 들어온 라이브 앱"을 구분한다.
+       예전에는 "저장된 기록이 전부 데모용인지"로 구분하려 했는데, 같은 도메인이라
+       라이브 앱을 한 번이라도 열어봤던 브라우저는 이미 데모 시드 데이터가 깔려 있어
+       "진짜 데이터"처럼 보이는 바람에, 케이스스터디 화면까지 7월/6일 고정이 풀려버리는
+       문제가 있었다. screen 파라미터로만 구분하면 그런 오염과 무관하게 항상 맞게 동작한다. */
     if (q.get('demo') === '1' && !getRecords().length && !getGoals().length){
       var goals = [
-        { id: uuid(), name: '덤벨 컬', type: 'curl', targetReps: 30, sets: 3, date: d(12), createdAt: new Date().toISOString(), demo: true },
-        { id: uuid(), name: '사이드 레터럴 레이즈', type: 'raise', targetReps: 20, sets: 3, date: d(17), createdAt: new Date().toISOString(), demo: true }
+        { id: uuid(), name: '덤벨 컬', type: 'curl', targetReps: 30, sets: 3, date: d(12), createdAt: new Date().toISOString() },
+        { id: uuid(), name: '사이드 레터럴 레이즈', type: 'raise', targetReps: 20, sets: 3, date: d(17), createdAt: new Date().toISOString() }
       ];
       setGoals(goals);
       var recs = [];
       /* day 6은 항상 갤러리 진입 시 기본 선택되는 날짜 */
       var plan = [[3,'덤벨 컬',90,540],[4,'덤벨 숄더 프레스',60,480],[5,'덤벨 컬',90,560],[6,'사이드 레터럴 레이즈',60,455],[7,'사이드 레터럴 레이즈',60,430],[8,'덤벨 컬',96,600],[9,'덤벨 오버헤드 익스텐션',45,390],[10,'덤벨 컬',90,545],[11,'사이드 레터럴 레이즈',66,470]];
       plan.forEach(function(p){
-        recs.push({ id: uuid(), goalId: goals[0].id, date: d(p[0]), name: p[1], totalReps: p[2], sets: 3, durationSeconds: p[3], savedAt: new Date().toISOString(), completed: true, photo: null, demo: true });
+        recs.push({ id: uuid(), goalId: goals[0].id, date: d(p[0]), name: p[1], totalReps: p[2], sets: 3, durationSeconds: p[3], savedAt: new Date().toISOString(), completed: true, photo: null });
       });
       setRecords(recs);
     }
-    /* 달력을 7월로 고정하는 건 "지금 데이터가 전부 데모용일 때"만 — 진짜 기록이
-       하나라도 섞여 있으면 오늘 날짜(실제 현재 달)를 그대로 보여주고 절대 건드리지 않는다. */
-    if (q.get('demo') === '1' && isPureDemo() && typeof calYear !== 'undefined'){ calYear = demoYear; calMonth = 6; }
-    var sc = q.get('screen');
+    /* 달력 7월 고정은 screen=gallery(케이스스터디 임베드)일 때만 — 그 외(?demo=1만 있는
+       라이브 앱 진입)는 오늘 날짜 그대로 두고, 실사용자가 갤러리 탭을 직접 눌렀을 때
+       자기 실제 데이터/실제 현재 달이 보이도록 절대 건드리지 않는다. */
+    if (sc === 'gallery' && typeof calYear !== 'undefined'){ calYear = demoYear; calMonth = 6; }
     if (sc && document.getElementById('screen-' + sc)) go(sc);
-    if (sc === 'gallery' && q.get('demo') === '1' && isPureDemo()){
+    if (sc === 'gallery' && q.get('demo') === '1'){
       try { showDayDetail(d(6)); } catch(e){}
       /* ?modal=1 → 그날 기록의 상세 모달까지 열린 상태로 진입 (케이스스터디용 화면).
          '카드 이미지 저장'이 눌러야 할 지점이라는 걸 알 수 있게 반짝임 힌트를 붙인다. */
