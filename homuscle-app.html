@@ -2881,19 +2881,39 @@ go('home');
        라이브 앱을 한 번이라도 열어봤던 브라우저는 이미 데모 시드 데이터가 깔려 있어
        "진짜 데이터"처럼 보이는 바람에, 케이스스터디 화면까지 7월/6일 고정이 풀려버리는
        문제가 있었다. screen 파라미터로만 구분하면 그런 오염과 무관하게 항상 맞게 동작한다. */
+    /* day 6은 항상 갤러리 진입 시 기본 선택되는 날짜. 사진이 있는 날은 실제 사진 파일 경로를 baked-in — 브라우저 저장소 상태와 무관하게 케이스스터디에서는 항상 같은 사진이 보이도록 한다. */
+    var plan = [
+      [3,'덤벨 컬',90,540,null],
+      [4,'덤벨 숄더 프레스',60,480,'images/homuscle/gallery/g-0704.jpg'],
+      [5,'덤벨 컬',90,560,'images/homuscle/gallery/g-0705.jpg'],
+      [6,'사이드 레터럴 레이즈',60,455,'images/homuscle/gallery/g-0706.jpg'],
+      [7,'사이드 레터럴 레이즈',60,430,null],
+      [8,'덤벨 컬',96,600,'images/homuscle/gallery/g-0708.jpg'],
+      [9,'덤벨 오버헤드 익스텐션',45,390,'images/homuscle/gallery/g-0709.jpg'],
+      [10,'덤벨 컬',90,545,null],
+      [11,'사이드 레터럴 레이즈',66,470,'images/homuscle/gallery/g-0711.jpg']
+    ];
+    var buildDemoRecords = function(goalId){
+      return plan.map(function(p){
+        return { id: uuid(), goalId: goalId, date: d(p[0]), name: p[1], totalReps: p[2], sets: 3, durationSeconds: p[3], savedAt: new Date().toISOString(), completed: true, photo: p[4] };
+      });
+    };
     if (q.get('demo') === '1' && !getRecords().length && !getGoals().length){
       var goals = [
         { id: uuid(), name: '덤벨 컬', type: 'curl', targetReps: 30, sets: 3, date: d(12), createdAt: new Date().toISOString() },
         { id: uuid(), name: '사이드 레터럴 레이즈', type: 'raise', targetReps: 20, sets: 3, date: d(17), createdAt: new Date().toISOString() }
       ];
       setGoals(goals);
-      var recs = [];
-      /* day 6은 항상 갤러리 진입 시 기본 선택되는 날짜 */
-      var plan = [[3,'덤벨 컬',90,540],[4,'덤벨 숄더 프레스',60,480],[5,'덤벨 컬',90,560],[6,'사이드 레터럴 레이즈',60,455],[7,'사이드 레터럴 레이즈',60,430],[8,'덤벨 컬',96,600],[9,'덤벨 오버헤드 익스텐션',45,390],[10,'덤벨 컬',90,545],[11,'사이드 레터럴 레이즈',66,470]];
-      plan.forEach(function(p){
-        recs.push({ id: uuid(), goalId: goals[0].id, date: d(p[0]), name: p[1], totalReps: p[2], sets: 3, durationSeconds: p[3], savedAt: new Date().toISOString(), completed: true, photo: null });
-      });
-      setRecords(recs);
+      setRecords(buildDemoRecords(goals[0].id));
+    }
+    /* screen=gallery(케이스스터디 전용 두 임베드)는 저장소에 뭐가 들어있든 항상 이
+       7/3~7/11 데모 데이터셋(사진 포함)으로 다시 채운다 — 실제 사용자가 이 날짜 범위
+       밖에 남긴 기록은 건드리지 않고, 7/3~7/11 구간만 골라서 교체한다. */
+    if (sc === 'gallery' && q.get('demo') === '1'){
+      var demoDates = plan.map(function(p){ return d(p[0]); });
+      var gid = (getGoals()[0] || {}).id || uuid();
+      var others = getRecords().filter(function(r){ return demoDates.indexOf(r.date) === -1; });
+      setRecords(others.concat(buildDemoRecords(gid)));
     }
     /* 달력 7월 고정은 screen=gallery(케이스스터디 임베드)일 때만 — 그 외(?demo=1만 있는
        라이브 앱 진입)는 오늘 날짜 그대로 두고, 실사용자가 갤러리 탭을 직접 눌렀을 때
