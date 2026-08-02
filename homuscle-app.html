@@ -28,6 +28,10 @@ body{
 button{font-family:inherit;cursor:pointer;border-radius:4px;font-size:.95rem;transition:opacity .15s}
 button:hover{opacity:.82}
 .btn-primary{background:var(--accent);color:#000;border:none;font-weight:800;padding:16px 32px;letter-spacing:.02em}
+/* 데모(?modal=1)에서 '카드 이미지 저장'이 눌러야 할 버튼임을 알려주는 반짝임.
+   실제 사용 중에는 붙지 않고, 포트폴리오 임베드에서만 .demo-hint가 추가된다. */
+.demo-hint{animation:demoPulse 1.9s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,0,0)}50%{box-shadow:0 0 26px 4px rgba(255,107,0,.55)}}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:15px 30px;font-weight:600}
 .btn-danger{background:transparent;color:var(--sub);border:1px solid var(--muted);padding:15px 30px}
 .btn-sm{padding:9px 18px;font-size:.85rem}
@@ -2251,7 +2255,7 @@ function openRecordModal(id){
       '<div class="m-stat-row"><span class="k">TIME</span><span class="v">' + fmtTime(s.time) + '</span></div>' +
     '</div>' +
     '<div class="modal-close" style="display:flex;gap:10px;flex-wrap:wrap">' +
-      '<button class="btn-primary btn-sm" style="flex:1 1 100%" onclick="downloadRecordCard(\'' + r.id + '\')">⬇ 카드 이미지 저장</button>' +
+      '<button class="btn-primary btn-sm js-save-card" style="flex:1 1 100%" onclick="downloadRecordCard(\'' + r.id + '\')">⬇ 카드 이미지 저장</button>' +
       '<button class="btn-fill btn-sm" style="flex:1" onclick="editRecordPhoto(\'' + r.id + '\')">📷 사진 수정</button>' +
       '<button class="btn-danger btn-sm" style="flex:1" onclick="deleteRecord(\'' + r.id + '\')">🗑 삭제</button>' +
       '<button class="btn-ghost btn-sm" style="flex:1" onclick="closeRecordModal()">닫기</button>' +
@@ -2863,23 +2867,83 @@ go('home');
 (function(){
   try {
     var q = new URLSearchParams(location.search);
+    /* 데모 데이터는 방문 시점(오늘)이 아니라 7월에 고정 — 8월 이후에 봐도 달력이 비어 보이지 않도록 */
+    var demoYear = new Date().getFullYear();
+    var d = function(day){ return dstr(new Date(demoYear, 6, day)); }; /* month 6 = July */
     if (q.get('demo') === '1' && !getRecords().length && !getGoals().length){
-      var d = function(off){ var t = new Date(); t.setDate(t.getDate()+off); return dstr(t); };
       var goals = [
-        { id: uuid(), name: '덤벨 컬', type: 'curl', targetReps: 30, sets: 3, date: d(0), createdAt: new Date().toISOString() },
-        { id: uuid(), name: '사이드 레터럴 레이즈', type: 'raise', targetReps: 20, sets: 3, date: d(5), createdAt: new Date().toISOString() }
+        { id: uuid(), name: '덤벨 컬', type: 'curl', targetReps: 30, sets: 3, date: d(12), createdAt: new Date().toISOString() },
+        { id: uuid(), name: '사이드 레터럴 레이즈', type: 'raise', targetReps: 20, sets: 3, date: d(17), createdAt: new Date().toISOString() }
       ];
       setGoals(goals);
       var recs = [];
-      var plan = [[-9,'덤벨 컬',90,540],[-8,'덤벨 숄더 프레스',60,480],[-7,'덤벨 컬',90,560],[-5,'사이드 레터럴 레이즈',60,430],[-4,'덤벨 컬',96,600],[-3,'덤벨 오버헤드 익스텐션',45,390],[-2,'덤벨 컬',90,545],[-1,'사이드 레터럴 레이즈',66,470]];
+      /* day 6은 항상 갤러리 진입 시 기본 선택되는 날짜 */
+      var plan = [[3,'덤벨 컬',90,540],[4,'덤벨 숄더 프레스',60,480],[5,'덤벨 컬',90,560],[6,'사이드 레터럴 레이즈',60,455],[7,'사이드 레터럴 레이즈',60,430],[8,'덤벨 컬',96,600],[9,'덤벨 오버헤드 익스텐션',45,390],[10,'덤벨 컬',90,545],[11,'사이드 레터럴 레이즈',66,470]];
       plan.forEach(function(p){
         recs.push({ id: uuid(), goalId: goals[0].id, date: d(p[0]), name: p[1], totalReps: p[2], sets: 3, durationSeconds: p[3], savedAt: new Date().toISOString(), completed: true, photo: null });
       });
       setRecords(recs);
+    } else if (q.get('demo') === '1'){
+      /* 이미 기록이 있는 경우엔 지우지 않는다(직접 만든 기록일 수 있음).
+         갤러리 기본 선택일(6일)만 비어 있으면 그 날짜 하나를 채워 넣는다. */
+      var cur = getRecords();
+      if (!cur.some(function(r){ return r.date === d(6); })){
+        var g0 = getGoals()[0];
+        cur.push({ id: uuid(), goalId: g0 ? g0.id : uuid(), date: d(6), name: '사이드 레터럴 레이즈',
+                   totalReps: 60, sets: 3, durationSeconds: 455,
+                   savedAt: new Date().toISOString(), completed: true, photo: null });
+        try { setRecords(cur); } catch(e){}
+      }
     }
+    /* 갤러리 데모 뷰: 항상 7월을 기본으로, day6 기록을 미리 펼쳐서 보여줌 */
+    if (typeof calYear !== 'undefined'){ calYear = demoYear; calMonth = 6; }
     var sc = q.get('screen');
     if (sc && document.getElementById('screen-' + sc)) go(sc);
+    if (sc === 'gallery' && q.get('demo') === '1'){
+      try { showDayDetail(d(6)); } catch(e){}
+      /* ?modal=1 → 그날 기록의 상세 모달까지 열린 상태로 진입 (케이스스터디용 화면).
+         '카드 이미지 저장'이 눌러야 할 지점이라는 걸 알 수 있게 반짝임 힌트를 붙인다. */
+      if (q.get('modal') === '1'){
+        try {
+          var rec = getRecords().filter(function(x){ return x.date === d(6); })[0];
+          if (rec){
+            openRecordModal(rec.id);
+            setTimeout(function(){
+              var btn = document.querySelector('#recordModalBody .js-save-card');
+              if (btn) btn.classList.add('demo-hint');
+            }, 350);
+          }
+        } catch(e){}
+      }
+    }
     if (q.get('embed') === '1') document.body.classList.add('pf-embed');
+
+    /* 임베드 높이 자동 맞춤: 기록 수·사진 유무에 따라 문서 높이가 달라져서
+       케이스스터디 쪽에 고정값을 박아두면 잘리거나 빈 공간이 남는다.
+       실제 높이를 부모에 알려주고, 부모는 data-autofit이 있는 임베드에만 적용한다. */
+    if (window.parent !== window){
+      var lastH = 0;
+      /* 갤러리 임베드는 사진 그리드까지만 보여준다 — 그 아래 푸터/여백은 케이스스터디에서 불필요.
+         그 외 화면은 문서 전체 높이를 그대로 알린다. */
+      var measure = function(){
+        var grid = document.getElementById('recordGrid');
+        if (q.get('screen') === 'gallery' && q.get('modal') !== '1' && grid && grid.children.length){
+          var r = grid.getBoundingClientRect();
+          return Math.ceil(r.bottom + window.scrollY + 28);
+        }
+        return Math.ceil(document.documentElement.scrollHeight);
+      };
+      var report = function(){
+        var h = measure();
+        if (h && Math.abs(h - lastH) > 2){
+          lastH = h;
+          try { window.parent.postMessage({ type: 'hm-embed-height', h: h, src: location.search }, '*'); } catch(e){}
+        }
+      };
+      window.addEventListener('load', report);
+      setTimeout(report, 60); setTimeout(report, 400); setTimeout(report, 1200);
+      if (window.ResizeObserver) new ResizeObserver(report).observe(document.body);
+    }
   } catch(e){ console.warn('demo mode skipped', e); }
 })();
 </script>

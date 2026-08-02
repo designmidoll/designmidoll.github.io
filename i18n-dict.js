@@ -12,24 +12,19 @@ window.I18N_DICT = {
 
   /* ───────── HOME · ABOUT (index.html)  (21개 · 번역완료 21 · 남음 0) ───────── */
   "home.about-bio.0": {
-    ko:   "<mark class=\"hl\">그래픽 디자인에서 출발해 콘텐츠·웹 디자인을 거쳐, 지금은 프로덕트 디자이너로 UX/UI를 설계합니다.</mark> OGQ에서 7년여간 삼성·NAVER·LINE 등과 협업하며 굿락 아이콘, 카카오톡 테마, 캐릭터 IP 기반 굿즈와 부스 디자인처럼 <mark class=\"hl\">시각적 완성도가 요구되는 작업으로 기본기를 쌓았고, 그 위에 사용자 리서치와 데이터 검증 역량을 더해 비주얼과 UX를 함께 다루는 디자이너로 전환했습니다.</mark>",
-    en:   "<mark class=\"hl\">I started in graphic design, moved through content and web design, and now work as a product designer shaping UX/UI.</mark> Over seven years at OGQ I've collaborated with Samsung, NAVER and LINE on Good Lock icons, KakaoTalk themes, and character-IP goods and booth design — <mark class=\"hl\">work demanding visual precision that became my foundation. On top of it I added user research and data validation, growing into a designer who handles both visual craft and UX.</mark>",
-    koAt: "<mark class=\"hl\">그래픽 디자인에서 출발해 콘텐츠·웹 디자인을 거쳐, 지금은 프로덕트 디자이너로 UX/UI를 설계합니다.</mark> OGQ에서 7년여간 삼성·NAVER·LINE 등과 협업하며 굿락 아이콘, 카카오톡 테마, 캐릭터 IP 기반 굿즈와 부스 디자인처럼 <mark class=\"hl\">시각적 완성도가 요구되는 작업으로 기본기를 쌓았고, 그 위에 사용자 리서치와 데이터 검증 역량을 더해 비주얼과 UX를 함께 다루는 디자이너로 전환했습니다.</mark>"
+    ko:   "안녕하세요. <strong>사용자 문제를 발견하고 데이터로 개선하는 것을 지향하는 Product Designer 박미선</strong>입니다. 8년간 디자인 경력을 쌓아왔으며, 현재 <strong>네이버 OGQ마켓과 채팅플러스를 담당</strong>하며 GA4·Microsoft Clarity 기반 행동 분석과 A/B 테스트로 디자인 시스템과 신규 기능 UI/UX를 개선하고 있습니다. 이러한 방식으로 <strong>Naver OGQ Market 클릭 전환율(CVR) 60.9% 향상, 배너 제작 공수 약 50% 절감</strong> 등 실질적 성과를 만들어왔으며, 현재는 통신사 3사와 협업하는 신규 서비스의 UX/UI 디자인을 담당하고 있습니다.",
+    en:   "Hello, I'm <strong>Miseon Park, a Product Designer who aims to spot user problems and improve them with data.</strong> I've built 8 years of design experience, and I currently <strong>lead Naver OGQ Market and Chatting Plus</strong>, improving the design system and new-feature UI/UX through GA4·Microsoft Clarity-based behavior analysis and A/B testing. This approach has produced concrete results — <strong>a 60.9% lift in Naver OGQ Market's click-through rate (CVR) and roughly a 50% cut in banner production effort</strong> — and I currently handle UX/UI design for a new service built with Korea's three major telecom carriers.",
+    koAt: "안녕하세요. <strong>사용자 문제를 발견하고 데이터로 개선하는 것을 지향하는 Product Designer 박미선</strong>입니다. 8년간 디자인 경력을 쌓아왔으며, 현재 <strong>네이버 OGQ마켓과 채팅플러스를 담당</strong>하며 GA4·Microsoft Clarity 기반 행동 분석과 A/B 테스트로 디자인 시스템과 신규 기능 UI/UX를 개선하고 있습니다. 이러한 방식으로 <strong>Naver OGQ Market 클릭 전환율(CVR) 60.9% 향상, 배너 제작 공수 약 50% 절감</strong> 등 실질적 성과를 만들어왔으며, 현재는 통신사 3사와 협업하는 신규 서비스의 UX/UI 디자인을 담당하고 있습니다."
   },
   "home.about-bio.1": {
-    ko:   "비주얼 작업을 오래 해오면서 자연스럽게 \"왜 사용자가 이걸 쓰는가\"를 파고들게 됐습니다. 사내 스터디와 사이드 프로젝트로 UX 방법론을 직접 적용하며, 리서치와 데이터를 기반으로 결정을 내리는 방식으로 일합니다.",
-    en:   "Years of visual work led me naturally to dig into \"why do users reach for this?\" I applied UX methods hands-on through internal study groups and side projects, and I now work by grounding decisions in research and data.",
-    koAt: "비주얼 작업을 오래 해오면서 자연스럽게 \"왜 사용자가 이걸 쓰는가\"를 파고들게 됐습니다. 사내 스터디와 사이드 프로젝트로 UX 방법론을 직접 적용하며, 리서치와 데이터를 기반으로 결정을 내리는 방식으로 일합니다."
+    ko:   "이 중 약 7년간은 Contents Designer로 다양한 서비스와 브랜드 프로젝트를 수행하며 시각적 완성도를 높이는 경험을 쌓았습니다. 이후 사용자 행동과 문제 해결에 더 큰 흥미를 느껴 사내 스터디와 사이드 프로젝트로 <strong>UX 리서치·데이터 분석 역량</strong>을 쌓으며 Product Designer로 역할을 확장했습니다. 직무 전환 이후에는 시니어 리드 디자이너 없이 서비스를 단독으로 책임지며, 짧은 기간 안에 폭넓은 실무 경험을 쌓아왔습니다.",
+    en:   "About seven of those years were spent as a Contents Designer, running a wide range of service and brand projects and building a strong sense of visual polish. I later grew more interested in user behavior and problem-solving, and through internal study groups and side projects built <strong>UX research and data analysis skills</strong>, expanding my role into Product Design. Since that transition, I've taken sole ownership of services without a senior lead designer, building broad hands-on experience in a short span of time.",
+    koAt: "이 중 약 7년간은 Contents Designer로 다양한 서비스와 브랜드 프로젝트를 수행하며 시각적 완성도를 높이는 경험을 쌓았습니다. 이후 사용자 행동과 문제 해결에 더 큰 흥미를 느껴 사내 스터디와 사이드 프로젝트로 <strong>UX 리서치·데이터 분석 역량</strong>을 쌓으며 Product Designer로 역할을 확장했습니다. 직무 전환 이후에는 시니어 리드 디자이너 없이 서비스를 단독으로 책임지며, 짧은 기간 안에 폭넓은 실무 경험을 쌓아왔습니다."
   },
   "home.about-bio.2": {
-    ko:   "<mark class=\"hl\">현재는 디자인 시스템 기반 UI 설계, 신규 컴포넌트 설계, 서비스 화면 개선을 담당합니다.</mark> Figma Auto Layout과 컬러·타이포그래피 토큰으로 개발 구현을 고려한 설계를 하고, 스펙을 명확히 정의해 개발자와 협업합니다. 신규 기능마다 디자인 시스템과 연계된 컴포넌트 구조를 함께 고도화합니다.",
-    en:   "<mark class=\"hl\">Today I handle design-system-based UI design, new component design, and service screen improvements.</mark> I design with implementation in mind using Figma Auto Layout and color and typography tokens, and I define specs clearly so developers and I stay in sync. With every new feature, I also refine the component structure tied to the design system.",
-    koAt: "<mark class=\"hl\">현재는 디자인 시스템 기반 UI 설계, 신규 컴포넌트 설계, 서비스 화면 개선을 담당합니다.</mark> Figma Auto Layout과 컬러·타이포그래피 토큰으로 개발 구현을 고려한 설계를 하고, 스펙을 명확히 정의해 개발자와 협업합니다. 신규 기능마다 디자인 시스템과 연계된 컴포넌트 구조를 함께 고도화합니다."
-  },
-  "home.about-bio.3": {
-    ko:   "기획자·개발자와 스쿼드로 협업하며 의사결정에 직접 참여합니다. 생성형 AI를 활용한 디자인 제작과 바이브 코딩 사이드 프로젝트를 병행하며 디자인과 기술의 접점을 넓혀가고 있습니다. <mark class=\"hl\">비주얼 완성도와 UX 논리를 함께 다룰 수 있는 것이 제 강점입니다.</mark>",
-    en:   "I work in a squad with PMs and developers and take part in decisions directly. Alongside that I use generative AI in design work and run vibe-coding side projects, widening where design and technology meet. <mark class=\"hl\">Being able to hold both visual craft and UX reasoning is my strength.</mark>",
-    koAt: "기획자·개발자와 스쿼드로 협업하며 의사결정에 직접 참여합니다. 생성형 AI를 활용한 디자인 제작과 바이브 코딩 사이드 프로젝트를 병행하며 디자인과 기술의 접점을 넓혀가고 있습니다. <mark class=\"hl\">비주얼 완성도와 UX 논리를 함께 다룰 수 있는 것이 제 강점입니다.</mark>"
+    ko:   "<strong>AI 기반 개발 도구</strong>로 아이디어를 빠르게 검증하고 업무 효율을 높이는 방식도 실무에 적용하고 있습니다. Contents Design에서 쌓은 시각적 완성도와 Product Design의 사용자 중심 사고를 바탕으로, <strong>사용자에게는 더 나은 경험을, 비즈니스에는 더 큰 가치</strong>를 만드는 디자이너가 되고자 합니다.",
+    en:   "I also apply <strong>AI-based development tools</strong> in my work to validate ideas quickly and improve efficiency. Building on the visual polish from Contents Design and the user-centered thinking of Product Design, I aim to be a designer who creates <strong>a better experience for users and greater value for the business</strong>.",
+    koAt: "<strong>AI 기반 개발 도구</strong>로 아이디어를 빠르게 검증하고 업무 효율을 높이는 방식도 실무에 적용하고 있습니다. Contents Design에서 쌓은 시각적 완성도와 Product Design의 사용자 중심 사고를 바탕으로, <strong>사용자에게는 더 나은 경험을, 비즈니스에는 더 큰 가치</strong>를 만드는 디자이너가 되고자 합니다."
   },
   "home.about-h1.0": {
     ko:   "가설을 세웁니다.<br>그리고 <em style=\"font-style:italic;font-weight:300;color:#555;\">검증합니다</em>.",
@@ -42,9 +37,9 @@ window.I18N_DICT = {
     koAt: "사용자가 말하는 불편함을 그대로 받아들이지 않습니다.<br>보이는 문제 너머, 진짜 이유를 파고들어 근거로 증명합니다."
   },
   "home.hero-title.0": {
-    ko:   "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          가설을 세우고 데이터로 검증합니다.",
-    en:   "I'm <span class=\"name-highlight\">Miseon Park</span> —<br>\n          a Product Designer who <em>hypothesizes</em>,<br>\n          then validates with data.",
-    koAt: "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          가설을 세우고 데이터로 검증합니다."
+    ko:   "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>",
+    en:   "I'm <span class=\"name-highlight\">Miseon Park</span> —<br>\n          a Product Designer who <em>hypothesizes</em>,<br>\n          <span class=\"hero-thin\">then validates with data.</span>",
+    koAt: "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>"
   },
   "home.pill.0": {
     ko:   "작업물 보기 ↓",
@@ -106,15 +101,25 @@ window.I18N_DICT = {
     en:   "AI Experiment · Side Project · Jul 2026",
     koAt: "AI Experiment · Side Project · Jul 2026"
   },
+  "home.upcoming-title.0": {
+    ko:   "Chatting Plus 이모티콘 구독 서비스(국내 통신 3사 협업 신규 서비스)",
+    en:   "Chatting Plus Emoticon Subscription Service (New Service with Korea's 3 Major Telecoms)",
+    koAt: "Chatting Plus 이모티콘 구독 서비스(국내 통신 3사 협업 신규 서비스)"
+  },
+  "home.upcoming-desc.0": {
+    ko:   "Product Design · Chatting Plus · AUGUST 2026 ~ing",
+    en:   "Product Design · Chatting Plus · AUGUST 2026 ~ing",
+    koAt: "Product Design · Chatting Plus · AUGUST 2026 ~ing"
+  },
   "home.work-item-title.0": {
     ko:   "<span>네이버 OGQ마켓 홈 상단 노출 구조 개선</span>",
     en:   "<span>Naver OGQ Market — Home Top-Area Exposure</span>",
     koAt: "<span>네이버 OGQ마켓 홈 상단 노출 구조 개선</span>"
   },
   "home.work-item-title.1": {
-    ko:   "유튜브 쇼츠 쇼핑 경험 재설계",
+    ko:   "유튜브 쇼츠 앱 쇼핑 경험 재설계",
     en:   "YouTube Shorts Shopping Experience",
-    koAt: "유튜브 쇼츠 쇼핑 경험 재설계"
+    koAt: "유튜브 쇼츠 앱 쇼핑 경험 재설계"
   },
   "home.work-item-title.2": {
     ko:   "HOMUSCLE : AI 홈트레이닝 트래커",
@@ -709,9 +714,9 @@ window.I18N_DICT = {
     koAt: "YouTube 리디자인 챌린지 · 2025"
   },
   "nom.next-title.0": {
-    ko:   "유튜브 쇼츠 쇼핑 경험 재설계",
-    en:   "YouTube Shorts Shopping Experience Redesign",
-    koAt: "유튜브 쇼츠 쇼핑 경험 재설계"
+    ko:   "유튜브 쇼츠 앱 쇼핑 경험 재설계",
+    en:   "YouTube Shorts App Shopping Experience Redesign",
+    koAt: "유튜브 쇼츠 앱 쇼핑 경험 재설계"
   },
   "nom.next-cta.0": {
     ko:   "케이스 스터디 보기 →",
@@ -746,9 +751,9 @@ window.I18N_DICT = {
     koAt: "UX Research & Design · YouTube Shorts · Sep 2025"
   },
   "yt.case-h1.0": {
-    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>",
-    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">YouTube Shorts Shopping Experience</span>\n        <span class=\"case-type-badge\">Mobile App</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">Designing a shopping experience that doesn't interrupt the viewing flow</span>\n      </span>",
-    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>"
+    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 앱 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>",
+    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">YouTube Shorts App Shopping Experience</span>\n        <span class=\"case-type-badge\">Mobile App</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">Designing a shopping experience that doesn't interrupt the viewing flow</span>\n      </span>",
+    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">유튜브 쇼츠 앱 쇼핑 경험 재설계</span>\n        <span class=\"case-type-badge\">모바일 앱</span>\n      </span>\n      <span style=\"display:flex;align-items:center;gap:8px;\">\n        <span style=\"font-size:21px;color:rgba(255,255,255,0.55);font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;\">시청 흐름을 방해하지 않는 쇼핑 경험 설계</span>\n      </span>"
   },
   "yt.cb-h2.0": {
     ko:   "무엇이 문제인가?",
@@ -1071,9 +1076,9 @@ window.I18N_DICT = {
     koAt: "스티커 제거/이동 기능"
   },
   "yt.proto-d.0": {
-    ko:   "스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다.",
-    en:   "Stickers were fixed in place and overlapped the action buttons, so I let users drag them anywhere or remove them. I bounded the draggable area to prevent accidental clicks outside it.",
-    koAt: "스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, 특정 영역 밖으로는 배치되지 않도록 제한을 두어 의도치 않은 클릭을 방지했습니다."
+    ko:   "스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, <mark class=\"hl\">특정 영역 밖으로는 배치되지 않도록 제한</mark>을 두어 의도치 않은 클릭을 방지했습니다.",
+    en:   "Stickers were fixed in place and overlapped the action buttons, so I let users drag them anywhere or remove them. <mark class=\"hl\">I bounded the draggable area to prevent accidental clicks</mark> outside it.",
+    koAt: "스티커가 화면에 고정 배치되어 액션 버튼과 겹치는 문제를 해결하기 위해 드래그로 위치를 자유롭게 이동하거나 제거할 수 있도록 설계했습니다. 단, <mark class=\"hl\">특정 영역 밖으로는 배치되지 않도록 제한</mark>을 두어 의도치 않은 클릭을 방지했습니다."
   },
   "yt.proto-t.1": {
     ko:   "태그된 제품 뱃지",
@@ -1081,9 +1086,9 @@ window.I18N_DICT = {
     koAt: "태그된 제품 뱃지"
   },
   "yt.proto-d.1": {
-    ko:   "바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. \"Featured(태그된 제품)\" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다.",
-    en:   "When multiple products were listed in the bottom sheet, it was hard to tell which ones actually appeared in the video. I added a \"Featured\" badge to clearly mark those products and set them apart visually from the rest.",
-    koAt: "바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. \"Featured(태그된 제품)\" 뱃지를 추가해 영상 속 제품임을 명확히 표시하고, 나머지 제품과 시각적으로 구분했습니다."
+    ko:   "바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. \"Featured(태그된 제품)\" 뱃지를 추가해 <mark class=\"hl\">영상 속 제품임을 명확히 표시</mark>하고, 나머지 제품과 시각적으로 구분했습니다.",
+    en:   "When multiple products were listed in the bottom sheet, it was hard to tell which ones actually appeared in the video. I added a \"Featured\" badge to <mark class=\"hl\">clearly mark those products and set them apart visually</mark> from the rest.",
+    koAt: "바텀시트에 여러 제품이 나열될 때 영상에 실제로 등장한 제품을 구분하기 어려웠습니다. \"Featured(태그된 제품)\" 뱃지를 추가해 <mark class=\"hl\">영상 속 제품임을 명확히 표시</mark>하고, 나머지 제품과 시각적으로 구분했습니다."
   },
   "yt.proto-t.2": {
     ko:   "타임스탬프 기능",
@@ -1091,9 +1096,9 @@ window.I18N_DICT = {
     koAt: "타임스탬프 기능"
   },
   "yt.proto-d.2": {
-    ko:   "바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다.",
-    en:   "There was no way to tell which scene a product appeared in, which hurt trust. I added a timestamp that shows when the product appears and jumps straight to that scene on tap.",
-    koAt: "바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, 누르면 바로 그 장면으로 이동할 수 있도록 설계했습니다."
+    ko:   "바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, <mark class=\"hl\">누르면 바로 그 장면으로 이동</mark>할 수 있도록 설계했습니다.",
+    en:   "There was no way to tell which scene a product appeared in, which hurt trust. I added a timestamp that shows when the product appears and <mark class=\"hl\">jumps straight to that scene on tap</mark>.",
+    koAt: "바텀시트 내 제품이 영상의 어느 장면에서 등장하는지 알 수 없어 신뢰도가 낮았습니다. 타임스탬프를 추가해 해당 제품이 영상에 등장하는 시점을 표시하고, <mark class=\"hl\">누르면 바로 그 장면으로 이동</mark>할 수 있도록 설계했습니다."
   },
   "yt.proto-t.3": {
     ko:   "제품 저장",
@@ -1101,9 +1106,9 @@ window.I18N_DICT = {
     koAt: "제품 저장"
   },
   "yt.proto-d.3": {
-    ko:   "관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.",
-    en:   "There was no way to save a product of interest — finding it again meant replaying the Short. I layered a save feature on YouTube's familiar save pattern, so users can add a product to Products directly from the bottom sheet.",
-    koAt: "관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. YouTube의 익숙한 저장 패턴 위에 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다."
+    ko:   "관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. <mark class=\"hl\">YouTube의 익숙한 저장 패턴 위에</mark> 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다.",
+    en:   "There was no way to save a product of interest — finding it again meant replaying the Short. I <mark class=\"hl\">layered a save feature on YouTube's familiar save pattern</mark>, so users can add a product to Products directly from the bottom sheet.",
+    koAt: "관심 제품만 따로 저장할 방법이 없어 나중에 다시 찾으려면 해당 쇼츠를 재생하여 다시 찾아야 했습니다. <mark class=\"hl\">YouTube의 익숙한 저장 패턴 위에</mark> 제품 저장 기능을 얹어 바텀시트에서 바로 관심 제품을 Products에 담을 수 있도록 설계했습니다."
   },
   "yt.proto-t.4": {
     ko:   "제품 폴더 내 썸네일 방식",
@@ -1111,9 +1116,9 @@ window.I18N_DICT = {
     koAt: "제품 폴더 내 썸네일 방식"
   },
   "yt.proto-d.4": {
-    ko:   "저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다.",
-    en:   "Text alone made it hard to tell saved products apart. I arranged the saved product stickers by recency across the folder thumbnail and the top thumbnails so users could identify them at a glance.",
-    koAt: "저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 최신순으로 배치해 시각적으로 빠르게 식별할 수 있도록 했습니다."
+    ko:   "저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 <mark class=\"hl\">최신순으로 배치해 시각적으로 빠르게 식별</mark>할 수 있도록 했습니다.",
+    en:   "Text alone made it hard to tell saved products apart. I <mark class=\"hl\">arranged the saved product stickers by recency</mark> across the folder thumbnail and the top thumbnails so users could identify them at a glance.",
+    koAt: "저장된 제품 목록에서 제품을 텍스트만으로 구분하기 어려웠습니다. Products 내 폴더 썸네일과 상단 썸네일에 저장된 제품 스티커를 <mark class=\"hl\">최신순으로 배치해 시각적으로 빠르게 식별</mark>할 수 있도록 했습니다."
   },
   "yt.proto-t.5": {
     ko:   "제품 정렬 기능",
@@ -1121,9 +1126,9 @@ window.I18N_DICT = {
     koAt: "제품 정렬 기능"
   },
   "yt.proto-d.5": {
-    ko:   "Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다.",
-    en:   "I folded YouTube's already-familiar sort pattern into the Products folder so saved items can be sorted the way users already expect.",
-    koAt: "Products 폴더 내에 저장한 제품을 정렬할 수 있도록 기존 유튜브에 익숙한 정렬 기능을 녹여서 넣어놓았습니다."
+    ko:   "Products 폴더 내에 저장한 제품을 정렬할 수 있도록 <mark class=\"hl\">기존 유튜브에 익숙한 정렬 기능</mark>을 녹여서 넣어놓았습니다.",
+    en:   "I <mark class=\"hl\">folded YouTube's already-familiar sort pattern</mark> into the Products folder so saved items can be sorted the way users already expect.",
+    koAt: "Products 폴더 내에 저장한 제품을 정렬할 수 있도록 <mark class=\"hl\">기존 유튜브에 익숙한 정렬 기능</mark>을 녹여서 넣어놓았습니다."
   },
   "yt.ut-t.0": {
     ko:   "스티커 제거 방식 변경",
@@ -1131,9 +1136,9 @@ window.I18N_DICT = {
     koAt: "스티커 제거 방식 변경"
   },
   "yt.ut-d.0": {
-    ko:   "초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 \"닫기\"를 선택할 수 있도록 수정했습니다.",
-    en:   "The original design deleted a sticker by long-pressing and dragging it right, but most UT participants found that awkward. I switched to YouTube's already-familiar more (⋮) icon — tapping it opens a bottom sheet where users can choose \"Close\".",
-    koAt: "초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식을 채택해, 누르면 바텀시트가 올라오며 \"닫기\"를 선택할 수 있도록 수정했습니다."
+    ko:   "초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. <mark class=\"hl\">YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식</mark>을 채택해, 누르면 바텀시트가 올라오며 \"닫기\"를 선택할 수 있도록 수정했습니다.",
+    en:   "The original design deleted a sticker by long-pressing and dragging it right, but most UT participants found that awkward. I <mark class=\"hl\">switched to YouTube's already-familiar more (⋮) icon</mark> — tapping it opens a bottom sheet where users can choose \"Close\".",
+    koAt: "초기 디자인에서는 스티커를 꾹 누른 후 우측으로 드래그하면 삭제되는 방식이었으나 UT에서 불편하다는 반응이 다수였습니다. <mark class=\"hl\">YouTube에서 이미 익숙한 더보기(⋮) 아이콘 방식</mark>을 채택해, 누르면 바텀시트가 올라오며 \"닫기\"를 선택할 수 있도록 수정했습니다."
   },
   "yt.ut-t.1": {
     ko:   "스티커 이동 기능 툴팁 추가",
@@ -1141,9 +1146,9 @@ window.I18N_DICT = {
     koAt: "스티커 이동 기능 툴팁 추가"
   },
   "yt.ut-d.1": {
-    ko:   "기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.",
-    en:   "The sticker-move feature wasn't discoverable, so users never noticed it existed. Based on UT findings, I added a tooltip that surfaces a move guide right after launch.",
-    koAt: "기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 기능 자체를 인지하지 못했습니다. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다."
+    ko:   "기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 <mark class=\"hl\">기능 자체를 인지하지 못했습니다</mark>. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다.",
+    en:   "The sticker-move feature wasn't discoverable, so <mark class=\"hl\">users never noticed it existed</mark>. Based on UT findings, I added a tooltip that surfaces a move guide right after launch.",
+    koAt: "기존에는 스티커 이동 기능이 직관적으로 드러나지 않아 사용자가 <mark class=\"hl\">기능 자체를 인지하지 못했습니다</mark>. UT 결과를 반영해 기능 출시 초반 이동 가이드가 노출되도록 툴팁을 추가했습니다."
   },
   "yt.ut-t.2": {
     ko:   "제품 관련 영상 탐색 플로우 추가",
@@ -1151,9 +1156,9 @@ window.I18N_DICT = {
     koAt: "제품 관련 영상 탐색 플로우 추가"
   },
   "yt.ut-d.2": {
-    ko:   "바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.",
-    en:   "After checking a product in the bottom sheet, there was no way to explore other Shorts or Videos featuring it. I added a Related Videos button that jumps to a list of videos tied to that product, keeping the viewing experience connected.",
-    koAt: "바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. Related Videos 버튼을 추가해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다."
+    ko:   "바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. <mark class=\"hl\">Related Videos 버튼을 추가</mark>해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다.",
+    en:   "After checking a product in the bottom sheet, there was no way to explore other Shorts or Videos featuring it. I <mark class=\"hl\">added a Related Videos button</mark> that jumps to a list of videos tied to that product, keeping the viewing experience connected.",
+    koAt: "바텀시트에서 제품을 확인한 후 해당 제품과 관련된 다른 Shorts나 Videos를 바로 탐색할 수 있는 플로우가 없었습니다. <mark class=\"hl\">Related Videos 버튼을 추가</mark>해 누르면 해당 제품과 관련된 영상 목록 페이지로 이동하도록 시청 경험을 연결성 있도록 설계했습니다."
   },
   "yt.ut-t.3": {
     ko:   "스티커 클릭 시 바텀시트 열리게 구조 변경",
@@ -1161,9 +1166,9 @@ window.I18N_DICT = {
     koAt: "스티커 클릭 시 바텀시트 열리게 구조 변경"
   },
   "yt.ut-d.3": {
-    ko:   "기존에는 \"Affiliate(제휴사)\" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. \"Affiliate(제휴사)\" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.",
-    en:   "Previously, the bottom sheet only opened via an \"Affiliate\" button, while tapping the sticker itself jumped straight to an external site. Most UT participants didn't expect that, and it created anxiety. I removed the \"Affiliate\" button and restructured it so tapping the sticker opens the bottom sheet directly.",
-    koAt: "기존에는 \"Affiliate(제휴사)\" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 대다수의 참가자가 이 구조를 예측하지 못했고 불안감을 만든다는 걸 확인했습니다. \"Affiliate(제휴사)\" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다."
+    ko:   "기존에는 \"Affiliate(제휴사)\" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 <mark class=\"hl\">대다수의 참가자가 이 구조를 예측하지 못했고</mark> 불안감을 만든다는 걸 확인했습니다. \"Affiliate(제휴사)\" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다.",
+    en:   "Previously, the bottom sheet only opened via an \"Affiliate\" button, while tapping the sticker itself jumped straight to an external site. <mark class=\"hl\">Most UT participants didn't expect that, and it created anxiety</mark>. I removed the \"Affiliate\" button and restructured it so tapping the sticker opens the bottom sheet directly.",
+    koAt: "기존에는 \"Affiliate(제휴사)\" 버튼을 눌러야 바텀시트가 열렸고, 스티커 자체를 클릭하면 바로 외부 사이트로 이동하는 구조였습니다. UT에서 <mark class=\"hl\">대다수의 참가자가 이 구조를 예측하지 못했고</mark> 불안감을 만든다는 걸 확인했습니다. \"Affiliate(제휴사)\" 버튼을 없애고 스티커 클릭 시 바텀시트가 바로 올라오도록 구조를 변경했습니다."
   },
   "yt.ut-t.4": {
     ko:   "제품 공유 기능 추가",
@@ -1171,9 +1176,9 @@ window.I18N_DICT = {
     koAt: "제품 공유 기능 추가"
   },
   "yt.ut-d.4": {
-    ko:   "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.",
-    en:   "There was no way to share a saved product with someone else. Research confirmed the need, so I added a Share button under the more (⋮) icon in the Products folder, letting users copy a link or share to another app.",
-    koAt: "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. 리서치를 통해 공유 니즈가 확인되어 Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다."
+    ko:   "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. <mark class=\"hl\">리서치를 통해 공유 니즈가 확인되어</mark> Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다.",
+    en:   "There was no way to share a saved product with someone else. <mark class=\"hl\">Research confirmed the need</mark>, so I added a Share button under the more (⋮) icon in the Products folder, letting users copy a link or share to another app.",
+    koAt: "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. <mark class=\"hl\">리서치를 통해 공유 니즈가 확인되어</mark> Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다."
   },
 
   /* ───────── HOMUSCLE (homuscle.html)  (83개 · 번역완료 83 · 남음 0) ───────── */
@@ -1317,6 +1322,11 @@ window.I18N_DICT = {
     en:   "On the calendar, days with a workout show an orange dot and days with a photo show a thumbnail. Clicking a date brings that day's sessions into the right panel, and tapping a record card opens a detail modal. <mark class=\"hl\">Making records worth revisiting</mark> was the goal of the retention design.",
     koAt: "달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class=\"hl\">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다."
   },
+  "hm.cb-p.6b": {
+    ko:   "기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class=\"hl\">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다.",
+    en:   "Tapping a record card opens the detail modal. From here, <mark class=\"hl\">Save card image</mark> exports that day's photo and stats (reps, sets, time) as a single card image. I assumed people need a reason to come back — and being able to keep and share the record outside the app is one.",
+    koAt: "기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class=\"hl\">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다."
+  },
   "hm.cb-p.7": {
     ko:   "목·어깨 스트레칭 가이드는 영상 대신 <mark class=\"hl\">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.",
     en:   "The neck and shoulder stretching guide is built as an <mark class=\"hl\">SVG wireframe animation</mark> rather than video. Drawing joint axes and motion paths in code costs almost nothing in file size and keeps the black-and-orange tone intact. The same technique drives the pre-workout guide popup.",
@@ -1328,9 +1338,9 @@ window.I18N_DICT = {
     koAt: "세션 화면은 제약이 분명했습니다. 사용자는 <mark class=\"hl\">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다."
   },
   "hm.cb-p.9": {
-    ko:   "아래는 세션 화면의 구조를 재현한 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다.",
-    en:   "Below is a mockup reproducing the session screen's structure — the real session needs camera permission, so you can try it in the <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">live app ↗</a>.",
-    koAt: "아래는 세션 화면의 구조를 재현한 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다."
+    ko:   "아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다.",
+    en:   "Below is a session-screen mockup built by overlaying pose-tracking output onto real footage — the actual session needs camera permission, so you can try it in the <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">live app ↗</a>.",
+    koAt: "아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다."
   },
   "hm.cb-p.10": {
     ko:   "초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class=\"hl\">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.",
@@ -1398,9 +1408,9 @@ window.I18N_DICT = {
     koAt: "이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">새 탭에서 직접 사용해보기 ↗</a>"
   },
   "hm.nom-cap.0": {
-    ko:   "세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다",
-    en:   "Session screen mockup — in real use the upper body fills the frame, with the pose skeleton, elbow angles and dumbbell detection box drawn live over the camera feed",
-    koAt: "세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다"
+    ko:   "세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다",
+    en:   "Session screen mockup — real footage analysed with MediaPipe Pose to extract shoulder, elbow and wrist coordinates plus elbow angles, then overlaid with the skeleton, angle readouts and dumbbell detection box. The UP/DOWN state and rep count come from applying the same 80°/110° thresholds as the state machine below",
+    koAt: "세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다"
   },
   "hm.obs-bubble.0": {
     ko:   "<strong>숫자는 맞는데 <mark class=\"hl\">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다.",
@@ -1658,9 +1668,9 @@ window.I18N_DICT = {
     koAt: "YouTube 리디자인 챌린지 · 2025"
   },
   "hm.next-title.1": {
-    ko:   "유튜브 쇼츠 쇼핑 경험 재설계",
-    en:   "YouTube Shorts Shopping Experience Redesign",
-    koAt: "유튜브 쇼츠 쇼핑 경험 재설계"
+    ko:   "유튜브 쇼츠 앱 쇼핑 경험 재설계",
+    en:   "YouTube Shorts App Shopping Experience Redesign",
+    koAt: "유튜브 쇼츠 앱 쇼핑 경험 재설계"
   },
   "hm.next-cta.1": {
     ko:   "케이스 스터디 보기 →",

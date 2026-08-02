@@ -143,33 +143,16 @@
   .hm-session { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #232323; background: #0d0d0d; box-shadow: 0 24px 70px rgba(0,0,0,0.4); }
   .hm-sess-cam { position: relative; height: 560px; overflow: hidden;
     background: radial-gradient(120% 150% at 50% 24%, #504f4f 0%, #3b3a3a 46%, #222121 100%); }
-  .hm-cam-stage { position: absolute; left: 50%; top: 0; transform: translateX(-50%); height: 100%; aspect-ratio: 1024 / 1040; }
-  .hm-cam-base { width: 100%; height: 100%; display: block;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%); }
-  .hm-arm { position: absolute; will-change: transform; animation: 3.2s ease-in-out infinite; }
-  .hm-arm img { width: 100%; height: 100%; display: block; }
-  .hm-armL { left: 27.246%; top: 80.385%; width: 7.617%; height: 17.692%; transform-origin: 55.128% 7.609%; animation-name: hmCurlL; }
-  .hm-armR { left: 63.379%; top: 80.673%; width: 10.449%; height: 17.788%; transform-origin: 47.664% 7.027%; animation-name: hmCurlR; }
-  @keyframes hmCurlL { 0%, 12% { transform: rotate(0deg); } 46%, 58% { transform: rotate(70deg); } 94%, 100% { transform: rotate(0deg); } }
-  @keyframes hmCurlR { 0%, 12% { transform: rotate(0deg); } 46%, 58% { transform: rotate(-70deg); } 94%, 100% { transform: rotate(0deg); } }
-  .hm-skel { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-  .hm-skel .rotL, .hm-skel .rotR { transform-box: view-box; animation: 3.2s ease-in-out infinite; }
-  .hm-skel .rotL { transform-origin: 322px 850px; animation-name: hmCurlL; }
-  .hm-skel .rotR { transform-origin: 700px 852px; animation-name: hmCurlR; }
-  .hm-skel .angA { animation: hmAngSwapA 3.2s ease-in-out infinite; }
-  .hm-skel .angB { animation: hmAngSwapB 3.2s ease-in-out infinite; }
-  @keyframes hmAngSwapA { 0%, 24% { opacity: 1; } 36%, 66% { opacity: 0; } 84%, 100% { opacity: 1; } }
-  @keyframes hmAngSwapB { 0%, 24% { opacity: 0; } 36%, 66% { opacity: 1; } 84%, 100% { opacity: 0; } }
-  .hm-skel .pulse { animation: hmPulse 3.2s ease-out infinite; }
-  @keyframes hmPulse { 0%, 46% { opacity: 0; r: 18px; } 55% { opacity: 0.85; } 76%, 100% { opacity: 0; r: 52px; } }
-  .hm-cam-fx { position: absolute; inset: 0; pointer-events: none;
+  /* 카메라 피드: 실사 영상 + 오프라인 분석된 포즈 오버레이(canvas) */
+  .hm-cam-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 0; }
+  .hm-pose-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+  .hm-cam-fx { position: absolute; inset: 0; pointer-events: none; z-index: 1;
     background:
       linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.4)),
       repeating-linear-gradient(0deg, rgba(0,0,0,0.09) 0 1px, transparent 1px 4px),
       radial-gradient(135% 105% at 50% 42%, transparent 56%, rgba(0,0,0,0.52) 100%); }
-  .hm-sess-status { position: absolute; top: 16px; left: 18px; font-family: monospace; font-size: 11px; color: #ff6b00; letter-spacing: 0.1em; z-index: 2; }
-  .hm-sess-status2 { position: absolute; top: 16px; right: 18px; font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; z-index: 2; }
+  .hm-sess-status { position: absolute; top: 16px; left: 18px; font-family: monospace; font-size: 11px; color: #ff6b00; letter-spacing: 0.1em; z-index: 3; }
+  .hm-sess-status2 { position: absolute; top: 16px; right: 18px; font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; z-index: 3; }
   @media (max-width: 760px) { .hm-sess-cam { height: 430px; } }
   .hm-sess-panel { background: rgba(10,10,10,0.92); border-top: 1px solid #1f1f1f; padding: 0 32px 24px; }
   .hm-prog { height: 3px; background: #1c1c1c; margin: 0 -32px 20px; }
@@ -261,7 +244,7 @@
   <div class="global-nav-pills">
     <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
     <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
-    <a href="resume.pdf?v=4" target="_blank">Resume</a>
+    <a href="resume.pdf?v=9" target="_blank">Resume</a>
   </div>
 </nav>
 
@@ -409,7 +392,6 @@
       <p data-i18n="hm.sub.2" class="cb-label cb-sublabel" style="margin-top:36px;">01 · Training — 목표와 진행 상황</p>
       <p data-i18n="hm.cb-p.5" class="cb-p" style="margin-bottom:16px;">모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class="hl">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.</p>
       <div class="hm-device">
-        <div class="hm-device-bar"><i></i><i></i><i></i><em>TRAINING</em><span class="hm-live">LIVE</span></div>
         <div class="hm-embed" data-w="1200" data-h="960">
           <iframe src="homuscle-app.html?screen=training&demo=1" title="HOMUSCLE — training" loading="lazy" scrolling="no"></iframe>
         </div>
@@ -418,16 +400,21 @@
       <p data-i18n="hm.sub.3" class="cb-label cb-sublabel" style="margin-top:44px;">02 · Gallery — 운동 기록</p>
       <p data-i18n="hm.cb-p.6" class="cb-p" style="margin-bottom:16px;">달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class="hl">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다.</p>
       <div class="hm-device">
-        <div class="hm-device-bar"><i></i><i></i><i></i><em>GALLERY</em><span class="hm-live">LIVE</span></div>
-        <div class="hm-embed" data-w="1200" data-h="860">
+        <div class="hm-embed" data-autofit="1" data-w="1200" data-h="1465">
           <iframe src="homuscle-app.html?screen=gallery&demo=1" title="HOMUSCLE — gallery" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <p data-i18n="hm.cb-p.6b" class="cb-p" style="margin-top:28px;margin-bottom:16px;">기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class="hl">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다.</p>
+      <div class="hm-device">
+        <div class="hm-embed" data-w="1200" data-h="900">
+          <iframe src="homuscle-app.html?screen=gallery&demo=1&modal=1" title="HOMUSCLE — record detail" loading="lazy" scrolling="no"></iframe>
         </div>
       </div>
 
       <p data-i18n="hm.sub.4" class="cb-label cb-sublabel" style="margin-top:44px;">03 · Stretch — 스트레칭 가이드</p>
       <p data-i18n="hm.cb-p.7" class="cb-p" style="margin-bottom:16px;">목·어깨 스트레칭 가이드는 영상 대신 <mark class="hl">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.</p>
       <div class="hm-device">
-        <div class="hm-device-bar"><i></i><i></i><i></i><em>STRETCH</em><span class="hm-live">LIVE</span></div>
         <div class="hm-embed" data-w="1200" data-h="820">
           <iframe src="homuscle-app.html?screen=stretch&demo=1" title="HOMUSCLE — stretch" loading="lazy" scrolling="no"></iframe>
         </div>
@@ -439,68 +426,15 @@
       <p class="cb-label">Session</p>
       <h2 data-i18n="hm.cb-h2.3" class="cb-h2">세션 화면 설계</h2>
       <p data-i18n="hm.cb-p.8" class="cb-p">세션 화면은 제약이 분명했습니다. 사용자는 <mark class="hl">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다.</p>
-      <p data-i18n="hm.cb-p.9" class="cb-p" style="font-size:13px;color:#888;">아래는 세션 화면의 구조를 재현한 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">라이브 앱 ↗</a>에서 체험할 수 있습니다.</p>
+      <p data-i18n="hm.cb-p.9" class="cb-p" style="font-size:13px;color:#888;">아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">라이브 앱 ↗</a>에서 체험할 수 있습니다.</p>
 
       <div class="hm-session" style="margin:20px 0 8px;">
         <div class="hm-sess-cam">
-          <div class="hm-cam-stage">
-            <img class="hm-cam-base" src="images/homuscle/cam-base.png" alt="카메라 피드 — 캐릭터">
-            <div class="hm-arm hm-armL"><img src="images/homuscle/cam-armL.png" alt=""></div>
-            <div class="hm-arm hm-armR"><img src="images/homuscle/cam-armR.png" alt=""></div>
-            <svg class="hm-skel" viewBox="0 0 1024 1040" xmlns="http://www.w3.org/2000/svg">
-              <!-- 몸통 스켈레톤 (디지털 그린, 은은하게) -->
-              <g stroke="rgba(0,255,100,0.28)" stroke-width="2.5" fill="none">
-                <line x1="392" y1="716" x2="633" y2="716"/>
-                <line x1="402" y1="716" x2="432" y2="1008"/>
-                <line x1="626" y1="716" x2="598" y2="1008"/>
-                <line x1="432" y1="1008" x2="598" y2="1008"/>
-              </g>
-              <g fill="rgba(0,255,100,0.55)">
-                <circle cx="432" cy="1008" r="6"/><circle cx="598" cy="1008" r="6"/>
-                <circle cx="447" cy="337" r="5"/><circle cx="577" cy="337" r="5"/><circle cx="512" cy="420" r="5"/>
-              </g>
-              <!-- 위팔 (주황, 고정) -->
-              <g stroke="rgba(255,107,0,0.9)" stroke-width="5" fill="none" stroke-linecap="round">
-                <line x1="382" y1="722" x2="322" y2="850"/>
-                <line x1="643" y1="722" x2="700" y2="852"/>
-              </g>
-              <!-- 전완 + 아령 오버레이 (팔 레이어와 동일 회전) -->
-              <g class="rotL">
-                <!-- 바 (주먹 뒤로 지나가는 두 구간) -->
-                <rect x="271" y="958" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
-                <rect x="335" y="958" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
-                <!-- 플레이트 -->
-                <rect x="253" y="929" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
-                <rect x="357" y="929" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
-                <line x1="322" y1="850" x2="315" y2="948" stroke="rgba(255,107,0,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/>
-              </g>
-              <g class="rotR">
-                <rect x="660" y="967" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
-                <rect x="738" y="967" width="24" height="9" rx="4" fill="#3a3a3a" stroke="#161616" stroke-width="1.5"/>
-                <rect x="642" y="938" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
-                <rect x="758" y="938" width="20" height="68" rx="7" fill="#1d1d1d" stroke="#ff6b00" stroke-width="2"/>
-                <line x1="700" y1="852" x2="710" y2="957" stroke="rgba(255,107,0,0.9)" stroke-width="5" stroke-linecap="round" fill="none"/>
-                <rect x="632" y="912" width="156" height="112" stroke="#ff6b00" stroke-width="3" fill="none"/>
-                <text x="632" y="896" font-family="monospace" font-size="22" font-weight="700" fill="#ff6b00">DUMBBELL DETECTED</text>
-                <rect x="632" y="1032" width="156" height="6" fill="rgba(255,107,0,0.35)"/>
-              </g>
-              <!-- 관절 포인트 -->
-              <g fill="#ff6b00">
-                <circle cx="382" cy="722" r="9"/><circle cx="643" cy="722" r="9"/>
-                <circle cx="322" cy="850" r="10"/><circle cx="700" cy="852" r="10"/>
-              </g>
-              <!-- 팔꿈치 각도 (상태 전환 시 스왑) -->
-              <g font-family="monospace" font-size="26" font-weight="700" fill="#ff6b00">
-                <text class="angA" x="178" y="742" text-anchor="middle">R 164°</text>
-                <text class="angB" x="178" y="742" text-anchor="middle">R 62°</text>
-                <text class="angA" x="848" y="746" text-anchor="middle">L 161°</text>
-                <text class="angB" x="848" y="746" text-anchor="middle">L 65°</text>
-              </g>
-              <!-- 카운트 펄스 (컬 정점 위치) -->
-              <circle class="pulse" cx="215" cy="880" r="18" fill="none" stroke="#ff6b00" stroke-width="4" opacity="0"/>
-              <circle class="pulse" cx="815" cy="882" r="18" fill="none" stroke="#ff6b00" stroke-width="4" opacity="0"/>
-            </svg>
-          </div>
+          <video class="hm-cam-video" id="hmCamVideo" muted loop playsinline autoplay preload="auto" disablepictureinpicture>
+            <source src="images/homuscle/session-real.webm" type="video/webm">
+            <source src="images/homuscle/session-real.mp4" type="video/mp4">
+          </video>
+          <canvas class="hm-pose-canvas" id="hmPoseCanvas"></canvas>
           <div class="hm-cam-fx"></div>
           <div class="hm-sess-status">MODEL READY · POSE TRACKING</div>
           <div class="hm-sess-status2">ON-DEVICE · 0 SERVER</div>
@@ -520,7 +454,7 @@
           </div>
         </div>
       </div>
-      <p data-i18n="hm.nom-cap.0" class="nom-cap" style="margin-bottom:32px;">세션 화면 재현 목업 — 실제 사용 시 상반신이 프레임에 가득 잡히고, 카메라 피드 위에 포즈 스켈레톤·팔꿈치 각도·아령 인식 박스가 실시간으로 그려집니다</p>
+      <p data-i18n="hm.nom-cap.0" class="nom-cap" style="margin-bottom:32px;">세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다</p>
 
       <p data-i18n="hm.sub.5" class="cb-label cb-sublabel">카운팅 상태머신</p>
       <p data-i18n="hm.cb-p.10" class="cb-p" style="margin-top:12px;">초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class="hl">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.</p>
@@ -693,7 +627,7 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
             <img class="next-case-thumb" src="images/youtube/youtube main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
             <div>
               <p data-i18n="hm.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">YouTube 리디자인 챌린지 · 2025</p>
-              <h3 data-i18n="hm.next-title.1" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">유튜브 쇼츠 쇼핑 경험 재설계</h3>
+              <h3 data-i18n="hm.next-title.1" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">유튜브 쇼츠 앱 쇼핑 경험 재설계</h3>
               <span data-i18n="hm.next-cta.1" style="font-size:13px;color:#e85f00;font-weight:600;">케이스 스터디 보기 →</span>
             </div>
           </div>
@@ -728,6 +662,7 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
 <script src="i18n-dict.js"></script>
 <script src="i18n.js"></script>
 <script src="script.js"></script>
+<script src="homuscle-pose.js"></script>
 <script>
   /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
   document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
@@ -736,10 +671,16 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
     el.style.transition = 'none';
   });
 
-  /* ── 라이브 임베드 스케일링 ── */
+  /* ── 라이브 임베드 스케일링 ──
+     기본은 data-h 고정값. 단 갤러리처럼 기록 수·사진 유무에 따라 내용 높이가
+     달라지는 화면은 data-autofit="1"을 붙여, 앱이 알려준 실제 높이를 쓴다.
+     (고정값을 쓰면 어떤 사람에겐 잘리고 어떤 사람에겐 아래가 비어 보인다) */
+  const embedH = new WeakMap();
   function fitEmbeds() {
     document.querySelectorAll('.hm-embed').forEach(w => {
-      const bw = +w.dataset.w || 1240, bh = +w.dataset.h || 760;
+      const bw = +w.dataset.w || 1240;
+      let bh = +w.dataset.h || 760;
+      if (w.dataset.autofit === '1' && embedH.get(w)) bh = embedH.get(w);
       const f = w.querySelector('iframe');
       if (!f) return;
       const s = w.clientWidth / bw;
@@ -749,6 +690,14 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
       w.style.height = (bh * s) + 'px';
     });
   }
+  window.addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || d.type !== 'hm-embed-height' || !d.h) return;
+    document.querySelectorAll('.hm-embed[data-autofit="1"]').forEach(w => {
+      const f = w.querySelector('iframe');
+      if (f && f.contentWindow === e.source) { embedH.set(w, d.h); fitEmbeds(); }
+    });
+  });
   window.addEventListener('resize', fitEmbeds);
   window.addEventListener('load', fitEmbeds);
   fitEmbeds();
@@ -779,18 +728,150 @@ ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</spa
     io.observe(overview);
   })();
 
-  /* ── 세션 목업: 카운터 + 컬 애니메이션 동기화 ── */
+  /* ── 세션 목업: 실사 영상 + 포즈 오버레이 ──────────────────────────
+     영상은 MediaPipe Pose로 미리 분석해 homuscle-pose.js에 프레임별
+     랜드마크/팔꿈치 각도/카운트 상태를 구워 두었다. 여기서는 video의
+     currentTime으로 해당 프레임을 찾아 캔버스에 그리기만 한다.
+     (런타임 추론이 없어 CDN 의존성·발열·지연이 없다)                    */
   (function(){
-    const rep = document.getElementById('hmRep');
-    if (!rep) return;
-    let n = 17;
-    setInterval(() => {
-      n = n >= 30 ? 12 : n + 1;
-      rep.textContent = n;
-      rep.style.transition = 'none';
-      rep.style.textShadow = '0 0 34px rgba(255,107,0,0.85)';
-      setTimeout(() => { rep.style.transition = 'text-shadow 0.6s ease'; rep.style.textShadow = 'none'; }, 80);
-    }, 3200);
+    var video  = document.getElementById('hmCamVideo');
+    var canvas = document.getElementById('hmPoseCanvas');
+    var repEl  = document.getElementById('hmRep');
+    var DATA   = window.HM_POSE;
+    if (!video || !canvas || !DATA) return;
+
+    var ctx = canvas.getContext('2d');
+    var F = DATA.frames, N = F.length, FPS = DATA.fps;
+    var VW = DATA.w, VH = DATA.h;
+    var BASE_REP = 17;            // 패널에 표시되는 시작 렙
+    var lastRep = -1, pulseAt = -1;
+
+    // 캔버스 해상도를 표시 크기 × DPR로 맞춘다
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize(){
+      var r = canvas.getBoundingClientRect();
+      canvas.width  = Math.round(r.width  * dpr);
+      canvas.height = Math.round(r.height * dpr);
+    }
+    resize();
+    if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+    else window.addEventListener('resize', resize);
+
+    // video는 object-fit:cover — 같은 cover 변환으로 좌표를 매핑해야 어긋나지 않는다
+    function mapper(){
+      var cw = canvas.width, ch = canvas.height;
+      var s  = Math.max(cw / VW, ch / VH);
+      var dw = VW * s, dh = VH * s;
+      var ox = (cw - dw) / 2, oy = (ch - dh) / 2;
+      return function(x, y){ return [ox + x * dw, oy + y * dh]; };
+    }
+
+    var ORANGE = '#ff6b00';
+    function line(a, b, w, color){
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]);
+      ctx.lineWidth = w; ctx.strokeStyle = color; ctx.lineCap = 'round'; ctx.stroke();
+    }
+    function dot(p, r, color){
+      ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, 6.284); ctx.fillStyle = color; ctx.fill();
+    }
+    function label(text, x, y, size, color, align){
+      ctx.font = '700 ' + size + 'px ui-monospace, SFMono-Regular, Menlo, monospace';
+      ctx.textAlign = align || 'left'; ctx.textBaseline = 'middle';
+      ctx.lineWidth = size * 0.34; ctx.strokeStyle = 'rgba(0,0,0,0.55)';
+      ctx.lineJoin = 'round'; ctx.strokeText(text, x, y);
+      ctx.fillStyle = color; ctx.fillText(text, x, y);
+    }
+
+    function draw(){
+      if (!canvas.width) { requestAnimationFrame(draw); return; }
+      var t  = video.currentTime || 0;
+      var fi = Math.min(N - 1, Math.max(0, Math.round(t * FPS)));
+      var f  = F[fi];
+      var M  = mapper();
+      var k  = canvas.width / 1280;          // 1280px 기준으로 선/글자 두께 스케일
+      var K  = function(v){ return Math.max(1, v * k); };
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      var LS = M(f[0],  f[1]),  RS = M(f[2],  f[3]);
+      var LE = M(f[4],  f[5]),  RE = M(f[6],  f[7]);
+      var LW = M(f[8],  f[9]),  RW = M(f[10], f[11]);
+      var LI = M(f[12], f[13]), RI = M(f[14], f[15]);
+      var angL = f[16], angR = f[17], isUp = f[18], rep = f[19];
+
+      // 어깨선 (연한 그린 — 기준선)
+      line(LS, RS, K(2.5), 'rgba(0,255,100,0.30)');
+      dot(LS, K(4), 'rgba(0,255,100,0.55)'); dot(RS, K(4), 'rgba(0,255,100,0.55)');
+
+      // 팔 (주황 — 카운팅에 실제로 쓰이는 관절)
+      [[LS,LE,LW],[RS,RE,RW]].forEach(function(a){
+        line(a[0], a[1], K(5), 'rgba(255,107,0,0.9)');
+        line(a[1], a[2], K(5), 'rgba(255,107,0,0.9)');
+      });
+      [LE, RE].forEach(function(p){ dot(p, K(9), ORANGE); });
+      [LW, RW].forEach(function(p){ dot(p, K(6), ORANGE); });
+
+      // 아령 인식 박스 — 손목~검지 사이를 중심으로.
+      // 손이 프레임 밖으로 내려가는 구간에서는 박스가 잘려 보이므로 생략한다.
+      [[LW,LI],[RW,RI]].forEach(function(h){
+        var cx = (h[0][0] + h[1][0]) / 2, cy = (h[0][1] + h[1][1]) / 2;
+        if (cy > canvas.height * 0.9 || cy < 0) return;
+        var w = K(132), hh = K(86);
+        ctx.lineWidth = K(3); ctx.strokeStyle = ORANGE;
+        ctx.strokeRect(cx - w/2, cy - hh/2, w, hh);
+        ctx.fillStyle = 'rgba(255,107,0,0.35)';
+        ctx.fillRect(cx - w/2, cy + hh/2 - K(4), w, K(4));
+        label('DUMBBELL', cx - w/2, cy - hh/2 - K(13), K(16), ORANGE);
+      });
+
+      // 팔꿈치 각도 — 팔꿈치 바깥쪽에 표시
+      label('L ' + Math.round(angL) + '°', LE[0] + K(24), LE[1], K(25), ORANGE, 'left');
+      label('R ' + Math.round(angR) + '°', RE[0] - K(24), RE[1], K(25), ORANGE, 'right');
+
+      // 상태 배지 (UP / DOWN) — 아래 상태머신 다이어그램과 같은 용어
+      label(isUp ? 'UP' : 'DOWN', canvas.width / 2, K(46), K(20),
+            isUp ? ORANGE : 'rgba(255,255,255,0.55)', 'center');
+
+      // 카운트 순간 펄스
+      if (rep !== lastRep) { if (lastRep !== -1) pulseAt = t; lastRep = rep;
+        if (repEl) {
+          repEl.textContent = BASE_REP + rep;
+          repEl.style.transition = 'none';
+          repEl.style.textShadow = '0 0 34px rgba(255,107,0,0.85)';
+          setTimeout(function(){
+            repEl.style.transition = 'text-shadow 0.6s ease';
+            repEl.style.textShadow = 'none';
+          }, 80);
+        }
+      }
+      if (pulseAt >= 0) {
+        var e = t - pulseAt;
+        if (e >= 0 && e < 0.75) {
+          var p = e / 0.75;
+          ctx.beginPath();
+          ctx.arc(LE[0], LE[1], K(18) + p * K(52), 0, 6.284);
+          ctx.lineWidth = K(4);
+          ctx.strokeStyle = 'rgba(255,107,0,' + (0.85 * (1 - p)).toFixed(3) + ')';
+          ctx.stroke();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+
+    // 루프 복귀 시 카운터 상태 초기화
+    video.addEventListener('seeked', function(){ lastRep = -1; pulseAt = -1; });
+    video.addEventListener('timeupdate', function(){
+      if (video.currentTime < 0.15) { lastRep = -1; pulseAt = -1; }
+    });
+
+    // 자동재생이 막히면(모바일 절전 등) 사용자의 첫 인터랙션 때 재생
+    var kick = function(){ video.play().catch(function(){}); };
+    kick();
+    ['click','touchstart','scroll'].forEach(function(ev){
+      window.addEventListener(ev, kick, { once: true, passive: true });
+    });
+
+    requestAnimationFrame(draw);
   })();
 
 </script>

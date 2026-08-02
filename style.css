@@ -478,13 +478,14 @@ body {
 .hero-title .name-highlight {
   display: inline;
   font-family: 'Archivo', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   background: #ffffff;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 6px;
   padding: 1px 8px;
   position: relative;
 }
+.hero-title .hero-thin { font-weight: 300; }
 .hero-title em {
   font-style: normal;
   font-weight: 500;
@@ -1069,6 +1070,15 @@ mark.hl.hl-visible {
   background-size: 100% 88%;
 }
 
+/* YouTube case — light yellow highlight (NOM과 통일) */
+#case-page mark.hl {
+  background: linear-gradient(#FEF4C2, #FEF4C2) no-repeat left center;
+  background-size: 0% 88%;
+}
+#case-page mark.hl.hl-visible {
+  background-size: 100% 88%;
+}
+
 /* About page — light yellow highlight */
 #about-page mark.hl {
   background: linear-gradient(#FEF4C2, #FEF4C2) no-repeat left center;
@@ -1251,7 +1261,7 @@ mark.hl.hl-visible {
 .work-item-title {
   font-family: 'Archivo', 'NanumSquareNeo', sans-serif;
   font-size: 28px;
-  font-weight: 500; line-height: 1.2;
+  font-weight: 600; line-height: 1.2;
   letter-spacing: -0.02em; color: var(--ink);
   margin-bottom: 16px;
 }
@@ -1591,6 +1601,7 @@ div.case-body {
 #case-page .p-title, #case-page .p-desc, #case-page .i-title, #case-page .i-desc,
 #case-page .sol-title, #case-page .sol-desc, #case-page .opp-title, #case-page .opp-desc,
 #case-page .ref-p, #case-page .meta-val, #case-page .meta-lbl,
+#case-page .yt-feat-title, #case-page .yt-feat-body,
 #case-page .case-role, #case-page .case-desc, #case-page .case-tag,
 #case-page .t-name, #case-page .t-role, #case-page .team-chip,
 #case-page .cb-label,
@@ -1736,7 +1747,7 @@ div.case-body {
   font-family: 'Figtree', 'NanumSquareNeo', sans-serif;
   font-size: 11px; font-weight: 600;
   padding: 6px 14px; border-radius: 100px;
-  background: rgba(15,15,15,0.78); color: #fff;
+  background: rgba(15,15,15,0.65); color: #fff;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.18);
 }
@@ -1814,4 +1825,84 @@ div.case-body {
 @media (max-width: 860px) {
   .nav-right { gap: 12px; }
   .lang-btn { font-size: 10px; }
+}
+
+/* ══ WORK — IN PROGRESS (홈 하단) ══ */
+/* 케이스스터디 종료 섹션(.case-end-card)의 홀로그램 그라데이션 톤을 그대로 가져와
+   사이트 전체의 시각 언어를 유지. 단 이 항목은 열리는 케이스가 아니므로
+   cursor:pointer / hover 강조는 주지 않음. */
+.work-upcoming-section {
+  max-width: 1100px; margin: 0 auto;
+  padding: 8px 48px 48px;
+}
+.work-upcoming-card {
+  position: relative;
+  border-radius: 20px; padding: 40px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #e8e0ff 0%,
+    #d4eaff 18%,
+    #fce4f6 36%,
+    #d6f5ef 54%,
+    #fff0d4 72%,
+    #e0d4ff 90%,
+    #c9e8ff 100%
+  );
+  background-size: 300% 300%;
+  animation: holo-shift 8s ease infinite;
+}
+.work-upcoming-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.08) 40%,
+    rgba(255,255,255,0.38) 100%
+  );
+  pointer-events: none;
+}
+.work-upcoming-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(0,0,0,0.35);
+  margin: 0 0 16px 0;
+}
+.work-upcoming-inner {
+  background: rgba(255,255,255,0.72);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.work-upcoming-head {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.work-upcoming-title {
+  font-family: 'NanumSquareNeo', sans-serif;
+  font-size: 17px; font-weight: 700; color: #111;
+  line-height: 1.4; margin: 0;
+}
+.work-upcoming-badge {
+  font-family: 'Figtree', sans-serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(0,0,0,0.45);
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: rgba(255,255,255,0.75);
+  white-space: nowrap;
+}
+.work-upcoming-desc {
+  font-family: 'Figtree', 'NanumSquareNeo', sans-serif;
+  font-size: 13px; font-weight: 400; color: #666;
+  line-height: 1.6; margin: 0;
+}
+@media (max-width: 600px) {
+  .work-upcoming-section { padding: 8px 16px 40px; }
+  .work-upcoming-card { padding: 28px 20px; }
+  .work-upcoming-inner { padding: 20px; }
 }
