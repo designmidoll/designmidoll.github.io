@@ -356,15 +356,6 @@ function _updateBox(px, py) {
   box.style.height = visH * 100 + '%';
 }
 
-function openTgLB(btn) {
-  var wrap = btn.closest('.tg-img-wrap');
-  if (!wrap) return;
-  var after = wrap.querySelector('.tg-after');
-  var before = wrap.querySelector('.tg-before');
-  var target = (after && after.classList.contains('tg-visible')) ? after : before;
-  if (target) openLBThis(target);
-}
-
 function openLBThis(el) {
   var overlay = document.getElementById('lb-overlay');
   var img = _getImg();

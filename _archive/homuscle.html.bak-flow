@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miseon Park — Product Designer</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<style>
+  /* HOMUSCLE 브랜드 폰트 */
+  @font-face{
+    font-family:'Ethnocentric';
+    src:url('Ethnocentric-Regular.otf') format('opentype');
+    font-display:swap;
+  }
+
+  /* HOMUSCLE 페이지 전용 배경 */
+  .gradient-bg { background: #F8F8F7; }
+  .gradient-bg::before, .gradient-bg::after, .blob-green { display: none; }
+  #global-nav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; transition: background 0.25s ease; }
+  /* 다크 히어로 밴드 위 내비 가독성 */
+  #nav-logo { color: #fff !important; transition: color 0.25s ease; }
+  .global-nav-pills { background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.18) !important; transition: background 0.25s ease, border-color 0.25s ease; }
+  .global-nav-pills a { color: rgba(255,255,255,0.75) !important; transition: color 0.25s ease; }
+  .global-nav-pills a:hover { color: #fff !important; background: rgba(255,255,255,0.12) !important; }
+  .global-nav-pills a.nav-active { color: #fff !important; background: rgba(255,255,255,0.18) !important; box-shadow: none !important; }
+  /* 라이트 영역으로 스크롤 시 원래 내비로 복귀 */
+  #global-nav.nav-light { background: rgba(251,251,251,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  #global-nav.nav-light #nav-logo { color: var(--ink) !important; }
+  #global-nav.nav-light .global-nav-pills { background: rgba(255,255,255,0.65) !important; border-color: rgba(0,0,0,0.08) !important; }
+  #global-nav.nav-light .global-nav-pills a { color: rgba(20,20,20,0.65) !important; }
+  #global-nav.nav-light .global-nav-pills a:hover, #global-nav.nav-light .global-nav-pills a.nav-active { color: #000 !important; }
+  /* 언어 토글 — 다크 밴드 위 (배경 없이 텍스트만) */
+  .lang-btn { color: rgba(255,255,255,0.4) !important; transition: color 0.25s ease; }
+  .lang-btn:hover { color: rgba(255,255,255,0.7) !important; }
+  .lang-btn.lang-active { color: #fff !important; }
+  .lang-sep { background: rgba(255,255,255,0.22) !important; }
+  #global-nav.nav-light .lang-btn { color: rgba(20,20,20,0.32) !important; }
+  #global-nav.nav-light .lang-btn:hover { color: rgba(20,20,20,0.6) !important; }
+  #global-nav.nav-light .lang-btn.lang-active { color: var(--ink) !important; }
+  #global-nav.nav-light .lang-sep { background: rgba(0,0,0,0.15) !important; }
+
+  /* 왼쪽 목차 */
+  #case3-sidenav button { color: rgba(255,255,255,0.45); transition: color 0.25s; }
+  #case3-sidenav button:hover { color: rgba(255,255,255,0.8); }
+  #case3-sidenav button.snav-active { color: #e85f00; font-weight: 700; }
+  #case3-sidenav.snav-light button { color: #9a9a9a; }
+  #case3-sidenav.snav-light button:hover { color: #555; }
+  #case3-sidenav.snav-light button.snav-active { color: #e85f00; }
+
+  /* 상단 다크 밴드 — 블랙 + 주황 글로우, 아래로 페이드 */
+  #case3-page { position: relative; }
+  /* hero wrap에 아래 여백을 줘서 fade가 콘텐츠 아닌 빈 공간에서 일어나도록 */
+  #case3-page .case-hero-wrap { padding-bottom: 160px; }
+  #case3-page::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1550px; z-index: -1;
+    background:
+      radial-gradient(1000px 460px at 82% -8%, rgba(255,107,0,0.30), transparent 62%),
+      radial-gradient(760px 560px at 6% 34%, rgba(255,107,0,0.10), transparent 60%),
+      #0a0a0a;
+    -webkit-mask: linear-gradient(180deg, #000 79%, transparent 100%);
+    mask: linear-gradient(180deg, #000 79%, transparent 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    #case3-page .case-hero-wrap { padding-bottom: 100px; }
+    #case3-page::before {
+      height: 1100px;
+      -webkit-mask: linear-gradient(180deg, #000 82%, transparent 100%);
+      mask: linear-gradient(180deg, #000 82%, transparent 100%);
+    }
+  }
+
+  /* 히어로 텍스트 — 다크 밴드 위 */
+  #case3-page .case-eyebrow { color: rgba(255,255,255,0.5); }
+  #case3-page .case-h1 { color: #fff; }
+  #case3-page .cht { background: rgba(255,255,255,0.07); color: #ffb27a; border: 1px solid rgba(255,107,0,0.25); }
+  #case3-page .case-type-badge { background: #ffffff; color: #333; border: none; }
+  #case3-page .cs-n { color: #fff; }
+  #case3-page .cs-l { color: #8a8a8a; }
+
+  .hm-logo-hero {
+    font-family: 'Ethnocentric', 'Archivo', sans-serif;
+    font-weight: 400; letter-spacing: 0.02em;
+    font-size: clamp(30px, 4.4vw, 52px); line-height: 1.05; color: #fff;
+  }
+  .hm-logo-hero span { color: #ff6300; }
+
+  /* ── 라이브 임베드 프레임 ── */
+  .hm-device {
+    background: #101010; border: 1px solid #232323; border-radius: 16px;
+    overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+  }
+  .hm-device-bar {
+    display: flex; align-items: center; gap: 6px; padding: 11px 14px;
+    background: #161616; border-bottom: 1px solid #232323;
+  }
+  .hm-device-bar i { width: 10px; height: 10px; border-radius: 50%; background: #2e2e2e; display: block; }
+  .hm-device-bar i:first-child { background: #3d3d3d; }
+  .hm-device-bar em {
+    font-style: normal; margin-left: 10px; font-size: 11px; color: #666;
+    font-family: 'Archivo', sans-serif; letter-spacing: 0.08em;
+  }
+  .hm-live {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Archivo', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; color: #ff6300;
+  }
+  .hm-live::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ff6300;
+    animation: hmBlink 1.4s ease-in-out infinite;
+  }
+  @keyframes hmBlink { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+  .hm-embed { position: relative; overflow: hidden; background: #080808; }
+  .hm-embed iframe { border: 0; display: block; transform-origin: 0 0; background: #080808; }
+  .hm-embed-note { font-size: 12px; color: #999; margin-top: 10px; text-align: center; }
+  .hm-embed-note b { color: #e85f00; font-weight: 600; }
+
+  /* ── 디자인 토큰 쇼케이스 ── */
+  .hm-panel { background: #0c0c0c; border: 1px solid #1f1f1f; border-radius: 16px; padding: 32px; }
+  .hm-swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .hm-sw { border-radius: 8px; overflow: hidden; border: 1px solid #222; }
+  .hm-sw .c { height: 64px; }
+  .hm-sw .t { padding: 8px 9px; background: #131313; }
+  .hm-sw .t b { display: block; font-family: 'Archivo', sans-serif; font-size: 10px; font-weight: 600; color: #ddd; letter-spacing: 0.04em; }
+  .hm-sw .t span { display: block; font-family: monospace; font-size: 10px; color: #777; margin-top: 2px; }
+  .hm-type-row { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 16px 0; border-bottom: 1px solid #1c1c1c; }
+  .hm-type-row:last-child { border-bottom: none; }
+  .hm-type-row .spec { font-family: monospace; font-size: 11px; color: #666; white-space: nowrap; }
+  .hm-btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .hm-btn { font-family: 'Pretendard', 'Figtree', sans-serif; border-radius: 4px; padding: 12px 22px; font-size: 14px; cursor: pointer; transition: opacity 0.15s; }
+  .hm-btn:hover { opacity: 0.82; }
+  .hm-btn.pri { background: #ff7726; color: #000; border: none; font-weight: 800; }
+  .hm-btn.gho { background: transparent; color: #ff7726; border: 1px solid #ff7726; font-weight: 700; }
+  .hm-btn.dan { background: transparent; color: #666; border: 1px solid #3a3a3a; font-weight: 600; }
+
+  /* ── 토큰 램프 ── */
+  .hm-ramp { margin-bottom: 30px; }
+  .hm-ramp:last-child { margin-bottom: 0; }
+  .hm-ramp-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 9px; flex-wrap: wrap; }
+  .hm-ramp-head b { font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #c4c4c4; }
+  .hm-ramp-head span { font-family: monospace; font-size: 10.5px; color: #5f5f5f; }
+  .hm-ramp-strip { display: flex; border-radius: 6px; overflow: hidden; border: 1px solid #242424; }
+  .hm-ramp-strip i { flex: 1; height: 36px; display: block; position: relative; }
+  .hm-ramp-strip i[data-key]::after {
+    content: attr(data-key); position: absolute; left: 50%; transform: translateX(-50%); top: 40px;
+    font-family: monospace; font-size: 9.5px; color: #ff8f5c; white-space: nowrap;
+  }
+  .hm-ramp.keyed { margin-bottom: 46px; }
+
+  /* ── Primitive → Semantic 2계층 ── */
+  .hm-arch { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; margin-bottom: 30px; }
+  .hm-arch-col { background: #131313; border: 1px solid #242424; border-radius: 10px; padding: 17px 19px; }
+  .hm-arch-col b { display: block; font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #ff8f5c; margin-bottom: 10px; }
+  .hm-arch-col code { font-family: monospace; font-size: 11.5px; color: #cfcfcf; display: block; line-height: 2; }
+  .hm-arch-col code em { font-style: normal; color: #6a6a6a; }
+  .hm-arch-arrow { align-self: center; color: #3d3d3d; font-size: 20px; }
+  @media (max-width: 760px) { .hm-arch { grid-template-columns: 1fr; } .hm-arch-arrow { transform: rotate(90deg); justify-self: center; } }
+
+  /* ── 스케일 ── */
+  .hm-scale { display: flex; flex-direction: column; gap: 8px; }
+  .hm-scale-row { display: flex; align-items: center; gap: 12px; }
+  .hm-scale-row b { font-family: monospace; font-size: 10.5px; color: #7a7a7a; width: 112px; flex-shrink: 0; font-weight: 400; }
+  .hm-scale-row i { height: 10px; background: linear-gradient(90deg, #ff6300, #ff8f5c); border-radius: 2px; display: block; }
+  .hm-scale-row u { text-decoration: none; font-family: monospace; font-size: 10.5px; color: #555; }
+
+  /* ── 마이그레이션 ── */
+  .hm-mig { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 18px; }
+  .hm-mig-card { background: #fff3ea; border-radius: 12px; padding: 18px 20px; }
+  .hm-mig-card .t { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #e85f00; }
+  .hm-mig-card .n { font-family: 'Archivo', sans-serif; font-size: 18px; font-weight: 700; color: #1a1a1a; margin: 9px 0 7px; letter-spacing: -0.01em; }
+  .hm-mig-card .n s { color: #b9917c; font-weight: 600; }
+  .hm-mig-card .d { font-size: 12.5px; color: #6b5a50; line-height: 1.65; }
+  @media (max-width: 760px) { .hm-mig { grid-template-columns: 1fr; } }
+
+  /* ── 검증 결과 ── */
+  .hm-verify { margin-top: 12px; background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 22px 24px; display: flex; gap: 36px; flex-wrap: wrap; }
+  .hm-verify > div b { display: block; font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: #e85f00; line-height: 1; }
+  .hm-verify > div span { display: block; font-size: 12px; color: #666; margin-top: 8px; line-height: 1.5; }
+
+  /* ── 세션 화면 재현 목업 — 캐릭터 카메라 피드 ── */
+  .hm-session { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #232323; background: #0d0d0d; box-shadow: 0 24px 70px rgba(0,0,0,0.4); }
+  .hm-sess-cam { position: relative; height: 560px; overflow: hidden;
+    background: radial-gradient(120% 150% at 50% 24%, #504f4f 0%, #3b3a3a 46%, #222121 100%); }
+  /* 카메라 피드: 실사 영상 + 오프라인 분석된 포즈 오버레이(canvas) */
+  .hm-cam-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 0; }
+  .hm-pose-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+  .hm-cam-fx { position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    background:
+      linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.4)),
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.09) 0 1px, transparent 1px 4px),
+      radial-gradient(135% 105% at 50% 42%, transparent 56%, rgba(0,0,0,0.52) 100%); }
+  .hm-sess-status { position: absolute; top: 16px; left: 18px; font-family: monospace; font-size: 11px; color: #ff6300; letter-spacing: 0.1em; z-index: 3; }
+  .hm-sess-status2 { position: absolute; top: 16px; right: 18px; font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; z-index: 3; }
+  @media (max-width: 760px) { .hm-sess-cam { height: 430px; } }
+  .hm-sess-panel { background: rgba(10,10,10,0.92); border-top: 1px solid #1f1f1f; padding: 0 32px 24px; }
+  .hm-prog { height: 3px; background: #1c1c1c; margin: 0 -32px 20px; }
+  .hm-prog i { display: block; height: 100%; background: #ff6300; width: 40%; animation: hmProg 9.6s linear infinite; }
+  @keyframes hmProg { 0% { width: 12%; } 100% { width: 88%; } }
+  .hm-sess-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .hm-sess-name { font-family: 'Pretendard', sans-serif; }
+  .hm-sess-name b { display: block; font-size: 24px; font-weight: 900; color: #fff; letter-spacing: 0.02em; }
+  .hm-sess-name span { display: block; font-size: 12px; color: #666; letter-spacing: 0.15em; margin-top: 6px; font-weight: 700; }
+  .hm-counter { font-family: 'Archivo', sans-serif; font-weight: 800; line-height: 1; display: flex; align-items: baseline; gap: 8px; }
+  .hm-counter b { font-size: 84px; color: #ff6300; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .hm-counter span { font-size: 20px; color: #555; font-weight: 600; }
+
+  /* 카운팅 상태머신 */
+  .hm-fsm { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: stretch; margin: 24px 0 8px; }
+  .hm-fsm-node { background: #fff; border-radius: 12px; padding: 18px; border: 1px solid rgba(0,0,0,0.07); }
+  .hm-fsm-node .st { font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #e85f00; }
+  .hm-fsm-node .cond { font-size: 13px; color: #333; margin-top: 8px; line-height: 1.6; }
+  .hm-fsm-node .cond code { font-family: monospace; font-size: 12px; background: #f4f0ec; border-radius: 4px; padding: 1px 5px; color: #b34a00; }
+  .hm-fsm-arrow { align-self: center; color: #ccc; font-size: 18px; }
+  @media (max-width: 760px) { .hm-fsm { grid-template-columns: 1fr; } .hm-fsm-arrow { transform: rotate(90deg); justify-self: center; } }
+
+  /* 스펙 문서 카드 */
+  .hm-doc { background: #0c0c0c; border: 1px solid #1f1f1f; border-radius: 14px; overflow: hidden; }
+  .hm-doc-head { display: flex; align-items: center; gap: 10px; padding: 12px 18px; background: #141414; border-bottom: 1px solid #1f1f1f; }
+  .hm-doc-head b { font-family: monospace; font-size: 12px; color: #ddd; font-weight: 600; }
+  .hm-doc-head span { font-size: 11px; color: #666; margin-left: auto; font-family: 'Archivo', sans-serif; letter-spacing: 0.05em; }
+  .hm-doc pre { margin: 0; padding: 18px 20px; font-family: monospace; font-size: 11.5px; line-height: 1.75; color: #999; overflow-x: auto; }
+  .hm-doc pre .k { color: #ffb27a; } .hm-doc pre .c { color: #5a5a5a; } .hm-doc pre .o { color: #ff7726; }
+
+  /* 실패 경로 — 번호 + 증상/처리 */
+  .hm-fail { margin-top: 18px; border-top: 1px solid rgba(0,0,0,0.09); }
+  .hm-fail-row { display: grid; grid-template-columns: 44px 1fr; gap: 4px; padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.09); }
+  .hm-fail-n { font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 800; color: #e85f00; letter-spacing: 0.08em; padding-top: 3px; }
+  .hm-fail-sym { font-size: 15px; font-weight: 700; color: #111; line-height: 1.55; margin: 0 0 8px; font-family: 'NanumSquareNeo', sans-serif; word-break: keep-all; }
+  .hm-fail-fix { font-size: 14px; color: #666; line-height: 1.8; margin: 0; word-break: keep-all; }
+  @media (max-width: 640px) { .hm-fail-row { grid-template-columns: 1fr; gap: 8px; } }
+
+  /* 피드백 타이밍 — 시점 + 설명 */
+  .hm-mot { margin-top: 20px; }
+  .hm-mot-row { display: grid; grid-template-columns: 108px 1fr; gap: 8px; padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,0.09); }
+  .hm-mot-row:first-child { border-top: 1px solid rgba(0,0,0,0.09); }
+  .hm-mot-when { font-size: 12.5px; font-weight: 700; color: #e85f00; letter-spacing: 0.02em; padding-top: 4px; font-family: 'NanumSquareNeo', sans-serif; }
+  .hm-mot-t { font-size: 15px; font-weight: 700; color: #111; margin: 0 0 8px; font-family: 'NanumSquareNeo', sans-serif; }
+  .hm-mot-d { font-size: 14px; color: #666; line-height: 1.85; margin: 0; word-break: keep-all; }
+  @media (max-width: 640px) { .hm-mot-row { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* 기준 유무 대비 */
+  .hm-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .hm-ba-col { background: #fff; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 18px 20px; }
+  .hm-ba-col.on { background: #fff3ea; border-color: rgba(232,95,0,0.18); }
+  .hm-ba-lbl { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; color: #999; margin: 0 0 10px; font-family: 'NanumSquareNeo', sans-serif; }
+  .hm-ba-col.on .hm-ba-lbl { color: #e85f00; }
+  .hm-ba-d { font-size: 13.5px; color: #555; line-height: 1.8; margin: 0; word-break: keep-all; }
+  @media (max-width: 640px) { .hm-ba { grid-template-columns: 1fr; } }
+
+  /* 워크플로 스텝 */
+  .hm-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+  .hm-step { background: #fff; border-radius: 12px; padding: 18px; border: 1px solid rgba(0,0,0,0.07); }
+  .hm-step .n { font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 800; color: #e85f00; letter-spacing: 0.08em; }
+  .hm-step .t { font-size: 14px; font-weight: 700; color: #111; margin: 8px 0 6px; font-family: 'NanumSquareNeo', sans-serif; }
+  .hm-step .d { font-size: 12.5px; color: #666; line-height: 1.65; }
+  @media (max-width: 860px) { .hm-steps { grid-template-columns: 1fr 1fr; } .hm-swatches { grid-template-columns: repeat(4, 1fr); } }
+
+  /* mark.hl — 주황 하이라이트로 오버라이드 */
+  #case3-page mark.hl { background: linear-gradient(rgba(255,107,0,0.30), rgba(255,107,0,0.30)) no-repeat left center; background-size: 0% 88%; }
+  #case3-page mark.hl.hl-visible { background-size: 100% 88%; }
+
+  #case3-page .nom-cap { font-size: 12px; color: #999; margin: 6px 0 0; text-align: center; }
+  /* 카드 톤 통일 — 민트/녹색 → 주황 계열 (nom과 공유 클래스라 이 페이지에서만 오버라이드) */
+  #case3-page .c2-detail { background: #fff3ea; }
+  #case3-page .c2-detail-t { color: #e85f00; }
+  /* Overview 메타 4카드 — 높이 통일 */
+  #case3-page .hm-meta { align-items: stretch; }
+  #case3-page .hm-meta .c2-card { display: flex; flex-direction: column; height: 100%; padding-top: 0 !important; padding-bottom: 0 !important; }
+  #case3-page .hm-meta .c2-card-s { margin-top: auto; }
+
+</style>
+</head>
+<body>
+
+
+
+<div class="gradient-bg"><div class="blob-green"></div></div>
+
+<!-- ── GLOBAL NAV (persists across all pages) ── -->
+<nav id="global-nav">
+  <div id="nav-logo" onclick="showPage('home')" style="font-family:'Archivo',sans-serif;font-size:23px;font-weight:600;color:#ffffff;cursor:pointer;letter-spacing:-0.02em;">Miseon Park</div>
+  <div class="global-nav-pills">
+    <a data-page="home" href="#" onclick="showPage('home');return false;">Home</a>
+    <a data-page="about" href="#" onclick="showPage('about');return false;">About</a>
+    <a href="resume.pdf?v=9" target="_blank">Resume</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HOMUSCLE CASE ═══════════════════ -->
+<div id="case3-page" class="page active">
+
+  <div class="case-hero-wrap">
+    <p data-i18n="hm.case-eyebrow.0" class="case-eyebrow">AI Experiment · Side Project · Jul 2026 — Vibe Coding</p>
+    <h1 data-i18n="hm.case-h1.0" class="case-h1" style="display:flex;flex-direction:column;gap:10px;">
+      <span style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-family:'Archivo',sans-serif;">HOMUSCLE : AI 홈트레이닝 트래커</span>
+        <span class="case-type-badge">웹앱</span>
+      </span>
+      <span style="font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>
+    </h1>
+    <div class="case-hero-tags">
+      <span data-i18n="hm.cht.0" class="cht">Vibe Coding · AI 협업</span>
+      <span data-i18n="hm.cht.1" class="cht">MediaPipe Pose</span>
+      <span data-i18n="hm.cht.2" class="cht">On-device YOLO</span>
+      <span data-i18n="hm.cht.3" class="cht">Design System</span>
+      <span data-i18n="hm.cht.4" class="cht">Motion Design</span>
+      <span data-i18n="hm.cht.5" class="cht">Single-file Web App</span>
+    </div>
+
+    <!-- HERO — 라이브 임베드 -->
+    <div style="margin-top:32px;">
+      <div class="hm-device">
+        <div class="hm-device-bar">
+          <i></i><i></i><i></i>
+          <em>homuscle-app.html</em>
+          <span class="hm-live">LIVE</span>
+        </div>
+        <div class="hm-embed" data-w="1560" data-h="962">
+          <iframe src="homuscle-app.html?demo=1" title="HOMUSCLE live app — intro" scrolling="no"></iframe>
+        </div>
+      </div>
+      <p data-i18n="hm.hm-embed-note.0" class="hm-embed-note">이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">새 탭에서 직접 사용해보기 ↗</a></p>
+    </div>
+
+    <div class="case-stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;">
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
+        <div class="cs-n">4<span style="font-size:28px;font-weight:500;color:#777;"> 종목</span></div>
+        <div data-i18n="hm.cs-l.0" class="cs-l">덤벨 운동 자동 카운팅</div>
+      </div>
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;border-left:1px solid rgba(255,255,255,0.08);border-right:1px solid rgba(255,255,255,0.08);">
+        <div class="cs-n">2,970<span style="font-size:28px;font-weight:500;color:#777;"> lines</span></div>
+        <div data-i18n="hm.cs-l.1" class="cs-l">단일 HTML 파일로 완성</div>
+      </div>
+      <div class="case-stats-card" style="background:transparent;padding:28px 24px 24px;">
+        <div class="cs-n">100<span style="font-size:28px;font-weight:500;color:#777;">%</span></div>
+        <div data-i18n="hm.cs-l.2" class="cs-l">온디바이스 추론 · 서버 0</div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="case-sidenav" id="case3-sidenav"></nav>
+
+  <div class="case-body">
+
+    <!-- 1. OVERVIEW -->
+    <div class="cb-section" data-nav="Overview">
+      <p class="cb-label">Overview</p>
+      <h2 data-i18n="hm.cb-h2.0" class="cb-h2">왜 만들었나</h2>
+      <p data-i18n="hm.cb-p.0" class="cb-p">집에서 덤벨 운동을 할 때 횟수를 세는 일이 생각보다 번거롭습니다. 세다가 놓치면 기록이 남지 않고, 기록이 없으면 운동을 이어가기 어려웠습니다. <mark class="hl">직접 겪은 이 문제를 카메라 포즈 인식으로 해결할 수 있을지</mark> 확인해보기 위해 시작한 개인 프로젝트입니다.</p>
+      <p data-i18n="hm.cb-p.1" class="cb-p">HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class="hl">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다.</p>
+
+      <div class="hm-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:32px 0 8px;">
+        <div class="c2-card" style="background:transparent;padding-right:20px;">
+          <div data-i18n="hm.c2-card-l.0" class="c2-card-l">My Role</div>
+          <div data-i18n="hm.c2-card-n.0" class="c2-card-n" style="font-size:17px;">Designer & Builder</div>
+          <div data-i18n="hm.c2-card-s.0" class="c2-card-s">기획 · 디자인 · 구현 · 검증 1인</div>
+        </div>
+        <div class="c2-card" style="background:transparent;padding:0 20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
+          <div data-i18n="hm.c2-card-l.1" class="c2-card-l">Method</div>
+          <div data-i18n="hm.c2-card-n.1" class="c2-card-n" style="font-size:17px;">Vibe Coding</div>
+          <div data-i18n="hm.c2-card-s.1" class="c2-card-s">스펙 문서 기반 AI 협업</div>
+        </div>
+        <div class="c2-card" style="background:transparent;padding:0 20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
+          <div data-i18n="hm.c2-card-l.2" class="c2-card-l">Tech</div>
+          <div data-i18n="hm.c2-card-n.2" class="c2-card-n" style="font-size:17px;">MediaPipe · YOLO</div>
+          <div data-i18n="hm.c2-card-s.2" class="c2-card-s">포즈 추적 + 아령 객체 인식</div>
+        </div>
+        <div class="c2-card" style="background:transparent;padding-left:20px;border-left:1px solid rgba(0,0,0,0.08);border-radius:0;">
+          <div data-i18n="hm.c2-card-l.3" class="c2-card-l">Format</div>
+          <div data-i18n="hm.c2-card-n.3" class="c2-card-n" style="font-size:17px;">1 HTML File</div>
+          <div data-i18n="hm.c2-card-s.3" class="c2-card-s">의존성은 CDN 3개뿐</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. DESIGN SYSTEM -->
+    <div class="cb-section" data-nav="Design System">
+      <p class="cb-label">Design System</p>
+      <h2 data-i18n="hm.ds.h2" class="cb-h2">토큰 9개에서 시스템으로</h2>
+      <p data-i18n="hm.ds.p0" class="cb-p">초기 버전은 CSS 변수 9개로 색을 묶어둔 수준이었습니다. 화면이 늘어나자 같은 오렌지가 화면마다 조금씩 달라지고, 같은 버튼인데 높이가 제각각이 됐습니다. <mark class="hl">사용자는 그 차이를 의도로 읽습니다.</mark> 그래서 Figma에 원본 파일을 만들고, 문서와 제품 코드가 그 값을 참조하는 구조로 다시 세웠습니다.</p>
+      <p data-i18n="hm.ds.p1" class="cb-p">핵심은 <mark class="hl">Primitive → Semantic 2계층</mark>입니다. <code class="c2-code">#ff7726</code> 대신 <code class="c2-code">Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다. 현재 Primitive 31개 위에 쓰임새의 이름을 가진 Semantic 35개를 얹어 씁니다.</p>
+
+      <div class="hm-panel" style="margin:24px 0;">
+        <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin-bottom:18px;">PRIMITIVE — 31</p>
+
+        <div class="hm-ramp keyed">
+          <div class="hm-ramp-head"><b>MONO</b><span>웜그레이 13단계 · 010 → 990</span></div>
+          <div class="hm-ramp-strip"><i style="background:#fefcfb;"></i><i style="background:#f2f0ef;"></i><i style="background:#e1dfde;"></i><i style="background:#cecccb;"></i><i style="background:#b6b4b3;"></i><i style="background:#9d9b9a;"></i><i style="background:#848281;"></i><i style="background:#666463;"></i><i style="background:#393736;"></i><i style="background:#272524;"></i><i style="background:#1d1b1a;"></i><i style="background:#111111;"></i><i style="background:#0a0a0a;" data-key="--bg"></i></div>
+        </div>
+        <div class="hm-ramp keyed">
+          <div class="hm-ramp-head"><b>PRIMARY</b><span>오렌지 13단계 · 010 → 990</span></div>
+          <div class="hm-ramp-strip"><i style="background:#fff8f5;"></i><i style="background:#fff3ed;"></i><i style="background:#ffefe6;"></i><i style="background:#ffdcce;"></i><i style="background:#ffb699;"></i><i style="background:#ff8f5c;"></i><i style="background:#ff7726;"></i><i style="background:#ff6300;" data-key="--accent"></i><i style="background:#d94800;"></i><i style="background:#a63200;"></i><i style="background:#732000;"></i><i style="background:#421100;"></i><i style="background:#240900;"></i></div>
+        </div>
+        <div class="hm-ramp keyed">
+          <div class="hm-ramp-head"><b>RED</b><span>경고 · 삭제 5단계</span></div>
+          <div class="hm-ramp-strip" style="max-width:270px;"><i style="background:#ffebeb;"></i><i style="background:#ffd6d6;"></i><i style="background:#ff9999;"></i><i style="background:#ff6666;"></i><i style="background:#ff4d4d;" data-key="--btn-quaternary"></i></div>
+        </div>
+
+        <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin:34px 0 16px;">SEMANTIC — 35 <span style="font-weight:400;letter-spacing:0.02em;color:#4a4a4a;">Button 21 · Text 6 · Elevation 5 · Border 3</span></p>
+        <div class="hm-arch">
+          <div class="hm-arch-col">
+            <b>PRIMITIVE</b>
+            <code>--mono-990: <em>#0a0a0a</em></code>
+            <code>--primary-400: <em>#ff7726</em></code>
+            <code>--red-300: <em>#ff4d4d</em></code>
+          </div>
+          <div class="hm-arch-arrow">→</div>
+          <div class="hm-arch-col">
+            <b>SEMANTIC</b>
+            <code>--bg: <em>var(--mono-990)</em></code>
+            <code>--btn-primary-bg: <em>var(--primary-400)</em></code>
+            <code>--btn-quaternary-text: <em>var(--red-300)</em></code>
+          </div>
+        </div>
+
+        <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin:0 0 16px;">SCALE</p>
+        <div class="hm-scale">
+          <div class="hm-scale-row"><b>Spacing · 17</b><i style="width:3%;"></i><u>4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 80 · 120</u></div>
+          <div class="hm-scale-row"><b>Radius · 7</b><i style="width:6%;"></i><u>0 · 4 · 8 · 12 · 16 · 20 · 1000</u></div>
+          <div class="hm-scale-row"><b>Type · 13</b><i style="width:11%;"></i><u>H1–H6 · B1–B5 · C1–C2</u></div>
+        </div>
+
+        <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin:32px 0 4px;">TYPE SCALE</p>
+        <div class="hm-type-row">
+          <span style="font-family:'Pretendard','Figtree',sans-serif;font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.01em;">H5 — 화면 제목</span>
+          <span class="spec">28 / 37.8px</span>
+        </div>
+        <div class="hm-type-row">
+          <span style="font-family:'Pretendard','Figtree',sans-serif;font-size:16px;color:#cecccb;">B3 — 본문 텍스트, 기록과 안내를 전달합니다</span>
+          <span class="spec">16 / 28px</span>
+        </div>
+        <div class="hm-type-row">
+          <span style="font-family:'Pretendard','Figtree',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#848281;">C1 — SECTION LABEL</span>
+          <span class="spec">11 / 18px</span>
+        </div>
+
+        <p style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;color:#666;margin:32px 0 16px;">BUTTON <span style="font-weight:400;letter-spacing:0.02em;color:#4a4a4a;">— Primary · Secondary · Tertiary · Quaternary</span></p>
+        <div class="hm-btn-row">
+          <button class="hm-btn pri">운동 시작</button>
+          <button class="hm-btn gho">세트 완료</button>
+          <button class="hm-btn" style="background:#111111;color:#cecccb;border:1px solid #1d1b1a;font-weight:600;">수정</button>
+          <button class="hm-btn" style="background:transparent;color:#ff4d4d;border:1px solid #ff4d4d;font-weight:600;">삭제</button>
+        </div>
+        <p style="font-family:monospace;font-size:11px;color:#555;margin-top:12px;">size 48 / 40 / 32 · state default · hover · dim · loading</p>
+      </div>
+
+      <!-- 2-1. 값의 원본 -->
+      <p data-i18n="hm.ds.sub0" class="cb-label cb-sublabel" style="margin-top:40px;">값의 원본을 한 곳으로</p>
+      <p data-i18n="hm.ds.p2" class="cb-p" style="margin-top:12px;">값이 사는 곳을 셋으로 나눴습니다. <mark class="hl">Figma가 원본, 문서가 설명, 코드가 사용</mark>입니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춘다는 규칙을 먼저 정해두니, 이후의 논의가 취향 문제가 아니라 확인 작업이 됐습니다.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;">
+        <div class="c2-detail"><div data-i18n="hm.ds.src0t" class="c2-detail-t">Figma "DS practice"</div><div data-i18n="hm.ds.src0d" class="c2-detail-d">Variables · Text Styles · Components — 값의 단일 원본</div></div>
+        <div class="c2-detail"><div data-i18n="hm.ds.src1t" class="c2-detail-t">문서 사이트</div><div data-i18n="hm.ds.src1d" class="c2-detail-d">값의 설명과 사용 규칙 — 왜 이 값인지를 남기는 곳</div></div>
+        <div class="c2-detail"><div data-i18n="hm.ds.src2t" class="c2-detail-t">제품 코드</div><div data-i18n="hm.ds.src2d" class="c2-detail-d">CSS 변수로 값을 참조만 — 자체 값을 갖지 않음</div></div>
+      </div>
+      <p data-i18n="hm.ds.p3" class="cb-p" style="margin-top:18px;">규칙을 세우고 첫 점검을 돌리자 곧바로 세 건이 나왔습니다. H1~H6 행간이 의도한 1.15~1.40이 아니라 <strong>1.67~1.71로 느슨하게</strong> 적용돼 있었고, <code class="c2-code">Button/Primary/BG-Hover</code>가 Primary/600을 가리키는데 실제 컴포넌트는 Primary/500으로 렌더링되고 있었으며, hover 상태가 컴포넌트 속성에 <code class="c2-code">state=focus</code>로 잘못 명명돼 있었습니다. <mark class="hl">눈으로는 찾기 어렵고, 기준이 있어야 보이는 종류의 오류였습니다.</mark></p>
+
+      <!-- 2-2. 적용 -->
+      <p data-i18n="hm.ds.sub1" class="cb-label cb-sublabel" style="margin-top:40px;">정의하는 것과 쓰는 것은 다른 일</p>
+      <p data-i18n="hm.ds.p4" class="cb-p" style="margin-top:12px;">문서를 아무리 정리해도 제품 코드가 자기 색값을 들고 있으면 화면은 그대로입니다. 실제로 한동안 <mark class="hl">토큰은 문서에만 있고 제품은 그와 무관하게 돌아가고</mark> 있었습니다. 네 번에 걸쳐 제품을 시스템 쪽으로 옮겼습니다.</p>
+      <div class="hm-mig">
+        <div class="hm-mig-card">
+          <div data-i18n="hm.ds.mig0t" class="t">참조 출처 정리</div>
+          <div data-i18n="hm.ds.mig0n" class="n">외부 컬렉션 <s>10</s> → 0</div>
+          <div data-i18n="hm.ds.mig0d" class="d">다른 파일의 변수를 보고 있어 로컬 값을 바꿔도 따라오지 않던 연결 309개를 로컬 Primitive로 교체했습니다. 컴포넌트 세트도 49개에서 1개로 정리했습니다.</div>
+        </div>
+        <div class="hm-mig-card">
+          <div data-i18n="hm.ds.mig1t" class="t">색</div>
+          <div data-i18n="hm.ds.mig1n" class="n">하드코딩 <s>45곳</s> → 0</div>
+          <div data-i18n="hm.ds.mig1d" class="d">hex 23곳과 rgba 22곳을 토큰으로 교체했습니다. 제품에서 51회 쓰이면서도 램프 어디에도 없던 <code>#ff6b00</code>은 Primary/500으로 흡수해 시스템 밖에 떠 있던 색을 없앴습니다.</div>
+        </div>
+        <div class="hm-mig-card">
+          <div data-i18n="hm.ds.mig2t" class="t">간격 · 타이포</div>
+          <div data-i18n="hm.ds.mig2n" class="n">var() 참조 529곳</div>
+          <div data-i18n="hm.ds.mig2d" class="d">스케일 밖에 있던 간격 76곳과 글자 66곳을 가장 가까운 단계로 맞췄습니다. 이동 폭은 간격 최대 4px, 글자 최대 1.6px입니다. 지정이 아예 없어 브라우저 기본값으로 렌더링되던 행간 56곳도 함께 채웠습니다.</div>
+        </div>
+        <div class="hm-mig-card">
+          <div data-i18n="hm.ds.mig3t" class="t">컴포넌트</div>
+          <div data-i18n="hm.ds.mig3n" class="n">자체 버튼 <s>8종</s> → DS 체계</div>
+          <div data-i18n="hm.ds.mig3d" class="d">25곳의 버튼을 Solid/Text 매트릭스로 옮기며 위계를 정리했습니다. 저장·시작은 Primary, 다음·다시하기는 Secondary, 수정·취소는 Tertiary, 삭제는 Quaternary입니다.</div>
+        </div>
+      </div>
+      <div class="hm-verify">
+        <div><b>0건</b><span data-i18n="hm.ds.v0">전 화면 크기 · 여백 · 라운드 · 폰트 차이</span></div>
+        <div><b>0건</b><span data-i18n="hm.ds.v1">JS 오류</span></div>
+        <div><b>3.36 → 5.18</b><span data-i18n="hm.ds.v2">섹션 라벨 대비율 (부수 효과)</span></div>
+      </div>
+      <p data-i18n="hm.ds.p5" class="cb-p" style="margin-top:16px;">적용 후 전 화면을 비교했을 때 <mark class="hl">바뀐 것은 색뿐이었습니다.</mark> 토큰 값을 따르면서 배경이 <code class="c2-code">#080808 → #0a0a0a</code>로, 섹션 라벨이 <code class="c2-code">#666666 → #848281</code>로 미세하게 달라졌는데, 라벨 쪽은 배경 대비가 3.36:1에서 5.18:1로 올라가 작은 글씨의 가독성이 함께 개선됐습니다.</p>
+
+      <!-- 2-3. 문서 사이트 -->
+      <p data-i18n="hm.ds.sub2" class="cb-label cb-sublabel" style="margin-top:44px;">문서 사이트</p>
+      <p data-i18n="hm.ds.p6" class="cb-p" style="margin-top:12px;">값만 정해두면 결국 각자 기억에 의존하게 됩니다. Get Started · Foundations · Components · Patterns 네 갈래로 문서 사이트를 만들어 <mark class="hl">값과 함께 그 값을 쓰는 규칙</mark>을 적었습니다. 이 사이트 자체도 아래 토큰만으로 만들어 두어, 문서가 곧 시스템이 동작한다는 증거가 되게 했습니다.</p>
+
+      <div class="hm-device" style="margin-top:18px;">
+        <div class="hm-device-bar"><i></i><i></i><i></i><em>Foundations / Color</em><span class="hm-live">LIVE</span></div>
+        <div class="hm-embed" data-w="1400" data-h="1000">
+          <iframe src="homuscle-ds-site.html#/foundations/color" title="HOMUSCLE Design System — Color" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="hm-device" style="margin-top:20px;">
+        <div class="hm-device-bar"><i></i><i></i><i></i><em>Components / Button</em><span class="hm-live">LIVE</span></div>
+        <div class="hm-embed" data-w="1400" data-h="1000">
+          <iframe src="homuscle-ds-site.html#/components/button" title="HOMUSCLE Design System — Button" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+      <p data-i18n="hm.ds.note" class="hm-embed-note">두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다. <a href="homuscle-ds-site.html" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">디자인 시스템 문서 전체 열기 ↗</a></p>
+    </div>
+
+    <!-- 3. KEY SCREENS -->
+    <div class="cb-section" data-nav="Screens">
+      <p class="cb-label">Key Screens</p>
+      <h2 data-i18n="hm.cb-h2.2" class="cb-h2">주요 화면</h2>
+      <p data-i18n="hm.cb-p.4" class="cb-p">아래 화면은 캡처가 아니라 <mark class="hl">실제 앱을 그대로 임베드</mark>한 것입니다. 상단 탭으로 화면을 이동하거나 목표를 추가해볼 수 있습니다.</p>
+
+      <p data-i18n="hm.sub.2" class="cb-label cb-sublabel" style="margin-top:36px;">01 · Training — 목표와 진행 상황</p>
+      <p data-i18n="hm.cb-p.5" class="cb-p" style="margin-bottom:16px;">모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class="hl">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.</p>
+      <div class="hm-device">
+        <div class="hm-embed" data-w="1200" data-h="960">
+          <iframe src="homuscle-app.html?screen=training&demo=1" title="HOMUSCLE — training" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <p data-i18n="hm.sub.3" class="cb-label cb-sublabel" style="margin-top:44px;">02 · Gallery — 운동 기록</p>
+      <p data-i18n="hm.cb-p.6" class="cb-p" style="margin-bottom:16px;">달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class="hl">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다.</p>
+      <div class="hm-device">
+        <div class="hm-embed" data-autofit="1" data-w="1200" data-h="1465">
+          <iframe src="homuscle-app.html?screen=gallery&demo=1" title="HOMUSCLE — gallery" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <p data-i18n="hm.cb-p.6b" class="cb-p" style="margin-top:28px;margin-bottom:16px;">기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class="hl">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다.</p>
+      <div class="hm-device">
+        <div class="hm-embed" data-w="1200" data-h="900">
+          <iframe src="homuscle-app.html?screen=gallery&demo=1&modal=1" title="HOMUSCLE — record detail" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <p data-i18n="hm.sub.4" class="cb-label cb-sublabel" style="margin-top:44px;">03 · Stretch — 스트레칭 가이드</p>
+      <p data-i18n="hm.cb-p.7" class="cb-p" style="margin-bottom:16px;">목·어깨 스트레칭 가이드는 영상 대신 <mark class="hl">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.</p>
+      <div class="hm-device">
+        <div class="hm-embed" data-w="1200" data-h="820">
+          <iframe src="homuscle-app.html?screen=stretch&demo=1" title="HOMUSCLE — stretch" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. SESSION -->
+    <div class="cb-section" data-nav="Session">
+      <p class="cb-label">Session</p>
+      <h2 data-i18n="hm.cb-h2.3" class="cb-h2">세션 화면 설계</h2>
+      <p data-i18n="hm.cb-p.8" class="cb-p">세션 화면은 제약이 분명했습니다. 사용자는 <mark class="hl">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다.</p>
+      <p data-i18n="hm.cb-p.9" class="cb-p" style="font-size:13px;color:#888;">아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href="homuscle-app.html?demo=1" target="_blank" style="color:#e85f00;font-weight:600;text-decoration:none;">라이브 앱 ↗</a>에서 체험할 수 있습니다.</p>
+
+      <div class="hm-session" style="margin:20px 0 8px;">
+        <div class="hm-sess-cam">
+          <video class="hm-cam-video" id="hmCamVideo" muted loop playsinline autoplay preload="auto" disablepictureinpicture>
+            <source src="images/homuscle/session-real.webm" type="video/webm">
+            <source src="images/homuscle/session-real.mp4" type="video/mp4">
+          </video>
+          <canvas class="hm-pose-canvas" id="hmPoseCanvas"></canvas>
+          <div class="hm-cam-fx"></div>
+          <div class="hm-sess-status">MODEL READY · POSE TRACKING</div>
+          <div class="hm-sess-status2">ON-DEVICE · 0 SERVER</div>
+        </div>
+        <div class="hm-sess-panel">
+          <div class="hm-prog"><i></i></div>
+          <div class="hm-sess-row">
+            <div class="hm-sess-name">
+              <b>덤벨 컬</b>
+              <span>2세트 / 3세트 · 04:12</span>
+            </div>
+            <div class="hm-counter"><b id="hmRep">17</b><span>/ 30</span></div>
+            <div class="hm-btn-row">
+              <button class="hm-btn pri">일시정지</button>
+              <button class="hm-btn gho">세트 완료</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p data-i18n="hm.nom-cap.0" class="nom-cap" style="margin-bottom:32px;">세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다</p>
+
+      <p data-i18n="hm.sub.5" class="cb-label cb-sublabel">카운팅 상태머신</p>
+      <p data-i18n="hm.cb-p.10" class="cb-p" style="margin-top:12px;">초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class="hl">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.</p>
+      <div class="hm-fsm">
+        <div class="hm-fsm-node">
+          <div class="st">DOWN</div>
+          <div class="cond">팔꿈치 각도 <code>&gt; 110°</code><br>2프레임 연속 유지 시 상태 확정</div>
+        </div>
+        <div class="hm-fsm-arrow">→</div>
+        <div class="hm-fsm-node">
+          <div class="st">UP</div>
+          <div class="cond">팔꿈치 각도 <code>&lt; 80°</code><br>DOWN→UP 전환 시 <b style="color:#e85f00;">+1 카운트</b></div>
+        </div>
+        <div class="hm-fsm-arrow">→</div>
+        <div class="hm-fsm-node">
+          <div class="st">DEBOUNCE</div>
+          <div class="cond">최소 간격 <code>300ms</code><br>반동·떨림에 의한 중복 카운트 차단</div>
+        </div>
+      </div>
+
+      <p data-i18n="hm.sub.0" class="cb-label cb-sublabel" style="margin-top:44px;">쓰다가 멈췄던 지점</p>
+      <p data-i18n="hm.cb-p.13" class="cb-p" style="margin-top:12px;">기능이 되는 것보다 <mark class="hl">안 될 때 이유를 알 수 있는가</mark>가 이 도구를 계속 쓰게 만드는 조건이었습니다. 실제로 세션이 멈췄던 세 지점입니다.</p>
+      <div class="hm-fail">
+        <div class="hm-fail-row">
+          <div class="hm-fail-n">01</div>
+          <div class="hm-fail-body">
+            <p data-i18n="hm.fail-sym.0" class="hm-fail-sym">아령 인식 모델이 로드되지 않자 카운트가 아예 올라가지 않았습니다</p>
+            <p data-i18n="hm.fail-fix.0" class="hm-fail-fix">아령 박스 렌더링과 포즈 기반 카운팅을 분리했습니다. 모델이 없으면 박스만 생략되고 세션은 끝까지 진행됩니다.</p>
+          </div>
+        </div>
+        <div class="hm-fail-row">
+          <div class="hm-fail-n">02</div>
+          <div class="hm-fail-body">
+            <p data-i18n="hm.fail-sym.1" class="hm-fail-sym">프레임 밖으로 나가면 화면은 그대로인데 숫자만 멈췄습니다</p>
+            <p data-i18n="hm.fail-fix.1" class="hm-fail-fix">포즈가 잡히지 않는 동안 '카메라 앞에 서주세요' 오버레이를 띄웁니다. 사용자가 자기 자세를 의심하기 전에 원인을 먼저 보여주기 위해서입니다.</p>
+          </div>
+        </div>
+        <div class="hm-fail-row">
+          <div class="hm-fail-n">03</div>
+          <div class="hm-fail-body">
+            <p data-i18n="hm.fail-sym.2" class="hm-fail-sym">저장 공간이 차자 세션 기록 자체가 남지 않았습니다</p>
+            <p data-i18n="hm.fail-fix.2" class="hm-fail-fix">용량이 부족하면 인증샷을 먼저 버리고 운동 기록은 남기도록 우선순위를 뒀습니다. 사진보다 연속 기록이 끊기는 쪽이 더 큰 손실이었습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MOTIVATION -->
+    <div class="cb-section" data-nav="Motivation">
+      <p class="cb-label">Feedback & Motivation</p>
+      <h2 data-i18n="hm.cb-h2.4" class="cb-h2">화면을 볼 수 없는 사용자를 위한 피드백</h2>
+      <p data-i18n="hm.cb-p.11" class="cb-p">카운트는 정확해졌는데 계속 쓰게 되지는 않았습니다. 이유는 단순했습니다 — 덤벨을 들고 있으면 <mark class="hl">화면을 볼 수가 없습니다.</mark> 시선은 위나 아래를 향하고, 숫자가 올라갔는지는 세트가 끝나고서야 확인하게 됩니다. 그래서 피드백을 화면 밖으로 꺼냈습니다.</p>
+      <div class="hm-mot">
+        <div class="hm-mot-row">
+          <div data-i18n="hm.mot-w.0" class="hm-mot-when">운동 중</div>
+          <div>
+            <p data-i18n="hm.mot-t.0" class="hm-mot-t">소리와 손목 펄스</p>
+            <p data-i18n="hm.mot-d.0" class="hm-mot-d">카운트마다 짧은 사운드가 울리고 손목 주변에 주황 펄스가 번집니다. 화면을 보지 않아도 세어졌다는 걸 알 수 있습니다. 결국 나를 세트 끝까지 가게 만든 건 이 하나였습니다.</p>
+          </div>
+        </div>
+        <div class="hm-mot-row">
+          <div data-i18n="hm.mot-w.1" class="hm-mot-when">운동 전</div>
+          <div>
+            <p data-i18n="hm.mot-t.1" class="hm-mot-t">자세 가이드</p>
+            <p data-i18n="hm.mot-d.1" class="hm-mot-d">세션에 들어가면 모션 가이드를 먼저 띄웁니다. 카운트가 안 되는 상황을 나중에 안내하기보다, 그런 자세로 시작하는 것 자체를 줄이는 편이 나았습니다.</p>
+          </div>
+        </div>
+        <div class="hm-mot-row">
+          <div data-i18n="hm.mot-w.2" class="hm-mot-when">끝난 뒤</div>
+          <div>
+            <p data-i18n="hm.mot-t.2" class="hm-mot-t">인증샷과 D-day</p>
+            <p data-i18n="hm.mot-d.2" class="hm-mot-d">완료 직후 3-2-1 카운트다운으로 자동 촬영해 기록에 붙이고, 다음 날 D-day와 연속 기록을 띄웁니다. 오늘을 끝내는 장치라기보다 내일 다시 열 이유를 만드는 쪽에 가깝습니다.</p>
+          </div>
+        </div>
+      </div>
+      <p data-i18n="hm.cb-p.14" class="cb-p" style="margin-top:20px;">컨페티나 격려 문구처럼 눈에 보이는 장치도 넣었지만, 실제로 차이를 만든 건 <mark class="hl">화면을 보지 않아도 전달되는 신호</mark>였습니다.</p>
+    </div>
+
+    <!-- 6. PROCESS -->
+    <div class="cb-section" data-nav="Process">
+      <p class="cb-label">Process — Working with AI</p>
+      <h2 data-i18n="hm.cb-h2.5" class="cb-h2">기준을 문서로 쓰기 전과 후</h2>
+      <p data-i18n="hm.cb-p.12" class="cb-p">처음에는 만들고 싶은 걸 그때그때 설명했습니다. 동작하는 화면은 빠르게 나왔지만, 요청 한 번에 카드 모서리가 둥글어지고 주황색이 배경까지 번졌습니다. 같은 지적을 세 번쯤 반복하고 나서야 문제를 알았습니다. <mark class="hl">AI가 기준을 어긴 게 아니라, 기준이 어디에도 적혀 있지 않았습니다.</mark></p>
+
+      <div class="hm-ba">
+        <div class="hm-ba-col">
+          <p data-i18n="hm.ba-lbl.0" class="hm-ba-lbl">기준 없이 요청할 때</p>
+          <p data-i18n="hm.ba-d.0" class="hm-ba-d">"카드 좀 더 깔끔하게" — 매번 다른 결과가 나오고, 마음에 안 들면 처음부터 다시 설명해야 했습니다.</p>
+        </div>
+        <div class="hm-ba-col on">
+          <p data-i18n="hm.ba-lbl.1" class="hm-ba-lbl">기준을 문서로 고정한 뒤</p>
+          <p data-i18n="hm.ba-d.1" class="hm-ba-d">"radius 4px, 주황은 강조점에만" — 대화를 새로 시작해도 같은 결과가 나왔습니다.</p>
+        </div>
+      </div>
+
+      <p data-i18n="hm.cb-p.15" class="cb-p" style="margin-top:24px;">이후 디자인 토큰, 레이아웃 규칙, 카운팅 임계값, 그리고 무엇이 완성인지를 판단할 체크리스트를 문서 하나에 모으고 모든 작업의 기준으로 삼았습니다. 프롬프트를 잘 쓰는 것보다 <mark class="hl">완성의 정의를 먼저 내리는 일</mark>이 결과물을 좌우했습니다.</p>
+
+      <div class="hm-doc" style="margin-top:20px;">
+        <div class="hm-doc-head"><b>HOMUSCLE.md</b><span data-i18n="hm.doc-tag.0">발췌</span></div>
+        <pre><span class="c">### 레이아웃 규칙</span>
+- 카드 border-radius: 4px <span class="c">(날카롭게)</span>
+- 주황(<span class="o">#ff6b00</span>)은 강조점에만 — 면적으로 쓰지 않음
+<span class="c">### 카운팅 민감도</span>
+ANGLE_UP = <span class="o">80°</span> / ANGLE_DOWN = <span class="o">110°</span>
+<span class="c">### 완성 기준</span>
+- [ ] 모델 로드 실패해도 카운팅은 동작한다
+- [ ] 포즈 미검출 시 원인을 화면에 말해준다
+- [ ] 카운트는 화면을 보지 않아도 인지된다</pre>
+      </div>
+      <p data-i18n="hm.nom-cap.1" class="nom-cap" style="text-align:left;margin-top:10px;">완성 기준은 기능 목록이 아니라 <b>사용자가 무엇을 알 수 있어야 하는가</b>로 적었습니다</p>
+    </div>
+
+    <!-- 7. REFLECTION -->
+    <div class="cb-section" data-nav="Reflection">
+      <p class="cb-label">Reflection</p>
+      <h2 data-i18n="hm.cb-h2.6" class="cb-h2">배운 것과 다음 단계</h2>
+
+      <div class="obs-wrap">
+        <div class="obs-row">
+          <div class="obs-avatar">📐</div>
+          <div class="obs-meta">
+            <span data-i18n="hm.obs-label.0" class="obs-label">Learning #1</span>
+            <div data-i18n="hm.obs-bubble.0" class="obs-bubble" style="background:#fff3ea;"><strong>숫자는 맞는데 <mark class="hl">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다.</div>
+          </div>
+        </div>
+        <div class="obs-row right">
+          <div class="obs-avatar">🛡</div>
+          <div class="obs-meta">
+            <span data-i18n="hm.obs-label.1" class="obs-label">Learning #2</span>
+            <div data-i18n="hm.obs-bubble.1" class="obs-bubble"><strong>고장인지 <mark class="hl">내 탓인지 구분되지 않으면</mark> 다시 열지 않는다</strong><br>모델이 로드되지 않은 날, 앱은 에러도 없이 그냥 숫자를 세지 않았습니다. 그럴 때 사용자가 의심하는 건 앱이 아니라 자기 자세입니다. 실패할 때 무엇이 안 되는지 말하게 고치고 나서야 믿고 쓸 수 있는 도구가 됐습니다.</div>
+          </div>
+        </div>
+        <div class="obs-row">
+          <div class="obs-avatar">📄</div>
+          <div class="obs-meta">
+            <span data-i18n="hm.obs-label.2" class="obs-label">Learning #3</span>
+            <div data-i18n="hm.obs-bubble.2" class="obs-bubble" style="background:#fff3ea;"><strong>필요한 건 지시하는 능력이 아니라 <mark class="hl">완성을 정의하는 능력</mark>이었다</strong><br>같은 도구를 쓰고도 결과가 달라진 이유는 프롬프트가 아니라 기준의 유무였습니다. 디자이너의 일이 화면을 그리는 것에서 판단 기준을 명시하는 쪽으로 옮겨가고 있다는 감각을 얻었습니다.</div>
+          </div>
+        </div>
+      </div>
+
+      <p data-i18n="hm.sub.6" class="cb-label cb-sublabel" style="margin-top:32px;">알고 있는 한계</p>
+      <div class="ref-grid">
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.0" class="ref-lbl">검증 범위</p><p data-i18n="hm.ref-p.0" class="ref-p">본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.1" class="ref-lbl">환경 민감도</p><p data-i18n="hm.ref-p.1" class="ref-p">조명·카메라 각도에 따라 포즈 인식 편차가 있어 <strong>측면 운동 종목</strong>은 인식률이 낮아집니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.2" class="ref-lbl">모바일 경험</p><p data-i18n="hm.ref-p.2" class="ref-p">데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다.</p></div>
+        <div class="ref-card"><p data-i18n="hm.ref-lbl.3" class="ref-lbl">단일 파일이라는 선택</p><p data-i18n="hm.ref-p.3" class="ref-p">링크 하나로 바로 열리게 하려고 HTML 한 파일로 유지했습니다. 대신 <strong>종목을 늘리는 시점</strong>에는 구조를 분리해야 합니다.</p></div>
+      </div>
+
+      <p data-i18n="hm.sub.1" class="cb-label cb-sublabel" style="margin-top:40px;">다음에 할 것</p>
+      <p data-i18n="hm.cb-p.16" class="cb-p" style="margin-top:12px;">아직은 혼자 쓰면서 맞춘 상태입니다. 다음에는 5명 정도에게 직접 써보게 해서 카운팅을 믿을 수 있는지, 첫 세션에서 어디가 막히는지를 확인해보고 싶습니다. 운동 종목은 무릎 각도를 쓰는 스쿼트·런지로 넓힐 수 있고, 모바일 세로 화면 최적화는 그다음 순서로 보고 있습니다.</p>
+    </div>
+
+  </div>
+
+  <div class="case-end-section">
+    <div class="case-end-card">
+      <div style="position:relative;z-index:1;text-align:left;">
+        <p data-i18n="hm.next-eyebrow.0" style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:16px;">다른 케이스</p>
+        <div class="next-case-grid">
+          <div class="next-case-link" onclick="showPage('case2')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/nom/NOM main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+            <div>
+              <p data-i18n="hm.next-tag.0" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">프로덕트 디자인 · Naver OGQ Market · 2026</p>
+              <h3 data-i18n="hm.next-title.0" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">네이버 OGQ마켓 홈 상단 노출 구조 개선</h3>
+              <span data-i18n="hm.next-cta.0" style="font-size:13px;color:#e85f00;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
+          </div>
+          <div class="next-case-link" onclick="showPage('case')" style="cursor:pointer;background:rgba(255,255,255,0.72);border-radius:16px;padding:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px);transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.9)'" onmouseout="this.style.background='rgba(255,255,255,0.72)'">
+            <img class="next-case-thumb" src="images/youtube/youtube main image.png" style="width:160px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;"/>
+            <div>
+              <p data-i18n="hm.next-tag.1" style="font-size:11px;color:#999;margin-bottom:6px;letter-spacing:0.04em;">YouTube 리디자인 챌린지 · 2025</p>
+              <h3 data-i18n="hm.next-title.1" style="font-family:'NanumSquareNeo',sans-serif;font-size:17px;font-weight:700;color:#111;line-height:1.4;margin-bottom:12px;">유튜브 쇼츠 앱 쇼핑 경험 재설계</h3>
+              <span data-i18n="hm.next-cta.1" style="font-size:13px;color:#e85f00;font-weight:600;">케이스 스터디 보기 →</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <button data-i18n="hm.next-allwork.0" class="ce-btn p" onclick="showPage('home')">← 전체 작업 보기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /case3-page -->
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb-overlay" onclick="closeLB()">
+  <div class="lb-img-wrap" onclick="event.stopPropagation(); event.preventDefault();">
+    <img id="lb-img" src="" alt="확대 이미지" onclick="toggleZoom(event)" style="cursor:zoom-in;transition:transform 0.15s ease;max-width:90vw;max-height:90vh;border-radius:12px;"/>
+  </div>
+  <button class="lb-close" onclick="event.stopPropagation(); closeLB();">✕</button>
+  <div id="lb-minimap" onclick="event.stopPropagation();" style="display:none;position:fixed;bottom:28px;right:28px;width:160px;height:100px;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.25);box-shadow:0 4px 20px rgba(0,0,0,0.4);background:#111;">
+    <img id="lb-minimap-img" src="" style="width:100%;height:100%;object-fit:contain;"/>
+    <div id="lb-minimap-box" style="position:absolute;border:2px solid #ff3d3d;border-radius:2px;cursor:grab;"></div>
+  </div>
+  <div style="position:fixed;bottom:28px;left:50%;transform:translateX(-50%);font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;pointer-events:none;">클릭으로 확대 · 다시 클릭으로 축소 · ESC로 닫기</div>
+</div>
+
+<div id="char-widget">
+  <div id="char-bubble"></div>
+  <img id="char-img" src="images/character.png" alt="character"/>
+</div>
+
+<script src="i18n-dict.js"></script>
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+<script src="homuscle-pose.js"></script>
+<script>
+  /* scroll reveal 비활성화 — 단독 페이지에서 깜빡임 방지 */
+  document.querySelectorAll('.cb-section,.ref-card,.sol-card,.meta-cell,.case-card,.pain-card,.insight-item,.opp-card').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.transition = 'none';
+  });
+
+  /* ── 라이브 임베드 스케일링 ──
+     기본은 data-h 고정값. 단 갤러리처럼 기록 수·사진 유무에 따라 내용 높이가
+     달라지는 화면은 data-autofit="1"을 붙여, 앱이 알려준 실제 높이를 쓴다.
+     (고정값을 쓰면 어떤 사람에겐 잘리고 어떤 사람에겐 아래가 비어 보인다) */
+  const embedH = new WeakMap();
+  function fitEmbeds() {
+    document.querySelectorAll('.hm-embed').forEach(w => {
+      const bw = +w.dataset.w || 1240;
+      let bh = +w.dataset.h || 760;
+      if (w.dataset.autofit === '1' && embedH.get(w)) bh = embedH.get(w);
+      const f = w.querySelector('iframe');
+      if (!f) return;
+      const s = w.clientWidth / bw;
+      f.style.width = bw + 'px';
+      f.style.height = bh + 'px';
+      f.style.transform = 'scale(' + s + ')';
+      w.style.height = (bh * s) + 'px';
+    });
+  }
+  window.addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || d.type !== 'hm-embed-height' || !d.h) return;
+    document.querySelectorAll('.hm-embed[data-autofit="1"]').forEach(w => {
+      const f = w.querySelector('iframe');
+      if (f && f.contentWindow === e.source) { embedH.set(w, d.h); fitEmbeds(); }
+    });
+  });
+  window.addEventListener('resize', fitEmbeds);
+  window.addEventListener('load', fitEmbeds);
+  fitEmbeds();
+
+  /* ── 다크 밴드를 지나면 내비 + 사이드nav를 라이트 모드로 ── */
+  (function(){
+    const nav = document.getElementById('global-nav');
+    const sidenav = document.getElementById('case3-sidenav');
+    function onScroll(){
+      const light = window.scrollY > (window.innerWidth <= 768 ? 1000 : 1400);
+      nav.classList.toggle('nav-light', light);
+      if (sidenav) sidenav.classList.toggle('snav-light', light);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ── 캐릭터 위젯: Overview 섹션 진입 시에만 등장 ── */
+  (function(){
+    const widget = document.getElementById('char-widget');
+    if (!widget) return;
+    widget.classList.remove('visible');
+    const overview = document.querySelector('#case3-page [data-nav="Overview"]');
+    if (!overview) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { widget.classList.add('visible'); io.disconnect(); } });
+    }, { threshold: 0.15 });
+    io.observe(overview);
+  })();
+
+  /* ── 세션 목업: 실사 영상 + 포즈 오버레이 ──────────────────────────
+     영상은 MediaPipe Pose로 미리 분석해 homuscle-pose.js에 프레임별
+     랜드마크/팔꿈치 각도/카운트 상태를 구워 두었다. 여기서는 video의
+     currentTime으로 해당 프레임을 찾아 캔버스에 그리기만 한다.
+     (런타임 추론이 없어 CDN 의존성·발열·지연이 없다)                    */
+  (function(){
+    var video  = document.getElementById('hmCamVideo');
+    var canvas = document.getElementById('hmPoseCanvas');
+    var repEl  = document.getElementById('hmRep');
+    var DATA   = window.HM_POSE;
+    if (!video || !canvas || !DATA) return;
+
+    var ctx = canvas.getContext('2d');
+    var F = DATA.frames, N = F.length, FPS = DATA.fps;
+    var VW = DATA.w, VH = DATA.h;
+    var BASE_REP = 17;            // 패널에 표시되는 시작 렙
+    var lastRep = -1, pulseAt = -1;
+
+    // 캔버스 해상도를 표시 크기 × DPR로 맞춘다
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize(){
+      var r = canvas.getBoundingClientRect();
+      canvas.width  = Math.round(r.width  * dpr);
+      canvas.height = Math.round(r.height * dpr);
+    }
+    resize();
+    if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+    else window.addEventListener('resize', resize);
+
+    // video는 object-fit:cover — 같은 cover 변환으로 좌표를 매핑해야 어긋나지 않는다
+    function mapper(){
+      var cw = canvas.width, ch = canvas.height;
+      var s  = Math.max(cw / VW, ch / VH);
+      var dw = VW * s, dh = VH * s;
+      var ox = (cw - dw) / 2, oy = (ch - dh) / 2;
+      return function(x, y){ return [ox + x * dw, oy + y * dh]; };
+    }
+
+    var ORANGE = '#ff6300';
+    function line(a, b, w, color){
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]);
+      ctx.lineWidth = w; ctx.strokeStyle = color; ctx.lineCap = 'round'; ctx.stroke();
+    }
+    function dot(p, r, color){
+      ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, 6.284); ctx.fillStyle = color; ctx.fill();
+    }
+    function label(text, x, y, size, color, align){
+      ctx.font = '700 ' + size + 'px ui-monospace, SFMono-Regular, Menlo, monospace';
+      ctx.textAlign = align || 'left'; ctx.textBaseline = 'middle';
+      ctx.lineWidth = size * 0.34; ctx.strokeStyle = 'rgba(0,0,0,0.55)';
+      ctx.lineJoin = 'round'; ctx.strokeText(text, x, y);
+      ctx.fillStyle = color; ctx.fillText(text, x, y);
+    }
+
+    function draw(){
+      if (!canvas.width) { requestAnimationFrame(draw); return; }
+      var t  = video.currentTime || 0;
+      var fi = Math.min(N - 1, Math.max(0, Math.round(t * FPS)));
+      var f  = F[fi];
+      var M  = mapper();
+      var k  = canvas.width / 1280;          // 1280px 기준으로 선/글자 두께 스케일
+      var K  = function(v){ return Math.max(1, v * k); };
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      var LS = M(f[0],  f[1]),  RS = M(f[2],  f[3]);
+      var LE = M(f[4],  f[5]),  RE = M(f[6],  f[7]);
+      var LW = M(f[8],  f[9]),  RW = M(f[10], f[11]);
+      var LI = M(f[12], f[13]), RI = M(f[14], f[15]);
+      var angL = f[16], angR = f[17], isUp = f[18], rep = f[19];
+
+      // 어깨선 (연한 그린 — 기준선)
+      line(LS, RS, K(2.5), 'rgba(0,255,100,0.30)');
+      dot(LS, K(4), 'rgba(0,255,100,0.55)'); dot(RS, K(4), 'rgba(0,255,100,0.55)');
+
+      // 팔 (주황 — 카운팅에 실제로 쓰이는 관절)
+      [[LS,LE,LW],[RS,RE,RW]].forEach(function(a){
+        line(a[0], a[1], K(5), 'rgba(255,107,0,0.9)');
+        line(a[1], a[2], K(5), 'rgba(255,107,0,0.9)');
+      });
+      [LE, RE].forEach(function(p){ dot(p, K(9), ORANGE); });
+      [LW, RW].forEach(function(p){ dot(p, K(6), ORANGE); });
+
+      // 아령 인식 박스 — 손목~검지 사이를 중심으로.
+      // 손이 프레임 밖으로 내려가는 구간에서는 박스가 잘려 보이므로 생략한다.
+      [[LW,LI],[RW,RI]].forEach(function(h){
+        var cx = (h[0][0] + h[1][0]) / 2, cy = (h[0][1] + h[1][1]) / 2;
+        if (cy > canvas.height * 0.9 || cy < 0) return;
+        var w = K(132), hh = K(86);
+        ctx.lineWidth = K(3); ctx.strokeStyle = ORANGE;
+        ctx.strokeRect(cx - w/2, cy - hh/2, w, hh);
+        ctx.fillStyle = 'rgba(255,107,0,0.35)';
+        ctx.fillRect(cx - w/2, cy + hh/2 - K(4), w, K(4));
+        label('DUMBBELL', cx - w/2, cy - hh/2 - K(13), K(16), ORANGE);
+      });
+
+      // 팔꿈치 각도 — 팔꿈치 바깥쪽에 표시
+      label('L ' + Math.round(angL) + '°', LE[0] + K(24), LE[1], K(25), ORANGE, 'left');
+      label('R ' + Math.round(angR) + '°', RE[0] - K(24), RE[1], K(25), ORANGE, 'right');
+
+      // 상태 배지 (UP / DOWN) — 아래 상태머신 다이어그램과 같은 용어
+      label(isUp ? 'UP' : 'DOWN', canvas.width / 2, K(46), K(20),
+            isUp ? ORANGE : 'rgba(255,255,255,0.55)', 'center');
+
+      // 카운트 순간 펄스
+      if (rep !== lastRep) { if (lastRep !== -1) pulseAt = t; lastRep = rep;
+        if (repEl) {
+          repEl.textContent = BASE_REP + rep;
+          repEl.style.transition = 'none';
+          repEl.style.textShadow = '0 0 34px rgba(255,107,0,0.85)';
+          setTimeout(function(){
+            repEl.style.transition = 'text-shadow 0.6s ease';
+            repEl.style.textShadow = 'none';
+          }, 80);
+        }
+      }
+      if (pulseAt >= 0) {
+        var e = t - pulseAt;
+        if (e >= 0 && e < 0.75) {
+          var p = e / 0.75;
+          ctx.beginPath();
+          ctx.arc(LE[0], LE[1], K(18) + p * K(52), 0, 6.284);
+          ctx.lineWidth = K(4);
+          ctx.strokeStyle = 'rgba(255,107,0,' + (0.85 * (1 - p)).toFixed(3) + ')';
+          ctx.stroke();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+
+    // 루프 복귀 시 카운터 상태 초기화
+    video.addEventListener('seeked', function(){ lastRep = -1; pulseAt = -1; });
+    video.addEventListener('timeupdate', function(){
+      if (video.currentTime < 0.15) { lastRep = -1; pulseAt = -1; }
+    });
+
+    // 자동재생이 막히면(모바일 절전 등) 사용자의 첫 인터랙션 때 재생
+    var kick = function(){ video.play().catch(function(){}); };
+    kick();
+    ['click','touchstart','scroll'].forEach(function(ev){
+      window.addEventListener(ev, kick, { once: true, passive: true });
+    });
+
+    requestAnimationFrame(draw);
+  })();
+
+</script>
+
+</body>
+</html>
