@@ -1181,7 +1181,100 @@ window.I18N_DICT = {
     koAt: "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. <mark class=\"hl\">리서치를 통해 공유 니즈가 확인되어</mark> Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다."
   },
 
-  /* ───────── HOMUSCLE (homuscle.html)  (83개 · 번역완료 83 · 남음 0) ───────── */
+  /* ───────── HOMUSCLE (homuscle.html)  (98개 · 번역완료 98 · 남음 0) ───────── */
+  /* ── Key Screens 사용 흐름 재구성 (2026.09) ── */
+  "hm.scr.goalp": {
+    ko:   "목표는 운동 종류·횟수·세트·날짜 네 가지만 고르면 끝납니다. 종목 4종을 버튼으로 먼저 펼쳐 <mark class=\"hl\">무엇을 할 수 있는 앱인지가 입력 화면에서 드러나도록</mark> 했고, 날짜는 과거와 미래를 모두 열어뒀습니다. 어제 못 한 운동을 오늘 기록하는 경우가 실제로 더 많았기 때문입니다.",
+    en:   "Creating a goal takes four choices — exercise, reps, sets, and date. The four exercises are laid out as buttons up front so <mark class=\"hl\">the input screen itself shows what the app can do</mark>, and the date field stays open to both past and future days, because logging yesterday's missed workout today turned out to be the more common case.",
+    koAt: "목표는 운동 종류·횟수·세트·날짜 네 가지만 고르면 끝납니다. 종목 4종을 버튼으로 먼저 펼쳐 <mark class=\"hl\">무엇을 할 수 있는 앱인지가 입력 화면에서 드러나도록</mark> 했고, 날짜는 과거와 미래를 모두 열어뒀습니다. 어제 못 한 운동을 오늘 기록하는 경우가 실제로 더 많았기 때문입니다."
+  },
+  "hm.sub.sess": {
+    ko:   "03 · Session — 직접 촬영하며 운동 실행",
+    en:   "03 · Session — working out in front of the camera",
+    koAt: "03 · Session — 직접 촬영하며 운동 실행"
+  },
+  "hm.scr.sessp": {
+    ko:   "운동을 시작하면 카메라가 켜지고, 팔꿈치 각도를 프레임마다 추적해 횟수를 셉니다. 화면에는 <mark class=\"hl\">지금 몇 개인지와 얼마나 남았는지만</mark> 남기고 나머지 조작은 세션 전후로 옮겼습니다. 아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면입니다.",
+    en:   "Starting a workout turns the camera on and counts reps by tracking elbow angle frame by frame. The screen keeps <mark class=\"hl\">only the current count and how much is left</mark>; every other control moved to before or after the session. Below is real footage with the pose-tracking output drawn straight onto it.",
+    koAt: "운동을 시작하면 카메라가 켜지고, 팔꿈치 각도를 프레임마다 추적해 횟수를 셉니다. 화면에는 <mark class=\"hl\">지금 몇 개인지와 얼마나 남았는지만</mark> 남기고 나머지 조작은 세션 전후로 옮겼습니다. 아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면입니다."
+  },
+  /* ── Design System 섹션 (2026.09 개편) ── */
+  "hm.ds.h2": {
+    ko:   "토큰 9개에서 시스템으로",
+    en:   "From Nine Variables to a System",
+    koAt: "토큰 9개에서 시스템으로"
+  },
+  "hm.ds.p0": {
+    ko:   "초기 버전은 CSS 변수 9개로 색을 묶어둔 수준이었습니다. 화면이 늘어나자 같은 오렌지가 화면마다 조금씩 달라지고, 같은 버튼인데 높이가 제각각이 됐습니다. <mark class=\"hl\">사용자는 그 차이를 의도로 읽습니다.</mark> 그래서 Figma에 원본 파일을 만들고, 문서와 제품 코드가 그 값을 참조하는 구조로 다시 세웠습니다.",
+    en:   "The first version was little more than nine CSS variables holding the colors together. As screens multiplied, the same orange drifted slightly from one screen to the next, and buttons that should have matched ended up at different heights. <mark class=\"hl\">Users read those inconsistencies as intent.</mark> So I built a source file in Figma and rebuilt the structure so that both the documentation and the product code reference those values.",
+    koAt: "초기 버전은 CSS 변수 9개로 색을 묶어둔 수준이었습니다. 화면이 늘어나자 같은 오렌지가 화면마다 조금씩 달라지고, 같은 버튼인데 높이가 제각각이 됐습니다. <mark class=\"hl\">사용자는 그 차이를 의도로 읽습니다.</mark> 그래서 Figma에 원본 파일을 만들고, 문서와 제품 코드가 그 값을 참조하는 구조로 다시 세웠습니다."
+  },
+  "hm.ds.p1": {
+    ko:   "핵심은 <mark class=\"hl\">Primitive → Semantic 2계층</mark>입니다. <code class=\"c2-code\">#ff7726</code> 대신 <code class=\"c2-code\">Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다. 현재 Primitive 31개 위에 쓰임새의 이름을 가진 Semantic 35개를 얹어 씁니다.",
+    en:   "The core is a <mark class=\"hl\">Primitive → Semantic two-layer structure</mark>. The moment you call it <code class=\"c2-code\">Primary/400</code> instead of <code class=\"c2-code\">#ff7726</code>, the meaning survives even when the value changes. Today 35 semantic tokens — named for how they are used — sit on top of 31 primitives.",
+    koAt: "핵심은 <mark class=\"hl\">Primitive → Semantic 2계층</mark>입니다. <code class=\"c2-code\">#ff7726</code> 대신 <code class=\"c2-code\">Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다. 현재 Primitive 31개 위에 쓰임새의 이름을 가진 Semantic 35개를 얹어 씁니다."
+  },
+  "hm.ds.sub0": {
+    ko:   "값의 원본을 한 곳으로",
+    en:   "One Source of Truth",
+    koAt: "값의 원본을 한 곳으로"
+  },
+  "hm.ds.p2": {
+    ko:   "값이 사는 곳을 셋으로 나눴습니다. <mark class=\"hl\">Figma가 원본, 문서가 설명, 코드가 사용</mark>입니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춘다는 규칙을 먼저 정해두니, 이후의 논의가 취향 문제가 아니라 확인 작업이 됐습니다.",
+    en:   "I split the places a value can live into three. <mark class=\"hl\">Figma is the source, the documentation is the explanation, and the code is the usage.</mark> Setting the rule up front — when the three disagree, Figma wins — turned later discussions from matters of taste into verification work.",
+    koAt: "값이 사는 곳을 셋으로 나눴습니다. <mark class=\"hl\">Figma가 원본, 문서가 설명, 코드가 사용</mark>입니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춘다는 규칙을 먼저 정해두니, 이후의 논의가 취향 문제가 아니라 확인 작업이 됐습니다."
+  },
+  "hm.ds.src0t": {
+    ko:   "Figma \"DS practice\"",
+    en:   "Figma \"DS practice\"",
+    koAt: "Figma \"DS practice\""
+  },
+  "hm.ds.src0d": {
+    ko:   "Variables · Text Styles · Components — 값의 단일 원본",
+    en:   "Variables · Text Styles · Components — the single source of truth",
+    koAt: "Variables · Text Styles · Components — 값의 단일 원본"
+  },
+  "hm.ds.src1t": {
+    ko:   "문서 사이트",
+    en:   "Documentation site",
+    koAt: "문서 사이트"
+  },
+  "hm.ds.src1d": {
+    ko:   "값의 설명과 사용 규칙 — 왜 이 값인지를 남기는 곳",
+    en:   "The explanation and usage rules — where the reasoning behind each value lives",
+    koAt: "값의 설명과 사용 규칙 — 왜 이 값인지를 남기는 곳"
+  },
+  "hm.ds.src2t": {
+    ko:   "제품 코드",
+    en:   "Product code",
+    koAt: "제품 코드"
+  },
+  "hm.ds.src2d": {
+    ko:   "CSS 변수로 값을 참조만 — 자체 값을 갖지 않음",
+    en:   "References values through CSS variables only — holds none of its own",
+    koAt: "CSS 변수로 값을 참조만 — 자체 값을 갖지 않음"
+  },
+  "hm.ds.p3": {
+    ko:   "규칙을 세우고 첫 점검을 돌리자 곧바로 세 건이 나왔습니다. H1~H6 행간이 의도한 1.15~1.40이 아니라 <strong>1.67~1.71로 느슨하게</strong> 적용돼 있었고, <code class=\"c2-code\">Button/Primary/BG-Hover</code>가 Primary/600을 가리키는데 실제 컴포넌트는 Primary/500으로 렌더링되고 있었으며, hover 상태가 컴포넌트 속성에 <code class=\"c2-code\">state=focus</code>로 잘못 명명돼 있었습니다. <mark class=\"hl\">눈으로는 찾기 어렵고, 기준이 있어야 보이는 종류의 오류였습니다.</mark>",
+    en:   "The first audit after setting the rule surfaced three issues immediately. Line-heights for H1–H6 were applied at <strong>1.67–1.71, far looser than the intended</strong> 1.15–1.40; <code class=\"c2-code\">Button/Primary/BG-Hover</code> pointed to Primary/600 while the component actually rendered Primary/500; and the hover state was misnamed <code class=\"c2-code\">state=focus</code> in the component properties. <mark class=\"hl\">These are the kind of errors you cannot catch by eye — only against a standard.</mark>",
+    koAt: "규칙을 세우고 첫 점검을 돌리자 곧바로 세 건이 나왔습니다. H1~H6 행간이 의도한 1.15~1.40이 아니라 <strong>1.67~1.71로 느슨하게</strong> 적용돼 있었고, <code class=\"c2-code\">Button/Primary/BG-Hover</code>가 Primary/600을 가리키는데 실제 컴포넌트는 Primary/500으로 렌더링되고 있었으며, hover 상태가 컴포넌트 속성에 <code class=\"c2-code\">state=focus</code>로 잘못 명명돼 있었습니다. <mark class=\"hl\">눈으로는 찾기 어렵고, 기준이 있어야 보이는 종류의 오류였습니다.</mark>"
+  },
+  "hm.ds.sub2": {
+    ko:   "문서 사이트",
+    en:   "The Documentation Site",
+    koAt: "문서 사이트"
+  },
+  "hm.ds.p6": {
+    ko:   "값만 정해두면 결국 각자 기억에 의존하게 됩니다. Get Started · Foundations · Components · Patterns 네 갈래로 문서 사이트를 만들어 <mark class=\"hl\">값과 함께 그 값을 쓰는 규칙</mark>을 적었습니다. 이 사이트 자체도 아래 토큰만으로 만들어 두어, 문서가 곧 시스템이 동작한다는 증거가 되게 했습니다.",
+    en:   "Values alone leave everyone relying on memory. I built a documentation site in four parts — Get Started · Foundations · Components · Patterns — to record <mark class=\"hl\">the values together with the rules for using them.</mark> The site itself is built from nothing but those tokens, so the documentation doubles as proof that the system works.",
+    koAt: "값만 정해두면 결국 각자 기억에 의존하게 됩니다. Get Started · Foundations · Components · Patterns 네 갈래로 문서 사이트를 만들어 <mark class=\"hl\">값과 함께 그 값을 쓰는 규칙</mark>을 적었습니다. 이 사이트 자체도 아래 토큰만으로 만들어 두어, 문서가 곧 시스템이 동작한다는 증거가 되게 했습니다."
+  },
+  "hm.ds.note": {
+    ko:   "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>",
+    en:   "Both frames are the <b>live documentation site, embedded</b> — you can open other pages from its sidebar. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Open the full design system ↗</a>",
+    koAt: "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>"
+  },
+
   "hm.c2-card-l.0": {
     ko:   "My Role",
     en:   "My Role",
@@ -1248,19 +1341,14 @@ window.I18N_DICT = {
     koAt: "AI Experiment · Side Project · Jul 2026 — Vibe Coding"
   },
   "hm.case-h1.0": {
-    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>",
-    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI Home Workout Tracker</span>\n        <span class=\"case-type-badge\">Web App</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">A web app that counts dumbbell reps automatically through camera pose detection — from design system to build and validation</span>",
-    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 정의부터 구현·검증까지</span>"
+    ko:   "\n      <span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 신규 구축부터 구현·검증까지</span>\n    ",
+    en:   "\"<span style=\\\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\\\">\\n        <span style=\\\"font-family:'Archivo',sans-serif;\\\">HOMUSCLE : AI Home Workout Tracker</span>\\n        <span class=\\\"case-type-badge\\\">Web App</span>\\n      </span>\\n      <span style=\\\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\\\">A web app that counts dumbbell reps automatically through camera pose detection — from building a new design system through implementation and validation</span>\"",
+    koAt: "\n      <span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 신규 구축부터 구현·검증까지</span>\n    "
   },
   "hm.cb-h2.0": {
     ko:   "왜 만들었나",
     en:   "Why I built it",
     koAt: "왜 만들었나"
-  },
-  "hm.cb-h2.1": {
-    ko:   "디자인 시스템 정의",
-    en:   "Defining the design system",
-    koAt: "디자인 시스템 정의"
   },
   "hm.cb-h2.2": {
     ko:   "주요 화면",
@@ -1297,20 +1385,10 @@ window.I18N_DICT = {
     en:   "HOMUSCLE tracks your elbow angle in real time as you work out in front of a webcam, <mark class=\"hl\">counting and recording reps automatically</mark>. It runs from a single HTML file — no install, no server, no account. I defined the planning, design system, motion and copy, then built it together with AI (Claude).",
     koAt: "HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class=\"hl\">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다."
   },
-  "hm.cb-p.2": {
-    ko:   "프리미엄 스포츠 브랜드의 공간 경험을 레퍼런스로 삼아, <mark class=\"hl\">블랙 배경에 주황(#FF6B00) 단일 액센트</mark>만 사용하는 규칙을 정했습니다. 색이 하나뿐이므로 위계는 타이포그래피와 여백으로 만들었습니다. 운동명은 4~5rem 올캡스, 레이블은 0.72rem 올캡스에 넓은 자간, 카운터는 7rem 주황으로 정리했고, 주황은 강조가 필요한 요소에만 제한적으로 사용했습니다.",
-    en:   "Using the spatial experience of premium sports brands as a reference, I set a rule of <mark class=\"hl\">a black background with a single orange (#FF6B00) accent</mark>. With only one color available, hierarchy had to come from typography and whitespace: exercise names at 4–5rem all-caps, labels at 0.72rem all-caps with wide tracking, the counter at 7rem in orange — and orange reserved strictly for what needed emphasis.",
-    koAt: "프리미엄 스포츠 브랜드의 공간 경험을 레퍼런스로 삼아, <mark class=\"hl\">블랙 배경에 주황(#FF6B00) 단일 액센트</mark>만 사용하는 규칙을 정했습니다. 색이 하나뿐이므로 위계는 타이포그래피와 여백으로 만들었습니다. 운동명은 4~5rem 올캡스, 레이블은 0.72rem 올캡스에 넓은 자간, 카운터는 7rem 주황으로 정리했고, 주황은 강조가 필요한 요소에만 제한적으로 사용했습니다."
-  },
-  "hm.cb-p.3": {
-    ko:   "모든 색은 CSS 변수 토큰으로만 쓰도록 규칙화해, 화면이 늘어나도 <mark class=\"hl\">시스템이 일관되게 유지되도록</mark> 했습니다.",
-    en:   "I made it a rule to use colors only as CSS variable tokens, so <mark class=\"hl\">the system stays consistent</mark> as screens multiply.",
-    koAt: "모든 색은 CSS 변수 토큰으로만 쓰도록 규칙화해, 화면이 늘어나도 <mark class=\"hl\">시스템이 일관되게 유지되도록</mark> 했습니다."
-  },
   "hm.cb-p.4": {
-    ko:   "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 상단 탭으로 화면을 이동하거나 목표를 추가해볼 수 있습니다.",
-    en:   "The screens below aren't captures — they're <mark class=\"hl\">the real app embedded as-is</mark>. Use the tabs to move between screens or try adding a goal.",
-    koAt: "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 상단 탭으로 화면을 이동하거나 목표를 추가해볼 수 있습니다."
+    ko:   "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 목표를 세우고 → 몸을 풀고 → 운동하고 → 기록을 남기는 순서로, 실제 사용 흐름을 따라 배치했습니다. 직접 눌러보거나 목표를 추가해볼 수 있습니다.",
+    en:   "The screens below aren't captures — they're <mark class=\"hl\">the real app embedded as-is</mark>. They follow the actual usage flow: set a goal → warm up → work out → keep the record. Click around, or try adding a goal of your own.",
+    koAt: "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 목표를 세우고 → 몸을 풀고 → 운동하고 → 기록을 남기는 순서로, 실제 사용 흐름을 따라 배치했습니다. 직접 눌러보거나 목표를 추가해볼 수 있습니다."
   },
   "hm.cb-p.5": {
     ko:   "모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class=\"hl\">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.",
@@ -1338,9 +1416,9 @@ window.I18N_DICT = {
     koAt: "세션 화면은 제약이 분명했습니다. 사용자는 <mark class=\"hl\">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다."
   },
   "hm.cb-p.9": {
-    ko:   "아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다.",
-    en:   "Below is a session-screen mockup built by overlaying pose-tracking output onto real footage — the actual session needs camera permission, so you can try it in the <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">live app ↗</a>.",
-    koAt: "아래는 실제 촬영 영상에 포즈 인식 결과를 입힌 세션 화면 목업입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다."
+    ko:   "위 03 화면이 그렇게 정리한 결과입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다.",
+    en:   "Screen 03 above is what that reasoning produced — the actual session needs camera permission, so you can try it in the <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">live app ↗</a>.",
+    koAt: "위 03 화면이 그렇게 정리한 결과입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다."
   },
   "hm.cb-p.10": {
     ko:   "초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class=\"hl\">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.",
@@ -1618,14 +1696,14 @@ window.I18N_DICT = {
     koAt: "01 · Training — 목표와 진행 상황"
   },
   "hm.sub.3": {
-    ko:   "02 · Gallery — 운동 기록",
-    en:   "02 · Gallery — workout records",
-    koAt: "02 · Gallery — 운동 기록"
+    ko:   "04 · Gallery — 운동 기록",
+    en:   "04 · Gallery — workout records",
+    koAt: "04 · Gallery — 운동 기록"
   },
   "hm.sub.4": {
-    ko:   "03 · Stretch — 스트레칭 가이드",
-    en:   "03 · Stretch — stretching guide",
-    koAt: "03 · Stretch — 스트레칭 가이드"
+    ko:   "02 · Stretch — 스트레칭 가이드",
+    en:   "02 · Stretch — stretching guide",
+    koAt: "02 · Stretch — 스트레칭 가이드"
   },
   "hm.sub.5": {
     ko:   "카운팅 상태머신",

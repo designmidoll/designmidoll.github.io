@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOMUSCLE Design System</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTgwLjAyNTQgNDcuNTkxMUM4Mi43MzI1IDQ3LjU5MTEgODQuODcgNDkuMzAwOSA4NS42Mjk5IDUyLjAwODFMODcuOTE4OSA1OS45MTI0Qzg5Ljc5ODggNTIuODM5NSA5Ni45ODc3IDQ4LjExNDUgMTA2LjU3NCA0OC4xMTQ1SDEyNy4yMDdDMTI3Ljg2MSA0OC4xMTQ1IDEyOC4yMzMgNDguODYyOCAxMjcuODM4IDQ5LjM4NEwxMjIuNzcgNTYuMDY0N0MxMjIuNjIgNTYuMjYyIDEyMi4zODYgNTYuMzc4MiAxMjIuMTM5IDU2LjM3ODJIMTA2LjU3NEMxMDAuNDQ4IDU2LjM3ODIgOTcuMjE3OCA1OC44OTU4IDk3LjIxNzggNjMuNjkyNkM5Ny4yMTggNjguNjc5MSAxMDAuNjg1IDcxLjYyMzMgMTA2LjU3NCA3MS42MjMzSDEyNy4yMDdDMTI3Ljg2MSA3MS42MjMzIDEyOC4yMzMgNzIuMzcyNSAxMjcuODM4IDcyLjg5MzhMMTIyLjc3IDc5LjU3NDVDMTIyLjYyIDc5Ljc3MTcgMTIyLjM4NiA3OS44ODcgMTIyLjEzOSA3OS44ODdIMTA2LjU3NEMxMDAuNjk2IDc5Ljg4NyA5NS42MjM2IDc3Ljg5NTcgOTIuMTc5NyA3NC42MjMzTDkzLjQxMTEgNzguODc1MkM5My41NTc0IDc5LjM4MTQgOTMuMTc3MyA3OS44ODcgOTIuNjUwNCA3OS44ODdIODQuMTQ0NUM4My43ODc4IDc5Ljg4NjkgODMuNDc1IDc5LjY0OCA4My4zODA5IDc5LjMwNEw3OS4wMjgzIDYzLjM3MjNDNzguODM5OSA2Mi42ODI1IDc3LjkwNTcgNjIuNTc2MyA3Ny41Njc0IDYzLjIwNjNMNzAuMjQyMiA3Ni44NDY5QzY4Ljc2OTkgNzkuNTA2NiA2Ny4yNDk2IDgwLjQwOTQgNjQuMzUyNSA4MC40MDk0QzYxLjQwODIgODAuNDA5MyA1OS44ODg2IDc5LjUwNjQgNTguNDYzOSA3Ni44NDY5TDUxLjMxNDUgNjMuMjIxOUM1MC45ODE4IDYyLjU4NzggNTAuMDQ1MiA2Mi42ODU5IDQ5Ljg1MTYgNjMuMzc1Mkw0NS4zNzUgNzkuMzA4OEM0NS4yNzkxIDc5LjY1MDMgNDQuOTY4IDc5Ljg4NyA0NC42MTMzIDc5Ljg4N0gzNi4yOTk4QzM2LjE4ODcgNzkuODg3IDM2LjA4NDcgNzkuODYyNyAzNS45OTAyIDc5LjgyMjVDMzUuNzgzNyA3OS44NjQ4IDM1LjU2OTYgNzkuODg3IDM1LjM1MDYgNzkuODg3SDI5LjUyNTRDMjkuMDg4MyA3OS44ODcgMjguNzMzNSA3OS41MzMxIDI4LjczMzQgNzkuMDk1OVY2OC40MjZDMjguNzMzNCA2Ny45ODkgMjguMzc5NCA2Ny42MzQyIDI3Ljk0MjQgNjcuNjM0SDEwLjYyM0MxMC4xODU5IDY3LjYzNCA5LjgzMTA1IDY3Ljk4ODkgOS44MzEwNSA2OC40MjZWNzkuMDk1OUM5LjgzMSA3OS41MzI5IDkuNDc2OTkgNzkuODg2OCA5LjA0MDA0IDc5Ljg4N0gzLjE2NjAyQzEuNDE3NDkgNzkuODg2OCAwIDc4LjQ2OTUgMCA3Ni43MjA5VjUxLjI4MDVDMS45NzczZS0wNSA0OS41MzIgMS40MTc1IDQ4LjExNDcgMy4xNjYwMiA0OC4xMTQ1SDkuMDQwMDRDOS40NzY5IDQ4LjExNDcgOS44MzA4NiA0OC40Njg3IDkuODMxMDUgNDguOTA1NVY1OC41Nzg0QzkuODMxMDUgNTkuMDE1NSAxMC4xODU5IDU5LjM3MDQgMTAuNjIzIDU5LjM3MDRIMjcuOTQyNEMyOC4zNzk0IDU5LjM3MDIgMjguNzMzNCA1OS4wMTU0IDI4LjczMzQgNTguNTc4NFY0OC45MDU1QzI4LjczMzYgNDguNDY4NSAyOS4wODgzIDQ4LjExNDUgMjkuNTI1NCA0OC4xMTQ1SDM1LjM1MDZDMzcuMDk5MiA0OC4xMTQ1IDM4LjUxNzYgNDkuNTMxOSAzOC41MTc2IDUxLjI4MDVWNjguODI3NEw0My41MDI5IDUyLjAwODFDNDQuMzEwMyA0OS4yMDYgNDYuMzUyOSA0Ny41OTExIDQ5LjEwNzQgNDcuNTkxMUM1MS4zODcgNDcuNTkxMSA1My4xOTE5IDQ4LjczMDcgNTQuNDI2OCA1MC45MTUzTDYzLjg0NjcgNjguNDczOUM2NC4xNDUgNjkuMDI5NSA2NC45NDE5IDY5LjAzIDY1LjI0MTIgNjguNDc0OUw3NC43MDYxIDUwLjkxNTNDNzUuODkzMyA0OC43MzA3IDc3Ljc0NTkgNDcuNTkxMiA4MC4wMjU0IDQ3LjU5MTFaIiBmaWxsPSIjRkY2MzAwIi8+PC9zdmc+">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+/* ============================================================================
+   HOMUSCLE DESIGN TOKENS
+   이 문서 사이트 자체가 아래 토큰만으로 만들어져 있습니다 (도그푸딩).
+   값의 출처는 Figma "DS practice" 파일입니다.
+============================================================================ */
+:root{
+  /* PRIMITIVE — Mono (웜그레이 13단계) */
+  --mono-010:#fefcfb; --mono-030:#f2f0ef; --mono-050:#e1dfde; --mono-100:#cecccb;
+  --mono-200:#b6b4b3; --mono-300:#9d9b9a; --mono-400:#848281; --mono-500:#666463;
+  --mono-600:#393736; --mono-700:#272524; --mono-800:#1d1b1a; --mono-900:#111111; --mono-990:#0a0a0a;
+
+  /* PRIMITIVE — Primary (오렌지 13단계) */
+  --primary-010:#fff8f5; --primary-030:#fff3ed; --primary-050:#ffefe6; --primary-100:#ffdcce;
+  --primary-200:#ffb699; --primary-300:#ff8f5c; --primary-400:#ff7726; --primary-500:#ff6300;
+  --primary-600:#d94800; --primary-700:#a63200; --primary-800:#732000; --primary-900:#421100; --primary-990:#240900;
+
+  /* PRIMITIVE — Red (경고/삭제, 5단계) */
+  --red-030:#ffebeb; --red-050:#ffd6d6; --red-100:#ff9999; --red-200:#ff6666; --red-300:#ff4d4d;
+
+  /* PRIMITIVE — Base */
+  --base-white:#ffffff; --base-black:#000000;
+
+  /* SEMANTIC — 표면 / 텍스트 */
+  --bg:var(--mono-990); --surface:var(--mono-900); --border:var(--mono-800); --muted:var(--mono-600);
+  --sub:var(--mono-400); --aux:var(--mono-300); --text:var(--mono-100); --em:#ffffff;
+  --accent:var(--primary-500); --accent-dim:rgba(255,99,0,.125);
+
+  /* SEMANTIC — Elevation (구조형 표면 밝기 단계) */
+  --elevation-0:var(--mono-990); --elevation-1:var(--mono-900); --elevation-2:var(--mono-800);
+  --elevation-3:var(--mono-700); --elevation-4:var(--mono-600);
+
+  /* SEMANTIC — Button */
+  --btn-primary-bg:var(--primary-400); --btn-primary-bg-hover:var(--primary-500); --btn-primary-bg-dim:var(--mono-700);
+  --btn-primary-text:var(--base-black); --btn-primary-text-dim:var(--mono-500);
+  --btn-secondary-border:var(--primary-400); --btn-secondary-border-dim:var(--mono-600);
+  --btn-secondary-text:var(--primary-400); --btn-secondary-text-dim:var(--mono-500);
+  --btn-secondary-bg-hover:var(--mono-700);
+  --btn-tertiary-bg:var(--mono-900); --btn-tertiary-bg-hover:var(--mono-600);
+  --btn-tertiary-border:var(--mono-800); --btn-tertiary-border-hover:var(--mono-600);
+  --btn-tertiary-text:var(--mono-100); --btn-tertiary-text-dim:var(--mono-600);
+  --btn-quaternary-border:var(--red-300); --btn-quaternary-border-dim:var(--mono-600);
+  --btn-quaternary-text:var(--red-300); --btn-quaternary-text-dim:var(--mono-500);
+  --btn-quaternary-bg-hover:var(--mono-700);
+
+  /* SPACING — 17단계 (0~120px) */
+  --space-0:0px; --space-2:2px; --space-4:4px; --space-6:6px; --space-8:8px; --space-10:10px;
+  --space-12:12px; --space-16:16px; --space-20:20px; --space-24:24px; --space-28:28px; --space-32:32px;
+  --space-40:40px; --space-48:48px; --space-64:64px; --space-80:80px; --space-120:120px;
+
+  /* RADIUS — 7단계 */
+  --radius-0:0px; --radius-4:4px; --radius-8:8px; --radius-12:12px;
+  --radius-16:16px; --radius-20:20px; --radius-1000:1000px;
+
+  /* OPACITY — Black / White / Primary × 5~90% */
+  --op-black-05:rgba(0,0,0,.05); --op-black-10:rgba(0,0,0,.1); --op-black-20:rgba(0,0,0,.2);
+  --op-black-30:rgba(0,0,0,.3); --op-black-40:rgba(0,0,0,.4); --op-black-50:rgba(0,0,0,.5);
+  --op-black-60:rgba(0,0,0,.6); --op-black-70:rgba(0,0,0,.7); --op-black-80:rgba(0,0,0,.8); --op-black-90:rgba(0,0,0,.9);
+  --op-white-05:rgba(255,255,255,.05); --op-white-10:rgba(255,255,255,.1); --op-white-20:rgba(255,255,255,.2);
+  --op-white-30:rgba(255,255,255,.3); --op-white-40:rgba(255,255,255,.4); --op-white-50:rgba(255,255,255,.5);
+  --op-white-60:rgba(255,255,255,.6); --op-white-70:rgba(255,255,255,.7); --op-white-80:rgba(255,255,255,.8); --op-white-90:rgba(255,255,255,.9);
+  --op-primary-05:rgba(255,99,0,.05); --op-primary-10:rgba(255,99,0,.1); --op-primary-20:rgba(255,99,0,.2);
+  --op-primary-30:rgba(255,99,0,.3); --op-primary-40:rgba(255,99,0,.4); --op-primary-50:rgba(255,99,0,.5);
+  --op-primary-60:rgba(255,99,0,.6); --op-primary-70:rgba(255,99,0,.7); --op-primary-80:rgba(255,99,0,.8); --op-primary-90:rgba(255,99,0,.9);
+
+  /* GLOW — 인터랙션 강조 */
+  --glow-resting:0 0 22px rgba(255,99,0,.14), 0 0 16px rgba(255,99,0,.07);
+  --glow-active:0 0 34px rgba(255,99,0,.35), 0 0 20px rgba(255,99,0,.14);
+  --glow-lift:0 14px 30px -14px rgba(255,99,0,.5);
+
+  /* TYPOGRAPHY — 13단계 */
+  --fs-h1:56px; --lh-h1:64.4px;  --fs-h2:48px; --lh-h2:57.6px;  --fs-h3:40px; --lh-h3:50px;
+  --fs-h4:32px; --lh-h4:41.6px;  --fs-h5:28px; --lh-h5:37.8px;  --fs-h6:24px; --lh-h6:33.6px;
+  --fs-b1:20px; --lh-b1:34px;  --fs-b2:18px; --lh-b2:30px;  --fs-b3:16px; --lh-b3:28px;
+  --fs-b4:14px; --lh-b4:24px;  --fs-b5:12px; --lh-b5:20px;
+  --fs-c1:11px; --lh-c1:18px;  --fs-c2:10px; --lh-c2:16px;
+
+  /* 사이트 셸 전용 */
+  --header-h:60px; --sidebar-w:250px; --toc-w:200px; --content-max:760px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 24px)}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* ============================ HEADER ============================ */
+header{
+  position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--space-28);
+  background:rgba(10,10,10,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.brand{display:flex;align-items:center;gap:var(--space-10);cursor:pointer;text-decoration:none}
+.brand .wordmark{height:13px;width:auto;color:var(--primary-500);display:block}
+.brand .sublabel{color:var(--mono-500);font-size:var(--fs-c1);font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.top-nav{display:flex;gap:var(--space-4);align-items:center}
+.top-nav a{
+  color:var(--mono-300);font-weight:600;font-size:var(--fs-b4);text-decoration:none;
+  padding:var(--space-6) var(--space-12);border-radius:var(--radius-8);
+  transition:color .15s ease,background-color .15s ease;
+}
+.top-nav a:hover{color:var(--mono-050);background:var(--mono-800)}
+.top-nav a.active{color:var(--em);background:var(--mono-800)}
+.header-meta{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace;letter-spacing:.04em}
+
+/* ============================ LAYOUT ============================ */
+.layout{display:flex;align-items:flex-start;padding-top:var(--header-h)}
+
+/* --- Sidebar --- */
+.sidebar{
+  width:var(--sidebar-w);flex-shrink:0;position:sticky;top:var(--header-h);
+  height:calc(100vh - var(--header-h));overflow-y:auto;
+  padding:var(--space-24) var(--space-16) var(--space-64) var(--space-28);
+  border-right:1px solid var(--border);
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--mono-800);border-radius:3px}
+.search-wrap{position:relative;margin-bottom:var(--space-20)}
+.search-wrap input{
+  width:100%;background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-8);
+  padding:var(--space-8) var(--space-12) var(--space-8) 30px;color:var(--text);
+  font-family:inherit;font-size:var(--fs-b5);outline:none;transition:border-color .15s ease;
+}
+.search-wrap input:focus{border-color:var(--mono-600)}
+.search-wrap input::placeholder{color:var(--mono-500)}
+.search-wrap .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--mono-500);font-size:var(--fs-b5);pointer-events:none}
+.side-group{margin-bottom:var(--space-24)}
+.side-group-label{
+  color:var(--mono-500);font-size:var(--fs-c1);font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;padding:0 var(--space-10);margin-bottom:var(--space-8);
+}
+.side-link{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);
+  color:var(--mono-300);font-size:var(--fs-b4);text-decoration:none;
+  padding:var(--space-6) var(--space-10);border-radius:var(--radius-8);margin-bottom:2px;
+  transition:color .12s ease,background-color .12s ease;
+}
+.side-link:hover{color:var(--mono-050);background:var(--mono-900)}
+.side-link.active{color:var(--em);background:var(--mono-800);font-weight:600}
+.side-link .wip{
+  color:var(--mono-500);font-size:var(--fs-c2);font-weight:700;letter-spacing:.06em;
+  border:1px solid var(--mono-700);border-radius:var(--radius-1000);padding:1px 6px;flex-shrink:0;
+}
+.side-empty{color:var(--mono-500);font-size:var(--fs-b5);padding:var(--space-10)}
+
+/* --- Content --- */
+.content-wrap{flex:1;min-width:0;display:flex;justify-content:flex-start;padding:var(--space-40) var(--space-40) var(--space-120) var(--space-64)}
+main{width:100%;max-width:var(--content-max)}
+
+/* --- TOC --- */
+.toc{
+  width:var(--toc-w);flex-shrink:0;position:sticky;top:var(--header-h);
+  height:calc(100vh - var(--header-h));overflow-y:auto;
+  padding:var(--space-40) var(--space-28) var(--space-64) 0;
+}
+.toc-label{color:var(--mono-500);font-size:var(--fs-c1);font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--space-12)}
+.toc a{
+  display:block;color:var(--mono-400);font-size:var(--fs-b5);text-decoration:none;
+  padding:var(--space-4) 0 var(--space-4) var(--space-12);
+  border-left:1px solid var(--mono-800);line-height:1.5;
+  transition:color .12s ease,border-color .12s ease;
+}
+.toc a:hover{color:var(--mono-100)}
+.toc a.active{color:var(--primary-400);border-left-color:var(--primary-400)}
+@media (max-width:1180px){ .toc{display:none} }
+@media (max-width:900px){
+  .sidebar{display:none}
+  .content-wrap{padding:var(--space-28) var(--space-20) var(--space-80)}
+  .top-nav a{padding:var(--space-6) var(--space-8);font-size:var(--fs-b5)}
+  .header-meta{display:none}
+}
+
+/* ============================ 문서 타이포 ============================ */
+.breadcrumb{color:var(--mono-500);font-size:var(--fs-b5);font-weight:600;margin-bottom:var(--space-16);letter-spacing:.02em}
+.breadcrumb span{color:var(--mono-700);margin:0 var(--space-6)}
+main h1{
+  color:var(--em);font-size:var(--fs-h3);line-height:var(--lh-h3);font-weight:900;
+  letter-spacing:-.035em;margin-bottom:var(--space-16);
+}
+@media (max-width:700px){ main h1{font-size:var(--fs-h5);line-height:var(--lh-h5)} }
+.lead{color:var(--mono-200);font-size:var(--fs-b2);line-height:var(--lh-b2);margin-bottom:var(--space-32);word-break:keep-all}
+main h2{
+  color:var(--em);font-size:var(--fs-h6);line-height:var(--lh-h6);font-weight:800;letter-spacing:-.02em;
+  margin:var(--space-64) 0 var(--space-16);padding-top:var(--space-8);
+}
+main h3{color:var(--mono-050);font-size:var(--fs-b2);line-height:var(--lh-b2);font-weight:700;margin:var(--space-32) 0 var(--space-12)}
+main p{color:var(--mono-300);font-size:var(--fs-b3);line-height:var(--lh-b3);margin-bottom:var(--space-16);word-break:keep-all}
+main ul{color:var(--mono-300);font-size:var(--fs-b3);line-height:var(--lh-b3);padding-left:var(--space-20);margin-bottom:var(--space-16)}
+main li{margin-bottom:var(--space-6);word-break:keep-all}
+main b,main strong{color:var(--mono-050);font-weight:700}
+main a.inline{color:var(--primary-400);text-decoration:none;border-bottom:1px solid var(--primary-800)}
+main a.inline:hover{border-bottom-color:var(--primary-400)}
+code{
+  font-family:'SFMono-Regular',Consolas,monospace;font-size:.88em;
+  background:var(--mono-800);color:var(--primary-200);padding:2px 6px;border-radius:var(--radius-4);
+}
+
+/* ============================ 문서 컴포넌트 ============================ */
+/* 토큰 표 */
+.tbl-wrap{overflow-x:auto;margin-bottom:var(--space-16)}
+table.tokens{width:100%;border-collapse:collapse;font-size:var(--fs-b4);line-height:var(--lh-b4)}
+table.tokens th{
+  text-align:left;color:var(--mono-500);font-size:var(--fs-c1);font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;padding:0 var(--space-16) var(--space-10) 0;border-bottom:1px solid var(--mono-700);white-space:nowrap;
+}
+table.tokens td{padding:var(--space-10) var(--space-16) var(--space-10) 0;border-bottom:1px solid var(--border);color:var(--mono-200);vertical-align:middle}
+table.tokens td.mono{font-family:'SFMono-Regular',Consolas,monospace;color:var(--mono-400);white-space:nowrap}
+table.tokens td.val{font-family:'SFMono-Regular',Consolas,monospace;color:var(--primary-300);white-space:nowrap}
+table.tokens td.name{color:var(--em);font-weight:600;white-space:nowrap}
+table.tokens tr:last-child td{border-bottom:none}
+.dot{display:inline-block;width:12px;height:12px;border-radius:var(--radius-4);margin-right:var(--space-8);vertical-align:-1px;border:1px solid rgba(255,255,255,.14)}
+
+/* 노트 */
+.note{
+  background:var(--mono-900);border:1px solid var(--border);border-left:2px solid var(--primary-500);
+  border-radius:var(--radius-8);padding:var(--space-16) var(--space-20);margin-bottom:var(--space-16);
+}
+.note .note-cap{color:var(--primary-400);font-size:var(--fs-c1);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:var(--space-6)}
+.note p{color:var(--mono-300);font-size:var(--fs-b4);line-height:var(--lh-b4);margin:0}
+.note p + p{margin-top:var(--space-8)}
+
+/* Do / Don't */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);margin-bottom:var(--space-16)}
+@media (max-width:700px){ .guide-grid{grid-template-columns:1fr} }
+.guide-col{background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-12);padding:var(--space-20)}
+.guide-col.do{border-top:2px solid var(--primary-400)}
+.guide-col.dont{border-top:2px solid var(--red-300)}
+.guide-cap{font-size:var(--fs-c1);font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--space-12)}
+.guide-col.do .guide-cap{color:var(--primary-400)}
+.guide-col.dont .guide-cap{color:var(--red-300)}
+.guide-col ul{list-style:none;padding:0;margin:0}
+.guide-col li{color:var(--mono-300);font-size:var(--fs-b4);line-height:var(--lh-b4);margin-bottom:var(--space-10);padding-left:var(--space-16);position:relative}
+.guide-col li:last-child{margin-bottom:0}
+.guide-col li::before{position:absolute;left:0;font-weight:800}
+.guide-col.do li::before{content:'+';color:var(--primary-400)}
+.guide-col.dont li::before{content:'\00d7';color:var(--red-300)}
+
+/* 카드 그리드 (Overview 페이지) */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:var(--space-16);margin-bottom:var(--space-16)}
+.doc-card{
+  display:block;text-decoration:none;background:var(--mono-900);border:1px solid var(--border);
+  border-radius:var(--radius-12);padding:var(--space-20);transition:border-color .15s ease,transform .15s ease;
+}
+.doc-card:hover{border-color:var(--mono-600);transform:translateY(-2px)}
+.doc-card .dc-thumb{
+  height:82px;border-radius:var(--radius-8);margin-bottom:var(--space-16);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--mono-800);
+}
+.doc-card .dc-title{color:var(--em);font-size:var(--fs-b3);line-height:var(--lh-b3);font-weight:700;margin-bottom:var(--space-4)}
+.doc-card .dc-desc{color:var(--mono-400);font-size:var(--fs-b5);line-height:var(--lh-b5);word-break:keep-all}
+.doc-card.is-wip{opacity:.55}
+.doc-card.is-wip .dc-title::after{
+  content:'준비 중';margin-left:var(--space-8);font-size:var(--fs-c2);font-weight:700;color:var(--mono-400);
+  border:1px solid var(--mono-700);border-radius:var(--radius-1000);padding:1px 6px;vertical-align:2px;
+}
+
+/* 예시 프레임 */
+.demo{
+  background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-12);
+  padding:var(--space-28);margin-bottom:var(--space-16);
+}
+.demo.pad-lg{padding:var(--space-40)}
+.demo-cap{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace;margin-top:var(--space-10);letter-spacing:.04em}
+
+/* 색상 스와치 */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:var(--space-8);margin-bottom:var(--space-16)}
+.swatch{border-radius:var(--radius-8);overflow:hidden;border:1px solid var(--border)}
+.swatch .fill{height:56px}
+.swatch .lab{background:var(--mono-900);padding:var(--space-6) var(--space-8)}
+.swatch .lab b{display:block;color:var(--mono-050);font-size:var(--fs-c1);font-weight:700;line-height:1.4}
+.swatch .lab span{color:var(--mono-500);font-family:monospace;font-size:var(--fs-c2)}
+
+/* 스페이싱 룰러 */
+.space-row{display:flex;align-items:center;gap:var(--space-16);margin-bottom:var(--space-8)}
+.space-row .nm{width:104px;flex-shrink:0;color:var(--mono-400);font-size:var(--fs-b5);font-family:monospace}
+.space-row .bar{background:var(--primary-400);height:12px;border-radius:var(--radius-4)}
+.space-row .px{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace}
+
+/* 라운드 */
+.radius-grid{display:flex;gap:var(--space-16);flex-wrap:wrap}
+.radius-item{text-align:center}
+.radius-item .box{width:72px;height:72px;background:var(--mono-700);border:1px solid var(--mono-600)}
+.radius-item .cap{margin-top:var(--space-8);color:var(--mono-400);font-size:var(--fs-c1);font-family:monospace}
+
+/* 오퍼시티 램프 */
+.op-row{display:flex;align-items:center;gap:var(--space-12);margin-bottom:var(--space-8)}
+.op-row .nm{width:76px;flex-shrink:0;color:var(--mono-400);font-size:var(--fs-b5);font-family:monospace}
+.op-ramp{display:flex;flex:1;border-radius:var(--radius-8);overflow:hidden;border:1px solid var(--border)}
+.op-chip{flex:1;height:36px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px}
+.op-chip i{font-style:normal;font-size:var(--fs-c2);color:var(--mono-100);font-family:monospace;opacity:.8}
+.op-bg-dark{background:var(--mono-990)}
+.op-bg-mid{background:var(--mono-700)}
+
+/* Elevation / Glow */
+.elev-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-10);margin-bottom:var(--space-16)}
+@media (max-width:700px){ .elev-grid{grid-template-columns:repeat(2,1fr)} }
+.elev-card{border-radius:var(--radius-8);padding:var(--space-20) var(--space-12);text-align:center;border:1px solid var(--mono-700)}
+.elev-card b{display:block;color:var(--em);font-size:var(--fs-b5);margin-bottom:var(--space-4)}
+.elev-card span{color:var(--mono-400);font-size:var(--fs-c2);font-family:monospace}
+.glow-grid{display:flex;gap:var(--space-24);flex-wrap:wrap}
+.glow-chip{
+  width:136px;height:72px;background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-8);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;font-size:var(--fs-b5);
+}
+.glow-chip.resting{box-shadow:var(--glow-resting)}
+.glow-chip.active{box-shadow:var(--glow-active)}
+.glow-chip.lift{box-shadow:var(--glow-lift)}
+.glow-cap{text-align:center;margin-top:var(--space-10);color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace}
+
+/* 타이포 스케일 행 */
+.type-row{border-bottom:1px solid var(--border);padding:var(--space-20) 0}
+.type-row:last-child{border-bottom:none}
+.type-meta{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-16);margin-bottom:var(--space-8)}
+.type-meta b{color:var(--primary-400);font-weight:800;font-size:var(--fs-b4)}
+.type-meta span{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace;white-space:nowrap}
+.type-sample{color:var(--em);word-break:keep-all;overflow:hidden}
+
+/* ============================ 로고 ============================ */
+.logo-stage{
+  background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-12);
+  min-height:132px;display:flex;align-items:center;justify-content:center;padding:var(--space-32);
+}
+.logo-stage.on-light{background:var(--mono-030);border-color:var(--mono-050)}
+.logo-stage svg{display:block;max-width:100%;color:var(--primary-500)}
+.logo-pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);margin-bottom:var(--space-16)}
+@media (max-width:700px){ .logo-pair{grid-template-columns:1fr} }
+.logo-cap{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace;margin-top:var(--space-8);text-align:center}
+.clearspace{position:relative;display:inline-block;padding:24px;outline:1px dashed var(--mono-600)}
+.clearspace::before{
+  content:'';position:absolute;inset:24px;outline:1px solid var(--primary-800);
+}
+
+/* ============================ 아이콘 ============================ */
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:var(--space-8)}
+.icon-cell{
+  background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-8);
+  padding:var(--space-16) var(--space-8) var(--space-10);text-align:center;
+}
+.icon-cell svg{display:block;margin:0 auto var(--space-10);color:var(--text)}
+.icon-cell .nm{color:var(--mono-500);font-size:var(--fs-c2);font-family:monospace;word-break:break-all}
+.icon-sizes{display:flex;align-items:flex-end;gap:var(--space-24);flex-wrap:wrap}
+.icon-sizes .is-item{text-align:center}
+.icon-sizes svg{display:block;color:var(--text);margin:0 auto var(--space-8)}
+.icon-sizes .is-cap{color:var(--mono-500);font-size:var(--fs-c1);font-family:monospace}
+.icon-colors{display:flex;gap:var(--space-16);flex-wrap:wrap}
+.icon-colors .ic-item{
+  background:var(--mono-900);border:1px solid var(--border);border-radius:var(--radius-8);
+  padding:var(--space-16);text-align:center;min-width:112px;
+}
+.icon-colors .ic-item svg{display:block;margin:0 auto var(--space-10)}
+.icon-colors .ic-cap{color:var(--mono-500);font-size:var(--fs-c2);font-family:monospace}
+.keyline-wrap{display:flex;gap:var(--space-24);align-items:center;flex-wrap:wrap}
+.keyline-box{
+  width:168px;height:168px;background:var(--mono-900);border:1px solid var(--border);
+  border-radius:var(--radius-8);display:flex;align-items:center;justify-content:center;
+}
+
+/* ============================ BUTTON SYSTEM ============================ */
+.btn{
+  font-family:'Pretendard',sans-serif;font-weight:500;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--space-4);
+  text-align:center;white-space:nowrap;
+  transition:background-color .15s ease,border-color .15s ease,color .15s ease;
+}
+.btn--48{height:48px;padding:0 var(--space-28);border-radius:var(--radius-12);font-size:var(--fs-b4);line-height:var(--lh-b4)}
+.btn--40{height:40px;padding:0 var(--space-20);border-radius:var(--radius-12);font-size:var(--fs-b5);line-height:var(--lh-b5)}
+.btn--32{height:32px;padding:0 var(--space-16);border-radius:var(--radius-8);font-size:var(--fs-b5);line-height:var(--lh-b5)}
+.btn .spinner{display:none;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:btnspin .7s linear infinite}
+.btn--48 .spinner{width:24px;height:24px}
+.btn--40 .spinner,.btn--32 .spinner{width:20px;height:20px}
+.btn[data-state="loading"] .btn-label{display:none}
+.btn[data-state="loading"] .spinner{display:inline-block}
+.btn[data-state="dim"]{cursor:default}
+@keyframes btnspin{to{transform:rotate(360deg)}}
+
+.btn--primary{background:var(--btn-primary-bg);color:var(--btn-primary-text)}
+.btn--primary:hover,.btn--primary[data-state="hover"]{background:var(--btn-primary-bg-hover)}
+.btn--primary[data-state="dim"]{background:var(--btn-primary-bg-dim);color:var(--btn-primary-text-dim)}
+.btn--secondary{background:transparent;border:1px solid var(--btn-secondary-border);color:var(--btn-secondary-text)}
+.btn--secondary:hover,.btn--secondary[data-state="hover"]{background:var(--btn-secondary-bg-hover)}
+.btn--secondary[data-state="dim"]{background:transparent;border-color:var(--btn-secondary-border-dim);color:var(--btn-secondary-text-dim)}
+.btn--tertiary{background:var(--btn-tertiary-bg);border:1px solid var(--btn-tertiary-border);color:var(--btn-tertiary-text)}
+.btn--tertiary:hover,.btn--tertiary[data-state="hover"]{background:var(--btn-tertiary-bg-hover);border-color:var(--btn-tertiary-border-hover)}
+.btn--tertiary[data-state="dim"]{background:var(--btn-tertiary-bg);border-color:var(--btn-tertiary-border);color:var(--btn-tertiary-text-dim)}
+.btn--quaternary{background:transparent;border:1px solid var(--btn-quaternary-border);color:var(--btn-quaternary-text)}
+.btn--quaternary:hover,.btn--quaternary[data-state="hover"]{background:var(--btn-quaternary-bg-hover)}
+.btn--quaternary[data-state="dim"]{background:transparent;border-color:var(--btn-quaternary-border-dim);color:var(--btn-quaternary-text-dim)}
+
+.btn-matrix-row{margin-bottom:var(--space-28)}
+.btn-matrix-row:last-child{margin-bottom:0}
+.hi-label{color:var(--primary-400);font-weight:800;font-size:var(--fs-b4);margin-bottom:var(--space-12)}
+.btn-cells{display:flex;gap:var(--space-12);flex-wrap:wrap;align-items:flex-start}
+.btn-cells .cell-cap{color:var(--mono-500);font-size:var(--fs-c2);font-family:monospace;text-align:center;margin-top:var(--space-6)}
+
+/* ============================ 패턴 예시 (TRAINING 홈) ============================ */
+.ex-label{text-transform:uppercase;letter-spacing:.15em;color:var(--mono-500);font-size:var(--fs-c1);font-weight:700;margin-bottom:var(--space-12)}
+.ex-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-4);padding:var(--space-24)}
+.motto-card{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-20);margin-bottom:var(--space-16)}
+.motto-text{color:var(--em);font-size:var(--fs-b2);font-weight:700;line-height:1.5;word-break:keep-all;flex:1}
+.motto-text .qm{color:var(--accent);font-weight:900}
+.streak-badge{
+  display:inline-flex;align-items:center;gap:var(--space-10);background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-1000);padding:var(--space-8) var(--space-20);color:var(--mono-300);
+  font-weight:600;margin-bottom:var(--space-16);font-size:var(--fs-b4);
+}
+.stats-row{display:flex;gap:var(--space-12);flex-wrap:wrap;margin-bottom:var(--space-28)}
+.stat-box{
+  flex:1;min-width:120px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-4);
+  padding:var(--space-20) var(--space-16);text-align:center;position:relative;
+}
+.stat-box::after{content:'';position:absolute;left:var(--space-16);right:var(--space-16);bottom:0;height:2px;background:var(--accent)}
+.stat-box .num{font-size:var(--fs-h6);line-height:1.1;font-weight:900;color:var(--accent)}
+.stat-box .lbl{font-size:var(--fs-c1);letter-spacing:.14em;color:var(--mono-500);text-transform:uppercase;margin-top:var(--space-6);font-weight:700}
+.goal-card{display:flex;justify-content:space-between;align-items:center;gap:var(--space-24);flex-wrap:wrap;margin-bottom:var(--space-16)}
+.goal-info{flex:1;min-width:200px}
+.goal-info h4{color:var(--em);font-size:var(--fs-h6);line-height:var(--lh-h6);font-weight:900;text-transform:uppercase;letter-spacing:.01em;margin:var(--space-6) 0}
+.goal-meta{color:var(--mono-300);font-size:var(--fs-b4);letter-spacing:.05em}
+.dday{font-size:var(--fs-h6);font-weight:900;color:var(--accent);text-align:center;min-width:110px;line-height:1}
+.dday small{display:block;font-size:var(--fs-c2);color:var(--mono-500);letter-spacing:.2em;font-weight:700;margin-top:var(--space-8)}
+.goal-actions{display:flex;flex-direction:column;gap:var(--space-8)}
+.goal-actions .row2{display:flex;gap:var(--space-8)}
+.goal-actions .row2 .btn{flex:1}
+.btn-add{background:transparent;border:none;color:var(--accent);font-weight:800;font-size:var(--fs-b3);letter-spacing:.03em;padding:var(--space-10) var(--space-8);font-family:inherit;cursor:pointer}
+.btn-add:hover{opacity:.82}
+
+/* ============================ 페이지 푸터 / 이전·다음 ============================ */
+.page-foot{margin-top:var(--space-80);padding-top:var(--space-24);border-top:1px solid var(--border)}
+.updated{color:var(--mono-500);font-size:var(--fs-b5);font-family:monospace;margin-bottom:var(--space-24)}
+.pager{display:flex;gap:var(--space-12);justify-content:space-between}
+.pager a{
+  flex:1;max-width:47%;text-decoration:none;background:var(--mono-900);border:1px solid var(--border);
+  border-radius:var(--radius-12);padding:var(--space-16) var(--space-20);transition:border-color .15s ease;
+}
+.pager a:hover{border-color:var(--mono-600)}
+.pager .dir{display:block;color:var(--mono-500);font-size:var(--fs-c1);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:var(--space-6)}
+.pager .ttl{display:block;color:var(--mono-050);font-size:var(--fs-b4);font-weight:600}
+.pager a.next{text-align:right;margin-left:auto}
+
+/* 준비 중 페이지 */
+.wip-box{
+  background:var(--mono-900);border:1px dashed var(--mono-600);border-radius:var(--radius-12);
+  padding:var(--space-48) var(--space-32);text-align:center;
+}
+.wip-box .wip-t{color:var(--mono-200);font-size:var(--fs-b2);font-weight:700;margin-bottom:var(--space-10)}
+.wip-box .wip-d{color:var(--mono-500);font-size:var(--fs-b4);line-height:var(--lh-b4);word-break:keep-all}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#/get-started/overview" aria-label="HOMUSCLE Design System">
+    <!-- assets/brand/Bi.svg — 실제 브랜드 워드마크 (색은 currentColor로 토큰 연결) -->
+    <svg class="wordmark" viewBox="0 0 165 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+      <path d="M152.869 4.01641C152.759 4.01641 152.669 4.10596 152.669 4.21641V5.68346C152.669 5.79392 152.759 5.88346 152.869 5.88346H163.714C163.882 5.88346 163.975 6.07852 163.869 6.20929L161.593 9.02235C161.555 9.06927 161.498 9.09653 161.437 9.09653H152.869C152.759 9.09653 152.669 9.18607 152.669 9.29653V10.7853C152.669 10.8957 152.759 10.9853 152.869 10.9853H164.598C164.763 10.9853 164.857 11.1743 164.757 11.306L162.199 14.6835C162.162 14.7335 162.103 14.7628 162.04 14.7628H149.183C148.631 14.7628 148.183 14.3151 148.183 13.7628V1.23889C148.183 0.686606 148.631 0.238892 149.183 0.238892H164.572C164.738 0.238892 164.832 0.429252 164.731 0.560784L162.134 3.9383C162.097 3.98755 162.038 4.01641 161.976 4.01641H152.869Z"/>
+      <path d="M143.888 14.6841C143.85 14.7337 143.792 14.7628 143.729 14.7628H131.999C131.447 14.7628 130.999 14.3151 130.999 13.7628V1.23889C130.999 0.686606 131.447 0.238892 131.999 0.238892H135.285C135.395 0.238892 135.485 0.328435 135.485 0.438892V10.7853C135.485 10.8957 135.574 10.9853 135.685 10.9853H146.306C146.472 10.9853 146.566 11.175 146.465 11.3066L143.888 14.6841Z"/>
+      <path d="M126.62 14.6835C126.582 14.7335 126.523 14.7628 126.46 14.7628H119.278C114.272 14.7628 110.545 11.5932 110.545 7.35974C110.545 3.19144 114.164 0.238892 119.278 0.238892H129.018C129.183 0.238892 129.277 0.427903 129.177 0.559631L126.62 3.93715C126.582 3.98708 126.523 4.01641 126.46 4.01641H119.278C116.483 4.01641 115.009 5.16704 115.009 7.35974C115.009 9.63927 116.591 10.9853 119.278 10.9853H129.018C129.183 10.9853 129.277 11.1743 129.177 11.306L126.62 14.6835Z"/>
+      <path d="M103.115 14.7628H89.6711C89.5055 14.7628 89.4116 14.5731 89.5121 14.4415L92.0891 11.064C92.1269 11.0144 92.1857 10.9853 92.2481 10.9853H103.245C104.155 10.9853 104.567 10.7031 104.567 10.0518C104.567 9.37875 104.133 9.09653 103.201 9.09653H95.3564C91.8241 9.09653 89.787 7.49 89.787 4.73284C89.787 1.73687 91.8024 0.238892 95.8982 0.238892H108.172C108.337 0.238892 108.431 0.428578 108.331 0.56021L105.754 3.93773C105.716 3.98732 105.657 4.01641 105.595 4.01641H95.5515C94.6196 4.01641 94.1862 4.32035 94.1862 4.94994C94.1862 5.60123 94.6196 5.90517 95.5515 5.90517H103.461C107.059 5.90517 108.966 7.35973 108.966 10.1169C108.966 13.3082 107.145 14.7628 103.115 14.7628Z"/>
+      <path d="M83.1048 8.42352V0.438891C83.1048 0.328434 83.1943 0.238892 83.3048 0.238892H87.369C87.4794 0.238892 87.569 0.328435 87.569 0.438892V8.42352C87.569 12.9609 84.6434 15.0016 78.1204 15.0016C71.5325 15.0016 68.5636 12.9826 68.5636 8.42352V0.438891C68.5636 0.328434 68.6531 0.238892 68.7636 0.238892H72.8495C72.9599 0.238892 73.0495 0.328435 73.0495 0.438892V8.42352C73.0495 10.486 74.3714 11.2241 78.1204 11.2241C81.8262 11.2241 83.1048 10.486 83.1048 8.42352Z"/>
+      <path d="M67.9947 14.5072C68.0316 14.6351 67.9357 14.7627 67.8025 14.7627H63.5837C63.4935 14.7627 63.4145 14.7024 63.3908 14.6153L61.2659 6.82356C61.2183 6.64913 60.9821 6.62234 60.8967 6.78169L57.3631 13.3733C56.6913 14.589 55.9978 15.0015 54.6759 15.0015C53.3323 15.0015 52.6388 14.589 51.9887 13.3733L48.5384 6.78554C48.4544 6.62516 48.2175 6.65001 48.1686 6.82433L45.9835 14.6167C45.9593 14.7031 45.8806 14.7627 45.7909 14.7627H41.6594C41.5257 14.7627 41.4297 14.6341 41.4676 14.506L45.1624 2.01902C45.5308 0.738136 46.4626 0 47.7195 0C48.7597 0 49.5832 0.521037 50.1467 1.51969L54.7626 10.1385L59.4002 1.51969C59.9419 0.521037 60.7871 0 61.8273 0C63.0625 0 64.0377 0.781555 64.3845 2.01902L67.9947 14.5072Z"/>
+      <path d="M30.458 0C37.6527 0 41.0767 2.4098 41.0767 7.48991C41.0767 12.57 37.6527 15.0015 30.458 15.0015C23.2849 15.0015 19.8826 12.5917 19.8826 7.48991C19.8826 2.4098 23.2632 0 30.458 0ZM30.458 3.77752C25.6254 3.77752 24.3468 4.55908 24.3468 7.48991C24.3468 10.4425 25.647 11.224 30.458 11.224C35.3123 11.224 36.5909 10.4425 36.5909 7.48991C36.5909 4.53737 35.3339 3.77752 30.458 3.77752Z"/>
+      <path d="M4.28588 0.238892C4.39634 0.238892 4.48588 0.328435 4.48588 0.438892V5.18414C4.48588 5.29459 4.57542 5.38414 4.68588 5.38414H12.9109C13.0214 5.38414 13.1109 5.29459 13.1109 5.18414V0.438891C13.1109 0.328434 13.2004 0.238892 13.3109 0.238892H16.5751C17.1274 0.238892 17.5751 0.686607 17.5751 1.23889V13.7628C17.5751 14.3151 17.1274 14.7628 16.5751 14.7628H13.3109C13.2004 14.7628 13.1109 14.6733 13.1109 14.5628V9.36166C13.1109 9.2512 13.0214 9.16166 12.9109 9.16166H4.68588C4.57542 9.16166 4.48588 9.2512 4.48588 9.36166V14.5628C4.48588 14.6733 4.39634 14.7628 4.28588 14.7628H1C0.447715 14.7628 0 14.3151 0 13.7628V1.23889C0 0.686606 0.447715 0.238892 1 0.238892H4.28588Z"/>
+    </svg>
+    <span class="sublabel">Design System</span>
+  </a>
+  <nav class="top-nav" id="topNav"></nav>
+  <div class="header-meta">v1.6.0</div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="search-wrap">
+      <span class="ico">⌕</span>
+      <input id="searchInput" type="text" placeholder="문서 검색" autocomplete="off">
+    </div>
+    <div id="sidebarNav"></div>
+  </aside>
+
+  <div class="content-wrap"><main id="content"></main></div>
+
+  <aside class="toc">
+    <div class="toc-label">목차</div>
+    <div id="tocList"></div>
+  </aside>
+</div>
+
+<script>
+/* ============================================================================
+   HOMUSCLE DESIGN SYSTEM — 문서 사이트
+
+   ▶ 새 문서를 추가하려면
+     1) 아래 NAV 배열에서 원하는 섹션의 pages 에 항목을 하나 추가합니다.
+        { slug:'input', title:'Input', desc:'한 줄 설명', body:()=>`...HTML...` }
+     2) status:'wip' 를 넣으면 "준비 중" 배지가 붙고 자동으로 플레이스홀더가 표시됩니다.
+     3) 본문에서 h2 는 반드시 U.h2('아이디','제목') 로 만들면 우측 목차에 자동 등록됩니다.
+   ▶ 값(토큰)은 이 파일 상단 :root 에 정의된 CSS 변수가 유일한 원본입니다.
+============================================================================ */
+
+/* ---------------------------------------------------------------- 토큰 데이터 */
+const T = {
+  /* 색은 순서가 중요하므로 객체가 아닌 배열로 둡니다
+     (JS 객체는 '100' 같은 숫자형 키를 앞으로 재정렬해 '010'이 뒤로 밀립니다) */
+  mono:[['010','#fefcfb'],['030','#f2f0ef'],['050','#e1dfde'],['100','#cecccb'],['200','#b6b4b3'],['300','#9d9b9a'],
+        ['400','#848281'],['500','#666463'],['600','#393736'],['700','#272524'],['800','#1d1b1a'],['900','#111111'],['990','#0a0a0a']],
+  primary:[['010','#fff8f5'],['030','#fff3ed'],['050','#ffefe6'],['100','#ffdcce'],['200','#ffb699'],['300','#ff8f5c'],
+        ['400','#ff7726'],['500','#ff6300'],['600','#d94800'],['700','#a63200'],['800','#732000'],['900','#421100'],['990','#240900']],
+  red:[['030','#ffebeb'],['050','#ffd6d6'],['100','#ff9999'],['200','#ff6666'],['300','#ff4d4d']],
+  spacing:[0,2,4,6,8,10,12,16,20,24,28,32,40,48,64,80,120],
+  radius:[0,4,8,12,16,20,1000],
+  opacity:[5,10,20,30,40,50,60,70,80,90],
+  type:[
+    ['H1','56px','64.4px','1.15'],['H2','48px','57.6px','1.20'],['H3','40px','50px','1.25'],
+    ['H4','32px','41.6px','1.30'],['H5','28px','37.8px','1.35'],['H6','24px','33.6px','1.40'],
+    ['B1','20px','34px','1.70'],['B2','18px','30px','1.67'],['B3','16px','28px','1.75'],
+    ['B4','14px','24px','1.71'],['B5','12px','20px','1.67'],
+    ['C1','11px','18px','1.64'],['C2','10px','16px','1.60']
+  ]
+};
+
+/* ---------------------------------------------------------------- 문서 헬퍼 */
+const U = {
+  lead: t => `<p class="lead">${t}</p>`,
+  h2:  (id,t) => `<h2 id="${id}">${t}</h2>`,
+  h3:  t => `<h3>${t}</h3>`,
+  p:   t => `<p>${t}</p>`,
+  ul:  items => `<ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul>`,
+  note:(cap,...ps) => `<div class="note"><div class="note-cap">${cap}</div>${ps.map(t=>`<p>${t}</p>`).join('')}</div>`,
+  demo:(inner,cap) => `<div class="demo">${inner}</div>${cap?`<div class="demo-cap">${cap}</div>`:''}`,
+  table:(headers, rows) => `
+    <div class="tbl-wrap"><table class="tokens">
+      <thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(r=>`<tr>${r.map(c=>`<td class="${c[0]}">${c[1]}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table></div>`,
+  guide:(dos,donts) => `
+    <div class="guide-grid">
+      <div class="guide-col do"><div class="guide-cap">이렇게 쓰세요</div><ul>${dos.map(d=>`<li>${d}</li>`).join('')}</ul></div>
+      <div class="guide-col dont"><div class="guide-cap">이건 피하세요</div><ul>${donts.map(d=>`<li>${d}</li>`).join('')}</ul></div>
+    </div>`,
+  swatches:(prefix,pairs) => `<div class="swatch-grid">${
+    pairs.map(([k,v]) =>
+      `<div class="swatch"><div class="fill" style="background:${v}"></div><div class="lab"><b>${prefix}/${k}</b><span>${v}</span></div></div>`
+    ).join('')}</div>`,
+  dot: hex => `<span class="dot" style="background:${hex}"></span>${hex}`,
+  /* sectionKey 를 넘기면 #/{sectionKey}/{slug} 로, 항목에 href 가 있으면 그 값으로 링크합니다 */
+  cards:(sectionKey, items) => `<div class="card-grid">${
+    items.map(it => `<a class="doc-card ${it.wip?'is-wip':''}" href="${it.href || ('#/'+sectionKey+'/'+it.slug)}">
+      <div class="dc-thumb">${it.thumb||''}</div>
+      <div class="dc-title">${it.title}</div>
+      <div class="dc-desc">${it.desc}</div>
+    </a>`).join('')}</div>`
+};
+
+/* 카드 썸네일용 미니 비주얼 */
+const TH = {
+  token:`<div style="display:flex;gap:6px"><div style="width:20px;height:34px;border-radius:4px;background:var(--mono-600)"></div><div style="width:20px;height:34px;border-radius:4px;background:var(--primary-600)"></div><div style="width:20px;height:34px;border-radius:4px;background:var(--primary-400)"></div></div>`,
+  color:`<div style="display:flex">${['#ff7726','#ff6300','#d94800','#a63200'].map(c=>`<div style="width:24px;height:40px;background:${c}"></div>`).join('')}</div>`,
+  type:`<div style="font-size:34px;font-weight:900;color:var(--mono-100);letter-spacing:-.03em">Ag</div>`,
+  spacing:`<div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start">${[16,32,52].map(w=>`<div style="width:${w}px;height:8px;border-radius:2px;background:var(--primary-400)"></div>`).join('')}</div>`,
+  radius:`<div style="width:46px;height:46px;background:var(--mono-600);border-radius:16px 4px 16px 4px"></div>`,
+  elevation:`<div style="width:46px;height:38px;border-radius:8px;background:var(--mono-800);box-shadow:var(--glow-resting)"></div>`,
+  opacity:`<div style="display:flex;border-radius:6px;overflow:hidden">${[.2,.4,.6,.9].map(o=>`<div style="width:20px;height:38px;background:rgba(255,99,0,${o})"></div>`).join('')}</div>`,
+  button:`<div style="display:flex;flex-direction:column;gap:6px;align-items:center"><div style="width:66px;height:20px;border-radius:6px;background:var(--primary-400)"></div><div style="width:66px;height:20px;border-radius:6px;border:1px solid var(--primary-400)"></div></div>`,
+  logo:`<div style="color:var(--primary-500);font-family:monospace;font-size:11px;letter-spacing:.1em">HOMUSCLE</div>`,
+  icon:`<div style="display:flex;gap:8px;color:var(--mono-300)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8.41963 21.3795C8.50273 21.4469 8.62418 21.4369 8.69522 21.3569L16.8822 12.1323C16.9494 12.0565 16.9494 11.9425 16.8822 11.8668L8.69522 2.64309C8.62418 2.56306 8.50274 2.55312 8.41964 2.62054L7.16235 3.64059C7.07387 3.71237 7.06314 3.84345 7.13877 3.92866L14.1838 11.8668C14.251 11.9425 14.251 12.0565 14.1838 12.1323L7.13875 20.0713C7.06313 20.1566 7.07386 20.2876 7.16234 20.3594L8.41963 21.3795Z"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19.301C21 19.4114 20.9105 19.501 20.8 19.501H3.2C3.08954 19.501 3 19.4114 3 19.301V17.701C3 17.5905 3.08954 17.501 3.2 17.501H20.8C20.9105 17.501 21 17.5905 21 17.701V19.301ZM21 13.091C21 13.2015 20.9105 13.291 20.8 13.291H3.2C3.08954 13.291 3 13.2015 3 13.091V11.491C3 11.3806 3.08954 11.291 3.2 11.291H20.8C20.9105 11.291 21 11.3806 21 11.491V13.091ZM21 6.3C21 6.41046 20.9105 6.5 20.8 6.5H3.2C3.08954 6.5 3 6.41046 3 6.3V4.7C3 4.58954 3.08954 4.5 3.2 4.5H20.8C20.9105 4.5 21 4.58954 21 4.7V6.3Z"/></svg></div>`,
+  screen:`<div style="width:52px;height:44px;border-radius:6px;border:1px solid var(--mono-600);padding:5px;display:flex;flex-direction:column;gap:3px"><div style="height:5px;border-radius:2px;background:var(--mono-600)"></div><div style="height:5px;width:70%;border-radius:2px;background:var(--mono-600)"></div><div style="height:9px;margin-top:auto;border-radius:2px;background:var(--primary-400)"></div></div>`,
+  wip:`<div style="color:var(--mono-600);font-size:22px">···</div>`
+};
+
+/* ---------------------------------------------------------------- 브랜드 에셋
+   출처: assets/brand/*.svg — 색은 fill="currentColor"로 바꿔 토큰에 연결했습니다.
+   워드마크 path는 헤더에 이미 들어있으므로 중복 없이 재사용합니다. */
+const BRAND = {
+  wordmark: (h) => {
+    const src = document.querySelector('.brand .wordmark');
+    return `<svg viewBox="0 0 165 15" fill="currentColor" style="height:${h}px;width:auto" aria-hidden="true">${src.innerHTML}</svg>`;
+  },
+  /* favicon.svg — 128×128 프레임을 가로로 꽉 채우는 HMC 마크 */
+  favicon: (s) => `<svg viewBox="0 0 128 128" fill="currentColor" style="width:${s}px;height:${s}px" aria-hidden="true"><path d="M80.0254 47.5911C82.7325 47.5911 84.87 49.3009 85.6299 52.0081L87.9189 59.9124C89.7988 52.8395 96.9877 48.1145 106.574 48.1145H127.207C127.861 48.1145 128.233 48.8628 127.838 49.384L122.77 56.0647C122.62 56.262 122.386 56.3782 122.139 56.3782H106.574C100.448 56.3782 97.2178 58.8958 97.2178 63.6926C97.218 68.6791 100.685 71.6233 106.574 71.6233H127.207C127.861 71.6233 128.233 72.3725 127.838 72.8938L122.77 79.5745C122.62 79.7717 122.386 79.887 122.139 79.887H106.574C100.696 79.887 95.6236 77.8957 92.1797 74.6233L93.4111 78.8752C93.5574 79.3814 93.1773 79.887 92.6504 79.887H84.1445C83.7878 79.8869 83.475 79.648 83.3809 79.304L79.0283 63.3723C78.8399 62.6825 77.9057 62.5763 77.5674 63.2063L70.2422 76.8469C68.7699 79.5066 67.2496 80.4094 64.3525 80.4094C61.4082 80.4093 59.8886 79.5064 58.4639 76.8469L51.3145 63.2219C50.9818 62.5878 50.0452 62.6859 49.8516 63.3752L45.375 79.3088C45.2791 79.6503 44.968 79.887 44.6133 79.887H36.2998C36.1887 79.887 36.0847 79.8627 35.9902 79.8225C35.7837 79.8648 35.5696 79.887 35.3506 79.887H29.5254C29.0883 79.887 28.7335 79.5331 28.7334 79.0959V68.426C28.7334 67.989 28.3794 67.6342 27.9424 67.634H10.623C10.1859 67.634 9.83105 67.9889 9.83105 68.426V79.0959C9.831 79.5329 9.47699 79.8868 9.04004 79.887H3.16602C1.41749 79.8868 0 78.4695 0 76.7209V51.2805C1.9773e-05 49.532 1.4175 48.1147 3.16602 48.1145H9.04004C9.4769 48.1147 9.83086 48.4687 9.83105 48.9055V58.5784C9.83105 59.0155 10.1859 59.3704 10.623 59.3704H27.9424C28.3794 59.3702 28.7334 59.0154 28.7334 58.5784V48.9055C28.7336 48.4685 29.0883 48.1145 29.5254 48.1145H35.3506C37.0992 48.1145 38.5176 49.5319 38.5176 51.2805V68.8274L43.5029 52.0081C44.3103 49.206 46.3529 47.5911 49.1074 47.5911C51.387 47.5911 53.1919 48.7307 54.4268 50.9153L63.8467 68.4739C64.145 69.0295 64.9419 69.03 65.2412 68.4749L74.7061 50.9153C75.8933 48.7307 77.7459 47.5912 80.0254 47.5911Z"/></svg>`,
+  /* Symbol.svg — 48×48 프레임 안에 여백을 두고 놓인 HMC 마크 */
+  symbol: (s) => `<svg viewBox="0 0 48 48" fill="currentColor" style="width:${s}px;height:${s}px" aria-hidden="true"><path d="M28.8629 19.0004C29.6876 19.0004 30.3383 19.5214 30.5699 20.3461L31.2681 22.7572C31.8399 20.6008 34.0297 19.1595 36.9517 19.1595H43.2379C43.4371 19.1595 43.5504 19.3875 43.4302 19.5463L41.8863 21.5824C41.8407 21.6425 41.7693 21.6771 41.6939 21.6771H36.9517C35.0852 21.6771 34.1013 22.4444 34.1011 23.9056C34.1011 25.425 35.1574 26.3226 36.9517 26.3226H43.2379C43.4372 26.3226 43.5506 26.5505 43.4302 26.7094L41.8863 28.7455C41.8407 28.8055 41.7693 28.8402 41.6939 28.8402H36.9517C35.1603 28.8402 33.6143 28.2333 32.565 27.2357L32.941 28.5316C32.9856 28.6858 32.87 28.8401 32.7095 28.8402H30.1177C30.009 28.8402 29.914 28.7674 29.8853 28.6625L28.5591 23.809C28.5017 23.5988 28.2169 23.5662 28.1138 23.7582L25.8814 27.9144C25.4329 28.7244 24.97 28.9994 24.0875 28.9994C23.1905 28.9994 22.7276 28.7245 22.2935 27.9144L20.1148 23.7631C20.0134 23.5699 19.7285 23.5999 19.6695 23.8099L18.3052 28.6644C18.2759 28.7684 18.1808 28.8402 18.0728 28.8402H15.5406C15.5069 28.8402 15.4755 28.8318 15.4468 28.8197C15.3837 28.8327 15.3185 28.8402 15.2515 28.8402H13.4761C13.3429 28.8402 13.2349 28.7322 13.2349 28.599V25.348C13.2348 25.2149 13.1268 25.1068 12.9937 25.1068H7.71735C7.58422 25.1068 7.47625 25.2149 7.47614 25.348V28.599C7.47614 28.7321 7.36797 28.84 7.23492 28.8402H5.44489C4.9122 28.8401 4.48004 28.4081 4.48004 27.8754V20.1244C4.48006 19.5917 4.91221 19.1597 5.44489 19.1595H7.23492C7.36792 19.1597 7.47605 19.2677 7.47614 19.4008V22.348C7.47614 22.4812 7.58415 22.5892 7.71735 22.5892H12.9937C13.1269 22.5892 13.2349 22.4812 13.2349 22.348V19.4008C13.235 19.2676 13.343 19.1596 13.4761 19.1595H15.2515C15.7841 19.1597 16.2163 19.5917 16.2164 20.1244V25.4691L17.7349 20.3461C17.9809 19.4923 18.6037 19.0004 19.4429 19.0004C20.1372 19.0005 20.6869 19.3477 21.063 20.0131L23.9332 25.3627C24.024 25.5319 24.2666 25.5324 24.358 25.3636L27.2418 20.0131C27.6035 19.3475 28.1683 19.0004 28.8629 19.0004Z"/></svg>`
+};
+
+/* ---------------------------------------------------------------- 아이콘 세트
+   출처: assets/icons/*.svg — 모두 24×24 뷰박스, 원본 fill #CECCCB(Mono/100)를
+   currentColor로 바꿔 상위 요소의 색을 따르게 했습니다. */
+const ICONS = {
+  'arrow-up':   'M21.3795 15.5804C21.4469 15.4973 21.4369 15.3758 21.3569 15.3048L12.1323 7.11783C12.0565 7.05061 11.9425 7.05061 11.8668 7.11784L2.64309 15.3048C2.56306 15.3758 2.55312 15.4973 2.62054 15.5804L3.64059 16.8377C3.71237 16.9261 3.84345 16.9369 3.92866 16.8612L11.8668 9.81623C11.9425 9.74901 12.0565 9.74901 12.1323 9.81622L20.0713 16.8613C20.1566 16.9369 20.2876 16.9261 20.3594 16.8377L21.3795 15.5804Z',
+  'arrow-down': 'M21.3795 8.41963C21.4469 8.50273 21.4369 8.62418 21.3569 8.69522L12.1323 16.8822C12.0565 16.9494 11.9425 16.9494 11.8668 16.8822L2.64309 8.69522C2.56306 8.62418 2.55312 8.50274 2.62054 8.41964L3.64059 7.16235C3.71237 7.07387 3.84345 7.06314 3.92866 7.13877L11.8668 14.1838C11.9425 14.251 12.0565 14.251 12.1323 14.1838L20.0713 7.13875C20.1566 7.06313 20.2876 7.07386 20.3594 7.16234L21.3795 8.41963Z',
+  'arrow-left': 'M15.5804 21.3795C15.4973 21.4469 15.3758 21.4369 15.3048 21.3569L7.11783 12.1323C7.05061 12.0565 7.05061 11.9425 7.11784 11.8668L15.3048 2.64309C15.3758 2.56306 15.4973 2.55312 15.5804 2.62054L16.8377 3.64059C16.9261 3.71237 16.9369 3.84345 16.8612 3.92866L9.81623 11.8668C9.74901 11.9425 9.74901 12.0565 9.81622 12.1323L16.8613 20.0713C16.9369 20.1566 16.9261 20.2876 16.8377 20.3594L15.5804 21.3795Z',
+  'arrow-right':'M8.41963 21.3795C8.50273 21.4469 8.62418 21.4369 8.69522 21.3569L16.8822 12.1323C16.9494 12.0565 16.9494 11.9425 16.8822 11.8668L8.69522 2.64309C8.62418 2.56306 8.50274 2.55312 8.41964 2.62054L7.16235 3.64059C7.07387 3.71237 7.06314 3.84345 7.13877 3.92866L14.1838 11.8668C14.251 11.9425 14.251 12.0565 14.1838 12.1323L7.13875 20.0713C7.06313 20.1566 7.07386 20.2876 7.16234 20.3594L8.41963 21.3795Z',
+  'close':      'M19.8586 5.35858C19.9367 5.43668 19.9367 5.56332 19.8586 5.64142L13.6414 11.8586C13.5633 11.9367 13.5633 12.0633 13.6414 12.1414L19.8586 18.3586C19.9367 18.4367 19.9367 18.5633 19.8586 18.6414L18.6414 19.8586C18.5633 19.9367 18.4367 19.9367 18.3586 19.8586L12.1414 13.6414C12.0633 13.5633 11.9367 13.5633 11.8586 13.6414L5.64142 19.8586C5.56332 19.9367 5.43668 19.9367 5.35858 19.8586L4.14142 18.6414C4.06332 18.5633 4.06332 18.4367 4.14142 18.3586L10.3586 12.1414C10.4367 12.0633 10.4367 11.9367 10.3586 11.8586L4.14142 5.64142C4.06332 5.56332 4.06332 5.43668 4.14142 5.35858L5.35858 4.14142C5.43668 4.06332 5.56332 4.06332 5.64142 4.14142L11.8586 10.3586C11.9367 10.4367 12.0633 10.4367 12.1414 10.3586L18.3586 4.14142C18.4367 4.06332 18.5633 4.06332 18.6414 4.14142L19.8586 5.35858Z',
+  'download':   'M3.8 13.8262C3.91046 13.8262 4 13.9157 4 14.0262V16.8098C4 16.9202 4.08954 17.0098 4.2 17.0098H19.8C19.9105 17.0098 20 16.9202 20 16.8098V14.0262C20 13.9157 20.0895 13.8262 20.2 13.8262H21.8C21.9105 13.8262 22 13.9157 22 14.0262V18.0098C22 18.5621 21.5523 19.0098 21 19.0098H3C2.44772 19.0098 2 18.5621 2 18.0098V14.0262C2 13.9157 2.08954 13.8262 2.2 13.8262H3.8ZM12.9084 4.00977C13.0189 4.00977 13.1084 4.09931 13.1084 4.20977V10.6775C13.1084 10.8557 13.3238 10.9449 13.4498 10.819L16.4289 7.84154C16.507 7.76347 16.6336 7.76349 16.7117 7.84158L17.8429 8.97281C17.921 9.05093 17.921 9.17758 17.8429 9.25568L12.2498 14.8469C12.1717 14.925 12.0451 14.925 11.967 14.8469L6.37389 9.25568C6.29576 9.17758 6.29575 9.05093 6.37387 8.97281L7.5051 7.84158C7.58319 7.76349 7.70979 7.76347 7.78791 7.84154L10.767 10.819C10.893 10.9449 11.1084 10.8557 11.1084 10.6775V4.20977C11.1084 4.09931 11.1979 4.00977 11.3084 4.00977H12.9084Z',
+  'upload':     'M3.8 9.18359C3.91046 9.18359 4 9.09405 4 8.98359V6.2C4 6.08954 4.08954 6 4.2 6H19.8C19.9105 6 20 6.08954 20 6.2V8.98359C20 9.09405 20.0895 9.18359 20.2 9.18359H21.8C21.9105 9.18359 22 9.09405 22 8.98359V5C22 4.44771 21.5523 4 21 4H3C2.44772 4 2 4.44771 2 5V8.98359C2 9.09405 2.08954 9.18359 2.2 9.18359H3.8ZM12.9084 19C13.0189 19 13.1084 18.9105 13.1084 18.8V12.3323C13.1084 12.1541 13.3238 12.0649 13.4498 12.1908L16.4289 15.1682C16.507 15.2463 16.6336 15.2463 16.7117 15.1682L17.8429 14.037C17.921 13.9588 17.921 13.8322 17.8429 13.7541L12.2498 8.16284C12.1717 8.08476 12.0451 8.08476 11.967 8.16284L6.37389 13.7541C6.29576 13.8322 6.29575 13.9588 6.37387 14.037L7.5051 15.1682C7.58319 15.2463 7.70979 15.2463 7.78791 15.1682L10.767 12.1908C10.893 12.0649 11.1084 12.1541 11.1084 12.3323V18.8C11.1084 18.9105 11.1979 19 11.3084 19H12.9084Z',
+  'drawer':     'M21 19.301C21 19.4114 20.9105 19.501 20.8 19.501H3.2C3.08954 19.501 3 19.4114 3 19.301V17.701C3 17.5905 3.08954 17.501 3.2 17.501H20.8C20.9105 17.501 21 17.5905 21 17.701V19.301ZM21 13.091C21 13.2015 20.9105 13.291 20.8 13.291H3.2C3.08954 13.291 3 13.2015 3 13.091V11.491C3 11.3806 3.08954 11.291 3.2 11.291H20.8C20.9105 11.291 21 11.3806 21 11.491V13.091ZM21 6.3C21 6.41046 20.9105 6.5 20.8 6.5H3.2C3.08954 6.5 3 6.41046 3 6.3V4.7C3 4.58954 3.08954 4.5 3.2 4.5H20.8C20.9105 4.5 21 4.58954 21 4.7V6.3Z',
+  'keyline':    'M7.99609 4.8C7.99609 4.91046 8.08564 5 8.19609 5H15.7961C15.9066 5 15.9961 4.91046 15.9961 4.8V3.2C15.9961 3.08954 16.0856 3 16.1961 3H17.7961C17.9066 3 17.9961 3.08954 17.9961 3.2V4.8C17.9961 4.91046 18.0856 5 18.1961 5H19.9795C20.5318 5 20.9795 5.44772 20.9795 6V20C20.9795 20.5523 20.5318 21 19.9795 21H3.97949C3.42721 21 2.97949 20.5523 2.97949 20V6C2.97949 5.44772 3.42721 5 3.97949 5H5.79609C5.90655 5 5.99609 4.91046 5.99609 4.8V3.2C5.99609 3.08954 6.08564 3 6.19609 3H7.79609C7.90655 3 7.99609 3.08954 7.99609 3.2V4.8ZM4.97949 18.8C4.97949 18.9105 5.06904 19 5.17949 19H18.7795C18.8899 19 18.9795 18.9105 18.9795 18.8V11.2117C18.9795 11.1013 18.8899 11.0117 18.7795 11.0117H5.17949C5.06903 11.0117 4.97949 11.1013 4.97949 11.2117V18.8ZM4.97949 8.81172C4.97949 8.92218 5.06904 9.01172 5.17949 9.01172H18.7795C18.8899 9.01172 18.9795 8.92218 18.9795 8.81172V7.2C18.9795 7.08954 18.8899 7 18.7795 7H5.17949C5.06903 7 4.97949 7.08954 4.97949 7.2V8.81172Z',
+  'loading':    'M7 13.091C7 13.2015 6.91046 13.291 6.8 13.291H5.2C5.08954 13.291 5 13.2015 5 13.091V11.49C5 11.3796 5.08954 11.29 5.2 11.29H6.8C6.91046 11.29 7 11.3796 7 11.49V13.091ZM13 13.091C13 13.2015 12.9105 13.291 12.8 13.291H11.2C11.0895 13.291 11 13.2015 11 13.091V11.49C11 11.3796 11.0895 11.29 11.2 11.29H12.8C12.9105 11.29 13 11.3796 13 11.49V13.091ZM19 13.091C19 13.2015 18.9105 13.291 18.8 13.291H17.2C17.0895 13.291 17 13.2015 17 13.091V11.49C17 11.3796 17.0895 11.29 17.2 11.29H18.8C18.9105 11.29 19 11.3796 19 11.49V13.091Z'
+};
+
+/* 아이콘 하나를 그립니다. size 기본 24, 색은 상위 요소의 color를 따릅니다. */
+function icon(name, size){
+  const d = ICONS[name];
+  if(!d) return '';
+  const s = size || 24;
+  return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="${d}"/></svg>`;
+}
+
+/* ============================================================================
+   NAV — 사이트 전체 구조 + 문서 본문
+============================================================================ */
+const NAV = [
+
+/* ══════════════════════════════ GET STARTED ══════════════════════════════ */
+{ key:'get-started', label:'Get Started', pages:[
+
+  { slug:'overview', title:'Overview', desc:'HOMUSCLE 디자인 시스템이 무엇이고 어떻게 구성되어 있는지', body:()=>`
+    ${U.lead('HOMUSCLE 디자인 시스템은 홈 트레이닝 기록 제품 homuscle의 시각 언어와 UI 규칙을 하나의 기준으로 모은 것입니다. 색·타이포·간격 같은 기본 단위부터 버튼 같은 실제 컴포넌트, 그리고 그것들이 화면에서 조합되는 방식까지를 다룹니다.')}
+
+    ${U.h2('why','왜 필요한가')}
+    ${U.p('같은 오렌지인데 화면마다 조금씩 다르고, 같은 버튼인데 높이가 제각각이면 사용자는 그 차이를 "의도"로 읽습니다. 디자인 시스템은 그 흔들림을 없애기 위해 <b>값에 이름을 붙이고, 그 이름으로만 소통하도록</b> 만드는 장치입니다. #ff7726 대신 <code>Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다.')}
+
+    ${U.h2('structure','구성')}
+    ${U.cards(null,[
+      {href:'#/foundations/overview', title:'Foundations', desc:'색, 타이포그래피, 간격, 라운드처럼 모든 화면의 바탕이 되는 기본 토큰', thumb:TH.token},
+      {href:'#/components/overview',  title:'Components',  desc:'버튼처럼 반복해서 쓰이는 UI 조각의 규격과 상태 정의', thumb:TH.button},
+      {href:'#/patterns/overview',    title:'Patterns',    desc:'토큰과 컴포넌트가 실제 화면에서 조합되는 방식', thumb:TH.screen}
+    ])}
+
+    ${U.h2('source','기준이 되는 원본')}
+    ${U.p('값의 원본은 Figma의 <b>"DS practice"</b> 파일입니다. 이 문서는 그 파일에 등록된 값을 그대로 옮겨 적은 것이고, homuscle 제품 코드는 다시 이 값을 CSS 변수로 참조합니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춥니다.')}
+    ${U.table(['위치','역할','비고'],[
+      [['name','Figma "DS practice"'],['','값의 원본 (Single Source of Truth)'],['mono','Variables · Text Styles · Components']],
+      [['name','이 문서'],['','값의 설명과 사용 규칙'],['mono','homuscle-ds-site.html']],
+      [['name','제품 코드'],['','값의 사용'],['mono','homuscle.html 의 :root']]
+    ])}
+    ${U.note('참고','이 문서 사이트 자체도 homuscle 디자인 시스템의 토큰만으로 만들어져 있습니다. 페이지에 보이는 배경·글자색·간격·라운드는 모두 아래 Foundations에 정의된 값 그대로입니다.')}
+  `},
+
+  { slug:'how-to-use', title:'사용 방법', desc:'디자이너와 개발자가 각각 이 시스템을 쓰는 방법', body:()=>`
+    ${U.lead('토큰은 "직접 값을 쓰지 않는다"는 약속이 지켜질 때만 의미가 있습니다. 아래는 그 약속을 지키는 구체적인 방법입니다.')}
+
+    ${U.h2('designer','디자이너')}
+    ${U.p('Figma에서 색·간격·라운드·텍스트를 지정할 때 <b>등록된 스타일과 변수만</b> 사용합니다. 필요한 값이 없다면 임의로 채우지 말고, 새 단계를 시스템에 추가할지부터 판단합니다. 대부분의 경우 기존 단계 중 하나로 충분합니다.')}
+    ${U.ul([
+      '색 → Variables의 <code>Mono</code> / <code>Primary</code> / <code>Red</code> 컬렉션',
+      '텍스트 → Text Styles의 H1~H6 / B1~B5 / C1~C2',
+      '간격·라운드 → <code>Spacing/*</code>, <code>Radius/*</code> 변수',
+      '컴포넌트 → 마스터 컴포넌트를 인스턴스로 가져다 쓰고, 인스턴스 내부를 임의로 수정하지 않기'
+    ])}
+
+    ${U.h2('developer','개발자')}
+    ${U.p('모든 토큰은 CSS 변수로 정의되어 있습니다. 하드코딩된 값 대신 변수를 참조하면, 나중에 값이 바뀔 때 한 곳만 고치면 됩니다.')}
+    ${U.table(['상황','이렇게','대신 이렇게'],[
+      [['','강조 색'],['mono','#ff7726'],['val','var(--primary-400)']],
+      [['','카드 배경'],['mono','#111111'],['val','var(--surface)']],
+      [['','요소 간격'],['mono','margin:16px'],['val','margin:var(--space-16)']],
+      [['','버튼 라운드'],['mono','border-radius:12px'],['val','border-radius:var(--radius-12)']],
+      [['','본문 크기'],['mono','font-size:16px'],['val','font-size:var(--fs-b3)']]
+    ])}
+
+    ${U.h2('checklist','새 컴포넌트를 만들 때')}
+    ${U.ul([
+      '이미 있는 컴포넌트로 해결되는지 먼저 확인합니다',
+      '크기는 기존 사이즈 체계(48 / 40 / 32)를 따릅니다',
+      '상태는 default · hover · dim · loading 네 가지를 모두 정의합니다',
+      '색은 프리미티브를 직접 쓰지 않고 의미 있는 이름(Semantic)을 한 겹 거칩니다',
+      'Figma에 마스터 컴포넌트를 만들고, 이 문서에 페이지를 추가합니다'
+    ])}
+  `},
+
+  { slug:'updates', title:'변경 이력', desc:'시스템에 반영된 변경 사항 기록', body:()=>`
+    ${U.lead('토큰이나 컴포넌트 규격이 바뀌면 여기에 기록합니다. 무엇이 왜 바뀌었는지 남겨두면, 나중에 같은 논의를 반복하지 않게 됩니다.')}
+
+    ${U.h2('v100','v1.0.0 — 2026.09.06')}
+    ${U.p('Figma 파일과 제품 코드 사이의 값 불일치를 점검하고 네 건을 바로잡았습니다. 모두 <b>Figma를 기준으로</b> 코드를 맞추거나, Figma 쪽 값이 의도와 달랐던 경우 Figma를 고쳤습니다.')}
+    ${U.table(['항목','내용','조치'],[
+      [['name','Heading 행간'],['','H1~H6의 "detail" 라벨은 1.15~1.40의 촘촘한 비율을 의도했는데 실제 적용값은 1.67~1.71로 느슨했음'],['val','Figma 적용값을 64.4 / 57.6 / 50 / 41.6 / 37.8 / 33.6px로 수정']],
+      [['name','Primary hover'],['','Semantic 변수 <code>Button/Primary/BG-Hover</code>가 Primary/600을 가리켰지만 실제 컴포넌트는 Primary/500으로 렌더링됨'],['val','Semantic 변수를 Primary/500으로 수정']],
+      [['name','버튼 상태 이름'],['','hover 상태가 컴포넌트 프로퍼티상 <code>state=focus</code>로 명명되어 있었음'],['val','Figma 프로퍼티를 <code>state=hover</code>로 통일']]
+    ])}
+
+    ${U.h2('v160','v1.6.0 — 2026.09.06')}
+    ${U.p('v1.5.0까지는 <b>토큰</b>만 적용된 상태였습니다. 제품은 여전히 자기만의 버튼 스타일 8종을 쓰고 있었고, 로고는 폰트로 그려져 있었으며 파비콘은 없었습니다. 이번에 <b>컴포넌트 계층</b>을 반영했습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','버튼 25곳'],['','자체 클래스 8종(<code>btn-primary · btn-ghost · btn-fill · btn-danger · btn-white · btn-sm</code>)을 DS <code>Solid/Text</code> 체계로 교체']],
+      [['name','위계 매핑'],['','저장·시작 → Primary · 다음·다시하기 → Secondary · 수정·취소 → Tertiary · 삭제 → Quaternary']],
+      [['name','로고'],['','헤더 워드마크를 Ethnocentric 폰트에서 실제 에셋 <code>assets/brand/Bi.svg</code>로 교체']],
+      [['name','파비콘'],['','<code>assets/brand/favicon.svg</code>를 브라우저 탭 아이콘으로 추가 (그동안 없었습니다)']],
+      [['name','아이콘 8곳'],['','화살표·닫기를 <code>assets/icons</code> 세트의 SVG로 교체 (스프라이트 방식, 색은 currentColor)']],
+      [['name','정리'],['','쓰이지 않던 <code>.btn-fill-accent</code> 규칙 제거. 삭제가 아닌 "취소" 버튼을 Quaternary에서 Tertiary로 정정']]
+    ])}
+    ${U.note('아이콘 세트가 제품을 못 따라갑니다',
+      '제품이 실제로 쓰는 아이콘 중 DS에 있는 것은 화살표와 닫기뿐이었습니다. 나머지 26곳은 이모지로 남아 있습니다 — 카메라(📸📷) · 이미지(🖼) · 소리 켜짐/꺼짐(🔊🔇) · 체크(✓✅) · 스트릭(🔥) · 트로피(🏆) · 근육(💪) 등.',
+      '이건 적용을 안 한 게 아니라 <b>DS 아이콘 세트에 해당 아이콘이 없어서</b> 못 한 것입니다. Iconography 문서의 10종을 제품이 필요로 하는 것까지 넓혀야 합니다.')}
+    ${U.note('DS 매트릭스 밖 버튼 12곳',
+      '아이콘만 있는 버튼(<code>cal-nav</code> · <code>modal-arrow</code> · <code>guide-x</code> · <code>sess-sound</code>)과 특수 컨트롤(<code>workout-btn</code> · <code>btn-add</code> · <code>sel</code>)은 라벨을 가진 <code>Solid/Text</code> 체계로 표현할 수 없습니다. Icon Button 컴포넌트가 정의되면 그때 흡수합니다.')}
+
+    ${U.h2('v150','v1.5.0 — 2026.09.06')}
+    ${U.p('제품이 <b>토큰 스케일을 예외 없이 따르도록</b> 마무리했습니다. v1.4.0에서는 스케일과 정확히 맞는 값만 연결했는데, 이번에는 어긋나 있던 값들도 가장 가까운 단계로 맞췄습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','간격 76곳'],['','스케일 밖 값(14 · 26 · 22 · 15 · 18 · 36 · 30px 등)을 가장 가까운 단계로. 이동 폭은 최대 4px']],
+      [['name','글자 66곳'],['','rem으로 흩어져 있던 크기를 13단계 스케일로. 이동 폭은 최대 1.6px, 대부분 1px 미만']],
+      [['name','행간 63곳'],['','font-size 토큰과 짝이 되는 line-height를 연결. 그동안 56곳은 행간 지정이 아예 없어 브라우저 기본값(약 1.2배)으로 렌더링되고 있었습니다']],
+      [['name','라운드 5곳'],['','6px → Radius/8, 2px → Radius/4']],
+      [['name','결과'],['','본문에 하드코딩된 색 0 · 라운드 0 · <code>var()</code> 참조 529곳']]
+    ])}
+    ${U.note('일부러 남긴 것',
+      '<b>디스플레이 크기 5곳</b> — 타이머 숫자와 인트로 히어로는 <code>clamp()</code>로 화면 폭에 반응하는 크기라 13단계 텍스트 스케일 밖입니다.',
+      '<b>레이아웃 치수 3곳</b> (72 · 100 · 210px) — 여백이 아니라 요소의 크기를 정하는 값이라 간격 스케일 대상이 아닙니다.',
+      '<b>line-height:1 세 곳</b> (<code>.sess-sound</code> · <code>.guide-x</code> · <code>.modal-arrow</code>) — 아이콘 버튼을 글자 높이에 딱 맞추려는 값이라 유지했습니다.')}
+
+    ${U.h2('v140','v1.4.0 — 2026.09.06')}
+    ${U.p('<b>제품 코드에 토큰 시스템을 적용했습니다.</b> 그동안 <code>homuscle.html</code>은 자기만의 색값을 들고 있어서, Figma와 이 문서를 아무리 정리해도 실제 화면은 그와 무관하게 돌아가고 있었습니다. 이제 제품의 <code>:root</code>가 Primitive → Semantic 구조를 그대로 갖습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','토큰 정의 이식'],['','Primitive(Mono·Primary·Red·Base) · Semantic(Text·Border·Elevation·Button) · Spacing · Radius · Opacity · Glow · Typography 전부를 제품 <code>:root</code>에 반영']],
+      [['name','시맨틱 변수 연결'],['','<code>--bg --surface --border --muted --sub --aux --text --em --accent</code> 9개가 이제 프리미티브를 가리킵니다 (이전에는 각자 하드코딩된 hex)']],
+      [['name','하드코딩 색 제거'],['','본문의 <code>#ff6b00</code>·<code>#000</code>·<code>#fff</code>·<code>#999999</code>·<code>#1c1c1c</code>·<code>#16100a</code> 23곳과 rgba 22곳을 토큰으로 교체']],
+      [['name','간격·라운드 연결'],['','스케일과 정확히 일치하는 간격 101곳과 라운드 25곳을 <code>var(--space-*)</code>·<code>var(--radius-*)</code>로 교체']],
+      [['name','검증'],['','TRAINING·STRETCH·GALLERY 전 화면에서 크기·여백·라운드·폰트 <b>차이 0건</b>, JS 오류 0건. 바뀐 것은 색뿐입니다']]
+    ])}
+    ${U.note('색이 미세하게 달라진 부분',
+      '토큰 값을 쓰기로 한 결과입니다 — 배경 <code>#080808 → #0a0a0a</code>, 본문 <code>#cccccc → #cecccb</code>, 강조 <code>#ff6b00 → #ff6300</code>, 보조 텍스트 <code>#999999 → #9d9b9a</code>.',
+      '눈에 가장 띄는 곳은 섹션 라벨입니다: <code>#666666 → #848281</code>로 밝아졌습니다. 배경 대비가 3.36:1에서 5.18:1로 올라가 작은 글씨의 가독성이 개선됩니다.')}
+
+    ${U.h2('v130','v1.3.0 — 2026.09.06')}
+    ${U.p('색의 <b>Semantic 레이어를 텍스트와 테두리까지 확장</b>했습니다. 그동안 Semantic은 버튼과 Elevation에만 있어서, 본문·보조 텍스트·구분선 같은 가장 많이 쓰이는 색은 Figma에 이름이 없고 코드에만 존재했습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','Text Semantic 6개 신설'],['','<code>Text/Strong · Default · Sub · Caption · Disabled · Brand</code> — 밝은 쪽에서 어두운 쪽으로 위계가 이름에 드러나도록 정리']],
+      [['name','Border Semantic 3개 신설'],['','<code>Border/Default · Strong · Brand</code>']],
+      [['name','강조색을 램프 안으로'],['','제품에서 51회 쓰이던 <code>#ff6b00</code>이 Primary 램프 어디에도 없었습니다. <code>Primary/500 (#ff6300)</code>으로 통합해 시스템 밖에 떠 있던 색을 없앴습니다']],
+      [['name','파생값 동기화'],['','<code>#ff6b00</code>을 기준으로 삼던 Opacity/Primary 10단계와 Glow 3종(그림자 5개)도 <code>Primary/500</code> 기준으로 맞춤']],
+      [['name','Semantic 규모'],['','26개 → <b>35개</b> (Button 21 · Elevation 5 · Text 6 · Border 3)']]
+    ])}
+    ${U.note('Surface 그룹을 만들지 않은 이유',
+      '<code>--bg</code>·<code>--surface</code>에 해당하는 semantic은 이미 <code>Elevation/Level0</code>·<code>Level1</code>이 같은 값으로 담당하고 있습니다. <code>Surface/*</code>를 새로 만들면 같은 값을 두 이름으로 부르게 되어, Elevation 쪽으로 일원화했습니다.')}
+
+    ${U.h2('v120','v1.2.0 — 2026.09.06')}
+    ${U.p('컴포넌트와 스타일이 참조하는 <b>토큰의 출처를 이 파일 안으로 일원화</b>했습니다. 그동안 버튼은 색만 로컬 토큰을 보고, 라운드·간격·타이포는 다른 파일(외부 라이브러리)의 변수를 보고 있었습니다. 이 상태에서는 로컬 <code>Spacing/16</code>이나 <code>Radius/8</code> 값을 바꿔도 버튼이 따라오지 않았습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','불필요한 섹션 정리'],['','다른 프로젝트에서 복사돼 온 섹션들을 제거. Buttons 페이지 컴포넌트 세트 49개 → 1개(<code>Solid/Text</code>), 같은 이름 중복 6종 → 0']],
+      [['name','토큰 재연결'],['','라운드·좌우 여백·간격·색 연결 309개를 외부 변수에서 값이 동일한 로컬 <code>Primitive</code> 변수로 교체 (실패 0건, 화면 변화 없음)']],
+      [['name','텍스트 스타일 정리'],['','로컬 텍스트 스타일 39개 중 38개가 외부 typography 변수를 참조하고 있던 것을 해제 (연결 62개). 13단계 크기·행간 값은 그대로 유지']],
+      [['name','참조 출처 정리 완료'],['','외부 컬렉션 10개 → <b>0개</b> · 버튼 페이지의 변수 연결 525개가 전부 로컬 <code>Primitive</code>']],
+      [['name','Radius 40 확정'],['','size=40 버튼의 라운드를 <code>12px</code>로 확정. Radius 스케일은 7단계(0/4/8/12/16/20/1000)를 유지합니다']]
+    ])}
+    ${U.h2('v110','v1.1.0 — 2026.09.06')}
+    ${U.p('v1.0.0에서 범위 밖으로 미뤄뒀던 <b>로고·아이콘·파비콘</b>을 시스템에 반영했습니다. 에셋은 이미 <code>assets/</code>에 준비되어 있었고, 문서와 코드에 연결되지 않은 상태였습니다.')}
+    ${U.table(['항목','내용'],[
+      [['name','Logo 페이지 신설'],['','Bi.svg 워드마크 · Symbol.svg · favicon.svg를 Foundations에 문서화']],
+      [['name','헤더 로고 교체'],['','텍스트 워드마크 → 실제 Bi.svg 아웃라인 에셋, 색은 <code>currentColor</code>로 Primary/500에 연결']],
+      [['name','파비콘 적용'],['','favicon.svg를 이 문서 사이트의 브라우저 탭 아이콘으로 설정']],
+      [['name','Iconography 페이지 완성'],['','아이콘 10종, 24×24 키라인 그리드, 크기·색 규칙 정리 ("준비 중" 해제)']],
+      [['name','Foundations 순서 정리'],['','Figma 파일의 페이지 순서(Logo → Color → Typography → Iconography)에 맞춰 재배열, Graphic·Grid 자리 추가']]
+    ])}
+
+    ${U.h2('migration','토큰 마이그레이션 기록')}
+    ${U.p('시스템을 도입하기 전 <code>homuscle.html</code>이 쓰던 색을 Mono 프리미티브로 옮긴 기록입니다. 완전히 같은 값이 아닌 경우가 있어, 어디가 어떻게 달라졌는지 남겨둡니다.')}
+    ${U.table(['변수','도입 전','도입 후','차이'],[
+      [['mono','--bg'],['val','#080808'],['val',U.dot('#0a0a0a')],['','Mono/990로 근접 대체']],
+      [['mono','--surface'],['val','#111111'],['val',U.dot('#111111')],['','완전 일치']],
+      [['mono','--border'],['val','#1e1e1e'],['val',U.dot('#1d1b1a')],['','Mono/800로 근접 대체']],
+      [['mono','--muted'],['val','—'],['val',U.dot('#393736')],['','Mono/600, 거의 동일']],
+      [['mono','--sub'],['val','#666666'],['val',U.dot('#848281')],['','Mono/400, 기존보다 밝아짐']],
+      [['mono','--aux'],['val','#999999'],['val',U.dot('#9d9b9a')],['','Mono/300, 근접']],
+      [['mono','--text'],['val','#cccccc'],['val',U.dot('#cecccb')],['','Mono/100, 거의 동일']],
+      [['mono','--em'],['val','#ffffff'],['val',U.dot('#ffffff')],['','Mono/010으로 바꾸지 않고 순백 유지']],
+      [['mono','--accent'],['val','#ff6b00'],['val',U.dot('#ff6300')],['','v1.3.0에서 Primary/500으로 통합']]
+    ])}
+
+    ${U.h2('next','다음에 다룰 것')}
+    ${U.ul([
+      'Iconography — 제품이 쓰는 아이콘까지 세트 넓히기 (카메라·이미지·소리·체크·스트릭·트로피 등)',
+      'Icon Button 컴포넌트 정의 — 아이콘만 있는 버튼 12곳이 아직 체계 밖입니다',
+      'Logo — 여백(clearspace)과 최소 사용 크기 수치 규정',
+      'Graphic / Grid — Figma의 0-5·0-9 페이지 내용 반영',
+      'Input / Card / Chip / Modal / Toast — 컴포넌트 확장',
+      'Motion — 트랜지션 시간과 이징 곡선 정리',
+      '제품 코드(homuscle.html)에 파비콘·아이콘 세트 적용'
+    ])}
+  `}
+
+]},
+
+/* ══════════════════════════════ FOUNDATIONS ══════════════════════════════ */
+{ key:'foundations', label:'Foundations', pages:[
+
+  { slug:'overview', title:'Overview', desc:'모든 화면의 바탕이 되는 핵심 토큰', body:()=>`
+    ${U.lead('색, 타이포그래피, 간격, 라운드 — 화면을 이루는 가장 작은 단위들입니다. 여기서 정한 값이 모든 컴포넌트와 화면의 기준이 됩니다.')}
+    ${U.cards('foundations',[
+      {slug:'design-token', title:'Design Token', desc:'값에 이름을 붙이는 방식과 두 겹의 구조', thumb:TH.token},
+      {slug:'logo',         title:'Logo',         desc:'워드마크·심볼·파비콘 브랜드 에셋', thumb:TH.logo},
+      {slug:'color',        title:'Color',        desc:'Mono 13단계, Primary 13단계, Red 5단계', thumb:TH.color},
+      {slug:'typography',   title:'Typography',   desc:'Pretendard 기반 13단계 타입 스케일', thumb:TH.type},
+      {slug:'iconography',  title:'Iconography',  desc:'24×24 키라인 기반 아이콘 10종', thumb:TH.icon},
+      {slug:'spacing',      title:'Spacing',      desc:'0부터 120까지 17단계의 간격 체계', thumb:TH.spacing},
+      {slug:'radius',       title:'Radius',       desc:'모서리 둥글기 7단계', thumb:TH.radius},
+      {slug:'elevation',    title:'Elevation',    desc:'표면 밝기 단계와 오렌지 글로우', thumb:TH.elevation},
+      {slug:'opacity',      title:'Opacity',      desc:'Black / White / Primary 투명도 램프', thumb:TH.opacity},
+      {slug:'graphic',      title:'Graphic',      desc:'일러스트·그래픽 요소 규격', thumb:TH.wip, wip:true},
+      {slug:'grid',         title:'Grid',         desc:'화면 폭과 컬럼 그리드', thumb:TH.wip, wip:true},
+      {slug:'motion',       title:'Motion',       desc:'트랜지션 시간과 이징 곡선', thumb:TH.wip, wip:true}
+    ])}
+  `},
+
+  { slug:'design-token', title:'Design Token', desc:'값에 이름을 붙이는 방식', body:()=>`
+    ${U.lead('디자인 토큰은 색·크기·간격 같은 디자인 결정에 이름을 붙여 재사용 가능하게 만든 최소 단위입니다.')}
+    ${U.p('<code>#ff7726</code>은 그냥 색입니다. 하지만 <code>Primary/400</code>은 "이 제품의 주 강조색 중 밝은 쪽"이라는 의미를 갖습니다. 값이 아니라 의미로 부르기 시작하면, 나중에 브랜드 색이 바뀌어도 그 이름을 쓰는 모든 곳이 함께 따라옵니다.')}
+
+    ${U.h2('layers','두 겹의 구조')}
+    ${U.p('HOMUSCLE의 토큰은 두 계층으로 나뉩니다. <b>Primitive</b>는 값 그 자체에 번호를 매긴 것이고, <b>Semantic</b>은 그 값에 쓰임새를 붙인 것입니다. 화면을 만들 때는 되도록 Semantic을 쓰고, Primitive는 Semantic을 정의할 때만 참조합니다.')}
+    ${U.demo(`
+      <div style="display:flex;align-items:center;gap:var(--space-16);flex-wrap:wrap;font-size:var(--fs-b5)">
+        <div style="text-align:center">
+          <div style="background:var(--mono-800);border:1px solid var(--mono-600);border-radius:var(--radius-8);padding:var(--space-12) var(--space-16);font-family:monospace;color:var(--mono-300)">#ff7726</div>
+          <div style="color:var(--mono-500);margin-top:var(--space-6);font-size:var(--fs-c1)">원시 값</div>
+        </div>
+        <div style="color:var(--mono-600);font-size:var(--fs-b2)">→</div>
+        <div style="text-align:center">
+          <div style="background:var(--mono-800);border:1px solid var(--primary-700);border-radius:var(--radius-8);padding:var(--space-12) var(--space-16);font-family:monospace;color:var(--primary-300)">Primary/400</div>
+          <div style="color:var(--mono-500);margin-top:var(--space-6);font-size:var(--fs-c1)">Primitive</div>
+        </div>
+        <div style="color:var(--mono-600);font-size:var(--fs-b2)">→</div>
+        <div style="text-align:center">
+          <div style="background:var(--mono-800);border:1px solid var(--primary-500);border-radius:var(--radius-8);padding:var(--space-12) var(--space-16);font-family:monospace;color:var(--primary-200)">Button/Primary/BG</div>
+          <div style="color:var(--mono-500);margin-top:var(--space-6);font-size:var(--fs-c1)">Semantic</div>
+        </div>
+        <div style="color:var(--mono-600);font-size:var(--fs-b2)">→</div>
+        <div style="text-align:center">
+          <button class="btn btn--primary btn--40">운동 시작</button>
+          <div style="color:var(--mono-500);margin-top:var(--space-6);font-size:var(--fs-c1)">화면</div>
+        </div>
+      </div>`,'원시 값이 이름을 얻고, 쓰임새를 얻고, 화면에 도달하는 경로')}
+
+    ${U.h2('naming','이름 규칙')}
+    ${U.p('Figma에서는 슬래시로 계층을 나누고, 코드에서는 같은 이름을 하이픈으로 잇습니다. 두 이름은 항상 1:1로 대응합니다.')}
+    ${U.table(['종류','Figma','CSS 변수'],[
+      [['','색 (Primitive)'],['mono','Mono/900'],['val','--mono-900']],
+      [['','색 (Semantic)'],['mono','Button/Primary/BG'],['val','--btn-primary-bg']],
+      [['','간격'],['mono','Spacing/16'],['val','--space-16']],
+      [['','라운드'],['mono','Radius/12'],['val','--radius-12']],
+      [['','텍스트'],['mono','B3'],['val','--fs-b3 / --lh-b3']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['화면을 만들 때는 Semantic 토큰을 먼저 찾습니다',
+       '적당한 토큰이 없으면 가장 가까운 기존 단계를 씁니다',
+       '새 단계가 정말 필요하면 시스템에 추가하고 이 문서에 기록합니다'],
+      ['Primitive를 화면에 직접 쓰기 (Semantic을 거치지 않기)',
+       '토큰에 없는 중간값을 임의로 만들기 (예: 18px 라운드)',
+       '같은 의미인데 화면마다 다른 토큰 쓰기']
+    )}
+  `},
+
+  { slug:'logo', title:'Logo', desc:'워드마크·심볼·파비콘 브랜드 에셋', body:()=>`
+    ${U.lead('HOMUSCLE의 브랜드 마크는 전체 워드마크와 축약형 마크(HMC) 두 가지 형태로 준비되어 있습니다.')}
+    ${U.p('두 형태 모두 <b>아웃라인 처리된 벡터</b>라 폰트 설치 여부와 무관하게 어디서든 같은 모양으로 보입니다. 색은 전부 <code>Primary/500 (#ff6300)</code> 하나로 통일되어 있습니다.')}
+
+    ${U.h2('wordmark','워드마크')}
+    ${U.p('가로로 충분한 공간이 있을 때 쓰는 기본 형태입니다. 이 문서 사이트의 헤더에도 같은 에셋이 들어가 있습니다.')}
+    <div class="logo-pair">
+      <div>
+        <div class="logo-stage">${BRAND.wordmark(22)}</div>
+        <div class="logo-cap">어두운 배경 (기본)</div>
+      </div>
+      <div>
+        <div class="logo-stage on-light">${BRAND.wordmark(22)}</div>
+        <div class="logo-cap">밝은 배경</div>
+      </div>
+    </div>
+
+    ${U.h2('symbol','축약형 마크 — HMC')}
+    ${U.p('가로 공간이 부족할 때 쓰는 축약형입니다. 두 파일로 나뉘어 있는데, 형태는 같고 <b>프레임 안의 여백이 다릅니다.</b>')}
+    ${U.ul([
+      '<code>Symbol.svg</code> — 48×48 프레임 안에 여백을 두고 놓인 형태. 다른 요소와 나란히 배치할 때 씁니다.',
+      '<code>favicon.svg</code> — 128×128 프레임을 가로로 꽉 채운 형태. 브라우저 탭처럼 아주 작게 보일 때를 위한 버전입니다.'
+    ])}
+    <div class="logo-pair">
+      <div>
+        <div class="logo-stage">${BRAND.symbol(180)}</div>
+        <div class="logo-cap">Symbol.svg · 48×48 프레임 (여백 포함)</div>
+      </div>
+      <div>
+        <div class="logo-stage">${BRAND.favicon(150)}</div>
+        <div class="logo-cap">favicon.svg · 128×128 프레임 (꽉 채움)</div>
+      </div>
+    </div>
+
+    ${U.h2('favicon','파비콘')}
+    ${U.p('이 문서 사이트의 브라우저 탭 아이콘으로 <code>favicon.svg</code>가 들어가 있습니다. 실제 탭에서 보이는 크기는 아래와 같습니다.')}
+    ${U.demo(`<div style="display:flex;align-items:flex-end;gap:var(--space-32)">
+      ${[64,32,16].map(s => `<div style="text-align:center">${BRAND.favicon(s)}<div class="logo-cap">${s}px</div></div>`).join('')}
+    </div>`,'16px에서도 형태가 유지되도록 프레임을 꽉 채운 버전을 씁니다')}
+
+    ${U.h2('assets','에셋')}
+    ${U.table(['에셋','파일','프레임','색'],[
+      [['name','워드마크'],['mono','assets/brand/Bi.svg'],['val','165 × 15'],['','Primary/500 #ff6300']],
+      [['name','축약형 마크'],['mono','assets/brand/Symbol.svg'],['val','48 × 48'],['','Primary/500 #ff6300']],
+      [['name','파비콘'],['mono','assets/brand/favicon.svg'],['val','128 × 128'],['','Primary/500 #ff6300']]
+    ])}
+    ${U.note('코드에서 쓸 때',
+      '세 에셋 모두 SVG라 <code>fill</code>을 <code>currentColor</code>로 바꾸면 상위 요소의 <code>color</code>를 따라갑니다. 이 사이트 헤더도 그 방식으로 <code>var(--primary-500)</code>에 연결해 두었습니다 — 브랜드 색을 바꾸면 로고도 함께 따라옵니다.',
+      '파비콘은 <code>&lt;link rel="icon" type="image/svg+xml"&gt;</code>으로 넣습니다.')}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['가로 공간이 부족하면 워드마크를 줄이지 말고 축약형(HMC)으로 바꿉니다',
+       '아주 작게 쓸 때는 favicon.svg 쪽을 씁니다',
+       '단색 배경 위에 올립니다'],
+      ['비율을 바꾸거나 기울이기',
+       '브랜드 오렌지가 아닌 색으로 칠하기',
+       '복잡한 사진 위에 여과 없이 올리기',
+       '워드마크를 다시 타이핑해서 대체하기 (아웃라인 에셋을 씁니다)']
+    )}
+
+    ${U.note('아직 정해지지 않은 것',
+      '여백(clearspace)과 최소 사용 크기의 수치가 Figma에 아직 규정되어 있지 않습니다. 위 가이드는 원칙만 적어둔 것이고, 정확한 값이 정해지면 이 페이지에 표로 추가합니다.')}
+  `},
+
+  { slug:'color', title:'Color', desc:'Mono · Primary · Red 팔레트', body:()=>`
+    ${U.lead('HOMUSCLE의 색은 어두운 배경 위에서 오렌지 하나가 또렷하게 살아나도록 설계되어 있습니다.')}
+    ${U.p('중립색은 순수한 회색이 아니라 <b>따뜻한 쪽으로 살짝 기운 웜그레이</b>입니다. 오렌지와 같은 온도를 공유해서, 강조색이 배경 위에 이물감 없이 얹힙니다. 경고와 삭제에만 Red를 쓰고, 그 외에는 팔레트를 늘리지 않습니다.')}
+
+    ${U.h2('mono','Mono — 웜그레이 13단계')}
+    ${U.p('배경부터 본문 텍스트까지, 화면의 대부분을 차지하는 중립 계열입니다. 숫자가 클수록 어둡습니다.')}
+    ${U.swatches('Mono', T.mono)}
+
+    ${U.h2('primary','Primary — 오렌지 13단계')}
+    ${U.p('브랜드 색이자 유일한 강조색입니다. 화면에서 "지금 눌러야 할 것" 하나를 가리키는 데 씁니다.')}
+    ${U.swatches('Primary', T.primary)}
+
+    ${U.h2('red','Red — 경고 5단계')}
+    ${U.p('되돌릴 수 없는 동작(삭제)과 오류 상태에만 사용합니다.')}
+    ${U.swatches('Red', T.red)}
+
+    ${U.h2('semantic','Semantic — 역할별 색')}
+    ${U.p('화면을 만들 때 실제로 참조하는 이름입니다. 각각이 어떤 프리미티브를 가리키는지는 아래와 같습니다.')}
+    ${U.table(['역할','CSS 변수','참조','값'],[
+      [['name','페이지 배경'],['mono','--bg'],['','Mono/990'],['val',U.dot('#0a0a0a')]],
+      [['name','카드 표면'],['mono','--surface'],['','Mono/900'],['val',U.dot('#111111')]],
+      [['name','테두리'],['mono','--border'],['','Mono/800'],['val',U.dot('#1d1b1a')]],
+      [['name','비활성 요소'],['mono','--muted'],['','Mono/600'],['val',U.dot('#393736')]],
+      [['name','보조 텍스트'],['mono','--sub'],['','Mono/400'],['val',U.dot('#848281')]],
+      [['name','부가 텍스트'],['mono','--aux'],['','Mono/300'],['val',U.dot('#9d9b9a')]],
+      [['name','본문 텍스트'],['mono','--text'],['','Mono/100'],['val',U.dot('#cecccb')]],
+      [['name','강조 텍스트'],['mono','--em'],['','순백 유지'],['val',U.dot('#ffffff')]],
+      [['name','강조색'],['mono','--accent'],['','Primary/500'],['val',U.dot('#ff6300')]]
+    ])}
+
+    ${U.h3('텍스트 · 테두리 Semantic')}
+    ${U.p('Figma <code>Semantic</code> 컬렉션에 등록된 이름입니다. 화면을 만들 때는 프리미티브 대신 이쪽을 참조합니다.')}
+    ${U.table(['Semantic','→ Primitive','값','쓰임'],[
+      [['name','Text/Strong'],['mono','Base/White'],['val',U.dot('#ffffff')],['','제목, 수치 강조']],
+      [['name','Text/Default'],['mono','Mono/100'],['val',U.dot('#cecccb')],['','본문']],
+      [['name','Text/Sub'],['mono','Mono/300'],['val',U.dot('#9d9b9a')],['','보조 설명']],
+      [['name','Text/Caption'],['mono','Mono/400'],['val',U.dot('#848281')],['','캡션, 라벨']],
+      [['name','Text/Disabled'],['mono','Mono/600'],['val',U.dot('#393736')],['','비활성 텍스트']],
+      [['name','Text/Brand'],['mono','Primary/500'],['val',U.dot('#ff6300')],['','강조 텍스트, 수치']],
+      [['name','Border/Default'],['mono','Mono/800'],['val',U.dot('#1d1b1a')],['','카드·구분선']],
+      [['name','Border/Strong'],['mono','Mono/600'],['val',U.dot('#393736')],['','hover 시 테두리']],
+      [['name','Border/Brand'],['mono','Primary/500'],['val',U.dot('#ff6300')],['','강조 테두리']]
+    ])}
+    ${U.note('--em과 --accent에 대하여',
+      '<code>--em</code>은 Mono/010(#fefcfb)이 아니라 순백 #ffffff을 유지합니다. 어두운 배경에서 가장 강한 대비가 필요한 자리이기 때문입니다.',
+      '<code>--accent</code>는 <code>Primary/500</code>을 가리킵니다. 예전에는 램프에 없는 <code>#ff6b00</code>을 따로 쓰고 있었지만, 시스템 밖에 색이 하나 떠 있는 상태를 없애려고 램프 안으로 들여왔습니다.')}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['한 화면에서 오렌지는 가장 중요한 동작 하나에만 씁니다',
+       '텍스트 위계는 --em → --text → --aux → --sub 순서로 낮춥니다',
+       '삭제·오류에는 Red/300을 씁니다'],
+      ['강조색을 여러 요소에 동시에 쓰기 (강조가 강조를 지웁니다)',
+       '중립색 자리에 순수 회색(#888 등) 쓰기 — 팔레트의 온도가 깨집니다',
+       'Red를 강조 목적으로 쓰기 — 경고로만 남겨둡니다']
+    )}
+  `},
+
+  { slug:'typography', title:'Typography', desc:'Pretendard 기반 13단계 타입 스케일', body:()=>`
+    ${U.lead('본문 서체는 Pretendard, 로고와 일부 제목은 Ethnocentric을 씁니다. 크기는 13단계로 고정되어 있습니다.')}
+    ${U.p('Heading(H1~H6)은 제목답게 촘촘한 행간을, Body(B1~B5)와 Caption(C1~C2)은 읽기 편한 넉넉한 행간을 갖습니다. 각 단계는 Bold(700) · Medium(500) · Regular(400) 세 웨이트로 정의되어 있습니다.')}
+
+    ${U.h2('scale','타입 스케일')}
+    ${U.table(['단계','크기','행간','비율'],
+      T.type.map(([n,fs,lh,ratio]) => [['name',n],['val',fs],['val',lh],['mono',ratio]]))}
+
+    ${U.h2('sample','실제 렌더링')}
+    <div class="demo">${T.type.map(([n,fs,lh]) => `
+      <div class="type-row">
+        <div class="type-meta"><b>${n}</b><span>${fs} / ${lh}</span></div>
+        <div class="type-sample" style="font-size:${fs};line-height:${lh};font-weight:700">홈에서 운동을 기록하세요</div>
+      </div>`).join('')}</div>
+
+    ${U.h2('ratio','행간 설계')}
+    ${U.p('Heading의 행간 비율은 <b>H1 1.15에서 H6 1.40까지 0.05씩 단계적으로 넓어집니다.</b> 큰 글자일수록 줄 사이가 상대적으로 넓어 보이기 때문에, 큰 제목일수록 비율을 좁혀 시각적 밀도를 맞춘 것입니다.')}
+    ${U.p('Body와 Caption은 1.6~1.75 사이로 넉넉하게 유지합니다. 여러 줄이 이어질 때 읽는 흐름이 끊기지 않도록 하기 위함입니다.')}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['제목 계층은 H단계를 순서대로 씁니다',
+       '본문은 B3(16px)를 기본으로 삼습니다',
+       '캡션·라벨처럼 보조적인 글자에만 C단계를 씁니다'],
+      ['스케일에 없는 크기를 임의로 쓰기 (예: 15px, 22px)',
+       '크기를 건너뛰어 위계를 만들기 (H2 다음 바로 H5)',
+       '행간을 크기와 무관하게 임의로 조정하기']
+    )}
+  `},
+
+  { slug:'iconography', title:'Iconography', desc:'24×24 키라인 기반 아이콘 10종', body:()=>`
+    ${U.lead('아이콘은 글자 없이 의미를 전달하는 가장 작은 단위입니다. 모두 24×24 키라인 위에서 그려져 서로 같은 무게로 보입니다.')}
+    ${U.p('현재 10종이 등록되어 있습니다. 선이 아니라 <b>면(fill)으로 그려진 형태</b>라, 어두운 배경에서도 형태가 뭉개지지 않습니다.')}
+
+    ${U.h2('set','아이콘 세트')}
+    <div class="icon-grid">${Object.keys(ICONS).map(n =>
+      `<div class="icon-cell">${icon(n,24)}<div class="nm">${n}</div></div>`).join('')}</div>
+
+    ${U.h2('keyline','키라인 그리드')}
+    ${U.p('모든 아이콘은 24×24 프레임 안의 공통 키라인에 맞춰 그립니다. 형태마다 시각적 크기가 달라 보이는 것을 막기 위해, 정사각형은 18, 원은 20처럼 서로 다른 기준을 씁니다.')}
+    <div class="demo">
+      <div class="keyline-wrap">
+        <div class="keyline-box">
+          <svg width="144" height="144" viewBox="0 0 24 24" fill="none">
+            <rect x="0" y="0" width="24" height="24" fill="none" stroke="#393736" stroke-width=".25"/>
+            <rect x="3" y="3" width="18" height="18" stroke="#ff7726" stroke-width=".25" fill="none"/>
+            <circle cx="12" cy="12" r="10" stroke="#ff7726" stroke-width=".25" fill="none"/>
+            <rect x="2" y="4" width="20" height="16" stroke="#666463" stroke-width=".25" fill="none"/>
+            <rect x="4" y="2" width="16" height="20" stroke="#666463" stroke-width=".25" fill="none"/>
+            <line x1="0" y1="0" x2="24" y2="24" stroke="#272524" stroke-width=".25"/>
+            <line x1="24" y1="0" x2="0" y2="24" stroke="#272524" stroke-width=".25"/>
+          </svg>
+        </div>
+        <div style="flex:1;min-width:220px">
+          ${U.table(['기준 도형','크기'],[
+            [['name','프레임'],['val','24 × 24']],
+            [['name','정사각형'],['val','18 × 18']],
+            [['name','원'],['val','지름 20']],
+            [['name','가로 직사각형'],['val','20 × 16']],
+            [['name','세로 직사각형'],['val','16 × 20']]
+          ])}
+        </div>
+      </div>
+    </div>
+
+    ${U.h2('size','크기')}
+    ${U.p('기본은 24입니다. 좁은 자리에서는 20이나 16으로 줄일 수 있지만, 원본이 24 기준으로 그려졌으므로 4의 배수를 유지해 선 굵기가 어긋나지 않게 합니다.')}
+    ${U.demo(`<div class="icon-sizes">
+      ${[32,24,20,16].map(s => `<div class="is-item">${icon('download',s)}<div class="is-cap">${s}</div></div>`).join('')}
+    </div>`)}
+
+    ${U.h2('color','색')}
+    ${U.p('원본 파일의 색은 <code>#CECCCB</code>(Mono/100 = <code>--text</code>)입니다. 코드에서는 <code>fill="currentColor"</code>로 두고 상위 요소의 <code>color</code>로 제어합니다.')}
+    <div class="icon-colors">
+      <div class="ic-item" style="color:var(--text)">${icon('keyline',28)}<div class="ic-cap">--text<br>기본</div></div>
+      <div class="ic-item" style="color:var(--sub)">${icon('keyline',28)}<div class="ic-cap">--sub<br>보조</div></div>
+      <div class="ic-item" style="color:var(--muted)">${icon('keyline',28)}<div class="ic-cap">--muted<br>비활성</div></div>
+      <div class="ic-item" style="color:var(--accent)">${icon('keyline',28)}<div class="ic-cap">--accent<br>강조</div></div>
+      <div class="ic-item" style="color:var(--red-300)">${icon('close',28)}<div class="ic-cap">Red/300<br>삭제·오류</div></div>
+    </div>
+
+    ${U.h2('files','파일')}
+    ${U.table(['이름','파일','용도'],[
+      [['name','arrow-up / down / left / right'],['mono','assets/icons/arrow-*.svg'],['','방향 이동, 정렬, 펼침']],
+      [['name','close'],['mono','assets/icons/close.svg'],['','닫기, 삭제 취소']],
+      [['name','download / upload'],['mono','assets/icons/download.svg · upload.svg'],['','내려받기, 사진 올리기']],
+      [['name','drawer'],['mono','assets/icons/drawer.svg'],['','메뉴 열기']],
+      [['name','keyline'],['mono','assets/icons/keyline.svg'],['','날짜·달력']],
+      [['name','loading'],['mono','assets/icons/loading.svg'],['','더보기, 처리 중']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['등록된 10종 안에서 해결합니다',
+       '같은 의미에는 항상 같은 아이콘을 씁니다',
+       '아이콘만으로 뜻이 애매하면 라벨을 함께 둡니다',
+       '색은 currentColor로 두고 상위에서 제어합니다'],
+      ['다른 아이콘 세트에서 가져와 섞어 쓰기',
+       '24 기준을 벗어난 크기로 늘리기 (예: 21px)',
+       'SVG 안의 fill 값을 직접 하드코딩하기',
+       '아이콘을 회전시켜 다른 방향 아이콘 대신 쓰기']
+    )}
+  `},
+
+  { slug:'spacing', title:'Spacing', desc:'0부터 120까지 17단계의 간격 체계', body:()=>`
+    ${U.lead('Spacing은 요소 사이의 거리와 컴포넌트 내부의 여백을 결정합니다.')}
+    ${U.p('기본은 4의 배수이고, 작은 조정이 필요한 구간에만 2 · 6 · 10을 추가로 둡니다. 간격이 일정하면 화면은 정리된 인상을 주고, 간격이 제각각이면 내용이 같아도 산만해 보입니다.')}
+
+    ${U.h2('scale','스케일')}
+    <div class="demo">${T.spacing.map(v => `
+      <div class="space-row">
+        <div class="nm">Spacing/${v}</div>
+        <div class="bar" style="width:${Math.max(v,2)}px"></div>
+        <div class="px">${v}px</div>
+      </div>`).join('')}</div>
+
+    ${U.h2('tokens','토큰')}
+    ${U.table(['Figma','CSS 변수','값'],
+      T.spacing.map(v => [['name','Spacing/'+v],['mono','--space-'+v],['val',v+'px']]))}
+
+    ${U.h2('usage','자주 쓰는 조합')}
+    ${U.table(['상황','권장 값'],[
+      [['','아이콘과 라벨 사이'],['val','4 · 6']],
+      [['','버튼 내부 좌우 여백'],['val','16 · 20 · 28 (사이즈별)']],
+      [['','카드 내부 여백'],['val','20 · 24 · 28']],
+      [['','요소 사이 기본 간격'],['val','12 · 16']],
+      [['','섹션 사이 간격'],['val','48 · 64 · 80']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['같은 위계의 요소는 같은 간격으로 배치합니다',
+       '관계가 가까운 것끼리 좁히고, 먼 것끼리 넓힙니다',
+       '큰 구조일수록 큰 단계를 씁니다'],
+      ['스케일에 없는 값 쓰기 (예: 18px, 35px)',
+       '위아래 여백을 다르게 줘서 중심을 흐트러뜨리기',
+       '간격으로 위계를 만들 수 있는 자리에 선을 추가하기']
+    )}
+  `},
+
+  { slug:'radius', title:'Radius', desc:'모서리 둥글기 7단계', body:()=>`
+    ${U.lead('Radius는 컴포넌트와 콘텐츠 모서리의 둥글기를 정합니다.')}
+    ${U.p('둥글기는 제품의 인상을 크게 좌우합니다. HOMUSCLE은 각진 형태와 완전한 캡슐을 양 끝에 두고, 그 사이를 4px 간격으로 채웁니다. <b>요소가 클수록 큰 라운드를 쓰는 것</b>이 기본 원칙입니다.')}
+
+    ${U.h2('scale','스케일')}
+    ${U.demo(`<div class="radius-grid">${T.radius.map(v => `
+      <div class="radius-item">
+        <div class="box" style="border-radius:${v>=1000?'36px':v+'px'}"></div>
+        <div class="cap">${v>=1000?'full':v}</div>
+      </div>`).join('')}</div>`, 'Radius/1000은 완전한 캡슐 형태입니다 (미리보기는 축약 표시)')}
+
+    ${U.h2('tokens','토큰')}
+    ${U.table(['Figma','CSS 변수','값','주요 쓰임'],[
+      [['name','Radius/0'],['mono','--radius-0'],['val','0px'],['','구분선, 꽉 찬 배경']],
+      [['name','Radius/4'],['mono','--radius-4'],['val','4px'],['','카드, 통계 박스']],
+      [['name','Radius/8'],['mono','--radius-8'],['val','8px'],['','32 사이즈 버튼, 스와치']],
+      [['name','Radius/12'],['mono','--radius-12'],['val','12px'],['','48 · 40 사이즈 버튼']],
+      [['name','Radius/16'],['mono','--radius-16'],['val','16px'],['','큰 카드']],
+      [['name','Radius/20'],['mono','--radius-20'],['val','20px'],['','히어로 영역']],
+      [['name','Radius/1000'],['mono','--radius-1000'],['val','1000px'],['','배지, 칩, 스트릭']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['버튼은 사이즈별로 정해진 라운드를 씁니다 (48·40 → 12, 32 → 8)',
+       '중첩된 요소는 안쪽이 바깥쪽보다 작은 라운드를 씁니다',
+       '배지·칩처럼 높이가 작고 가로로 긴 요소는 캡슐(1000)로 처리합니다'],
+      ['스케일에 없는 중간값 쓰기 (예: 6px, 14px)',
+       '같은 위계의 카드마다 다른 라운드 쓰기',
+       '큰 컨테이너에 작은 라운드를 써서 각져 보이게 만들기']
+    )}
+  `},
+
+  { slug:'elevation', title:'Elevation', desc:'표면 밝기 단계와 오렌지 글로우', body:()=>`
+    ${U.lead('어두운 배경에서는 그림자가 잘 보이지 않습니다. 그래서 HOMUSCLE은 깊이를 두 가지 방식으로 나눠서 표현합니다.')}
+    ${U.p('하나는 <b>구조적 깊이</b>로, 표면이 위로 올라올수록 밝아집니다. 다른 하나는 <b>인터랙션 강조</b>로, 오렌지 글로우를 써서 "지금 반응하고 있다"는 신호를 보냅니다. 둘은 목적이 다르므로 섞어 쓰지 않습니다.')}
+
+    ${U.h2('surface','구조적 깊이 — 표면 밝기')}
+    ${U.p('레벨이 올라갈수록 표면이 밝아지면서 배경에서 떠오릅니다.')}
+    <div class="elev-grid">
+      <div class="elev-card" style="background:var(--elevation-0)"><b>Level 0</b><span>페이지 배경</span></div>
+      <div class="elev-card" style="background:var(--elevation-1)"><b>Level 1</b><span>카드 · 리스트</span></div>
+      <div class="elev-card" style="background:var(--elevation-2)"><b>Level 2</b><span>모달 · 바텀시트</span></div>
+      <div class="elev-card" style="background:var(--elevation-3)"><b>Level 3</b><span>팝오버 · 드롭다운</span></div>
+      <div class="elev-card" style="background:var(--elevation-4)"><b>Level 4</b><span>토스트</span></div>
+    </div>
+    ${U.table(['레벨','CSS 변수','참조','값'],[
+      [['name','Level 0'],['mono','--elevation-0'],['','Mono/990'],['val',U.dot('#0a0a0a')]],
+      [['name','Level 1'],['mono','--elevation-1'],['','Mono/900'],['val',U.dot('#111111')]],
+      [['name','Level 2'],['mono','--elevation-2'],['','Mono/800'],['val',U.dot('#1d1b1a')]],
+      [['name','Level 3'],['mono','--elevation-3'],['','Mono/700'],['val',U.dot('#272524')]],
+      [['name','Level 4'],['mono','--elevation-4'],['','Mono/600'],['val',U.dot('#393736')]]
+    ])}
+    ${U.note('현재 적용 범위','Level 0과 1은 제품에서 사용 중입니다. Level 2~4는 모달·팝오버·토스트를 위해 미리 예약해 둔 단계로, 해당 컴포넌트가 만들어질 때 적용됩니다.')}
+
+    ${U.h2('glow','인터랙션 강조 — Glow')}
+    ${U.p('오렌지 글로우는 사용자의 동작에 반응하는 요소에만 씁니다. 표면 밝기와 달리 <b>상태</b>를 나타냅니다.')}
+    ${U.demo(`<div class="glow-grid">
+      <div><div class="glow-chip resting">Resting</div><div class="glow-cap">기본 상태</div></div>
+      <div><div class="glow-chip active">Active</div><div class="glow-cap">누르거나 hover</div></div>
+      <div><div class="glow-chip lift">Lift</div><div class="glow-cap">카드 hover</div></div>
+    </div>`)}
+    ${U.table(['이름','CSS 변수','값'],[
+      [['name','Resting'],['mono','--glow-resting'],['val','0 0 22px rgba(255,99,0,.14), 0 0 16px rgba(255,99,0,.07)']],
+      [['name','Active'],['mono','--glow-active'],['val','0 0 34px rgba(255,99,0,.35), 0 0 20px rgba(255,99,0,.14)']],
+      [['name','Lift'],['mono','--glow-lift'],['val','0 14px 30px -14px rgba(255,99,0,.5)']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['화면 위에 겹쳐지는 요소일수록 높은 레벨을 씁니다',
+       '글로우는 사용자가 직접 조작하는 요소에만 씁니다',
+       '한 화면에서 Active 글로우는 하나만 보이게 합니다'],
+      ['구조를 나타내는 자리에 글로우 쓰기',
+       '어두운 그림자로 깊이를 표현하기 (배경이 이미 어둡습니다)',
+       '레벨을 건너뛰어 배치하기 (Level 0 위에 바로 Level 4)']
+    )}
+  `},
+
+  { slug:'opacity', title:'Opacity', desc:'Black · White · Primary 투명도 램프', body:()=>`
+    ${U.lead('반투명한 겹침이 필요한 자리에 쓰는 투명도 단계입니다. 5%부터 90%까지 10단계로 정의되어 있습니다.')}
+    ${U.p('오버레이, 딤 처리, 은은한 강조 배경처럼 <b>아래 내용이 비쳐 보여야 하는</b> 경우에 씁니다. 불투명한 색으로 해결되는 자리에는 쓰지 않습니다.')}
+
+    ${U.h2('ramp','램프')}
+    ${U.demo([
+      { name:'Black',   rgb:'0,0,0',       bg:'op-bg-mid'  },
+      { name:'White',   rgb:'255,255,255', bg:'op-bg-mid'  },
+      { name:'Primary', rgb:'255,99,0',   bg:'op-bg-dark' }
+    ].map(r => `<div class="op-row"><div class="nm">${r.name}</div><div class="op-ramp ${r.bg}">${
+        T.opacity.map(s => `<div class="op-chip" style="background:rgba(${r.rgb},${s/100})"><i>${s}</i></div>`).join('')
+      }</div></div>`).join(''), 'Primary 램프는 Primary/500(#ff6300) 기준입니다')}
+
+    ${U.h2('tokens','토큰')}
+    ${U.table(['계열','CSS 변수 형태','기준 색','단계'],[
+      [['name','Black'],['mono','--op-black-{n}'],['val','rgba(0,0,0,n)'],['','5 · 10 · 20 · 30 · 40 · 50 · 60 · 70 · 80 · 90']],
+      [['name','White'],['mono','--op-white-{n}'],['val','rgba(255,255,255,n)'],['','5 · 10 · 20 · 30 · 40 · 50 · 60 · 70 · 80 · 90']],
+      [['name','Primary'],['mono','--op-primary-{n}'],['val','rgba(255,99,0,n)'],['','5 · 10 · 20 · 30 · 40 · 50 · 60 · 70 · 80 · 90']]
+    ])}
+
+    ${U.h2('usage','자주 쓰는 값')}
+    ${U.table(['상황','권장 값'],[
+      [['','모달 뒤 딤 처리'],['val','--op-black-60 ~ 70']],
+      [['','이미지 위 텍스트 가독성 확보'],['val','--op-black-40 ~ 50']],
+      [['','은은한 강조 배경'],['val','--op-primary-10 ~ 20']],
+      [['','구분선 대신 쓰는 옅은 경계'],['val','--op-white-05 ~ 10']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['아래 내용이 비쳐 보여야 할 때만 씁니다',
+       '같은 목적에는 같은 단계를 반복해서 씁니다',
+       '텍스트 가독성이 필요한 딤은 40% 이상을 씁니다'],
+      ['불투명 색으로 충분한 자리에 투명도 쓰기',
+       '텍스트 자체에 투명도를 걸어 흐리게 만들기 (Mono 단계를 쓰세요)',
+       '투명도를 여러 겹 쌓아 최종 값을 예측하기 어렵게 만들기']
+    )}
+  `},
+
+  { slug:'graphic', title:'Graphic', desc:'일러스트·그래픽 요소 규격', status:'wip' },
+  { slug:'grid',    title:'Grid',    desc:'화면 폭과 컬럼 그리드', status:'wip' },
+  { slug:'motion',  title:'Motion',  desc:'트랜지션 시간과 이징 곡선', status:'wip' }
+
+]},
+
+/* ══════════════════════════════ COMPONENTS ══════════════════════════════ */
+{ key:'components', label:'Components', pages:[
+
+  { slug:'overview', title:'Overview', desc:'반복해서 쓰이는 UI 조각', body:()=>`
+    ${U.lead('컴포넌트는 토큰을 조합해 만든, 화면에서 반복해서 쓰이는 UI 조각입니다. 각 컴포넌트는 크기와 상태를 모두 정의해 두어야 합니다.')}
+    ${U.cards('components',[
+      {slug:'button', title:'Button', desc:'4가지 위계 × 3가지 크기 × 4가지 상태', thumb:TH.button},
+      {slug:'input',  title:'Input',  desc:'텍스트 입력 필드와 검증 상태', thumb:TH.wip, wip:true},
+      {slug:'card',   title:'Card',   desc:'기록·목표를 담는 컨테이너', thumb:TH.wip, wip:true},
+      {slug:'chip',   title:'Chip',   desc:'태그와 필터', thumb:TH.wip, wip:true},
+      {slug:'modal',  title:'Modal',  desc:'확인·입력을 위한 레이어', thumb:TH.wip, wip:true},
+      {slug:'toast',  title:'Toast',  desc:'일시적인 피드백 메시지', thumb:TH.wip, wip:true}
+    ])}
+  `},
+
+  { slug:'button', title:'Button', desc:'4가지 위계 × 3가지 크기 × 4가지 상태', body:()=>`
+    ${U.lead('버튼은 사용자가 화면에서 취할 수 있는 동작을 나타냅니다. 위계로 중요도를, 크기로 맥락을, 상태로 반응을 표현합니다.')}
+    ${U.p('Figma의 <code>Solid/Text</code> 마스터 컴포넌트를 기준으로 합니다. 한 화면에 Primary는 하나만 두는 것이 원칙입니다.')}
+
+    ${U.h2('hierarchy','위계')}
+    ${U.table(['위계','용도','예시'],[
+      [['name','Primary'],['','화면에서 가장 중요한 하나의 동작'],['','운동 시작, 저장']],
+      [['name','Secondary'],['','Primary를 보조하는 대등한 선택지'],['','다시 하기']],
+      [['name','Tertiary'],['','부수적인 동작'],['','수정, 취소']],
+      [['name','Quaternary'],['','되돌릴 수 없는 위험한 동작'],['','삭제']]
+    ])}
+
+    ${U.h2('size','크기')}
+    ${U.p('높이에 따라 좌우 여백·라운드·글자 크기가 함께 정해집니다. 임의 조합을 만들지 않습니다.')}
+    ${U.table(['크기','높이','좌우 여백','라운드','텍스트'],[
+      [['name','48'],['val','48px'],['mono','--space-28'],['mono','--radius-12'],['mono','B4 (14/24)']],
+      [['name','40'],['val','40px'],['mono','--space-20'],['mono','--radius-12'],['mono','B5 (12/20)']],
+      [['name','32'],['val','32px'],['mono','--space-16'],['mono','--radius-8'],['mono','B5 (12/20)']]
+    ])}
+
+    ${U.h2('state','상태')}
+    ${U.table(['상태','의미'],[
+      [['name','default'],['','기본 상태']],
+      [['name','hover'],['','커서가 올라간 상태']],
+      [['name','dim'],['','조건이 충족되지 않아 누를 수 없는 상태']],
+      [['name','loading'],['','동작을 처리 중인 상태 (라벨 대신 스피너)']]
+    ])}
+
+    ${U.h2('matrix','전체 매트릭스')}
+    <div class="demo">
+    ${[['Primary','primary'],['Secondary','secondary'],['Tertiary','tertiary'],['Quaternary (Danger)','quaternary']].map(([label,cls]) => `
+      <div class="btn-matrix-row">
+        <div class="hi-label">${label}</div>
+        <div class="btn-cells">
+          <div><button class="btn btn--${cls} btn--48">button</button><div class="cell-cap">48 · default</div></div>
+          <div><button class="btn btn--${cls} btn--48" data-state="hover">button</button><div class="cell-cap">48 · hover</div></div>
+          <div><button class="btn btn--${cls} btn--48" data-state="dim">button</button><div class="cell-cap">48 · dim</div></div>
+          <div><button class="btn btn--${cls} btn--48" data-state="loading"><span class="btn-label">button</span><span class="spinner"></span></button><div class="cell-cap">48 · loading</div></div>
+          <div><button class="btn btn--${cls} btn--40">button</button><div class="cell-cap">40 · default</div></div>
+          <div><button class="btn btn--${cls} btn--32">button</button><div class="cell-cap">32 · default</div></div>
+        </div>
+      </div>`).join('')}
+    </div>
+
+    ${U.h2('tokens','색 토큰')}
+    ${U.table(['위계','기본','hover','비활성(dim)'],[
+      [['name','Primary'],['mono','Primary/400'],['mono','Primary/500'],['mono','Mono/700 + Mono/500 텍스트']],
+      [['name','Secondary'],['mono','Primary/400 선·글자'],['mono','Mono/700 배경'],['mono','Mono/600 선 + Mono/500 텍스트']],
+      [['name','Tertiary'],['mono','Mono/900 + Mono/800 선'],['mono','Mono/600'],['mono','Mono/600 텍스트']],
+      [['name','Quaternary'],['mono','Red/300 선·글자'],['mono','Mono/700 배경'],['mono','Mono/600 선 + Mono/500 텍스트']]
+    ])}
+
+    ${U.h2('guide','사용 가이드')}
+    ${U.guide(
+      ['한 화면에 Primary는 하나만 둡니다',
+       '삭제처럼 되돌릴 수 없는 동작에는 Quaternary를 씁니다',
+       '나란히 놓을 때는 같은 크기로 맞춥니다',
+       '처리 시간이 있는 동작에는 loading 상태를 반드시 붙입니다'],
+      ['Primary를 여러 개 나란히 두기',
+       '크기와 라운드를 임의로 조합하기 (40 높이에 12px 라운드 등)',
+       '비활성 상태를 회색 텍스트만으로 표현하기',
+       '취소처럼 가벼운 동작에 Quaternary 쓰기']
+    )}
+  `},
+
+  { slug:'input', title:'Input', desc:'텍스트 입력 필드와 검증 상태', status:'wip' },
+  { slug:'card',  title:'Card',  desc:'기록·목표를 담는 컨테이너', status:'wip' },
+  { slug:'chip',  title:'Chip',  desc:'태그와 필터', status:'wip' },
+  { slug:'modal', title:'Modal', desc:'확인·입력을 위한 레이어', status:'wip' },
+  { slug:'toast', title:'Toast', desc:'일시적인 피드백 메시지', status:'wip' }
+
+]},
+
+/* ══════════════════════════════ PATTERNS ══════════════════════════════ */
+{ key:'patterns', label:'Patterns', pages:[
+
+  { slug:'overview', title:'Overview', desc:'토큰과 컴포넌트가 실제 화면에서 조합되는 방식', body:()=>`
+    ${U.lead('패턴은 토큰과 컴포넌트가 실제 화면에서 어떻게 조합되는지를 보여줍니다. 개별 규칙이 맞아도 합쳐놓으면 어색한 경우가 있어서, 완성된 화면 단위로 확인합니다.')}
+    ${U.cards('patterns',[
+      {slug:'training-home', title:'TRAINING 홈', desc:'모토·스트릭·통계·목표 카드로 이루어진 메인 화면', thumb:TH.screen}
+    ])}
+  `},
+
+  { slug:'training-home', title:'TRAINING 홈', desc:'메인 화면 적용 예시', body:()=>`
+    ${U.lead('homuscle의 첫 화면입니다. 지금까지 정의한 토큰과 버튼 시스템이 실제로 어떻게 쓰이는지 보여줍니다.')}
+
+    ${U.h2('screen','화면')}
+    <div class="demo pad-lg">
+      <div class="ex-label">MY MOTTO</div>
+      <div class="ex-card motto-card">
+        <div class="motto-text"><span class="qm">"</span>오늘 흘린 땀은 내일의 나를 만든다.<span class="qm">"</span></div>
+        <button class="btn btn--tertiary btn--32">수정</button>
+      </div>
+
+      <div class="streak-badge">오늘 운동하고 스트릭을 시작해보세요 🔥</div>
+
+      <div class="stats-row">
+        <div class="stat-box"><div class="num">9</div><div class="lbl">총 운동 일수</div></div>
+        <div class="stat-box"><div class="num">657</div><div class="lbl">총 횟수</div></div>
+        <div class="stat-box"><div class="num">9</div><div class="lbl">최장 스트릭</div></div>
+        <div class="stat-box"><div class="num">08:17</div><div class="lbl">평균 시간</div></div>
+      </div>
+
+      <div class="ex-label">MY GOALS</div>
+      <div class="ex-card goal-card">
+        <div class="goal-info">
+          <div class="ex-label" style="margin-bottom:0">2026-07-12</div>
+          <h4>덤벨 컬</h4>
+          <div class="goal-meta">30회 × 3세트</div>
+        </div>
+        <div class="dday">D+49<small>TARGET</small></div>
+        <div class="goal-actions">
+          <button class="btn btn--primary btn--48">운동 시작</button>
+          <div class="row2">
+            <button class="btn btn--tertiary btn--32">수정</button>
+            <button class="btn btn--quaternary btn--32">삭제</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:var(--space-16)"><button class="btn-add">+목표 추가</button></div>
+    </div>
+
+    ${U.h2('applied','적용된 토큰')}
+    ${U.table(['요소','토큰','비고'],[
+      [['name','페이지 배경'],['mono','--bg (Mono/990)'],['','Elevation Level 0']],
+      [['name','카드 표면'],['mono','--surface (Mono/900)'],['','Elevation Level 1']],
+      [['name','카드 라운드'],['mono','--radius-4'],['','기록·목표 카드 공통']],
+      [['name','통계 강조 숫자'],['mono','Text/Brand (Primary/500)'],['','하단 2px 밑줄도 동일 색']],
+      [['name','스트릭 배지'],['mono','--radius-1000'],['','캡슐 형태']],
+      [['name','운동 시작'],['mono','Primary / 48'],['','화면의 유일한 Primary']],
+      [['name','수정'],['mono','Tertiary / 32'],['','부수적 동작']],
+      [['name','삭제'],['mono','Quaternary / 32'],['','되돌릴 수 없는 동작']]
+    ])}
+
+    ${U.h2('reading','이 화면이 지키는 규칙')}
+    ${U.ul([
+      '오렌지는 통계 숫자와 "운동 시작" 버튼에만 등장합니다 — 시선이 갈 곳이 분명합니다',
+      '목표 카드마다 Primary는 하나이고, 부수 동작(수정·삭제)은 한 단계 작은 32 크기로 내려갑니다',
+      '삭제만 Red 계열이라 실수로 누르기 어렵습니다',
+      '카드 사이 간격과 카드 내부 여백이 서로 다른 단계를 써서 묶음이 구분됩니다'
+    ])}
+  `}
+
+]}
+
+];
+
+/* ============================================================================
+   라우터 · 렌더링
+============================================================================ */
+const FLAT = [];
+NAV.forEach(sec => sec.pages.forEach(pg => FLAT.push({ ...pg, sectionKey:sec.key, sectionLabel:sec.label })));
+
+function findPage(sectionKey, slug){
+  return FLAT.find(p => p.sectionKey===sectionKey && p.slug===slug);
+}
+
+function parseHash(){
+  const raw = location.hash.replace(/^#\/?/, '');
+  const [sectionKey, slug] = raw.split('/');
+  const page = findPage(sectionKey, slug);
+  return page || FLAT[0];
+}
+
+function renderTopNav(activeSection){
+  document.getElementById('topNav').innerHTML = NAV.map(sec =>
+    `<a href="#/${sec.key}/${sec.pages[0].slug}" class="${sec.key===activeSection?'active':''}">${sec.label}</a>`
+  ).join('');
+}
+
+function renderSidebar(activePage, query){
+  const el = document.getElementById('sidebarNav');
+  const q = (query||'').trim().toLowerCase();
+
+  if(q){
+    const hits = FLAT.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      (p.desc||'').toLowerCase().includes(q) ||
+      p.sectionLabel.toLowerCase().includes(q)
+    );
+    el.innerHTML = hits.length
+      ? `<div class="side-group"><div class="side-group-label">검색 결과 ${hits.length}</div>${
+          hits.map(p => `<a class="side-link ${p===activePage?'active':''}" href="#/${p.sectionKey}/${p.slug}">
+            <span>${p.sectionLabel} · ${p.title}</span>${p.status==='wip'?'<span class="wip">준비 중</span>':''}</a>`).join('')
+        }</div>`
+      : `<div class="side-empty">검색 결과가 없습니다.</div>`;
+    return;
+  }
+
+  const sec = NAV.find(s => s.key===activePage.sectionKey);
+  el.innerHTML = `<div class="side-group">
+    <div class="side-group-label">${sec.label}</div>
+    ${sec.pages.map(p => `<a class="side-link ${p.slug===activePage.slug?'active':''}" href="#/${sec.key}/${p.slug}">
+      <span>${p.title}</span>${p.status==='wip'?'<span class="wip">준비 중</span>':''}</a>`).join('')}
+  </div>`;
+}
+
+function wipBody(page){
+  return `<div class="wip-box">
+    <div class="wip-t">${page.title} 문서는 아직 준비 중입니다</div>
+    <div class="wip-d">${page.desc}<br>이 항목이 정리되면 이곳에 정의·토큰·사용 가이드가 채워집니다.</div>
+  </div>`;
+}
+
+function renderPage(page){
+  const idx  = FLAT.indexOf(page);
+  const prev = FLAT[idx-1];
+  const next = FLAT[idx+1];
+
+  const body = page.status==='wip' ? wipBody(page) : page.body();
+
+  document.getElementById('content').innerHTML = `
+    <div class="breadcrumb">${page.sectionLabel}<span>/</span>${page.title}</div>
+    <h1>${page.title}</h1>
+    ${body}
+    <div class="page-foot">
+      <div class="updated">최종 수정 · 2026. 9. 6.</div>
+      <div class="pager">
+        ${prev?`<a class="prev" href="#/${prev.sectionKey}/${prev.slug}"><span class="dir">이전 문서</span><span class="ttl">${prev.title}</span></a>`:'<span></span>'}
+        ${next?`<a class="next" href="#/${next.sectionKey}/${next.slug}"><span class="dir">다음 문서</span><span class="ttl">${next.title}</span></a>`:''}
+      </div>
+    </div>`;
+
+  renderToc();
+}
+
+function renderToc(){
+  const heads = [...document.querySelectorAll('#content h2[id]')];
+  const el = document.getElementById('tocList');
+  el.innerHTML = heads.length
+    ? heads.map(h => `<a href="#${h.id}" data-target="${h.id}">${h.textContent}</a>`).join('')
+    : '<div class="side-empty" style="padding:0">—</div>';
+
+  // TOC 클릭은 해시 라우팅과 충돌하므로 직접 스크롤 처리
+  el.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.getElementById(a.dataset.target);
+      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+  observeHeadings(heads);
+}
+
+let tocObserver = null;
+function observeHeadings(heads){
+  if(tocObserver) tocObserver.disconnect();
+  if(!heads.length) return;
+  const links = new Map([...document.querySelectorAll('#tocList a')].map(a => [a.dataset.target, a]));
+  tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const a = links.get(en.target.id);
+      if(!a) return;
+      if(en.isIntersecting){
+        links.forEach(l => l.classList.remove('active'));
+        a.classList.add('active');
+      }
+    });
+  }, { rootMargin:'-70px 0px -75% 0px', threshold:0 });
+  heads.forEach(h => tocObserver.observe(h));
+}
+
+function route(){
+  const page = parseHash();
+  renderTopNav(page.sectionKey);
+  renderSidebar(page, document.getElementById('searchInput').value);
+  renderPage(page);
+  document.querySelector('.content-wrap').scrollTop = 0;
+  window.scrollTo(0,0);
+}
+
+window.addEventListener('hashchange', route);
+document.getElementById('searchInput').addEventListener('input', e => {
+  renderSidebar(parseHash(), e.target.value);
+});
+route();
+</script>
+
+</body>
+</html>
