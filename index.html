@@ -26,8 +26,8 @@
   .hero-dark .pills-row { justify-content: center; }
   .hero-dark .pill { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: #e1dfde; }
   .hero-dark .pill:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.28); }
-  .hero-dark .pill.primary { background: #ff6300; color: #0b0b0c; font-weight: 600; }
-  .hero-dark .pill.primary:hover { background: #ff7726; }
+  .hero-dark .pill.primary { background: #fff; border-color: #fff; color: #0b0b0c; font-weight: 600; }
+  .hero-dark .pill.primary:hover { background: #e9e8e7; border-color: #e9e8e7; }
   .hero-dark .chat-input-box { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); }
   .hero-dark .chat-input-box:focus-within { border-color: rgba(255,255,255,0.3); box-shadow: 0 0 0 3px rgba(255,255,255,0.06); }
   .hero-dark .chat-prompt, .hero-dark .chat-input::placeholder { color: #848281; }
@@ -79,6 +79,13 @@
   #home-page .footer-col a:hover { color: #fff; }
   /* 히어로를 지나 카드 위로 스크롤하면 내비에 반투명 다크 바탕 */
   body.home-dark.home-scrolled #global-nav { background: rgba(11,11,12,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  /* In Progress 카드: 다크 배경에서 튀지 않게 낮은 불투명도로 */
+  #home-page .work-upcoming-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); animation: none; }
+  #home-page .work-upcoming-card::before { display: none; }
+  #home-page .work-upcoming-eyebrow { color: #8a8886; }
+  #home-page .work-upcoming-inner { background: rgba(255,255,255,0.05); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  #home-page .work-upcoming-title { color: #f3f2f1; }
+  #home-page .work-upcoming-desc { color: #9a9896; }
 </style>
 </head>
 <body>
