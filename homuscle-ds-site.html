@@ -23,8 +23,9 @@
   --primary-200:#ffb699; --primary-300:#ff8f5c; --primary-400:#ff7726; --primary-500:#ff6300;
   --primary-600:#d94800; --primary-700:#a63200; --primary-800:#732000; --primary-900:#421100; --primary-990:#240900;
 
-  /* PRIMITIVE — Red (경고/삭제, 5단계) */
-  --red-030:#ffebeb; --red-050:#ffd6d6; --red-100:#ff9999; --red-200:#ff6666; --red-300:#ff4d4d;
+  /* PRIMITIVE — Red (경고/삭제, 10단계 · v1.7.0) — Primary(주황)와 겹치지 않게 로즈 레드 쪽으로, 채도는 낮게 */
+  --red-050:#fbeaea; --red-100:#f6cfcf; --red-200:#f0a3a3; --red-300:#e08a8a; --red-400:#d36f71;
+  --red-500:#c4585b; --red-600:#9a4447; --red-700:#5a2a2b; --red-800:#3f1d1e; --red-900:#2a1415;
 
   /* PRIMITIVE — Base */
   --base-white:#ffffff; --base-black:#000000;
@@ -47,9 +48,11 @@
   --btn-tertiary-bg:var(--mono-900); --btn-tertiary-bg-hover:var(--mono-600);
   --btn-tertiary-border:var(--mono-800); --btn-tertiary-border-hover:var(--mono-600);
   --btn-tertiary-text:var(--mono-100); --btn-tertiary-text-dim:var(--mono-600);
-  --btn-quaternary-border:var(--red-300); --btn-quaternary-border-dim:var(--mono-600);
+  /* Button/Danger — 평소엔 차분하게, hover에서만 또렷하게 (v1.7.0) */
+  --btn-quaternary-border:var(--red-700); --btn-quaternary-border-dim:var(--mono-600);
   --btn-quaternary-text:var(--red-300); --btn-quaternary-text-dim:var(--mono-500);
-  --btn-quaternary-bg-hover:var(--mono-700);
+  --btn-quaternary-bg-hover:var(--red-900);
+  --btn-quaternary-border-hover:var(--red-500); --btn-quaternary-text-hover:var(--red-200);
 
   /* SPACING — 17단계 (0~120px) */
   --space-0:0px; --space-2:2px; --space-4:4px; --space-6:6px; --space-8:8px; --space-10:10px;
@@ -398,7 +401,7 @@ table.tokens tr:last-child td{border-bottom:none}
 .btn--tertiary:hover,.btn--tertiary[data-state="hover"]{background:var(--btn-tertiary-bg-hover);border-color:var(--btn-tertiary-border-hover)}
 .btn--tertiary[data-state="dim"]{background:var(--btn-tertiary-bg);border-color:var(--btn-tertiary-border);color:var(--btn-tertiary-text-dim)}
 .btn--quaternary{background:transparent;border:1px solid var(--btn-quaternary-border);color:var(--btn-quaternary-text)}
-.btn--quaternary:hover,.btn--quaternary[data-state="hover"]{background:var(--btn-quaternary-bg-hover)}
+.btn--quaternary:hover,.btn--quaternary[data-state="hover"]{background:var(--btn-quaternary-bg-hover);border-color:var(--btn-quaternary-border-hover);color:var(--btn-quaternary-text-hover)}
 .btn--quaternary[data-state="dim"]{background:transparent;border-color:var(--btn-quaternary-border-dim);color:var(--btn-quaternary-text-dim)}
 
 .btn-matrix-row{margin-bottom:var(--space-28)}
@@ -478,7 +481,7 @@ table.tokens tr:last-child td{border-bottom:none}
     <span class="sublabel">Design System</span>
   </a>
   <nav class="top-nav" id="topNav"></nav>
-  <div class="header-meta">v1.6.0</div>
+  <div class="header-meta">v1.7.0</div>
 </header>
 
 <div class="layout">
@@ -518,7 +521,8 @@ const T = {
         ['400','#848281'],['500','#666463'],['600','#393736'],['700','#272524'],['800','#1d1b1a'],['900','#111111'],['990','#0a0a0a']],
   primary:[['010','#fff8f5'],['030','#fff3ed'],['050','#ffefe6'],['100','#ffdcce'],['200','#ffb699'],['300','#ff8f5c'],
         ['400','#ff7726'],['500','#ff6300'],['600','#d94800'],['700','#a63200'],['800','#732000'],['900','#421100'],['990','#240900']],
-  red:[['030','#ffebeb'],['050','#ffd6d6'],['100','#ff9999'],['200','#ff6666'],['300','#ff4d4d']],
+  red:[['050','#fbeaea'],['100','#f6cfcf'],['200','#f0a3a3'],['300','#e08a8a'],['400','#d36f71'],
+        ['500','#c4585b'],['600','#9a4447'],['700','#5a2a2b'],['800','#3f1d1e'],['900','#2a1415']],
   spacing:[0,2,4,6,8,10,12,16,20,24,28,32,40,48,64,80,120],
   radius:[0,4,8,12,16,20,1000],
   opacity:[5,10,20,30,40,50,60,70,80,90],
@@ -684,6 +688,18 @@ const NAV = [
   { slug:'updates', title:'변경 이력', desc:'시스템에 반영된 변경 사항 기록', body:()=>`
     ${U.lead('토큰이나 컴포넌트 규격이 바뀌면 여기에 기록합니다. 무엇이 왜 바뀌었는지 남겨두면, 나중에 같은 논의를 반복하지 않게 됩니다.')}
 
+    ${U.h2('v170','v1.7.0 — 2026.09.29')}
+    ${U.p('Danger(Quaternary) 버튼이 화면에서 너무 튀던 문제를 고쳤습니다. Figma <b>DS practice</b>의 Colors·Buttons 업데이트(DS v1.1 적용본)를 이 문서와 제품에 반영했습니다.')}
+    ${U.table(['항목','이전','적용'],[
+      [['name','Red 팔레트'],['','5단계 (030–300, #FF4D4D 중심의 채도 높은 빨강)'],['','10단계 (050–900) — 로즈 레드 쪽으로 hue 이동, 채도 낮춤']],
+      [['name','Danger 기본 선'],['mono','Red/300 #FF4D4D'],['val','Red/700 #5A2A2B']],
+      [['name','Danger 기본 글자'],['mono','Red/300 #FF4D4D'],['val','Red/300 #E08A8A']],
+      [['name','Danger hover 배경'],['mono','Mono/700 #272524'],['val','Red/900 #2A1415']],
+      [['name','Danger hover 선 (신규)'],['','기본 선 재사용'],['val','Red/500 #C4585B']],
+      [['name','Danger hover 글자 (신규)'],['','기본 글자 재사용'],['val','Red/200 #F0A3A3']],
+      [['name','dim'],['mono','Mono/600 · Mono/500'],['','유지']]
+    ])}
+
     ${U.h2('v100','v1.0.0 — 2026.09.06')}
     ${U.p('Figma 파일과 제품 코드 사이의 값 불일치를 점검하고 네 건을 바로잡았습니다. 모두 <b>Figma를 기준으로</b> 코드를 맞추거나, Figma 쪽 값이 의도와 달랐던 경우 Figma를 고쳤습니다.')}
     ${U.table(['항목','내용','조치'],[
@@ -802,7 +818,7 @@ const NAV = [
     ${U.cards('foundations',[
       {slug:'design-token', title:'Design Token', desc:'값에 이름을 붙이는 방식과 두 겹의 구조', thumb:TH.token},
       {slug:'logo',         title:'Logo',         desc:'워드마크·심볼·파비콘 브랜드 에셋', thumb:TH.logo},
-      {slug:'color',        title:'Color',        desc:'Mono 13단계, Primary 13단계, Red 5단계', thumb:TH.color},
+      {slug:'color',        title:'Color',        desc:'Mono 13단계, Primary 13단계, Red 10단계', thumb:TH.color},
       {slug:'typography',   title:'Typography',   desc:'Pretendard 기반 13단계 타입 스케일', thumb:TH.type},
       {slug:'iconography',  title:'Iconography',  desc:'24×24 키라인 기반 아이콘 10종', thumb:TH.icon},
       {slug:'spacing',      title:'Spacing',      desc:'0부터 120까지 17단계의 간격 체계', thumb:TH.spacing},
@@ -942,9 +958,16 @@ const NAV = [
     ${U.p('브랜드 색이자 유일한 강조색입니다. 화면에서 "지금 눌러야 할 것" 하나를 가리키는 데 씁니다.')}
     ${U.swatches('Primary', T.primary)}
 
-    ${U.h2('red','Red — 경고 5단계')}
-    ${U.p('되돌릴 수 없는 동작(삭제)과 오류 상태에만 사용합니다.')}
+    ${U.h2('red','Red — 경고 10단계')}
+    ${U.p('되돌릴 수 없는 동작(삭제)과 오류 상태에만 사용합니다. Primary(주황, hue 23°)와 헷갈리지 않도록 hue를 0°(로즈 레드) 쪽으로 옮기고 채도를 낮췄습니다. 텍스트로 쓰는 값은 #111 배경 기준 WCAG AA(4.5:1) 이상입니다.')}
     ${U.swatches('Red', T.red)}
+    ${U.table(['단계','값','쓰임'],[
+      [['name','Red/200'],['val',U.dot('#f0a3a3')],['','Danger 버튼 hover 글자']],
+      [['name','Red/300'],['val',U.dot('#e08a8a')],['','Danger 버튼 기본 글자 · 오류 텍스트 (#111 위 7.3:1)']],
+      [['name','Red/500'],['val',U.dot('#c4585b')],['','Danger 버튼 hover 선']],
+      [['name','Red/700'],['val',U.dot('#5a2a2b')],['','Danger 버튼 기본 선']],
+      [['name','Red/900'],['val',U.dot('#2a1415')],['','Danger 버튼 hover 배경']]
+    ])}
 
     ${U.h2('semantic','Semantic — 역할별 색')}
     ${U.p('화면을 만들 때 실제로 참조하는 이름입니다. 각각이 어떤 프리미티브를 가리키는지는 아래와 같습니다.')}
@@ -981,7 +1004,7 @@ const NAV = [
     ${U.guide(
       ['한 화면에서 오렌지는 가장 중요한 동작 하나에만 씁니다',
        '텍스트 위계는 --em → --text → --aux → --sub 순서로 낮춥니다',
-       '삭제·오류에는 Red/300을 씁니다'],
+       '삭제·오류에는 Red 계열을 씁니다 — 글자 Red/300, 선 Red/700'],
       ['강조색을 여러 요소에 동시에 쓰기 (강조가 강조를 지웁니다)',
        '중립색 자리에 순수 회색(#888 등) 쓰기 — 팔레트의 온도가 깨집니다',
        'Red를 강조 목적으로 쓰기 — 경고로만 남겨둡니다']
@@ -989,7 +1012,7 @@ const NAV = [
   `},
 
   { slug:'typography', title:'Typography', desc:'Pretendard 기반 13단계 타입 스케일', body:()=>`
-    ${U.lead('본문 서체는 Pretendard, 로고와 일부 제목은 Ethnocentric을 씁니다. 크기는 13단계로 고정되어 있습니다.')}
+    ${U.lead('본문 서체는 Pretendard 하나만 씁니다. 로고와 인트로 워드마크는 웹폰트가 아니라 SVG 패스 에셋입니다(Ethnocentric 글자꼴을 아웃라인으로 딴 것 — 웹폰트 임베딩은 라이선스 제외 항목이라 로고 아트워크로 처리했습니다). 크기는 13단계로 고정되어 있습니다.')}
     ${U.p('Heading(H1~H6)은 제목답게 촘촘한 행간을, Body(B1~B5)와 Caption(C1~C2)은 읽기 편한 넉넉한 행간을 갖습니다. 각 단계는 Bold(700) · Medium(500) · Regular(400) 세 웨이트로 정의되어 있습니다.')}
 
     ${U.h2('scale','타입 스케일')}
@@ -1316,8 +1339,12 @@ const NAV = [
       [['name','Primary'],['mono','Primary/400'],['mono','Primary/500'],['mono','Mono/700 + Mono/500 텍스트']],
       [['name','Secondary'],['mono','Primary/400 선·글자'],['mono','Mono/700 배경'],['mono','Mono/600 선 + Mono/500 텍스트']],
       [['name','Tertiary'],['mono','Mono/900 + Mono/800 선'],['mono','Mono/600'],['mono','Mono/600 텍스트']],
-      [['name','Quaternary'],['mono','Red/300 선·글자'],['mono','Mono/700 배경'],['mono','Mono/600 선 + Mono/500 텍스트']]
+      [['name','Quaternary (Danger)'],['mono','Red/700 선 + Red/300 글자'],['mono','Red/900 + Red/500 선·Red/200 글자'],['mono','Mono/600 선 + Mono/500 텍스트']]
     ])}
+
+    ${U.note('Danger는 평소엔 차분하게, hover에서만 또렷하게',
+      '이전 Red/300(#FF4D4D)은 채도가 높고 차가운 빨강이라 따뜻한 주황 톤의 어두운 화면에서 가장 먼저 눈에 띄었습니다. 삭제는 필요할 때 찾을 수 있을 정도로만 존재감을 두고, 주요 동작(운동 시작, 주황)이 먼저 읽히도록 기본 상태를 가라앉혔습니다.',
+      'Figma Semantic: <code>Button/Danger/Border-Default</code> → Red/700 · <code>Text-Default</code> → Red/300 · <code>BG-Hover</code> → Red/900 · <code>Border-Hover</code> → Red/500 (신규) · <code>Text-Hover</code> → Red/200 (신규) · dim은 기존 Mono/600 · Mono/500 유지.')}
 
     ${U.h2('guide','사용 가이드')}
     ${U.guide(

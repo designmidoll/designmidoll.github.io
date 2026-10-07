@@ -141,11 +141,20 @@ function initCaseSidenav(pageId) {
       if (!sectionMap[raw]) return;
       label = sectionMap[raw];
     }
+    // 연속된 섹션이 같은 data-nav를 쓰면 목차 한 항목으로 묶는다 (예: 리서치 3개 → Research)
+    const last = items[items.length - 1];
+    if (last && last.label === label) {
+      if (!section.id) section.id = last.id + '-' + (last.members.length + 1);
+      last.members.push(section.id);
+      return;
+    }
     if (!section.id) {
       section.id = navId + '-' + label.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
     }
-    items.push({ id: section.id, label });
+    items.push({ id: section.id, label, members: [section.id] });
   });
+  const groupOf = {};
+  items.forEach(it => it.members.forEach(m => { groupOf[m] = it.id; }));
 
   nav.innerHTML = items.map(it =>
     `<button data-target="${it.id}" onclick="scrollToSec('${it.id}')">${it.label}</button>`
@@ -156,16 +165,16 @@ function initCaseSidenav(pageId) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         nav.querySelectorAll('button').forEach(btn => {
-          btn.classList.toggle('snav-active', btn.dataset.target === entry.target.id);
+          btn.classList.toggle('snav-active', btn.dataset.target === groupOf[entry.target.id]);
         });
       }
     });
   }, { rootMargin: '-15% 0px -75% 0px' });
 
-  items.forEach(it => {
-    const el = document.getElementById(it.id);
+  items.forEach(it => it.members.forEach(m => {
+    const el = document.getElementById(m);
     if (el) observer.observe(el);
-  });
+  }));
 }
 
 /* ── CHAT ── */
@@ -497,18 +506,19 @@ document.addEventListener('keydown', function(e) {
   /* 페이지별 전용 메시지 — 같은 라벨(Reflection 등)이 여러 케이스에 있어서 페이지로 분리 */
   const pageMessages = {
     'case3-page': {
-      'Overview':                   '집에서 덤벨 운동을 하고 싶은데 자꾸 미루게 되는 분들을 위해 직접 만들어봤어요 💪',
-      'Design System':              '액센트 컬러는 주황 원컬러로 했어요. 블랙과 조화를 이루어서 스포츠 브랜드의 느낌을 살렸어요.',
-      'Key Screens':                '이건 캡처 이미지가 아니라 진짜 앱이에요. 탭을 눌러 화면을 옮겨볼 수 있어요 👆',
-      '01 · Training — 목표와 진행 상황': 'D-day를 화면에서 제일 크게 뒀어요. 오늘 운동할 이유가 가장 먼저 보이도록요.',
-      '02 · Gallery — 운동 기록':   '운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시돼요 📅',
-      '03 · Stretch — 스트레칭 가이드': '운동 전후에 목·어깨를 풀 수 있는 가이드예요. 관절이 움직이는 궤적을 하나하나 그렸어요.',
-      'Session':                    '운동 중엔 화면에서 2~3m 떨어져 있어요. 그래서 카운터만 7rem으로 키웠어요 🏋️',
-      '카운팅 상태머신':             '팔꿈치가 110°보다 크면 DOWN, 80°보다 작으면 UP. 이 전환이 일어날 때 +1 카운트해요.',
-      '예외 상황 처리':              '아령 인식이 실패해도 포즈 카운팅은 계속 돌아가요. 핵심 기능은 안 멈추게 했어요.',
-      'Feedback & Motivation':      '카운트마다 주황 펄스와 사운드가 같이 나와요. 화면을 안 봐도 세졌는지 알 수 있죠 🔥',
-      'Process — Working with AI':  '474줄짜리 스펙 문서를 먼저 쓰고 AI에게 넘겼어요. 스펙이 정밀할수록 결과물이 좋아지더라고요.',
-      '다음에 할 것':                '다른 부위 운동도 더 추가해보고 싶어요 🦾'
+      'Overview': '집에서 덤벨 운동을 하고 싶은데 자꾸 미루게 되는 분들을 위해 직접 만들어봤어요 💪',
+      'Desk Research': '습관이 되기까지 평균 두 달! 그 전에 앱을 지우는 게 문제였어요 📚',
+      'Competitive Analysis': '다들 외부 보상에 기대고 있었어요. 그래서 나만의 기록으로 갔어요 🧭',
+      'User Research': '32명 설문, 3명 인터뷰로 방향을 잡았어요 📝',
+      'Project Goal': '입력 없이 남는 기록! 이게 핵심 목표였어요 🎯',
+      'User Journey': '단계마다 다시 하게 만드는 장치를 하나씩 심었어요 🔁',
+      'Information Architecture': '메뉴는 딱 다섯 개로 줄였어요 ✂️',
+      'Design System': '액센트 컬러는 주황 원컬러로 했어요. 블랙과 조화를 이루어서 스포츠 브랜드의 느낌을 살렸어요.',
+      'Key Features': '테두리 있는 화면은 진짜 앱이에요. 직접 눌러보세요 👆',
+      '05 · Auto Counting': '팔꿈치 각도로 횟수를 세요. 영상은 기기 밖으로 안 나가요 🏋️',
+      'Edge Cases': '인식이 실패해도 운동은 멈추지 않게 했어요 🛡',
+      'Result': '5명 중 5명이 1분 안에 첫 운동을 시작했어요 ✨',
+      'Retrospective': '다음엔 운동 알림이랑 기기 간 동기화를 해보고 싶어요 🚀'
     }
   };
 

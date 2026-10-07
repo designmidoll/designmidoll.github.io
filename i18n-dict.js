@@ -1181,274 +1181,32 @@ window.I18N_DICT = {
     koAt: "저장한 제품을 다른 사람에게 공유하는 경로가 없었습니다. <mark class=\"hl\">리서치를 통해 공유 니즈가 확인되어</mark> Products 폴더 내 더보기(⋮) 아이콘 클릭 시 Share(공유) 버튼을 추가하여, 링크 복사·외부 앱으로 공유할 수 있도록 설계했습니다."
   },
 
-  /* ───────── HOMUSCLE (homuscle.html)  (98개 · 번역완료 98 · 남음 0) ───────── */
-  /* ── Key Screens 사용 흐름 재구성 (2026.09) ── */
-  "hm.scr.goalp": {
-    ko:   "목표는 운동 종류·횟수·세트·날짜 네 가지만 고르면 끝납니다. 종목 4종을 버튼으로 먼저 펼쳐 <mark class=\"hl\">무엇을 할 수 있는 앱인지가 입력 화면에서 드러나도록</mark> 했고, 날짜는 과거와 미래를 모두 열어뒀습니다. 어제 못 한 운동을 오늘 기록하는 경우가 실제로 더 많았기 때문입니다.",
-    en:   "Creating a goal takes four choices — exercise, reps, sets, and date. The four exercises are laid out as buttons up front so <mark class=\"hl\">the input screen itself shows what the app can do</mark>, and the date field stays open to both past and future days, because logging yesterday's missed workout today turned out to be the more common case.",
-    koAt: "목표는 운동 종류·횟수·세트·날짜 네 가지만 고르면 끝납니다. 종목 4종을 버튼으로 먼저 펼쳐 <mark class=\"hl\">무엇을 할 수 있는 앱인지가 입력 화면에서 드러나도록</mark> 했고, 날짜는 과거와 미래를 모두 열어뒀습니다. 어제 못 한 운동을 오늘 기록하는 경우가 실제로 더 많았기 때문입니다."
-  },
-  "hm.sub.sess": {
-    ko:   "03 · Session — 직접 촬영하며 운동 실행",
-    en:   "03 · Session — working out in front of the camera",
-    koAt: "03 · Session — 직접 촬영하며 운동 실행"
-  },
-  "hm.scr.sessp": {
-    ko:   "운동을 시작하면 카메라가 켜지고, 팔꿈치 각도를 프레임마다 추적해 횟수를 셉니다. 화면에는 <mark class=\"hl\">지금 몇 개인지와 얼마나 남았는지만</mark> 남기고 나머지 조작은 세션 전후로 옮겼습니다. 아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면입니다.",
-    en:   "Starting a workout turns the camera on and counts reps by tracking elbow angle frame by frame. The screen keeps <mark class=\"hl\">only the current count and how much is left</mark>; every other control moved to before or after the session. Below is real footage with the pose-tracking output drawn straight onto it.",
-    koAt: "운동을 시작하면 카메라가 켜지고, 팔꿈치 각도를 프레임마다 추적해 횟수를 셉니다. 화면에는 <mark class=\"hl\">지금 몇 개인지와 얼마나 남았는지만</mark> 남기고 나머지 조작은 세션 전후로 옮겼습니다. 아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면입니다."
-  },
-  /* ── Design System 섹션 (2026.09 개편) ── */
-  "hm.ds.h2": {
-    ko:   "토큰 9개에서 시스템으로",
-    en:   "From Nine Variables to a System",
-    koAt: "토큰 9개에서 시스템으로"
-  },
-  "hm.ds.p0": {
-    ko:   "초기 버전은 CSS 변수 9개로 색을 묶어둔 수준이었습니다. 화면이 늘어나자 같은 오렌지가 화면마다 조금씩 달라지고, 같은 버튼인데 높이가 제각각이 됐습니다. <mark class=\"hl\">사용자는 그 차이를 의도로 읽습니다.</mark> 그래서 Figma에 원본 파일을 만들고, 문서와 제품 코드가 그 값을 참조하는 구조로 다시 세웠습니다.",
-    en:   "The first version was little more than nine CSS variables holding the colors together. As screens multiplied, the same orange drifted slightly from one screen to the next, and buttons that should have matched ended up at different heights. <mark class=\"hl\">Users read those inconsistencies as intent.</mark> So I built a source file in Figma and rebuilt the structure so that both the documentation and the product code reference those values.",
-    koAt: "초기 버전은 CSS 변수 9개로 색을 묶어둔 수준이었습니다. 화면이 늘어나자 같은 오렌지가 화면마다 조금씩 달라지고, 같은 버튼인데 높이가 제각각이 됐습니다. <mark class=\"hl\">사용자는 그 차이를 의도로 읽습니다.</mark> 그래서 Figma에 원본 파일을 만들고, 문서와 제품 코드가 그 값을 참조하는 구조로 다시 세웠습니다."
-  },
-  "hm.ds.p1": {
-    ko:   "핵심은 <mark class=\"hl\">Primitive → Semantic 2계층</mark>입니다. <code class=\"c2-code\">#ff7726</code> 대신 <code class=\"c2-code\">Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다. 현재 Primitive 31개 위에 쓰임새의 이름을 가진 Semantic 35개를 얹어 씁니다.",
-    en:   "The core is a <mark class=\"hl\">Primitive → Semantic two-layer structure</mark>. The moment you call it <code class=\"c2-code\">Primary/400</code> instead of <code class=\"c2-code\">#ff7726</code>, the meaning survives even when the value changes. Today 35 semantic tokens — named for how they are used — sit on top of 31 primitives.",
-    koAt: "핵심은 <mark class=\"hl\">Primitive → Semantic 2계층</mark>입니다. <code class=\"c2-code\">#ff7726</code> 대신 <code class=\"c2-code\">Primary/400</code>이라고 부르는 순간, 값이 바뀌어도 의미는 유지됩니다. 현재 Primitive 31개 위에 쓰임새의 이름을 가진 Semantic 35개를 얹어 씁니다."
-  },
-  "hm.ds.sub0": {
-    ko:   "값의 원본을 한 곳으로",
-    en:   "One Source of Truth",
-    koAt: "값의 원본을 한 곳으로"
-  },
-  "hm.ds.p2": {
-    ko:   "값이 사는 곳을 셋으로 나눴습니다. <mark class=\"hl\">Figma가 원본, 문서가 설명, 코드가 사용</mark>입니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춘다는 규칙을 먼저 정해두니, 이후의 논의가 취향 문제가 아니라 확인 작업이 됐습니다.",
-    en:   "I split the places a value can live into three. <mark class=\"hl\">Figma is the source, the documentation is the explanation, and the code is the usage.</mark> Setting the rule up front — when the three disagree, Figma wins — turned later discussions from matters of taste into verification work.",
-    koAt: "값이 사는 곳을 셋으로 나눴습니다. <mark class=\"hl\">Figma가 원본, 문서가 설명, 코드가 사용</mark>입니다. 세 곳이 어긋나면 항상 Figma를 기준으로 맞춘다는 규칙을 먼저 정해두니, 이후의 논의가 취향 문제가 아니라 확인 작업이 됐습니다."
-  },
-  "hm.ds.src0t": {
-    ko:   "Figma \"DS practice\"",
-    en:   "Figma \"DS practice\"",
-    koAt: "Figma \"DS practice\""
-  },
-  "hm.ds.src0d": {
-    ko:   "Variables · Text Styles · Components — 값의 단일 원본",
-    en:   "Variables · Text Styles · Components — the single source of truth",
-    koAt: "Variables · Text Styles · Components — 값의 단일 원본"
-  },
-  "hm.ds.src1t": {
-    ko:   "문서 사이트",
-    en:   "Documentation site",
-    koAt: "문서 사이트"
-  },
-  "hm.ds.src1d": {
-    ko:   "값의 설명과 사용 규칙 — 왜 이 값인지를 남기는 곳",
-    en:   "The explanation and usage rules — where the reasoning behind each value lives",
-    koAt: "값의 설명과 사용 규칙 — 왜 이 값인지를 남기는 곳"
-  },
-  "hm.ds.src2t": {
-    ko:   "제품 코드",
-    en:   "Product code",
-    koAt: "제품 코드"
-  },
-  "hm.ds.src2d": {
-    ko:   "CSS 변수로 값을 참조만 — 자체 값을 갖지 않음",
-    en:   "References values through CSS variables only — holds none of its own",
-    koAt: "CSS 변수로 값을 참조만 — 자체 값을 갖지 않음"
-  },
-  "hm.ds.p3": {
-    ko:   "규칙을 세우고 첫 점검을 돌리자 곧바로 세 건이 나왔습니다. H1~H6 행간이 의도한 1.15~1.40이 아니라 <strong>1.67~1.71로 느슨하게</strong> 적용돼 있었고, <code class=\"c2-code\">Button/Primary/BG-Hover</code>가 Primary/600을 가리키는데 실제 컴포넌트는 Primary/500으로 렌더링되고 있었으며, hover 상태가 컴포넌트 속성에 <code class=\"c2-code\">state=focus</code>로 잘못 명명돼 있었습니다. <mark class=\"hl\">눈으로는 찾기 어렵고, 기준이 있어야 보이는 종류의 오류였습니다.</mark>",
-    en:   "The first audit after setting the rule surfaced three issues immediately. Line-heights for H1–H6 were applied at <strong>1.67–1.71, far looser than the intended</strong> 1.15–1.40; <code class=\"c2-code\">Button/Primary/BG-Hover</code> pointed to Primary/600 while the component actually rendered Primary/500; and the hover state was misnamed <code class=\"c2-code\">state=focus</code> in the component properties. <mark class=\"hl\">These are the kind of errors you cannot catch by eye — only against a standard.</mark>",
-    koAt: "규칙을 세우고 첫 점검을 돌리자 곧바로 세 건이 나왔습니다. H1~H6 행간이 의도한 1.15~1.40이 아니라 <strong>1.67~1.71로 느슨하게</strong> 적용돼 있었고, <code class=\"c2-code\">Button/Primary/BG-Hover</code>가 Primary/600을 가리키는데 실제 컴포넌트는 Primary/500으로 렌더링되고 있었으며, hover 상태가 컴포넌트 속성에 <code class=\"c2-code\">state=focus</code>로 잘못 명명돼 있었습니다. <mark class=\"hl\">눈으로는 찾기 어렵고, 기준이 있어야 보이는 종류의 오류였습니다.</mark>"
-  },
-  "hm.ds.sub2": {
-    ko:   "문서 사이트",
-    en:   "The Documentation Site",
-    koAt: "문서 사이트"
-  },
-  "hm.ds.p6": {
-    ko:   "값만 정해두면 결국 각자 기억에 의존하게 됩니다. Get Started · Foundations · Components · Patterns 네 갈래로 문서 사이트를 만들어 <mark class=\"hl\">값과 함께 그 값을 쓰는 규칙</mark>을 적었습니다. 이 사이트 자체도 아래 토큰만으로 만들어 두어, 문서가 곧 시스템이 동작한다는 증거가 되게 했습니다.",
-    en:   "Values alone leave everyone relying on memory. I built a documentation site in four parts — Get Started · Foundations · Components · Patterns — to record <mark class=\"hl\">the values together with the rules for using them.</mark> The site itself is built from nothing but those tokens, so the documentation doubles as proof that the system works.",
-    koAt: "값만 정해두면 결국 각자 기억에 의존하게 됩니다. Get Started · Foundations · Components · Patterns 네 갈래로 문서 사이트를 만들어 <mark class=\"hl\">값과 함께 그 값을 쓰는 규칙</mark>을 적었습니다. 이 사이트 자체도 아래 토큰만으로 만들어 두어, 문서가 곧 시스템이 동작한다는 증거가 되게 했습니다."
-  },
-  "hm.ds.note": {
-    ko:   "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>",
-    en:   "Both frames are the <b>live documentation site, embedded</b> — you can open other pages from its sidebar. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Open the full design system ↗</a>",
-    koAt: "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다. <a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>"
-  },
-
-  "hm.c2-card-l.0": {
-    ko:   "My Role",
-    en:   "My Role",
-    koAt: "My Role"
-  },
-  "hm.c2-card-l.1": {
-    ko:   "Method",
-    en:   "Method",
-    koAt: "Method"
-  },
-  "hm.c2-card-l.2": {
-    ko:   "Tech",
-    en:   "Tech",
-    koAt: "Tech"
-  },
-  "hm.c2-card-l.3": {
-    ko:   "Format",
-    en:   "Format",
-    koAt: "Format"
-  },
-  "hm.c2-card-n.0": {
-    ko:   "Designer & Builder",
-    en:   "Designer & Builder",
-    koAt: "Designer & Builder"
-  },
-  "hm.c2-card-n.1": {
-    ko:   "Vibe Coding",
-    en:   "Vibe Coding",
-    koAt: "Vibe Coding"
-  },
-  "hm.c2-card-n.2": {
-    ko:   "MediaPipe · YOLO",
-    en:   "MediaPipe · YOLO",
-    koAt: "MediaPipe · YOLO"
-  },
-  "hm.c2-card-n.3": {
-    ko:   "1 HTML File",
-    en:   "1 HTML File",
-    koAt: "1 HTML File"
-  },
-  "hm.c2-card-s.0": {
-    ko:   "기획 · 디자인 · 구현 · 검증 1인",
-    en:   "Planning · design · build · validation, solo",
-    koAt: "기획 · 디자인 · 구현 · 검증 1인"
-  },
-  "hm.c2-card-s.1": {
-    ko:   "스펙 문서 기반 AI 협업",
-    en:   "Spec-document-driven AI collaboration",
-    koAt: "스펙 문서 기반 AI 협업"
-  },
-  "hm.c2-card-s.2": {
-    ko:   "포즈 추적 + 아령 객체 인식",
-    en:   "Pose tracking + dumbbell object detection",
-    koAt: "포즈 추적 + 아령 객체 인식"
-  },
-  "hm.c2-card-s.3": {
-    ko:   "의존성은 CDN 3개뿐",
-    en:   "Only 3 CDN dependencies",
-    koAt: "의존성은 CDN 3개뿐"
-  },
+  /* ───────── HOMUSCLE (homuscle.html)  (316개 · 번역완료 316 · 남음 0) ───────── */
+  /* ── 2026.10 개편: Figma 최신 케이스스터디 구조 반영 ── */
   "hm.case-eyebrow.0": {
-    ko:   "AI Experiment · Side Project · Jul 2026 — Vibe Coding",
-    en:   "AI Experiment · Side Project · Jul 2026 — Vibe Coding",
-    koAt: "AI Experiment · Side Project · Jul 2026 — Vibe Coding"
+    ko:   "Personal Work · Jul 2026 · UX Research &amp; Product Design",
+    en:   "Personal Work · Jul 2026 · UX Research &amp; Product Design",
+    koAt: "Personal Work · Jul 2026 · UX Research &amp; Product Design"
   },
   "hm.case-h1.0": {
-    ko:   "\n      <span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 신규 구축부터 구현·검증까지</span>\n    ",
-    en:   "\"<span style=\\\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\\\">\\n        <span style=\\\"font-family:'Archivo',sans-serif;\\\">HOMUSCLE : AI Home Workout Tracker</span>\\n        <span class=\\\"case-type-badge\\\">Web App</span>\\n      </span>\\n      <span style=\\\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\\\">A web app that counts dumbbell reps automatically through camera pose detection — from building a new design system through implementation and validation</span>\"",
-    koAt: "\n      <span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라 포즈 인식으로 덤벨 운동 횟수를 자동으로 세는 웹앱 — 디자인 시스템 신규 구축부터 구현·검증까지</span>\n    "
-  },
-  "hm.cb-h2.0": {
-    ko:   "왜 만들었나",
-    en:   "Why I built it",
-    koAt: "왜 만들었나"
-  },
-  "hm.cb-h2.2": {
-    ko:   "주요 화면",
-    en:   "Key screens",
-    koAt: "주요 화면"
-  },
-  "hm.cb-h2.3": {
-    ko:   "세션 화면 설계",
-    en:   "Designing the session screen",
-    koAt: "세션 화면 설계"
-  },
-  "hm.cb-h2.4": {
-    ko:   "화면을 볼 수 없는 사용자를 위한 피드백",
-    en:   "Feedback for a user who can't look at the screen",
-    koAt: "화면을 볼 수 없는 사용자를 위한 피드백"
-  },
-  "hm.cb-h2.5": {
-    ko:   "기준을 문서로 쓰기 전과 후",
-    en:   "Before and after writing the standards down",
-    koAt: "기준을 문서로 쓰기 전과 후"
-  },
-  "hm.cb-h2.6": {
-    ko:   "배운 것과 다음 단계",
-    en:   "What I learned and what's next",
-    koAt: "배운 것과 다음 단계"
-  },
-  "hm.cb-p.0": {
-    ko:   "집에서 덤벨 운동을 할 때 횟수를 세는 일이 생각보다 번거롭습니다. 세다가 놓치면 기록이 남지 않고, 기록이 없으면 운동을 이어가기 어려웠습니다. <mark class=\"hl\">직접 겪은 이 문제를 카메라 포즈 인식으로 해결할 수 있을지</mark> 확인해보기 위해 시작한 개인 프로젝트입니다.",
-    en:   "Counting reps during a home dumbbell workout is more of a nuisance than it sounds. Lose count and nothing gets recorded; without records it's hard to keep going. This is a personal project I started to see whether <mark class=\"hl\">a problem I'd felt myself could be solved with camera pose detection</mark>.",
-    koAt: "집에서 덤벨 운동을 할 때 횟수를 세는 일이 생각보다 번거롭습니다. 세다가 놓치면 기록이 남지 않고, 기록이 없으면 운동을 이어가기 어려웠습니다. <mark class=\"hl\">직접 겪은 이 문제를 카메라 포즈 인식으로 해결할 수 있을지</mark> 확인해보기 위해 시작한 개인 프로젝트입니다."
-  },
-  "hm.cb-p.1": {
-    ko:   "HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class=\"hl\">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다.",
-    en:   "HOMUSCLE tracks your elbow angle in real time as you work out in front of a webcam, <mark class=\"hl\">counting and recording reps automatically</mark>. It runs from a single HTML file — no install, no server, no account. I defined the planning, design system, motion and copy, then built it together with AI (Claude).",
-    koAt: "HOMUSCLE은 웹캠 앞에서 운동하면 팔꿈치 각도를 실시간으로 추적해 <mark class=\"hl\">횟수를 자동으로 세고 기록하는</mark> 웹앱입니다. 설치나 서버, 계정 없이 HTML 파일 하나로 동작합니다. 기획과 디자인 시스템, 모션, 카피를 정의하고 AI(Claude)와 함께 구현까지 진행했습니다."
-  },
-  "hm.cb-p.4": {
-    ko:   "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 목표를 세우고 → 몸을 풀고 → 운동하고 → 기록을 남기는 순서로, 실제 사용 흐름을 따라 배치했습니다. 직접 눌러보거나 목표를 추가해볼 수 있습니다.",
-    en:   "The screens below aren't captures — they're <mark class=\"hl\">the real app embedded as-is</mark>. They follow the actual usage flow: set a goal → warm up → work out → keep the record. Click around, or try adding a goal of your own.",
-    koAt: "아래 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것입니다. 목표를 세우고 → 몸을 풀고 → 운동하고 → 기록을 남기는 순서로, 실제 사용 흐름을 따라 배치했습니다. 직접 눌러보거나 목표를 추가해볼 수 있습니다."
-  },
-  "hm.cb-p.5": {
-    ko:   "모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class=\"hl\">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다.",
-    en:   "Motto, streak, stats and goal cards sit on one screen. The D-day number is large and orange so <mark class=\"hl\">the reason to work out today reads first</mark>. Even on days the goal is met, \"keep going\" allows another session, so the completion badge never becomes a reason to stop.",
-    koAt: "모토·스트릭·통계·목표 카드를 한 화면에 배치했습니다. D-day 숫자를 주황으로 크게 배치해 <mark class=\"hl\">오늘 운동해야 하는 이유가 가장 먼저 보이도록</mark> 했습니다. 목표를 달성한 날에도 '계속 하기'로 재운동할 수 있게 해, 달성 뱃지가 운동을 멈추는 이유가 되지 않도록 했습니다."
-  },
-  "hm.cb-p.6": {
-    ko:   "달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class=\"hl\">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다.",
-    en:   "On the calendar, days with a workout show an orange dot and days with a photo show a thumbnail. Clicking a date brings that day's sessions into the right panel, and tapping a record card opens a detail modal. <mark class=\"hl\">Making records worth revisiting</mark> was the goal of the retention design.",
-    koAt: "달력에서 운동한 날은 주황 도트로, 인증샷이 있는 날은 썸네일로 표시됩니다. 날짜를 클릭하면 그날의 세션이 우측 패널에 나타나고, 기록 카드를 누르면 상세 모달이 열립니다. <mark class=\"hl\">기록을 다시 확인하고 싶게 만드는 것</mark>을 리텐션 설계의 목표로 잡았습니다."
-  },
-  "hm.cb-p.6b": {
-    ko:   "기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class=\"hl\">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다.",
-    en:   "Tapping a record card opens the detail modal. From here, <mark class=\"hl\">Save card image</mark> exports that day's photo and stats (reps, sets, time) as a single card image. I assumed people need a reason to come back — and being able to keep and share the record outside the app is one.",
-    koAt: "기록 카드를 누르면 상세 모달이 열립니다. 여기서 <mark class=\"hl\">카드 이미지 저장</mark>을 누르면 그날의 사진과 기록(횟수·세트·시간)을 한 장의 카드 이미지로 내보냅니다. 앱 밖에서도 기록을 남기고 공유할 수 있어야 다시 돌아올 이유가 생긴다고 봤습니다."
-  },
-  "hm.cb-p.7": {
-    ko:   "목·어깨 스트레칭 가이드는 영상 대신 <mark class=\"hl\">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다.",
-    en:   "The neck and shoulder stretching guide is built as an <mark class=\"hl\">SVG wireframe animation</mark> rather than video. Drawing joint axes and motion paths in code costs almost nothing in file size and keeps the black-and-orange tone intact. The same technique drives the pre-workout guide popup.",
-    koAt: "목·어깨 스트레칭 가이드는 영상 대신 <mark class=\"hl\">SVG 와이어프레임 애니메이션</mark>으로 제작했습니다. 관절 회전축과 동작 궤적을 코드로 그리면 용량 부담이 거의 없고, 블랙·주황 톤을 그대로 유지할 수 있습니다. 같은 방식의 애니메이션을 운동 시작 전 가이드 팝업에도 사용했습니다."
-  },
-  "hm.cb-p.8": {
-    ko:   "세션 화면은 제약이 분명했습니다. 사용자는 <mark class=\"hl\">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다.",
-    en:   "The session screen had clear constraints: the user is <mark class=\"hl\">2–3m away from the screen with a dumbbell in each hand.</mark> So I placed only the essentials over a full-screen camera view — the counter enlarged to 7rem in orange to stay readable from a distance, a full-width progress bar, and a pose skeleton overlay. All controls moved to before and after the session, and in-session feedback was doubled up visually (pulse) and audibly (sound).",
-    koAt: "세션 화면은 제약이 분명했습니다. 사용자는 <mark class=\"hl\">화면에서 2~3m 떨어져 있고, 두 손에는 덤벨이 들려 있습니다.</mark> 그래서 풀스크린 카메라 위에 최소한의 정보만 배치했습니다. 멀리서도 읽히도록 카운터를 7rem 주황으로 키우고, 풀와이드 진행 바와 포즈 스켈레톤 오버레이를 더했습니다. 모든 조작은 세션 전후로 옮겼고, 세션 중 피드백은 시각(펄스)과 청각(사운드)으로 이중화했습니다."
-  },
-  "hm.cb-p.9": {
-    ko:   "위 03 화면이 그렇게 정리한 결과입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다.",
-    en:   "Screen 03 above is what that reasoning produced — the actual session needs camera permission, so you can try it in the <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">live app ↗</a>.",
-    koAt: "위 03 화면이 그렇게 정리한 결과입니다 — 실제 세션은 카메라 권한이 필요해 <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">라이브 앱 ↗</a>에서 체험할 수 있습니다."
-  },
-  "hm.cb-p.10": {
-    ko:   "초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class=\"hl\">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다.",
-    en:   "At first a rep only counted if you bent your arm past 50°. Working out with it myself, I found that <mark class=\"hl\">the experience of a rep not counting drove people away more than imprecise form did</mark>. I relaxed the thresholds to 80°/110° and blocked noise-driven miscounts with frame stabilization and debouncing.",
-    koAt: "초기에는 팔을 50° 이하로 완전히 굽혀야 카운트됐습니다. 직접 운동해보니 <mark class=\"hl\">자세의 정확도보다 카운트가 안 되는 경험이 이탈 요인</mark>이었습니다. 임계값을 80°/110°로 완화하고, 노이즈로 인한 오카운트는 프레임 안정화와 디바운스로 막았습니다."
-  },
-  "hm.cb-p.11": {
-    ko:   "카운트는 정확해졌는데 계속 쓰게 되지는 않았습니다. 이유는 단순했습니다 — 덤벨을 들고 있으면 <mark class=\"hl\">화면을 볼 수가 없습니다.</mark> 시선은 위나 아래를 향하고, 숫자가 올라갔는지는 세트가 끝나고서야 확인하게 됩니다. 그래서 피드백을 화면 밖으로 꺼냈습니다.",
-    en:   "Counting got accurate, but I still didn't keep using it. The reason was simple — once you're holding a dumbbell, <mark class=\"hl\">you can't look at the screen.</mark> Your eyes go up or down, and you only check the number once the set is over. So I moved the feedback off the screen.",
-    koAt: "카운트는 정확해졌는데 계속 쓰게 되지는 않았습니다. 이유는 단순했습니다 — 덤벨을 들고 있으면 <mark class=\"hl\">화면을 볼 수가 없습니다.</mark> 시선은 위나 아래를 향하고, 숫자가 올라갔는지는 세트가 끝나고서야 확인하게 됩니다. 그래서 피드백을 화면 밖으로 꺼냈습니다."
-  },
-  "hm.cb-p.12": {
-    ko:   "처음에는 만들고 싶은 걸 그때그때 설명했습니다. 동작하는 화면은 빠르게 나왔지만, 요청 한 번에 카드 모서리가 둥글어지고 주황색이 배경까지 번졌습니다. 같은 지적을 세 번쯤 반복하고 나서야 문제를 알았습니다. <mark class=\"hl\">AI가 기준을 어긴 게 아니라, 기준이 어디에도 적혀 있지 않았습니다.</mark>",
-    en:   "At first I described what I wanted as I went. A working screen came fast, but one request later the card corners had gone round and the orange had bled into the background. Only after repeating the same note about three times did I see it. <mark class=\"hl\">The AI hadn't broken the rules — the rules were written down nowhere.</mark>",
-    koAt: "처음에는 만들고 싶은 걸 그때그때 설명했습니다. 동작하는 화면은 빠르게 나왔지만, 요청 한 번에 카드 모서리가 둥글어지고 주황색이 배경까지 번졌습니다. 같은 지적을 세 번쯤 반복하고 나서야 문제를 알았습니다. <mark class=\"hl\">AI가 기준을 어긴 게 아니라, 기준이 어디에도 적혀 있지 않았습니다.</mark>"
+    ko:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라로 운동 횟수를 세고, 기록까지 남기는 홈트레이닝 웹앱</span>",
+    en:   "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI Home Workout Tracker</span>\n        <span class=\"case-type-badge\">Web App</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">A home workout web app that counts your reps with the camera — and keeps the record for you</span>",
+    koAt: "<span style=\"display:flex;align-items:center;gap:14px;flex-wrap:wrap;\">\n        <span style=\"font-family:'Archivo',sans-serif;\">HOMUSCLE : AI 홈트레이닝 트래커</span>\n        <span class=\"case-type-badge\">웹앱</span>\n      </span>\n      <span style=\"font-size:20px;color:#b5b5b5;font-weight:400;letter-spacing:-0.02em;font-family:'NanumSquareNeo',sans-serif;word-break:keep-all;line-height:1.6;\">카메라로 운동 횟수를 세고, 기록까지 남기는 홈트레이닝 웹앱</span>"
   },
   "hm.cht.0": {
-    ko:   "Vibe Coding · AI 협업",
-    en:   "Vibe Coding · Working with AI",
-    koAt: "Vibe Coding · AI 협업"
+    ko:   "Desk Research",
+    en:   "Desk Research",
+    koAt: "Desk Research"
   },
   "hm.cht.1": {
-    ko:   "MediaPipe Pose",
-    en:   "MediaPipe Pose",
-    koAt: "MediaPipe Pose"
+    ko:   "Survey · Interview",
+    en:   "Survey · Interview",
+    koAt: "Survey · Interview"
   },
   "hm.cht.2": {
-    ko:   "On-device YOLO",
-    en:   "On-device YOLO",
-    koAt: "On-device YOLO"
+    ko:   "Product Design",
+    en:   "Product Design",
+    koAt: "Product Design"
   },
   "hm.cht.3": {
     ko:   "Design System",
@@ -1456,269 +1214,1514 @@ window.I18N_DICT = {
     koAt: "Design System"
   },
   "hm.cht.4": {
-    ko:   "Motion Design",
-    en:   "Motion Design",
-    koAt: "Motion Design"
+    ko:   "MediaPipe Pose",
+    en:   "MediaPipe Pose",
+    koAt: "MediaPipe Pose"
   },
   "hm.cht.5": {
-    ko:   "Single-file Web App",
-    en:   "Single-file Web App",
-    koAt: "Single-file Web App"
-  },
-  "hm.cs-l.0": {
-    ko:   "덤벨 운동 자동 카운팅",
-    en:   "Dumbbell exercises auto-counted",
-    koAt: "덤벨 운동 자동 카운팅"
-  },
-  "hm.cs-l.1": {
-    ko:   "단일 HTML 파일로 완성",
-    en:   "Built as a single HTML file",
-    koAt: "단일 HTML 파일로 완성"
-  },
-  "hm.cs-l.2": {
-    ko:   "온디바이스 추론 · 서버 0",
-    en:   "On-device inference · zero servers",
-    koAt: "온디바이스 추론 · 서버 0"
+    ko:   "AI 협업 개발",
+    en:   "AI-assisted Development",
+    koAt: "AI 협업 개발"
   },
   "hm.hm-embed-note.0": {
-    ko:   "이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">새 탭에서 직접 사용해보기 ↗</a>",
-    en:   "This isn't a screenshot — <b>the real app is rendering live</b>. The intro's human wireframe is drawn frame by frame on Canvas. <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Try it in a new tab ↗</a>",
-    koAt: "이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 인트로의 인체 와이어프레임은 Canvas로 매 프레임 그려집니다. <a href=\"homuscle-app.html?demo=1\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">새 탭에서 직접 사용해보기 ↗</a>"
+    ko:   "이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 페이지 곳곳의 테두리 있는 화면도 모두 실제 앱이에요.<br class=\"br-d\"><a href=\"https://homuscle.vercel.app/\" target=\"_blank\" rel=\"noopener\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">새 탭에서 직접 사용해보기 ↗</a>",
+    en:   "This isn't a screenshot — <b>the real app is rendering live</b>, and so are the other framed screens on this page.<br class=\"br-d\"><a href=\"https://homuscle.vercel.app/\" target=\"_blank\" rel=\"noopener\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Try it in a new tab ↗</a>",
+    koAt: "이 화면은 캡처 이미지가 아니라 <b>실제 앱이 라이브로 렌더링</b>된 것입니다 — 페이지 곳곳의 테두리 있는 화면도 모두 실제 앱이에요.<br class=\"br-d\"><a href=\"https://homuscle.vercel.app/\" target=\"_blank\" rel=\"noopener\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">새 탭에서 직접 사용해보기 ↗</a>"
   },
-  "hm.nom-cap.0": {
-    ko:   "세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다",
-    en:   "Session screen mockup — real footage analysed with MediaPipe Pose to extract shoulder, elbow and wrist coordinates plus elbow angles, then overlaid with the skeleton, angle readouts and dumbbell detection box. The UP/DOWN state and rep count come from applying the same 80°/110° thresholds as the state machine below",
-    koAt: "세션 화면 목업 — 실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸습니다. UP/DOWN 상태와 카운트는 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과입니다"
+  "hm.cs-l.0": {
+    ko:   "첫 세션을 1분 안에 시작",
+    en:   "started their first session within 1 minute",
+    koAt: "첫 세션을 1분 안에 시작"
   },
-  "hm.obs-bubble.0": {
-    ko:   "<strong>숫자는 맞는데 <mark class=\"hl\">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다.",
-    en:   "<strong>The numbers were right, but <mark class=\"hl\">my body didn't follow</mark></strong><br>The first thresholds were 50°/140°. On screen it was precise, but from the third set on my arms bent less and reps went uncounted. Two adjustments later I landed on 80°/110°. Measuring accurately and keeping someone going turned out to be different problems.",
-    koAt: "<strong>숫자는 맞는데 <mark class=\"hl\">몸이 안 따라왔다</mark></strong><br>처음 임계값은 50°/140°였습니다. 화면상으로는 정확했지만, 3세트째부터 팔이 덜 굽혀지면서 카운트가 빠졌습니다. 두 번 조정해 80°/110°에 도착했습니다. 정확하게 재는 것과 계속하게 만드는 것은 다른 문제였습니다."
+  "hm.cs-l.1": {
+    ko:   "3일 중 2일 이상 다시 돌아옴",
+    en:   "came back on 2+ of 3 days",
+    koAt: "3일 중 2일 이상 다시 돌아옴"
   },
-  "hm.obs-bubble.1": {
-    ko:   "<strong>고장인지 <mark class=\"hl\">내 탓인지 구분되지 않으면</mark> 다시 열지 않는다</strong><br>모델이 로드되지 않은 날, 앱은 에러도 없이 그냥 숫자를 세지 않았습니다. 그럴 때 사용자가 의심하는 건 앱이 아니라 자기 자세입니다. 실패할 때 무엇이 안 되는지 말하게 고치고 나서야 믿고 쓸 수 있는 도구가 됐습니다.",
-    en:   "<strong>If it can't tell you <mark class=\"hl\">broken from your own fault</mark>, you won't open it again</strong><br>The day the model failed to load, the app just stopped counting — no error at all. In that moment a user doubts their own form, not the app. Only once it said what had failed did it become something I could trust.",
-    koAt: "<strong>고장인지 <mark class=\"hl\">내 탓인지 구분되지 않으면</mark> 다시 열지 않는다</strong><br>모델이 로드되지 않은 날, 앱은 에러도 없이 그냥 숫자를 세지 않았습니다. 그럴 때 사용자가 의심하는 건 앱이 아니라 자기 자세입니다. 실패할 때 무엇이 안 되는지 말하게 고치고 나서야 믿고 쓸 수 있는 도구가 됐습니다."
+  "hm.cs-l.2": {
+    ko:   "운동 중 직접 입력한 횟수",
+    en:   "manual inputs during a workout",
+    koAt: "운동 중 직접 입력한 횟수"
   },
-  "hm.obs-bubble.2": {
-    ko:   "<strong>필요한 건 지시하는 능력이 아니라 <mark class=\"hl\">완성을 정의하는 능력</mark>이었다</strong><br>같은 도구를 쓰고도 결과가 달라진 이유는 프롬프트가 아니라 기준의 유무였습니다. 디자이너의 일이 화면을 그리는 것에서 판단 기준을 명시하는 쪽으로 옮겨가고 있다는 감각을 얻었습니다.",
-    en:   "<strong>What I needed wasn't the ability to instruct, but <mark class=\"hl\">the ability to define done</mark></strong><br>The same tool gave different results not because of the prompt but because of whether a standard existed. It left me with a sense that a designer's work is shifting from drawing screens to stating the criteria for judgment.",
-    koAt: "<strong>필요한 건 지시하는 능력이 아니라 <mark class=\"hl\">완성을 정의하는 능력</mark>이었다</strong><br>같은 도구를 쓰고도 결과가 달라진 이유는 프롬프트가 아니라 기준의 유무였습니다. 디자이너의 일이 화면을 그리는 것에서 판단 기준을 명시하는 쪽으로 옮겨가고 있다는 감각을 얻었습니다."
+  "hm.ov.h2": {
+    ko:   "집에서 덤벨 운동은, 왜 매번 <em>작심삼일</em>로 끝날까?",
+    en:   "Why do home dumbbell workouts <em>always fizzle out</em> after a few days?",
+    koAt: "집에서 덤벨 운동은, 왜 매번 <em>작심삼일</em>로 끝날까?"
   },
-  "hm.obs-label.0": {
-    ko:   "Learning #1",
-    en:   "Learning #1",
-    koAt: "Learning #1"
+  "hm.ov.p0": {
+    ko:   "따로 횟수를 세는 것도 귀찮고 기록도 따로 남기지 않다 보니, 금방 지루해지고 이어갈 이유가 사라져요.<br class=\"br-d\">직접 겪은 이러한 문제들을 해결하고자 <b>HOMUSCLE</b>을 만들게 되었어요.",
+    en:   "Counting reps is a chore, and nothing gets recorded — so it gets boring fast and the reason to keep going disappears.<br class=\"br-d\"> I built <b>HOMUSCLE</b> to solve the problems I ran into myself.",
+    koAt: "따로 횟수를 세는 것도 귀찮고 기록도 따로 남기지 않다 보니, 금방 지루해지고 이어갈 이유가 사라져요.<br class=\"br-d\">직접 겪은 이러한 문제들을 해결하고자 <b>HOMUSCLE</b>을 만들게 되었어요."
   },
-  "hm.obs-label.1": {
-    ko:   "Learning #2",
-    en:   "Learning #2",
-    koAt: "Learning #2"
+  "hm.ov.p1": {
+    ko:   "HOMUSCLE은 카메라가 운동 횟수를 자동으로 세고,<br class=\"br-d\"><mark class=\"hl\">달력·사진·기록으로 남아 다시 운동하게 만드는</mark> 홈트레이닝 웹앱이에요.",
+    en:   "HOMUSCLE is a home workout web app where <mark class=\"hl\">the camera counts your reps automatically, and each session is kept as a calendar mark, a photo and a record that brings you back</mark>.",
+    koAt: "HOMUSCLE은 카메라가 운동 횟수를 자동으로 세고,<br class=\"br-d\"><mark class=\"hl\">달력·사진·기록으로 남아 다시 운동하게 만드는</mark> 홈트레이닝 웹앱이에요."
   },
-  "hm.obs-label.2": {
-    ko:   "Learning #3",
-    en:   "Learning #3",
-    koAt: "Learning #3"
+  "hm.meta.0": {
+    ko:   "Personal Work",
+    en:   "Personal Work",
+    koAt: "Personal Work"
   },
-  "hm.ref-lbl.0": {
-    ko:   "검증 범위",
-    en:   "Scope of validation",
-    koAt: "검증 범위"
+  "hm.meta.2": {
+    ko:   "기획·디자인 100% · 개발 AI 협업",
+    en:   "Planning &amp; design 100% · Development with AI",
+    koAt: "기획·디자인 100% · 개발 AI 협업"
   },
-  "hm.ref-lbl.1": {
-    ko:   "환경 민감도",
-    en:   "Environmental sensitivity",
-    koAt: "환경 민감도"
+  "hm.dr.h2": {
+    ko:   "홈트, 방법은 알아요.<br>부족한 건 <em>의지를 대신할 장치</em>",
+    en:   "People already know how to work out at home.<br>What's missing is <em>something to stand in for willpower</em>",
+    koAt: "홈트, 방법은 알아요.<br>부족한 건 <em>의지를 대신할 장치</em>"
   },
-  "hm.ref-lbl.2": {
-    ko:   "모바일 경험",
-    en:   "Mobile experience",
-    koAt: "모바일 경험"
+  "hm.dr.p0": {
+    ko:   "운동 정보는 이미 넘쳐나요. 그래서 많은 사람이 혼자서도 할 수 있다고 믿어요.<br class=\"br-d\">근데 혼자 하면 결국 의지 하나로 버텨야 해요.<br class=\"br-d\">운동이 습관이 되기까지, <mark class=\"hl\">대부분은 그 전에 헬스 앱을 그만둬요.</mark>",
+    en:   "Workout information is everywhere, so many people believe they can do it alone.<br class=\"br-d\"> But alone, it all comes down to willpower.<br class=\"br-d\"> Before exercise ever becomes a habit, <mark class=\"hl\">most people have already quit their fitness app.</mark>",
+    koAt: "운동 정보는 이미 넘쳐나요. 그래서 많은 사람이 혼자서도 할 수 있다고 믿어요.<br class=\"br-d\">근데 혼자 하면 결국 의지 하나로 버텨야 해요.<br class=\"br-d\">운동이 습관이 되기까지, <mark class=\"hl\">대부분은 그 전에 헬스 앱을 그만둬요.</mark>"
   },
-  "hm.ref-lbl.3": {
-    ko:   "단일 파일이라는 선택",
-    en:   "Choosing a single file",
-    koAt: "단일 파일이라는 선택"
+  "hm.dr.q0": {
+    ko:   "Q. 새 습관이 자동으로 되기까지 걸리는 시간은?",
+    en:   "Q. How long does it take for a new habit to become automatic?",
+    koAt: "Q. 새 습관이 자동으로 되기까지 걸리는 시간은?"
   },
-  "hm.ref-p.0": {
-    ko:   "본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다.",
-    en:   "It's still tuned around my own use — <strong>usability testing with other users</strong> hasn't happened yet.",
-    koAt: "본인 사용 기반 튜닝 단계로, <strong>타 사용자 대상 사용성 테스트</strong>는 아직 진행 전입니다."
+  "hm.dr.s0": {
+    ko:   "Singh et al., 2024 · Healthcare (메타분석, 2,601명)",
+    en:   "Singh et al., 2024 · Healthcare (meta-analysis, n=2,601)",
+    koAt: "Singh et al., 2024 · Healthcare (메타분석, 2,601명)"
   },
-  "hm.ref-p.1": {
-    ko:   "조명·카메라 각도에 따라 포즈 인식 편차가 있어 <strong>측면 운동 종목</strong>은 인식률이 낮아집니다.",
-    en:   "Pose detection varies with lighting and camera angle, so <strong>side-facing exercises</strong> have lower accuracy.",
-    koAt: "조명·카메라 각도에 따라 포즈 인식 편차가 있어 <strong>측면 운동 종목</strong>은 인식률이 낮아집니다."
+  "hm.dr.b0": {
+    ko:   "흔히 알려진 21일",
+    en:   "The popular “21 days”",
+    koAt: "흔히 알려진 21일"
   },
-  "hm.ref-p.2": {
-    ko:   "데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다.",
-    en:   "It was designed desktop-webcam-first, so the <strong>mobile session UI</strong> still needs work.",
-    koAt: "데스크톱 웹캠 시나리오 우선으로 설계해 <strong>모바일 세션 UI</strong>는 최적화가 필요합니다."
+  "hm.dr.b1": {
+    ko:   "실제 중앙값 59~66일",
+    en:   "Actual median 59–66 days",
+    koAt: "실제 중앙값 59~66일"
   },
-  "hm.ref-p.3": {
-    ko:   "링크 하나로 바로 열리게 하려고 HTML 한 파일로 유지했습니다. 대신 <strong>종목을 늘리는 시점</strong>에는 구조를 분리해야 합니다.",
-    en:   "I kept it as one HTML file so a single link opens it straight away. The trade-off is that <strong>adding more exercises</strong> will require splitting the structure up.",
-    koAt: "링크 하나로 바로 열리게 하려고 HTML 한 파일로 유지했습니다. 대신 <strong>종목을 늘리는 시점</strong>에는 구조를 분리해야 합니다."
+  "hm.dr.b2": {
+    ko:   "평균 106~154일",
+    en:   "Mean 106–154 days",
+    koAt: "평균 106~154일"
   },
-  "hm.cb-p.13": {
-    ko:   "기능이 되는 것보다 <mark class=\"hl\">안 될 때 이유를 알 수 있는가</mark>가 이 도구를 계속 쓰게 만드는 조건이었습니다. 실제로 세션이 멈췄던 세 지점입니다.",
-    en:   "What kept me using this tool wasn't that it worked, but <mark class=\"hl\">whether I could tell why when it didn't.</mark> These are the three points where a session actually stalled.",
-    koAt: "기능이 되는 것보다 <mark class=\"hl\">안 될 때 이유를 알 수 있는가</mark>가 이 도구를 계속 쓰게 만드는 조건이었습니다. 실제로 세션이 멈췄던 세 지점입니다."
+  "hm.dr.q1": {
+    ko:   "Q. 헬스·피트니스 앱, 한 달 뒤에도 쓰고 있을까?",
+    en:   "Q. Are people still using a fitness app a month later?",
+    koAt: "Q. 헬스·피트니스 앱, 한 달 뒤에도 쓰고 있을까?"
   },
-  "hm.cb-p.14": {
-    ko:   "컨페티나 격려 문구처럼 눈에 보이는 장치도 넣었지만, 실제로 차이를 만든 건 <mark class=\"hl\">화면을 보지 않아도 전달되는 신호</mark>였습니다.",
-    en:   "I added visible touches too — confetti, encouragement copy — but what actually made the difference was <mark class=\"hl\">a signal that lands without looking.</mark>",
-    koAt: "컨페티나 격려 문구처럼 눈에 보이는 장치도 넣었지만, 실제로 차이를 만든 건 <mark class=\"hl\">화면을 보지 않아도 전달되는 신호</mark>였습니다."
+  "hm.dr.b3": {
+    ko:   "약 3%",
+    en:   "~3%",
+    koAt: "약 3%"
   },
-  "hm.cb-p.15": {
-    ko:   "이후 디자인 토큰, 레이아웃 규칙, 카운팅 임계값, 그리고 무엇이 완성인지를 판단할 체크리스트를 문서 하나에 모으고 모든 작업의 기준으로 삼았습니다. 프롬프트를 잘 쓰는 것보다 <mark class=\"hl\">완성의 정의를 먼저 내리는 일</mark>이 결과물을 좌우했습니다.",
-    en:   "From then on I collected the design tokens, layout rules, counting thresholds and a checklist for judging what counted as finished into one document, and made it the reference for every task. <mark class=\"hl\">Defining done first</mark> shaped the output far more than writing better prompts did.",
-    koAt: "이후 디자인 토큰, 레이아웃 규칙, 카운팅 임계값, 그리고 무엇이 완성인지를 판단할 체크리스트를 문서 하나에 모으고 모든 작업의 기준으로 삼았습니다. 프롬프트를 잘 쓰는 것보다 <mark class=\"hl\">완성의 정의를 먼저 내리는 일</mark>이 결과물을 좌우했습니다."
+  "hm.dr.b4": {
+    ko:   "30일 뒤 남는 사용자",
+    en:   "of users remain after 30 days",
+    koAt: "30일 뒤 남는 사용자"
   },
-  "hm.cb-p.16": {
-    ko:   "아직은 혼자 쓰면서 맞춘 상태입니다. 다음에는 5명 정도에게 직접 써보게 해서 카운팅을 믿을 수 있는지, 첫 세션에서 어디가 막히는지를 확인해보고 싶습니다. 운동 종목은 무릎 각도를 쓰는 스쿼트·런지로 넓힐 수 있고, 모바일 세로 화면 최적화는 그다음 순서로 보고 있습니다.",
-    en:   "So far it's been tuned around my own use. Next I'd like to put it in front of about five people and see whether the counting feels trustworthy and where the first session breaks down. The exercise list can extend to squats and lunges, which run on knee angle, and optimizing the portrait mobile layout comes after that.",
-    koAt: "아직은 혼자 쓰면서 맞춘 상태입니다. 다음에는 5명 정도에게 직접 써보게 해서 카운팅을 믿을 수 있는지, 첫 세션에서 어디가 막히는지를 확인해보고 싶습니다. 운동 종목은 무릎 각도를 쓰는 스쿼트·런지로 넓힐 수 있고, 모바일 세로 화면 최적화는 그다음 순서로 보고 있습니다."
+  "hm.dr.h3": {
+    ko:   "앱을 떠나는 이유? 입력은 번거롭고, 목표가 달라져요",
+    en:   "Why do people leave? Logging is tedious, and goals change",
+    koAt: "앱을 떠나는 이유? 입력은 번거롭고, 목표가 달라져요"
   },
-  "hm.sub.0": {
-    ko:   "쓰다가 멈췄던 지점",
-    en:   "Where it stalled in use",
-    koAt: "쓰다가 멈췄던 지점"
+  "hm.dr.p1": {
+    ko:   "건강 앱을 그만두는 이유는 크게 여섯 가지로 나뉘고, 자기 활동을 기록했을 때 효과가 더 좋았어요.<br class=\"br-d\">HOMUSCLE도 집에서 카메라를 켜고 자발적으로 운동하는 서비스라,<br class=\"br-d\"><mark class=\"hl\">입력의 번거로움과 달라지는 목표</mark>는 반드시 풀어야 할 문제였어요.",
+    en:   "Reasons for abandoning health apps fall into six groups, and self-monitoring made a measurable difference.<br class=\"br-d\"> Since HOMUSCLE asks people to turn on a camera and work out on their own at home, <mark class=\"hl\">the friction of manual input and shifting goals</mark> were problems it had to solve.",
+    koAt: "건강 앱을 그만두는 이유는 크게 여섯 가지로 나뉘고, 자기 활동을 기록했을 때 효과가 더 좋았어요.<br class=\"br-d\">HOMUSCLE도 집에서 카메라를 켜고 자발적으로 운동하는 서비스라,<br class=\"br-d\"><mark class=\"hl\">입력의 번거로움과 달라지는 목표</mark>는 반드시 풀어야 할 문제였어요."
   },
-  "hm.sub.1": {
-    ko:   "다음에 할 것",
-    en:   "What's next",
-    koAt: "다음에 할 것"
+  "hm.dr.q2": {
+    ko:   "Q. 사람들은 왜 건강 앱을 그만둘까?",
+    en:   "Q. Why do people stop using health apps?",
+    koAt: "Q. 사람들은 왜 건강 앱을 그만둘까?"
   },
-  "hm.fail-sym.0": {
-    ko:   "아령 인식 모델이 로드되지 않자 카운트가 아예 올라가지 않았습니다",
-    en:   "When the dumbbell detection model failed to load, the count stopped moving entirely",
-    koAt: "아령 인식 모델이 로드되지 않자 카운트가 아예 올라가지 않았습니다"
+  "hm.dr.s2": {
+    ko:   "Kidman et al., 2024 · JMIR (스코핑 리뷰)",
+    en:   "Kidman et al., 2024 · JMIR (scoping review)",
+    koAt: "Kidman et al., 2024 · JMIR (스코핑 리뷰)"
   },
-  "hm.fail-fix.0": {
-    ko:   "아령 박스 렌더링과 포즈 기반 카운팅을 분리했습니다. 모델이 없으면 박스만 생략되고 세션은 끝까지 진행됩니다.",
-    en:   "I separated the dumbbell box rendering from pose-based counting. Without the model only the box is skipped, and the session still runs to the end.",
-    koAt: "아령 박스 렌더링과 포즈 기반 카운팅을 분리했습니다. 모델이 없으면 박스만 생략되고 세션은 끝까지 진행됩니다."
+  "hm.dr.c0": {
+    ko:   "기술·기능 문제",
+    en:   "Technical / feature issues",
+    koAt: "기술·기능 문제"
   },
-  "hm.fail-sym.1": {
-    ko:   "프레임 밖으로 나가면 화면은 그대로인데 숫자만 멈췄습니다",
-    en:   "Step out of frame and the screen looked fine — only the number froze",
-    koAt: "프레임 밖으로 나가면 화면은 그대로인데 숫자만 멈췄습니다"
+  "hm.dr.c1": {
+    ko:   "개인정보 우려",
+    en:   "Privacy concerns",
+    koAt: "개인정보 우려"
   },
-  "hm.fail-fix.1": {
-    ko:   "포즈가 잡히지 않는 동안 '카메라 앞에 서주세요' 오버레이를 띄웁니다. 사용자가 자기 자세를 의심하기 전에 원인을 먼저 보여주기 위해서입니다.",
-    en:   "While no pose is detected, a 'Please stand in front of the camera' overlay appears — so the cause shows up before the user starts doubting their own form.",
-    koAt: "포즈가 잡히지 않는 동안 '카메라 앞에 서주세요' 오버레이를 띄웁니다. 사용자가 자기 자세를 의심하기 전에 원인을 먼저 보여주기 위해서입니다."
+  "hm.dr.c2": {
+    ko:   "번거로운 사용 경험(수기 입력)",
+    en:   "Tedious use (manual logging)",
+    koAt: "번거로운 사용 경험(수기 입력)"
   },
-  "hm.fail-sym.2": {
-    ko:   "저장 공간이 차자 세션 기록 자체가 남지 않았습니다",
-    en:   "When storage filled up, the session record itself wasn't saved",
-    koAt: "저장 공간이 차자 세션 기록 자체가 남지 않았습니다"
+  "hm.dr.c3": {
+    ko:   "콘텐츠·기능 부족",
+    en:   "Lack of content / features",
+    koAt: "콘텐츠·기능 부족"
   },
-  "hm.fail-fix.2": {
-    ko:   "용량이 부족하면 인증샷을 먼저 버리고 운동 기록은 남기도록 우선순위를 뒀습니다. 사진보다 연속 기록이 끊기는 쪽이 더 큰 손실이었습니다.",
-    en:   "When space runs low, the photo is dropped first and the workout record is kept. Losing a streak costs more than losing a picture.",
-    koAt: "용량이 부족하면 인증샷을 먼저 버리고 운동 기록은 남기도록 우선순위를 뒀습니다. 사진보다 연속 기록이 끊기는 쪽이 더 큰 손실이었습니다."
+  "hm.dr.c4": {
+    ko:   "달라지는 목표",
+    en:   "Changing goals",
+    koAt: "달라지는 목표"
   },
-  "hm.mot-w.0": {
-    ko:   "운동 중",
-    en:   "During",
-    koAt: "운동 중"
+  "hm.dr.c5": {
+    ko:   "시간·비용 부담",
+    en:   "Time / cost burden",
+    koAt: "시간·비용 부담"
   },
-  "hm.mot-w.1": {
+  "hm.dr.q3": {
+    ko:   "기록을 돌아보게 될 때 더 움직여요",
+    en:   "People move more when they review their own records",
+    koAt: "기록을 돌아보게 될 때 더 움직여요"
+  },
+  "hm.dr.b5": {
+    ko:   "+851보",
+    en:   "+851 steps",
+    koAt: "+851보"
+  },
+  "hm.dr.b6": {
+    ko:   "자기 활동 기록을 돌아보게 했더니 하루 30% 더 걸음",
+    en:   "per day (+30%) after reviewing their own activity logs",
+    koAt: "자기 활동 기록을 돌아보게 했더니 하루 30% 더 걸음"
+  },
+  "hm.dr.ins": {
+    ko:   "“방법은 알지만 의지만으로는 두 달을 버티기 어려워요.<br><em>입력 없이 남는 기록</em>이 필요해요.”",
+    en:   "“People know how — but willpower alone won't carry them through two months.<br>They need <em>a record that builds up without any input</em>.”",
+    koAt: "“방법은 알지만 의지만으로는 두 달을 버티기 어려워요.<br><em>입력 없이 남는 기록</em>이 필요해요.”"
+  },
+  "hm.dr.insd": {
+    ko:   "습관이 자리잡는 데 걸리는 두 달, 그 전에 결심이 먼저 흐려지고 앱은 지워져요.<br class=\"br-d\">기록은 다시 운동하게 만들지만, 직접 입력해야 하는 순간 또 하나의 숙제가 돼요.<br class=\"br-d\">그래서 필요한 건 더 많은 정보가 아니라, <b>운동만 하면 흔적이 저절로 남는 장치</b>예요.",
+    en:   "It takes about two months for a habit to settle, and resolve fades — and the app gets deleted — well before that.<br class=\"br-d\"> Records do bring people back, but the moment they have to be typed in, they become one more chore.<br class=\"br-d\"> So what's needed isn't more information; it's <b>a mechanism that leaves a trace just by working out</b>.",
+    koAt: "습관이 자리잡는 데 걸리는 두 달, 그 전에 결심이 먼저 흐려지고 앱은 지워져요.<br class=\"br-d\">기록은 다시 운동하게 만들지만, 직접 입력해야 하는 순간 또 하나의 숙제가 돼요.<br class=\"br-d\">그래서 필요한 건 더 많은 정보가 아니라, <b>운동만 하면 흔적이 저절로 남는 장치</b>예요."
+  },
+  "hm.ca.h2": {
+    ko:   "경쟁사가 비워둔 자리,<br><em>'자동 기록 × 나만의 기록'</em>으로 포지셔닝을 잡았어요",
+    en:   "Taking the space competitors left open:<br><em>auto-logging × a record of your own</em>",
+    koAt: "경쟁사가 비워둔 자리,<br><em>'자동 기록 × 나만의 기록'</em>으로 포지셔닝을 잡았어요"
+  },
+  "hm.ca.p0": {
+    ko:   "국내 주요 홈트 서비스를 분석한 결과, 루틴 추천과 자세 교정 등 '무엇을 어떻게 할지'는 촘촘하게 채워져 있었어요.<br class=\"br-d\">하지만 지속 장치는 커뮤니티의 응원이나 포인트 보상처럼 <mark class=\"hl\">대부분 외부 보상에 기대는 방식</mark>이었어요.",
+    en:   "Analyzing the major home-workout services in Korea showed that “what to do and how” — routine recommendations, form correction — was thoroughly covered.<br class=\"br-d\"> But their retention mechanics, like community cheering or reward points, <mark class=\"hl\">mostly relied on external rewards</mark>.",
+    koAt: "국내 주요 홈트 서비스를 분석한 결과, 루틴 추천과 자세 교정 등 '무엇을 어떻게 할지'는 촘촘하게 채워져 있었어요.<br class=\"br-d\">하지만 지속 장치는 커뮤니티의 응원이나 포인트 보상처럼 <mark class=\"hl\">대부분 외부 보상에 기대는 방식</mark>이었어요."
+  },
+  "hm.ca.ax0": {
+    ko:   "자동 인식",
+    en:   "Auto-detected",
+    koAt: "자동 인식"
+  },
+  "hm.ca.ax1": {
+    ko:   "직접 입력",
+    en:   "Manual input",
+    koAt: "직접 입력"
+  },
+  "hm.ca.ax2": {
+    ko:   "외부 보상",
+    en:   "External rewards",
+    koAt: "외부 보상"
+  },
+  "hm.ca.ax3": {
+    ko:   "나만의 기록",
+    en:   "Own record",
+    koAt: "나만의 기록"
+  },
+  "hm.ca.n1": {
+    ko:   "엑서사이트",
+    en:   "Exercite",
+    koAt: "엑서사이트"
+  },
+  "hm.ca.n0": {
+    ko:   "플랜핏",
+    en:   "Planfit",
+    koAt: "플랜핏"
+  },
+  "hm.ca.n2": {
+    ko:   "콰트",
+    en:   "QUAT",
+    koAt: "콰트"
+  },
+  "hm.ca.th0": {
+    ko:   "구분",
+    en:   "Category",
+    koAt: "구분"
+  },
+  "hm.ca.th1": {
+    ko:   "플랜핏",
+    en:   "Planfit",
+    koAt: "플랜핏"
+  },
+  "hm.ca.th2": {
+    ko:   "엑서사이트",
+    en:   "Exercite",
+    koAt: "엑서사이트"
+  },
+  "hm.ca.th3": {
+    ko:   "콰트",
+    en:   "QUAT",
+    koAt: "콰트"
+  },
+  "hm.ca.r0": {
+    ko:   "핵심 질문",
+    en:   "Core question",
+    koAt: "핵심 질문"
+  },
+  "hm.ca.r0a": {
+    ko:   "정말 할지",
+    en:   "Will I actually do it?",
+    koAt: "정말 할지"
+  },
+  "hm.ca.r0b": {
+    ko:   "무엇을 할지",
+    en:   "What should I do?",
+    koAt: "무엇을 할지"
+  },
+  "hm.ca.r0c": {
+    ko:   "어떻게 할지",
+    en:   "How should I do it?",
+    koAt: "어떻게 할지"
+  },
+  "hm.ca.r0d": {
+    ko:   "무엇을 볼지",
+    en:   "What should I watch?",
+    koAt: "무엇을 볼지"
+  },
+  "hm.ca.r1": {
+    ko:   "핵심 기능",
+    en:   "Core feature",
+    koAt: "핵심 기능"
+  },
+  "hm.ca.r1a": {
+    ko:   "카운팅 → 기록 자동 저장",
+    en:   "Counting → auto-saved record",
+    koAt: "카운팅 → 기록 자동 저장"
+  },
+  "hm.ca.r1b": {
+    ko:   "루틴 추천·음성 코칭",
+    en:   "Routine picks · voice coaching",
+    koAt: "루틴 추천·음성 코칭"
+  },
+  "hm.ca.r1c": {
+    ko:   "AI 자세 분석·카운팅",
+    en:   "AI form analysis · counting",
+    koAt: "AI 자세 분석·카운팅"
+  },
+  "hm.ca.r1d": {
+    ko:   "영상 클래스·식단 코칭",
+    en:   "Video classes · diet coaching",
+    koAt: "영상 클래스·식단 코칭"
+  },
+  "hm.ca.r2": {
+    ko:   "지속 장치",
+    en:   "Retention",
+    koAt: "지속 장치"
+  },
+  "hm.ca.r2a": {
+    ko:   "나만의 기록과 인증",
+    en:   "Your own record &amp; proof",
+    koAt: "나만의 기록과 인증"
+  },
+  "hm.ca.r2b": {
+    ko:   "커뮤니티·응원",
+    en:   "Community · cheering",
+    koAt: "커뮤니티·응원"
+  },
+  "hm.ca.r2c": {
+    ko:   "포인트 적립",
+    en:   "Reward points",
+    koAt: "포인트 적립"
+  },
+  "hm.ca.r2d": {
+    ko:   "포인트·스토어",
+    en:   "Points · store",
+    koAt: "포인트·스토어"
+  },
+  "hm.ca.r3": {
+    ko:   "이용 방식",
+    en:   "Access",
+    koAt: "이용 방식"
+  },
+  "hm.ca.r3a": {
+    ko:   "설치 없는 웹",
+    en:   "Web, no install",
+    koAt: "설치 없는 웹"
+  },
+  "hm.ca.r3b": {
+    ko:   "앱 설치",
+    en:   "App install",
+    koAt: "앱 설치"
+  },
+  "hm.ca.r3c": {
+    ko:   "앱 설치·TV",
+    en:   "App install · TV",
+    koAt: "앱 설치·TV"
+  },
+  "hm.ca.r3d": {
+    ko:   "앱 설치·워치",
+    en:   "App install · watch",
+    koAt: "앱 설치·워치"
+  },
+  "hm.ur.h2": {
+    ko:   "집에서 운동, 잘 하고 계신가요?",
+    en:   "Are you actually working out at home?",
+    koAt: "집에서 운동, 잘 하고 계신가요?"
+  },
+  "hm.ur.p0": {
+    ko:   "집에 운동기구가 있는 20~30대 32명에게 설문을, 그중 3명에게 인터뷰를 진행했어요.<br class=\"br-d\"><mark class=\"hl\">표본이 작아 비율보다 방향을 보는 용도</mark>로 읽었어요.",
+    en:   "I surveyed 32 people in their 20s–30s who own home workout equipment, and interviewed 3 of them.<br class=\"br-d\"> <mark class=\"hl\">With a small sample, I read the results for direction rather than precise ratios.</mark>",
+    koAt: "집에 운동기구가 있는 20~30대 32명에게 설문을, 그중 3명에게 인터뷰를 진행했어요.<br class=\"br-d\"><mark class=\"hl\">표본이 작아 비율보다 방향을 보는 용도</mark>로 읽었어요."
+  },
+  "hm.sv.q1": {
+    ko:   "Q1. 집에 덤벨 등 운동기구가 있나요?",
+    en:   "Q1. Do you have dumbbells or other equipment at home?",
+    koAt: "Q1. 집에 덤벨 등 운동기구가 있나요?"
+  },
+  "hm.sv.q1a": {
+    ko:   "있다",
+    en:   "Yes",
+    koAt: "있다"
+  },
+  "hm.sv.q1b": {
+    ko:   "없다 19%",
+    en:   "No 19%",
+    koAt: "없다 19%"
+  },
+  "hm.sv.q2": {
+    ko:   "Q2. 지난 일주일 동안 집에서 운동한 날은?",
+    en:   "Q2. How many days did you work out at home last week?",
+    koAt: "Q2. 지난 일주일 동안 집에서 운동한 날은?"
+  },
+  "hm.sv.q2a": {
+    ko:   "0일",
+    en:   "0 days",
+    koAt: "0일"
+  },
+  "hm.sv.q2b": {
+    ko:   "1~2일",
+    en:   "1–2 days",
+    koAt: "1~2일"
+  },
+  "hm.sv.q2c": {
+    ko:   "3~4일",
+    en:   "3–4 days",
+    koAt: "3~4일"
+  },
+  "hm.sv.q2d": {
+    ko:   "5일+",
+    en:   "5+ days",
+    koAt: "5일+"
+  },
+  "hm.sv.q2e": {
+    ko:   "주 2일 이하 79%",
+    en:   "79% worked out 2 days or fewer",
+    koAt: "주 2일 이하 79%"
+  },
+  "hm.sv.q3": {
+    ko:   "Q3. 운동을 안 한 날, 가장 큰 이유는?",
+    en:   "Q3. On days you skipped, what was the main reason?",
+    koAt: "Q3. 운동을 안 한 날, 가장 큰 이유는?"
+  },
+  "hm.sv.q3a": {
+    ko:   "미루다 보니",
+    en:   "Kept putting it off",
+    koAt: "미루다 보니"
+  },
+  "hm.sv.q3b": {
+    ko:   "시간이 없어서",
+    en:   "No time",
+    koAt: "시간이 없어서"
+  },
+  "hm.sv.q3c": {
+    ko:   "효과가 안 보여서",
+    en:   "No visible results",
+    koAt: "효과가 안 보여서"
+  },
+  "hm.sv.q3d": {
+    ko:   "뭘 할지 몰라서",
+    en:   "Didn't know what to do",
+    koAt: "뭘 할지 몰라서"
+  },
+  "hm.sv.q3e": {
+    ko:   "기타",
+    en:   "Other",
+    koAt: "기타"
+  },
+  "hm.sv.q4": {
+    ko:   "Q4. 운동한 횟수·세트를 기록하나요?",
+    en:   "Q4. Do you log your reps and sets?",
+    koAt: "Q4. 운동한 횟수·세트를 기록하나요?"
+  },
+  "hm.sv.q4a": {
+    ko:   "안 한다",
+    en:   "Never",
+    koAt: "안 한다"
+  },
+  "hm.sv.q4b": {
+    ko:   "가끔",
+    en:   "Sometimes",
+    koAt: "가끔"
+  },
+  "hm.sv.q4c": {
+    ko:   "항상",
+    en:   "Always",
+    koAt: "항상"
+  },
+  "hm.sv.q5": {
+    ko:   "Q5. 누가 세주거나 기록이 남으면 더 할 것 같나요?",
+    en:   "Q5. Would you work out more if someone counted for you or a record was kept?",
+    koAt: "Q5. 누가 세주거나 기록이 남으면 더 할 것 같나요?"
+  },
+  "hm.sv.q5a": {
+    ko:   "그렇다",
+    en:   "Yes",
+    koAt: "그렇다"
+  },
+  "hm.sv.q5b": {
+    ko:   "아니다 22%",
+    en:   "No 22%",
+    koAt: "아니다 22%"
+  },
+  "hm.sv.q6": {
+    ko:   "Q6. 영상이 저장·전송되지 않는다면 운동 중 카메라를 켤 수 있나요?",
+    en:   "Q6. Would you turn on a camera during workouts if video is never stored or sent?",
+    koAt: "Q6. 영상이 저장·전송되지 않는다면 운동 중 카메라를 켤 수 있나요?"
+  },
+  "hm.sv.q6a": {
+    ko:   "켤 수 있다",
+    en:   "Yes",
+    koAt: "켤 수 있다"
+  },
+  "hm.sv.q6b": {
+    ko:   "조건부",
+    en:   "Depends",
+    koAt: "조건부"
+  },
+  "hm.sv.q6c": {
+    ko:   "싫다",
+    en:   "No",
+    koAt: "싫다"
+  },
+  "hm.sv.note": {
+    ko:   "설문 기간 2026.07.01 ~ 07.07 · 응답 24~39세 남녀 32명(설문) &amp; 3명(인터뷰)",
+    en:   "Survey period Jul 1–7, 2026 · 32 respondents aged 24–39 (survey) &amp; 3 (interviews)",
+    koAt: "설문 기간 2026.07.01 ~ 07.07 · 응답 24~39세 남녀 32명(설문) &amp; 3명(인터뷰)"
+  },
+  "hm.iv.m0": {
+    ko:   "김*현 | 31세 | 직장인 4년차",
+    en:   "K. | 31 | Office worker, 4 yrs",
+    koAt: "김*현 | 31세 | 직장인 4년차"
+  },
+  "hm.iv.r0": {
+    ko:   "헬스장을 끊고 덤벨을 산 직장인",
+    en:   "Quit the gym and bought dumbbells",
+    koAt: "헬스장을 끊고 덤벨을 산 직장인"
+  },
+  "hm.iv.q0": {
+    ko:   "\"헬스장 한 달 끊어놓고 세 번 갔어요. 그래서 덤벨을 샀는데, 퇴근하면 '내일 하지'가 되더라고요. <b>집에선 아무도 안 보니까 안 해도 티가 안 나요.</b>\"",
+    en:   "\"I paid for a month at the gym and went three times. So I bought dumbbells — but after work it always turns into 'tomorrow.' <b>No one sees me at home, so skipping doesn't show.</b>\"",
+    koAt: "\"헬스장 한 달 끊어놓고 세 번 갔어요. 그래서 덤벨을 샀는데, 퇴근하면 '내일 하지'가 되더라고요. <b>집에선 아무도 안 보니까 안 해도 티가 안 나요.</b>\""
+  },
+  "hm.iv.p0": {
+    ko:   "퇴근 후 반복되는 '내일 하지'",
+    en:   "“I'll do it tomorrow,” every night after work",
+    koAt: "퇴근 후 반복되는 '내일 하지'"
+  },
+  "hm.iv.m1": {
+    ko:   "이*은 | 27세 | 대학원생",
+    en:   "L. | 27 | Grad student",
+    koAt: "이*은 | 27세 | 대학원생"
+  },
+  "hm.iv.r1": {
+    ko:   "유튜브 홈트를 따라 하다 멈춘 사람",
+    en:   "Followed YouTube workouts, then stopped",
+    koAt: "유튜브 홈트를 따라 하다 멈춘 사람"
+  },
+  "hm.iv.q1": {
+    ko:   "\"유튜브 루틴 따라 하는 건 어렵지 않아요. <b>근데 끝나고 나면 아무것도 안 남으니까, 지난주에 몇 번 했는지도 모르겠고</b> 점점 흐지부지돼요.\"",
+    en:   "\"Following a YouTube routine isn't hard. <b>But nothing's left afterwards — I can't even tell how many times I worked out last week,</b> so it slowly fizzles out.\"",
+    koAt: "\"유튜브 루틴 따라 하는 건 어렵지 않아요. <b>근데 끝나고 나면 아무것도 안 남으니까, 지난주에 몇 번 했는지도 모르겠고</b> 점점 흐지부지돼요.\""
+  },
+  "hm.iv.p1": {
+    ko:   "해도 남는 게 없어 흐지부지",
+    en:   "Nothing to show for it, so it fizzles out",
+    koAt: "해도 남는 게 없어 흐지부지"
+  },
+  "hm.iv.m2": {
+    ko:   "박*주 | 34세 | 디자이너",
+    en:   "P. | 34 | Designer",
+    koAt: "박*주 | 34세 | 디자이너"
+  },
+  "hm.iv.r2": {
+    ko:   "운동 기록 앱을 써봤다 지운 사람",
+    en:   "Tried a workout-log app, then deleted it",
+    koAt: "운동 기록 앱을 써봤다 지운 사람"
+  },
+  "hm.iv.q2": {
+    ko:   "\"기록 앱을 깔았는데 <b>세트마다 폰 들고 숫자 입력하는 게 귀찮아서 지웠어요.</b> 운동하러 들어갔다가 입력만 하다 끝나는 느낌?\"",
+    en:   "\"I installed a logging app, <b>but picking up my phone to type numbers after every set was so annoying I deleted it.</b> It felt like I went to work out and ended up just doing data entry.\"",
+    koAt: "\"기록 앱을 깔았는데 <b>세트마다 폰 들고 숫자 입력하는 게 귀찮아서 지웠어요.</b> 운동하러 들어갔다가 입력만 하다 끝나는 느낌?\""
+  },
+  "hm.iv.p2": {
+    ko:   "기록은 또 하나의 숙제",
+    en:   "Logging becomes another chore",
+    koAt: "기록은 또 하나의 숙제"
+  },
+  "hm.ur.ins": {
+    ko:   "“기록은 귀찮지만,<br><em>오늘 한 운동은 흔적으로 남기고 싶어요.</em>”",
+    en:   "“Logging is a hassle — <br><em>but I still want today's workout to leave a trace.</em>”",
+    koAt: "“기록은 귀찮지만,<br><em>오늘 한 운동은 흔적으로 남기고 싶어요.</em>”"
+  },
+  "hm.ur.insd": {
+    ko:   "응답자의 81%는 집에 운동기구가 있지만, 79%는 지난주에 운동한 날이 이틀 이하였어요.<br class=\"br-d\">운동을 안 한 이유는 방법이 아니라 '미루다 보니'(53%)였고, 기록을 남기는 사람은 9%뿐이었어요.<br class=\"br-d\">하지만 78%는 누가 세어주거나 기록이 남으면 더 할 것 같다고 답했어요.<br class=\"br-d\">그래서 <b>기록을 사용자의 일에서 빼고, 운동만 하면 흔적이 남게 만드는 것</b>이 필요하다고 봤어요.",
+    en:   "81% of respondents have equipment at home, yet 79% worked out two days or fewer last week.<br class=\"br-d\"> The reason wasn't not knowing how — it was “putting it off” (53%) — and only 9% always log their workouts.<br class=\"br-d\"> Still, 78% said they'd do more if someone counted for them or a record was kept.<br class=\"br-d\"> So I concluded the job was to <b>take logging off the user's plate and let a trace remain simply by working out</b>.",
+    koAt: "응답자의 81%는 집에 운동기구가 있지만, 79%는 지난주에 운동한 날이 이틀 이하였어요.<br class=\"br-d\">운동을 안 한 이유는 방법이 아니라 '미루다 보니'(53%)였고, 기록을 남기는 사람은 9%뿐이었어요.<br class=\"br-d\">하지만 78%는 누가 세어주거나 기록이 남으면 더 할 것 같다고 답했어요.<br class=\"br-d\">그래서 <b>기록을 사용자의 일에서 빼고, 운동만 하면 흔적이 남게 만드는 것</b>이 필요하다고 봤어요."
+  },
+  "hm.goal.t": {
+    ko:   "입력 없이 남는 기록으로, 홈트에 강제성을 만들어<br>오늘 한 세트가 내일로 이어지도록 돕는 서비스",
+    en:   "A service that builds commitment into home workouts with records that need no input —<br>so today's set carries over into tomorrow",
+    koAt: "입력 없이 남는 기록으로, 홈트에 강제성을 만들어<br>오늘 한 세트가 내일로 이어지도록 돕는 서비스"
+  },
+  "hm.goal.d": {
+    ko:   "남에게 보여주거나 보상을 받지 않아도,<br class=\"br-d\">내가 남긴 기록이 눈에 보이면 그것이 다음 운동을 시작할 이유가 된다고 봤어요.",
+    en:   "No audience, no rewards needed: when the record you've built is visible, that itself becomes the reason to start the next workout.",
+    koAt: "남에게 보여주거나 보상을 받지 않아도,<br class=\"br-d\">내가 남긴 기록이 눈에 보이면 그것이 다음 운동을 시작할 이유가 된다고 봤어요."
+  },
+  "hm.goal.c0": {
+    ko:   "목표 하나, 버튼 하나로<br>고민 없이 바로 시작",
+    en:   "One goal, one button —<br>start right away without overthinking",
+    koAt: "목표 하나, 버튼 하나로<br>고민 없이 바로 시작"
+  },
+  "hm.goal.c1": {
+    ko:   "혼자여도 카메라가 세어주는<br>한 개 더의 힘",
+    en:   "Even alone, a camera that counts —<br>the push for “one more rep”",
+    koAt: "혼자여도 카메라가 세어주는<br>한 개 더의 힘"
+  },
+  "hm.goal.c2": {
+    ko:   "인증샷·달력·스트릭으로<br>매일의 흔적 남기기",
+    en:   "Proof photos, calendar and streaks —<br>a daily trace of your effort",
+    koAt: "인증샷·달력·스트릭으로<br>매일의 흔적 남기기"
+  },
+  "hm.goal.c3": {
+    ko:   "지난 기간과 비교하는 리포트로<br>쌓인 변화 확인하기",
+    en:   "Reports against the previous period —<br>see the change add up",
+    koAt: "지난 기간과 비교하는 리포트로<br>쌓인 변화 확인하기"
+  },
+  "hm.goal.lock": {
+    ko:   "🔒 모든 영상은 기기 안에서만 처리되고, 서버로 보내지 않아요.",
+    en:   "🔒 All video is processed on the device and never sent to a server.",
+    koAt: "🔒 모든 영상은 기기 안에서만 처리되고, 서버로 보내지 않아요."
+  },
+  "hm.goal.k": {
+    ko:   "성공 지표",
+    en:   "Success metrics",
+    koAt: "성공 지표"
+  },
+  "hm.goal.k0": {
+    ko:   "주당 운동일<b>주 2일 → 3일</b>",
+    en:   "Workout days per week<b>2 → 3</b>",
+    koAt: "주당 운동일<b>주 2일 → 3일</b>"
+  },
+  "hm.goal.k1": {
+    ko:   "7일 안에 다시 온 비율<b>60% 이상</b>",
+    en:   "Return within 7 days<b>60%+</b>",
+    koAt: "7일 안에 다시 온 비율<b>60% 이상</b>"
+  },
+  "hm.goal.k2": {
+    ko:   "첫 세션 시작까지<b>1분 이내</b>",
+    en:   "Time to first session<b>under 1 min</b>",
+    koAt: "첫 세션 시작까지<b>1분 이내</b>"
+  },
+  "hm.uj.h2": {
+    ko:   "앱을 열고, 운동하고, 기록을 남기고, 다시 돌아오기까지.<br>단계마다 <em>다시 하게 만드는 이유</em>를 하나씩 심어 두었어요",
+    en:   "From opening the app to working out, saving the record and coming back —<br>I planted <em>one reason to keep going</em> at every stage",
+    koAt: "앱을 열고, 운동하고, 기록을 남기고, 다시 돌아오기까지.<br>단계마다 <em>다시 하게 만드는 이유</em>를 하나씩 심어 두었어요"
+  },
+  "hm.uj.f0": {
+    ko:   "↻ 기록이 다음 운동의 이유가 되는 고리",
+    en:   "↻ A loop where the record becomes the reason for the next workout",
+    koAt: "↻ 기록이 다음 운동의 이유가 되는 고리"
+  },
+  "hm.uj.f1": {
+    ko:   "✓ 사용자가 직접 입력하는 단계는 없어요",
+    en:   "✓ No step requires manual input",
+    koAt: "✓ 사용자가 직접 입력하는 단계는 없어요"
+  },
+  "hm.uj.s0": {
     ko:   "운동 전",
     en:   "Before",
     koAt: "운동 전"
   },
-  "hm.mot-w.2": {
-    ko:   "끝난 뒤",
+  "hm.uj.s1": {
+    ko:   "운동 중",
+    en:   "During",
+    koAt: "운동 중"
+  },
+  "hm.uj.s2": {
+    ko:   "운동 후",
     en:   "After",
-    koAt: "끝난 뒤"
+    koAt: "운동 후"
   },
-  "hm.mot-t.0": {
-    ko:   "소리와 손목 펄스",
-    en:   "Sound and a wrist pulse",
-    koAt: "소리와 손목 펄스"
+  "hm.uj.s3": {
+    ko:   "다음 날",
+    en:   "Next day",
+    koAt: "다음 날"
   },
-  "hm.mot-d.0": {
-    ko:   "카운트마다 짧은 사운드가 울리고 손목 주변에 주황 펄스가 번집니다. 화면을 보지 않아도 세어졌다는 걸 알 수 있습니다. 결국 나를 세트 끝까지 가게 만든 건 이 하나였습니다.",
-    en:   "Every rep fires a short sound and an orange pulse around the wrist. You know it counted without looking. In the end, this one thing is what got me through a full set.",
-    koAt: "카운트마다 짧은 사운드가 울리고 손목 주변에 주황 펄스가 번집니다. 화면을 보지 않아도 세어졌다는 걸 알 수 있습니다. 결국 나를 세트 끝까지 가게 만든 건 이 하나였습니다."
+  "hm.uj.r0": {
+    ko:   "사용자",
+    en:   "User",
+    koAt: "사용자"
   },
-  "hm.mot-t.1": {
-    ko:   "자세 가이드",
-    en:   "A form guide",
-    koAt: "자세 가이드"
+  "hm.uj.r0a": {
+    ko:   "\"오늘 해야 하는데\"<br>앱을 열고 오늘의 목표 확인",
+    en:   "“I should work out today”<br>opens the app, checks today's goal",
+    koAt: "\"오늘 해야 하는데\"<br>앱을 열고 오늘의 목표 확인"
   },
-  "hm.mot-d.1": {
-    ko:   "세션에 들어가면 모션 가이드를 먼저 띄웁니다. 카운트가 안 되는 상황을 나중에 안내하기보다, 그런 자세로 시작하는 것 자체를 줄이는 편이 나았습니다.",
-    en:   "Entering a session brings up a motion guide first. Preventing a bad starting posture worked better than explaining afterwards why a rep didn't count.",
-    koAt: "세션에 들어가면 모션 가이드를 먼저 띄웁니다. 카운트가 안 되는 상황을 나중에 안내하기보다, 그런 자세로 시작하는 것 자체를 줄이는 편이 나았습니다."
+  "hm.uj.r0b": {
+    ko:   "카메라 앞에 서서<br>덤벨을 든다",
+    en:   "Stands in front of the camera,<br>picks up the dumbbells",
+    koAt: "카메라 앞에 서서<br>덤벨을 든다"
   },
-  "hm.mot-t.2": {
-    ko:   "인증샷과 D-day",
-    en:   "A photo and a D-day",
-    koAt: "인증샷과 D-day"
+  "hm.uj.r0c": {
+    ko:   "인증샷을 찍고<br>달력을 본다",
+    en:   "Takes a proof photo,<br>looks at the calendar",
+    koAt: "인증샷을 찍고<br>달력을 본다"
   },
-  "hm.mot-d.2": {
-    ko:   "완료 직후 3-2-1 카운트다운으로 자동 촬영해 기록에 붙이고, 다음 날 D-day와 연속 기록을 띄웁니다. 오늘을 끝내는 장치라기보다 내일 다시 열 이유를 만드는 쪽에 가깝습니다.",
-    en:   "Right after finishing, a 3-2-1 countdown takes a photo and attaches it to the record; the next day a D-day and streak appear. Less a way to close out today than a reason to open it again tomorrow.",
-    koAt: "완료 직후 3-2-1 카운트다운으로 자동 촬영해 기록에 붙이고, 다음 날 D-day와 연속 기록을 띄웁니다. 오늘을 끝내는 장치라기보다 내일 다시 열 이유를 만드는 쪽에 가깝습니다."
+  "hm.uj.r0d": {
+    ko:   "비어 있는 오늘 칸과<br>리포트를 본다",
+    en:   "Sees today's empty cell<br>and the report",
+    koAt: "비어 있는 오늘 칸과<br>리포트를 본다"
   },
-  "hm.ba-lbl.0": {
-    ko:   "기준 없이 요청할 때",
-    en:   "Asking without a standard",
-    koAt: "기준 없이 요청할 때"
+  "hm.uj.r1": {
+    ko:   "화면",
+    en:   "Screen",
+    koAt: "화면"
   },
-  "hm.ba-d.0": {
-    ko:   "\"카드 좀 더 깔끔하게\" — 매번 다른 결과가 나오고, 마음에 안 들면 처음부터 다시 설명해야 했습니다.",
-    en:   "\"Make the cards a bit cleaner\" — a different result every time, and if I didn't like it I had to explain from scratch again.",
-    koAt: "\"카드 좀 더 깔끔하게\" — 매번 다른 결과가 나오고, 마음에 안 들면 처음부터 다시 설명해야 했습니다."
+  "hm.uj.r1a": {
+    ko:   "홈(모토·오늘의 목표·D-DAY),<br>목표 카드",
+    en:   "Home (motto · today's goal · D-DAY),<br>goal card",
+    koAt: "홈(모토·오늘의 목표·D-DAY),<br>목표 카드"
   },
-  "hm.ba-lbl.1": {
-    ko:   "기준을 문서로 고정한 뒤",
-    en:   "After fixing the standard in writing",
-    koAt: "기준을 문서로 고정한 뒤"
+  "hm.uj.r1b": {
+    ko:   "3초 카운트다운 →<br>풀스크린 카메라 + 카운터",
+    en:   "3-second countdown →<br>full-screen camera + counter",
+    koAt: "3초 카운트다운 →<br>풀스크린 카메라 + 카운터"
   },
-  "hm.ba-d.1": {
-    ko:   "\"radius 4px, 주황은 강조점에만\" — 대화를 새로 시작해도 같은 결과가 나왔습니다.",
-    en:   "\"radius 4px, orange on accents only\" — the same result even in a brand-new conversation.",
-    koAt: "\"radius 4px, 주황은 강조점에만\" — 대화를 새로 시작해도 같은 결과가 나왔습니다."
+  "hm.uj.r1c": {
+    ko:   "완료 화면, 인증샷, 갤러리",
+    en:   "Completion screen, proof photo, gallery",
+    koAt: "완료 화면, 인증샷, 갤러리"
   },
-  "hm.nom-cap.1": {
-    ko:   "완성 기준은 기능 목록이 아니라 <b>사용자가 무엇을 알 수 있어야 하는가</b>로 적었습니다",
-    en:   "The definition of done was written as <b>what the user must be able to tell</b>, not as a feature list",
-    koAt: "완성 기준은 기능 목록이 아니라 <b>사용자가 무엇을 알 수 있어야 하는가</b>로 적었습니다"
+  "hm.uj.r1d": {
+    ko:   "달력 · 리포트 · 기록 카드",
+    en:   "Calendar · report · record card",
+    koAt: "달력 · 리포트 · 기록 카드"
   },
-  "hm.sub.2": {
-    ko:   "01 · Training — 목표와 진행 상황",
-    en:   "01 · Training — goals and progress",
-    koAt: "01 · Training — 목표와 진행 상황"
+  "hm.uj.r2": {
+    ko:   "HOMUSCLE이<br>하는 일",
+    en:   "What HOMUSCLE<br>does",
+    koAt: "HOMUSCLE이<br>하는 일"
   },
-  "hm.sub.3": {
-    ko:   "04 · Gallery — 운동 기록",
-    en:   "04 · Gallery — workout records",
-    koAt: "04 · Gallery — 운동 기록"
+  "hm.uj.r2a": {
+    ko:   "오늘 할 종목·횟수·세트를<br>미리 보여줌",
+    en:   "Shows today's exercise, reps<br>and sets up front",
+    koAt: "오늘 할 종목·횟수·세트를<br>미리 보여줌"
   },
-  "hm.sub.4": {
-    ko:   "02 · Stretch — 스트레칭 가이드",
-    en:   "02 · Stretch — stretching guide",
-    koAt: "02 · Stretch — 스트레칭 가이드"
+  "hm.uj.r2b": {
+    ko:   "기기 안에서 포즈 인식 →<br>자동 카운트, 세트 넘김",
+    en:   "On-device pose detection →<br>auto count, set advance",
+    koAt: "기기 안에서 포즈 인식 →<br>자동 카운트, 세트 넘김"
   },
-  "hm.sub.5": {
-    ko:   "카운팅 상태머신",
-    en:   "The counting state machine",
-    koAt: "카운팅 상태머신"
+  "hm.uj.r2c": {
+    ko:   "기록과 사진을 자동 저장",
+    en:   "Saves record and photo automatically",
+    koAt: "기록과 사진을 자동 저장"
   },
-  "hm.sub.6": {
-    ko:   "알고 있는 한계",
-    en:   "Known limitations",
-    koAt: "알고 있는 한계"
+  "hm.uj.r2d": {
+    ko:   "지난 기간 대비 변화 계산",
+    en:   "Calculates change vs. last period",
+    koAt: "지난 기간 대비 변화 계산"
   },
-  "hm.doc-tag.0": {
-    ko:   "발췌",
-    en:   "EXCERPT",
-    koAt: "발췌"
+  "hm.uj.r3": {
+    ko:   "강제성 포인트",
+    en:   "Commitment point",
+    koAt: "강제성 포인트"
+  },
+  "hm.uj.r3a": {
+    ko:   "뭘 할지 이미 정해져 있어<br>고민할 일이 없다",
+    en:   "The plan is already set,<br>nothing to decide",
+    koAt: "뭘 할지 이미 정해져 있어<br>고민할 일이 없다"
+  },
+  "hm.uj.r3b": {
+    ko:   "올라가는 숫자를 보며<br>\"한 개만 더\"",
+    en:   "Watching the number climb —<br>“just one more”",
+    koAt: "올라가는 숫자를 보며<br>\"한 개만 더\""
+  },
+  "hm.uj.r3c": {
+    ko:   "사진과 기록이<br>\"했다\"의 증거가 된다",
+    en:   "Photo and record become<br>proof that “I did it”",
+    koAt: "사진과 기록이<br>\"했다\"의 증거가 된다"
+  },
+  "hm.uj.r3d": {
+    ko:   "끊기기 싫은 스트릭,<br>채우고 싶은 빈칸",
+    en:   "A streak you don't want to break,<br>a blank you want to fill",
+    koAt: "끊기기 싫은 스트릭,<br>채우고 싶은 빈칸"
+  },
+  "hm.uj.emo": {
+    ko:   "감정 흐름",
+    en:   "Emotion",
+    koAt: "감정 흐름"
+  },
+  "hm.uj.e0": {
+    ko:   "<b>부담</b>\"해야 하는데\"",
+    en:   "<b>Pressure</b>“I should…”",
+    koAt: "<b>부담</b>\"해야 하는데\""
+  },
+  "hm.uj.e1": {
+    ko:   "<b>몰입</b>\"한 개만 더\"",
+    en:   "<b>Flow</b>“Just one more”",
+    koAt: "<b>몰입</b>\"한 개만 더\""
+  },
+  "hm.uj.e2": {
+    ko:   "<b>성취</b>\"오늘 했다\"",
+    en:   "<b>Achievement</b>“Done today”",
+    koAt: "<b>성취</b>\"오늘 했다\""
+  },
+  "hm.uj.e3": {
+    ko:   "<b>복귀</b>\"빈칸이 보인다\"",
+    en:   "<b>Return</b>“I see a blank”",
+    koAt: "<b>복귀</b>\"빈칸이 보인다\""
+  },
+  "hm.ia.h2": {
+    ko:   "설치 없이 열자마자 쓸 수 있도록,<br>메뉴를 <em>다섯 개</em>로 줄였어요",
+    en:   "So it's usable the moment it opens — no install —<br>I cut the menu down to <em>five</em>",
+    koAt: "설치 없이 열자마자 쓸 수 있도록,<br>메뉴를 <em>다섯 개</em>로 줄였어요"
+  },
+  "hm.ia.p0": {
+    ko:   "PC에서는 상단 메뉴, 모바일에서는 왼쪽 드로워로 이동해요.",
+    en:   "Top navigation on desktop; a left-side drawer on mobile.",
+    koAt: "PC에서는 상단 메뉴, 모바일에서는 왼쪽 드로워로 이동해요."
+  },
+  "hm.ia.a0": {
+    ko:   "나의 모토",
+    en:   "My motto",
+    koAt: "나의 모토"
+  },
+  "hm.ia.a1": {
+    ko:   "오늘의 목표",
+    en:   "Today's goal",
+    koAt: "오늘의 목표"
+  },
+  "hm.ia.b0": {
+    ko:   "목표 목록",
+    en:   "Goal list",
+    koAt: "목표 목록"
+  },
+  "hm.ia.b1": {
+    ko:   "새 목표 만들기",
+    en:   "New goal",
+    koAt: "새 목표 만들기"
+  },
+  "hm.ia.b2": {
+    ko:   "종목 가이드",
+    en:   "Exercise guide",
+    koAt: "종목 가이드"
+  },
+  "hm.ia.b3": {
+    ko:   "↳ SESSION<br>카운트다운 → 자동 카운팅 → 완료 → 인증샷",
+    en:   "↳ SESSION<br>Countdown → auto counting → done → proof photo",
+    koAt: "↳ SESSION<br>카운트다운 → 자동 카운팅 → 완료 → 인증샷"
+  },
+  "hm.ia.c0": {
+    ko:   "목·어깨 스트레칭 4종",
+    en:   "4 neck &amp; shoulder stretches",
+    koAt: "목·어깨 스트레칭 4종"
+  },
+  "hm.ia.d0": {
+    ko:   "달력",
+    en:   "Calendar",
+    koAt: "달력"
+  },
+  "hm.ia.d1": {
+    ko:   "인증샷",
+    en:   "Proof photos",
+    koAt: "인증샷"
+  },
+  "hm.ia.d2": {
+    ko:   "기록 상세",
+    en:   "Record detail",
+    koAt: "기록 상세"
+  },
+  "hm.ia.d3": {
+    ko:   "기록 카드 공유",
+    en:   "Share record card",
+    koAt: "기록 카드 공유"
+  },
+  "hm.ia.d4": {
+    ko:   "백업",
+    en:   "Backup",
+    koAt: "백업"
+  },
+  "hm.ia.e0": {
+    ko:   "이번 주 · 이번 달",
+    en:   "This week · this month",
+    koAt: "이번 주 · 이번 달"
+  },
+  "hm.ia.e1": {
+    ko:   "지난 기간 대비",
+    en:   "vs. previous period",
+    koAt: "지난 기간 대비"
+  },
+  "hm.ds.h2": {
+    ko:   "디자인 시스템을 신규 구축하고<br>문서 사이트로 정리했어요",
+    en:   "Built a new design system<br>and documented it as a site",
+    koAt: "디자인 시스템을 신규 구축하고<br>문서 사이트로 정리했어요"
+  },
+  "hm.ds.p0": {
+    ko:   "HOMUSCLE의 시각 언어와 UI 규칙을 하나의 기준으로 모았어요.<br class=\"br-d\">색·타이포·간격 같은 토큰부터 버튼 같은 컴포넌트, 화면에서 조합되는 방식까지 다뤄요.<br class=\"br-d\"><mark class=\"hl\">사이트 자체도 토큰만으로 만들었어요.</mark>",
+    en:   "I brought HOMUSCLE's visual language and UI rules under a single standard — from tokens like color, type and spacing, to components like buttons, to how they combine on screen.<br class=\"br-d\"> <mark class=\"hl\">The documentation site itself is built only from those tokens.</mark>",
+    koAt: "HOMUSCLE의 시각 언어와 UI 규칙을 하나의 기준으로 모았어요.<br class=\"br-d\">색·타이포·간격 같은 토큰부터 버튼 같은 컴포넌트, 화면에서 조합되는 방식까지 다뤄요.<br class=\"br-d\"><mark class=\"hl\">사이트 자체도 토큰만으로 만들었어요.</mark>"
+  },
+  "hm.ds.p1": {
+    ko:   "피그마 변수를 CSS 변수로 옮기는 작업은 AI 코딩 도구와 함께했고,<br class=\"br-d\">어떤 값을 어떤 이름으로 나눌지는 직접 정했어요.",
+    en:   "Moving Figma variables into CSS variables was done with an AI coding tool; deciding which values to split out and what to name them was my call.",
+    koAt: "피그마 변수를 CSS 변수로 옮기는 작업은 AI 코딩 도구와 함께했고,<br class=\"br-d\">어떤 값을 어떤 이름으로 나눌지는 직접 정했어요."
+  },
+  "hm.ds.f0": {
+    ko:   "Figma 변수",
+    en:   "Figma variables",
+    koAt: "Figma 변수"
+  },
+  "hm.ds.f1": {
+    ko:   "AI 코딩 도구",
+    en:   "AI coding tool",
+    koAt: "AI 코딩 도구"
+  },
+  "hm.ds.f2": {
+    ko:   "CSS 변수",
+    en:   "CSS variables",
+    koAt: "CSS 변수"
+  },
+  "hm.ds.f3": {
+    ko:   "문서 사이트",
+    en:   "Docs site",
+    koAt: "문서 사이트"
+  },
+  "hm.ds.ref": {
+    ko:   "토큰 참조 100%",
+    en:   "100% token references",
+    koAt: "토큰 참조 100%"
+  },
+  "hm.ds.logo": {
+    ko:   "집에서 키우는 근육이라는 뜻으로,<br>'HOME'과 'MUSCLE'을 한 단어로 붙여 이름을 지었어요.",
+    en:   "“Muscle grown at home” —<br>the name joins HOME and MUSCLE into a single word.",
+    koAt: "집에서 키우는 근육이라는 뜻으로,<br>'HOME'과 'MUSCLE'을 한 단어로 붙여 이름을 지었어요."
+  },
+  "hm.ds.note": {
+    ko:   "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>",
+    en:   "Both frames are the <b>live documentation site, embedded</b> — you can open other pages from its sidebar.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Open the full design system ↗</a>",
+    koAt: "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>"
+  },
+  "hm.kf.h2": {
+    ko:   "목표를 세우고, 몸을 풀고, 운동하고,<br>기록을 남기는 흐름 그대로",
+    en:   "Set a goal, warm up, work out,<br>keep the record — in that order",
+    koAt: "목표를 세우고, 몸을 풀고, 운동하고,<br>기록을 남기는 흐름 그대로"
+  },
+  "hm.kf.p0": {
+    ko:   "아래 화면 중 테두리가 있는 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것이에요.<br class=\"br-d\">직접 눌러보거나 목표를 추가해볼 수 있어요.",
+    en:   "The framed screens below aren't screenshots — <mark class=\"hl\">they're the real app, embedded</mark>.<br class=\"br-d\"> You can click around or even add a goal.",
+    koAt: "아래 화면 중 테두리가 있는 화면은 캡처가 아니라 <mark class=\"hl\">실제 앱을 그대로 임베드</mark>한 것이에요.<br class=\"br-d\">직접 눌러보거나 목표를 추가해볼 수 있어요."
+  },
+  "hm.f1.h": {
+    ko:   "오늘 할 운동이 첫 화면에 있어요",
+    en:   "Today's workout is on the first screen",
+    koAt: "오늘 할 운동이 첫 화면에 있어요"
+  },
+  "hm.f1.p": {
+    ko:   "홈 화면에 나의 모토와 오늘의 목표가 가장 먼저 보여요.<br class=\"br-d\">뭘 할지 고민할 틈 없이 바로 시작할 수 있어요.",
+    en:   "Your motto and today's goal are the first things you see on Home, so you can start right away without deciding what to do.",
+    koAt: "홈 화면에 나의 모토와 오늘의 목표가 가장 먼저 보여요.<br class=\"br-d\">뭘 할지 고민할 틈 없이 바로 시작할 수 있어요."
+  },
+  "hm.f1.d0": {
+    ko:   "스스로 정한 한 문장이 매번 다짐을 대신해요",
+    en:   "A sentence you chose yourself stands in for a fresh resolution every time",
+    koAt: "스스로 정한 한 문장이 매번 다짐을 대신해요"
+  },
+  "hm.f1.t1": {
+    ko:   "연속 운동 배지",
+    en:   "Streak badge",
+    koAt: "연속 운동 배지"
+  },
+  "hm.f1.d1": {
+    ko:   "이어 온 날이 보이면 오늘 끊기가 아까워져요",
+    en:   "Seeing the days you've kept up makes it harder to break the chain today",
+    koAt: "이어 온 날이 보이면 오늘 끊기가 아까워져요"
+  },
+  "hm.f1.t2": {
+    ko:   "누적 통계",
+    en:   "Totals",
+    koAt: "누적 통계"
+  },
+  "hm.f1.d2": {
+    ko:   "총 운동 일수·횟수·최장 스트릭·평균 시간을 한눈에 볼 수 있어요",
+    en:   "Total days, reps, longest streak and average time at a glance",
+    koAt: "총 운동 일수·횟수·최장 스트릭·평균 시간을 한눈에 볼 수 있어요"
+  },
+  "hm.f1.d3": {
+    ko:   "종목·목표 횟수·D-DAY를 설정하고, 운동 시작 버튼은 Primary 색상으로 강조했어요",
+    en:   "Set the exercise, target reps and D-DAY; the start button is emphasized in Primary",
+    koAt: "종목·목표 횟수·D-DAY를 설정하고, 운동 시작 버튼은 Primary 색상으로 강조했어요"
+  },
+  "hm.f2.h": {
+    ko:   "목표는 딱 세 가지만 정해요",
+    en:   "A goal takes just three choices",
+    koAt: "목표는 딱 세 가지만 정해요"
+  },
+  "hm.f2.p": {
+    ko:   "종목, 횟수와 세트, 날짜만 고르면 끝.<br class=\"br-d\">긴 온보딩이나 루틴 설정 없이 <mark class=\"hl\">목표 카드 한 장이 오늘의 운동 일정</mark>이 돼요.",
+    en:   "Pick the exercise, reps and sets, and a date — done.<br class=\"br-d\"> No long onboarding or routine setup; <mark class=\"hl\">a single goal card becomes today's workout plan</mark>.",
+    koAt: "종목, 횟수와 세트, 날짜만 고르면 끝.<br class=\"br-d\">긴 온보딩이나 루틴 설정 없이 <mark class=\"hl\">목표 카드 한 장이 오늘의 운동 일정</mark>이 돼요."
+  },
+  "hm.f2.s0": {
+    ko:   "목표 목록에서 목표 추가 클릭",
+    en:   "Tap “Add goal” in the goal list",
+    koAt: "목표 목록에서 목표 추가 클릭"
+  },
+  "hm.f2.s1": {
+    ko:   "종목·횟수·세트·날짜만 선택하면 끝",
+    en:   "Choose exercise, reps, sets and date",
+    koAt: "종목·횟수·세트·날짜만 선택하면 끝"
+  },
+  "hm.f2.s2": {
+    ko:   "등록한 운동은 내 목표에 바로 추가",
+    en:   "It's added to My Goals right away",
+    koAt: "등록한 운동은 내 목표에 바로 추가"
+  },
+  "hm.f2.t3": {
+    ko:   "운동 종류 선택",
+    en:   "Exercise picker",
+    koAt: "운동 종류 선택"
+  },
+  "hm.f2.d3": {
+    ko:   "덤벨 운동 4종이 입력 화면에서 바로 보여서 고르기만 하면 돼요",
+    en:   "All four dumbbell exercises are visible on the input screen — just pick one",
+    koAt: "덤벨 운동 4종이 입력 화면에서 바로 보여서 고르기만 하면 돼요"
+  },
+  "hm.f2.t4": {
+    ko:   "날짜 설정은 과거까지",
+    en:   "Dates open to the past",
+    koAt: "날짜 설정은 과거까지"
+  },
+  "hm.f2.d4": {
+    ko:   "어제 못 한 운동을 오늘 채우는 경우도 있어서 열어뒀어요",
+    en:   "People sometimes make up yesterday's missed workout today, so past dates stay available",
+    koAt: "어제 못 한 운동을 오늘 채우는 경우도 있어서 열어뒀어요"
+  },
+  "hm.f3.h": {
+    ko:   "운동 전후 2분, 목과 어깨부터 풀어요",
+    en:   "Two minutes before and after: start with the neck and shoulders",
+    koAt: "운동 전후 2분, 목과 어깨부터 풀어요"
+  },
+  "hm.f3.p": {
+    ko:   "책상 앞에 오래 앉아 있다가 바로 운동을 시작하는 경우가 많아서,<br class=\"br-d\">덤벨 운동에 많이 쓰는 목·어깨를 먼저 푸는 스트레칭 네 동작을 따로 만들었어요.<br class=\"br-d\">동작마다 시간이 정해져 있고, 카운트다운이 끝나면 다음 동작으로 넘어가요.",
+    en:   "People often go straight from a long stretch at the desk into a workout, so I made a separate set of four stretches that loosen the neck and shoulders — the areas dumbbell exercises rely on most.<br class=\"br-d\"> Each move is timed, and when the countdown ends it advances to the next one.",
+    koAt: "책상 앞에 오래 앉아 있다가 바로 운동을 시작하는 경우가 많아서,<br class=\"br-d\">덤벨 운동에 많이 쓰는 목·어깨를 먼저 푸는 스트레칭 네 동작을 따로 만들었어요.<br class=\"br-d\">동작마다 시간이 정해져 있고, 카운트다운이 끝나면 다음 동작으로 넘어가요."
+  },
+  "hm.f3.s0": {
+    ko:   "30초",
+    en:   "30s",
+    koAt: "30초"
+  },
+  "hm.f3.t0": {
+    ko:   "목 옆으로 기울이기",
+    en:   "Neck side tilt",
+    koAt: "목 옆으로 기울이기"
+  },
+  "hm.f3.d0": {
+    ko:   "귀를 어깨에 붙인다는 느낌으로 좌우 15초씩",
+    en:   "As if bringing your ear to your shoulder — 15s each side",
+    koAt: "귀를 어깨에 붙인다는 느낌으로 좌우 15초씩"
+  },
+  "hm.f3.s1": {
+    ko:   "20초",
+    en:   "20s",
+    koAt: "20초"
+  },
+  "hm.f3.t1": {
+    ko:   "목 앞뒤로 숙이기",
+    en:   "Neck forward &amp; back",
+    koAt: "목 앞뒤로 숙이기"
+  },
+  "hm.f3.d1": {
+    ko:   "턱을 당겼다가 편한 범위까지 반동 없이 부드럽게",
+    en:   "Tuck the chin, then move gently within a comfortable range, no bouncing",
+    koAt: "턱을 당겼다가 편한 범위까지 반동 없이 부드럽게"
+  },
+  "hm.f3.s2": {
+    ko:   "25초",
+    en:   "25s",
+    koAt: "25초"
+  },
+  "hm.f3.t2": {
+    ko:   "어깨 으쓱 돌리기",
+    en:   "Shoulder shrug rolls",
+    koAt: "어깨 으쓱 돌리기"
+  },
+  "hm.f3.d2": {
+    ko:   "어깨를 올렸다가 뒤로 크게 돌려 굽은 어깨를 펴줘요",
+    en:   "Lift the shoulders and roll them back wide to open rounded shoulders",
+    koAt: "어깨를 올렸다가 뒤로 크게 돌려 굽은 어깨를 펴줘요"
+  },
+  "hm.f3.s3": {
+    ko:   "30초",
+    en:   "30s",
+    koAt: "30초"
+  },
+  "hm.f3.t3": {
+    ko:   "크로스 바디 어깨 스트레칭",
+    en:   "Cross-body shoulder stretch",
+    koAt: "크로스 바디 어깨 스트레칭"
+  },
+  "hm.f3.d3": {
+    ko:   "팔을 가슴 앞으로 가로질러 반대 손으로 지그시",
+    en:   "Bring one arm across the chest and press gently with the other hand",
+    koAt: "팔을 가슴 앞으로 가로질러 반대 손으로 지그시"
+  },
+  "hm.f4.h": {
+    ko:   "운동 종목은 네 가지로, 시작 전에 가이드가 떠요",
+    en:   "Four exercises, with a guide before you start",
+    koAt: "운동 종목은 네 가지로, 시작 전에 가이드가 떠요"
+  },
+  "hm.f4.p": {
+    ko:   "목표를 만들 때 고를 수 있는 종목은 네 가지예요.<br class=\"br-d\">팔 앞·뒤와 어깨 앞·옆을 고르게 쓰도록 골랐고, <mark class=\"hl\">종목마다 반복을 세는 관절 각도 기준</mark>이 따로 있어요.",
+    en:   "There are four exercises to choose from when creating a goal, picked to work the front and back of the arms and the front and side of the shoulders evenly.<br class=\"br-d\"> <mark class=\"hl\">Each exercise has its own joint-angle threshold for counting a rep.</mark>",
+    koAt: "목표를 만들 때 고를 수 있는 종목은 네 가지예요.<br class=\"br-d\">팔 앞·뒤와 어깨 앞·옆을 고르게 쓰도록 골랐고, <mark class=\"hl\">종목마다 반복을 세는 관절 각도 기준</mark>이 따로 있어요."
+  },
+  "hm.f4.cap": {
+    ko:   "덤벨 컬(이두근) · 숄더 프레스(어깨 전면) · 오버헤드 익스텐션(삼두근) · 사이드 레터럴 레이즈(어깨 측면)",
+    en:   "Dumbbell curl (biceps) · shoulder press (front delts) · overhead extension (triceps) · side lateral raise (side delts)",
+    koAt: "덤벨 컬(이두근) · 숄더 프레스(어깨 전면) · 오버헤드 익스텐션(삼두근) · 사이드 레터럴 레이즈(어깨 측면)"
+  },
+  "hm.f5.h": {
+    ko:   "혼자여도 괜찮아요, 카메라가 세어줄게요",
+    en:   "Working out alone? The camera will count for you",
+    koAt: "혼자여도 괜찮아요, 카메라가 세어줄게요"
+  },
+  "hm.f5.p": {
+    ko:   "카메라 앞에 서면 3초 카운트다운 후 횟수가 자동으로 올라가요.<br class=\"br-d\"><mark class=\"hl\">목표까지 남은 개수가 보여서, 한 개 더 하게 돼요.</mark>",
+    en:   "Stand in front of the camera, and after a 3-second countdown the count goes up on its own.<br class=\"br-d\"> <mark class=\"hl\">Seeing how many are left to the goal makes you do one more.</mark>",
+    koAt: "카메라 앞에 서면 3초 카운트다운 후 횟수가 자동으로 올라가요.<br class=\"br-d\"><mark class=\"hl\">목표까지 남은 개수가 보여서, 한 개 더 하게 돼요.</mark>"
+  },
+  "hm.f5.s0": {
+    ko:   "3초 카운트다운",
+    en:   "3-second countdown",
+    koAt: "3초 카운트다운"
+  },
+  "hm.f5.s1": {
+    ko:   "카메라가 자동으로 카운팅",
+    en:   "The camera counts automatically",
+    koAt: "카메라가 자동으로 카운팅"
+  },
+  "hm.f5.s2": {
+    ko:   "세트 사이 짧은 휴식",
+    en:   "Short rest between sets",
+    koAt: "세트 사이 짧은 휴식"
+  },
+  "hm.f5.c0t": {
+    ko:   "운동 동작 자동 카운팅",
+    en:   "Automatic rep counting",
+    koAt: "운동 동작 자동 카운팅"
+  },
+  "hm.f5.c0d": {
+    ko:   "덤벨을 들 때 동작을 인식하고<br>횟수를 자동으로 카운팅해요",
+    en:   "Recognizes the lift as you raise<br>the dumbbell and counts each rep",
+    koAt: "덤벨을 들 때 동작을 인식하고<br>횟수를 자동으로 카운팅해요"
+  },
+  "hm.f5.c1t": {
+    ko:   "온디바이스 처리",
+    en:   "On-device processing",
+    koAt: "온디바이스 처리"
+  },
+  "hm.f5.c1d": {
+    ko:   "자세 인식은 기기 안에서 끝나요.<br>영상은 밖으로 나가지 않아요",
+    en:   "Pose detection finishes on the device.<br>Video never leaves it",
+    koAt: "자세 인식은 기기 안에서 끝나요.<br>영상은 밖으로 나가지 않아요"
+  },
+  "hm.f5.mt": {
+    ko:   "<b>Motion Tracking</b> — 동작을 인식하고 자동으로 카운트해요.<br class=\"br-d\">아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면이에요.<br class=\"br-d\"><mark class=\"hl\">자세 인식은 기기 안에서 끝나고, 영상은 밖으로 나가지 않아요.</mark>",
+    en:   "<b>Motion Tracking</b> — the movement is recognized and counted automatically.<br class=\"br-d\"> Below is real footage with the pose-tracking output drawn straight onto it.<br class=\"br-d\"> <mark class=\"hl\">Pose detection finishes on the device, and video never leaves it.</mark>",
+    koAt: "<b>Motion Tracking</b> — 동작을 인식하고 자동으로 카운트해요.<br class=\"br-d\">아래는 실제 촬영 영상에 포즈 인식 결과를 그대로 입힌 화면이에요.<br class=\"br-d\"><mark class=\"hl\">자세 인식은 기기 안에서 끝나고, 영상은 밖으로 나가지 않아요.</mark>"
+  },
+  "hm.nom-cap.0": {
+    ko:   "실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸어요.<br class=\"br-d\">덤벨 컬 기준으로 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과예요.",
+    en:   "Real footage analyzed with MediaPipe Pose to extract shoulder, elbow and wrist coordinates and elbow angle, with the skeleton, angles and dumbbell boxes drawn on top.<br class=\"br-d\"> For the dumbbell curl, counting applies the state machine's thresholds below (80°/110°) as-is.",
+    koAt: "실제 촬영 영상을 MediaPipe Pose로 분석해 어깨·팔꿈치·손목 좌표와 팔꿈치 각도를 뽑고, 그 위에 스켈레톤·각도·아령 인식 박스를 그렸어요.<br class=\"br-d\">덤벨 컬 기준으로 아래 상태머신의 임계값(80°/110°)을 그대로 적용한 결과예요."
+  },
+  "hm.fsm.0": {
+    ko:   "팔꿈치 각도 <code>&gt; 110°</code><br>2프레임 연속 유지 시 상태 확정",
+    en:   "Elbow angle <code>&gt; 110°</code><br>State confirmed after 2 consecutive frames",
+    koAt: "팔꿈치 각도 <code>&gt; 110°</code><br>2프레임 연속 유지 시 상태 확정"
+  },
+  "hm.fsm.1": {
+    ko:   "팔꿈치 각도 <code>&lt; 80°</code><br>DOWN→UP 전환 시 <b style=\"color:#e85f00;\">+1 카운트</b>",
+    en:   "Elbow angle <code>&lt; 80°</code><br>DOWN→UP transition = <b style=\"color:#e85f00;\">+1 rep</b>",
+    koAt: "팔꿈치 각도 <code>&lt; 80°</code><br>DOWN→UP 전환 시 <b style=\"color:#e85f00;\">+1 카운트</b>"
+  },
+  "hm.fsm.2": {
+    ko:   "최소 간격 <code>300ms</code><br>반동·떨림에 의한 중복 카운트 차단",
+    en:   "Minimum interval <code>300ms</code><br>Blocks double counts from bounce or jitter",
+    koAt: "최소 간격 <code>300ms</code><br>반동·떨림에 의한 중복 카운트 차단"
+  },
+  "hm.f6.h": {
+    ko:   "빈칸이 보이면 채우고 싶어져요",
+    en:   "An empty cell makes you want to fill it",
+    koAt: "빈칸이 보이면 채우고 싶어져요"
+  },
+  "hm.f6.p": {
+    ko:   "운동한 날은 달력에 표시되고, 인증샷은 갤러리에 모여요.<br class=\"br-d\"><mark class=\"hl\">비어 있는 날이 보이는 것만으로 다시 올 이유</mark>가 돼요.",
+    en:   "Workout days are marked on the calendar and proof photos collect in the gallery.<br class=\"br-d\"> <mark class=\"hl\">Simply seeing an empty day becomes a reason to come back.</mark>",
+    koAt: "운동한 날은 달력에 표시되고, 인증샷은 갤러리에 모여요.<br class=\"br-d\"><mark class=\"hl\">비어 있는 날이 보이는 것만으로 다시 올 이유</mark>가 돼요."
+  },
+  "hm.f6.t0": {
+    ko:   "운동한 날 표시",
+    en:   "Workout days marked",
+    koAt: "운동한 날 표시"
+  },
+  "hm.f6.d0": {
+    ko:   "운동한 날은 주황 표시로, 인증샷이 있는 날은 썸네일로 보여줘요",
+    en:   "Workout days get an orange mark; days with a proof photo show a thumbnail",
+    koAt: "운동한 날은 주황 표시로, 인증샷이 있는 날은 썸네일로 보여줘요"
+  },
+  "hm.f6.t1": {
+    ko:   "갤러리 · 백업",
+    en:   "Gallery · backup",
+    koAt: "갤러리 · 백업"
+  },
+  "hm.f6.d1": {
+    ko:   "기록을 목록으로 모아 보고, 기기를 바꿔도 내보내기·가져오기로 옮겨요",
+    en:   "Browse records as a list, and move them to a new device with export/import",
+    koAt: "기록을 목록으로 모아 보고, 기기를 바꿔도 내보내기·가져오기로 옮겨요"
+  },
+  "hm.f6.t2": {
+    ko:   "카드 이미지 저장",
+    en:   "Save as card image",
+    koAt: "카드 이미지 저장"
+  },
+  "hm.f6.d2": {
+    ko:   "그날의 사진과 기록을 한 장의 카드로 저장·공유해요",
+    en:   "Save and share the day's photo and record as a single card",
+    koAt: "그날의 사진과 기록을 한 장의 카드로 저장·공유해요"
+  },
+  "hm.f6.cap": {
+    ko:   "기록 상세 — '카드 이미지 저장'을 누르면 그날의 사진과 기록(횟수·세트·시간)이 한 장의 이미지로 내보내져요",
+    en:   "Record detail — “Save card image” exports the day's photo and record (reps · sets · time) as one image",
+    koAt: "기록 상세 — '카드 이미지 저장'을 누르면 그날의 사진과 기록(횟수·세트·시간)이 한 장의 이미지로 내보내져요"
+  },
+  "hm.f7.h": {
+    ko:   "매일 쌓이는 성취감, 운동 기록 카드로 남겨요",
+    en:   "A sense of achievement that builds daily, kept as a workout card",
+    koAt: "매일 쌓이는 성취감, 운동 기록 카드로 남겨요"
+  },
+  "hm.f7.p": {
+    ko:   "목표를 채우면 완료 화면과 함께 인증샷을 찍을 수 있어요. 사진은 기록에 붙어 달력과 갤러리에 쌓여요.<br class=\"br-d\">기록 카드를 공유하면, <mark class=\"hl\">누군가에게 보이는 순간 강제성이 한 번 더 커져요.</mark>",
+    en:   "When you hit your goal, the completion screen lets you take a proof photo.<br class=\"br-d\"> The photo is attached to the record and collects in the calendar and gallery.<br class=\"br-d\"> Share the record card, and <mark class=\"hl\">the moment someone else can see it, the commitment grows once more.</mark>",
+    koAt: "목표를 채우면 완료 화면과 함께 인증샷을 찍을 수 있어요. 사진은 기록에 붙어 달력과 갤러리에 쌓여요.<br class=\"br-d\">기록 카드를 공유하면, <mark class=\"hl\">누군가에게 보이는 순간 강제성이 한 번 더 커져요.</mark>"
+  },
+  "hm.f8.h": {
+    ko:   "지난주보다 얼마나 했을까?",
+    en:   "How much more than last week?",
+    koAt: "지난주보다 얼마나 했을까?"
+  },
+  "hm.f8.p": {
+    ko:   "이번 주와 이번 달의 운동을 지난 기간과 비교해 보여줘요.",
+    en:   "Compares this week's and this month's workouts with the previous period.",
+    koAt: "이번 주와 이번 달의 운동을 지난 기간과 비교해 보여줘요."
+  },
+  "hm.f8.k": {
+    ko:   "절댓값보다 변화가 먼저 보이게!",
+    en:   "Show the change before the totals!",
+    koAt: "절댓값보다 변화가 먼저 보이게!"
+  },
+  "hm.f8.t0": {
+    ko:   "변화를 먼저",
+    en:   "Change first",
+    koAt: "변화를 먼저"
+  },
+  "hm.f8.d0": {
+    ko:   "절댓값보다 지난 기간 대비 증감이 먼저 보이게 했어요",
+    en:   "The increase or decrease vs. last period shows up before absolute numbers",
+    koAt: "절댓값보다 지난 기간 대비 증감이 먼저 보이게 했어요"
+  },
+  "hm.f8.t1": {
+    ko:   "한 줄 신호",
+    en:   "One-line signal",
+    koAt: "한 줄 신호"
+  },
+  "hm.f8.d1": {
+    ko:   "연속 일수 → 증가 → 첫 기록 순으로 가장 말할 거리 하나만 골라요",
+    en:   "Picks the single most worth saying — streak → increase → first record, in that order",
+    koAt: "연속 일수 → 증가 → 첫 기록 순으로 가장 말할 거리 하나만 골라요"
+  },
+  "hm.f8.t2": {
+    ko:   "요일별 · 종목별",
+    en:   "By day · by exercise",
+    koAt: "요일별 · 종목별"
+  },
+  "hm.f8.d2": {
+    ko:   "어느 날, 어떤 운동을 했는지 차트로 확인해요",
+    en:   "Charts show which days you trained and which exercises you did",
+    koAt: "어느 날, 어떤 운동을 했는지 차트로 확인해요"
+  },
+  "hm.f8.t3": {
+    ko:   "주간 · 월간",
+    en:   "Weekly · monthly",
+    koAt: "주간 · 월간"
+  },
+  "hm.f8.d3": {
+    ko:   "기간을 바꿔 쌓인 흐름을 비교해요",
+    en:   "Switch periods to compare the trend you've built",
+    koAt: "기간을 바꿔 쌓인 흐름을 비교해요"
+  },
+  "hm.f9.h": {
+    ko:   "PC든 모바일이든, 언제 어디서나",
+    en:   "Desktop or mobile — anytime, anywhere",
+    koAt: "PC든 모바일이든, 언제 어디서나"
+  },
+  "hm.f9.p": {
+    ko:   "설치 없는 웹앱이라 집에서 다른 일을 하다가도 브라우저만 열어서 짬짬이 할 수 있어요.<br class=\"br-d\"><mark class=\"hl\">홈트는 마음먹은 순간과 실제로 시작하는 순간 사이가 짧을수록 이어져요.</mark><br class=\"br-d\">반응형으로 PC와 모바일 상관없이 상황에 맞는 기기로 이용할 수 있어요.",
+    en:   "As a web app with nothing to install, you can open a browser and squeeze in a set between other things at home.<br class=\"br-d\"> <mark class=\"hl\">Home workouts stick when the gap between deciding to work out and actually starting is short.</mark> It's responsive, so you can use whichever device suits the moment.",
+    koAt: "설치 없는 웹앱이라 집에서 다른 일을 하다가도 브라우저만 열어서 짬짬이 할 수 있어요.<br class=\"br-d\"><mark class=\"hl\">홈트는 마음먹은 순간과 실제로 시작하는 순간 사이가 짧을수록 이어져요.</mark><br class=\"br-d\">반응형으로 PC와 모바일 상관없이 상황에 맞는 기기로 이용할 수 있어요."
+  },
+  "hm.ec.h2": {
+    ko:   "카운트가 틀릴 때를 먼저 설계했어요",
+    en:   "I designed for miscounts first",
+    koAt: "카운트가 틀릴 때를 먼저 설계했어요"
+  },
+  "hm.ec.p0": {
+    ko:   "카메라 인식은 조명·각도·옷 색에 따라 흔들려요.<br class=\"br-d\">자동이 실패해도 운동이 멈추지 않도록 세 가지를 뒀어요.",
+    en:   "Camera detection wavers with lighting, angle and clothing color.<br class=\"br-d\"> I put three safeguards in place so the workout never stops when automation fails.",
+    koAt: "카메라 인식은 조명·각도·옷 색에 따라 흔들려요.<br class=\"br-d\">자동이 실패해도 운동이 멈추지 않도록 세 가지를 뒀어요."
+  },
+  "hm.ec.t0": {
+    ko:   "사람이 안 잡힐 때",
+    en:   "When the person isn't detected",
+    koAt: "사람이 안 잡힐 때"
+  },
+  "hm.ec.d0": {
+    ko:   "카운터가 멈추고, 전신이 보이게 서 달라는 가이드를 띄워요",
+    en:   "The counter pauses and a guide asks the user to stand so their full body is visible",
+    koAt: "카운터가 멈추고, 전신이 보이게 서 달라는 가이드를 띄워요"
+  },
+  "hm.ec.r": {
+    ko:   "대응",
+    en:   "Response",
+    koAt: "대응"
+  },
+  "hm.ec.r0": {
+    ko:   "멈춘 숫자부터 이어서 세기",
+    en:   "Resume counting from where it stopped",
+    koAt: "멈춘 숫자부터 이어서 세기"
+  },
+  "hm.ec.t1": {
+    ko:   "숫자가 틀렸을 때",
+    en:   "When the count is wrong",
+    koAt: "숫자가 틀렸을 때"
+  },
+  "hm.ec.d1": {
+    ko:   "카운터를 눌러 직접 올리고 내릴 수 있어요",
+    en:   "Tap the counter to adjust it up or down manually",
+    koAt: "카운터를 눌러 직접 올리고 내릴 수 있어요"
+  },
+  "hm.ec.rb": {
+    ko:   "대응",
+    en:   "Response",
+    koAt: "대응"
+  },
+  "hm.ec.r1": {
+    ko:   "직접 고쳐도 세트 기록은 유지",
+    en:   "Manual fixes keep the set record intact",
+    koAt: "직접 고쳐도 세트 기록은 유지"
+  },
+  "hm.ec.t2": {
+    ko:   "카메라를 못 쓸 때",
+    en:   "When the camera can't be used",
+    koAt: "카메라를 못 쓸 때"
+  },
+  "hm.ec.d2": {
+    ko:   "카메라 없이 세트만 넘기는 모드로 바뀌어요",
+    en:   "Switches to a mode that just advances sets without the camera",
+    koAt: "카메라 없이 세트만 넘기는 모드로 바뀌어요"
+  },
+  "hm.ec.rc": {
+    ko:   "대응",
+    en:   "Response",
+    koAt: "대응"
+  },
+  "hm.ec.r2": {
+    ko:   "남는 기록의 모양은 똑같이",
+    en:   "The resulting record looks exactly the same",
+    koAt: "남는 기록의 모양은 똑같이"
+  },
+  "hm.ec.pl": {
+    ko:   "원칙",
+    en:   "Principle",
+    koAt: "원칙"
+  },
+  "hm.ec.pr": {
+    ko:   "인식이 실패해도 \"오늘 했다\"는 기록은 남아요",
+    en:   "Even if detection fails, the “I worked out today” record remains",
+    koAt: "인식이 실패해도 \"오늘 했다\"는 기록은 남아요"
+  },
+  "hm.rs.h2": {
+    ko:   "5명에게 3일 동안 HOMUSCLE을 써보게 했어요",
+    en:   "Five people used HOMUSCLE for three days",
+    koAt: "5명에게 3일 동안 HOMUSCLE을 써보게 했어요"
+  },
+  "hm.rs.p0": {
+    ko:   "Project Goal에서 세운 지표를 그대로 확인했어요.<br class=\"br-d\">사용성 테스트 · 20~30대 5명 · 3일 사용 · 2026.08",
+    en:   "I checked the metrics set in Project Goal as they were.<br class=\"br-d\"> Usability test · 5 participants in their 20s–30s · 3 days of use · Aug 2026",
+    koAt: "Project Goal에서 세운 지표를 그대로 확인했어요.<br class=\"br-d\">사용성 테스트 · 20~30대 5명 · 3일 사용 · 2026.08"
+  },
+  "hm.rs.bl": {
+    ko:   "가장 좋았던 점",
+    en:   "Liked most",
+    koAt: "가장 좋았던 점"
+  },
+  "hm.rs.best": {
+    ko:   "“입력 없이 기록이 남는 것”",
+    en:   "“The record builds up without any input”",
+    koAt: "“입력 없이 기록이 남는 것”"
+  },
+  "hm.rs.note": {
+    ko:   "표본이 작아 수치보다 경향으로 봤어요.",
+    en:   "With a small sample, I read these as trends rather than figures.",
+    koAt: "표본이 작아 수치보다 경향으로 봤어요."
+  },
+  "hm.rs.g0": {
+    ko:   "목표 1분 이내",
+    en:   "Target: under 1 min",
+    koAt: "목표 1분 이내"
+  },
+  "hm.rs.l0": {
+    ko:   "첫 세션을 1분 안에 시작",
+    en:   "started their first session within 1 minute",
+    koAt: "첫 세션을 1분 안에 시작"
+  },
+  "hm.rs.g1": {
+    ko:   "목표 재방문 60%↑",
+    en:   "Target: 60%+ return",
+    koAt: "목표 재방문 60%↑"
+  },
+  "hm.rs.l1": {
+    ko:   "3일 중 2일 이상 다시 돌아옴",
+    en:   "came back on 2 or more of 3 days",
+    koAt: "3일 중 2일 이상 다시 돌아옴"
+  },
+  "hm.rs.g2": {
+    ko:   "시작 이후 입력 없음",
+    en:   "No input after start",
+    koAt: "시작 이후 입력 없음"
+  },
+  "hm.rs.l2": {
+    ko:   "운동 중 직접 입력한 횟수",
+    en:   "manual inputs during a workout",
+    koAt: "운동 중 직접 입력한 횟수"
+  },
+  "hm.rt.h2": {
+    ko:   "프로젝트 후 돌아본 것들",
+    en:   "Looking back on the project",
+    koAt: "프로젝트 후 돌아본 것들"
+  },
+  "hm.rt.h0": {
+    ko:   "잘한 점",
+    en:   "What went well",
+    koAt: "잘한 점"
+  },
+  "hm.rt.a0": {
+    ko:   "시작 버튼 이후 입력 단계 0개",
+    en:   "Zero input steps after the start button",
+    koAt: "시작 버튼 이후 입력 단계 0개"
+  },
+  "hm.rt.a1": {
+    ko:   "영상은 기기 밖으로 나가지 않아요",
+    en:   "Video never leaves the device",
+    koAt: "영상은 기기 밖으로 나가지 않아요"
+  },
+  "hm.rt.a2": {
+    ko:   "디자인 시스템을 코드까지 내려 검증했어요",
+    en:   "Validated the design system all the way down to code",
+    koAt: "디자인 시스템을 코드까지 내려 검증했어요"
+  },
+  "hm.rt.h1": {
+    ko:   "검증한 것",
+    en:   "What was validated",
+    koAt: "검증한 것"
+  },
+  "hm.rt.k0": {
+    ko:   "첫 세션을 1분 안에 시작",
+    en:   "started their first session within 1 minute",
+    koAt: "첫 세션을 1분 안에 시작"
+  },
+  "hm.rt.k1": {
+    ko:   "3일 중 2일 이상 재방문",
+    en:   "returned on 2+ of 3 days",
+    koAt: "3일 중 2일 이상 재방문"
+  },
+  "hm.rt.best": {
+    ko:   "가장 좋았던 점 — “입력 없이 기록이 남는 것”",
+    en:   "Liked most — “The record builds up without any input”",
+    koAt: "가장 좋았던 점 — “입력 없이 기록이 남는 것”"
+  },
+  "hm.rt.h2b": {
+    ko:   "아쉬운 점",
+    en:   "What fell short",
+    koAt: "아쉬운 점"
+  },
+  "hm.rt.b0": {
+    ko:   "스트릭이 끊긴 뒤 돌아오는 경험이 약해요",
+    en:   "Coming back after a broken streak still feels weak",
+    koAt: "스트릭이 끊긴 뒤 돌아오는 경험이 약해요"
+  },
+  "hm.rt.b1": {
+    ko:   "빠진 날에도 다시 시작하기 쉬운 장치가 필요해요",
+    en:   "Needs something that makes restarting easy after a missed day",
+    koAt: "빠진 날에도 다시 시작하기 쉬운 장치가 필요해요"
+  },
+  "hm.rt.h3": {
+    ko:   "다음 단계",
+    en:   "Next steps",
+    koAt: "다음 단계"
+  },
+  "hm.rt.n0": {
+    ko:   "기기 간 동기화",
+    en:   "Cross-device sync",
+    koAt: "기기 간 동기화"
+  },
+  "hm.rt.n0d": {
+    ko:   "폰에서 시작한 세트를 노트북에서 이어가기",
+    en:   "Start a set on the phone, continue on the laptop",
+    koAt: "폰에서 시작한 세트를 노트북에서 이어가기"
+  },
+  "hm.rt.n1": {
+    ko:   "운동 알림",
+    en:   "Workout reminders",
+    koAt: "운동 알림"
+  },
+  "hm.rt.n1d": {
+    ko:   "스트릭이 끊기기 전에 붙잡기",
+    en:   "Catch users before their streak breaks",
+    koAt: "스트릭이 끊기기 전에 붙잡기"
+  },
+  "hm.rt.n2": {
+    ko:   "종목 확장",
+    en:   "More exercises",
+    koAt: "종목 확장"
+  },
+  "hm.rt.n2d": {
+    ko:   "덤벨 밖 동작에서도 카운팅 확인",
+    en:   "Validate counting on movements beyond dumbbells",
+    koAt: "덤벨 밖 동작에서도 카운팅 확인"
+  },
+  "hm.rt.note": {
+    ko:   "다음 측정 지표 제안 · 주당 운동일 · 7일 안에 다시 온 비율",
+    en:   "Proposed metrics to track next · workout days per week · return rate within 7 days",
+    koAt: "다음 측정 지표 제안 · 주당 운동일 · 7일 안에 다시 온 비율"
   },
   "hm.next-eyebrow.0": {
     ko:   "다른 케이스",
@@ -1940,5 +2943,49 @@ window.I18N_JS = {
   "다른 부위 운동도 더 추가해보고 싶어요 🦾": {
     en:   "I'd like to add exercises for other muscle groups 🦾",
     koAt: "다른 부위 운동도 더 추가해보고 싶어요 🦾"
+  },
+  "습관이 되기까지 평균 두 달! 그 전에 앱을 지우는 게 문제였어요 📚": {
+    en:   "A habit takes about two months to form — most people delete the app before that 📚",
+    koAt: "습관이 되기까지 평균 두 달! 그 전에 앱을 지우는 게 문제였어요 📚"
+  },
+  "다들 외부 보상에 기대고 있었어요. 그래서 나만의 기록으로 갔어요 🧭": {
+    en:   "Everyone leaned on external rewards, so I went with a record of your own 🧭",
+    koAt: "다들 외부 보상에 기대고 있었어요. 그래서 나만의 기록으로 갔어요 🧭"
+  },
+  "32명 설문, 3명 인터뷰로 방향을 잡았어요 📝": {
+    en:   "A survey of 32 and three interviews set the direction 📝",
+    koAt: "32명 설문, 3명 인터뷰로 방향을 잡았어요 📝"
+  },
+  "입력 없이 남는 기록! 이게 핵심 목표였어요 🎯": {
+    en:   "A record that builds up with zero input — that was the core goal 🎯",
+    koAt: "입력 없이 남는 기록! 이게 핵심 목표였어요 🎯"
+  },
+  "단계마다 다시 하게 만드는 장치를 하나씩 심었어요 🔁": {
+    en:   "Every stage has one small hook that brings you back 🔁",
+    koAt: "단계마다 다시 하게 만드는 장치를 하나씩 심었어요 🔁"
+  },
+  "메뉴는 딱 다섯 개로 줄였어요 ✂️": {
+    en:   "I cut the menu down to just five ✂️",
+    koAt: "메뉴는 딱 다섯 개로 줄였어요 ✂️"
+  },
+  "테두리 있는 화면은 진짜 앱이에요. 직접 눌러보세요 👆": {
+    en:   "The framed screens are the real app — go ahead and tap around 👆",
+    koAt: "테두리 있는 화면은 진짜 앱이에요. 직접 눌러보세요 👆"
+  },
+  "팔꿈치 각도로 횟수를 세요. 영상은 기기 밖으로 안 나가요 🏋️": {
+    en:   "Reps are counted from elbow angle — and video never leaves the device 🏋️",
+    koAt: "팔꿈치 각도로 횟수를 세요. 영상은 기기 밖으로 안 나가요 🏋️"
+  },
+  "인식이 실패해도 운동은 멈추지 않게 했어요 🛡": {
+    en:   "Even when detection fails, the workout keeps going 🛡",
+    koAt: "인식이 실패해도 운동은 멈추지 않게 했어요 🛡"
+  },
+  "5명 중 5명이 1분 안에 첫 운동을 시작했어요 ✨": {
+    en:   "All five started their first workout within a minute ✨",
+    koAt: "5명 중 5명이 1분 안에 첫 운동을 시작했어요 ✨"
+  },
+  "다음엔 운동 알림이랑 기기 간 동기화를 해보고 싶어요 🚀": {
+    en:   "Next I want to try workout reminders and cross-device sync 🚀",
+    koAt: "다음엔 운동 알림이랑 기기 간 동기화를 해보고 싶어요 🚀"
   },
 };

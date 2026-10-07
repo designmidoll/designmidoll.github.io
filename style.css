@@ -1,11 +1,13 @@
-/* NanumSquareNeo — 한글 전용 (unicode-range) */
+/* NanumSquareNeo — 한글 전용 (unicode-range)
+   *.subset.woff2: KS X 1001 한글 2,350자 + 사이트에 쓰인 글자만 남긴 경량본(약 115KB, 원본 TTF 2.1MB).
+   사이트에 새 글자가 생기면 subset을 다시 만들 것 — 빠진 글자는 기기 기본 폰트로 표시된다. */
 @font-face {
   font-family: 'NanumSquareNeo';
   font-weight: 300;
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-aLt.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-aLt.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-aLt.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NanumSquareNeo';
@@ -13,7 +15,7 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-bRg.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-bRg.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-bRg.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NanumSquareNeo';
@@ -21,7 +23,7 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-bRg.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-bRg.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-bRg.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NanumSquareNeo';
@@ -29,7 +31,7 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-cBd.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-cBd.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-cBd.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NanumSquareNeo';
@@ -37,7 +39,7 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-dEb.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-dEb.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-dEb.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NanumSquareNeo';
@@ -45,7 +47,7 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
-  src: url('fonts/NanumSquareNeo-eHv.ttf') format('truetype');
+  src: url('fonts/NanumSquareNeo-eHv.subset.woff2') format('woff2'), url('fonts/NanumSquareNeo-eHv.ttf') format('truetype');
 }
 
 /* Pretendard — 영문 fallback용 유지 */
@@ -54,28 +56,28 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('fonts/Pretendard-Regular.woff2') format('woff2'), url('fonts/Pretendard-Regular.otf') format('opentype');
+  src: url('fonts/Pretendard-Regular.subset.woff2') format('woff2'), url('fonts/Pretendard-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Pretendard';
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('fonts/Pretendard-Medium.woff2') format('woff2'), url('fonts/Pretendard-Medium.otf') format('opentype');
+  src: url('fonts/Pretendard-Medium.subset.woff2') format('woff2'), url('fonts/Pretendard-Medium.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Pretendard';
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url('fonts/Pretendard-SemiBold.woff2') format('woff2'), url('fonts/Pretendard-SemiBold.otf') format('opentype');
+  src: url('fonts/Pretendard-SemiBold.subset.woff2') format('woff2'), url('fonts/Pretendard-SemiBold.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Pretendard';
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('fonts/Pretendard-Bold.woff2') format('woff2'), url('fonts/Pretendard-Bold.otf') format('opentype');
+  src: url('fonts/Pretendard-Bold.subset.woff2') format('woff2'), url('fonts/Pretendard-Bold.woff2') format('woff2');
 }
 
 /* Instrument Serif — 영문/라틴만 적용, 한글 제외 */
