@@ -53,6 +53,32 @@
   body.home-dark .lang-btn.lang-active { color: #fff; }
   body.home-dark .lang-sep { background: rgba(255,255,255,0.22); }
   #global-nav, #global-nav * { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+  /* 홈 전체(히어로 아래 작업 카드·푸터까지) 같은 단색 */
+  #home-page { background: #0b0b0c; }
+  body.home-dark { background: #0b0b0c; }
+  body.home-dark .gradient-bg { display: none; }
+  #work-section { scroll-margin-top: 88px; }
+  .hero-portrait { cursor: pointer; }
+  .hero-portrait img { transition: transform .35s ease; }
+  .hero-portrait:hover img { transform: translateY(-4px); }
+  .hero-portrait:focus-visible { outline: none; }
+  .hero-portrait:focus-visible img { outline: 2px solid #ff6300; outline-offset: 6px; border-radius: 24px; }
+  #home-page .work-item { border-bottom-color: rgba(255,255,255,0.08); }
+  #home-page .work-item-tag { color: #8a8886; }
+  #home-page .work-item-title { color: #f3f2f1; }
+  #home-page .work-item-stat-big { color: #fff; }
+  #home-page .work-item-stat-unit { color: #8a8886; }
+  #home-page .wit { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.72); }
+  #home-page .work-item-yt .work-item-right { background: #1a1a1b; }
+  #home-page .work-item-nom .work-item-right { background: #1a1a1b; }
+  #home-page .work-item-right img { box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+  #home-page .site-footer { border-top-color: rgba(255,255,255,0.1); }
+  #home-page .footer-copy { color: #6f6d6c; }
+  #home-page .footer-col h4 { color: #f3f2f1; }
+  #home-page .footer-col a { color: #9a9896; }
+  #home-page .footer-col a:hover { color: #fff; }
+  /* 히어로를 지나 카드 위로 스크롤하면 내비에 반투명 다크 바탕 */
+  body.home-dark.home-scrolled #global-nav { background: rgba(11,11,12,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 </style>
 </head>
 <body>
@@ -77,7 +103,7 @@
   <!-- HERO (다크) -->
   <div class="hero-dark">
     <div class="hero">
-      <div class="hero-portrait" aria-hidden="true"><img src="images/hero-portrait.webp" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="hero-portrait" id="hero-portrait" role="button" tabindex="0" aria-label="작업물 보기"><img src="images/hero-portrait.webp" alt="" fetchpriority="high" decoding="async"></div>
       <div class="hero-top">
         <h1 data-i18n="home.hero-title.0" class="hero-title">
           프로덕트 디자이너, <span class="name-highlight">박미선</span>입니다.<br>
@@ -338,17 +364,25 @@
 <script src="script.js"></script>
 
 <script>
-  /* 홈 히어로(다크)가 화면 상단에 있는 동안만 내비를 다크 모드로 */
+  /* 홈 페이지(전체 다크)에서는 내비도 다크, 히어로를 지나면 반투명 바탕 */
   (function(){
     const home = document.getElementById('home-page');
     const hero = document.querySelector('.hero-dark');
     const update = () => {
-      const on = home && home.classList.contains('active') && hero && window.scrollY < hero.offsetHeight - 60;
-      document.body.classList.toggle('home-dark', !!on);
+      const on = !!(home && home.classList.contains('active'));
+      document.body.classList.toggle('home-dark', on);
+      document.body.classList.toggle('home-scrolled', on && !!hero && hero.getBoundingClientRect().bottom < 120);
     };
     window.addEventListener('scroll', update, { passive: true });
     if (home) new MutationObserver(update).observe(home, { attributes: true, attributeFilter: ['class'] });
     update();
+    /* 프로필 이미지 클릭 → 작업물 목록으로 */
+    const portrait = document.getElementById('hero-portrait');
+    const toWork = () => { const w = document.getElementById('work-section'); if (w) w.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    if (portrait){
+      portrait.addEventListener('click', toWork);
+      portrait.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toWork(); } });
+    }
   })();
 </script>
 
