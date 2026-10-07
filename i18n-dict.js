@@ -37,9 +37,9 @@ window.I18N_DICT = {
     koAt: "사용자가 말하는 불편함을 그대로 받아들이지 않습니다.<br>보이는 문제 너머, 진짜 이유를 파고들어 근거로 증명합니다."
   },
   "home.hero-title.0": {
-    ko:   "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>",
+    ko:   "프로덕트 디자이너, <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>",
     en:   "I'm <span class=\"name-highlight\">Miseon Park</span> —<br>\n          a Product Designer who <em>hypothesizes</em>,<br>\n          <span class=\"hero-thin\">then validates with data.</span>",
-    koAt: "프로덕트 디자이너,<br>\n          <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>"
+    koAt: "프로덕트 디자이너, <span class=\"name-highlight\">박미선</span>입니다.<br>\n          <span class=\"hero-thin\">가설을 세우고 데이터로 검증합니다.</span>"
   },
   "home.pill.0": {
     ko:   "작업물 보기 ↓",

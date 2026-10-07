@@ -13,22 +13,12 @@
 <style>
   /* ═════ 홈 히어로 — 다크 톤 + 일러스트 프로필 ═════ */
   .hero-dark { position: relative; isolation: isolate; }
-  .hero-dark::before {
-    content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: -160px; z-index: -1;
-    background:
-      radial-gradient(900px 480px at 78% 18%, rgba(255,107,0,0.16), transparent 62%),
-      radial-gradient(700px 420px at 12% 70%, rgba(150,120,255,0.10), transparent 60%),
-      #0b0b0c;
-    -webkit-mask: linear-gradient(180deg, #000 calc(100% - 260px), rgba(0,0,0,.7) calc(100% - 170px), rgba(0,0,0,.3) calc(100% - 80px), transparent 100%);
-            mask: linear-gradient(180deg, #000 calc(100% - 260px), rgba(0,0,0,.7) calc(100% - 170px), rgba(0,0,0,.3) calc(100% - 80px), transparent 100%);
-    pointer-events: none;
-  }
+  .hero-dark { background: #0b0b0c; }
   .hero-dark .hero { position: relative; min-height: 0; padding: 110px 24px 40px; }
   .hero-portrait { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 8px; opacity: 0; animation: fadeIn 0.9s 0.05s forwards; }
-  .hero-portrait img { width: clamp(220px, 26vw, 320px); height: auto; display: block;
+  .hero-portrait img { width: clamp(280px, 34vw, 440px); height: auto; display: block;
     -webkit-mask: linear-gradient(180deg, #000 72%, transparent 100%); mask: linear-gradient(180deg, #000 72%, transparent 100%);
  }
-  .hero-portrait::before { content: ''; position: absolute; left: 50%; top: 45%; width: 420px; height: 420px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(255,107,0,0.18), transparent); z-index: -1; }
   .hero-dark .hero-top { justify-content: center; text-align: center; }
   .hero-dark .hero-title { color: #f2f0ef; }
   .hero-dark .hero-title .name-highlight { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); color: #fff; }
@@ -90,8 +80,7 @@
       <div class="hero-portrait" aria-hidden="true"><img src="images/hero-portrait.webp" alt="" fetchpriority="high" decoding="async"></div>
       <div class="hero-top">
         <h1 data-i18n="home.hero-title.0" class="hero-title">
-          프로덕트 디자이너,<br>
-          <span class="name-highlight">박미선</span>입니다.<br>
+          프로덕트 디자이너, <span class="name-highlight">박미선</span>입니다.<br>
           <span class="hero-thin">가설을 세우고 데이터로 검증합니다.</span>
         </h1>
       </div>
