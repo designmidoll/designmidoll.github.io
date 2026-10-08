@@ -1501,8 +1501,8 @@ div.case-body {
   .cs { flex: 0 0 calc(50% - 20px); border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.08); margin-right: 0; padding-right: 0; padding-bottom: 20px; margin-bottom: 0; }
   .cs:last-child { border-bottom: none; }
   .case-hero-desc { white-space: normal !important; }
-  .htag-r { right: -40px !important; }
-  .htag-l { left: -50px !important; }
+  .htag-r { right: 0 !important; }
+  .htag-l { left: 0 !important; }
   .htag-r > div, .htag-l > div { font-size: 13px !important; }
 }
 @media (max-width: 600px) {
@@ -1862,4 +1862,42 @@ div.case-body {
   .work-upcoming-section { padding: 8px 16px 40px; }
   .work-upcoming-card { padding: 28px 20px; }
   .work-upcoming-inner { padding: 20px; }
+}
+
+
+/* ═══ MOBILE POLISH (2026-10) ═══ */
+@media (max-width: 600px) {
+  body { overflow-x: clip; }
+  /* 한글 제목이 단어 중간에서 끊기지 않게 */
+  .case-h1, .case-h1 span, .work-item-title, .about-wrap h1, .about-wrap h2 { word-break: keep-all; overflow-wrap: break-word; }
+  /* 푸터: 3열 → 2열, 저작권은 아래로 */
+  .site-footer { grid-template-columns: 1fr 1fr; gap: 28px 24px; padding: 36px 20px 56px; }
+  .site-footer .footer-copy { grid-column: 1 / -1; order: 3; padding-top: 8px; }
+  .site-footer .footer-col a { margin-bottom: 10px; }
+  .about-footer { flex-direction: column !important; align-items: flex-start !important; gap: 12px; padding: 0 20px 48px !important; }
+  /* 케이스 프로세스 단계 탭: 6개가 한 줄에 들어가도록 */
+  .proc-track { gap: 0; }
+  .proc-step { flex: 0 0 auto; width: 52px; }
+  .proc-conn { min-width: 4px; margin-top: 14px; }
+  .p-circ { width: 30px; height: 30px; font-size: 12px; }
+  .p-lbl { font-size: 10px; white-space: normal; word-break: keep-all; width: 52px; margin-top: 6px; }
+  /* 홈 카드의 타입 배지가 이미지 내용(로고)을 가리지 않게 */
+  .work-item-hm .work-item-type { top: auto; bottom: 12px; right: 12px; }
+}
+
+/* ── MOBILE POLISH 2 (narrow phones) ── */
+@media (max-width: 600px) {
+  .cb-section div[style*="repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 400px) {
+  #global-nav { padding: 10px 12px; gap: 6px; }
+  #nav-logo { font-size: 16px !important; }
+  .nav-right { gap: 8px; }
+  .lang-btn { font-size: 9px; }
+  .global-nav-pills { padding: 2px 3px; }
+  .global-nav-pills a { font-size: 10.5px !important; padding: 5px 8px; }
+}
+@media (max-width: 1100px) {
+  .htag-r { right: 0 !important; }
+  .htag-l { left: 0 !important; }
 }

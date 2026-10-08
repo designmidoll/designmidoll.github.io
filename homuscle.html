@@ -70,10 +70,10 @@
   }
   #case3-page .case-body { padding-top: 24px !important; }
   @media (max-width: 768px) {
-    #case3-page .case-hero-wrap { padding-bottom: 200px; }
+    #case3-page .case-hero-wrap { padding-bottom: 110px; }
     #case3-page .case-hero-wrap::before {
-      -webkit-mask: linear-gradient(180deg, #000 0, #000 calc(100% - 300px), rgba(0,0,0,0.75) calc(100% - 200px), rgba(0,0,0,0.35) calc(100% - 100px), transparent 100%);
-              mask: linear-gradient(180deg, #000 0, #000 calc(100% - 300px), rgba(0,0,0,0.75) calc(100% - 200px), rgba(0,0,0,0.35) calc(100% - 100px), transparent 100%);
+      -webkit-mask: linear-gradient(180deg, #000 0, #000 calc(100% - 120px), rgba(0,0,0,0.6) calc(100% - 70px), transparent 100%);
+              mask: linear-gradient(180deg, #000 0, #000 calc(100% - 120px), rgba(0,0,0,0.6) calc(100% - 70px), transparent 100%);
     }
   }
 
@@ -414,6 +414,7 @@
 
   /* User Journey */
   .hm-jr-wrap { overflow-x: auto; margin-top: 20px; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 760px) { .hm-jr-wrap::before { content: '‹  swipe  ›'; display: block; position: sticky; left: 0; width: 100%; text-align: center; font-size: 11px; letter-spacing: .12em; color: #999; margin-bottom: 8px; } }
   .hm-jr { display: grid; grid-template-columns: 110px repeat(4, minmax(150px, 1fr)); gap: 6px; min-width: 760px; }
   .hm-jr > div { border-radius: 8px; padding: 14px 12px; font-size: 12.5px; line-height: 1.55; text-align: center; display: flex; align-items: center; justify-content: center; word-break: keep-all; }
   .hm-jr .hd { background: #0a0a0a; color: #fff; font-weight: 600; }
