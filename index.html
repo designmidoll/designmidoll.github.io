@@ -15,9 +15,11 @@
   .hero-dark { position: relative; isolation: isolate; }
   .hero-dark { background: #0b0b0c; }
   .hero-dark .hero { position: relative; min-height: 0; padding: 110px 24px 40px; }
-  .hero-portrait { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 8px; opacity: 0; animation: fadeIn 0.9s 0.05s forwards; }
-  .hero-portrait img { width: clamp(280px, 34vw, 440px); height: auto; display: block;
-    -webkit-mask: linear-gradient(180deg, #000 72%, transparent 100%); mask: linear-gradient(180deg, #000 72%, transparent 100%);
+  .hero-portrait { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 8px; }
+  .hero-portrait-media { opacity: 0; animation: fadeIn 0.9s 0.05s forwards; }
+  .hero-portrait .hero-portrait-media { width: clamp(300px, 36vw, 480px); aspect-ratio: 720 / 876; height: auto; display: block; object-fit: cover; mix-blend-mode: lighten;
+    -webkit-mask: linear-gradient(180deg, transparent 0%, #000 6%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in; mask: linear-gradient(180deg, transparent 0%, #000 6%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%); mask-composite: intersect;
  }
   .hero-dark .hero-top { justify-content: center; text-align: center; }
   .hero-dark .hero-title { color: #f2f0ef; }
@@ -59,10 +61,10 @@
   body.home-dark .gradient-bg { display: none; }
   #work-section { scroll-margin-top: 88px; }
   .hero-portrait { cursor: pointer; }
-  .hero-portrait img { transition: transform .35s ease; }
-  .hero-portrait:hover img { transform: translateY(-4px); }
+  .hero-portrait .hero-portrait-media { transition: transform .35s ease; }
+  .hero-portrait:hover .hero-portrait-media { transform: translateY(-4px); }
   .hero-portrait:focus-visible { outline: none; }
-  .hero-portrait:focus-visible img { outline: 2px solid #ff6300; outline-offset: 6px; border-radius: 24px; }
+  .hero-portrait:focus-visible .hero-portrait-media { outline: 2px solid #ff6300; outline-offset: 6px; border-radius: 24px; }
   #home-page .work-item { border-bottom-color: rgba(255,255,255,0.08); }
   #home-page .work-item-tag { color: #8a8886; }
   #home-page .work-item-title { color: #f3f2f1; }
@@ -110,7 +112,7 @@
   <!-- HERO (다크) -->
   <div class="hero-dark">
     <div class="hero">
-      <div class="hero-portrait" id="hero-portrait" role="button" tabindex="0" aria-label="작업물 보기"><img src="images/hero-portrait.webp" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="hero-portrait" id="hero-portrait" role="button" tabindex="0" aria-label="작업물 보기"><video class="hero-portrait-media" autoplay muted loop playsinline preload="auto" poster="images/hero-portrait-poster.jpg" aria-hidden="true"><source src="images/hero-portrait.webm?v=1" type="video/webm"><source src="images/hero-portrait.mp4?v=1" type="video/mp4"></video></div>
       <div class="hero-top">
         <h1 data-i18n="home.hero-title.0" class="hero-title">
           프로덕트 디자이너, <span class="name-highlight">박미선</span>입니다.<br>
