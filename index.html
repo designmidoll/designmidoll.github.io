@@ -17,6 +17,10 @@
   .hero-dark .hero { position: relative; min-height: 0; padding: 110px 24px 40px; }
   .hero-portrait { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 8px; }
   .hero-portrait-media { opacity: 0; animation: fadeIn 0.9s 0.05s forwards; }
+  /* 타이틀을 머리카락 중간쯤부터 영상 위에 겹치게 */
+  .hero-dark .hero-portrait { margin-bottom: calc(clamp(300px, 36vw, 480px) * 1.2167 * -0.3); }
+  .hero-dark .hero-top { position: relative; z-index: 2; }
+  .hero-dark .hero-title { text-shadow: 0 2px 24px rgba(11,11,12,0.85), 0 0 2px rgba(11,11,12,0.6); }
   .hero-portrait .hero-portrait-media { width: clamp(300px, 36vw, 480px); aspect-ratio: 720 / 876; height: auto; display: block; object-fit: cover; mix-blend-mode: lighten;
     -webkit-mask: linear-gradient(180deg, transparent 0%, #000 6%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
     -webkit-mask-composite: source-in; mask: linear-gradient(180deg, transparent 0%, #000 6%, #000 70%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%); mask-composite: intersect;
