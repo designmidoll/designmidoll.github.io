@@ -2114,9 +2114,9 @@ window.I18N_DICT = {
     koAt: "집에서 키우는 근육이라는 뜻으로,<br>'HOME'과 'MUSCLE'을 한 단어로 붙여 이름을 지었어요."
   },
   "hm.ds.note": {
-    ko:   "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>",
-    en:   "Both frames are the <b>live documentation site, embedded</b> — you can open other pages from its sidebar.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Open the full design system ↗</a>",
-    koAt: "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-ds-site.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>"
+    ko:   "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-design-system.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>",
+    en:   "Both frames are the <b>live documentation site, embedded</b> — you can open other pages from its sidebar.<br class=\"br-d\"><a href=\"homuscle-design-system.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">Open the full design system ↗</a>",
+    koAt: "두 화면 모두 <b>실제 문서 사이트가 라이브로 임베드</b>된 것입니다 — 좌측 목차로 다른 문서를 열어볼 수도 있습니다.<br class=\"br-d\"><a href=\"homuscle-design-system.html\" target=\"_blank\" style=\"color:#e85f00;font-weight:600;text-decoration:none;\">디자인 시스템 문서 전체 열기 ↗</a>"
   },
   "hm.kf.h2": {
     ko:   "목표를 세우고, 몸을 풀고, 운동하고,<br>기록을 남기는 흐름 그대로",
